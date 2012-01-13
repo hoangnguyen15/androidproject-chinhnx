@@ -3,5 +3,9 @@
 
     <string name="hello">Hello World, Main!</string>
     <string name="app_name">Huyenhoc</string>
+    <string name="name">Nhập họ và tên</string>
+    <string name="dateofbirth">Ngày tháng năm sinh</string>
+    <string name="male">Nam</string>
+    <string name="female">Nữ</string>
 
 </resources>
