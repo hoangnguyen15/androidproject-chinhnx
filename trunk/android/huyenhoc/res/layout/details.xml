@@ -1,9 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/detail_background"
     android:orientation="vertical" >
 
-    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal" >
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lt"
+            android:textColor="#fff"
+            android:textSize="40dip" />
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="Cuộc sống"
+            android:textColor="#fff"
+            android:textSize="40dip" />
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/gt"
+            android:textColor="#fff"
+            android:textSize="40dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="20"
+        android:background="@drawable/table_background"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="3" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="30dip"
+                android:text="This webpage is not available
+Google Chrome could not load the webpage because vozforums.com took too long to respond. The website may be down, or you may be experiencing issues with your Internet connection.
+Here are some suggestions:
+Reload this webpage later.
+Check your Internet connection. Restart any router, modem, or other network devices you may be using.
+Add Google Chrome as a permitted program in your firewall&apos;s or antivirus software&apos;s settings. If it is already a permitted program, try deleting it from the list of permitted programs and adding it again.
+If you use a proxy server, check your proxy settings or contact your network administrator to make sure the proxy server is working. If you don&apos;t believe you should be using a proxy server, adjust your proxy settings: Go to the wrench menu > Options > Under the Hood > Change proxy settings... > LAN Settings and deselect the " />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:paddingLeft="30dip"
+            android:paddingRight="30dip" >
+
+            <com.candroid.huyenhoc.Btn
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hoan_thanh_button"
+                android:text="@string/sendsms"
+                android:textColor="#fff"
+                android:textSize="24dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+    </LinearLayout>
 
 </LinearLayout>
