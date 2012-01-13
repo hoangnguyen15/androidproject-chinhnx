@@ -7,5 +7,15 @@
     <string name="dateofbirth">Ngày tháng năm sinh</string>
     <string name="male">Nam</string>
     <string name="female">Nữ</string>
+    <string name="hourborn">Giờ sinh</string>
+    <string name="btnfinish">Hoàn thành</string>
+    <string name="btnapp">Chương trình</string>
+    <string name="btnchange">Đổi ngày</string>
+    <string name="btnintro">Giới thiệu</string>
+    <string name="btnsetting">Cấu hình</string>
+    <string name="site">Huyenhoc.com</string>
+    <string name="backtomenu">Trở lại menu</string>
+    <string name="back">Trở lại</string>
+    <string name="lt">&lt;</string>
 
 </resources>

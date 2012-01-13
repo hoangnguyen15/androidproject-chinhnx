@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:background="@drawable/nav_bar"
+        android:gravity="center_vertical|left"
+        android:paddingLeft="10dip"
+        android:layout_weight="1" >
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lt"
+            android:textColor="#fff"
+            android:textSize="24dip" />
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="@string/backtomenu"
+            android:textColor="#fff"
+            android:textSize="24dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:background="@drawable/table_background"
+        android:layout_weight="8" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center_vertical|right" 
+        android:paddingRight="10dip">
+
+        <com.candroid.huyenhoc.Text
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/site"
+            android:textColor="#7f0000"
+            android:textSize="18dip" />
+    </LinearLayout>
+
+</LinearLayout>
