@@ -17,5 +17,7 @@
     <string name="backtomenu">Trở lại menu</string>
     <string name="back">Trở lại</string>
     <string name="lt">&lt;</string>
+    <string name="gt">&gt;</string>
+    <string name="sendsms">Gửi tin nhắn</string>
 
 </resources>
