@@ -15,7 +15,7 @@ public class Sqlite
 	static long cachesize = 0;
 	
 	public static final String CREATE_TABLE_USER="create table user("+
-			"id interger primary key autoincrement not null,"+
+			"id integer primary key autoincrement not null,"+
 			"name nvarchar(128) null,"+
 			"dateofbirth int null,"+
 			"montheofbirth int null,"+
@@ -25,6 +25,7 @@ public class Sqlite
 			" id integer primary key autoincrement not null,"+
 			" ind integer null," +
 			" time nvarchar(50) null)";
+	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dateofbirth,montheofbirth,yearofbirth) values('',0,0,0)";
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -54,6 +55,15 @@ public class Sqlite
 			if(c!=null)c.close();
 		}
 		return name;
+	}
+	
+	public void setName(String name,int dateofbirth,int montheofbirth,int yearofbirth){
+		mSqlDatabase.execSQL("UPDATE into user(name,dateofbirth,monthofbirth,yearofbirth) values("
+				+ "'"+name+"'"
+				+dateofbirth+","
+				+montheofbirth+","
+				+yearofbirth+")");
+				
 	}
 	
 	public void buy(int ind,String time){
@@ -87,10 +97,11 @@ public class Sqlite
 		public void onCreate(SQLiteDatabase db) 
 		{
 			try{
-				db.execSQL("DROP TABLE IF EXISTS unlock");
+				db.execSQL("DROP TABLE IF EXISTS user");
 				db.execSQL("DROP TABLE IF EXISTS buy");
 				db.execSQL(CREATE_TABLE_USER);
 				db.execSQL(CREATE_TABLE_BUY);
+				db.execSQL(INSERT_TABLE_USER);
 			}catch(Exception e)
 			{
 				e.printStackTrace();
@@ -101,10 +112,11 @@ public class Sqlite
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
 		{
 			try{
-				db.execSQL("DROP TABLE IF EXISTS unlock");
+				db.execSQL("DROP TABLE IF EXISTS user");
 				db.execSQL("DROP TABLE IF EXISTS buy");
 				db.execSQL(CREATE_TABLE_USER);
 				db.execSQL(CREATE_TABLE_BUY);
+				db.execSQL(INSERT_TABLE_USER);
 			}catch(Exception e)
 			{
 				e.printStackTrace();
