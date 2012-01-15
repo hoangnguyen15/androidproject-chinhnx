@@ -21,7 +21,7 @@ public class MainMenu extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View v) {
 		if(v.getId() == btnApp.getId()){
-			startActivity(new Intent(this,ChildMenu.class));
+			startActivity(new Intent(this,Options.class));
 		}
 		
 	}
