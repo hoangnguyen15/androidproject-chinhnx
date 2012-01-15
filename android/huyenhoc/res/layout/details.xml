@@ -68,6 +68,7 @@ Con người thường hay lo nghĩ và tính toán, cuộc sống dù giàu san
             android:paddingRight="30dip" >
 
             <com.candroid.huyenhoc.Btn
+                android:id="@+id/btnBuy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoan_thanh_button"
