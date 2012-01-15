@@ -12,18 +12,15 @@ public class Text extends TextView {
         public Text(Context context) {
             super(context);
             setTypeface(Global.face);
-            setGravity(Gravity.CENTER);
         }
 
         public Text(Context context, AttributeSet attrs) {
             super(context, attrs);
             setTypeface(Global.face);
-            setGravity(Gravity.CENTER);
         }
         public Text(Context context, AttributeSet attrs, int defStyle) {
             super(context, attrs, defStyle);
             setTypeface(Global.face);
-            setGravity(Gravity.CENTER);
         }
         
 }
