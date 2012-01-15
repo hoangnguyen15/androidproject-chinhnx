@@ -42,10 +42,7 @@ public class Main extends Activity implements OnClickListener {
 		
 		Log.d("getName",sql.getName());
 		// GetName
-		if (sql.getName().length() == 0) {
-			// sql.setName(name, dateofbirth, montheofbirth, yearofbirth)
-
-		} else {
+		if (sql.getName().length() != 0) {
 			startActivity(new Intent(this, MainMenu.class));
 			finish();
 		}
