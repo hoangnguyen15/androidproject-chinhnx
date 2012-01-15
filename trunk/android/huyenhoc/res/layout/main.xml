@@ -4,15 +4,15 @@
     android:layout_height="fill_parent"
     android:background="@drawable/background"
     android:gravity="center_horizontal"
-    android:orientation="vertical" 
-    android:padding="3px">
+    android:orientation="vertical"
+    android:padding="3px" >
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:padding="7dip"
-        android:layout_weight="1" >
+        android:padding="7dip" >
 
         <EditText
             android:id="@+id/edtName"
@@ -33,9 +33,48 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/scroll_full"
         android:orientation="horizontal"
-        android:layout_weight="1">
+        android:paddingLeft="30dip"
+        android:paddingRight="20dip" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="12"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="12"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="1988"
+                android:textColor="#7f0000"
+                android:textSize="32dip"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -83,9 +122,48 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:background="@drawable/scroll_full"
-        android:orientation="horizontal" 
-        android:layout_weight="1">
+        android:orientation="horizontal"
+        android:paddingLeft="30dip"
+        android:paddingRight="20dip" >
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="12"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="12"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <com.candroid.huyenhoc.Text
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Thân"
+                android:textColor="#7f0000"
+                android:textSize="32dip"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
