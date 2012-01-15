@@ -17,15 +17,15 @@ public class Sqlite
 	public static final String CREATE_TABLE_USER="create table user("+
 			"id integer primary key autoincrement not null,"+
 			"name nvarchar(128) null,"+
-			"dateofbirth int null,"+
-			"montheofbirth int null,"+
-			"yearofbirth int null)";
+			"dateofbirth datetime null,"+
+			"hourofbirth int null,"+
+			"minuteofbirth int null)";
 
 	public static final String CREATE_TABLE_BUY="create table buy(" +
 			" id integer primary key autoincrement not null,"+
 			" ind integer null," +
 			" time nvarchar(50) null)";
-	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dateofbirth,montheofbirth,yearofbirth) values('',0,0,0)";
+	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dateofbirth,hourofbirth,minuteofbirth) values('','1988-12-27',0,0)";
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -57,12 +57,12 @@ public class Sqlite
 		return name;
 	}
 	
-	public void setName(String name,int dateofbirth,int montheofbirth,int yearofbirth){
-		mSqlDatabase.execSQL("UPDATE into user(name,dateofbirth,monthofbirth,yearofbirth) values("
-				+ "'"+name+"'"
-				+dateofbirth+","
-				+montheofbirth+","
-				+yearofbirth+")");
+	
+	public void setName(String name,String dateofbirth,int hourofbirth,int minuteofbirth){
+		mSqlDatabase.execSQL("UPDATE user set name="+"'"+name+"'"+","
+				+ "dateofbirth="+"'"+dateofbirth+"'"+","
+				+"hourofbirth="+hourofbirth+","
+				+"minuteofbirth="+minuteofbirth);
 				
 	}
 	
