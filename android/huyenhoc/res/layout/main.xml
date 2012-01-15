@@ -20,14 +20,16 @@
             android:layout_height="wrap_content"
             android:hint="@string/name"
             android:singleLine="true"
-            android:textColor="#7f0000" />
+            android:textColor="#7f0000"
+            android:textSize="20dip" />
 
         <com.candroid.huyenhoc.Text
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/dateofbirth"
             android:textColor="#7f0000"
-            android:textSize="28dip" />
+            android:textSize="28dip" 
+            android:gravity="center"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,7 +42,7 @@
         android:paddingRight="20dip" >
 
         <TextView
-            android:id="@+id/txt_dateofbirth"
+            android:id="@+id/txtDayofbith"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -51,7 +53,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txt_monthofbirth"
+            android:id="@+id/txtMonthofbirh"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -62,7 +64,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txt_yearofbirth"
+            android:id="@+id/txtYearofbirth"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="2"
@@ -90,14 +92,16 @@
                 android:layout_weight="1"
                 android:text="@string/male"
                 android:textColor="#7f0000"
-                android:textSize="50dip" />
+                android:textSize="50dip" 
+                android:gravity="center"/>
 
             <com.candroid.huyenhoc.Text
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/female"
-                android:textSize="50dip" />
+                android:textSize="50dip"
+                android:gravity="center" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,7 +115,8 @@
                 android:layout_weight="1"
                 android:text="@string/hourborn"
                 android:textColor="#7f0000"
-                android:textSize="24dip" />
+                android:textSize="24dip" 
+                android:gravity="center"/>
         </LinearLayout>
     </LinearLayout>
 
