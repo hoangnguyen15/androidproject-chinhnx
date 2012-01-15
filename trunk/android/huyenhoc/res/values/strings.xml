@@ -19,5 +19,5 @@
     <string name="lt">&lt;</string>
     <string name="gt">&gt;</string>
     <string name="sendsms">Gửi tin nhắn</string>
-
+	<string name="err_name">Họ và tên không được bỏ trống.</string>
 </resources>
