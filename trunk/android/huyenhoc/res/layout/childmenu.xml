@@ -33,10 +33,15 @@
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:background="@drawable/table_background"
-        android:layout_weight="8" >
+        android:layout_weight="8" 
+        android:paddingLeft="25dip"
+        android:paddingRight="25dip"
+        android:paddingTop="15dip"
+        android:paddingBottom="15dip">
         <ListView android:id="@+id/lstChildMenu"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:cacheColorHint="#00000000"/>
     </LinearLayout>
 
     <LinearLayout

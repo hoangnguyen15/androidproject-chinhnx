@@ -44,19 +44,19 @@
         <ScrollView
             android:layout_width="fill_parent"
             android:layout_height="0dip"
-            android:layout_weight="3" >
+            android:layout_weight="3"
+            android:paddingLeft="30dip"
+            android:paddingRight="30dip"
+            android:paddingTop="30dip" >
 
             <TextView
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="30dip"
-                android:text="This webpage is not available
-Google Chrome could not load the webpage because vozforums.com took too long to respond. The website may be down, or you may be experiencing issues with your Internet connection.
-Here are some suggestions:
-Reload this webpage later.
-Check your Internet connection. Restart any router, modem, or other network devices you may be using.
-Add Google Chrome as a permitted program in your firewall&apos;s or antivirus software&apos;s settings. If it is already a permitted program, try deleting it from the list of permitted programs and adding it again.
-If you use a proxy server, check your proxy settings or contact your network administrator to make sure the proxy server is working. If you don&apos;t believe you should be using a proxy server, adjust your proxy settings: Go to the wrench menu > Options > Under the Hood > Change proxy settings... > LAN Settings and deselect the " />
+                android:layout_height="fill_parent"
+                android:text="Tuổi Đinh Sửu thuộc mạng Thủy, cuộc sống rất tốt đẹp, cuộc đời ít cực nhọc và ít bị lao tâm khổ trí. Tuy không thành công vĩ đại nhưng công danh cũng có phát triển mạnh mẽ. Đời sống luôn luôn ở trong mức độ trung bình, không quá thiếu thốn và cũng không quá dư dả, không giàu sang, nhưng xác thể vẫn được sung sướng. Sự cực nhọc thân thể có thể có chỉ trong một giai đoạn tạm thời và sẽ trở về một đời sống sung túc hơn trong giai đoạn khác. Năm 30 tuổi có vài thành công về danh vọng cũng như về tài lộc và sẽ phát triển sự nghiệp vào tuổi 34.
+Con người thường hay lo nghĩ và tính toán, cuộc sống dù giàu sang cũng không được hưởng an nhàn, không bao giờ được thảnh thơi trí óc. Lúc nào cũng có những thắc mắc và lo lắng trong tâm"
+                android:textColor="#000"
+                android:textSize="18dip"
+                android:paddingLeft="10dip" />
         </ScrollView>
 
         <LinearLayout
