@@ -28,8 +28,7 @@ public class Main extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Typeface tf = Typeface.createFromAsset(getAssets(),
-				"fonts/HL-OngDo-Unicode.ttf");
+		Typeface tf = Typeface.createFromAsset(getAssets(),"fonts/HL-OngDo-Unicode.ttf");
 		Global.face = tf;
 		setContentView(R.layout.main);
 
@@ -41,8 +40,7 @@ public class Main extends Activity implements OnClickListener {
 		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
-		
-		Log.d("getName",sql.getName());
+
 		// GetName
 //		if (sql.getName().length() != 0) {
 //			startActivity(new Intent(this, MainMenu.class));
@@ -64,6 +62,7 @@ public class Main extends Activity implements OnClickListener {
 				dateofbith = txtYearofbirth.getText() + "-"+txtMonthofbirth.getText()+"-"+txtDayofbirth.getText();
 				sql.setName(name, dateofbith, 0, 0);
 				startActivity(new Intent(this, MainMenu.class));
+				finish();
 			}
 		}
 
