@@ -22,6 +22,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	ListView lstChildmenu;
 	ChildMenu childmenu;
 	ChildMenus childmenus;
+	LinearLayout btnBack;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.childmenu);
 		lstChildmenu = (ListView) findViewById(R.id.lstChildMenu);
+		btnBack = (LinearLayout)findViewById(R.id.btnBack);
 		lstChildmenu.setDivider(null);
 		lstChildmenu.setDividerHeight(0);
 		
@@ -43,6 +45,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		ChildMenuAdapter adapter = new ChildMenuAdapter(this, childmenus);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
+		btnBack.setOnClickListener(this);
 
 	}
 
@@ -97,7 +100,9 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		}
 		@Override
 		public void onClick(View v) {
-			
+			if(v.getId() ==btnBack.getId()){
+				finish();
+			}
 		}
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int positon,
