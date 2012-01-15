@@ -9,48 +9,44 @@
         android:id="@+id/btnBack"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:background="@drawable/nav_bar"
+        android:layout_weight="1"
         android:gravity="center_vertical|left"
-        android:paddingLeft="10dip"
-        android:layout_weight="1" >
+        android:paddingLeft="10dip" >
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lt"
-            android:textColor="#fff"
-            android:textSize="24dip" />
+            android:textSize="24dip"
+            android:textColor="#7f0000" />
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:text="@string/backtomenu"
-            android:textColor="#fff"
-            android:textSize="24dip" />
+            android:textSize="24dip"
+            android:textColor="#7f0000" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dip"
-        android:background="@drawable/table_background"
-        android:layout_weight="8" 
-        android:paddingLeft="25dip"
-        android:paddingRight="25dip"
-        android:paddingTop="15dip"
-        android:paddingBottom="15dip">
-        <ListView android:id="@+id/lstChildMenu"
+        android:layout_weight="8"
+        android:id="@+id/btnOptions" >
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:cacheColorHint="#00000000"/>
+            android:layout_height="fill_parent"
+            android:background="@drawable/option_full_background" >
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:gravity="center_vertical|right" 
-        android:paddingRight="10dip">
+        android:gravity="center_vertical|right"
+        android:paddingRight="10dip" >
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
