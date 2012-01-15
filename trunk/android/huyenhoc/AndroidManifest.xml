@@ -20,8 +20,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainMenu"/>
+        <activity android:name=".Options"/>
         <activity android:name=".ChildMenu"/>
         <activity android:name=".Details"/>
+        
     </application>
 
 </manifest>
