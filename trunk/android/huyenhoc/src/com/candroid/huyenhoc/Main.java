@@ -17,6 +17,7 @@ public class Main extends Activity implements OnClickListener {
     EditText edtName;
     Button btnFinish;
     Sqlite sql;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
