@@ -40,6 +40,7 @@
         android:paddingRight="20dip" >
 
         <TextView
+            android:id="@+id/txt_dateofbirth"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -50,6 +51,7 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/txt_monthofbirth"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="1"
@@ -59,22 +61,16 @@
             android:textSize="32dip"
             android:textStyle="bold" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/txt_yearofbirth"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="1988"
-                android:textColor="#7f0000"
-                android:textSize="32dip"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:text="1988"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -148,22 +144,15 @@
             android:textSize="32dip"
             android:textStyle="bold" />
 
-        <LinearLayout
+        <com.candroid.huyenhoc.Text
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal"
-            android:orientation="horizontal" >
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center_vertical|center_horizontal"
-                android:text="Thân"
-                android:textColor="#7f0000"
-                android:textSize="32dip"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:text="Thân"
+            android:textColor="#7f0000"
+            android:textSize="32dip"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
