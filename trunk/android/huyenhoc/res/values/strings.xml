@@ -30,4 +30,11 @@
 		<item >Cuộc sống gia đình</item>
 		<item >Phong thủy</item>
 	</string-array>
+	<string name="tuvi">Tử vi</string>
+	<string name="phong">phong</string>
+	<string name="thuy">thủy</string>
+	<string name="ung">Ứng</string>
+	<string name="dung">dụng</string>
+	<string name="cuoc">cuộc</string>
+	<string name="song">sống</string>
 </resources>
