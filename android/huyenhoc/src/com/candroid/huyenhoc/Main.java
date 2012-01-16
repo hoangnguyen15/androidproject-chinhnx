@@ -12,12 +12,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Main extends Activity implements OnClickListener {
+public class Main extends Activity implements OnClickListener,OnTouchListener {
 	EditText edtName;
 	Button btnFinish;
 	Sqlite sql;
@@ -40,6 +41,11 @@ public class Main extends Activity implements OnClickListener {
 		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
+		txtDayofbirth.setOnTouchListener(this);
+		txtMonthofbirth.setOnTouchListener(this);
+		txtYearofbirth.setOnTouchListener(this);
+		
+
 
 		// GetName
 //		if (sql.getName().length() != 0) {
@@ -73,5 +79,47 @@ public class Main extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onDestroy();
 		sql.close();
+	}
+
+
+	float downx,downy;
+	int val;
+	int min,max;
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
+		TextView tv = (TextView)v;
+		if(v.getId() == txtDayofbirth.getId()){
+			min = 1;
+			max = 31;
+		}
+		if(v.getId() == txtMonthofbirth.getId()){
+			min = 1;
+			max = 12;
+		}
+		if(v.getId() == txtYearofbirth.getId()){
+			max = 2030;
+			min = 1930;
+		}
+		if(event.getAction()==MotionEvent.ACTION_DOWN)
+		{
+			downy = event.getRawY();
+			return true;
+		}
+		if(event.getAction()==MotionEvent.ACTION_UP)
+		{
+			if(event.getRawY()-downy>20){
+				val = Integer.parseInt(tv.getText().toString());
+				val--;if(val<min)val = max;
+				tv.setText(""+val);
+				return true;
+			}
+			if(downy - event.getRawY()>20){
+				val = Integer.parseInt(tv.getText().toString());
+				val++;if(val>max)val = min;
+				tv.setText(""+val);
+				return true;
+			}
+		}
+		return false;
 	}
 }
