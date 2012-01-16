@@ -23,7 +23,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	ChildMenu childmenu;
 	ChildMenus childmenus;
 	LinearLayout btnBack;
-
+	String[]stype;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -33,12 +33,12 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		btnBack = (LinearLayout)findViewById(R.id.btnBack);
 		lstChildmenu.setDivider(null);
 		lstChildmenu.setDividerHeight(0);
-		
+		stype = getResources().getStringArray(R.array.optiontype);
 		childmenus = new ChildMenus();
 		
-		for(int i =0;i<10;i++){
+		for(int i =0;i<8;i++){
 			childmenu = new ChildMenu();
-			childmenu.setTitle("Cuộc sống");
+			childmenu.setTitle(stype[i]);
 			childmenus.addItem(childmenu);
 		}
 		
@@ -108,7 +108,9 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		public void onItemClick(AdapterView<?> parent, View view, int positon,
 				long id) {
 			if(parent.getId() == lstChildmenu.getId()){
-				startActivity(new Intent(ChildMenu.this,Details.class));
+				Intent i = new Intent(ChildMenu.this,Details.class);
+				i.putExtra("type", positon);
+				startActivity(i);
 				Log.d("postion",""+positon);
 				
 			}

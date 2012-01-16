@@ -7,17 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Details extends Activity implements OnClickListener {
 	Button btnBuy;
+	TextView txtcap;
+	int type;
+	String[]stype;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
 		btnBuy = (Btn)findViewById(R.id.btnBuy);
+		txtcap = (TextView)findViewById(R.id.txtcap);
 		btnBuy.setOnClickListener(this);
+		stype = getResources().getStringArray(R.array.optiontype);
+		type = getIntent().getIntExtra("type", 0);
+		txtcap.setText(stype[type]);
 	}
 
 	@Override
