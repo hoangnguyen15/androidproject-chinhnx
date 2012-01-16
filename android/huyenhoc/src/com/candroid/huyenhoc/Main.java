@@ -5,6 +5,7 @@ import com.candroid.objects.Sqlite;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
@@ -27,6 +28,7 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	TextView txtMale,txtFemale;
 	String name, dateofbith;
 	String hourofbirth, minuteofbirth;
+	boolean male = true;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 		txtHourofbith = (TextView)findViewById(R.id.txtHourofbirth);
 		txtMinuteofbirth = (TextView)findViewById(R.id.txtMinuteofbirth);
 		txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
+		txtMale = (TextView)findViewById(R.id.txtMale);
+		txtFemale = (TextView)findViewById(R.id.txtFemale);
 		
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
@@ -52,6 +56,9 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 		txtYearofbirth.setOnTouchListener(this);
 		txtHourofbith.setOnTouchListener(this);
 		txtMinuteofbirth.setOnTouchListener(this);
+		
+		txtMale.setOnClickListener(this);
+		txtFemale.setOnClickListener(this);
 		
 
 
@@ -65,7 +72,6 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	}
 
 
-	
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == btnFinish.getId()) {
@@ -77,6 +83,22 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 				sql.setName(name, dateofbith, 0, 0);
 				startActivity(new Intent(this, MainMenu.class));
 				finish();
+			}
+		}
+		
+		if(v.getId() == txtMale.getId()){
+			if(!male){
+				txtMale.setTextColor(Color.parseColor("#7f0000"));
+				txtFemale.setTextColor(Color.parseColor("#cccccc"));
+				male = true;
+			}
+		}
+		
+		if(v.getId() == txtFemale.getId()){
+			if(male){
+				txtFemale.setTextColor(Color.parseColor("#7f0000"));
+				txtMale.setTextColor(Color.parseColor("#cccccc"));
+				male = false;
 			}
 		}
 
