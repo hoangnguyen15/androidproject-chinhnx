@@ -20,4 +20,14 @@
     <string name="gt">&gt;</string>
     <string name="sendsms">Gửi tin nhắn</string>
 	<string name="err_name">Họ và tên không được bỏ trống.</string>
+	<string-array name="optiontype">
+		<item >Tử vi</item>
+		<item >Tình duyên hôn nhân</item>
+		<item >Quan hệ</item>
+		<item >Giờ đẹp</item>
+		<item >Chọn ngày</item>
+		<item >Dự đoán</item>
+		<item >Cuộc sống gia đình</item>
+		<item >Phong thủy</item>
+	</string-array>
 </resources>
