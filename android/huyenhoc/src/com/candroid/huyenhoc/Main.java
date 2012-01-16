@@ -23,6 +23,8 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	Button btnFinish;
 	Sqlite sql;
 	TextView txtDayofbirth, txtMonthofbirth, txtYearofbirth;
+	TextView txtHourofbith,txtMinuteofbirth,txtLunarHourofbith;
+	TextView txtMale,txtFemale;
 	String name, dateofbith;
 	String hourofbirth, minuteofbirth;
 
@@ -39,11 +41,17 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 		txtDayofbirth = (TextView) findViewById(R.id.txtDayofbith);
 		txtMonthofbirth = (TextView) findViewById(R.id.txtMonthofbirh);
 		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
+		txtHourofbith = (TextView)findViewById(R.id.txtHourofbirth);
+		txtMinuteofbirth = (TextView)findViewById(R.id.txtMinuteofbirth);
+		txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
+		
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
 		txtDayofbirth.setOnTouchListener(this);
 		txtMonthofbirth.setOnTouchListener(this);
 		txtYearofbirth.setOnTouchListener(this);
+		txtHourofbith.setOnTouchListener(this);
+		txtMinuteofbirth.setOnTouchListener(this);
 		
 
 
@@ -76,7 +84,6 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 		sql.close();
 	}
@@ -89,8 +96,38 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	public boolean onTouch(View v, MotionEvent event) {
 		TextView tv = (TextView)v;
 		if(v.getId() == txtDayofbirth.getId()){
+			int month = Integer.parseInt(txtMonthofbirth.getText().toString());
+			int year = Integer.parseInt(txtYearofbirth.getText().toString());
 			min = 1;
 			max = 31;
+			if(month == 2){
+				max = 28;
+				if(year %4 == 0){
+					max = 29;
+				}
+			}
+			switch (month) {
+			case 4:
+				max = 30;
+				break;
+			case 6:
+				max = 30;
+				break;
+			case 9:
+				max = 30;
+				break;
+			case 11:
+				max = 30;
+				break;
+			default:
+				break;
+			}
+			if(Integer.parseInt(txtMonthofbirth.getText().toString()) == 3){
+				max = 28;
+				if(Integer.parseInt(txtYearofbirth.getText().toString())%4 == 0){
+					max = 29;
+				}
+			}
 		}
 		if(v.getId() == txtMonthofbirth.getId()){
 			min = 1;
@@ -99,6 +136,14 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 		if(v.getId() == txtYearofbirth.getId()){
 			max = 2030;
 			min = 1930;
+		}
+		if(v.getId() == txtHourofbith.getId()){
+			min = 0;
+			max = 23;
+		}
+		if(v.getId() == txtMinuteofbirth.getId()){
+			min = 0;
+			max = 59;
 		}
 		if(event.getAction()==MotionEvent.ACTION_DOWN)
 		{
@@ -118,6 +163,127 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 				val++;if(val>max)val = min;
 				tv.setText(""+val);
 				return true;
+			}
+		}
+		if(v.getId() == txtHourofbith.getId()){
+			int hourOfbirh = Integer.parseInt(txtHourofbith.getText().toString());
+			int minuteOfbirth = Integer.parseInt(txtMinuteofbirth.getText().toString());
+			switch (hourOfbirh) {
+			case 23:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Hợi");
+				}
+				txtLunarHourofbith.setText("Tý");
+				break;
+			
+			case 0:
+				txtLunarHourofbith.setText("Tý");
+				break;
+			case 1:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Tý");
+				}
+				txtLunarHourofbith.setText("Sửu");
+				break;
+			case 2:
+				txtLunarHourofbith.setText("Sửu");
+				break;
+
+			case 3:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Sửu");
+				}
+				txtLunarHourofbith.setText("Dần");
+				break;
+			case 4:
+				txtLunarHourofbith.setText("Dần");
+				break;
+			case 5:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Dần");
+				}
+				txtLunarHourofbith.setText("Mão");
+				break;
+			case 6:
+				txtLunarHourofbith.setText("Mão");
+				break;
+
+			case 7:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Mão");
+				}
+				txtLunarHourofbith.setText("Thìn");
+				break;
+			case 8:
+				txtLunarHourofbith.setText("Thìn");
+				break;
+			case 9:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Thìn");
+				}
+				txtLunarHourofbith.setText("Tỵ");
+				break;
+			case 10:
+				txtLunarHourofbith.setText("Tỵ");
+				break;
+			case 11:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Tỵ");
+				}
+				txtLunarHourofbith.setText("Ngọ");
+				break;
+			case 12:
+				txtLunarHourofbith.setText("Ngọ");
+				break;
+			case 13:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Ngọ");
+				}
+				txtLunarHourofbith.setText("Mùi");
+				break;
+			case 14:
+				txtLunarHourofbith.setText("Mùi");
+				break;
+			case 15:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Mùi");
+				}
+				txtLunarHourofbith.setText("Thân");
+				break;
+			case 16:
+				txtLunarHourofbith.setText("Thân");
+				break;
+			case 17:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Thân");
+				}
+				txtLunarHourofbith.setText("Dậu");
+				break;
+			case 18:
+				txtLunarHourofbith.setText("Dậu");
+				break;
+			case 19:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Dậu");
+				}
+				txtLunarHourofbith.setText("Tuất");
+				break;
+			case 20:
+				txtLunarHourofbith.setText("Tuất");
+				break;
+			case 21:
+				if(minuteOfbirth == 0){
+					txtLunarHourofbith.setText("Tuất");
+				}
+				txtLunarHourofbith.setText("Hợi");
+				break;
+			case 22:
+				txtLunarHourofbith.setText("Hợi");
+				break;
+				
+
+			default:
+				break;
 			}
 		}
 		return false;
