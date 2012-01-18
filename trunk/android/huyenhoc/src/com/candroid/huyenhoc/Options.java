@@ -13,7 +13,6 @@ public class Options extends Activity implements OnClickListener{
 	LinearLayout btnBack,btnOptions;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.options);
 		btnBack = (LinearLayout)findViewById(R.id.btnBack);
@@ -52,9 +51,9 @@ public class Options extends Activity implements OnClickListener{
 		}
 	};
 	
-	float lastangle;
 	float calcAngle(float x1,float x2,float y1,float y2)
 	{
+		float lastangle = 0;
 		float vx,vy,dv;
 		vx = x1-x2;
 		vy = y1-y2;
