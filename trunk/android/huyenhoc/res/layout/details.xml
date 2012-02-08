@@ -24,7 +24,7 @@
             android:id="@+id/txtcap"
             android:text="Cuộc sống"
             android:textColor="#fff"
-            android:textSize="40dip" />
+            android:textSize="32dip" />
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"

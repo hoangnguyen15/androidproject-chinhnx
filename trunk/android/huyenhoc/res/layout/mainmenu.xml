@@ -17,63 +17,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/stripe"
-            android:orientation="vertical"
-            android:paddingTop="30dip" 
-            android:paddingLeft="20dip">
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tuvi"
-                android:textColor="#fff"
-                android:textSize="42dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/phong"
-                android:textColor="#fff"
-                android:textSize="42dip"
-                android:layout_marginLeft="10dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/thuy"
-                android:textColor="#fff"
-                android:textSize="42dip"
-                android:layout_marginLeft="20dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/ung"
-                android:textColor="#fff"
-                android:textSize="42dip"
-                android:layout_marginTop="20dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/dung"
-                android:textColor="#fff"
-                android:textSize="42dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/cuoc"
-                android:textColor="#fff"
-                android:textSize="42dip"
-                android:layout_marginLeft="15dip" />
-
-            <com.candroid.huyenhoc.Text
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/song"
-                android:textColor="#fff"
-                android:textSize="42dip"
-                android:layout_marginLeft="20dip" />
+            android:orientation="vertical">
         </LinearLayout>
     </LinearLayout>
 
@@ -118,6 +62,7 @@
                 android:gravity="center_vertical|center_horizontal" >
 
                 <com.candroid.huyenhoc.Btn
+                    android:id="@+id/btnChange"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/main_button"
@@ -133,6 +78,7 @@
                 android:gravity="center_vertical|center_horizontal" >
 
                 <com.candroid.huyenhoc.Btn
+                    android:id="@+id/btnSetting"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/main_button"
@@ -148,6 +94,7 @@
                 android:gravity="center_vertical|center_horizontal" >
 
                 <com.candroid.huyenhoc.Btn
+                    android:id="@+id/btnIntro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/main_button"
