@@ -1,9 +1,18 @@
 package com.candroid.huyenhoc;
 
+import java.util.Calendar;
+
+
+import kankan.wheel.widget.OnWheelChangedListener;
+import kankan.wheel.widget.WheelView;
+import kankan.wheel.widget.adapters.ArrayWheelAdapter;
+import kankan.wheel.widget.adapters.NumericWheelAdapter;
+
 import com.candroid.objects.Global;
 import com.candroid.objects.Sqlite;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -12,19 +21,25 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AbsListView.OnScrollListener;
 
-public class Main extends Activity implements OnClickListener,OnTouchListener {
+public class Main extends Activity implements OnClickListener {
 	EditText edtName;
 	Button btnFinish;
 	Sqlite sql;
 	TextView txtDayofbirth, txtMonthofbirth, txtYearofbirth;
-	TextView txtHourofbith,txtMinuteofbirth,txtLunarHourofbith;
+
+//	TextView txtHourofbith,txtMinuteofbirth,txtLunarHourofbith;
 	TextView txtMale,txtFemale;
 	String name, dateofbith;
 	String hourofbirth, minuteofbirth;
@@ -40,27 +55,59 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 		edtName = (EditText) findViewById(R.id.edtName);
 		edtName.setTypeface(tf);
 		btnFinish = (Button) findViewById(R.id.btnFinish);
-		txtDayofbirth = (TextView) findViewById(R.id.txtDayofbith);
-		txtMonthofbirth = (TextView) findViewById(R.id.txtMonthofbirh);
-		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
-		txtHourofbith = (TextView)findViewById(R.id.txtHourofbirth);
-		txtMinuteofbirth = (TextView)findViewById(R.id.txtMinuteofbirth);
-		txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
+//		txtDayofbirth = (TextView) findViewById(R.id.txtDayofbith);
+//		txtMonthofbirth = (TextView) findViewById(R.id.txtMonthofbirh);
+//		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
+//		txtHourofbith = (TextView)findViewById(R.id.txtHourofbirth);
+//		txtMinuteofbirth = (TextView)findViewById(R.id.txtMinuteofbirth);
+//		txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
 		txtMale = (TextView)findViewById(R.id.txtMale);
 		txtFemale = (TextView)findViewById(R.id.txtFemale);
 		
+
+		
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
-		txtDayofbirth.setOnTouchListener(this);
-		txtMonthofbirth.setOnTouchListener(this);
-		txtYearofbirth.setOnTouchListener(this);
-		txtHourofbith.setOnTouchListener(this);
-		txtMinuteofbirth.setOnTouchListener(this);
+//		txtDayofbirth.setOnTouchListener(this);
+//		txtMonthofbirth.setOnTouchListener(this);
+//		txtYearofbirth.setOnTouchListener(this);
+//		txtHourofbith.setOnTouchListener(this);
+//		txtMinuteofbirth.setOnTouchListener(this);
 		
 		txtMale.setOnClickListener(this);
 		txtFemale.setOnClickListener(this);
 		
 
+		
+        Calendar calendar = Calendar.getInstance();
+
+        final WheelView month = (WheelView) findViewById(R.id.txtMonthofbirh);
+        final WheelView year = (WheelView) findViewById(R.id.txtYearofbirth);
+        final WheelView day = (WheelView) findViewById(R.id.txtDayofbith);
+        
+        OnWheelChangedListener listener = new OnWheelChangedListener() {
+            public void onChanged(WheelView wheel, int oldValue, int newValue) {
+                updateDays(year, month, day);
+            }
+        };
+
+        // month
+        int curMonth = calendar.get(Calendar.MONTH);
+        String months[] = new String[] {"1", "2", "3", "4", "5",
+                "6", "7", "8", "9", "10", "11", "12"};
+        month.setViewAdapter(new DateArrayAdapter(this, months, curMonth));
+        month.setCurrentItem(curMonth);
+        month.addChangingListener(listener);
+    
+        // year
+        int curYear = calendar.get(Calendar.YEAR);
+        year.setViewAdapter(new DateNumericAdapter(this, 1900, 2099, 0));
+        year.setCurrentItem(curYear-1900);
+        year.addChangingListener(listener);
+        
+        //day
+        updateDays(year, month, day);
+        day.setCurrentItem(calendar.get(Calendar.DAY_OF_MONTH) - 1);
 
 		// GetName
 //		if (sql.getName().length() != 0) {
@@ -111,203 +158,86 @@ public class Main extends Activity implements OnClickListener,OnTouchListener {
 	}
 
 
-	float downx,downy;
-	int val;
-	int min,max;
-	@Override
-	public boolean onTouch(View v, MotionEvent event) {
-		TextView tv = (TextView)v;
-		if(v.getId() == txtDayofbirth.getId()){
-			int month = Integer.parseInt(txtMonthofbirth.getText().toString());
-			int year = Integer.parseInt(txtYearofbirth.getText().toString());
-			min = 1;
-			max = 31;
-			if(month == 2){
-				max = 28;
-				if(year %4 == 0){
-					max = 29;
-				}
-			}
-			switch (month) {
-			case 4:
-				max = 30;
-				break;
-			case 6:
-				max = 30;
-				break;
-			case 9:
-				max = 30;
-				break;
-			case 11:
-				max = 30;
-				break;
-			default:
-				break;
-			}
-			if(Integer.parseInt(txtMonthofbirth.getText().toString()) == 3){
-				max = 28;
-				if(Integer.parseInt(txtYearofbirth.getText().toString())%4 == 0){
-					max = 29;
-				}
-			}
-		}
-		if(v.getId() == txtMonthofbirth.getId()){
-			min = 1;
-			max = 12;
-		}
-		if(v.getId() == txtYearofbirth.getId()){
-			max = 2030;
-			min = 1930;
-		}
-		if(v.getId() == txtHourofbith.getId()){
-			min = 0;
-			max = 23;
-		}
-		if(v.getId() == txtMinuteofbirth.getId()){
-			min = 0;
-			max = 59;
-		}
-		if(event.getAction()==MotionEvent.ACTION_DOWN)
-		{
-			downy = event.getRawY();
-			return true;
-		}
-		if(event.getAction()==MotionEvent.ACTION_UP)
-		{
-			if(event.getRawY()-downy>20){
-				val = Integer.parseInt(tv.getText().toString());
-				val--;if(val<min)val = max;
-				tv.setText(""+val);
-				return true;
-			}
-			if(downy - event.getRawY()>20){
-				val = Integer.parseInt(tv.getText().toString());
-				val++;if(val>max)val = min;
-				tv.setText(""+val);
-				return true;
-			}
-		}
-		if(v.getId() == txtHourofbith.getId()){
-			int hourOfbirh = Integer.parseInt(txtHourofbith.getText().toString());
-			int minuteOfbirth = Integer.parseInt(txtMinuteofbirth.getText().toString());
-			switch (hourOfbirh) {
-			case 23:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Hợi");
-				}
-				txtLunarHourofbith.setText("Tý");
-				break;
-			
-			case 0:
-				txtLunarHourofbith.setText("Tý");
-				break;
-			case 1:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Tý");
-				}
-				txtLunarHourofbith.setText("Sửu");
-				break;
-			case 2:
-				txtLunarHourofbith.setText("Sửu");
-				break;
+	  /**
+     * Updates day wheel. Sets max days according to selected month and year
+     */
+    void updateDays(WheelView year, WheelView month, WheelView day) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR) + year.getCurrentItem());
+        calendar.set(Calendar.MONTH, month.getCurrentItem());
+        
+        int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, calendar.get(Calendar.DAY_OF_MONTH) - 1));
+        int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
+        day.setCurrentItem(curDay - 1, true);
+        Log.d("curDay",""+curDay);
+    }
+    
+    /**
+     * Adapter for numeric wheels. Highlights the current value.
+     */
+    private class DateNumericAdapter extends NumericWheelAdapter {
+        // Index of current item
+        int currentItem;
+        // Index of item to be highlighted
+        int currentValue;
+        
+        /**
+         * Constructor
+         */
+        public DateNumericAdapter(Context context, int minValue, int maxValue, int current) {
+            super(context, minValue, maxValue);
+            this.currentValue = current;
+            setTextSize(45);
+        }
+        
+        @Override
+        protected void configureTextView(TextView view) {
+            super.configureTextView(view);
+            if (currentItem == currentValue) {
+            	view.setTextColor(Color.parseColor("#7f0000"));
+            }
+        }
+        
+        @Override
+        public View getItem(int index, View cachedView, ViewGroup parent) {
+            currentItem = index;
+            return super.getItem(index, cachedView, parent);
+        }
+    }
+    
+    /**
+     * Adapter for string based wheel. Highlights the current value.
+     */
+    private class DateArrayAdapter extends ArrayWheelAdapter<String> {
+        // Index of current item
+        int currentItem;
+        // Index of item to be highlighted
+        int currentValue;
+        
+        /**
+         * Constructor
+         */
+        public DateArrayAdapter(Context context, String[] items, int current) {
+            super(context, items);
+            this.currentValue = current;
+            setTextSize(45);
+        }
+        
+        @Override
+        protected void configureTextView(TextView view) {
+            super.configureTextView(view);
+            if (currentItem == currentValue) {
+            	view.setTextColor(Color.parseColor("#7f0000"));
+            	
+            }
+        }
+        
+        @Override
+        public View getItem(int index, View cachedView, ViewGroup parent) {
+            currentItem = index;
+            return super.getItem(index, cachedView, parent);
+        }
+    }
 
-			case 3:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Sửu");
-				}
-				txtLunarHourofbith.setText("Dần");
-				break;
-			case 4:
-				txtLunarHourofbith.setText("Dần");
-				break;
-			case 5:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Dần");
-				}
-				txtLunarHourofbith.setText("Mão");
-				break;
-			case 6:
-				txtLunarHourofbith.setText("Mão");
-				break;
-
-			case 7:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Mão");
-				}
-				txtLunarHourofbith.setText("Thìn");
-				break;
-			case 8:
-				txtLunarHourofbith.setText("Thìn");
-				break;
-			case 9:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Thìn");
-				}
-				txtLunarHourofbith.setText("Tỵ");
-				break;
-			case 10:
-				txtLunarHourofbith.setText("Tỵ");
-				break;
-			case 11:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Tỵ");
-				}
-				txtLunarHourofbith.setText("Ngọ");
-				break;
-			case 12:
-				txtLunarHourofbith.setText("Ngọ");
-				break;
-			case 13:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Ngọ");
-				}
-				txtLunarHourofbith.setText("Mùi");
-				break;
-			case 14:
-				txtLunarHourofbith.setText("Mùi");
-				break;
-			case 15:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Mùi");
-				}
-				txtLunarHourofbith.setText("Thân");
-				break;
-			case 16:
-				txtLunarHourofbith.setText("Thân");
-				break;
-			case 17:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Thân");
-				}
-				txtLunarHourofbith.setText("Dậu");
-				break;
-			case 18:
-				txtLunarHourofbith.setText("Dậu");
-				break;
-			case 19:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Dậu");
-				}
-				txtLunarHourofbith.setText("Tuất");
-				break;
-			case 20:
-				txtLunarHourofbith.setText("Tuất");
-				break;
-			case 21:
-				if(minuteOfbirth == 0){
-					txtLunarHourofbith.setText("Tuất");
-				}
-				txtLunarHourofbith.setText("Hợi");
-				break;
-			case 22:
-				txtLunarHourofbith.setText("Hợi");
-				break;
-				
-
-			default:
-				break;
-			}
-		}
-		return false;
-	}
 }
