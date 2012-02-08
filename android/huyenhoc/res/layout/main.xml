@@ -39,9 +39,30 @@
         android:background="@drawable/scroll_full"
         android:orientation="horizontal"
         android:paddingLeft="30dip"
-        android:paddingRight="20dip" >
+        android:paddingRight="20dip"
+        android:paddingTop="20dip"
+        android:paddingBottom="20dip" >
 
-        <TextView
+		<kankan.wheel.widget.WheelView 
+		    android:id="@+id/txtDayofbith"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:textSize="32dip"/>
+        <kankan.wheel.widget.WheelView 
+            android:id="@+id/txtMonthofbirh"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:textSize="20dip"/>
+        <kankan.wheel.widget.WheelView 
+            android:id="@+id/txtYearofbirth"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:textSize="20dip"/>  
+        
+        <!--  <TextView
             android:id="@+id/txtDayofbith"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
@@ -51,7 +72,6 @@
             android:textColor="#7f0000"
             android:textSize="32dip"
             android:textStyle="bold" />
-
         <TextView
             android:id="@+id/txtMonthofbirh"
             android:layout_width="0dip"
@@ -72,7 +92,7 @@
             android:text="1988"
             android:textColor="#7f0000"
             android:textSize="32dip"
-            android:textStyle="bold" />
+            android:textStyle="bold" /> -->
     </LinearLayout>
 
     <LinearLayout
