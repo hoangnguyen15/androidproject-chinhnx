@@ -100,6 +100,31 @@ public class Sqlite
 		}
 	}
 	
+	public Calendar getTimeOfBirth(){
+		int h,m;
+		Cursor c = mSqlDatabase.query("userdata", new String[]{"gio"}, null, null, null, null, null);
+		c.moveToFirst();
+		String date = c.getString(0);
+		String dat[] = date.split(":");
+		h = Integer.parseInt(dat[0]);
+		m = Integer.parseInt(dat[1]);
+		Calendar ca = Calendar.getInstance();
+		ca.set(Calendar.HOUR_OF_DAY, h);
+		ca.set(Calendar.MINUTE, m);
+		return ca;
+	}
+	
+	/**
+	 * @param s : String. format: hour:min:HourOf<br>
+	 * example: "1:0:1" -> 1h, giờ Tí<br>
+	 * Hour of list: 1-Tí 2-Sửu 3-Dần ....
+	 */
+	public void setTimeOfBirth(String s){
+		mSqlDatabase.execSQL("Update userdata set gióinh='"+s+"'");
+	}
+	
+	
+	
 	public void close() {
 		if(mSqlDatabase!=null&&mSqlDatabase.isOpen())
 			mSqlDatabase.close();
