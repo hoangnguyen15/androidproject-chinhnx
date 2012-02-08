@@ -3,6 +3,7 @@ package com.candroid.huyenhoc;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -45,6 +46,7 @@ public class Options extends Activity implements OnClickListener{
 				int type = (int) ((angle+22.5)/45);
 				Intent i = new Intent(Options.this,ChildMenu.class);
 				i.putExtra("type", type);
+				Log.e("TYPE", ""+type);
 				startActivity(i);
 			}
 			return true;
