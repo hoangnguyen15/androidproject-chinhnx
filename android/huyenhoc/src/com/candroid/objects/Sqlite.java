@@ -10,22 +10,28 @@ import android.util.Log;
 public class Sqlite 
 {
 	private static final String DATABASE_NAME="huyenhoc.db";
-	private static final int DATABASE_VERSION=1;
+	private static final int DATABASE_VERSION=3;
 	static long maxcache = 0;
 	static long cachesize = 0;
 	
 	public static final String CREATE_TABLE_USER="create table user("+
 			"id integer primary key autoincrement not null,"+
 			"name nvarchar(128) null,"+
-			"dateofbirth datetime null,"+
+			"dayofbirth int null,"+
+			"monthofbirth int null,"+
+			"yearofbirth int null,"+
 			"hourofbirth int null,"+
-			"minuteofbirth int null)";
+			"minuteofbirth int null,"+
+			"isactive int null,"+
+			"deadline datetime null,"+
+			"sex int null)";
 
 	public static final String CREATE_TABLE_BUY="create table buy(" +
 			" id integer primary key autoincrement not null,"+
 			" ind integer null," +
 			" time nvarchar(50) null)";
-	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dateofbirth,hourofbirth,minuteofbirth) values('','1988-12-27',0,0)";
+	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dayofbirth,monthofbirth,yearofbirth,hourofbirth" +
+			",minuteofbirth,isactive,deadline,sex) values('',0,0,0,0,0,0,'1988-12-27',2)";
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -57,12 +63,38 @@ public class Sqlite
 		return name;
 	}
 	
+	public Infor getInfo(){
+		Cursor c = null;
+		Infor infor = null;
+		try{
+			c = mSqlDatabase.query("user", new String[]{"name","dayofbirth","monthofbirth","yearofbirth",
+					"hourofbirth","minuteofbirth","isactive","deadline","sex"}, null, null, null, null, null);
+			c.moveToFirst();
+			infor= new Infor();
+			infor.setName(c.getString(0)); 
+			infor.setDayofbith(c.getInt(1));
+			infor.setDeadline(c.getString(7));
+			Log.d("infor.name",""+infor.getName());
+			Log.d("infor.dead",""+infor.getDeadline());
+			
+		}catch (Exception e) {
+			if(c!=null)c.close();
+			e.printStackTrace();
+		}finally{
+			if(c!=null)c.close();
+		}
+		return infor;
+	}
 	
-	public void setName(String name,String dateofbirth,int hourofbirth,int minuteofbirth){
+	
+	public void setName(String name,int dayofbirth,int monthofbirth,int yearofbirth,int hourofbirth,int minuteofbirth,int sex){
 		mSqlDatabase.execSQL("UPDATE user set name="+"'"+name+"'"+","
-				+ "dateofbirth="+"'"+dateofbirth+"'"+","
+				+ "dayofbirth="+dayofbirth+","
+				+ "monthofbirth="+monthofbirth+","
+				+ "yearofbirth="+yearofbirth+","
 				+"hourofbirth="+hourofbirth+","
-				+"minuteofbirth="+minuteofbirth);
+				+"minuteofbirth="+minuteofbirth+","
+				+"sex="+sex);
 				
 	}
 	
