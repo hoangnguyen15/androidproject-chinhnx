@@ -9,11 +9,13 @@ import kankan.wheel.widget.adapters.ArrayWheelAdapter;
 import kankan.wheel.widget.adapters.NumericWheelAdapter;
 
 import com.candroid.objects.Global;
+import com.candroid.objects.Infor;
 import com.candroid.objects.Sqlite;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -37,14 +39,15 @@ public class Main extends Activity implements OnClickListener {
 	EditText edtName;
 	Button btnFinish;
 	Sqlite sql;
-	TextView txtDayofbirth, txtMonthofbirth, txtYearofbirth;
-
-//	TextView txtHourofbith,txtMinuteofbirth,txtLunarHourofbith;
+	WheelView month,year,day;
+	WheelView hours,minutes;
+	TextView txtLunarHourofbith;
 	TextView txtMale,txtFemale;
 	String name, dateofbith;
 	String hourofbirth, minuteofbirth;
 	boolean male = true;
-
+	int sex = 2;
+	Infor infor;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,35 +58,28 @@ public class Main extends Activity implements OnClickListener {
 		edtName = (EditText) findViewById(R.id.edtName);
 		edtName.setTypeface(tf);
 		btnFinish = (Button) findViewById(R.id.btnFinish);
-//		txtDayofbirth = (TextView) findViewById(R.id.txtDayofbith);
-//		txtMonthofbirth = (TextView) findViewById(R.id.txtMonthofbirh);
-//		txtYearofbirth = (TextView) findViewById(R.id.txtYearofbirth);
-//		txtHourofbith = (TextView)findViewById(R.id.txtHourofbirth);
-//		txtMinuteofbirth = (TextView)findViewById(R.id.txtMinuteofbirth);
-//		txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
+
 		txtMale = (TextView)findViewById(R.id.txtMale);
 		txtFemale = (TextView)findViewById(R.id.txtFemale);
 		
 
-		
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
-//		txtDayofbirth.setOnTouchListener(this);
-//		txtMonthofbirth.setOnTouchListener(this);
-//		txtYearofbirth.setOnTouchListener(this);
-//		txtHourofbith.setOnTouchListener(this);
-//		txtMinuteofbirth.setOnTouchListener(this);
+
 		
 		txtMale.setOnClickListener(this);
 		txtFemale.setOnClickListener(this);
 		
 
-		
+		infor = sql.getInfo();
         Calendar calendar = Calendar.getInstance();
-
-        final WheelView month = (WheelView) findViewById(R.id.txtMonthofbirh);
-        final WheelView year = (WheelView) findViewById(R.id.txtYearofbirth);
-        final WheelView day = (WheelView) findViewById(R.id.txtDayofbith);
+        
+        day = (WheelView) findViewById(R.id.txtDayofbith);
+        month = (WheelView) findViewById(R.id.txtMonthofbirh);
+        year = (WheelView) findViewById(R.id.txtYearofbirth);
+        hours = (WheelView) findViewById(R.id.txtHourofbirth);
+        minutes = (WheelView) findViewById(R.id.txtMinuteofbirth);
+        
         
         OnWheelChangedListener listener = new OnWheelChangedListener() {
             public void onChanged(WheelView wheel, int oldValue, int newValue) {
@@ -93,9 +89,7 @@ public class Main extends Activity implements OnClickListener {
 
         // month
         int curMonth = calendar.get(Calendar.MONTH);
-        String months[] = new String[] {"1", "2", "3", "4", "5",
-                "6", "7", "8", "9", "10", "11", "12"};
-        month.setViewAdapter(new DateArrayAdapter(this, months, curMonth));
+        month.setViewAdapter(new DateNumericAdapter(this, 1, 12,0));
         month.setCurrentItem(curMonth);
         month.addChangingListener(listener);
     
@@ -109,6 +103,20 @@ public class Main extends Activity implements OnClickListener {
         updateDays(year, month, day);
         day.setCurrentItem(calendar.get(Calendar.DAY_OF_MONTH) - 1);
 
+        //hour
+        hours.setViewAdapter(new DateNumericAdapter(this, 0, 23,0));
+        
+        //minute
+        minutes.setViewAdapter(new DateNumericAdapter(this, 0, 59,0));
+//        minutes.setCyclic(true);
+        
+        
+        //GetInfo
+        
+        if(infor.getName().length()!=0){
+        	edtName.setText(infor.getName());
+        }
+        
 		// GetName
 //		if (sql.getName().length() != 0) {
 //			startActivity(new Intent(this, MainMenu.class));
@@ -126,8 +134,8 @@ public class Main extends Activity implements OnClickListener {
 			if(name.length() == 0){
 				Toast.makeText(this,getString(R.string.err_name), 2).show();
 			}else{
-				dateofbith = txtYearofbirth.getText() + "-"+txtMonthofbirth.getText()+"-"+txtDayofbirth.getText();
-				sql.setName(name, dateofbith, 0, 0);
+				dateofbith = year.getCurrentItem()+1900 + "-"+(month.getCurrentItem()+1)+"-"+(day.getCurrentItem()+1);
+				sql.setName(name, day.getCurrentItem(), month.getCurrentItem(), year.getCurrentItem(), hours.getCurrentItem(), minutes.getCurrentItem(), sex);
 				startActivity(new Intent(this, MainMenu.class));
 				finish();
 			}
@@ -138,6 +146,7 @@ public class Main extends Activity implements OnClickListener {
 				txtMale.setTextColor(Color.parseColor("#7f0000"));
 				txtFemale.setTextColor(Color.parseColor("#cccccc"));
 				male = true;
+				sex = 1;
 			}
 		}
 		
@@ -146,6 +155,7 @@ public class Main extends Activity implements OnClickListener {
 				txtFemale.setTextColor(Color.parseColor("#7f0000"));
 				txtMale.setTextColor(Color.parseColor("#cccccc"));
 				male = false;
+				sex = 0;
 			}
 		}
 
@@ -170,7 +180,6 @@ public class Main extends Activity implements OnClickListener {
         day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, calendar.get(Calendar.DAY_OF_MONTH) - 1));
         int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
         day.setCurrentItem(curDay - 1, true);
-        Log.d("curDay",""+curDay);
     }
     
     /**
@@ -205,39 +214,6 @@ public class Main extends Activity implements OnClickListener {
             return super.getItem(index, cachedView, parent);
         }
     }
-    
-    /**
-     * Adapter for string based wheel. Highlights the current value.
-     */
-    private class DateArrayAdapter extends ArrayWheelAdapter<String> {
-        // Index of current item
-        int currentItem;
-        // Index of item to be highlighted
-        int currentValue;
-        
-        /**
-         * Constructor
-         */
-        public DateArrayAdapter(Context context, String[] items, int current) {
-            super(context, items);
-            this.currentValue = current;
-            setTextSize(45);
-        }
-        
-        @Override
-        protected void configureTextView(TextView view) {
-            super.configureTextView(view);
-            if (currentItem == currentValue) {
-            	view.setTextColor(Color.parseColor("#7f0000"));
-            	
-            }
-        }
-        
-        @Override
-        public View getItem(int index, View cachedView, ViewGroup parent) {
-            currentItem = index;
-            return super.getItem(index, cachedView, parent);
-        }
-    }
+ 
 
 }
