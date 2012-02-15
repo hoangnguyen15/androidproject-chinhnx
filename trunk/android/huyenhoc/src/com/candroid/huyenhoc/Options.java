@@ -1,5 +1,13 @@
 package com.candroid.huyenhoc;
 
+import java.io.IOException;
+
+import org.xmlpull.v1.XmlPullParserException;
+
+import com.candroid.objects.DigitalLoungeParser;
+import com.candroid.objects.Global;
+
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +20,7 @@ import android.widget.LinearLayout;
 
 public class Options extends Activity implements OnClickListener{
 	LinearLayout btnBack,btnOptions;
+	private DigitalLoungeParser parser;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,6 +30,23 @@ public class Options extends Activity implements OnClickListener{
 		
 		btnBack.setOnClickListener(this);
 		btnOptions.setOnClickListener(this);
+		
+		parser = new DigitalLoungeParser();
+
+		try {
+			parser.parseXML();
+		} catch (XmlPullParserException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+//			e.printStackTrace();
+			e.getMessage();
+		
+		}
+		
+		//Save xml file to sdCard
+//		String fileName = "huyenhoc.xml";
+//		String urlDownload = "http://krazevina.com/merge.xml";
+//		Global.downloadFromUrl(urlDownload, fileName);
 	}
 	@Override
 	public void onClick(View v) {
