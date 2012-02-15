@@ -29,7 +29,7 @@ public class Options extends Activity implements OnClickListener{
 		btnOptions = (LinearLayout)findViewById(R.id.btnOptions);
 		
 		btnBack.setOnClickListener(this);
-		btnOptions.setOnClickListener(this);
+		btnOptions.setOnTouchListener(touch);
 		
 		parser = new DigitalLoungeParser();
 
@@ -68,8 +68,9 @@ public class Options extends Activity implements OnClickListener{
 				distance = (float) Math.sqrt(Math.pow(e.getX()-cx,2)+Math.pow(e.getY()-cy, 2));
 				if(distance<cx/2)return true;
 				
-				angle = calcAngle(e.getX(0),e.getX(1),1,0);
+				angle = calcAngle(e.getX()-cx,1,e.getY()-cy,0);
 				int type = (int) ((angle+22.5)/45);
+				if(type==8)type=0;
 				Intent i = new Intent(Options.this,ChildMenu.class);
 				i.putExtra("type", type);
 				Log.e("TYPE", ""+type);
