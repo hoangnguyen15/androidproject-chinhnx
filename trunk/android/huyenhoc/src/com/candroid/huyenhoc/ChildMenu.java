@@ -35,6 +35,8 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
 		childmenus = new ChildMenus();
+		int type = getIntent().getIntExtra("type", 0);
+		Log.e("ZZZ", ""+type);
 		
 		for(int i =0;i<8;i++){
 			childmenu = new ChildMenu();

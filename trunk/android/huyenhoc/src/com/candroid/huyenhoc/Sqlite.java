@@ -17,10 +17,10 @@ public class Sqlite
 	public static final String CREATE_TABLE_USERDATA="create table userdata(" +
 			" name nvarchar(100) null," +
 			" ngaysinh nvarchar(200) null, " +
-			" giosinh integer null, " +
+			" giosinh nvarchar(200) null, " +
 			" gioitinh integer null)";
 
-	private static SQLiteDatabase mSqlDatabase;
+	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
 	
 	public Sqlite(Context context) {
@@ -120,10 +120,22 @@ public class Sqlite
 	 * Hour of list: 1-Tí 2-Sửu 3-Dần ....
 	 */
 	public void setTimeOfBirth(String s){
-		mSqlDatabase.execSQL("Update userdata set gióinh='"+s+"'");
+		mSqlDatabase.execSQL("Update userdata set giosinh='"+s+"'");
 	}
 	
+	public void setGender(boolean gender){
+		mSqlDatabase.execSQL("Update userdata set gioitinh="+(gender?1:0));
+	}
 	
+	public boolean getGender(){
+		try{
+			Cursor c = mSqlDatabase.query("userdata",new String[]{"gioitinh"},null,null,null,null,null);
+			c.moveToFirst();
+			if(c.getInt(0)>0)return true;
+		}catch (Exception e) {
+		}
+		return false;
+	}
 	
 	public void close() {
 		if(mSqlDatabase!=null&&mSqlDatabase.isOpen())
