@@ -12,6 +12,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 
+
 import android.os.Environment;
 import android.util.Log;
 
@@ -46,6 +47,7 @@ public class DigitalLoungeParser {
 	private int currentSection = -1;
 
 	private boolean isParsed = false;
+	Groups groups;
 
 	public void parseXML() throws XmlPullParserException, IOException {
 		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -67,7 +69,6 @@ public class DigitalLoungeParser {
 		// /
 
 		while (eventType != XmlPullParser.END_DOCUMENT) {
-			
 
 			// set flags for main tags.
 			if (eventType == XmlPullParser.START_DOCUMENT) {
@@ -78,7 +79,6 @@ public class DigitalLoungeParser {
 				System.out.println("End document");
 			} else if (eventType == XmlPullParser.START_TAG) {
 				String nodeName = xpp.getName();
-	
 				if (nodeName.contentEquals(VERSION)) {
 					currentSection = 0;
 				}
@@ -89,6 +89,7 @@ public class DigitalLoungeParser {
 					currentSection = 2;
 				}
 				if (nodeName.contentEquals(CANHAN) ) {
+					groups = new Groups();
 					currentSection = 3;
 				}
 				if (nodeName.contentEquals(HNGD) ) {
@@ -113,19 +114,35 @@ public class DigitalLoungeParser {
 					currentSection = 10;
 				}
 				Log.d("parser", "current section :>>" + currentSection);
+				Group group = new Group();
 				switch (currentSection) {
 				case 0:
 					Log.d("version",xpp.nextText());
 					break;
 				case 1:
-					Log.d("smsactive",xpp.nextText());
+//					Log.d("smsactive",xpp.nextText());
 					break;
 				case 2:
-					Log.d("smsinbox",xpp.nextText());
+//					Log.d("smsinbox",xpp.nextText());
 					break;
 				case 3:
-					if(nodeName.contentEquals(SRVSNAME)){
-						Log.d("canhan",xpp.getAttributeValue(0));
+					
+					if (nodeName.contentEquals(SRVSNAME)) {
+						group = new Group();
+						groups.addItem(group);
+						group.setServiceName(xpp.getAttributeValue(0));
+					}
+					if (nodeName.contentEquals(DES)) {
+						group.setDes(xpp.nextText());
+					}
+					if (nodeName.contentEquals(MC)) {
+						group.setMc(xpp.nextText());
+					}
+					if (nodeName.contentEquals(MP)) {
+						group.setMp(xpp.nextText());
+					}
+					if (nodeName.contentEquals(PARAM1)) {
+						group.setParam1(xpp.nextText());
 					}
 					break;
 					
@@ -138,6 +155,7 @@ public class DigitalLoungeParser {
 			}
 			eventType = xpp.next();
 		}
+		Global.groups = groups;
 		isParsed = true;
 	}
 
