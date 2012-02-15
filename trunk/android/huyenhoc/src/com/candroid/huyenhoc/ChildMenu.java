@@ -27,8 +27,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class ChildMenu extends Activity implements OnClickListener,OnItemClickListener{
 	ListView lstChildmenu;
-	ChildMenu childmenu;
-	ChildMenus childmenus;
+
 	LinearLayout btnBack;
 	String[]stype;
 	private DigitalLoungeParser parser;
@@ -42,7 +41,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		lstChildmenu.setDivider(null);
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
-		childmenus = new ChildMenus();
+
 		
 		parser = new DigitalLoungeParser();
 
@@ -56,17 +55,10 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		}
 		for(int i = 0;i<Global.groups.count();i++){
 			Log.d("serr",""+Global.groups.getItem(i).getServiceName());
-		}
-		
+		}	
 		int type = getIntent().getIntExtra("type", 0);
 		Log.e("ZZZ", ""+type);
-		
-		for(int i =0;i<8;i++){
-			childmenu = new ChildMenu();
-			childmenu.setTitle(stype[i]);
-			childmenus.addItem(childmenu);
-		}
-		
+	
 		ChildMenuAdapter adapter = new ChildMenuAdapter(this, Global.groups);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
