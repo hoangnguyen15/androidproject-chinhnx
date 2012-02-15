@@ -20,6 +20,8 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 
+import com.candroid.objects.Global;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -47,7 +49,7 @@ public class MainMenu extends Activity implements OnClickListener{
 		//Save xml file to sdCard
 		String fileName = "huyenhoc.xml";
 		String urlDownload = "http://krazevina.com/merge.xml";
-		downloadFromUrl(urlDownload, fileName);
+		Global.downloadFromUrl(urlDownload, fileName);
 		
 		//Parse xml
 
@@ -63,35 +65,5 @@ public class MainMenu extends Activity implements OnClickListener{
 			finish();
 		}
 		
-	}
-	
-	public void downloadFromUrl(String urlDownload, String fileName){
-		try{
-			File root = android.os.Environment.getExternalStorageDirectory();
-			File dir = new File(root.getAbsolutePath() + "/huyenhocxml");
-			if(dir.exists() == false){
-				dir.mkdirs();
-			}
-			
-			URL url = new URL(urlDownload);
-			File file = new File(dir,fileName);
-			long startTime = System.currentTimeMillis();
-			URLConnection ucon = url.openConnection();
-			InputStream is = ucon.getInputStream();
-			BufferedInputStream bis = new BufferedInputStream(is);
-			ByteArrayBuffer baf = new ByteArrayBuffer(5000);
-			int current = 0;
-			while ((current = bis.read()) != -1) {
-	              baf.append((byte) current);
-	        }
-			
-			FileOutputStream fos = new FileOutputStream(file);
-	        fos.write(baf.toByteArray());
-			fos.flush();
-			fos.close();
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 }
