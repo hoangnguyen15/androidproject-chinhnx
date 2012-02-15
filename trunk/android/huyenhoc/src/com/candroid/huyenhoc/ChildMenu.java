@@ -1,6 +1,13 @@
 package com.candroid.huyenhoc;
 
+import java.io.IOException;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import com.candroid.objects.ChildMenus;
+import com.candroid.objects.DigitalLoungeParser;
+import com.candroid.objects.Global;
+import com.candroid.objects.Groups;
 
 import android.app.Activity;
 import android.content.Context;
@@ -24,6 +31,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	ChildMenus childmenus;
 	LinearLayout btnBack;
 	String[]stype;
+	private DigitalLoungeParser parser;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -35,6 +43,21 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
 		childmenus = new ChildMenus();
+		
+		parser = new DigitalLoungeParser();
+
+		try {
+			parser.parseXML();
+		} catch (XmlPullParserException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		
+		}
+		for(int i = 0;i<Global.groups.count();i++){
+			Log.d("serr",""+Global.groups.getItem(i).getServiceName());
+		}
+		
 		int type = getIntent().getIntExtra("type", 0);
 		Log.e("ZZZ", ""+type);
 		
@@ -44,7 +67,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 			childmenus.addItem(childmenu);
 		}
 		
-		ChildMenuAdapter adapter = new ChildMenuAdapter(this, childmenus);
+		ChildMenuAdapter adapter = new ChildMenuAdapter(this, Global.groups);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
 		btnBack.setOnClickListener(this);
@@ -52,24 +75,22 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	}
 
 	public class ChildMenuAdapter extends BaseAdapter {
-		ChildMenus Achildmenus;
 		private LayoutInflater mInflater;
 		
-		public ChildMenuAdapter(Context context, ChildMenus childmenus){
+		public ChildMenuAdapter(Context context, Groups groups){
 			mInflater = LayoutInflater.from(context);
-			Achildmenus = childmenus;
 		}
 		
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Achildmenus.count();
+			return Global.groups.count();
 		}
 
 		@Override
 		public Object getItem(int position) {
 			// TODO Auto-generated method stub
-			return Achildmenus.getItem(position);
+			return Global.groups.getItem(position);
 		}
 
 		@Override
@@ -91,7 +112,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 			   holder = (ViewHolder) convertView.getTag();
 			  }
 			  
-			  holder.txt.setText(Achildmenus.getItem(position).getTitle());
+			  holder.txt.setText(Global.groups.getItem(position).getServiceName());
 
 			  return convertView;
 			 }

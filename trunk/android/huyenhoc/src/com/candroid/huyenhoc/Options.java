@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 
 public class Options extends Activity implements OnClickListener{
 	LinearLayout btnBack,btnOptions;
-	private DigitalLoungeParser parser;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,17 +31,7 @@ public class Options extends Activity implements OnClickListener{
 		btnBack.setOnClickListener(this);
 		btnOptions.setOnTouchListener(touch);
 		
-		parser = new DigitalLoungeParser();
 
-		try {
-			parser.parseXML();
-		} catch (XmlPullParserException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-//			e.printStackTrace();
-			e.getMessage();
-		
-		}
 		
 		//Save xml file to sdCard
 //		String fileName = "huyenhoc.xml";
