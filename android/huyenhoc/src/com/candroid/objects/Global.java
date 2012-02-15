@@ -15,6 +15,7 @@ import android.graphics.Typeface;
 public class Global {
 	public static Typeface face;
 	public static String name;
+	public static Groups groups;
 	
 	
 	@Override
