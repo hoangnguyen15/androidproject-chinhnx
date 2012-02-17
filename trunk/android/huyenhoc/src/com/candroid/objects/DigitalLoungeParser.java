@@ -152,7 +152,46 @@ public class DigitalLoungeParser {
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
 						}
-
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
+						}
+					}
+					break;
+				case 1:
+					if(currentSection == type){
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
 						}
@@ -186,69 +225,243 @@ public class DigitalLoungeParser {
 						
 					}
 					break;
-				case 1:
-					if(currentSection == type){
-						cate = new Cate();
-						if(nodeName.contentEquals(SRVSNAME)){
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
-						}
-						if(nodeName.contentEquals(MP)){
-							Log.d("mc",xpp.nextText());
-						}
-					}
-					break;
 				case 2:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
 				case 3:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
 				case 4:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
 				case 5:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
 				case 6:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
 				case 7:
 					if(currentSection == type){
-						cate = new Cate();
 						if(nodeName.contentEquals(SRVSNAME)){
+							cate = new Cate();
+							group = new Group();
 							cate.setServiceName(xpp.getAttributeValue(0));
 							cates.addItem(cate);
+						}
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+						if(nodeName.contentEquals(DES)){
+							group.setDes(xpp.nextText());
+						}
+						if(nodeName.contentEquals(MP)){
+							group.setMp(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM1)){
+							group.setParam1(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM2)){
+							group.setParam2(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM3)){
+							group.setParam3(xpp.nextText());
+						}
+						if(nodeName.contentEquals(PARAM4)){
+							group.setParam4(xpp.nextText());
+						}
+						if(nodeName.contentEquals(SMSNUMBER)){
+							group.setSmsnumber(xpp.nextText());
+						}
+						if(nodeName.contentEquals(OPTION)){
+							group.setOption(xpp.nextText());
+						}
+						if(nodeName.contentEquals(URL)){
+							group.setUrl(xpp.nextText());
 						}
 					}
 					break;
@@ -258,12 +471,8 @@ public class DigitalLoungeParser {
 
 			} else if (eventType == XmlPullParser.END_TAG) {
 				nodeName = xpp.getName();
-				
 				if(currentSection == type){
-					System.out.println("End tag " + xpp.getName());
-
 					if(nodeName.contentEquals(SRVSNAME)){
-						Log.d("getMP",""+group.getMp());
 						groups.addItem(group);
 						Global.groups = groups;
 					}
