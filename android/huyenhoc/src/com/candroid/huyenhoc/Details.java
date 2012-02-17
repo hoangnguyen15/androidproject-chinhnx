@@ -29,6 +29,19 @@ public class Details extends Activity implements OnClickListener {
 		type = getIntent().getIntExtra("type", 0);
 //		txtcap.setText(stype[type]);
 		Log.d("group.c",""+Global.groups.count());
+		for(int i =0;i<Global.groups.count();i++){
+			Log.d("group.c",""+Global.groups.getItem(i).getDes());
+			Log.d("group.c",""+Global.groups.getItem(i).getMc());
+			Log.d("group.c",""+Global.groups.getItem(i).getMp());
+			Log.d("group.c",""+Global.groups.getItem(i).getParam1());
+			Log.d("group.c",""+Global.groups.getItem(i).getParam2());
+			Log.d("group.c",""+Global.groups.getItem(i).getParam3());
+			Log.d("group.c",""+Global.groups.getItem(i).getParam4());
+			Log.d("group.c",""+Global.groups.getItem(i).getSmsnumber());
+			Log.d("group.c",""+Global.groups.getItem(i).getUrl());
+			Log.d("group.c",""+Global.groups.getItem(i).getOption());
+			Log.d("group.c","-----------------------------");
+		}
 
 	}
 
