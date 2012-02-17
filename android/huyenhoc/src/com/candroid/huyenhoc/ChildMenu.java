@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import com.candroid.objects.ChildMenus;
+import com.candroid.objects.Cate;
+import com.candroid.objects.Cates;
 import com.candroid.objects.DigitalLoungeParser;
 import com.candroid.objects.Global;
 import com.candroid.objects.Groups;
@@ -31,6 +32,8 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	LinearLayout btnBack;
 	String[]stype;
 	private DigitalLoungeParser parser;
+	Cates cates;
+	Cate cate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -42,24 +45,20 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
 
+//		cates = new Groups();
 		
+		int type = getIntent().getIntExtra("type", 0);
 		parser = new DigitalLoungeParser();
-
 		try {
-			parser.parseXML();
+			cates = parser.parseXML(type);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		
 		}
-		for(int i = 0;i<Global.groups.count();i++){
-			Log.d("serr",""+Global.groups.getItem(i).getServiceName());
-		}	
-		int type = getIntent().getIntExtra("type", 0);
-		Log.e("ZZZ", ""+type);
-	
-		ChildMenuAdapter adapter = new ChildMenuAdapter(this, Global.groups);
+		
+		ChildMenuAdapter adapter = new ChildMenuAdapter(this, cates);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
 		btnBack.setOnClickListener(this);
@@ -69,20 +68,20 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	public class ChildMenuAdapter extends BaseAdapter {
 		private LayoutInflater mInflater;
 		
-		public ChildMenuAdapter(Context context, Groups groups){
+		public ChildMenuAdapter(Context context, Cates cates){
 			mInflater = LayoutInflater.from(context);
 		}
 		
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Global.groups.count();
+			return cates.count();
 		}
 
 		@Override
 		public Object getItem(int position) {
 			// TODO Auto-generated method stub
-			return Global.groups.getItem(position);
+			return cates.getItem(position);
 		}
 
 		@Override
@@ -104,7 +103,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 			   holder = (ViewHolder) convertView.getTag();
 			  }
 			  
-			  holder.txt.setText(Global.groups.getItem(position).getServiceName());
+			  holder.txt.setText(cates.getItem(position).getServiceName());
 
 			  return convertView;
 			 }
