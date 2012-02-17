@@ -15,7 +15,10 @@ import android.graphics.Typeface;
 public class Global {
 	public static Typeface face;
 	public static String name;
-	public static Groups groups;
+	public static Groups groups = null;
+	public static String version;
+	public static String smsinbox;
+	public static String smsactive;
 	
 	
 	@Override
