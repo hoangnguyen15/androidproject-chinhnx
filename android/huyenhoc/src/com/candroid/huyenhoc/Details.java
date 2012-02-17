@@ -28,20 +28,18 @@ public class Details extends Activity implements OnClickListener {
 //		stype = getResources().getStringArray(R.array.optiontype);
 		type = getIntent().getIntExtra("type", 0);
 //		txtcap.setText(stype[type]);
-		Log.d("group.c",""+Global.groups.count());
-		for(int i =0;i<Global.groups.count();i++){
-			Log.d("group.c",""+Global.groups.getItem(i).getDes());
-			Log.d("group.c",""+Global.groups.getItem(i).getMc());
-			Log.d("group.c",""+Global.groups.getItem(i).getMp());
-			Log.d("group.c",""+Global.groups.getItem(i).getParam1());
-			Log.d("group.c",""+Global.groups.getItem(i).getParam2());
-			Log.d("group.c",""+Global.groups.getItem(i).getParam3());
-			Log.d("group.c",""+Global.groups.getItem(i).getParam4());
-			Log.d("group.c",""+Global.groups.getItem(i).getSmsnumber());
-			Log.d("group.c",""+Global.groups.getItem(i).getUrl());
-			Log.d("group.c",""+Global.groups.getItem(i).getOption());
+		
+			Log.d("group.c",""+Global.groups.getItem(type).getDes());
+			Log.d("group.c",""+Global.groups.getItem(type).getMc());
+			Log.d("group.c",""+Global.groups.getItem(type).getMp());
+			Log.d("group.c",""+Global.groups.getItem(type).getParam1());
+			Log.d("group.c",""+Global.groups.getItem(type).getParam2());
+			Log.d("group.c",""+Global.groups.getItem(type).getParam3());
+			Log.d("group.c",""+Global.groups.getItem(type).getParam4());
+			Log.d("group.c",""+Global.groups.getItem(type).getSmsnumber());
+			Log.d("group.c",""+Global.groups.getItem(type).getUrl());
+			Log.d("group.c",""+Global.groups.getItem(type).getOption());
 			Log.d("group.c","-----------------------------");
-		}
 
 	}
 
