@@ -31,9 +31,6 @@ public class DigitalLoungeParser {
 	private static final String TT = "tt";
 	private static final String CV = "cv";
 
-	// repeating nodes
-
-	
 	private static final String DES = "des";
 	private static final String	MC = "mc";
 	private static final String MP = "mp";
@@ -45,17 +42,22 @@ public class DigitalLoungeParser {
 	private static final String OPTION = "option";
 	private static final String URL = "url";
 	private int currentSection = -1;
+	String nodeName;
 
 	private boolean isParsed = false;
+	Cates cates;
+	Cate cate;
+	File file;
+	Group group;
 	Groups groups;
 
-	public void parseXML() throws XmlPullParserException, IOException {
+	public void getVersion(int type) throws XmlPullParserException, IOException {
 		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
 		factory.setNamespaceAware(true);
 		XmlPullParser xpp = factory.newPullParser();
 
 		// get a reference to the file.
-		File file = new File(Environment.getExternalStorageDirectory()
+		file = new File(Environment.getExternalStorageDirectory()
 				+ "/huyenhocxml/merge.xml");
 		
 		// create an input stream to be read by the stream reader.
@@ -66,7 +68,42 @@ public class DigitalLoungeParser {
 
 		int eventType = xpp.getEventType();
 
-		// /
+		while (eventType != XmlPullParser.END_DOCUMENT) {
+			// set flags for main tags.
+			if (eventType == XmlPullParser.START_DOCUMENT) {
+				// TODO only parse if the timestamps don't match.
+				System.out.println("Start document");
+			} else if (eventType == XmlPullParser.END_DOCUMENT) {
+				System.out.println("End document");
+			} else if (eventType == XmlPullParser.START_TAG) {
+				String nodeName = xpp.getName();
+				if (nodeName.contentEquals(VERSION)) {
+					Global.version = xpp.nextText();
+				}
+				if (nodeName.contentEquals(SMSACTIVE)) {
+				}
+				if (nodeName.contentEquals(SMSINBOX)) {
+				}
+			}
+		}
+	}
+	
+	public Cates parseXML(int type) throws XmlPullParserException, IOException {
+		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+		factory.setNamespaceAware(true);
+		XmlPullParser xpp = factory.newPullParser();
+
+		// get a reference to the file.
+		file = new File(Environment.getExternalStorageDirectory()
+				+ "/huyenhocxml/merge.xml");
+		
+		// create an input stream to be read by the stream reader.
+		FileInputStream fis = new FileInputStream(file);
+
+		// set the input for the parser using an InputStreamReader
+		xpp.setInput(new InputStreamReader(fis));
+
+		int eventType = xpp.getEventType();
 
 		while (eventType != XmlPullParser.END_DOCUMENT) {
 
@@ -74,98 +111,134 @@ public class DigitalLoungeParser {
 			if (eventType == XmlPullParser.START_DOCUMENT) {
 				// TODO only parse if the timestamps don't match.
 				System.out.println("Start document");
-
+				cates = new Cates();
+				groups = new Groups();
 			} else if (eventType == XmlPullParser.END_DOCUMENT) {
 				System.out.println("End document");
 			} else if (eventType == XmlPullParser.START_TAG) {
-				String nodeName = xpp.getName();
-				if (nodeName.contentEquals(VERSION)) {
+				nodeName = xpp.getName();
+				if (nodeName.contentEquals(CANHAN) ) {					
 					currentSection = 0;
 				}
-				if (nodeName.contentEquals(SMSACTIVE)) {
+				if (nodeName.contentEquals(HNGD) ) {
 					currentSection = 1;
 				}
-				if (nodeName.contentEquals(SMSINBOX)) {
+				if (nodeName.contentEquals(NC) ) {
 					currentSection = 2;
 				}
-				if (nodeName.contentEquals(CANHAN) ) {
-					groups = new Groups();
+				if (nodeName.contentEquals(SHCS) ) {
 					currentSection = 3;
 				}
-				if (nodeName.contentEquals(HNGD) ) {
+				if (nodeName.contentEquals(CD) ) {
 					currentSection = 4;
 				}
-				if (nodeName.contentEquals(NC) ) {
+				if (nodeName.contentEquals(TY) ) {
 					currentSection = 5;
 				}
-				if (nodeName.contentEquals(SHCS) ) {
+				if (nodeName.contentEquals(TT) ) {
 					currentSection = 6;
 				}
-				if (nodeName.contentEquals(CD) ) {
+				if (nodeName.contentEquals(CV) ) {
 					currentSection = 7;
 				}
-				if (nodeName.contentEquals(TY) ) {
-					currentSection = 8;
-				}
-				if (nodeName.contentEquals(TT) ) {
-					currentSection = 9;
-				}
-				if (nodeName.contentEquals(CV) ) {
-					currentSection = 10;
-				}
-				Log.d("parser", "current section :>>" + currentSection);
-				Group group = new Group();
-				switch (currentSection) {
+				Log.d("curentSetion",""+currentSection);
+				switch (type) {
 				case 0:
-					Log.d("version",xpp.nextText());
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+						group = new Group();
+						if(nodeName.contentEquals(MC)){
+							group.setMc(xpp.nextText());
+						}
+					}
 					break;
 				case 1:
-//					Log.d("smsactive",xpp.nextText());
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
 					break;
 				case 2:
-//					Log.d("smsinbox",xpp.nextText());
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
 					break;
 				case 3:
-					
-					if (nodeName.contentEquals(SRVSNAME)) {
-						group = new Group();
-						groups.addItem(group);
-						group.setServiceName(xpp.getAttributeValue(0));
-					}
-					if (nodeName.contentEquals(DES)) {
-						group.setDes(xpp.nextText());
-					}
-					if (nodeName.contentEquals(MC)) {
-						group.setMc(xpp.nextText());
-					}
-					if (nodeName.contentEquals(MP)) {
-						group.setMp(xpp.nextText());
-					}
-					if (nodeName.contentEquals(PARAM1)) {
-						group.setParam1(xpp.nextText());
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
 					}
 					break;
-					
+				case 4:
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
+					break;
+				case 5:
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
+					break;
+				case 6:
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
+					break;
+				case 7:
+					if(currentSection == type){
+						cate = new Cate();
+						if(nodeName.contentEquals(SRVSNAME)){
+							cate.setServiceName(xpp.getAttributeValue(0));
+							cates.addItem(cate);
+						}
+					}
+					break;
 				default:
 					break;
 				}
+
 			} else if (eventType == XmlPullParser.END_TAG) {
-				// System.out.println("End tag " + nodeName);
+				nodeName = xpp.getName();
+				System.out.println("End tag " + xpp.getName());
+				if(currentSection == type){
+					if(nodeName.contentEquals(SRVSNAME)){
+						groups.addItem(group);
+						Global.groups = groups;
+					}
+					
+				}
+				
 			} else if (eventType == XmlPullParser.TEXT) {
 			}
 			eventType = xpp.next();
 		}
-		Global.groups = groups;
-		isParsed = true;
-	}
-
-
-
-	/**
-	 * @return the currentSection
-	 */
-	public int getCurrentSection() {
-		return currentSection;
+		return cates;
 	}
 
 }

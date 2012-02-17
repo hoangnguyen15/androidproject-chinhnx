@@ -1,7 +1,6 @@
 package com.candroid.objects;
 
 public class Group {
-	private String serviceName;
 	private String des;
 	private String mc;
 	private String mp;
@@ -12,12 +11,7 @@ public class Group {
 	private String smsnumber;
 	private String option;
 	private String url;
-	public void setServiceName(String serviceName) {
-		this.serviceName = serviceName;
-	}
-	public String getServiceName() {
-		return serviceName;
-	}
+
 	public void setDes(String des) {
 		this.des = des;
 	}
