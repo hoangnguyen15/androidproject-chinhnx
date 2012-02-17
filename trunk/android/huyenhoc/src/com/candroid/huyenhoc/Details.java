@@ -1,9 +1,12 @@
 package com.candroid.huyenhoc;
 
 
+import com.candroid.objects.Global;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -22,9 +25,11 @@ public class Details extends Activity implements OnClickListener {
 		btnBuy = (Btn)findViewById(R.id.btnBuy);
 		txtcap = (TextView)findViewById(R.id.txtcap);
 		btnBuy.setOnClickListener(this);
-		stype = getResources().getStringArray(R.array.optiontype);
+//		stype = getResources().getStringArray(R.array.optiontype);
 		type = getIntent().getIntExtra("type", 0);
-		txtcap.setText(stype[type]);
+//		txtcap.setText(stype[type]);
+		Log.d("group.c",""+Global.groups.count());
+
 	}
 
 	@Override
