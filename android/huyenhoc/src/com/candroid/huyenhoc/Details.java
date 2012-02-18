@@ -73,19 +73,6 @@ public class Details extends Activity implements OnClickListener {
 			edtParam4.setVisibility(View.GONE);
 		}
 
-		
-		
-//		Log.d("group.c",""+Global.groups.getItem(type).getDes());
-//		Log.d("group.c",""+Global.groups.getItem(type).getMc());
-//		Log.d("group.c",""+Global.groups.getItem(type).getMp());
-//		Log.d("group.c",""+Global.groups.getItem(type).getParam1());
-//		Log.d("group.c",""+Global.groups.getItem(type).getParam2());
-//		Log.d("group.c",""+Global.groups.getItem(type).getParam3());
-//		Log.d("group.c",""+Global.groups.getItem(type).getParam4());
-//		Log.d("group.c",""+Global.groups.getItem(type).getSmsnumber());
-//		Log.d("group.c",""+Global.groups.getItem(type).getUrl());
-//		Log.d("group.c",""+Global.groups.getItem(type).getOption());
-//		Log.d("group.c","-----------------------------");
 
 	}
 
