@@ -44,8 +44,6 @@ public class DigitalLoungeParser {
 	String nodeName;
 	String des,mc,mp,param1,param2,param3,param4,smsnumber,option,url;
 	private boolean isParsed = false;
-	Cates cates;
-	Cate cate;
 	File file;
 	Group group;
 	Groups groups;
@@ -80,14 +78,16 @@ public class DigitalLoungeParser {
 					Global.version = xpp.nextText();
 				}
 				if (nodeName.contentEquals(SMSACTIVE)) {
+					Global.smsactive = xpp.nextText();
 				}
 				if (nodeName.contentEquals(SMSINBOX)) {
+					Global.smsinbox = xpp.nextText();
 				}
 			}
 		}
 	}
 	
-	public Cates parseXML(int type) throws XmlPullParserException, IOException {
+	public void parseXML(int type) throws XmlPullParserException, IOException {
 		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
 		factory.setNamespaceAware(true);
 		XmlPullParser xpp = factory.newPullParser();
@@ -110,7 +110,6 @@ public class DigitalLoungeParser {
 			if (eventType == XmlPullParser.START_DOCUMENT) {
 				// TODO only parse if the timestamps don't match.
 				System.out.println("Start document");
-				cates = new Cates();
 				groups = new Groups();
 			} else if (eventType == XmlPullParser.END_DOCUMENT) {
 				System.out.println("End document");
@@ -145,10 +144,8 @@ public class DigitalLoungeParser {
 				case 0:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -185,10 +182,8 @@ public class DigitalLoungeParser {
 				case 1:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -226,10 +221,8 @@ public class DigitalLoungeParser {
 				case 2:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -266,10 +259,8 @@ public class DigitalLoungeParser {
 				case 3:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -306,10 +297,8 @@ public class DigitalLoungeParser {
 				case 4:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -346,10 +335,8 @@ public class DigitalLoungeParser {
 				case 5:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -386,10 +373,8 @@ public class DigitalLoungeParser {
 				case 6:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -426,10 +411,8 @@ public class DigitalLoungeParser {
 				case 7:
 					if(currentSection == type){
 						if(nodeName.contentEquals(SRVSNAME)){
-							cate = new Cate();
 							group = new Group();
-							cate.setServiceName(xpp.getAttributeValue(0));
-							cates.addItem(cate);
+							group.setSrvName(xpp.getAttributeValue(0));
 						}
 						if(nodeName.contentEquals(MC)){
 							group.setMc(xpp.nextText());
@@ -479,7 +462,6 @@ public class DigitalLoungeParser {
 			}
 			eventType = xpp.next();
 		}
-		return cates;
 	}
 
 }
