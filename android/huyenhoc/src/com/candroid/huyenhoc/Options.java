@@ -30,13 +30,7 @@ public class Options extends Activity implements OnClickListener{
 		
 		btnBack.setOnClickListener(this);
 		btnOptions.setOnTouchListener(touch);
-		
 
-		
-		//Save xml file to sdCard
-//		String fileName = "huyenhoc.xml";
-//		String urlDownload = "http://krazevina.com/merge.xml";
-//		Global.downloadFromUrl(urlDownload, fileName);
 	}
 	@Override
 	public void onClick(View v) {

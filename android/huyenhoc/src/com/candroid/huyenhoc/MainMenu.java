@@ -47,11 +47,10 @@ public class MainMenu extends Activity implements OnClickListener{
 		btnIntro.setOnClickListener(this);
 		
 		//Save xml file to sdCard
-		String fileName = "huyenhoc.xml";
-		String urlDownload = "http://krazevina.com/merge.xml";
-		Global.downloadFromUrl(urlDownload, fileName);
-		
-		//Parse xml
+//		String fileName = "huyenhoc.xml";
+//		String urlDownload = "http://krazevina.com/merge.xml";
+//		Global.downloadFromUrl(urlDownload, fileName);
+
 
 				
 	}
