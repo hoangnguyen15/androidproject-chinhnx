@@ -5,8 +5,6 @@ import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParserException;
 
-import com.candroid.objects.Cate;
-import com.candroid.objects.Cates;
 import com.candroid.objects.DigitalLoungeParser;
 import com.candroid.objects.Global;
 import com.candroid.objects.Groups;
