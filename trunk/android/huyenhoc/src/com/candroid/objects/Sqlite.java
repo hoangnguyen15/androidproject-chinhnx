@@ -31,7 +31,7 @@ public class Sqlite
 			" ind integer null," +
 			" time nvarchar(50) null)";
 	public static final String INSERT_TABLE_USER="INSERT INTO user(name,dayofbirth,monthofbirth,yearofbirth,hourofbirth" +
-			",minuteofbirth,isactive,deadline,sex) values('',0,0,0,0,0,0,'1988-12-27',2)";
+			",minuteofbirth,isactive,deadline,sex) values('',0,0,0,0,0,0,'1988-12-27',1)";
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -73,9 +73,13 @@ public class Sqlite
 			infor= new Infor();
 			infor.setName(c.getString(0)); 
 			infor.setDayofbith(c.getInt(1));
+			infor.setMonthofbith(c.getInt(2));
+			infor.setYearofbith(c.getInt(3));
+			infor.setHourofbith(c.getInt(4));
+			infor.setMinuteofbith(c.getInt(5));
+			infor.setIsactive(c.getInt(6));
 			infor.setDeadline(c.getString(7));
-			Log.d("infor.name",""+infor.getName());
-			Log.d("infor.dead",""+infor.getDeadline());
+			infor.setSex(c.getInt(8));
 			
 		}catch (Exception e) {
 			if(c!=null)c.close();
