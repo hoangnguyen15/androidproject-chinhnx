@@ -72,6 +72,18 @@ public class Main extends Activity implements OnClickListener {
 		
 
 		infor = sql.getInfo();
+		
+		//setSex
+		if(infor.getSex() == 1){
+			male = true;
+			txtMale.setTextColor(Color.parseColor("#7f0000"));
+			txtFemale.setTextColor(Color.parseColor("#cccccc"));
+		}else{
+			male = false;
+			txtFemale.setTextColor(Color.parseColor("#7f0000"));
+			txtMale.setTextColor(Color.parseColor("#cccccc"));
+
+		}
         Calendar calendar = Calendar.getInstance();
         
         day = (WheelView) findViewById(R.id.txtDayofbith);
@@ -79,6 +91,7 @@ public class Main extends Activity implements OnClickListener {
         year = (WheelView) findViewById(R.id.txtYearofbirth);
         hours = (WheelView) findViewById(R.id.txtHourofbirth);
         minutes = (WheelView) findViewById(R.id.txtMinuteofbirth);
+        txtLunarHourofbith = (TextView)findViewById(R.id.txtLunarHourofbith);
         
         
         OnWheelChangedListener listener = new OnWheelChangedListener() {
@@ -90,38 +103,61 @@ public class Main extends Activity implements OnClickListener {
         // month
         int curMonth = calendar.get(Calendar.MONTH);
         month.setViewAdapter(new DateNumericAdapter(this, 1, 12,0));
-        month.setCurrentItem(curMonth);
-        month.addChangingListener(listener);
+        if(infor.getMonthofbith() == 0){
+        	month.setCurrentItem(curMonth);
+        }else
+        	month.setCurrentItem(infor.getMonthofbith());
+        	month.addChangingListener(listener);
     
         // year
         int curYear = calendar.get(Calendar.YEAR);
         year.setViewAdapter(new DateNumericAdapter(this, 1900, 2099, 0));
-        year.setCurrentItem(curYear-1900);
+        if(infor.getYearofbith() == 0){
+        	year.setCurrentItem(curYear-1900);
+        }else{
+        	year.setCurrentItem(infor.getYearofbith());
+        }
+        
         year.addChangingListener(listener);
         
         //day
         updateDays(year, month, day);
-        day.setCurrentItem(calendar.get(Calendar.DAY_OF_MONTH) - 1);
+        if(infor.getDayofbith() == 0){
+        	day.setCurrentItem(calendar.get(Calendar.DAY_OF_MONTH) - 1);
+        }else
+        	day.setCurrentItem(infor.getDayofbith());
+        
 
         //hour
         hours.setViewAdapter(new DateNumericAdapter(this, 0, 23,0));
+        hours.setCurrentItem(infor.getHourofbith());
+        updateLunarTime();
+        hours.addChangingListener(new OnWheelChangedListener() {			
+			@Override
+			public void onChanged(WheelView wheel, int oldValue, int newValue) {
+				updateLunarTime();
+			}
+		});
         
         //minute
         minutes.setViewAdapter(new DateNumericAdapter(this, 0, 59,0));
-//        minutes.setCyclic(true);
+        minutes.setCurrentItem(infor.getMinuteofbith());
+//      minutes.setCyclic(true);
         
         
-        //GetInfo
-        
+        //GetInfo        
         if(infor.getName().length()!=0){
         	edtName.setText(infor.getName());
         }
+        Log.d("dayOfbirth",""+infor.getDayofbith());
+        Log.d("dayOfbirth",""+infor.getMonthofbith());
+        Log.d("dayOfbirth",""+infor.getYearofbith());
+        Log.d("sex",""+infor.getSex());
+        Log.d("dayOfbirth",""+infor.getHourofbith());
+        Log.d("dayOfbirth",""+infor.getMinuteofbith());
         
-		// GetName
-//		if (sql.getName().length() != 0) {
-//			startActivity(new Intent(this, MainMenu.class));
-//			finish();
-//		}
+        
+
 		
 
 	}
@@ -180,6 +216,45 @@ public class Main extends Activity implements OnClickListener {
         day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, calendar.get(Calendar.DAY_OF_MONTH) - 1));
         int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
         day.setCurrentItem(curDay - 1, true);
+    }
+    
+    void updateLunarTime(){
+		if(hours.getCurrentItem() == 23 || hours.getCurrentItem() == 0){
+			txtLunarHourofbith.setText("Tý");
+		}
+		if(hours.getCurrentItem() == 1 || hours.getCurrentItem() == 2){
+			txtLunarHourofbith.setText("Sửu");
+		}
+		if(hours.getCurrentItem() == 3 || hours.getCurrentItem() == 4){
+			txtLunarHourofbith.setText("Dần");
+		}
+		if(hours.getCurrentItem() == 5 || hours.getCurrentItem() == 6){
+			txtLunarHourofbith.setText("Mão");
+		}
+		if(hours.getCurrentItem() == 7 || hours.getCurrentItem() == 8){
+			txtLunarHourofbith.setText("Thìn");
+		}
+		if(hours.getCurrentItem() == 9 || hours.getCurrentItem() == 10){
+			txtLunarHourofbith.setText("Tỵ");
+		}
+		if(hours.getCurrentItem() == 11 || hours.getCurrentItem() == 12){
+			txtLunarHourofbith.setText("Ngọ");
+		}
+		if(hours.getCurrentItem() == 13 || hours.getCurrentItem() == 14){
+			txtLunarHourofbith.setText("Mùi");
+		}
+		if(hours.getCurrentItem() == 15 || hours.getCurrentItem() == 16){
+			txtLunarHourofbith.setText("Thân");
+		}
+		if(hours.getCurrentItem() == 17 || hours.getCurrentItem() == 18){
+			txtLunarHourofbith.setText("Dậu");
+		}
+		if(hours.getCurrentItem() == 19 || hours.getCurrentItem() == 20){
+			txtLunarHourofbith.setText("Tuất");
+		}
+		if(hours.getCurrentItem() == 21 || hours.getCurrentItem() == 22){
+			txtLunarHourofbith.setText("Hợi");
+		}
     }
     
     /**
