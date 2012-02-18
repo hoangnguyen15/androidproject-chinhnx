@@ -1,6 +1,7 @@
 package com.candroid.objects;
 
 public class Group {
+	private String srvName; 
 	private String des;
 	private String mc;
 	private String mp;
@@ -12,6 +13,12 @@ public class Group {
 	private String option;
 	private String url;
 
+	public void setSrvName(String srvName) {
+		this.srvName = srvName;
+	}
+	public String getSrvName() {
+		return srvName;
+	}
 	public void setDes(String des) {
 		this.des = des;
 	}
