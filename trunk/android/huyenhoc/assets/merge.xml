@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app>
+	<version>1.0</version>
+	<smsactive>8732</smsactive>
+	<smsinbox>8532</smsinbox>
+	
+	<!-- Cá nhân -->
+	<canhan>
+		<srvsname title="SIM phong thủy">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>SIM</mp>
+			<param1>Năm sinh</param1>
+			<param2>Số điện thoại</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	
+		<srvsname title="Xem mệnh cho tuổi">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>TM</mp>
+			<param1>Năm sinh</param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	
+		<srvsname title="Màu sắc xe">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MX</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	
+		<srvsname title="Chấm điểm Account Mail">
+			<des></des>
+			<mc></mc>
+			<mp>MAIL</mp>
+			<param1>Năm sinh</param1>
+			<param2>Email</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Màu sắc website">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MW</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Chấm biển số đẹp">
+			<des></des>
+			<mc></mc>
+			<mp>SO</mp>
+			<param1>Năm sinh</param1>
+			<param2>Biển số</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>	
+	
+		<srvsname title="Màu sắc hợp mệnh">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MM</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</canhan>
+	
+	<!-- Hôn nhân gia đình -->
+	<hngd>
+		<srvsname title="Kim lâu - tránh cưới hỏi">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>TKL</mp>
+			<param1>Năm sinh</param1>
+			<param2>Năm xem</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Kim lâu - tránh cưới hỏi">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>KL</mp>
+			<param1>Năm sinh</param1>
+			<param2>Năm xem</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Chọn năm sinh con">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>TNS</mp>
+			<param1>Năm sinh chồng</param1>
+			<param2>Năm sinh vợ</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Nhận định sinh con (Trai hay gái)">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>TTG</mp>
+			<param1>Tuổi vợ</param1>
+			<param2>Tuổi chồng</param2>
+			<param3>Tháng có bầu</param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Quan hệ bố-con">
+			<des></des>
+			<mc></mc>
+			<mp>BC</mp>
+			<param1>Năm sinh Cha</param1>
+			<param2>Năm xem Con</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Quan hệ mẹ-con">
+			<des></des>
+			<mc></mc>
+			<mp>MC</mp>
+			<param1>Năm sinh Mẹ</param1>
+			<param2>Năm sinh Con</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Ngày tốt cưới hỏi">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NC</mp>
+			<param1>Năm sinh</param1>
+			<param2>Tháng sinh</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</hngd>
+	<!-- Nhà cửa -->
+	<nc>
+		<srvsname title="Chọn tuổi làm nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>PLN</mp>
+			<param1>Năm sinh</param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hướng nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hướng bàn thờ">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HT</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hướng giường">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HG</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hướng bếp">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HB</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hướng tốt">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HX</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Chọn màu sắc nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Chọn màu sắc phòng">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MP</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>	
+
+		<srvsname title="Ngày chuyển nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NN</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Ngày động thổ, khởi công">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NO</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Tuổi xông nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>PXN</mp>
+			<param1>Năm sinh</param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Chấm điểm cho số nhà">
+			<des></des>
+			<mc></mc>
+			<mp>SN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Số nhà</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</nc>
+	
+	<!-- Sinh hoạt cuộc sống -->
+	<shcs>
+		<srvsname title="Chọn ngày tốt">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NT</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Chọn hướng sinh hoạt">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HS</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Chọn giờ tốt">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>GT</mp>
+			<param1>Ngày</param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Năm xây nhà">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>PXD</mp>
+			<param1>Năm sinh</param1>
+			<param2>Năm xây nhà</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</shcs>
+	<!-- Chấm điểm -->
+	<cd>
+		<srvsname title="Chấm điểm cho tên">
+			<des></des>
+			<mc></mc>
+			<mp>TEN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Tên</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Chấm điểm biển số đẹp">
+			<des></des>
+			<mc></mc>
+			<mp>SO</mp>
+			<param1>Năm sinh</param1>
+			<param2>Biển số</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Chấm điểm Acconunt Mail">
+			<des></des>
+			<mc></mc>
+			<mp>MAIL</mp>
+			<param1>Năm sinh</param1>
+			<param2>Email</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Chấm điểm số nhà">
+			<des></des>
+			<mc></mc>
+			<mp>SN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Số nhà</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>	
+	</cd>
+	
+	<!-- Tình yêu -->
+	<ty>
+		<srvsname title="Hợp tuổi tình yêu">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>QTY</mp>
+			<param1>Năm sinh Nam</param1>
+			<param2>Năm sinh Nữ</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Ngày giờ hẹn hò">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NH</mp>
+			<param1></param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</ty>
+	<!-- Thời trang -->
+	<tt>
+		<srvsname title="Chọn thời trang theo mệnh">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>MT</mp>
+			<param1>Năm sinh</param1>
+			<param2>Giới tính</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</tt>
+	<!-- Công việc -->
+	<cv>
+		<srvsname title="Quan hệ sếp nhân viên">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>SN</mp>
+			<param1>Năm sinh</param1>
+			<param2>Năm sinh sếp</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+		
+		<srvsname title="Hợp tuổi làm ăn">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>QLV</mp>
+			<param1>Năm sinh 1</param1>
+			<param2>Giới tính 2</param2>
+			<param3>Năm sinh 2</param3>
+			<param4>Giới tính 2</param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Hướng xuất hành">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>HX</mp>
+			<param1>Ngày</param1>
+			<param2></param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Ngày tốt giao dịch, ký kết">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NG</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Ngày tốt cầu tài lộc">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NL</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+
+		<srvsname title="Ngày chuyển văn phòng">
+			<des></des>
+			<mc>huyenhoc</mc>
+			<mp>NV</mp>
+			<param1>Năm</param1>
+			<param2>Tháng</param2>
+			<param3></param3>
+			<param4></param4>
+			<smsnumber></smsnumber>
+			<option></option>
+			<url></url>
+		</srvsname>
+	</cv>	
+</app>
