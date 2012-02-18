@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:text="@string/lt"
             android:textColor="#fff"
-            android:textSize="40dip" />
+            android:textSize="32dip" />
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:layout_marginLeft="10dip"
             android:text="@string/gt"
             android:textColor="#fff"
-            android:textSize="40dip" />
+            android:textSize="32dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -49,15 +49,38 @@
             android:paddingLeft="30dip"
             android:paddingRight="30dip"
             android:paddingTop="30dip" >
-
-            <TextView
-                android:layout_width="fill_parent"
+				<LinearLayout android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Tuổi Đinh Sửu thuộc mạng Thủy, cuộc sống rất tốt đẹp, cuộc đời ít cực nhọc và ít bị lao tâm khổ trí. Tuy không thành công vĩ đại nhưng công danh cũng có phát triển mạnh mẽ. Đời sống luôn luôn ở trong mức độ trung bình, không quá thiếu thốn và cũng không quá dư dả, không giàu sang, nhưng xác thể vẫn được sung sướng. Sự cực nhọc thân thể có thể có chỉ trong một giai đoạn tạm thời và sẽ trở về một đời sống sung túc hơn trong giai đoạn khác. Năm 30 tuổi có vài thành công về danh vọng cũng như về tài lộc và sẽ phát triển sự nghiệp vào tuổi 34.
-Con người thường hay lo nghĩ và tính toán, cuộc sống dù giàu sang cũng không được hưởng an nhàn, không bao giờ được thảnh thơi trí óc. Lúc nào cũng có những thắc mắc và lo lắng trong tâm"
-                android:textColor="#000"
-                android:textSize="18dip"
-                android:paddingLeft="10dip" />
+                android:orientation="vertical">
+	            <TextView
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:text="Tuổi Đinh Sửu thuộc mạng Thủy, cuộc sống rất tốt đẹp, cuộc đời ít cực nhọc và ít bị lao tâm khổ trí."
+	                android:textColor="#000"
+	                android:textSize="14dip"
+	                android:paddingLeft="10dip"
+	                android:paddingBottom="10dip" />
+	            <EditText
+	                android:id="@+id/edtParam1" 
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="Param1" />
+	            <EditText
+	                android:id="@+id/edtParam2"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="Param2" />
+	            <EditText
+	                android:id="@+id/edtParam3"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="Param3" />
+	            <EditText
+	                android:id="@+id/edtParam4"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="Param4" />
+            </LinearLayout>
         </ScrollView>
 
         <LinearLayout
