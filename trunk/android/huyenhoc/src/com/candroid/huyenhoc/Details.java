@@ -29,17 +29,17 @@ public class Details extends Activity implements OnClickListener {
 		type = getIntent().getIntExtra("type", 0);
 //		txtcap.setText(stype[type]);
 		
-			Log.d("group.c",""+Global.groups.getItem(type).getDes());
-			Log.d("group.c",""+Global.groups.getItem(type).getMc());
-			Log.d("group.c",""+Global.groups.getItem(type).getMp());
-			Log.d("group.c",""+Global.groups.getItem(type).getParam1());
-			Log.d("group.c",""+Global.groups.getItem(type).getParam2());
-			Log.d("group.c",""+Global.groups.getItem(type).getParam3());
-			Log.d("group.c",""+Global.groups.getItem(type).getParam4());
-			Log.d("group.c",""+Global.groups.getItem(type).getSmsnumber());
-			Log.d("group.c",""+Global.groups.getItem(type).getUrl());
-			Log.d("group.c",""+Global.groups.getItem(type).getOption());
-			Log.d("group.c","-----------------------------");
+		Log.d("group.c",""+Global.groups.getItem(type).getDes());
+		Log.d("group.c",""+Global.groups.getItem(type).getMc());
+		Log.d("group.c",""+Global.groups.getItem(type).getMp());
+		Log.d("group.c",""+Global.groups.getItem(type).getParam1());
+		Log.d("group.c",""+Global.groups.getItem(type).getParam2());
+		Log.d("group.c",""+Global.groups.getItem(type).getParam3());
+		Log.d("group.c",""+Global.groups.getItem(type).getParam4());
+		Log.d("group.c",""+Global.groups.getItem(type).getSmsnumber());
+		Log.d("group.c",""+Global.groups.getItem(type).getUrl());
+		Log.d("group.c",""+Global.groups.getItem(type).getOption());
+		Log.d("group.c","-----------------------------");
 
 	}
 
@@ -50,7 +50,7 @@ public class Details extends Activity implements OnClickListener {
 			long time = System.currentTimeMillis();
 			try {
 				String timerequest = "HUYENHOC" + time;
-				sendIntent.putExtra("address", "8085");
+				sendIntent.putExtra("address", Global.smsinbox);
 				sendIntent.putExtra("sms_body", timerequest);
 				sendIntent.setType("vnd.android-dir/mms-sms");
 				startActivity(sendIntent);

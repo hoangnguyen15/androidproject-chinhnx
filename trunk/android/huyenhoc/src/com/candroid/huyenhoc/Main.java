@@ -197,7 +197,7 @@ public class Main extends Activity implements OnClickListener {
         public DateNumericAdapter(Context context, int minValue, int maxValue, int current) {
             super(context, minValue, maxValue);
             this.currentValue = current;
-            setTextSize(45);
+            setTextSize(32);
         }
         
         @Override
