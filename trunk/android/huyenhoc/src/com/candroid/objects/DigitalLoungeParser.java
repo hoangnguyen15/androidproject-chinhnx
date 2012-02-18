@@ -14,7 +14,6 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 
 import android.os.Environment;
-import android.util.Log;
 
 public class DigitalLoungeParser {
 	private static final String APP = "app";
@@ -58,7 +57,7 @@ public class DigitalLoungeParser {
 
 		// get a reference to the file.
 		file = new File(Environment.getExternalStorageDirectory()
-				+ "/huyenhocxml/merge.xml");
+				+ "/huyenhocxml/huyenhoc.xml");
 		
 		// create an input stream to be read by the stream reader.
 		FileInputStream fis = new FileInputStream(file);
@@ -95,7 +94,7 @@ public class DigitalLoungeParser {
 
 		// get a reference to the file.
 		file = new File(Environment.getExternalStorageDirectory()
-				+ "/huyenhocxml/merge.xml");
+				+ "/huyenhocxml/huyenhoc.xml");
 		
 		// create an input stream to be read by the stream reader.
 		FileInputStream fis = new FileInputStream(file);
@@ -141,8 +140,7 @@ public class DigitalLoungeParser {
 				if (nodeName.contentEquals(CV) ) {
 					currentSection = 7;
 				}
-				
-				Log.d("curentSetion",""+currentSection);
+//				Log.d("curentSetion",""+currentSection);
 				switch (type) {
 				case 0:
 					if(currentSection == type){
