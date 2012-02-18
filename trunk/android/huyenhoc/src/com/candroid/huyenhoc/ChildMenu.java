@@ -33,8 +33,6 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	LinearLayout btnBack;
 	String[]stype;
 	private DigitalLoungeParser parser;
-	Cates cates;
-	Cate cate;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -65,7 +63,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		int type = getIntent().getIntExtra("type", 0);
 		parser = new DigitalLoungeParser();
 		try {
-			cates = parser.parseXML(type);
+			parser.parseXML(type);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -73,7 +71,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		
 		}
 		
-		ChildMenuAdapter adapter = new ChildMenuAdapter(this, cates);
+		ChildMenuAdapter adapter = new ChildMenuAdapter(this, Global.groups);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
 		btnBack.setOnClickListener(this);
@@ -83,20 +81,20 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	public class ChildMenuAdapter extends BaseAdapter {
 		private LayoutInflater mInflater;
 		
-		public ChildMenuAdapter(Context context, Cates cates){
+		public ChildMenuAdapter(Context context,Groups groups){
 			mInflater = LayoutInflater.from(context);
 		}
 		
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return cates.count();
+			return Global.groups.count();
 		}
 
 		@Override
 		public Object getItem(int position) {
 			// TODO Auto-generated method stub
-			return cates.getItem(position);
+			return Global.groups.getItem(position);
 		}
 
 		@Override
@@ -118,7 +116,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 			   holder = (ViewHolder) convertView.getTag();
 			  }
 			  
-			  holder.txt.setText(cates.getItem(position).getServiceName());
+			  holder.txt.setText(Global.groups.getItem(position).getSrvName());;
 
 			  return convertView;
 			 }
