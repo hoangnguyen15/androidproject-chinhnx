@@ -29,6 +29,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 	ListView lstChildmenu;
 
 	LinearLayout btnBack;
+	TextView txtTitle;
 	String[]stype;
 	private DigitalLoungeParser parser;
 	@Override
@@ -38,6 +39,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		setContentView(R.layout.childmenu);
 		lstChildmenu = (ListView) findViewById(R.id.lstChildMenu);
 		btnBack = (LinearLayout)findViewById(R.id.btnBack);
+		txtTitle = (TextView)findViewById(R.id.txtTitle);
 		lstChildmenu.setDivider(null);
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
@@ -52,7 +54,7 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 			e.printStackTrace();
 		
 		}
-		
+		txtTitle.setText(stype[type]);
 		ChildMenuAdapter adapter = new ChildMenuAdapter(this, Global.groups);
 		lstChildmenu.setAdapter(adapter);
 		lstChildmenu.setOnItemClickListener(this);
