@@ -21,14 +21,14 @@
     <string name="sendsms">Gửi tin nhắn</string>
 	<string name="err_name">Họ và tên không được bỏ trống.</string>
 	<string-array name="optiontype">
-		<item >Tử vi</item>
-		<item >Tình duyên hôn nhân</item>
-		<item >Quan hệ</item>
-		<item >Giờ đẹp</item>
-		<item >Chọn ngày</item>
-		<item >Dự đoán</item>
-		<item >Cuộc sống gia đình</item>
-		<item >Phong thủy</item>
+		<item >Cá nhân</item>
+		<item >Hôn nhân gia đình</item>
+		<item >Nhà cửa</item>
+		<item >Sinh hoạt cuộc sống</item>
+		<item >Chấm điểm</item>
+		<item >Tình yêu</item>
+		<item >Thời trang</item>
+		<item >Công việc</item>
 	</string-array>
 	<string name="tuvi">Tử vi</string>
 	<string name="phong">phong</string>
@@ -37,4 +37,5 @@
 	<string name="dung">dụng</string>
 	<string name="cuoc">cuộc</string>
 	<string name="song">sống</string>
+	<string name="err_con">Cần có kết nối internet để tải dữ liệu, hãy thử lại.</string>
 </resources>
