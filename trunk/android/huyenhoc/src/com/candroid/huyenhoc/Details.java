@@ -11,12 +11,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Details extends Activity implements OnClickListener {
 	Button btnBuy;
 	TextView txtcap;
+	LinearLayout btnBack;
 	int position;
 	String[]stype;
 	EditText edtParam1,edtParam2,edtParam3,edtParam4;
@@ -28,6 +30,7 @@ public class Details extends Activity implements OnClickListener {
 		setContentView(R.layout.details);
 		btnBuy = (Btn)findViewById(R.id.btnBuy);
 		txtcap = (TextView)findViewById(R.id.txtcap);
+		btnBack = (LinearLayout)findViewById(R.id.btnBack);
 		btnBuy.setOnClickListener(this);
 		position = getIntent().getIntExtra("type", 0);
 		txtcap.setText(Global.groups.getItem(position).getSrvName());
@@ -95,6 +98,9 @@ public class Details extends Activity implements OnClickListener {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		}
+		if(v.getId() == btnBack.getId()){
+			finish();
 		}
 
 	}
