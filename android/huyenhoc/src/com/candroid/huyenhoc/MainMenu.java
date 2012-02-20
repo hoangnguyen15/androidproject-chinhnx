@@ -46,13 +46,6 @@ public class MainMenu extends Activity implements OnClickListener{
 		btnSetting.setOnClickListener(this);
 		btnIntro.setOnClickListener(this);
 		
-		//Save xml file to sdCard
-//		String fileName = "huyenhoc.xml";
-//		String urlDownload = "http://krazevina.com/merge.xml";
-//		Global.downloadFromUrl(urlDownload, fileName);
-
-
-				
 	}
 	@Override
 	public void onClick(View v) {
@@ -64,5 +57,14 @@ public class MainMenu extends Activity implements OnClickListener{
 			finish();
 		}
 		
+	}
+	
+	@Override
+	protected void onDestroy() {
+		Global.groups = null;
+		Global.smsactive = null;
+		Global.smsinbox = null;
+		Global.version = null;
+		super.onDestroy();
 	}
 }
