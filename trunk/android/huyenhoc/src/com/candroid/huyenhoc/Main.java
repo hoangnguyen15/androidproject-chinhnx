@@ -155,10 +155,6 @@ public class Main extends Activity implements OnClickListener {
         Log.d("sex",""+infor.getSex());
         Log.d("dayOfbirth",""+infor.getHourofbith());
         Log.d("dayOfbirth",""+infor.getMinuteofbith());
-        
-        
-
-		
 
 	}
 

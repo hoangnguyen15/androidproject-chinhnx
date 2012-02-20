@@ -49,6 +49,9 @@ public class MainMenu extends Activity implements OnClickListener{
 	}
 	@Override
 	public void onClick(View v) {
+		if(v.getId() == btnChange.getId()){
+			startActivity(new Intent(this,Change.class));
+		}
 		if(v.getId() == btnApp.getId()){
 			startActivity(new Intent(this,Options.class));
 		}
