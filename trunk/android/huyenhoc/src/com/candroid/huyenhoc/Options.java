@@ -1,5 +1,6 @@
 package com.candroid.huyenhoc;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class Options extends Activity implements OnClickListener{
 	LinearLayout btnBack,btnOptions;
@@ -37,9 +39,6 @@ public class Options extends Activity implements OnClickListener{
 		if(v.getId() == btnBack.getId()){
 			finish();
 		}
-		if(v.getId() == btnOptions.getId()){
-			startActivity(new Intent(Options.this,ChildMenu.class));
-		}
 	}
 	OnTouchListener touch = new OnTouchListener() {
 		public boolean onTouch(View v, MotionEvent e) {
@@ -55,17 +54,42 @@ public class Options extends Activity implements OnClickListener{
 				angle = calcAngle(e.getX()-cx,1,e.getY()-cy,0);
 				int type = (int) ((angle+22.5)/45);
 				if(type==8)type=0;
-				Intent i = new Intent(Options.this,ChildMenu.class);
-				i.putExtra("type", type);
-				Log.e("TYPE", ""+type);
-				startActivity(i);
+				//Check exist file
+				File root = android.os.Environment.getExternalStorageDirectory();
+				File dir = new File(root.getAbsolutePath() + "/huyenhocxml");
+				File file = new File(dir,"huyenhoc.xml");
+				if(file.exists()){
+					Log.d("file.exists","true");
+					Intent i = new Intent(Options.this,ChildMenu.class);
+					i.putExtra("type", type);
+					Log.e("TYPE", ""+type);
+					startActivity(i);
+				}else{
+					Log.d("file.exists","false");
+					//check connection
+					if(Global.isOnline()){				
+						//Save xml file to sdCard
+						String fileName = "huyenhoc.xml";
+						String urlDownload = Global.URL;
+						Global.downloadFromUrl(urlDownload, fileName);
+						Intent i = new Intent(Options.this,ChildMenu.class);
+						i.putExtra("type", type);
+						Log.e("TYPE", ""+type);
+						startActivity(i);
+					}else{
+						Toast.makeText(Options.this, getString(R.string.err_con), 2).show();
+					}
+				}
+				
+
+
+
 			}
 			return true;
 		}
 	};
 	
-	float calcAngle(float x1,float x2,float y1,float y2)
-	{
+	float calcAngle(float x1,float x2,float y1,float y2){
 		float lastangle = 0;
 		float vx,vy,dv;
 		vx = x1-x2;

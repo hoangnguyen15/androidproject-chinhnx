@@ -41,22 +41,6 @@ public class ChildMenu extends Activity implements OnClickListener,OnItemClickLi
 		lstChildmenu.setDivider(null);
 		lstChildmenu.setDividerHeight(0);
 		stype = getResources().getStringArray(R.array.optiontype);
-
-		//Check exist file
-		File root = android.os.Environment.getExternalStorageDirectory();
-		File dir = new File(root.getAbsolutePath() + "/huyenhocxml");
-		File file = new File(dir,"huyenhoc.xml");
-		if(file.exists()){
-			Log.d("file.exists","true");
-		}else{
-			Log.d("file.exists","false");
-			//Save xml file to sdCard
-			String fileName = "huyenhoc.xml";
-			String urlDownload = "http://krazevina.com/merge.xml";
-			Global.downloadFromUrl(urlDownload, fileName);
-		}
-		
-
 		
 		int type = getIntent().getIntExtra("type", 0);
 		parser = new DigitalLoungeParser();
