@@ -47,45 +47,6 @@ public class DigitalLoungeParser {
 	File file;
 	Group group;
 	Groups groups;
-
-	public void getVersion(int type) throws XmlPullParserException, IOException {
-		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-		factory.setNamespaceAware(true);
-		XmlPullParser xpp = factory.newPullParser();
-
-		// get a reference to the file.
-		file = new File(Environment.getExternalStorageDirectory()
-				+ "/huyenhocxml/huyenhoc.xml");
-		
-		// create an input stream to be read by the stream reader.
-		FileInputStream fis = new FileInputStream(file);
-
-		// set the input for the parser using an InputStreamReader
-		xpp.setInput(new InputStreamReader(fis));
-
-		int eventType = xpp.getEventType();
-
-		while (eventType != XmlPullParser.END_DOCUMENT) {
-			// set flags for main tags.
-			if (eventType == XmlPullParser.START_DOCUMENT) {
-				// TODO only parse if the timestamps don't match.
-				System.out.println("Start document");
-			} else if (eventType == XmlPullParser.END_DOCUMENT) {
-				System.out.println("End document");
-			} else if (eventType == XmlPullParser.START_TAG) {
-				String nodeName = xpp.getName();
-				if (nodeName.contentEquals(VERSION)) {
-					Global.version = xpp.nextText();
-				}
-				if (nodeName.contentEquals(SMSACTIVE)) {
-					Global.smsactive = xpp.nextText();
-				}
-				if (nodeName.contentEquals(SMSINBOX)) {
-					Global.smsinbox = xpp.nextText();
-				}
-			}
-		}
-	}
 	
 	public void parseXML(int type) throws XmlPullParserException, IOException {
 		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -115,6 +76,15 @@ public class DigitalLoungeParser {
 				System.out.println("End document");
 			} else if (eventType == XmlPullParser.START_TAG) {
 				nodeName = xpp.getName();
+				if (nodeName.contentEquals(VERSION)) {
+					Global.version = xpp.nextText();
+				}
+				if (nodeName.contentEquals(SMSACTIVE)) {
+					Global.smsactive = xpp.nextText();
+				}
+				if (nodeName.contentEquals(SMSINBOX)) {
+					Global.smsinbox = xpp.nextText();
+				}
 				if (nodeName.contentEquals(CANHAN) ) {					
 					currentSection = 0;
 				}
