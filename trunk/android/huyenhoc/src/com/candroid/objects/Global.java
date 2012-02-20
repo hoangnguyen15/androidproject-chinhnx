@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -19,6 +20,7 @@ public class Global {
 	public static String version;
 	public static String smsinbox;
 	public static String smsactive;
+	public static String URL = "http://krazevina.com/merge.xml";
 	
 	
 	@Override
@@ -59,5 +61,24 @@ public class Global {
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static boolean isOnline() {
+		try {
+			URL url = new URL(URL);
+			HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
+			urlc.setRequestProperty("User-Agent", "My Android Demo");
+			urlc.setRequestProperty("Connection", "close");
+			urlc.setConnectTimeout(1000); // mTimeout is in seconds
+			urlc.connect();
+			if (urlc.getResponseCode() == 200) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 }
