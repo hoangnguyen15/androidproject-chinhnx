@@ -22,10 +22,10 @@
             android:textSize="24dip" />
 
         <com.candroid.huyenhoc.Text
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
-            android:text="@string/backtomenu"
             android:textColor="#fff"
             android:textSize="24dip" />
     </LinearLayout>
