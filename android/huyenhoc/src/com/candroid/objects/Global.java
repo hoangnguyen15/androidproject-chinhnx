@@ -21,6 +21,7 @@ public class Global {
 	public static String smsinbox;
 	public static String smsactive;
 	public static String URL = "http://krazevina.com/merge.xml";
+	public static int TimeZone = 7;
 	
 	
 	@Override
