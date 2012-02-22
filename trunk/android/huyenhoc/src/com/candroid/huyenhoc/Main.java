@@ -11,6 +11,7 @@ import kankan.wheel.widget.adapters.NumericWheelAdapter;
 import com.candroid.objects.Global;
 import com.candroid.objects.Infor;
 import com.candroid.objects.Sqlite;
+import com.candroid.webservice.Callwebservice;
 
 import android.app.Activity;
 import android.content.Context;
@@ -46,7 +47,7 @@ public class Main extends Activity implements OnClickListener {
 	String name, dateofbith;
 	String hourofbirth, minuteofbirth;
 	boolean male = true;
-	int sex = 2;
+	int sex;
 	Infor infor;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -58,18 +59,22 @@ public class Main extends Activity implements OnClickListener {
 		edtName = (EditText) findViewById(R.id.edtName);
 		edtName.setTypeface(tf);
 		btnFinish = (Button) findViewById(R.id.btnFinish);
-
 		txtMale = (TextView)findViewById(R.id.txtMale);
 		txtFemale = (TextView)findViewById(R.id.txtFemale);
 		
-
 		sql = new Sqlite(this);
 		btnFinish.setOnClickListener(this);
-
-		
 		txtMale.setOnClickListener(this);
 		txtFemale.setOnClickListener(this);
 		
+		//Callweb
+//		Callwebservice c  = new Callwebservice(this);
+//		try {
+//			c.test();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 		infor = sql.getInfo();
 		
@@ -78,10 +83,12 @@ public class Main extends Activity implements OnClickListener {
 			male = true;
 			txtMale.setTextColor(Color.parseColor("#7f0000"));
 			txtFemale.setTextColor(Color.parseColor("#cccccc"));
+			sex = 1;
 		}else{
 			male = false;
 			txtFemale.setTextColor(Color.parseColor("#7f0000"));
 			txtMale.setTextColor(Color.parseColor("#cccccc"));
+			sex = 0;
 
 		}
         Calendar calendar = Calendar.getInstance();
@@ -144,18 +151,10 @@ public class Main extends Activity implements OnClickListener {
         minutes.setCurrentItem(infor.getMinuteofbith());
 //      minutes.setCyclic(true);
         
-        
         //GetInfo        
         if(infor.getName().length()!=0){
         	edtName.setText(infor.getName());
         }
-        Log.d("dayOfbirth",""+infor.getDayofbith());
-        Log.d("dayOfbirth",""+infor.getMonthofbith());
-        Log.d("dayOfbirth",""+infor.getYearofbith());
-        Log.d("sex",""+infor.getSex());
-        Log.d("dayOfbirth",""+infor.getHourofbith());
-        Log.d("dayOfbirth",""+infor.getMinuteofbith());
-
 	}
 
 
