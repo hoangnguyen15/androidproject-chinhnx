@@ -11,7 +11,7 @@
     <string name="btnfinish">Hoàn thành</string>
     <string name="btnapp">Chương trình</string>
     <string name="btnchange">Đổi ngày</string>
-    <string name="btnintro">Giới thiệu</string>
+    <string name="btnhot">Hot nhất</string>
     <string name="btnsetting">Cấu hình</string>
     <string name="site">Huyenhoc.com</string>
     <string name="backtomenu">Trở lại menu</string>
@@ -21,8 +21,8 @@
     <string name="sendsms">Gửi tin nhắn</string>
 	<string name="err_name">Họ và tên không được bỏ trống.</string>
 	<string name="err_con">Cần có kết nối internet để tải dữ liệu, hãy thử lại.</string>
-	<string name="lunartosolar">Âm sang dương</string>
-	<string name="solartolunar">Dương sang âm</string>
+	<string name="solar">Ngày dương</string>
+	<string name="lunar">Ngày âm</string>
 	<string-array name="optiontype">
 		<item >Cá nhân</item>
 		<item >Hôn nhân gia đình</item>
