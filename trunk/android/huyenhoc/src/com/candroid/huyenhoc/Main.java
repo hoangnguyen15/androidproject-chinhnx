@@ -1,6 +1,8 @@
 package com.candroid.huyenhoc;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 
 import kankan.wheel.widget.OnWheelChangedListener;
@@ -12,6 +14,7 @@ import com.candroid.objects.Global;
 import com.candroid.objects.Infor;
 import com.candroid.objects.Sqlite;
 import com.candroid.webservice.Callwebservice;
+import com.candroid.webservice.WebServiceC;
 
 import android.app.Activity;
 import android.content.Context;
@@ -67,15 +70,20 @@ public class Main extends Activity implements OnClickListener {
 		txtMale.setOnClickListener(this);
 		txtFemale.setOnClickListener(this);
 		
-		//Callweb
-//		Callwebservice c  = new Callwebservice(this);
-//		try {
-//			c.test();
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-
+		
+		WebServiceC w = new WebServiceC(WebServiceC.url+ WebServiceC.url_SmsMobile);
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("id", "84906289289");
+		params.put("pas", "hehe");
+		params.put("mcode", "machinh");
+		params.put("scode","maphu");
+		params.put("param1", "v1");
+		params.put("param2", "v2");
+		params.put("param3", "v3");
+		params.put("param4", "v4");
+		String result_api = w.webGet("", params);
+		Log.d("result_api", result_api);
+		
 		infor = sql.getInfo();
 		
 		//setSex
@@ -112,9 +120,10 @@ public class Main extends Activity implements OnClickListener {
         month.setViewAdapter(new DateNumericAdapter(this, 1, 12,0));
         if(infor.getMonthofbith() == 0){
         	month.setCurrentItem(curMonth);
-        }else
+        }else{
         	month.setCurrentItem(infor.getMonthofbith());
-        	month.addChangingListener(listener);
+        }
+        month.addChangingListener(listener);
     
         // year
         int curYear = calendar.get(Calendar.YEAR);
@@ -124,7 +133,6 @@ public class Main extends Activity implements OnClickListener {
         }else{
         	year.setCurrentItem(infor.getYearofbith());
         }
-        
         year.addChangingListener(listener);
         
         //day
@@ -203,10 +211,22 @@ public class Main extends Activity implements OnClickListener {
      */
     void updateDays(WheelView year, WheelView month, WheelView day) {
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR) + year.getCurrentItem());
+        int maxDays1 = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        Log.d("calendar.dayofMonth",""+Calendar.DAY_OF_MONTH);
+        Log.d("calendar.day",""+calendar.get(Calendar.DAY_OF_MONTH));
+        Log.d("calendar.month",""+calendar.get(Calendar.MONTH));
+        Log.d("calendar.year",""+calendar.get(Calendar.YEAR));
+        Log.d("calendar.maxDays1",""+maxDays1);
+        
+        calendar.set(Calendar.YEAR, year.getCurrentItem()+1900);
+        Log.d("calendar.monthCurrent",""+month.getCurrentItem());
         calendar.set(Calendar.MONTH, month.getCurrentItem());
         
+        Log.d("calendar.year",""+calendar.get(Calendar.YEAR));
+        Log.d("calendar.month",""+calendar.get(Calendar.MONTH));
+        
         int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        Log.d("maxDays",""+maxDays+"----"+Calendar.DAY_OF_MONTH+"----"+Calendar.MONTH);
         day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, calendar.get(Calendar.DAY_OF_MONTH) - 1));
         int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
         day.setCurrentItem(curDay - 1, true);
