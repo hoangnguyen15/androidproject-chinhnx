@@ -234,40 +234,40 @@ public class Main extends Activity implements OnClickListener {
     
     void updateLunarTime(){
 		if(hours.getCurrentItem() == 23 || hours.getCurrentItem() == 0){
-			txtLunarHourofbith.setText("Tý");
+			txtLunarHourofbith.setText(getString(R.string.ty));
 		}
 		if(hours.getCurrentItem() == 1 || hours.getCurrentItem() == 2){
-			txtLunarHourofbith.setText("Sửu");
+			txtLunarHourofbith.setText(getString(R.string.suu));
 		}
 		if(hours.getCurrentItem() == 3 || hours.getCurrentItem() == 4){
-			txtLunarHourofbith.setText("Dần");
+			txtLunarHourofbith.setText(getString(R.string.dan));
 		}
 		if(hours.getCurrentItem() == 5 || hours.getCurrentItem() == 6){
-			txtLunarHourofbith.setText("Mão");
+			txtLunarHourofbith.setText(getString(R.string.mao));
 		}
 		if(hours.getCurrentItem() == 7 || hours.getCurrentItem() == 8){
-			txtLunarHourofbith.setText("Thìn");
+			txtLunarHourofbith.setText(getString(R.string.thin));
 		}
 		if(hours.getCurrentItem() == 9 || hours.getCurrentItem() == 10){
-			txtLunarHourofbith.setText("Tỵ");
+			txtLunarHourofbith.setText(getString(R.string.tyj));
 		}
 		if(hours.getCurrentItem() == 11 || hours.getCurrentItem() == 12){
-			txtLunarHourofbith.setText("Ngọ");
+			txtLunarHourofbith.setText(getString(R.string.ngo));
 		}
 		if(hours.getCurrentItem() == 13 || hours.getCurrentItem() == 14){
-			txtLunarHourofbith.setText("Mùi");
+			txtLunarHourofbith.setText(getString(R.string.mui));
 		}
 		if(hours.getCurrentItem() == 15 || hours.getCurrentItem() == 16){
-			txtLunarHourofbith.setText("Thân");
+			txtLunarHourofbith.setText(getString(R.string.than));
 		}
 		if(hours.getCurrentItem() == 17 || hours.getCurrentItem() == 18){
-			txtLunarHourofbith.setText("Dậu");
+			txtLunarHourofbith.setText(getString(R.string.dau));
 		}
 		if(hours.getCurrentItem() == 19 || hours.getCurrentItem() == 20){
-			txtLunarHourofbith.setText("Tuất");
+			txtLunarHourofbith.setText(getString(R.string.tuat));
 		}
 		if(hours.getCurrentItem() == 21 || hours.getCurrentItem() == 22){
-			txtLunarHourofbith.setText("Hợi");
+			txtLunarHourofbith.setText(getString(R.string.hoi));
 		}
     }
     
