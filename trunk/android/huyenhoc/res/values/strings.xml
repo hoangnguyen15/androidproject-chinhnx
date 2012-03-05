@@ -41,4 +41,17 @@
 	<string name="cuoc">cuộc</string>
 	<string name="song">sống</string>
 	
+	<string name="ty">Tý</string>
+	<string name="suu">Sửu</string>
+	<string name="dan">Dần</string>
+	<string name="mao">Mão</string>
+	<string name="thin">Thìn</string>
+	<string name="tyj">Tỵ</string>
+	<string name="ngo">Ngọ</string>
+	<string name="mui">Mùi</string>
+	<string name="than">Thân</string>
+	<string name="dau">Dậu</string>
+	<string name="tuat">Tuất</string>
+	<string name="hoi">Hợi</string>
+	
 </resources>
