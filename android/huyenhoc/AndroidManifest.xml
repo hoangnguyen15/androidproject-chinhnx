@@ -24,6 +24,7 @@
         <activity android:name=".ChildMenu"/>
         <activity android:name=".Details"/>
         <activity android:name=".Change"/>
+        <activity android:name=".Result"/>
         
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
