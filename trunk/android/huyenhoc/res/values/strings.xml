@@ -23,6 +23,7 @@
 	<string name="err_con">Cần có kết nối internet để tải dữ liệu, hãy thử lại.</string>
 	<string name="solar">Ngày dương</string>
 	<string name="lunar">Ngày âm</string>
+	<string name="result">Kết quả</string>
 	<string-array name="optiontype">
 		<item >Tử vi </item>
 		<item >Màu sắc</item>
