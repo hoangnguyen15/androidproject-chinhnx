@@ -56,7 +56,10 @@ public class MainMenu extends Activity implements OnClickListener{
 			startActivity(new Intent(this,Options.class));
 		}
 		if(v.getId() == btnSetting.getId()){
-			startActivity(new Intent(this,Main.class));
+			Intent intent = new Intent();
+			intent.setClass(this,Main.class);
+			intent.putExtra("Edit",true);
+			startActivity(intent);
 			finish();
 		}
 		
@@ -68,6 +71,7 @@ public class MainMenu extends Activity implements OnClickListener{
 		Global.smsactive = null;
 		Global.smsinbox = null;
 		Global.version = null;
+		Global.result = null;
 		super.onDestroy();
 	}
 }

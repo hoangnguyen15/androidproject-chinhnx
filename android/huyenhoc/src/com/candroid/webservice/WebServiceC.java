@@ -44,10 +44,6 @@ public class WebServiceC {
 
 	public static String url = "http://222.255.8.122:8888/huyenHoc/";
 	public static String url_SmsMobile = "getSmsMobile";
-	
-	
-	
-	
 
 	DefaultHttpClient httpClient;
 	HttpContext localContext;
