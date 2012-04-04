@@ -9,31 +9,34 @@
         android:id="@+id/btnBack"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal" >
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal" >
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lt"
             android:textColor="#fff"
-            android:textSize="32dip" />
+            android:textSize="32dip"/>
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
             android:id="@+id/txtcap"
             android:text="Cuộc sống"
             android:textColor="#fff"
-            android:textSize="32dip" />
+            android:textSize="28dip"
+            android:maxWidth="300dip"
+            android:gravity="center_vertical|center_horizontal"/>
 
         <com.candroid.huyenhoc.Text
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
             android:text="@string/gt"
             android:textColor="#fff"
-            android:textSize="32dip" />
+            android:textSize="32dip"/>
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +59,7 @@
 	            <TextView
 	                android:layout_width="fill_parent"
 	                android:layout_height="wrap_content"
-	                android:text="Tuổi Đinh Sửu thuộc mạng Thủy, cuộc sống rất tốt đẹp, cuộc đời ít cực nhọc và ít bị lao tâm khổ trí."
+	                android:text="Nhập thông tin vào ô trống."
 	                android:textColor="#000"
 	                android:textSize="14dip"
 	                android:paddingLeft="10dip"
@@ -65,22 +68,26 @@
 	                android:id="@+id/edtParam1" 
 	                android:layout_width="fill_parent"
 	                android:layout_height="50dip"
-	                android:hint="Param1" />
+	                android:hint="Param1"
+	                android:singleLine="true" />
 	            <EditText
 	                android:id="@+id/edtParam2"
 	                android:layout_width="fill_parent"
 	                android:layout_height="50dip"
-	                android:hint="Param2" />
+	                android:hint="Param2"
+	                android:singleLine="true" />
 	            <EditText
 	                android:id="@+id/edtParam3"
 	                android:layout_width="fill_parent"
 	                android:layout_height="50dip"
-	                android:hint="Param3" />
+	                android:hint="Param3"
+	                android:singleLine="true" />
 	            <EditText
 	                android:id="@+id/edtParam4"
 	                android:layout_width="fill_parent"
 	                android:layout_height="50dip"
-	                android:hint="Param4" />
+	                android:hint="Param4"
+	                android:singleLine="true" />
             </LinearLayout>
         </ScrollView>
 

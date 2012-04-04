@@ -20,7 +20,7 @@
             android:paddingLeft="20dip"
             android:text="Ngày-Giờ"
             android:textColor="#7f0000"
-            android:textSize="24dip" />
+            android:textSize="20dip" />
 
         <com.candroid.huyenhoc.Text
             android:layout_width="30dip"
