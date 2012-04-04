@@ -16,6 +16,7 @@ import com.candroid.objects.Sqlite;
 import com.candroid.webservice.Callwebservice;
 import com.candroid.webservice.WebServiceC;
 
+import android.R.bool;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -52,6 +53,7 @@ public class Main extends Activity implements OnClickListener {
 	boolean male = true;
 	int sex;
 	Infor infor;
+	boolean isEdit;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -69,23 +71,11 @@ public class Main extends Activity implements OnClickListener {
 		btnFinish.setOnClickListener(this);
 		txtMale.setOnClickListener(this);
 		txtFemale.setOnClickListener(this);
-		
-		
-		WebServiceC w = new WebServiceC(WebServiceC.url+ WebServiceC.url_SmsMobile);
-		Map<String, String> params = new HashMap<String, String>();
-		params.put("id", "84906289289");
-		params.put("pas", "hehe");
-		params.put("mcode", "machinh");
-		params.put("scode","maphu");
-		params.put("param1", "v1");
-		params.put("param2", "v2");
-		params.put("param3", "v3");
-		params.put("param4", "v4");
-		String result_api = w.webGet("", params);
-		Log.d("result_api", result_api);
-		
 		infor = sql.getInfo();
+		isEdit = getIntent().getBooleanExtra("Edit",false);
 		
+		if(isEdit || infor.getName().length()==0){
+
 		//setSex
 		if(infor.getSex() == 1){
 			male = true;
@@ -163,6 +153,10 @@ public class Main extends Activity implements OnClickListener {
         if(infor.getName().length()!=0){
         	edtName.setText(infor.getName());
         }
+		}else{
+			finish();
+			startActivity(new Intent(this,MainMenu.class));
+		}
 	}
 
 	@Override
