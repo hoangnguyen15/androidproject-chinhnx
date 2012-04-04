@@ -24,14 +24,14 @@
 	<string name="solar">Ngày dương</string>
 	<string name="lunar">Ngày âm</string>
 	<string-array name="optiontype">
-		<item >Cá nhân</item>
-		<item >Hôn nhân gia đình</item>
-		<item >Nhà cửa</item>
-		<item >Sinh hoạt cuộc sống</item>
-		<item >Chấm điểm</item>
-		<item >Tình yêu</item>
-		<item >Thời trang</item>
-		<item >Công việc</item>
+		<item >Tử vi </item>
+		<item >Màu sắc</item>
+		<item >Quan hệ</item>
+		<item >Giờ đẹp</item>
+		<item >Chọn ngày</item>
+		<item >Dự đoán</item>
+		<item >Xem hướng</item>
+		<item >Phong thủy</item>
 	</string-array>
 	<string name="tuvi">Tử vi</string>
 	<string name="phong">phong</string>
