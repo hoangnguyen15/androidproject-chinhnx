@@ -21,14 +21,14 @@ public class DigitalLoungeParser {
 	private static final String SMSACTIVE = "smsactive";
 	private static final String SMSINBOX = "smsinbox";
 	private static final String SRVSNAME = "srvsname";
-	private static final String CANHAN = "canhan";
-	private static final String HNGD = "hngd";
-	private static final String NC = "nc";
-	private static final String SHCS = "shcs";
-	private static final String CD = "cd";
-	private static final String TY = "ty";
-	private static final String TT = "tt";
-	private static final String CV = "cv";
+	private static final String GIODEP = "giodep";
+	private static final String HUONGDEP = "huongdep";
+	private static final String MAUDEP = "maudep";
+	private static final String NGAYDEP = "ngaydep";
+	private static final String PHONGTHUY = "phongthuy";
+	private static final String QUANHE = "quanhe";
+	private static final String TUVI = "tuvi";
+	private static final String DUDOAN = "dudoan";
 
 	private static final String DES = "des";
 	private static final String	MC = "mc";
@@ -85,28 +85,28 @@ public class DigitalLoungeParser {
 				if (nodeName.contentEquals(SMSINBOX)) {
 					Global.smsinbox = xpp.nextText();
 				}
-				if (nodeName.contentEquals(CANHAN) ) {					
+				if (nodeName.contentEquals(TUVI) ) {					
 					currentSection = 0;
 				}
-				if (nodeName.contentEquals(HNGD) ) {
+				if (nodeName.contentEquals(MAUDEP) ) {
 					currentSection = 1;
 				}
-				if (nodeName.contentEquals(NC) ) {
+				if (nodeName.contentEquals(QUANHE) ) {
 					currentSection = 2;
 				}
-				if (nodeName.contentEquals(SHCS) ) {
+				if (nodeName.contentEquals(GIODEP) ) {
 					currentSection = 3;
 				}
-				if (nodeName.contentEquals(CD) ) {
+				if (nodeName.contentEquals(NGAYDEP) ) {
 					currentSection = 4;
 				}
-				if (nodeName.contentEquals(TY) ) {
+				if (nodeName.contentEquals(DUDOAN) ) {
 					currentSection = 5;
 				}
-				if (nodeName.contentEquals(TT) ) {
+				if (nodeName.contentEquals(HUONGDEP) ) {
 					currentSection = 6;
 				}
-				if (nodeName.contentEquals(CV) ) {
+				if (nodeName.contentEquals(PHONGTHUY) ) {
 					currentSection = 7;
 				}
 //				Log.d("curentSetion",""+currentSection);

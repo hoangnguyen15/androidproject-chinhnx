@@ -20,7 +20,8 @@ public class Global {
 	public static String version;
 	public static String smsinbox;
 	public static String smsactive;
-	public static String URL = "http://krazevina.com/merge.xml";
+//	public static String URL = "http://krazevina.com/merge.xml";
+	public static String URL = "http://krazevina.com/huyenhocv2.6.xml";
 	public static int TimeZone = 7;
 	
 	
