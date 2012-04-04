@@ -80,9 +80,6 @@ public class Options extends Activity implements OnClickListener{
 						Toast.makeText(Options.this, getString(R.string.err_con), 2).show();
 					}
 				}
-				
-
-
 
 			}
 			return true;
