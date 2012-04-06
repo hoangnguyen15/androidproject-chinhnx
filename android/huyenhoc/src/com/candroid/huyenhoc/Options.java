@@ -62,7 +62,6 @@ public class Options extends Activity implements OnClickListener{
 					Log.d("file.exists","true");
 					Intent i = new Intent(Options.this,ChildMenu.class);
 					i.putExtra("type", type);
-					Log.e("TYPE", ""+type);
 					startActivity(i);
 				}else{
 					Log.d("file.exists","false");
@@ -74,7 +73,6 @@ public class Options extends Activity implements OnClickListener{
 						Global.downloadFromUrl(urlDownload, fileName);
 						Intent i = new Intent(Options.this,ChildMenu.class);
 						i.putExtra("type", type);
-						Log.e("TYPE", ""+type);
 						startActivity(i);
 					}else{
 						Toast.makeText(Options.this, getString(R.string.err_con), 2).show();
