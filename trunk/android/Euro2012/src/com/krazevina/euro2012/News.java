@@ -8,13 +8,13 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-public class Main extends Activity implements OnClickListener {
+public class News extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.news);
         btnSchedule = (Button)findViewById(R.id.btnSchedule);
         btnNews = (Button)findViewById(R.id.btnNews);
         btnTeams = (Button)findViewById(R.id.btnTeams);
