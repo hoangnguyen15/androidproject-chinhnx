@@ -11,7 +11,7 @@
         android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
-            android:name=".Main" >
+            android:name="com.krazevina.euro2012.Main" >
             <intent-filter >
                 <action android:name="android.intent.action.MAIN" />
 
