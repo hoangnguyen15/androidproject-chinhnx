@@ -3,5 +3,10 @@
 
     <string name="hello">Hello World, Main!</string>
     <string name="app_name">Euro2012</string>
+    <string name="schedule">Schedule</string>
+    <string name="news">News</string>
+    <string name="teams">Teams</string>
+    <string name="setting">Setting</string>
+    
 
 </resources>
