@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    
     <string name="hello">Hello World, Main!</string>
     <string name="app_name">Euro2012</string>
     <string name="schedule">Schedule</string>
@@ -8,5 +8,4 @@
     <string name="teams">Teams</string>
     <string name="setting">Setting</string>
     
-
 </resources>

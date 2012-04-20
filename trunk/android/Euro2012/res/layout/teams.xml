@@ -12,7 +12,7 @@
         <TextView android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center_vertical|center_horizontal"
-            android:text="@string/schedule"
+            android:text="@string/teams"
             android:textColor="#fff"
             android:textSize="28dip"/>
     </LinearLayout>
@@ -41,13 +41,12 @@
                 android:id="@+id/btnSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/scheduleactive" />
+                android:background="@drawable/btnschedule" />
             <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/schedule"
-                android:textSize="8dip"
-                android:textColor="#fff"/>
+                android:textSize="8dip"/>
         </LinearLayout>
 
         <LinearLayout
@@ -80,12 +79,13 @@
                 android:id="@+id/btnTeams"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btnteams" />
+                android:background="@drawable/teamsactive" />
             <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/teams"
-                android:textSize="8dip"/>
+                android:textSize="8dip"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
