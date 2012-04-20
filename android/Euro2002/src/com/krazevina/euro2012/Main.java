@@ -1,4 +1,6 @@
-package com.krazevina.euro2002;
+package com.krazevina.euro2012;
+
+import com.krazevina.euro2002.R;
 
 import android.app.Activity;
 import android.os.Bundle;
