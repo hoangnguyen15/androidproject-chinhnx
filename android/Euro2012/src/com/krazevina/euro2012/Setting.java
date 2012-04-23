@@ -22,20 +22,23 @@ public class Setting extends Activity implements OnClickListener {
         
         btnNews.setOnClickListener(this);
         btnTeams.setOnClickListener(this);
-        btnSetting.setOnClickListener(this);
+        btnSchedule.setOnClickListener(this);
     }
 	@Override
 	public void onClick(View v) {
 		if(v.getId() == btnNews.getId()){
 			startActivity(new Intent(this,News.class));
+			finish();
 		}
 		
 		if(v.getId() == btnTeams.getId()){
 			startActivity(new Intent(this,Teams.class));
+			finish();
 		}
 		
-		if(v.getId() == btnSetting.getId()){
-			startActivity(new Intent(this,Setting.class));
+		if(v.getId() == btnSchedule.getId()){
+			startActivity(new Intent(this,Main.class));
+			finish();
 		}
 		
 	}

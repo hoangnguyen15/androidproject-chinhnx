@@ -28,14 +28,17 @@ public class Main extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		if(v.getId() == btnNews.getId()){
 			startActivity(new Intent(this,News.class));
+			finish();
 		}
 		
 		if(v.getId() == btnTeams.getId()){
 			startActivity(new Intent(this,Teams.class));
+			finish();
 		}
 		
 		if(v.getId() == btnSetting.getId()){
 			startActivity(new Intent(this,Setting.class));
+			finish();
 		}
 		
 	}
