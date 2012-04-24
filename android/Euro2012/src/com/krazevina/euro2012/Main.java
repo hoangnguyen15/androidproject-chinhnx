@@ -1,5 +1,7 @@
 package com.krazevina.euro2012;
 
+import com.krazevina.objects.sqlite;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +25,8 @@ public class Main extends Activity implements OnClickListener {
         btnNews.setOnClickListener(this);
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
+        sqlite sql;
+        sql = new sqlite(this);
     }
 	@Override
 	public void onClick(View v) {
