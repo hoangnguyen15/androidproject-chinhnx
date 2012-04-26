@@ -17,5 +17,19 @@
     <string name="tno">T.No</string>
     <string name="name">Name</string>
     <string name="position">Position</string>
+    <string name="groupa">GROUP A</string>
+    <string name="groupb">GROUP B</string>
+    <string name="groupc">GROUP C</string>
+    <string name="groupd">GROUP D</string>
+    <string name="team">Team</string>
+    <string name="pld">PLD</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="gf">GF</string>
+    <string name="ga">GA</string>
+    <string name="gd">GD</string>
+    <string name="pts">PTS</string>
+    
     
 </resources>
