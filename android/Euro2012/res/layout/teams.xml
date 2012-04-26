@@ -19,7 +19,114 @@
     
 	<LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:paddingBottom="44dip"
+        android:orientation="vertical"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip">
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bgwhitetop">
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/team"
+			    android:layout_weight="3"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/pld"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/w"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/d"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/l"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/gf"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/ga"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/gd"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+			<LinearLayout android:layout_width="1px"
+			    android:layout_height="fill_parent"
+			    android:background="#d8e1d6"/>
+			<TextView android:layout_width="0dip"
+			    android:layout_height="fill_parent"
+			    android:textColor="#333"
+			    android:text="@string/pts"
+			    android:layout_weight="1"
+			    android:gravity="center_vertical|center_horizontal"/>
+    	</LinearLayout>
+    	
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bgtab">
+			<TextView android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:textColor="#fffc00"
+			    android:text="@string/groupa"
+			    android:textSize="20dip"
+			    android:gravity="center_vertical|center_horizontal"/>
+    	</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			    android:layout_height="200dip"
+			    android:background="#fff">
+
+			</LinearLayout>
     </LinearLayout>
 
     <LinearLayout
