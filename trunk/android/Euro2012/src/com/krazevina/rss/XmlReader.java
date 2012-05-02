@@ -1,4 +1,5 @@
-package krazevina.com.rss;
+package com.krazevina.rss;
+
 
 import org.xmlpull.v1.XmlPullParser;
 import android.util.Xml;

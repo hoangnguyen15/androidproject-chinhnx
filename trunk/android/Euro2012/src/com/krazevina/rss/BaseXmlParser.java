@@ -1,9 +1,9 @@
-package krazevina.com.rss;
-
+package com.krazevina.rss;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 
 public abstract class BaseXmlParser implements XmlParser {
 
