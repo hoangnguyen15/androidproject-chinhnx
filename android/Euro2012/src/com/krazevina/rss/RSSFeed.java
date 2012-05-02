@@ -1,4 +1,4 @@
-package krazevina.com.rss;
+package com.krazevina.rss;
 
 import java.util.ArrayList;
 

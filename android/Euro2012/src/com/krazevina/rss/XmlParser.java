@@ -1,4 +1,4 @@
-package krazevina.com.rss;
+package com.krazevina.rss;
 
 public interface XmlParser {
 	 RSSFeed parse();
