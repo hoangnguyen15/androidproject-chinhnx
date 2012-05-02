@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="77dip"
+    android:orientation="horizontal"
+    android:background="#fff" >
+	<LinearLayout android:layout_width="0dip"
+		android:layout_height="fill_parent"
+    	android:orientation="vertical"
+    	android:layout_weight="8" >
+			<TextView android:layout_width="fill_parent"
+		android:layout_height="0dip"
+    	android:text="Leicester v West Ham betting Bookies struggling to split..."
+    	android:layout_weight="2"
+    	android:gravity="center_vertical|left"
+    	android:textColor="#333333"
+    	android:textSize="18dip"
+    	android:paddingLeft="5dip">
+		
+    </TextView>
+    	<TextView android:layout_width="fill_parent"
+		android:layout_height="0dip"
+    	android:orientation="vertical"
+    	android:layout_weight="1"
+    	android:text="Monday, 23rd April 2012"
+    	android:gravity="center_vertical|right"
+    	android:textColor="#6d6d6d" >
+		
+    </TextView>		
+    </LinearLayout>
+	<LinearLayout
+    	android:layout_width="0dip"
+    	android:layout_height="fill_parent"
+    	android:layout_weight="2" 
+    	android:gravity="center_vertical|center_horizontal">
+		<ImageView android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/icongo"/>
+    </LinearLayout>
+    
+
+</LinearLayout>
