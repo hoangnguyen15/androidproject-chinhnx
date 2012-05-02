@@ -36,10 +36,13 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="#fff"
+            android:background="#fff" android:id="@+id/body"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:layout_marginTop="-25dip" />
+            android:layout_marginTop="-25dip" >
+            <ListView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:id="@+id/lvnews"/>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
