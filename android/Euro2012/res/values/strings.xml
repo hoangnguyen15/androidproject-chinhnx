@@ -30,6 +30,7 @@
     <string name="ga">GA</string>
     <string name="gd">GD</string>
     <string name="pts">PTS</string>
+    <string name="details">&gt;</string>
     
     
 </resources>

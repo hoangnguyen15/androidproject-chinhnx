@@ -9,15 +9,24 @@
         android:layout_width="0dip"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
 		android:gravity="center_vertical|center_horizontal">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:text="08/06-16:00"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:text="08/06"
             android:textColor="#333333"
             android:gravity="center_vertical|center_horizontal"
-            android:textSize="10dip" />
+            android:textSize="12dip"
+            android:layout_weight="1" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:text="16:00"
+            android:textColor="#333333"
+            android:gravity="center_vertical|center_horizontal"
+            android:textSize="12dip"
+            android:layout_weight="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="1px"
@@ -27,7 +36,7 @@
     <LinearLayout
         android:layout_width="0dip"
         android:layout_height="fill_parent"
-        android:layout_weight="3"
+        android:layout_weight="4"
         android:orientation="horizontal"
         android:gravity="center_vertical|center_horizontal" >
 		<TextView
@@ -40,8 +49,8 @@
             android:textStyle="bold"
             android:textSize="10dip"/>  
         <ImageView android:layout_width="20dip"
-            android:layout_height="17dip"
-            android:src="@drawable/japanflag"/>
+            android:layout_height="20dip"
+            android:src="@drawable/vietnamflag"/>
 		<TextView
             android:layout_width="0dip"
             android:layout_height="fill_parent"
@@ -51,8 +60,8 @@
             android:gravity="center_vertical|center_horizontal"
             android:textSize="10dip"/>
 		<ImageView android:layout_width="20dip"
-            android:layout_height="17dip"
-            android:src="@drawable/japanflag"/>
+            android:layout_height="20dip"
+            android:src="@drawable/vietnamflag"/>
 		<TextView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
@@ -73,15 +82,12 @@
         android:layout_width="0dip"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:orientation="horizontal" >
-	    <TextView
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:text="Details"
-            android:textColor="#333333"
-            android:layout_weight="3" 
-            android:gravity="center_vertical|center_horizontal"
-            android:textSize="10dip"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical|center_horizontal" >
+	    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icongo" />
 	</LinearLayout>
         
 
