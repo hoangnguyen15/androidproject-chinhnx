@@ -3,23 +3,43 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
-    android:orientation="vertical">
-    
+    android:orientation="vertical" >
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="44dip"
-        android:background="@drawable/bgtop">
-        <TextView android:layout_width="fill_parent"
+        android:background="@drawable/bgtop" >
+
+        <TextView
+            android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/news"
             android:textColor="#fff"
-            android:textSize="28dip"/>
+            android:textSize="28dip" />
     </LinearLayout>
-    
-	<LinearLayout
+
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" 
+        android:paddingBottom="44dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgwhitetop"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#fff"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="-25dip" />
     </LinearLayout>
 
     <LinearLayout
@@ -28,7 +48,7 @@
         android:layout_marginTop="-44dip"
         android:background="@drawable/bgbottom"
         android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal" >
 
         <LinearLayout
             android:layout_width="0dip"
@@ -42,11 +62,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btnschedule" />
-            <TextView 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/schedule"
-                android:textSize="8dip"/>
+                android:textSize="8dip" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,12 +82,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/newsactive" />
-            <TextView 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/news"
-                android:textSize="8dip"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:textSize="8dip" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,11 +103,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btnteams" />
-            <TextView 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/teams"
-                android:textSize="8dip"/>
+                android:textSize="8dip" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,11 +123,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btnsetting" />
-            <TextView 
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/setting"
-                android:textSize="8dip"/>
+                android:textSize="8dip" />
         </LinearLayout>
     </LinearLayout>
 
