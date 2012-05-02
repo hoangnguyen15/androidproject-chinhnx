@@ -47,7 +47,6 @@ public class Main extends Activity implements OnClickListener {
     
     OnTouchListener touch = new OnTouchListener() {
 		public boolean onTouch(View v, MotionEvent event) {
-			Log.e("ZZZZZZZZ", "ZZZZZZZZZZ");
 			try{
 				LinearLayout l = (LinearLayout)v;
 				((Button)l.getChildAt(0)).onTouchEvent(event);

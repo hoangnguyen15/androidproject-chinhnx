@@ -51,7 +51,7 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:layout_width="0dip"
+            android:layout_width="0dip"  android:id="@+id/llbtnsched"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -70,7 +70,7 @@
                 android:textSize="8dip" />
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout  android:id="@+id/llbtnnews"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -91,8 +91,8 @@
                 android:textSize="8dip" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dip"
+        <LinearLayout  android:id="@+id/llbtnteams"
+            android:layout_width="0dip" 
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -111,7 +111,7 @@
                 android:textSize="8dip" />
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout  android:id="@+id/llbtnsetting"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
             android:layout_weight="1"
