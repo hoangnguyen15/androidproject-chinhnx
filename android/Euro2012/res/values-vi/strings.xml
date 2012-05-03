@@ -32,6 +32,6 @@
     <string name="pts">PTS</string>
     <string name="details">&gt;</string>
     <string name="pleasewait">Hãy chờ</string>
-    
+    <string name="nonetwork">Không có kết nối mạng.</string>
     
 </resources>

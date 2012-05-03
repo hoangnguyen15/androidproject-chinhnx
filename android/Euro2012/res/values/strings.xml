@@ -32,6 +32,7 @@
     <string name="pts">PTS</string>
     <string name="details">&gt;</string>
     <string name="pleasewait">Please wait</string>
+    <string name="nonetwork">No internet connection.</string>
     
     
 </resources>
