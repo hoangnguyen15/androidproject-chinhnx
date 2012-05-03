@@ -1,9 +1,15 @@
 package com.krazevina.euro2012;
 
+import java.net.URL;
+
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.TagNode;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -13,6 +19,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
@@ -98,15 +105,27 @@ public class News extends Activity implements OnClickListener {
     };
     
     ImageView img;
-    Bitmap b;
+    WebView txtcon;
+    Bitmap b;String head,tail;
+    
     void showInfo(final RSSItem item){
+    	head="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"+
+    	"<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"VN\">"+
+    	"<head>"+
+    		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" +
+    	"</head>" +
+    		"<body>";
+    	tail = "</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
+    	img.setImageBitmap(null);
     	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
-    	TextView txtcon = (TextView)findViewById(R.id.txtcontent);
+    	txtcon = (WebView)findViewById(R.id.txtcontent);
+//    	txtcon.set
     	tit.setText(item.getTitle());
-    	txtcon.setText(" "+item.getDescription());
+    	txtcon.loadData(head+" "+item.getDescription()+tail, "text/html", "UTF-8");
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
+    		RSSItem ite = item;
 			public void run() {
 				b = ImageDownloader.readImageByUrl(url);
 				handler.post(new Runnable() {
@@ -114,8 +133,44 @@ public class News extends Activity implements OnClickListener {
 						img.setImageBitmap(b);
 					}
 				});
+				final String s = getAdditionInfo(ite.getLink());
+				handler.post(new Runnable() {
+					public void run() {
+						txtcon.loadData(head+" "+ite.getDescription()+s+tail,"text/html","UTF-8");
+						Log.e("HTML:", head+" "+ite.getDescription()+s+tail);
+					}
+				});
 			}
 		}).start();
+    }
+    
+    String getAdditionInfo(String url){
+    	String s = "";
+    	if(url.contains("bongda")){
+    		try{
+	    		HtmlCleaner cleaner = new HtmlCleaner();
+	    		Uri ss = Uri.parse(url);
+	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
+	            TagNode root = cleaner.clean(u);
+//	            Log.e("URL", ""+url);
+	            TagNode div = root.findElementByAttValue("class", "story-body article", true, false);
+	            TagNode[]child = div.getElementsByName("strong", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].removeFromTree();
+	            child = div.getElementsByName("p", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].removeFromTree();
+	            child = div.getElementsByName("img", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].addAttribute("width", "100%");
+	            s = cleaner.getInnerHtml(div);
+	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
+	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
+    		}catch (Exception e) {
+    			e.printStackTrace();
+			}
+    	}
+    	return s;
     }
     
     OnTouchListener touch = new OnTouchListener() {
