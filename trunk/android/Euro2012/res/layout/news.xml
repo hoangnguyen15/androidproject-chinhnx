@@ -33,16 +33,48 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bgwhitetop"/>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="#fff" android:id="@+id/body"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:layout_marginTop="-25dip" >
-            <ListView android:layout_width="fill_parent" android:layout_height="wrap_content"
-                android:id="@+id/lvnews"/>
-        </LinearLayout>
+        <ViewFlipper android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:id="@+id/vfnews">
+        	<LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:background="#fff" android:id="@+id/body"
+	            android:gravity="center_horizontal"
+	            android:orientation="vertical"
+	            android:layout_marginTop="-25dip" >
+	            <ListView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	                android:id="@+id/lvnews"/>
+        	</LinearLayout>
+        	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+                android:background="#fff"
+                android:weightSum="775" android:baselineAligned="false" android:orientation="vertical">
+        	    <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
+        	        android:layout_weight="150" android:layout_margin="10dip">
+        	        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
+        	            android:id="@+id/imgnews" android:layout_weight="1"/>
+        	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+        	            android:layout_weight="2" android:orientation="vertical">
+        	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	        	            android:textColor="#000" android:textSize="8pt" android:textStyle="bold"
+	        	            android:text="pafkl sdgksdg af saf khai kai fde sa" android:layout_weight="2"
+	        	            android:gravity="center_vertical" android:id="@+id/txttitle"
+	        	            android:layout_marginLeft="10dip"/>
+        	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	        	            android:textColor="#888" android:textSize="4pt"
+	        	            android:text="Monday 5th April, 2012" android:layout_weight="2"
+	        	            android:id="@+id/txttime"
+	        	            android:layout_marginLeft="10dip"/>
+        	        </LinearLayout>
+        	        
+        	    </LinearLayout>
+        	    <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
+        	        android:layout_weight="625" android:layout_margin="10dip">
+        	        <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+        	            android:id="@+id/txtcontent"/>
+        	    </LinearLayout>
+        	</LinearLayout>
+        </ViewFlipper>
+        
     </LinearLayout>
 
     <LinearLayout
