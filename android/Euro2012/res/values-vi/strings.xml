@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Euro2012</string>
+    <string name="schedule">Schedule</string>
+    <string name="news">News</string>
+    <string name="teams">Teams</string>
+    <string name="setting">Setting</string>
+    <string name="matchdetail">Match Detail</string>
+    <string name="stadium">Stadium</string>
+    <string name="arbitration">Arbitration</string>
+    <string name="teamdetail">Team Detail</string>
+    <string name="description">Description</string>
+    <string name="testdes">The England national football team represents England in association football and is controlled by the Football Association, the governing body forThe England national football team represents England in association football and is controlled by the Football Association, the governing body forThe England national football team represents England in association football and is controlled by the Football Association, the governing body for</string>
+    <string name="playerlist">Players List</string>
+    <string name="tno">T.No</string>
+    <string name="name">Name</string>
+    <string name="position">Position</string>
+    <string name="groupa">GROUP A</string>
+    <string name="groupb">GROUP B</string>
+    <string name="groupc">GROUP C</string>
+    <string name="groupd">GROUP D</string>
+    <string name="team">Team</string>
+    <string name="pld">PLD</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="gf">GF</string>
+    <string name="ga">GA</string>
+    <string name="gd">GD</string>
+    <string name="pts">PTS</string>
+    <string name="details">&gt;</string>
+    <string name="pleasewait">Hãy chờ</string>
+    
+    
+</resources>
