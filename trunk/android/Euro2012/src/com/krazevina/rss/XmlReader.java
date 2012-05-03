@@ -11,8 +11,8 @@ public class XmlReader extends BaseXmlParser {
 	    }
 	    public RSSFeed parse() {
 	    	RSSFeed rssFeeds = null;
-	        XmlPullParser parser = Xml.newPullParser();
 	        try {
+	        	XmlPullParser parser = Xml.newPullParser();
 	            // auto-detect the encoding from the stream
 	            parser.setInput(this.getInputStream(), null);
 	            int eventType = parser.getEventType();
