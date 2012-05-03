@@ -4,13 +4,14 @@
     android:layout_height="wrap_content" android:background="#ffffff"
     android:orientation="horizontal" >
     <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
-        android:layout_weight="7" android:orientation="vertical">
+        android:layout_weight="7" android:orientation="vertical"
+        android:layout_marginLeft="10dip">
         <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
             android:textStyle="bold" android:textColor="#000000"
-            android:id="@+od/txttitle"/>
+            android:id="@+id/txttitle"/>
         <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
             android:textColor="#808080" android:gravity="right"
-            android:id="@+od/txttime"/>
+            android:id="@+id/txttime"/>
     </LinearLayout>
 	<TextView android:layout_width="0dip" android:layout_height="fill_parent"
 	    android:layout_weight="1" android:textColor="#000"
