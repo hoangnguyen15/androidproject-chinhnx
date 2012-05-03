@@ -6,7 +6,9 @@ public class RSSItem
 	private String _description = null;
 	private String _link = null;
 	private String _category = null;
-	private String _pubdate = null;		
+	private String _pubdate = null;
+	private String _enclosure = null;
+	
 	public void setTitle(String title){
 		this._title = title;	
 	}
@@ -69,5 +71,11 @@ public class RSSItem
 		}
 		
 		
+	}
+	public String getEnclosure() {
+		return _enclosure;
+	}
+	public void setEnclosure(String _enclosure) {
+		this._enclosure = _enclosure;
 	}
 }
