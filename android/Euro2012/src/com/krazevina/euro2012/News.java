@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.krazevina.objects.ImageDownloader;
@@ -63,22 +64,28 @@ public class News extends Activity implements OnClickListener {
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
-        pr = ProgressDialog.show(News.this, null, R.string.pleasewait);
+        pr = ProgressDialog.show(News.this, null, getString(R.string.pleasewait));
+        
         handler = new Handler();
         new Thread(new Runnable() {
 			@Override
 			public void run() {
 		        rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
+		        
 		        handler.post(new Runnable() {
 					public void run() {
-						lvnew.setAdapter(new adapter());
-						lvnew.setOnItemClickListener(new OnItemClickListener() {
-							public void onItemClick(AdapterView<?> arg0,
-									View arg1, int arg2, long arg3) {
-								showInfo(rss1.get(arg2));
-								vfnew.setDisplayedChild(1);
-							}
-						});
+						pr.dismiss();
+						if(rss1==null)Toast.makeText(News.this, R.string.nonetwork, 0).show();
+						else{
+							lvnew.setAdapter(new adapter());
+							lvnew.setOnItemClickListener(new OnItemClickListener() {
+								public void onItemClick(AdapterView<?> arg0,
+										View arg1, int arg2, long arg3) {
+									showInfo(rss1.get(arg2));
+									vfnew.setDisplayedChild(1);
+								}
+							});
+						}
 					}
 				});
 			}
