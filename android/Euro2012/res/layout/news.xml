@@ -29,12 +29,9 @@
         android:paddingRight="10dip"
         android:paddingTop="10dip">
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bgwhitetop"/>
         <ViewFlipper android:layout_width="fill_parent" android:layout_height="fill_parent"
-            android:id="@+id/vfnews">
+            android:id="@+id/vfnews" android:background="@drawable/bgwhite"
+            android:paddingTop="10dip">
         	<LinearLayout
 	            android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
@@ -55,9 +52,9 @@
         	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
         	            android:layout_weight="2" android:orientation="vertical">
         	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-	        	            android:textColor="#000" android:textSize="8pt" android:textStyle="bold"
+	        	            android:textColor="#000" android:textStyle="bold"
 	        	            android:text="pafkl sdgksdg af saf khai kai fde sa" android:layout_weight="2"
-	        	            android:gravity="center_vertical" android:id="@+id/txttitle"
+	        	            android:gravity="center_vertical" android:id="@+id/txtinfotitle"
 	        	            android:layout_marginLeft="10dip"/>
         	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
 	        	            android:textColor="#888" android:textSize="4pt"
@@ -70,6 +67,7 @@
         	    <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
         	        android:layout_weight="625" android:layout_margin="10dip">
         	        <TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+        	            android:textColor="#000"
         	            android:id="@+id/txtcontent"/>
         	    </LinearLayout>
         	</LinearLayout>

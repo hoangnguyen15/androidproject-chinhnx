@@ -31,6 +31,7 @@
     <string name="gd">GD</string>
     <string name="pts">PTS</string>
     <string name="details">&gt;</string>
+    <string name="pleasewait">Please wait</string>
     
     
 </resources>

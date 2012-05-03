@@ -1,10 +1,9 @@
 package com.krazevina.euro2012;
 
-import com.krazevina.rss.RSSFeed;
-import com.krazevina.rss.XmlReader;
-
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -18,19 +17,27 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
+
+import com.krazevina.objects.ImageDownloader;
+import com.krazevina.rss.RSSFeed;
+import com.krazevina.rss.RSSItem;
+import com.krazevina.rss.XmlReader;
 
 
 public class News extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
+    ViewFlipper vfnew;
     ListView lvnew;
     RSSFeed rss1;
     Handler handler;
-    
+    ProgressDialog pr;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,12 +57,13 @@ public class News extends Activity implements OnClickListener {
         btnTeams = (Button)findViewById(R.id.btnTeams);
         btnSetting = (Button)findViewById(R.id.btnSetting);
         
+        vfnew = (ViewFlipper)findViewById(R.id.vfnews);
         lvnew = (ListView)findViewById(R.id.lvnews);
         
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
-        
+        pr = ProgressDialog.show(News.this, null, R.string.pleasewait);
         handler = new Handler();
         new Thread(new Runnable() {
 			@Override
@@ -67,17 +75,41 @@ public class News extends Activity implements OnClickListener {
 						lvnew.setOnItemClickListener(new OnItemClickListener() {
 							public void onItemClick(AdapterView<?> arg0,
 									View arg1, int arg2, long arg3) {
-								
+								showInfo(rss1.get(arg2));
+								vfnew.setDisplayedChild(1);
 							}
 						});
 					}
 				});
 			}
 		}).start();
-
     }
     
+    public void onBackPressed() {
+    	if(vfnew.getDisplayedChild()>0)vfnew.setDisplayedChild(0);
+    	else super.onBackPressed();
+    };
     
+    ImageView img;
+    Bitmap b;
+    void showInfo(final RSSItem item){
+    	img = (ImageView)findViewById(R.id.imgnews);
+    	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
+    	TextView txtcon = (TextView)findViewById(R.id.txtcontent);
+    	tit.setText(item.getTitle());
+    	txtcon.setText(" "+item.getDescription());
+    	new Thread(new Runnable() {
+    		String url = item.getEnclosure();
+			public void run() {
+				b = ImageDownloader.readImageByUrl(url);
+				handler.post(new Runnable() {
+					public void run() {
+						img.setImageBitmap(b);
+					}
+				});
+			}
+		}).start();
+    }
     
     OnTouchListener touch = new OnTouchListener() {
 		public boolean onTouch(View v, MotionEvent event) {
