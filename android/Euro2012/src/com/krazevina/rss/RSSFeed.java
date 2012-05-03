@@ -48,6 +48,9 @@ public class RSSFeed
 	{
 		return _itemlist.size();
 	}
+	public RSSItem get(int pos){
+		return _itemlist.get(pos);
+	}
 	public ArrayList<RSSItem> get2ItemNext(){
 		ArrayList<RSSItem> rssfeed=null;
 		try{
