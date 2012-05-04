@@ -10,9 +10,11 @@ import org.htmlcleaner.TagNode;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,6 +32,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -107,7 +110,7 @@ public class News extends Activity implements OnClickListener {
 						pr.dismiss();
 						if(rss1==null)Toast.makeText(News.this, R.string.nonetwork, 0).show();
 						else{
-							lvnew.setAdapter(new adapter());
+							lvnew.setAdapter(new NewsAdapter(News.this));
 							lvnew.setOnItemClickListener(new OnItemClickListener() {
 								public void onItemClick(AdapterView<?> arg0,
 										View arg1, int arg2, long arg3) {
@@ -248,12 +251,13 @@ public class News extends Activity implements OnClickListener {
 		}
 	}
 	
-	class adapter extends BaseAdapter{
-		LayoutInflater li;
-		TextView tit,time;
-		public adapter() {
-			li = LayoutInflater.from(News.this);
+	public class NewsAdapter extends BaseAdapter {
+		private LayoutInflater mInflater;
+		
+		public NewsAdapter(Context context){
+			mInflater = LayoutInflater.from(context);
 		}
+		
 		@Override
 		public int getCount() {
 			return rss1.getCount();
@@ -261,25 +265,43 @@ public class News extends Activity implements OnClickListener {
 
 		@Override
 		public Object getItem(int position) {
+			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
 		public long getItemId(int position) {
+			// TODO Auto-generated method stub
 			return 0;
 		}
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			if(convertView == null){
-				convertView = li.inflate(R.layout.newitem, null);
-			}
-			tit = (TextView)convertView.findViewById(R.id.txttitle);
-			time = (TextView)convertView.findViewById(R.id.txttime);
-			tit.setText(rss1.get(position).getTitle());
-			time.setText(rss1.get(position).getPubDate());
-			return convertView;
-		}
-		
+			ViewHolder holder;
+			  if (convertView == null) {
+			   convertView = mInflater.inflate(R.layout.itemnews, null);
+			   holder = new ViewHolder();
+			   holder.tit = (TextView)convertView.findViewById(R.id.txttitle);
+			   holder.time = (TextView)convertView.findViewById(R.id.txttime);
+			   
+			   
+			   convertView.setTag(holder);
+			  } else {
+			   holder = (ViewHolder) convertView.getTag();
+			  }
+			  if(position%2==0){
+					convertView.setBackgroundColor(Color.parseColor("#ffffff"));
+				}else{
+					convertView.setBackgroundColor(Color.parseColor("#e9efe9"));
+				}
+			  holder.tit.setText(rss1.get(position).getTitle());
+			  holder.time.setText(rss1.get(position).getPubDate());
+
+			  return convertView;
+			 }
 	}
+		static class ViewHolder {
+			TextView tit,time;
+//			LinearLayout line;
+		}
 }
