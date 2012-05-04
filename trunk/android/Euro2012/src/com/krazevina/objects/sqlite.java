@@ -117,65 +117,23 @@ public class sqlite
 			sqlitehelper.onUpgrade(mSqlDatabase, mSqlDatabase.getVersion(), DATABASE_VERSION);
 	}
 
-
-	/*SQLite Helper use to help open connection to database*/
 	private class SQLiteRssHelper extends SQLiteOpenHelper 
 	{
-//		public SQLiteRssHelper(Context context) {
-//			super(context, DATABASE_NAME, null, DATABASE_VERSION);
-//		}
-//		@Override
-//		public void onCreate(SQLiteDatabase db) 
-//		{
-//			try{
-//				db.execSQL(CREATE_TABLE_BEGINNINGSTRATEGY);
-//				db.execSQL(CREATE_TABLE_BETAHOUSES);
-//				db.execSQL(CREATE_TABLE_BETDETAIL);
-//				db.execSQL(CREATE_TABLE_EVENTS);
-//				db.execSQL(CREATE_TABLE_GROUPS);
-//				db.execSQL(CREATE_TABLE_MATCHES);
-//				db.execSQL(CREATE_TABLE_MATCHONLINE);
-//				db.execSQL(CREATE_TABLE_PLAYERS);
-//				db.execSQL(CREATE_TABLE_TEAMS);
-//			}catch(Exception e)
-//			{
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		@Override
-//		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) 
-//		{
-//			try{
-//				db.execSQL(CREATE_TABLE_BEGINNINGSTRATEGY);
-//				db.execSQL(CREATE_TABLE_BETAHOUSES);
-//				db.execSQL(CREATE_TABLE_BETDETAIL);
-//				db.execSQL(CREATE_TABLE_EVENTS);
-//				db.execSQL(CREATE_TABLE_GROUPS);
-//				db.execSQL(CREATE_TABLE_MATCHES);
-//				db.execSQL(CREATE_TABLE_MATCHONLINE);
-//				db.execSQL(CREATE_TABLE_PLAYERS);
-//				db.execSQL(CREATE_TABLE_TEAMS);
-//			}catch(Exception e)
-//			{
-//				e.printStackTrace();
-//			}
-//			db.setVersion(newVersion);
-//		}
-		
-	    private SQLiteDatabase myDataBase; 
 	    private Context myContext;
-	 
-	    /**
-	     * Constructor
-	     * Takes and keeps a reference of the passed context in order to access to the application assets and resources.
-	     * @param context
-	     */
 	    public SQLiteRssHelper(Context context) {
-	 
-	    	super(context, DATABASE_NAME, null, 1);
+	    	super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	        this.myContext = context;
-	    }	
+	    }
+	    
+	    @Override
+		public synchronized SQLiteDatabase getWritableDatabase() {
+	    	try {
+				createDataBase();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			return super.getWritableDatabase();
+		}
 	 
 	    public void createDataBase() throws IOException{
 	    	boolean dbExist = checkDataBase();
@@ -217,28 +175,9 @@ public class sqlite
 	    	myOutput.flush();
 	    	myOutput.close();
 	    	myInput.close();
-	 
 	    }
-	 
-	    public void openDataBase() throws SQLException{
-	        String myPath = DB_PATH + DATABASE_NAME;
-	    	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-	    }
-	 
-	    @Override
-		public synchronized void close() {
-			if(myDataBase != null)
-			    myDataBase.close();
-			super.close();
-		}
 		@Override
 		public void onCreate(SQLiteDatabase db) {
-			try {
-				createDataBase();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			openDataBase();
 		}
 	 
 		@Override
@@ -246,9 +185,11 @@ public class sqlite
 		}
 	}
 	
-	public void recycle()
+	public synchronized void recycle()
 	{
 		if(mSqlDatabase!=null)mSqlDatabase.close();
 		if(sqlitehelper!=null)sqlitehelper.close();
 	}
+	
+	
 }
