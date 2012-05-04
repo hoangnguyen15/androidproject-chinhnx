@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="77dip"
+    android:layout_height="70dip"
     android:orientation="horizontal"
     android:background="#fff"
     android:id="@+id/llnewsitem" >
@@ -10,17 +10,16 @@
 	    	android:orientation="vertical"
 	    	android:layout_weight="8" >
 			<TextView android:layout_width="fill_parent"
-				android:layout_height="55dip"
+				android:layout_height="50dip"
 				android:text="z"
 		    	android:gravity="center_vertical|left"
 		    	android:textColor="#333333"
 		    	android:textSize="16dip"
 		    	android:paddingLeft="10dip"
-		    	android:id="@+id/txttitle">
-			
-	    </TextView>
+		    	android:id="@+id/txttitle"
+		    	android:singleLine="true"/>
 	    	<TextView android:layout_width="fill_parent"
-				android:layout_height="22dip"
+				android:layout_height="20dip"
 		    	android:orientation="vertical"
 		    	android:text="Monday, 23rd April 2012"
 		    	android:gravity="center_vertical|right"
