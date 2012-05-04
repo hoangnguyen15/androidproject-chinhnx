@@ -138,7 +138,7 @@ public class News extends Activity implements OnClickListener {
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" +
     	"</head>" +
     		"<body>";
-    	String loading = "<img alt=\"loading\" src=\"load.gif\"/>";
+    	String loading = "<p><img alt=\"loading\" src=\"load.gif\"/></p>";
     	tail = "</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
     	img.setImageBitmap(null);
