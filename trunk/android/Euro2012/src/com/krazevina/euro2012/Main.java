@@ -1,5 +1,8 @@
 package com.krazevina.euro2012;
 
+import java.util.Vector;
+
+import com.krazevina.objects.Match;
 import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
@@ -18,6 +21,7 @@ public class Main extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
+    Vector<Match>match;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,8 @@ public class Main extends Activity implements OnClickListener {
         btnSetting.setOnClickListener(this);
         sqlite sql;
         sql = new sqlite(this);
+        
+        match = sql.getAllMatches();
         sql.recycle();
     }
     

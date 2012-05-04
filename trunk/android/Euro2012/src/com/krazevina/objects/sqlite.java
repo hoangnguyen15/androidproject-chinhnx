@@ -4,9 +4,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Vector;
 
 import android.content.Context;
-import android.database.SQLException;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -191,5 +192,32 @@ public class sqlite
 		if(sqlitehelper!=null)sqlitehelper.close();
 	}
 	
-	
+	public Vector<Match>getAllMatches(){
+		Vector<Match>ret = new Vector<Match>();
+		Cursor c = mSqlDatabase.query("Matches", new String[]{
+				"ID","GroupID","FirstTeam","SecondTeam","Stadium","Start","End",
+				"FinalScore","MainReferee","FirstPickup","SecondPickup","Status"}, null, null, null, null, null);
+		if(c==null)return ret;
+		Match m;
+		c.moveToFirst();
+		for(int i=0;i<c.getCount();i++){
+			m = new Match();
+			m.ID = c.getInt(c.getColumnIndex("ID"));
+			m.groupID = c.getInt(c.getColumnIndex("GroupID"));
+			m.team1 = c.getInt(c.getColumnIndex("FirstTeam"));
+			m.team2 = c.getInt(c.getColumnIndex("SecondTeam"));
+			m.stadium = c.getString(c.getColumnIndex("Stadium"));
+			m.start = c.getString(c.getColumnIndex("Start"));
+			m.end = c.getString(c.getColumnIndex("End"));
+			m.finalScore = c.getString(c.getColumnIndex("FinalScore"));
+			m.referee = c.getString(c.getColumnIndex("MainReferee"));
+			m.firstPick = c.getInt(c.getColumnIndex("FirstPickup"));
+			m.secPick = c.getInt(c.getColumnIndex("SecondPickup"));
+			m.status = c.getInt(c.getColumnIndex("Status"));
+			ret.add(m);
+			c.moveToNext();
+		}
+		
+		return ret;
+	}
 }
