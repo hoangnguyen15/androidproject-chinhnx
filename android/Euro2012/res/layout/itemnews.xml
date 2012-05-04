@@ -14,7 +14,7 @@
 				android:text="z"
 		    	android:gravity="center_vertical|left"
 		    	android:textColor="#333333"
-		    	android:textSize="16dip"
+		    	android:textSize="18dip"
 		    	android:paddingLeft="10dip"
 		    	android:id="@+id/txttitle"
 		    	android:singleLine="true"/>
