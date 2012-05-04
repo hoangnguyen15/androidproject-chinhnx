@@ -1,12 +1,16 @@
 package com.krazevina.euro2012;
 
 import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Locale;
 
 import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -44,6 +48,7 @@ public class News extends Activity implements OnClickListener {
     ViewFlipper vfnew;
     ListView lvnew;
     RSSFeed rss1;
+    static int lang = 0;
     Handler handler;
     ProgressDialog pr;
     
@@ -51,6 +56,8 @@ public class News extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
+        Log.e("LANG",Locale.getDefault().getDisplayLanguage());
+
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
         llbtnteams = (LinearLayout)findViewById(R.id.llbtnteams);
@@ -71,14 +78,30 @@ public class News extends Activity implements OnClickListener {
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
-        pr = ProgressDialog.show(News.this, null, getString(R.string.pleasewait));
-        
         handler = new Handler();
+        
+        if(lang==0){
+	        final CharSequence[] items = {"Tin tiếng Việt", "English news"};
+	        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	        builder.setTitle("");
+	        builder.setItems(items, new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int item) {
+	                lang = item+1;
+	                loadRss();
+	            }
+	        });
+	        AlertDialog alert = builder.create();
+	        alert.show();
+        }else loadRss();
+    }
+    
+    void loadRss(){
+    	pr = ProgressDialog.show(News.this, null, getString(R.string.pleasewait));
         new Thread(new Runnable() {
 			@Override
 			public void run() {
-		        rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
-		        
+				if(lang==1)rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
+				else rss1 = new XmlReader("http://www.teamtalk.com/rss/15274").parse();
 		        handler.post(new Runnable() {
 					public void run() {
 						pr.dismiss();
@@ -152,7 +175,6 @@ public class News extends Activity implements OnClickListener {
 	    		Uri ss = Uri.parse(url);
 	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
 	            TagNode root = cleaner.clean(u);
-//	            Log.e("URL", ""+url);
 	            TagNode div = root.findElementByAttValue("class", "story-body article", true, false);
 	            TagNode[]child = div.getElementsByName("strong", true);
 	            for(int i=0;i<child.length;i++)
@@ -162,10 +184,32 @@ public class News extends Activity implements OnClickListener {
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].addAttribute("width", "100%");
+	            	child[i].setAttribute("width", "100%");
 	            s = cleaner.getInnerHtml(div);
 	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
 	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
+	            s = URLEncoder.encode(s).replaceAll("\\+"," ");
+    		}catch (Exception e) {
+    			e.printStackTrace();
+			}
+    	}else if(url.contains("teamtalk")){
+    		try{
+	    		HtmlCleaner cleaner = new HtmlCleaner();
+	    		Uri ss = Uri.parse(url);
+	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
+	            TagNode root = cleaner.clean(u);
+	            TagNode div = root.findElementByAttValue("class", "tt-article-text", true, false);
+	            TagNode[]child = div.getElementsByName("p", true);
+	            for(int i=0;i<child.length;i++)
+	            	if(child[i].hasAttribute("class")||child[i].hasAttribute("style"))
+	            		child[i].removeFromTree();
+	            child = div.getElementsByName("img", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].setAttribute("width", "100%");
+	            s = cleaner.getInnerHtml(div);
+	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
+	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
+	            s = URLEncoder.encode(s).replaceAll("\\+"," ");
     		}catch (Exception e) {
     			e.printStackTrace();
 			}
