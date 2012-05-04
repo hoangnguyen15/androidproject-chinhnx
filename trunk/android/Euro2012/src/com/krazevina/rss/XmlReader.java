@@ -45,7 +45,7 @@ public class XmlReader extends BaseXmlParser {
 	                            } else if (name.equalsIgnoreCase(TITLE)){
 	                            	currentFeed.setTitle(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(ENCLOSURE)){
-	                            	currentFeed.setEnclosure(parser.getAttributeValue(0));
+	                            	currentFeed.setEnclosure(parser.getAttributeValue(parser.getNamespace(), "url"));
 	                            }  
 	                        }
                         	break;

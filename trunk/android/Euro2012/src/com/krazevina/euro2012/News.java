@@ -138,6 +138,7 @@ public class News extends Activity implements OnClickListener {
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" +
     	"</head>" +
     		"<body>";
+    	String loading = "<img alt=\"loading\" src=\"load.gif\"/>";
     	tail = "</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
     	img.setImageBitmap(null);
@@ -145,7 +146,7 @@ public class News extends Activity implements OnClickListener {
     	txtcon = (WebView)findViewById(R.id.txtcontent);
 //    	txtcon.set
     	tit.setText(item.getTitle());
-    	txtcon.loadData(head+" "+item.getDescription()+tail, "text/html", "UTF-8");
+    	txtcon.loadDataWithBaseURL("file:///android_asset/",head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8", null);
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
     		RSSItem ite = item;
