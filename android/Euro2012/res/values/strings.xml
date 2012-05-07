@@ -21,6 +21,9 @@
     <string name="groupb">GROUP B</string>
     <string name="groupc">GROUP C</string>
     <string name="groupd">GROUP D</string>
+    <string name="quarter">QUARTER-FINALS</string>
+    <string name="semi">SEMI-FINALS</string>
+    <string name="finals">FINAL</string>
     <string name="team">Team</string>
     <string name="pld">PLD</string>
     <string name="w">W</string>
