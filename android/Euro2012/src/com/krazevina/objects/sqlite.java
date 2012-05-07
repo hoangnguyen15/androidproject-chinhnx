@@ -221,7 +221,8 @@ public class sqlite
 			ret.add(m);
 			c.moveToNext();
 		}
-		
+		c.close();
 		return ret;
+		
 	}
 }
