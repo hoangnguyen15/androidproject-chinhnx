@@ -46,21 +46,21 @@
         	</LinearLayout>
         	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
                 android:background="#fff"
-                android:weightSum="775" android:baselineAligned="false" android:orientation="vertical">
+                android:weightSum="825" android:baselineAligned="false" android:orientation="vertical">
         	    <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
-        	        android:layout_weight="150" android:layout_margin="10dip">
+        	        android:layout_weight="200" android:layout_margin="10dip">
         	        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
         	            android:id="@+id/imgnews" android:layout_weight="1"/>
         	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
         	            android:layout_weight="2" android:orientation="vertical">
         	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
 	        	            android:textColor="#000" android:textStyle="bold"
-	        	            android:text="pafkl sdgksdg af saf khai kai fde sa" android:layout_weight="2"
+	        	            android:text="pafkl sdgksdg af saf khai kai fde sa"
 	        	            android:gravity="center_vertical" android:id="@+id/txtinfotitle"
 	        	            android:layout_marginLeft="10dip"/>
         	            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
 	        	            android:textColor="#888" android:textSize="4pt"
-	        	            android:text="Monday 5th April, 2012" android:layout_weight="2"
+	        	            android:text="Monday 5th April, 2012"
 	        	            android:id="@+id/txttime"
 	        	            android:layout_marginLeft="10dip"/>
         	        </LinearLayout>
