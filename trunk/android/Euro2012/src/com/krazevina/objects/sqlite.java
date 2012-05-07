@@ -1,5 +1,6 @@
 package com.krazevina.objects;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +12,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class sqlite 
 {
@@ -128,23 +130,20 @@ public class sqlite
 	    
 	    @Override
 		public synchronized SQLiteDatabase getWritableDatabase() {
-	    	try {
-				createDataBase();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+	    	Log.e("GET", "GET");
+			createDataBase();
 			return super.getWritableDatabase();
 		}
 	 
-	    public void createDataBase() throws IOException{
+	    public void createDataBase(){
+	    	Log.e("CREATE", "CREATE");
 	    	boolean dbExist = checkDataBase();
 	    	if(dbExist){
 	    	}else{
-	        	this.getReadableDatabase();
 	        	try {
 	    			copyDataBase();
 	    		} catch (IOException e) {
-	        		throw new Error("Error copying database");
+	    			e.printStackTrace();
 	        	}
 	    	}
 	    }
@@ -160,13 +159,18 @@ public class sqlite
 	    	if(checkDB != null){
 	    		checkDB.close();
 	    	}
+	    	Log.e("CHECK", "CHECK:"+(checkDB!=null));
 	    	return checkDB != null ? true : false;
 	    }
 	 
 	    private void copyDataBase() throws IOException{
+	    	Log.e("COPY", "COPY");
 	    	InputStream myInput = myContext.getAssets().open(DATABASE_NAME);
 	    	String outFileName = DB_PATH + DATABASE_NAME;
-	    	OutputStream myOutput = new FileOutputStream(outFileName);
+	    	File f = new File(outFileName);
+	    	f.getParentFile().mkdirs();
+	    	f.createNewFile();
+	    	OutputStream myOutput = new FileOutputStream(f);
 	 
 	    	byte[] buffer = new byte[1024];
 	    	int length;
