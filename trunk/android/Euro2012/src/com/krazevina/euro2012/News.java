@@ -69,7 +69,7 @@ public class News extends Activity implements OnClickListener {
         llbtnsched.setOnTouchListener(touch);
         llbtnteams.setOnTouchListener(touch);
         llbtnsetting.setOnTouchListener(touch);
-        
+
         btnSchedule = (Button)findViewById(R.id.btnSchedule);
         btnNews = (Button)findViewById(R.id.btnNews);
         btnTeams = (Button)findViewById(R.id.btnTeams);
@@ -136,20 +136,39 @@ public class News extends Activity implements OnClickListener {
     
     void showInfo(final RSSItem item){
     	head="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"+
-    	"<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"VN\">"+
-    	"<head>"+
-    		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />" +
-    	"</head>" +
-    		"<body>";
-    	String loading = "<p><img alt=\"loading\" src=\"load.gif\"/></p>";
+    	"<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"VN\">\n"+
+    	"<head>\n"+
+    		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
+	    	"<script type=\"text/javascript\" src=\"http://bongdaplus.vn/JScripts/jslib.axd?d=jquery-1.5.1.min.js,jquery.ui.core.js,jquery.ui.widget.js,jquery.ui.tabs.js,jquery.ui.datepicker.js,jquery.maskedinput.js,jquery.charcounter.js,vietuni.js,espebanner.js,swfobject.js,jwplayer.js,jquery.popupWindow.js,datetime.js\"></script>\n"+  
+	    	"<script type=\"text/javascript\" src=\"http://bongdaplus.vn/JScripts/jslib.axd?d=common.ui.js,jquery.cycle.all.min.js,jquery.jcarousel.min.js,jquery.scrollfollow.js\"></script> \n" +
+	    	"<script type=\"text/javascript\">\n" +
+	    	"function VideoPlaying(id, h,w,p) {\n"+
+	         "jwplayer(\"videoholder\" + id).setup({\n"+
+				   "flashplayer: \"http://bongdaplus.vn/JScripts/player.swf\",\n"+
+					"height: h,\n"+
+					"width: w,\n"+
+					"file: p,\n"+
+					"stretching: 'uniform',\n"+
+					"autostart: false,\n"+
+					"\"controlbar.position\": \"over\",\n"+
+					"skin:'http://bongdaplus.vn/JScripts/playerskin/bbd/bbd.xml'\n"+
+	         "});"+
+	         "}" +
+	    	"</script>" +
+    	"</head>\n" +
+    	"<body>";
+    	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
     	tail = "</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
     	img.setImageBitmap(null);
     	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
     	txtcon = (WebView)findViewById(R.id.txtcontent);
-//    	txtcon.set
+    	txtcon.getSettings().setJavaScriptEnabled(true);
+    	txtcon.getSettings().setPluginsEnabled(true);
+    	txtcon.getSettings().setAllowFileAccess(true);
+
     	tit.setText(item.getTitle());
-    	txtcon.loadDataWithBaseURL("file:///android_asset/",head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8", null);
+    	txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8", null);
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
     		RSSItem ite = item;
@@ -164,7 +183,6 @@ public class News extends Activity implements OnClickListener {
 				handler.post(new Runnable() {
 					public void run() {
 						txtcon.loadData(head+" "+ite.getDescription()+s+tail,"text/html","UTF-8");
-						Log.e("HTML:", head+" "+ite.getDescription()+s+tail);
 					}
 				});
 			}
@@ -192,6 +210,14 @@ public class News extends Activity implements OnClickListener {
 	            s = cleaner.getInnerHtml(div);
 	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
 	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
+	            System.out.println(s);
+	            if(s.indexOf("VideoPlaying(")>0){
+	            	int x = s.indexOf("VideoPlaying(");
+	            	int st = s.indexOf("'", x);
+	            	int en = s.indexOf("'", st+1);
+	            	String urlvideo = "http://bongdaplus.vn"+s.substring(st+1, en);
+	            	s = s+"<a href=\""+urlvideo+"\"> Video </a></br></br>";
+	            }
 	            s = URLEncoder.encode(s).replaceAll("\\+"," ");
     		}catch (Exception e) {
     			e.printStackTrace();
