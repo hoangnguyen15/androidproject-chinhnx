@@ -187,6 +187,7 @@ public class News extends Activity implements OnClickListener {
 				});
 			}
 		}).start();
+    	
     }
     
     String getAdditionInfo(String url){
