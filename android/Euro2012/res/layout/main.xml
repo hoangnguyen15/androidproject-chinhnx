@@ -84,24 +84,84 @@
             </LinearLayout>
         </LinearLayout>
         
-		<LinearLayout
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="horizontal"
-	        android:background="@drawable/bgtab">
-			<TextView android:layout_width="fill_parent"
-			    android:layout_height="fill_parent"
-			    android:textColor="#fffc00"
-			    android:text="@string/groupa"
-			    android:textSize="20dip"
-			    android:gravity="center_vertical|center_horizontal"/>
-    	</LinearLayout>
-    	
-		<LinearLayout android:layout_width="fill_parent"
-			    android:layout_height="200dip"
-			    android:background="#fff">
-
-		</LinearLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:orientation="vertical">
+        		<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+			        android:background="@drawable/bgtab">
+					<TextView android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:textColor="#fffc00"
+					    android:text="@string/groupa"
+					    android:textSize="20dip"
+					    android:gravity="center_vertical|center_horizontal"/>
+		    	</LinearLayout>
+		    	
+				<LinearLayout android:layout_width="fill_parent"
+					    android:layout_height="200dip"
+					    android:background="#fff">
+		
+				</LinearLayout>
+				<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+			        android:background="@drawable/bgtab">
+					<TextView android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:textColor="#fffc00"
+					    android:text="@string/groupa"
+					    android:textSize="20dip"
+					    android:gravity="center_vertical|center_horizontal"/>
+		    	</LinearLayout>
+		    	
+				<LinearLayout android:layout_width="fill_parent"
+					    android:layout_height="200dip"
+					    android:background="#fff">
+		
+				</LinearLayout>
+				<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+			        android:background="@drawable/bgtab">
+					<TextView android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:textColor="#fffc00"
+					    android:text="@string/groupa"
+					    android:textSize="20dip"
+					    android:gravity="center_vertical|center_horizontal"/>
+		    	</LinearLayout>
+		    	
+				<LinearLayout android:layout_width="fill_parent"
+					    android:layout_height="200dip"
+					    android:background="#fff">
+		
+				</LinearLayout>
+				<LinearLayout
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal"
+			        android:background="@drawable/bgtab">
+					<TextView android:layout_width="fill_parent"
+					    android:layout_height="fill_parent"
+					    android:textColor="#fffc00"
+					    android:text="@string/groupa"
+					    android:textSize="20dip"
+					    android:gravity="center_vertical|center_horizontal"/>
+		    	</LinearLayout>
+		    	
+				<LinearLayout android:layout_width="fill_parent"
+					    android:layout_height="200dip"
+					    android:background="#fff">
+		
+				</LinearLayout>        
+            </LinearLayout>
+        </ScrollView>
+		
     </LinearLayout>
 
     <LinearLayout
