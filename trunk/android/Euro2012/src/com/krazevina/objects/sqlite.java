@@ -225,4 +225,16 @@ public class sqlite
 		return ret;
 		
 	}
+	
+	public String searchNameTeam(int teamID){
+		String nameTeam;
+		Cursor c = mSqlDatabase.query("Teams", new String[]{
+				"BongdasoID","Name"}, "BongdasoId="+teamID, null, null, null, null);
+		if(c==null)return null;
+
+		c.moveToFirst();
+		nameTeam = c.getString(1);
+		c.close();
+		return nameTeam;
+	}
 }
