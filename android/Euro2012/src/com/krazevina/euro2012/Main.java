@@ -33,6 +33,7 @@ public class Main extends Activity implements OnClickListener {
     Vector<Match> match;
     LinearLayout llgroupa,llgroupb,llgroupc,llgroupd,llquarter,llsemi,llfinal;
     int i ;
+    sqlite sql;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,61 +65,69 @@ public class Main extends Activity implements OnClickListener {
         btnNews.setOnClickListener(this);
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
-        sqlite sql;
         sql = new sqlite(this);
         
         match = sql.getAllMatches();
-        sql.recycle();
-        
-        for(int i =0;i<match.size();i++){
-        	Log.d("match.groupid",""+match.elementAt(i).groupID);
-        }
         
 		LinearLayout ll;
 		LayoutInflater mInflater = LayoutInflater.from(this);
 		TextView txtsday,txtstime,txtsteam1,txtsteam2,txtsratio;
 		ImageView imgsflag1,imgsflag2;
-
-//		   convertView = mInflater.inflate(R.layout.itemschedule, null);
 		
 		int j = 0;
-		   for(i = 0;i<match.size();i++){
-			   if(match.elementAt(i).groupID == 1){
-				   
-				   ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
-				   ll.setOrientation(LinearLayout.HORIZONTAL);
+		for(i = 0;i<match.size();i++){
+			ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
+			ll.setOrientation(LinearLayout.HORIZONTAL);
 
-				   txtsday = (TextView)ll.findViewById(R.id.txtsday);
-				   txtstime = (TextView)ll.findViewById(R.id.txtstime);
-				   txtsteam1 = (TextView)ll.findViewById(R.id.txtsteam1);
-				   txtsteam2 = (TextView)ll.findViewById(R.id.txtsteam2);
-				   txtsratio = (TextView)ll.findViewById(R.id.txtsratio);
-				   imgsflag1 = (ImageView)ll.findViewById(R.id.imgsflag1);
-				   imgsflag2 = (ImageView)ll.findViewById(R.id.imgsflag2);
-					
-				   txtsday.setText(match.elementAt(i).start);
-				   txtsteam1.setOnClickListener(new OnClickListener() {
-					int ind = i;
-					@Override
-					public void onClick(View v) {
-						Intent i  = new Intent();
-						i.putExtra("idTeam", match.elementAt(ind).team1);
-						startActivity(new Intent(Main.this,Teams.class));
-						
-						}
-				   });
-				   
-				   llgroupa.addView(ll);
-				   j++;
-				   if(j%2==0){
-					   ll.setBackgroundColor(Color.parseColor("#ffffff"));
-				   }else{
-					   ll.setBackgroundColor(Color.parseColor("#e9efe9"));
-				   }
-			   }
-		   }
-
-
+			txtsday = (TextView)ll.findViewById(R.id.txtsday);
+			txtstime = (TextView)ll.findViewById(R.id.txtstime);
+			txtsteam1 = (TextView)ll.findViewById(R.id.txtsteam1);
+			txtsteam2 = (TextView)ll.findViewById(R.id.txtsteam2);
+			txtsratio = (TextView)ll.findViewById(R.id.txtsratio);
+			imgsflag1 = (ImageView)ll.findViewById(R.id.imgsflag1);
+			imgsflag2 = (ImageView)ll.findViewById(R.id.imgsflag2);
+			String timefull = match.elementAt(i).start;
+			String time[] = timefull.split(" ");
+			txtsday.setText(time[0].split("-")[2]+"/"+time[0].split("-")[1]);
+			txtstime.setText(time[1].split(":")[0]+":"+time[1].split(":")[1]);
+			int teamID1 = match.elementAt(i).team1;
+			int teamID2 = match.elementAt(i).team2;
+			imgsflag1.setImageResource(searchFlag(teamID1));
+			imgsflag2.setImageResource(searchFlag(teamID2));
+			txtsteam1.setText(sql.searchNameTeam(teamID1));
+			txtsteam2.setText(sql.searchNameTeam(teamID2));
+			txtsteam1.setOnClickListener(new OnClickListener() {
+				int ind = i;
+				@Override
+				public void onClick(View v) {
+					Intent i  = new Intent();
+					i.putExtra("idTeam", match.elementAt(ind).team1);
+					startActivity(new Intent(Main.this,Teams.class));
+				}
+			});
+			j++;
+			if(j%2==0){
+				ll.setBackgroundColor(Color.parseColor("#ffffff"));
+			}else{
+				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
+			}
+			
+			if(match.elementAt(i).groupID == 1){
+			   llgroupa.addView(ll);
+			}else if(match.elementAt(i).groupID ==2){
+				llgroupb.addView(ll);
+			}else if(match.elementAt(i).groupID ==3){
+				llgroupc.addView(ll);
+			}else if(match.elementAt(i).groupID ==4){
+				llgroupd.addView(ll);
+			}else if(match.elementAt(i).groupID ==5){
+				llquarter.addView(ll);
+			}else if(match.elementAt(i).groupID ==6){
+				llsemi.addView(ll);
+			}else if(match.elementAt(i).groupID ==7){
+				llfinal.addView(ll);
+			}
+		}
     }
     
     OnTouchListener touch = new OnTouchListener() {
@@ -151,6 +160,55 @@ public class Main extends Activity implements OnClickListener {
 			finish();
 		}
 		
+	}
+	
+	
+	public int searchFlag(int teamID){
+		switch (teamID) {
+		case 157:
+			return R.drawable.pol;
+		case 155:
+			return R.drawable.ger;
+		case 171:
+			return R.drawable.ita;
+		case 159:
+			return R.drawable.eng;
+		case 10144:
+			return R.drawable.gre;
+		case 10145:
+			return R.drawable.rus;
+		case 175:
+			return R.drawable.cze;
+		case 166:
+			return R.drawable.ned;
+		case 10141:
+			return R.drawable.den;
+		case 168:
+			return R.drawable.por;
+		case 185:
+			return R.drawable.esp;
+		case 10148:
+			return R.drawable.irl;
+		case 179:
+			return R.drawable.cro;
+		case 182:
+			return R.drawable.fra;
+		case 186:
+			return R.drawable.ukr;
+		case 162:
+			return R.drawable.swe;
+		default:
+			break;
+		}
+		
+		return 0;
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		sql.recycle();
 	}
 	
 }
