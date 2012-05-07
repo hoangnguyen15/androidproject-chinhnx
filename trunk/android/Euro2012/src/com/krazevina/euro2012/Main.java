@@ -96,6 +96,12 @@ public class Main extends Activity implements OnClickListener {
 			imgsflag2.setImageResource(searchFlag(teamID2));
 			txtsteam1.setText(sql.searchNameTeam(teamID1));
 			txtsteam2.setText(sql.searchNameTeam(teamID2));
+			String ratio = match.elementAt(i).finalScore;
+			if(ratio!=null){
+				txtsratio.setText(ratio);
+			}else{
+				txtsratio.setText("?-?");
+			}
 			txtsteam1.setOnClickListener(new OnClickListener() {
 				int ind = i;
 				@Override
