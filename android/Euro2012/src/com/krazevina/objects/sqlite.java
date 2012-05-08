@@ -230,7 +230,7 @@ public class sqlite
 		Cursor c = mSqlDatabase.query("Teams", new String[]{
 				"ID","BongdasoID","Name","Flag","Uniform1","Uniform2","EstablishedYear",
 				"FifaJoinedYear","FifaRanking","Coach","Desc","AttendTimes",
-				"status","NameEng","NameKor"}, "BongdasoId="+teamID, null, null, null, null);
+				"status","NameEng","NameKor","descEng","descKor"}, "BongdasoId="+teamID, null, null, null, null);
 		if(c==null)return t;
 		c.moveToFirst();
 		t = new Team();
