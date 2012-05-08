@@ -108,7 +108,7 @@ public class Main extends Activity implements OnClickListener {
 				public void onClick(View v) {
 					Intent i  = new Intent();
 					i.putExtra("idTeam", match.elementAt(ind).team1);
-					startActivity(new Intent(Main.this,Teams.class));
+					startActivity(new Intent(Main.this,TeamDetails.class));
 				}
 			});
 			j++;
