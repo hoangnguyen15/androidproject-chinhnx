@@ -1,6 +1,6 @@
 package com.krazevina.objects;
 
-public class Players {
+public class Player {
 	public String name;
 	public String imageUrl;
 	public String dob,height,weight,club,pos,number,tip;
