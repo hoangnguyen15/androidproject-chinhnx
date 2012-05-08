@@ -75,6 +75,7 @@ public class Main extends Activity implements OnClickListener {
 		LayoutInflater mInflater = LayoutInflater.from(this);
 		TextView txtsday,txtstime,txtsteam1,txtsteam2,txtsratio;
 		ImageView imgsflag1,imgsflag2;
+		LinearLayout llmatchdetail;
 		
 		int j = 0;
 		for(i = 0;i<match.size();i++){
@@ -88,6 +89,7 @@ public class Main extends Activity implements OnClickListener {
 			txtsratio = (TextView)ll.findViewById(R.id.txtsratio);
 			imgsflag1 = (ImageView)ll.findViewById(R.id.imgsflag1);
 			imgsflag2 = (ImageView)ll.findViewById(R.id.imgsflag2);
+			llmatchdetail = (LinearLayout)ll.findViewById(R.id.llmatchdetail);
 			String timefull = match.elementAt(i).start;
 			String time[] = timefull.split(" ");
 			txtsday.setText(time[0].split("-")[2]+"/"+time[0].split("-")[1]);
@@ -122,6 +124,18 @@ public class Main extends Activity implements OnClickListener {
 					startActivity(i);
 				}
 			});
+			
+			llmatchdetail.setOnClickListener(new OnClickListener() {
+				int ind = i;
+				@Override
+				public void onClick(View v) {
+					Intent i  = new Intent(Main.this,MatchDetail.class);
+					i.putExtra("idTeam1", match.elementAt(ind).team1);
+					i.putExtra("idTeam2", match.elementAt(ind).team2);
+					startActivity(i);
+				}
+			});
+			
 			j++;
 			if(j%2==0){
 				ll.setBackgroundColor(Color.parseColor("#ffffff"));
