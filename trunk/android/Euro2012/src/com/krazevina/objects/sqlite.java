@@ -254,6 +254,30 @@ public class sqlite
 	
 	public Vector<Player> getTeamPlayers(int teamID){
 		Vector<Player>t = new Vector<Player>();
+		Cursor c = mSqlDatabase.query("Players", new String[]{
+				"TeamID","Name","Image","DOB","Height","Weight",
+				"Club","Position","Number","Score","Status","PlayerTip"}, "TeamID="+teamID, null, null, null, null);
+		if(c==null)return t;
+		Player m;
+		c.moveToFirst();
+		for(int i=0;i<c.getCount();i++){
+			m = new Player();
+			m.teamID = teamID;
+			m.name = c.getString(c.getColumnIndex("Name"));
+			m.imageUrl = c.getString(c.getColumnIndex("Image"));
+			m.dob = c.getString(c.getColumnIndex("DOB"));
+			m.height = c.getString(c.getColumnIndex("Height"));
+			m.weight = c.getString(c.getColumnIndex("Weight"));
+			m.club = c.getString(c.getColumnIndex("Club"));
+			m.pos = c.getString(c.getColumnIndex("Position"));
+			m.number = c.getString(c.getColumnIndex("Number"));
+			m.score = c.getInt(c.getColumnIndex("Score"));
+			m.status = c.getInt(c.getColumnIndex("Status"));
+			m.tip = c.getString(c.getColumnIndex("PlayerTip"));
+			t.add(m);
+			c.moveToNext();
+		}
+		c.close();
 		return t;
 	}
 	
