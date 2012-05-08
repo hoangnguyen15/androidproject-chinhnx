@@ -223,8 +223,35 @@ public class sqlite
 		}
 		c.close();
 		return ret;
-		
 	}
+	
+	public Team getTeam(int teamID){
+		Team t = null;
+		Cursor c = mSqlDatabase.query("Teams", new String[]{
+				"ID","BongdasoID","Name","Flag","Uniform1","Uniform2","EstablishedYear",
+				"FifaJoinedYear","FifaRanking","Coach","Desc","AttendTimes",
+				"status","NameEng","NameKor"}, "BongdasoId="+teamID, null, null, null, null);
+		if(c==null)return t;
+		c.moveToFirst();
+		t = new Team();
+		t.ID = c.getInt(c.getColumnIndex("BongdasoID"));
+		t.name = c.getString(c.getColumnIndex("Name"));
+		t.flag = c.getString(c.getColumnIndex("Flag"));
+		t.uniform1 = c.getString(c.getColumnIndex("Uniform1"));
+		t.uniform2 = c.getString(c.getColumnIndex("Uniform2"));
+		t.establish = c.getInt(c.getColumnIndex("EstablishedYear"));
+		t.fifaJoin = c.getInt(c.getColumnIndex("FifaJoinedYear"));
+		t.fifaRank = c.getInt(c.getColumnIndex("FifaRanking"));
+		t.coach = c.getString(c.getColumnIndex("Coach"));
+		t.desc = c.getString(c.getColumnIndex("Desc"));
+		t.attendTimes = c.getString(c.getColumnIndex("AttendTimes"));
+		t.status = c.getInt(c.getColumnIndex("status"));
+		t.nameEng = c.getString(c.getColumnIndex("NameEng"));
+		t.nameKor = c.getString(c.getColumnIndex("NameKor"));
+		c.close();
+		return t;
+	}
+	
 	
 	public String searchNameTeam(int teamID){
 		String nameTeam;

@@ -10,11 +10,15 @@ import android.view.View.OnTouchListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.krazevina.objects.Team;
+
 
 public class Teams extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
+    
+    Team t;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,8 @@ public class Teams extends Activity implements OnClickListener {
         btnNews.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
+        
+        int teamId = getIntent().getIntExtra("idTeam", 155);
     }
     
 
