@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="40dip" android:background="#9eb399"
-    >
-    <TextView android:layout_width="0dip" android:layout_height="fill_parent"
-        android:layout_weight="1" android:gravity="center"
-        android:id="@+id/no" android:textColor="#000"
-        android:layout_marginRight="1px" android:background="#fff"
-        />
-	<TextView android:layout_width="0dip" android:layout_height="fill_parent"
-        android:layout_weight="2" android:gravity="center_vertical"
-        android:id="@+id/name" android:textColor="#000" android:paddingLeft="3dip"
-        android:layout_marginRight="1px" android:background="#fff"/>
-	<TextView android:layout_width="0dip" android:layout_height="fill_parent"
-        android:layout_weight="1" android:gravity="center"
-        android:id="@+id/pos" android:textColor="#000"
-        android:background="#fff"/>
+    android:layout_width="fill_parent"
+    android:layout_height="37dip"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/no"
+        android:layout_width="0dip"
+        android:layout_height="37dip"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/tno"
+        android:textColor="#333" />
+
+    <LinearLayout
+        android:layout_width="1px"
+        android:layout_height="37dip"
+        android:background="#9eb399" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dip"
+        android:layout_height="37dip"
+        android:layout_weight="2"
+        android:gravity="center_vertical|left"
+        android:text="@string/name"
+        android:textColor="#333"
+        android:paddingLeft="10dip" />
+
+    <LinearLayout
+        android:layout_width="1px"
+        android:layout_height="37dip"
+        android:background="#9eb399" />
+
+    <TextView
+        android:id="@+id/pos"
+        android:layout_width="0dip"
+        android:layout_height="37dip"
+        android:layout_weight="1"
+        android:gravity="center_vertical|left"
+        android:text="@string/position"
+        android:textColor="#333"
+        android:paddingLeft="10dip" />
+
 </LinearLayout>
