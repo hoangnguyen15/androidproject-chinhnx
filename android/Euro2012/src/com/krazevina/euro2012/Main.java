@@ -106,9 +106,18 @@ public class Main extends Activity implements OnClickListener {
 				int ind = i;
 				@Override
 				public void onClick(View v) {
-					Intent i  = new Intent();
+					Intent i  = new Intent(Main.this,TeamDetails.class);
 					i.putExtra("idTeam", match.elementAt(ind).team1);
-					startActivity(new Intent(Main.this,TeamDetails.class));
+					startActivity(i);
+				}
+			});
+			txtsteam2.setOnClickListener(new OnClickListener() {
+				int ind = i;
+				@Override
+				public void onClick(View v) {
+					Intent i  = new Intent(Main.this,TeamDetails.class);
+					i.putExtra("idTeam", match.elementAt(ind).team2);
+					startActivity(i);
 				}
 			});
 			j++;

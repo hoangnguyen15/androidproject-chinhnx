@@ -7,6 +7,7 @@ import com.krazevina.objects.Team;
 import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class TeamDetails extends Activity{
 		
 		sqlite sql = new sqlite(this);
 	    int teamId = getIntent().getIntExtra("idTeam", 155);
+	    Log.e("ID", ""+teamId);
 	    t = sql.getTeam(teamId);
 	    players = sql.getTeamPlayers(teamId);
 	    sql.recycle();
