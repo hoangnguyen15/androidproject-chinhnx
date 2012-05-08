@@ -88,6 +88,7 @@
         android:background="#9fb39a">
 	</LinearLayout>
 	<LinearLayout
+	    android:id="@+id/llmatchdetail"
         android:layout_width="0dip"
         android:layout_height="fill_parent"
         android:layout_weight="1"
