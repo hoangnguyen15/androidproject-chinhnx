@@ -13,11 +13,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class TeamDetails extends Activity{
+public class TeamDetails extends Activity implements OnClickListener{
 	Team t;
 	Vector<Player>players;
 	TextView txtteam,txtdesc;
@@ -28,7 +30,7 @@ public class TeamDetails extends Activity{
 			{"tiền vệ","Midfielder","미드필더"},
 			{"tiền đạo","Striker","수비수"},
 	};
-	
+	Button btnBack;
 	protected void onCreate(android.os.Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.teamdetail);
@@ -43,6 +45,8 @@ public class TeamDetails extends Activity{
 	    txtteam = (TextView)findViewById(R.id.txtteam);
 	    txtdesc = (TextView)findViewById(R.id.txtdesc);
 	    lv = (ListView)findViewById(R.id.lvplayers);
+	    btnBack = (Button)findViewById(R.id.btnBack);
+	    btnBack.setOnClickListener(this);
 	    if(Global.lang.equals("EN"))txtteam.setText(t.nameEng);
 	    else if(Global.lang.equals("KO"))txtteam.setText(t.nameKor);
 	    else txtteam.setText(t.name);
@@ -105,5 +109,12 @@ public class TeamDetails extends Activity{
 					return pos[i][2];
 			}
 		return "";
+	}
+	@Override
+	public void onClick(View v) {
+		if(v.getId() == btnBack.getId()){
+			finish();
+		}
+		
 	}
 }
