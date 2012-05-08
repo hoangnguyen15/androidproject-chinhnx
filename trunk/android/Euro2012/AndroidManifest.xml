@@ -23,6 +23,7 @@
         <activity android:name=".News"/>
         <activity android:name=".Teams"/>
         <activity android:name=".Setting"/>
+        <activity android:name=".TeamDetails"/>
     </application>
 
 </manifest>
