@@ -130,13 +130,11 @@ public class sqlite
 	    
 	    @Override
 		public synchronized SQLiteDatabase getWritableDatabase() {
-	    	Log.e("GET", "GET");
 			createDataBase();
 			return super.getWritableDatabase();
 		}
 	 
 	    public void createDataBase(){
-	    	Log.e("CREATE", "CREATE");
 	    	boolean dbExist = checkDataBase();
 	    	if(dbExist){
 	    	}else{
@@ -159,12 +157,10 @@ public class sqlite
 	    	if(checkDB != null){
 	    		checkDB.close();
 	    	}
-	    	Log.e("CHECK", "CHECK:"+(checkDB!=null));
 	    	return checkDB != null ? true : false;
 	    }
 	 
 	    private void copyDataBase() throws IOException{
-	    	Log.e("COPY", "COPY");
 	    	InputStream myInput = myContext.getAssets().open(DATABASE_NAME);
 	    	String outFileName = DB_PATH + DATABASE_NAME;
 	    	File f = new File(outFileName);
@@ -248,7 +244,7 @@ public class sqlite
 		t.status = c.getInt(c.getColumnIndex("status"));
 		t.nameEng = c.getString(c.getColumnIndex("NameEng"));
 		t.nameKor = c.getString(c.getColumnIndex("NameKor"));
-		t.descEng = c.getString(c.getColumnIndex("descKor"));
+		t.descEng = c.getString(c.getColumnIndex("descEng"));
 		t.descKor = c.getString(c.getColumnIndex("descKor"));
 		c.close();
 		return t;

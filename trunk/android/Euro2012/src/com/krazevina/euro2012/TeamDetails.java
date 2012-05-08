@@ -51,7 +51,10 @@ public class TeamDetails extends Activity implements OnClickListener{
 	    if(Global.lang.equals("EN"))txtteam.setText(t.nameEng);
 	    else if(Global.lang.equals("KO"))txtteam.setText(t.nameKor);
 	    else txtteam.setText(t.name);
-	    txtdesc.setText(t.desc);
+	    
+	    if(Global.lang.equals("EN"))txtdesc.setText(t.descEng);
+	    else if(Global.lang.equals("KO"))txtdesc.setText(t.descKor);
+	    else txtdesc.setText(t.desc);
 	    
 	    LayoutInflater li = LayoutInflater.from(TeamDetails.this);;
 		TextView no,name,pos;
