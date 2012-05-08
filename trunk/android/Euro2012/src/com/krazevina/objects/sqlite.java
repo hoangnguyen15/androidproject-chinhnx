@@ -252,6 +252,10 @@ public class sqlite
 		return t;
 	}
 	
+	public Vector<Player> getTeamPlayers(int teamID){
+		Vector<Player>t = new Vector<Player>();
+		return t;
+	}
 	
 	public String searchNameTeam(int teamID){
 		String nameTeam;
