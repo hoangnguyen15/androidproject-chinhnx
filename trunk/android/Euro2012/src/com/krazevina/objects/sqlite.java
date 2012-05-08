@@ -247,7 +247,9 @@ public class sqlite
 		t.attendTimes = c.getString(c.getColumnIndex("AttendTimes"));
 		t.status = c.getInt(c.getColumnIndex("status"));
 		t.nameEng = c.getString(c.getColumnIndex("NameEng"));
-		t.nameKor = c.getString(14 );
+		t.nameKor = c.getString(c.getColumnIndex("NameKor"));
+		t.descEng = c.getString(c.getColumnIndex("descKor"));
+		t.descKor = c.getString(c.getColumnIndex("descKor"));
 		c.close();
 		return t;
 	}
