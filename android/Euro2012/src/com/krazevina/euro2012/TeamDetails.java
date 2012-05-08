@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,7 +24,7 @@ public class TeamDetails extends Activity implements OnClickListener{
 	Team t;
 	Vector<Player>players;
 	TextView txtteam,txtdesc;
-	ListView lv;
+	LinearLayout lv;
 	String pos[][]= new String[][]{
 			{"hậu vệ","Defender","옹호자"},
 			{"thủ môn","Goalkeeper", "골키퍼"},
@@ -44,43 +45,20 @@ public class TeamDetails extends Activity implements OnClickListener{
 	    
 	    txtteam = (TextView)findViewById(R.id.txtteam);
 	    txtdesc = (TextView)findViewById(R.id.txtdesc);
-	    lv = (ListView)findViewById(R.id.lvplayers);
+	    lv = (LinearLayout)findViewById(R.id.lvplayers);
 	    btnBack = (Button)findViewById(R.id.btnBack);
 	    btnBack.setOnClickListener(this);
 	    if(Global.lang.equals("EN"))txtteam.setText(t.nameEng);
 	    else if(Global.lang.equals("KO"))txtteam.setText(t.nameKor);
 	    else txtteam.setText(t.name);
 	    txtdesc.setText(t.desc);
-	    lv.setAdapter(new adapter());
-	};
-	
-	class adapter extends BaseAdapter{
-		LayoutInflater li;
+	    
+	    LayoutInflater li = LayoutInflater.from(TeamDetails.this);;
 		TextView no,name,pos;
-		public adapter() {
-			li = LayoutInflater.from(TeamDetails.this);
-		}
-		@Override
-		public int getCount() {
-			return players.size();
-		}
-
-		@Override
-		public Object getItem(int position) {
-			return null;
-		}
-
-		@Override
-		public long getItemId(int position) {
-			return 0;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			if(convertView==null){
-				convertView = li.inflate(R.layout.itemteamplayers, null);
-			}
-			if(position%2==0){
+		View convertView;
+		for(int i=0;i<players.size();i++){
+			convertView = li.inflate(R.layout.itemteamplayers, null);
+			if(i%2==0){
 				convertView.setBackgroundColor(Color.parseColor("#ffffff"));
 			}else{
 				convertView.setBackgroundColor(Color.parseColor("#e9efe9"));
@@ -89,13 +67,13 @@ public class TeamDetails extends Activity implements OnClickListener{
 			name = (TextView)convertView.findViewById(R.id.name);
 			pos = (TextView)convertView.findViewById(R.id.pos);
 			
-			no.setText(""+(players.get(position).number!=null?players.get(position).number:""));
-			name.setText(players.get(position).name);
-			
-			pos.setText(pos(players.get(position).pos));
-			return convertView;
+			no.setText(""+(players.get(i).number!=null?players.get(i).number:""));
+			name.setText(players.get(i).name);
+			pos.setText(pos(players.get(i).pos));
+			lv.addView(convertView);
 		}
-	}
+	};
+	
 	String pos(String posi){
 		if(Global.lang.equals("VI"))return posi;
 		if(Global.lang.equals("EN"))
@@ -115,6 +93,5 @@ public class TeamDetails extends Activity implements OnClickListener{
 		if(v.getId() == btnBack.getId()){
 			finish();
 		}
-		
 	}
 }
