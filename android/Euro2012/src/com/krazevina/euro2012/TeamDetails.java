@@ -8,6 +8,7 @@ import com.krazevina.objects.Team;
 import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -74,6 +75,11 @@ public class TeamDetails extends Activity{
 		public View getView(int position, View convertView, ViewGroup parent) {
 			if(convertView==null){
 				convertView = li.inflate(R.layout.itemteamplayers, null);
+			}
+			if(position%2==0){
+				convertView.setBackgroundColor(Color.parseColor("#ffffff"));
+			}else{
+				convertView.setBackgroundColor(Color.parseColor("#e9efe9"));
 			}
 			no = (TextView)convertView.findViewById(R.id.no);
 			name = (TextView)convertView.findViewById(R.id.name);
