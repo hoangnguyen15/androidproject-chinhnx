@@ -7,25 +7,28 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dip"
         android:background="@drawable/bgtop"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/btnBack" android:layout_marginTop="3dip"
+            android:layout_width="0dip" android:layout_height="fill_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_weight="1"
             android:background="@drawable/btnback" />
 
         <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-64dip"
-            android:gravity="center_horizontal"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="@string/teamdetail"
-            android:textColor="#fff"
-            android:textSize="28dip" />
+            android:textColor="#fff" android:textStyle="bold"
+            android:textSize="20dip"/>
+        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+            android:layout_weight="1"/>
     </LinearLayout>
 	<LinearLayout
         android:layout_width="fill_parent"
@@ -41,7 +44,7 @@
 	        >
 		<TextView android:layout_width="fill_parent"
 	            android:layout_height="40dip"
-	            android:text="England"
+	            android:id="@+id/txtteam"
 	            android:textSize="22dip"
 	            android:textColor="#333"
 	            android:gravity="center_vertical|center_horizontal"/>			        
@@ -59,7 +62,7 @@
 	        <TextView android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/testdes"
-	            android:textColor="#333"
+	            android:textColor="#333" android:id="@+id/txtdesc"
 	            android:padding="10dip"
 	            android:textSize="12dip"/>
 	        <TextView android:layout_width="fill_parent"
@@ -100,7 +103,7 @@
 	    	        android:layout_height="fill_parent"
 	    	        android:text="@string/position"
 	    	        android:textColor="#333"
-	    	        android:layout_weight="2"
+	    	        android:layout_weight="1"
 	    	        android:gravity="center_vertical|center_horizontal"/>
 	    	</LinearLayout>
 	    	<LinearLayout
@@ -114,7 +117,9 @@
 	        android:layout_height="fill_parent"
 	        android:gravity="center_horizontal"
 	        android:orientation="vertical">
-			        
+			<ListView android:layout_width="fill_parent" android:layout_height="fill_parent"
+			    android:fadingEdge="none" android:id="@+id/lvplayers"
+			    android:layout_marginBottom="5dip"/>
 		</LinearLayout>      
 	</LinearLayout>
 </LinearLayout>
