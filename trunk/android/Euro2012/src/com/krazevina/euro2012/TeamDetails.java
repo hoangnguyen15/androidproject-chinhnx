@@ -9,21 +9,18 @@ import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 public class TeamDetails extends Activity implements OnClickListener{
 	Team t;
 	Vector<Player>players;
-	TextView txtteam,txtdesc;
+	TextView txtteam,txtdesc,txtest,txtfifajoin,txtfifarank,txtattend,txtcoach;
+	
 	LinearLayout lv;
 	String pos[][]= new String[][]{
 			{"hậu vệ","Defender","옹호자"},
@@ -38,24 +35,40 @@ public class TeamDetails extends Activity implements OnClickListener{
 		
 		sqlite sql = new sqlite(this);
 	    int teamId = getIntent().getIntExtra("idTeam", 155);
-	    Log.e("ID", ""+teamId);
 	    t = sql.getTeam(teamId);
 	    players = sql.getTeamPlayers(teamId);
 	    sql.recycle();
 	    
 	    txtteam = (TextView)findViewById(R.id.txtteam);
 	    txtdesc = (TextView)findViewById(R.id.txtdesc);
+	    txtest = (TextView)findViewById(R.id.txtestyear);
+	    txtfifajoin = (TextView)findViewById(R.id.txtfifajoin);
+	    txtfifarank = (TextView)findViewById(R.id.txtfifarank);
+	    txtattend = (TextView)findViewById(R.id.txtattend);
+	    txtcoach = (TextView)findViewById(R.id.txtcoach);
+	    
 	    lv = (LinearLayout)findViewById(R.id.lvplayers);
 	    btnBack = (Button)findViewById(R.id.btnBack);
 	    btnBack.setOnClickListener(this);
-	    if(Global.lang.equals("EN"))txtteam.setText(t.nameEng);
-	    else if(Global.lang.equals("KO"))txtteam.setText(t.nameKor);
-	    else txtteam.setText(t.name);
 	    
-	    if(Global.lang.equals("EN"))txtdesc.setText(t.descEng);
-	    else if(Global.lang.equals("KO"))txtdesc.setText(t.descKor);
-	    else txtdesc.setText(t.desc);
-	    
+	    if(Global.lang.equals("EN")){
+	    	txtteam.setText(t.nameEng);
+	    	txtdesc.setText(t.descEng);
+	    }
+	    else if(Global.lang.equals("KO")){
+	    	txtteam.setText(t.nameKor);
+	    	txtdesc.setText(t.descKor);
+	    }
+	    else{
+	    	txtteam.setText(t.name);
+	    	txtdesc.setText(t.desc);
+	    }
+	    txtest.setText(getString(R.string.estimate)+":\t"+t.establish);
+    	txtfifajoin.setText(getString(R.string.fifajoin)+":\t"+t.fifaJoin);
+    	txtfifarank.setText(getString(R.string.fifarank)+":\t"+t.fifaRank);
+    	txtcoach.setText(getString(R.string.coach)+":\t"+t.coach);
+    	txtattend.setText(getString(R.string.attend)+":\t"+t.attendTimes);
+
 	    LayoutInflater li = LayoutInflater.from(TeamDetails.this);;
 		TextView no,name,pos;
 		View convertView;
