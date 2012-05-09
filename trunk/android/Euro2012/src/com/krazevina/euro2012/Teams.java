@@ -28,7 +28,7 @@ public class Teams extends Activity implements OnClickListener {
     Vector<Team>teams,ta,tb,tc,td;
     
     int viewCount = 0;
-        
+    sqlite sql;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,13 +56,18 @@ public class Teams extends Activity implements OnClickListener {
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
         
-        sqlite sql = new sqlite(this);
+        sql = new sqlite(this);
         teams = sql.getAllTeams();
         sort();
         viewCount=0;addView(ta, lla);
         viewCount=0;addView(tb, llb);
         viewCount=0;addView(tc, llc);
         viewCount=0;addView(td, lld);
+    }
+    @Override
+    protected void onDestroy() {
+    	super.onDestroy();
+    	sql.recycle();
     }
     
     void sort(){
