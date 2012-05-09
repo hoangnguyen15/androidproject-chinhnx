@@ -69,7 +69,7 @@
                         android:textColor="#333" />
 
                     <Button
-                        android:id="@+id/btnOnOff1"
+                        android:id="@+id/btnNotify"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-75dip"
@@ -96,7 +96,7 @@
                         android:textColor="#333" />
 
                     <Button
-                        android:id="@+id/btnOnOff2"
+                        android:id="@+id/btnVibrate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-75dip"
