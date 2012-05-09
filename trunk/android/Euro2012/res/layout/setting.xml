@@ -1,111 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/bg"
-    android:orientation="vertical">
-    
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="44dip"
-        android:background="@drawable/bgtop">
-        <TextView android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="@string/setting"
-            android:textColor="#fff"
-            android:textSize="28dip"/>
-    </LinearLayout>
-    
-	<LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-    </LinearLayout>
+        android:layout_height="fill_parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="44dip"
-        android:layout_marginTop="-44dip"
-        android:background="@drawable/bgbottom"
-        android:gravity="center_vertical|center_horizontal"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="44dip"
+            android:background="@drawable/bgtop" >
 
-        <LinearLayout android:id="@+id/llbtnsched"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/btnSchedule"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btnschedule" />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/schedule"
-                android:textSize="8dip"/>
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/llbtnnews"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/btnNews"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btnnews" />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/news"
-                android:textSize="8dip"/>
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/llbtnteams"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/btnTeams"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btnteams" />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/teams"
-                android:textSize="8dip"/>
-        </LinearLayout>
-
-        <LinearLayout android:id="@+id/llbtnsetting"
-            android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/btnSetting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/settingactive" />
-            <TextView 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical|center_horizontal"
                 android:text="@string/setting"
-                android:textSize="8dip"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:textSize="28dip" />
+        </LinearLayout>
+<ScrollView 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="44dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:paddingTop="10dip" >
+
+            <!-- Layout Phan hoi -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="@drawable/settinghead"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="5dip"
+                    android:text="@string/settingreply" >
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="#fff"
+                    android:orientation="horizontal"
+                    android:textColor="#333" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/warnewsmsg"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-75dip"
+                        android:background="@drawable/btnon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bgwhitebottom"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/vibrate"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-75dip"
+                        android:background="@drawable/btnoff" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Layout Ngon ngu -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="@drawable/settinghead"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="5dip"
+                    android:text="@string/settinglanguage" >
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="#fff"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/english"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-40dip"
+                        android:background="@drawable/radon" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="#fff"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/korean"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-40dip"
+                        android:background="@drawable/radoff" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bgwhitebottom"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/vietnam"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-40dip"
+                        android:background="@drawable/radoff" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Layout Lien he -->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="@drawable/settinghead"
+                    android:gravity="center_vertical|left"
+                    android:paddingLeft="5dip"
+                    android:text="@string/contact" >
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="38dip"
+                    android:background="#fff"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/aboutus"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-40dip"
+                        android:background="@drawable/btngo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#9eb399" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bgwhitebottom"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|left"
+                        android:paddingLeft="5dip"
+                        android:text="@string/feedback"
+                        android:textColor="#333" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="-40dip"
+                        android:background="@drawable/btngo" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+</ScrollView>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="44dip"
+            android:layout_marginTop="-44dip"
+            android:background="@drawable/bgbottom"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:id="@+id/llbtnsched"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSchedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnschedule" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule"
+                    android:textSize="8dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llbtnnews"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnNews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnnews" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/news"
+                    android:textSize="8dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llbtnteams"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnTeams"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btnteams" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/teams"
+                    android:textSize="8dip" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llbtnsetting"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/btnSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/settingactive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setting"
+                    android:textColor="#fff"
+                    android:textSize="8dip" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
