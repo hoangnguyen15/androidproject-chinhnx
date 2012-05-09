@@ -1,5 +1,8 @@
 package com.krazevina.euro2012;
 
+import com.krazevina.objects.Global;
+import com.krazevina.objects.sqlite;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,15 +18,12 @@ public class Setting extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
-    Button btnonoff1,btnonoff2,radeng,radkor,radvie;
+    Button btnnotify,btnvibrate,radeng,radkor,radvie;
     LinearLayout llabouts,llfeedback;
     
-    boolean onoff1 = true;
-    boolean onoff2 = true;
-    boolean eng = true;
-    boolean kor = false;
-    boolean vie = false;
+    boolean notify,vibrate,eng,kor,vie;
     
+    sqlite sql;
     
     
     @Override
@@ -48,14 +48,14 @@ public class Setting extends Activity implements OnClickListener {
         btnTeams.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
         
-        btnonoff1 = (Button)findViewById(R.id.btnOnOff1);
-        btnonoff2 = (Button)findViewById(R.id.btnOnOff2);
+        btnnotify = (Button)findViewById(R.id.btnNotify);
+        btnvibrate = (Button)findViewById(R.id.btnVibrate);
         radeng = (Button)findViewById(R.id.radeng);
         radkor = (Button)findViewById(R.id.radkor);
         radvie = (Button)findViewById(R.id.radvie);
         
-        btnonoff1.setOnClickListener(this);
-        btnonoff2.setOnClickListener(this);
+        btnnotify.setOnClickListener(this);
+        btnvibrate.setOnClickListener(this);
         radeng.setOnClickListener(this);
         radkor.setOnClickListener(this);
         radvie.setOnClickListener(this);
@@ -65,6 +65,25 @@ public class Setting extends Activity implements OnClickListener {
         
         llabouts.setOnClickListener(this);
         llfeedback.setOnClickListener(this);
+        
+        //GetSetting
+        sql = new sqlite(this);
+        sql.getSetting();
+        if(Global.notify == 1){
+        	notify = true;
+        	btnnotify.setBackgroundResource(R.drawable.btnon);
+        }else if (Global.notify == 0){
+        	notify = false;
+        	btnnotify.setBackgroundResource(R.drawable.btnoff);
+        }
+        
+        if(Global.vibrate == 1){
+        	vibrate = true;
+        	btnvibrate.setBackgroundResource(R.drawable.btnon);
+        }else if (Global.notify == 0){
+        	vibrate = false;
+        	btnvibrate.setBackgroundResource(R.drawable.btnoff);
+        }
         
         
     }
@@ -98,22 +117,26 @@ public class Setting extends Activity implements OnClickListener {
 			finish();
 		}
 		
-		if(v.getId() == btnonoff1.getId()){
-			if(onoff1){
-				btnonoff1.setBackgroundResource(R.drawable.btnoff);
-				onoff1 = false;
+		if(v.getId() == btnnotify.getId()){
+			if(notify){
+				btnnotify.setBackgroundResource(R.drawable.btnoff);
+				notify = false;
+				sql.setNotify(0);
 			}else{
-				btnonoff1.setBackgroundResource(R.drawable.btnon);
-				onoff1 = true;
+				btnnotify.setBackgroundResource(R.drawable.btnon);
+				notify = true;
+				sql.setNotify(1);
 			}
 		}
-		if(v.getId() == btnonoff2.getId()){
-			if(onoff2){
-				btnonoff2.setBackgroundResource(R.drawable.btnoff);
-				onoff2 = false;
+		if(v.getId() == btnvibrate.getId()){
+			if(vibrate){
+				btnvibrate.setBackgroundResource(R.drawable.btnoff);
+				vibrate = false;
+				sql.setVibrate(0);
 			}else{
-				btnonoff2.setBackgroundResource(R.drawable.btnon);
-				onoff2 = true;
+				btnvibrate.setBackgroundResource(R.drawable.btnon);
+				vibrate = true;
+				sql.setVibrate(1);
 			}
 		}
 		
@@ -149,6 +172,13 @@ public class Setting extends Activity implements OnClickListener {
 				kor=false;
 			}
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		sql.recycle();
 	}
 	
 }

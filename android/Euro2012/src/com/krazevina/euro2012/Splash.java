@@ -33,7 +33,6 @@ public class Splash extends Activity{
                 } finally {
                     finish();
                     startActivity(new Intent(Splash.this,Main.class));
-                    stop();
                 }
             }
         };
