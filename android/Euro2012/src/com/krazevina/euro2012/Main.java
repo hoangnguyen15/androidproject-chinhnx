@@ -2,28 +2,22 @@ package com.krazevina.euro2012;
 
 import java.util.Vector;
 
-import com.krazevina.euro2012.News.ViewHolder;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
 import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 
@@ -39,8 +33,8 @@ public class Main extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
         Global.getLang(this);
+        setContentView(R.layout.main);
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
         llbtnteams = (LinearLayout)findViewById(R.id.llbtnteams);
