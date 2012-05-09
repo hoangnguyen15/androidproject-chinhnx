@@ -9,13 +9,14 @@ import android.content.res.Configuration;
 
 public class Global 
 {
-	public static String z = "";
 	
 	/**
 	 * VI,EN,KO</br>
 	 * not VN and KR
 	 */
 	public static String lang;
+	public static int notify;
+	public static int vibrate;
 	
 	public static void getLang(Activity c){
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_PRIVATE);

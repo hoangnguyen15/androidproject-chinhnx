@@ -20,96 +20,6 @@ public class sqlite
 	private static final String DATABASE_NAME="euro2012.dbo";
 	private static final int DATABASE_VERSION=1;
 	
-	public static final String CREATE_TABLE_GROUPS =" CREATE TABLE Groups("
-		+" 	ID tinyint NOT NULL,"
-		+" 	Name nvarchar(50) NULL,"
-		+" 	TeamID smallint NULL,"
-		+" 	Point tinyint NULL,"
-		+" 	LooseScore tinyint NULL,"
-		+" 	WinScore tinyint NULL,"
-		+" 	Win tinyint NULL,"
-		+" 	Lose tinyint NULL,"
-		+" 	Draw tinyint NULL,"
-		+" 	Status tinyint NULL)";
-
-	public static final String CREATE_TABLE_BEGINNINGSTRATEGY = " CREATE TABLE BeginningStrategy("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	MatchID smallint NULL,"
-		+" 	TeamID smallint NULL,"
-		+" 	Detail nvarchar(350) NULL)";
-
-	public static final String CREATE_TABLE_MATCHES = " CREATE TABLE Matches("
-		+" 	ID smallint NULL,"
-		+" 	GroupID smallint NULL,"
-		+" 	FirstTeam smallint NULL,"
-		+" 	SecondTeam smallint NULL,"
-		+" 	Stadium nvarchar(50) NULL,"
-		+" 	Start datetime NULL,"
-		+" 	End datetime NULL,"
-		+" 	FinalScore varchar(10) NULL,"
-		+" 	FirstScore varchar(10) NULL,"
-		+" 	SecondScore varchar(10) NULL,"
-		+" 	MainReferee nvarchar(50) NULL,"
-		+" 	FirstPickup int NULL,"
-		+" 	SecondPickup int NULL,"
-		+" 	Status tinyint NULL)";
-	public static final String CREATE_TABLE_MATCHONLINE = " CREATE TABLE MatchOnline("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	MatchID smallint NULL,"
-		+" 	TeamID smallint NULL,"
-		+" 	PlayerID smallint NULL,"
-		+" 	EventID smallint NULL,"
-		+" 	Detail nvarchar(250) NULL,"
-		+" 	MatchTime varchar(10) NULL,"
-		+" 	Status tinyint NULL)";
-
-	public static final String CREATE_TABLE_BETAHOUSES = " CREATE TABLE BetHouses("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	Name nvarchar(50) NULL,"
-		+" 	Desc nvarchar(512) NULL,"
-		+" 	Status tinyint NULL)";
-
-	public static final String CREATE_TABLE_BETDETAIL=" CREATE TABLE BetDetail("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	MatchID smallint NULL,"
-		+" 	BetHouseID smallint NULL,"
-		+" 	Col1 varchar(10) NULL,"
-		+" 	Col2 varchar(10) NULL,"
-		+" 	Col3 varchar(10) NULL,"
-		+" 	Status tinyint NULL)";
-
-	public static final String CREATE_TABLE_EVENTS=" CREATE TABLE Events("
-		+" 	ID tinyint NULL,"
-		+" 	Name nchar(10) NULL,"
-		+" 	Status bit NULL)";
-
-	public static final String CREATE_TABLE_PLAYERS=" CREATE TABLE Players("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	TeamID smallint NULL,"
-		+" 	Name nvarchar(50) NULL,"
-		+" 	DOB smalldatetime NULL,"
-		+" 	Height varchar(10) NULL,"
-		+" 	Weight varchar(10) NULL,"
-		+" 	Club nvarchar(50) NULL,"
-		+" 	Position nvarchar(50) NULL,"
-		+" 	Number tinyint NULL,"
-		+" 	Score tinyint NULL,"
-		+" 	Status tinyint NULL,"
-		+" 	PlayerTip varchar(50) NULL)";
-
-	public static final String CREATE_TABLE_TEAMS=" CREATE TABLE Teams("
-		+" 	ID smallint IDENTITY(1,1) NOT NULL,"
-		+" 	BongdasoID int NULL,"
-		+" 	Name nvarchar(50) NULL,"
-		+" 	Flag nvarchar(250) NULL,"
-		+" 	Uniform1 nvarchar(250) NULL,"
-		+" 	Uniform2 nvarchar(250) NULL,"
-		+" 	FifaRanking tinyint NULL,"
-		+" 	Coach nvarchar(50) NULL,"
-		+" 	Desc nvarchar(512) NULL,"
-		+" 	AttendTimes nvarchar(512) NULL,"
-		+" 	status tinyint NULL)";
-
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
 	
@@ -314,14 +224,48 @@ public class sqlite
 	}
 	
 	public String searchNameTeam(int teamID){
-		String nameTeam;
-		Cursor c = mSqlDatabase.query("Teams", new String[]{
-				"BongdasoID","Name"}, "BongdasoId="+teamID, null, null, null, null);
-		if(c==null)return null;
+		String nameTeam="";
+		try {
+			Cursor c = mSqlDatabase.query("Teams", new String[]{
+					"BongdasoID","Name"}, "BongdasoId="+teamID, null, null, null, null);
+			if(c==null)return null;
 
-		c.moveToFirst();
-		nameTeam = c.getString(1);
-		c.close();
+			c.moveToFirst();
+			nameTeam = c.getString(1);
+			c.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return nameTeam;
+	}
+	
+	public void getSetting(){
+		try {
+			Cursor c = mSqlDatabase.query("Setting", new String[]{"notify","vibrate"}, null, null, null, null, null);
+			if(c==null) return;
+			c.moveToFirst();
+			Global.notify = c.getInt(0);
+			Global.vibrate = c.getInt(1);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void setNotify(int i) {
+		try {
+			mSqlDatabase.execSQL("update setting set notify=" + i);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void setVibrate(int i) {
+		try {
+			mSqlDatabase.execSQL("update setting set vibrate=" + i);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
