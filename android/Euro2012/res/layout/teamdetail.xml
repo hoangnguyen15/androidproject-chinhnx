@@ -34,55 +34,55 @@
         android:gravity="center_horizontal"
         android:orientation="vertical" 
         android:layout_margin="10dip" android:background="@drawable/bgwhite">
-    	<LinearLayout
-	        android:layout_width="fill_parent"
-	        android:layout_height="100dip"
-	        android:gravity="center" android:layout_margin="10dip"
-	        android:orientation="horizontal" >
-	        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
-	            android:id="@+id/imgflag" android:layout_weight="2"
-	            android:src="@drawable/engl"/>
-	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
-	            android:layout_weight="3" android:orientation="vertical" 
-	            android:layout_marginLeft="10dip">
-	            <TextView android:layout_width="fill_parent"
-		            android:layout_height="wrap_content" android:textStyle="bold"
-		            android:id="@+id/txtteam" android:text="@string/name"
-		            android:textSize="20dip" android:textColor="#333"
-		            android:gravity="center_vertical"/>
-	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-	                android:gravity="center">
-	                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
-	                    android:id="@+id/imguniform1" android:src="@drawable/ao_england1"
-	                    android:layout_weight="1" android:layout_marginRight="6dip"/>
-	                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
-	                    android:id="@+id/imguniform2" android:src="@drawable/ao_england2"
-	                    android:layout_weight="1"/>
-	            </LinearLayout>
-	        </LinearLayout>
-						        
-		</LinearLayout>
-		
+    	
     	<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
 		<LinearLayout
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:gravity="center_horizontal"
 	        android:orientation="vertical" >
+	        
+		    <LinearLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="100dip"
+		        android:gravity="center" android:layout_margin="10dip"
+		        android:orientation="horizontal" >
+		        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
+		            android:id="@+id/imgflag" android:layout_weight="2"
+		            android:src="@drawable/engl"/>
+		        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+		            android:layout_weight="3" android:orientation="vertical" 
+		            android:layout_marginLeft="10dip">
+		            <TextView android:layout_width="fill_parent"
+			            android:layout_height="wrap_content" android:textStyle="bold"
+			            android:id="@+id/txtteam" android:text="@string/name"
+			            android:textSize="20dip" android:textColor="#333"
+			            android:gravity="center_vertical"/>
+		            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+		                android:gravity="center">
+		                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
+		                    android:id="@+id/imguniform1" android:src="@drawable/ao_england1"
+		                    android:layout_weight="1" android:layout_marginRight="6dip"/>
+		                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
+		                    android:id="@+id/imguniform2" android:src="@drawable/ao_england2"
+		                    android:layout_weight="1"/>
+		            </LinearLayout>
+		        </LinearLayout>
+			</LinearLayout>
 	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
 	            android:id="@+id/txtestyear" android:textColor="#000"
 	            android:text="@string/estimate" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:id="@+id/txtfifajoin" android:textColor="#000"
 	            android:text="@string/fifajoin" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:id="@+id/txtfifarank" android:textColor="#000"
 	            android:text="@string/fifarank" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:id="@+id/txtcoach" android:textColor="#000"
 	            android:text="@string/coach" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
-	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:id="@+id/txtattend" android:textColor="#000"
 	            android:text="@string/attend" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
