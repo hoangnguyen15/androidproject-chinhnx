@@ -47,12 +47,22 @@ public class Teams extends Activity implements OnClickListener {
         btnTeams = (Button)findViewById(R.id.btnTeams);
         btnSetting = (Button)findViewById(R.id.btnSetting);
         
+        lla = (LinearLayout)findViewById(R.id.lla);
+        llb = (LinearLayout)findViewById(R.id.llb);
+        llc = (LinearLayout)findViewById(R.id.llc);
+        lld = (LinearLayout)findViewById(R.id.lld);
+        
         btnNews.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         btnSchedule.setOnClickListener(this);
         
         sqlite sql = new sqlite(this);
         teams = sql.getAllTeams();
+        sort();
+        viewCount=0;addView(ta, lla);
+        viewCount=0;addView(tb, llb);
+        viewCount=0;addView(tc, llc);
+        viewCount=0;addView(td, lld);
     }
     
     void sort(){
@@ -88,47 +98,47 @@ public class Teams extends Activity implements OnClickListener {
 			gd = (TextView)ll.findViewById(R.id.gd);
 			pts = (TextView)ll.findViewById(R.id.pts);
 			
-//			imgflag.setImageResource(resId)
-//			name.setText(v.get(i).name);
-//			txtstime.setText(time[1].split(":")[0]+":"+time[1].split(":")[1]);
-//			int teamID1 = match.elementAt(i).team1;
-//			int teamID2 = match.elementAt(i).team2;
-//			imgsflag1.setImageResource(searchFlag(teamID1));
-//			imgsflag2.setImageResource(searchFlag(teamID2));
-//			txtsteam1.setText(sql.searchNameTeam(teamID1));
-//			txtsteam2.setText(sql.searchNameTeam(teamID2));
-//			String ratio = match.elementAt(i).finalScore;
-//			if(ratio!=null){
-//				txtsratio.setText(ratio);
-//			}else{
-//				txtsratio.setText("?-?");
-//			}
-//			
-//			
-//			j++;
-//			if(j%2==0){
-//				ll.setBackgroundColor(Color.parseColor("#ffffff"));
-//			}else{
-//				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
-//			}
-//			
-//			if(match.elementAt(i).groupID == 1){
-//			   llgroupa.addView(ll);
-//			}else if(match.elementAt(i).groupID ==2){
-//				llgroupb.addView(ll);
-//			}else if(match.elementAt(i).groupID ==3){
-//				llgroupc.addView(ll);
-//			}else if(match.elementAt(i).groupID ==4){
-//				llgroupd.addView(ll);
-//			}else if(match.elementAt(i).groupID ==5){
-//				llquarter.addView(ll);
-//			}else if(match.elementAt(i).groupID ==6){
-//				llsemi.addView(ll);
-//			}else if(match.elementAt(i).groupID ==7){
-//				llfinal.addView(ll);
-//			}
+			imgflag.setImageResource(flag(v.get(i).ID));
+			name.setText(v.get(i).name);
+			pld.setText(""+(v.get(i).win+v.get(i).lose+v.get(i).draw));
+			win.setText(""+(v.get(i).win));
+			lose.setText(""+(v.get(i).lose));
+			dr.setText(""+(v.get(i).draw));
+			gf.setText(""+(v.get(i).goalscore));
+			gd.setText(""+(v.get(i).goallose));
+			pts.setText(""+v.get(i).point);
+			
+			viewCount++;
+			if(viewCount%2==0){
+				ll.setBackgroundColor(Color.parseColor("#ffffff"));
+			}else{
+				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
+			}
+			lll.addView(ll);
 		}
     }
+    
+    public static int flag(int teamID){
+		switch (teamID) {
+		case 157:return R.drawable.pol;
+		case 155:return R.drawable.ger;
+		case 171:return R.drawable.ita;
+		case 159:return R.drawable.eng;
+		case 10144:return R.drawable.gre;
+		case 10145:return R.drawable.rus;
+		case 175:return R.drawable.cze;
+		case 166:return R.drawable.ned;
+		case 10141:return R.drawable.den;
+		case 168:return R.drawable.por;
+		case 185:return R.drawable.esp;
+		case 10148:return R.drawable.irl;
+		case 179:return R.drawable.cro;
+		case 182:return R.drawable.fra;
+		case 186:return R.drawable.ukr;
+		case 162:return R.drawable.swe;
+		}
+		return 0;
+	}
     
     void sort1(Vector<Team> temp){
     	Team templ;
