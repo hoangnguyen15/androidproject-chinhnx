@@ -33,4 +33,23 @@ public class Global
         config.locale = locale;
         c.getBaseContext().getResources().updateConfiguration(config, c.getBaseContext().getResources().getDisplayMetrics());
 	}
+	/**
+	 * @param lang
+	 * lang = 1: eng </br>
+	 * lang = 2: vn </br>
+	 * lang = 3: kor
+	 */
+	public void setLang(Context c,int lang){
+		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_PRIVATE);
+		if(lang==2){
+			sp.edit().putString("lang", "VN");
+			sp.edit().commit();
+		}else if(lang==1){
+			sp.edit().putString("lang", "EN");
+			sp.edit().commit();
+		}else {
+			sp.edit().putString("lang", "KO");
+			sp.edit().commit();
+		}
+	}
 }
