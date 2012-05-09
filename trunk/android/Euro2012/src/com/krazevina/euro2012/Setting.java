@@ -6,6 +6,7 @@ import com.krazevina.objects.sqlite;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -85,6 +86,33 @@ public class Setting extends Activity implements OnClickListener {
         	btnvibrate.setBackgroundResource(R.drawable.btnoff);
         }
         
+        //GetLang
+        Global.getLang(this);
+        Log.d("global.lang",Global.lang);
+        if(Global.lang.equals("VI")){
+        	vie = true;
+        	kor = false;
+        	eng = false;
+        	radvie.setBackgroundResource(R.drawable.radon);
+        	radeng.setBackgroundResource(R.drawable.radoff);
+        	radkor.setBackgroundResource(R.drawable.radoff);
+        }
+        if(Global.lang.equals("KOR")){
+        	kor = true;
+        	vie = false;
+        	eng = false;
+        	radkor.setBackgroundResource(R.drawable.radon);
+        	radvie.setBackgroundResource(R.drawable.radoff);
+        	radeng.setBackgroundResource(R.drawable.radoff);
+        }
+        if(Global.lang.equals("ENG")){
+        	eng = true;
+        	vie = false;
+        	kor = false;
+        	radeng.setBackgroundResource(R.drawable.radon);
+        	radvie.setBackgroundResource(R.drawable.radoff);
+        	radkor.setBackgroundResource(R.drawable.radoff);
+        }
         
     }
     
@@ -148,6 +176,7 @@ public class Setting extends Activity implements OnClickListener {
 				eng=true;
 				kor=false;
 				vie=false;
+				Global.setLang(this,1);
 			}
 		}
 		
@@ -159,6 +188,7 @@ public class Setting extends Activity implements OnClickListener {
 				kor=true;
 				eng=false;
 				vie=false;
+				Global.setLang(this,3);
 			}
 		}
 		
@@ -170,6 +200,7 @@ public class Setting extends Activity implements OnClickListener {
 				vie=true;
 				eng=false;
 				kor=false;
+				Global.setLang(this,2);
 			}
 		}
 	}
