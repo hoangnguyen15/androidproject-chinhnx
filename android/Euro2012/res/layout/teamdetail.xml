@@ -69,11 +69,26 @@
 	        android:layout_height="wrap_content"
 	        android:gravity="center_horizontal"
 	        android:orientation="vertical" >
+	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:text="@string/estimate" android:padding="10dip"/>
+	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:text="@string/fifajoin" android:padding="10dip"/>
+	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:text="@string/fifarank" android:padding="10dip"/>
+	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:text="@string/coach" android:padding="10dip"/>
+	        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+	            android:id="@+id/txtestyear" android:textColor="#000"
+	            android:text="@string/attend" android:padding="10dip"/>
 	        <TextView android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/description"
-	            android:textColor="#333"
-	            android:paddingLeft="10dip"/>
+	            android:textColor="#000" android:paddingLeft="10dip"
+	            android:paddingTop="10dip"/>
 	        <TextView android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="@string/testdes"
