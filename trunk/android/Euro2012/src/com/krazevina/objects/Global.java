@@ -38,15 +38,15 @@ public class Global
 	}
 	/**
 	 * @param lang
-	 * lang = 1: eng </br>
-	 * lang = 2: vn </br>
-	 * lang = 3: kor
+	 * lang = 1: en </br>
+	 * lang = 2: vi </br>
+	 * lang = 3: ko
 	 */
 	public static void setLang(Context c,int lang){
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
 		Editor e = sp.edit();
 		if(lang==2){
-			e.putString("lang", "VN");
+			e.putString("lang", "VI");
 			e.commit();
 		}else if(lang==1){
 			e.putString("lang", "EN");
