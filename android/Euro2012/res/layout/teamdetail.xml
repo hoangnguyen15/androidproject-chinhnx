@@ -53,10 +53,10 @@
 	            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
 	                android:gravity="center">
 	                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
-	                    android:id="@+id/imguniform1" android:src="@drawable/esp"
+	                    android:id="@+id/imguniform1" android:src="@drawable/ao_england1"
 	                    android:layout_weight="1" android:layout_marginRight="6dip"/>
 	                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
-	                    android:id="@+id/imguniform2" android:src="@drawable/esp"
+	                    android:id="@+id/imguniform2" android:src="@drawable/ao_england2"
 	                    android:layout_weight="1"/>
 	            </LinearLayout>
 	        </LinearLayout>
