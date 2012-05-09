@@ -58,7 +58,7 @@
 			            android:layout_height="wrap_content" android:textStyle="bold"
 			            android:id="@+id/txtteam" android:text="@string/name"
 			            android:textSize="20dip" android:textColor="#333"
-			            android:gravity="center_vertical"/>
+			            android:gravity="center_vertical" android:paddingLeft="10dip" />
 		            <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
 		                android:gravity="center" android:layout_marginTop="5dip">
 		                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
