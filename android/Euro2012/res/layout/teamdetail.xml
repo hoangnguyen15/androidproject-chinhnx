@@ -62,10 +62,11 @@
 		                android:gravity="center" android:layout_marginTop="5dip">
 		                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
 		                    android:id="@+id/imguniform1" android:src="@drawable/ao_england1"
-		                    android:layout_weight="1" android:layout_marginRight="6dip"/>
+		                    android:layout_weight="1" android:layout_marginRight="6dip"
+		                    android:background="#eee"/>
 		                <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
 		                    android:id="@+id/imguniform2" android:src="@drawable/ao_england2"
-		                    android:layout_weight="1"/>
+		                    android:layout_weight="1" android:background="#eee"/>
 		            </LinearLayout>
 		        </LinearLayout>
 			</LinearLayout>

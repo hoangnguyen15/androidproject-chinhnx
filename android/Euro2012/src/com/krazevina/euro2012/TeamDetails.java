@@ -58,15 +58,15 @@ public class TeamDetails extends Activity implements OnClickListener{
 	    btnBack.setOnClickListener(this);
 	    
 	    if(Global.lang.equals("EN")){
-	    	txtteam.setText(t.nameEng);
+	    	txtteam.setText(t.nameEng.toUpperCase());
 	    	txtdesc.setText(t.descEng);
 	    }
 	    else if(Global.lang.equals("KO")){
-	    	txtteam.setText(t.nameKor);
+	    	txtteam.setText(t.nameKor.toUpperCase());
 	    	txtdesc.setText(t.descKor);
 	    }
 	    else{
-	    	txtteam.setText(t.name);
+	    	txtteam.setText(t.name.toUpperCase());
 	    	txtdesc.setText(t.desc);
 	    }
 	    txtest.setText(getString(R.string.estimate)+":\t"+t.establish);
