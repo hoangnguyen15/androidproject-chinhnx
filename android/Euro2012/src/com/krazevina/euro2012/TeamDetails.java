@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class TeamDetails extends Activity implements OnClickListener{
 	Team t;
 	Vector<Player>players;
 	TextView txtteam,txtdesc,txtest,txtfifajoin,txtfifarank,txtattend,txtcoach;
+	ImageView imgflag,imguni1,imguni2;
 	
 	LinearLayout lv;
 	String pos[][]= new String[][]{
@@ -28,6 +30,7 @@ public class TeamDetails extends Activity implements OnClickListener{
 			{"tiền vệ","Midfielder","미드필더"},
 			{"tiền đạo","Striker","수비수"},
 	};
+	
 	Button btnBack;
 	protected void onCreate(android.os.Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,6 +49,9 @@ public class TeamDetails extends Activity implements OnClickListener{
 	    txtfifarank = (TextView)findViewById(R.id.txtfifarank);
 	    txtattend = (TextView)findViewById(R.id.txtattend);
 	    txtcoach = (TextView)findViewById(R.id.txtcoach);
+	    imgflag = (ImageView)findViewById(R.id.imgflag);
+	    imguni1 = (ImageView)findViewById(R.id.imguniform1);
+	    imguni2 = (ImageView)findViewById(R.id.imguniform2);
 	    
 	    lv = (LinearLayout)findViewById(R.id.lvplayers);
 	    btnBack = (Button)findViewById(R.id.btnBack);
@@ -68,6 +74,9 @@ public class TeamDetails extends Activity implements OnClickListener{
     	txtfifarank.setText(getString(R.string.fifarank)+":\t"+t.fifaRank);
     	txtcoach.setText(getString(R.string.coach)+":\t"+t.coach);
     	txtattend.setText(getString(R.string.attend)+":\t"+t.attendTimes);
+    	imgflag.setImageResource(flag(t.ID));
+    	imguni1.setImageResource(uni1(t.ID));
+    	imguni2.setImageResource(uni2(t.ID));
 
 	    LayoutInflater li = LayoutInflater.from(TeamDetails.this);;
 		TextView no,name,pos;
@@ -109,5 +118,68 @@ public class TeamDetails extends Activity implements OnClickListener{
 		if(v.getId() == btnBack.getId()){
 			finish();
 		}
+	}
+	public static int flag(int teamID){
+		switch (teamID) {
+		case 157:return R.drawable.poll;
+		case 155:return R.drawable.gerl;
+		case 171:return R.drawable.itall;
+		case 159:return R.drawable.engl;
+		case 10144:return R.drawable.grel;
+		case 10145:return R.drawable.rusl;
+		case 175:return R.drawable.czel;
+		case 166:return R.drawable.nedl;
+		case 10141:return R.drawable.denl;
+		case 168:return R.drawable.porl;
+		case 185:return R.drawable.espl;
+		case 10148:return R.drawable.irll;
+		case 179:return R.drawable.crol;
+		case 182:return R.drawable.fral;
+		case 186:return R.drawable.ukrl;
+		case 162:return R.drawable.swel;
+		}
+		return 0;
+	}
+	public static int uni1(int teamID){
+		switch (teamID) {
+		case 157:return R.drawable.aopoland1;
+		case 155:return R.drawable.aogermany1;
+		case 171:return R.drawable.aoitaly1;
+		case 159:return R.drawable.ao_england1;
+		case 10144:return R.drawable.aogreece1;
+		case 10145:return R.drawable.aorussia1;
+		case 175:return R.drawable.ao_czech1;
+		case 166:return R.drawable.ao_holland1;
+		case 10141:return R.drawable.aodenmark1;
+		case 168:return R.drawable.ao_portugal1;
+		case 185:return R.drawable.ao_spain1;
+		case 10148:return R.drawable.ao_ireland1;
+		case 179:return R.drawable.ao_croatia1;
+		case 182:return R.drawable.ao_france1;
+		case 186:return R.drawable.ao_ukraine1;
+		case 162:return R.drawable.ao_sweden1;
+		}
+		return 0;
+	}
+	public static int uni2(int teamID){
+		switch (teamID) {
+		case 157:return R.drawable.aopoland2;
+		case 155:return R.drawable.aogermany2;
+		case 171:return R.drawable.aoitaly2;
+		case 159:return R.drawable.ao_england2;
+		case 10144:return R.drawable.aogreece2;
+		case 10145:return R.drawable.aorussia2;
+		case 175:return R.drawable.ao_czech2;
+		case 166:return R.drawable.ao_holland2;
+		case 10141:return R.drawable.aodenmark2;
+		case 168:return R.drawable.ao_portugal2;
+		case 185:return R.drawable.ao_spain2;
+		case 10148:return R.drawable.ao_ireland2;
+		case 179:return R.drawable.ao_croatia2;
+		case 182:return R.drawable.ao_france2;
+		case 186:return R.drawable.ao_ukraine2;
+		case 162:return R.drawable.ao_sweden2;
+		}
+		return 0;
 	}
 }
