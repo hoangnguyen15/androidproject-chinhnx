@@ -82,16 +82,15 @@ public class Teams extends Activity implements OnClickListener {
     	sort1(ta);sort1(tb);
     	sort1(tc);sort1(td);
     }
-    
-    void addView(Vector<Team>v,LinearLayout lll){
-    	int i;LinearLayout ll;
+    int i;
+    void addView(final Vector<Team>v,LinearLayout lll){
+    	LinearLayout ll;
     	LayoutInflater mInflater = LayoutInflater.from(this);
     	ImageView imgflag;
     	TextView name,pld,win,lose,dr,gf,gd,pts;
     	
     	for(i = 0;i<v.size();i++){
-			ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
-			ll.setOrientation(LinearLayout.HORIZONTAL);
+			ll = (LinearLayout) mInflater.inflate(R.layout.itemteams, null);
 
 			imgflag = (ImageView)ll.findViewById(R.id.imgflag);
 			name = (TextView)ll.findViewById(R.id.txtname);
@@ -119,6 +118,14 @@ public class Teams extends Activity implements OnClickListener {
 			}else{
 				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
 			}
+			ll.setOnClickListener(new OnClickListener() {
+				int ind = v.get(i).ID;
+				public void onClick(View v) {
+					Intent i = new Intent(Teams.this,TeamDetails.class);
+					i.putExtra("idTeam", ind);
+					startActivity(i);
+				}
+			});
 			lll.addView(ll);
 		}
     }
