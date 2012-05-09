@@ -40,7 +40,7 @@ public class Global
 	 * lang = 2: vn </br>
 	 * lang = 3: kor
 	 */
-	public void setLang(Context c,int lang){
+	public static void setLang(Context c,int lang){
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_PRIVATE);
 		if(lang==2){
 			sp.edit().putString("lang", "VN");
