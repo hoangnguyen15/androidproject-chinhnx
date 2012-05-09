@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="40dip"
+    android:layout_height="48dip"
     android:background="#fff"
 	android:orientation="horizontal" >
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	<LinearLayout
 	    android:layout_width="0dip"
-	    android:layout_height="fill_parent"
+	    android:layout_height="48dip"
 	    android:background="#fff"
 		android:orientation="horizontal"
 		android:gravity="center_vertical|center_horizontal"
@@ -15,100 +15,100 @@
     	    android:layout_height="20dip" android:id="@+id/imgflag"
     	    android:src="@drawable/vietnamflag"/>
 	        <TextView
-	            android:layout_width="wrap_content"
+	            android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
 	            android:text="Netherlands" android:id="@+id/txtname"
 	            android:textColor="#333" android:gravity="center"
 	            android:padding="5dip" />
 	</LinearLayout>
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" 
-            android:layout_height="fill_parent"
-            android:layout_weight="1" android:id="@+id/pld"
-            android:gravity="center"
-            android:text="1"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" 
+           android:layout_height="fill_parent"
+           android:layout_weight="1" android:id="@+id/pld"
+           android:gravity="center"
+           android:text="1"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/win"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="1"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/win"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="1"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/lose"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="0"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/lose"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="0"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/draw"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="0"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/draw"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="0"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/gf"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="2"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/gf"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="2"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/gd"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="1"
-            android:textColor="#333" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/gd"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="1"
+           android:textColor="#333" />
 
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
+       <LinearLayout
+           android:layout_width="1px"
+           android:layout_height="fill_parent"
+           android:background="#d8e1d6" />
 
-        <TextView
-            android:layout_width="0dip" android:id="@+id/pts"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="3"
-            android:textColor="#f00" />
+       <TextView
+           android:layout_width="0dip" android:id="@+id/pts"
+           android:layout_height="fill_parent"
+           android:layout_weight="1"
+           android:gravity="center_vertical|center_horizontal"
+           android:text="3"
+           android:textColor="#f00" />
 </LinearLayout>
