@@ -97,7 +97,7 @@ public class Setting extends Activity implements OnClickListener {
         	radeng.setBackgroundResource(R.drawable.radoff);
         	radkor.setBackgroundResource(R.drawable.radoff);
         }
-        if(Global.lang.equals("KOR")){
+        if(Global.lang.equals("KO")){
         	kor = true;
         	vie = false;
         	eng = false;
@@ -105,7 +105,7 @@ public class Setting extends Activity implements OnClickListener {
         	radvie.setBackgroundResource(R.drawable.radoff);
         	radeng.setBackgroundResource(R.drawable.radoff);
         }
-        if(Global.lang.equals("ENG")){
+        if(Global.lang.equals("EN")){
         	eng = true;
         	vie = false;
         	kor = false;
