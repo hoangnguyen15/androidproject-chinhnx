@@ -69,6 +69,7 @@
                         android:textColor="#333" />
 
                     <Button
+                        android:id="@+id/btnOnOff1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-75dip"
@@ -95,10 +96,11 @@
                         android:textColor="#333" />
 
                     <Button
+                        android:id="@+id/btnOnOff2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-75dip"
-                        android:background="@drawable/btnoff" />
+                        android:background="@drawable/btnon" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -139,6 +141,7 @@
                         android:textColor="#333" />
 
                     <Button
+                        android:id="@+id/radeng"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-40dip"
@@ -165,6 +168,7 @@
                         android:textColor="#333" />
 
                     <Button
+                        android:id="@+id/radkor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-40dip"
@@ -191,6 +195,7 @@
                         android:textColor="#333" />
 
                     <Button
+                        android:id="@+id/radvie"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="-40dip"
@@ -221,6 +226,7 @@
                     android:background="#9eb399" />
 
                 <LinearLayout
+                    android:id="@+id/llabouts"
                     android:layout_width="fill_parent"
                     android:layout_height="38dip"
                     android:background="#fff"
@@ -247,6 +253,7 @@
                     android:background="#9eb399" />
 
                 <LinearLayout
+                    android:id="@+id/llfeedback"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bgwhitebottom"
