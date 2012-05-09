@@ -5,6 +5,7 @@ import java.util.Locale;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 
 public class Global 
@@ -19,14 +20,15 @@ public class Global
 	public static int vibrate;
 	
 	public static void getLang(Activity c){
-		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_PRIVATE);
+		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
 		lang = sp.getString("lang", "");
 		if(lang.length()<=0){
 			if(Locale.getDefault().getDisplayLanguage().equals("Vietnamese"))lang = "VI";
 			else if(Locale.getDefault().getDisplayLanguage().equals("Korean"))lang = "KO";
 			else lang = "EN";
-			sp.edit().putString("lang", lang);
-			sp.edit().commit();
+			Editor e = sp.edit();
+			e.putString("lang", lang);
+			e.commit();
 		}
 		Configuration config = c.getBaseContext().getResources().getConfiguration();
 		Locale locale = new Locale(lang);
@@ -41,16 +43,17 @@ public class Global
 	 * lang = 3: kor
 	 */
 	public static void setLang(Context c,int lang){
-		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_PRIVATE);
+		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
+		Editor e = sp.edit();
 		if(lang==2){
-			sp.edit().putString("lang", "VN");
-			sp.edit().commit();
+			e.putString("lang", "VN");
+			e.commit();
 		}else if(lang==1){
-			sp.edit().putString("lang", "EN");
-			sp.edit().commit();
+			e.putString("lang", "EN");
+			e.commit();
 		}else {
-			sp.edit().putString("lang", "KO");
-			sp.edit().commit();
+			e.putString("lang", "KO");
+			e.commit();
 		}
 	}
 }
