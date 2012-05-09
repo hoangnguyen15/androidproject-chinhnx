@@ -10,16 +10,15 @@
 	    android:background="#fff"
 		android:orientation="horizontal"
 		android:gravity="center_vertical|center_horizontal"
-		android:layout_weight="3" >
+		android:layout_weight="4" >
     	<ImageView android:layout_width="20dip"
-    	    android:layout_height="20dip"
+    	    android:layout_height="20dip" android:id="@+id/imgflag"
     	    android:src="@drawable/vietnamflag"/>
 	        <TextView
 	            android:layout_width="wrap_content"
 	            android:layout_height="fill_parent"
-	            android:text="Netherlands"
-	            android:textColor="#333"
-	            android:gravity="center_vertical|center_horizontal"
+	            android:text="Netherlands" android:id="@+id/txtname"
+	            android:textColor="#333" android:gravity="center"
 	            android:padding="5dip" />
 	</LinearLayout>
         <LinearLayout
@@ -28,7 +27,20 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" 
+            android:layout_height="fill_parent"
+            android:layout_weight="1" android:id="@+id/pld"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#333" />
+
+        <LinearLayout
+            android:layout_width="1px"
+            android:layout_height="fill_parent"
+            android:background="#d8e1d6" />
+
+        <TextView
+            android:layout_width="0dip" android:id="@+id/win"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -41,20 +53,7 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="1"
-            android:textColor="#333" />
-
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
-
-        <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" android:id="@+id/lose"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -67,7 +66,7 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" android:id="@+id/draw"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -80,7 +79,7 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" android:id="@+id/gf"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -93,7 +92,7 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" android:id="@+id/gd"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
@@ -106,20 +105,7 @@
             android:background="#d8e1d6" />
 
         <TextView
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center_vertical|center_horizontal"
-            android:text="1"
-            android:textColor="#333" />
-
-        <LinearLayout
-            android:layout_width="1px"
-            android:layout_height="fill_parent"
-            android:background="#d8e1d6" />
-
-        <TextView
-            android:layout_width="0dip"
+            android:layout_width="0dip" android:id="@+id/pts"
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"

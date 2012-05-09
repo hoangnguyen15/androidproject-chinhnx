@@ -160,6 +160,20 @@ public class sqlite
 		return t;
 	}
 	
+	public void getTeamGroup(Team t){
+		Cursor c = mSqlDatabase.query("TeamsInRound", new String[]{
+			"ID","RoundID","TeamID","Point","LooseScore","WinScore","Win",
+			"Lose","Draw","Status"}, "TeamID="+t.ID, null, null, null, null);
+		c.moveToFirst();
+		t.point = c.getInt(3);
+		t.goallose = c.getInt(4);
+		t.goalscore = c.getInt(5);
+		t.win = c.getInt(6);
+		t.lose = c.getInt(7);
+		t.draw = c.getInt(8);
+		t.status = c.getInt(9);
+	}
+	
 	public Vector<Team> getAllTeams(){
 		Vector<Team>tt = new Vector<Team>();
 		Team t = null;
@@ -189,6 +203,7 @@ public class sqlite
 			t.descKor = c.getString(c.getColumnIndex("descKor"));
 			c.moveToNext();
 			tt.add(t);
+			getTeamGroup(t);
 		}
 		c.close();
 		return tt;

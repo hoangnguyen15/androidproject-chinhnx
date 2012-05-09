@@ -20,21 +20,20 @@
 	<LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:paddingBottom="44dip"
+        android:layout_marginBottom="44dip" android:background="@drawable/bgwhite"
         android:orientation="vertical"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip">
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip">
 		<LinearLayout
 	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="horizontal"
-	        android:background="@drawable/bgwhitetop">
+	        android:layout_height="45dip"
+	        android:orientation="horizontal">
 			<TextView android:layout_width="0dip"
 			    android:layout_height="fill_parent"
 			    android:textColor="#333"
 			    android:text="@string/team"
-			    android:layout_weight="3"
+			    android:layout_weight="4"
 			    android:gravity="center_vertical|center_horizontal"/>
 			<LinearLayout android:layout_width="1px"
 			    android:layout_height="fill_parent"
@@ -93,12 +92,6 @@
 			<LinearLayout android:layout_width="1px"
 			    android:layout_height="fill_parent"
 			    android:background="#d8e1d6"/>
-			<TextView android:layout_width="0dip"
-			    android:layout_height="fill_parent"
-			    android:textColor="#333"
-			    android:text="@string/gd"
-			    android:layout_weight="1"
-			    android:gravity="center_vertical|center_horizontal"/>
 			<LinearLayout android:layout_width="1px"
 			    android:layout_height="fill_parent"
 			    android:background="#d8e1d6"/>
@@ -109,7 +102,10 @@
 			    android:layout_weight="1"
 			    android:gravity="center_vertical|center_horizontal"/>
     	</LinearLayout>
-    	
+    	<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+        	android:scrollbars="none">
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+		    android:orientation="vertical">
 		<LinearLayout
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
@@ -123,10 +119,55 @@
 			    android:gravity="center_vertical|center_horizontal"/>
     	</LinearLayout>
 		<LinearLayout android:layout_width="fill_parent"
-			    android:layout_height="200dip"
-			    android:background="#fff">
-
-			</LinearLayout>
+			    android:layout_height="wrap_content"
+			    android:background="#fff" android:id="@+id/lla"/>
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bgtab">
+			<TextView android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:textColor="#fffc00"
+			    android:text="@string/groupb"
+			    android:textSize="20dip"
+			    android:gravity="center_vertical|center_horizontal"/>
+    	</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:background="#fff" android:id="@+id/llb"/>
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bgtab">
+			<TextView android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:textColor="#fffc00"
+			    android:text="@string/groupc"
+			    android:textSize="20dip"
+			    android:gravity="center_vertical|center_horizontal"/>
+    	</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:background="#fff" android:id="@+id/llc"/>
+		<LinearLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+	        android:background="@drawable/bgtab">
+			<TextView android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:textColor="#fffc00"
+			    android:text="@string/groupd"
+			    android:textSize="20dip"
+			    android:gravity="center_vertical|center_horizontal"/>
+    	</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:background="#fff" android:id="@+id/lld"/>
+		</LinearLayout>
+		</ScrollView>
     </LinearLayout>
 
     <LinearLayout

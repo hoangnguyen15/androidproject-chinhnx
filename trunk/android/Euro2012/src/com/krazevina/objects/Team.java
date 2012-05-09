@@ -5,5 +5,5 @@ public class Team {
 	public String name,flag,uniform1,uniform2,coach,desc,attendTimes,
 	nameEng,nameKor,descEng,descKor;
 	public int establish,fifaJoin,fifaRank,status,
-	roundID,point,win,lose,draw,goald,goala,goal;
+	roundID,point,win,lose,draw,goallose,goalscore;
 }
