@@ -165,6 +165,7 @@ public class sqlite
 			"ID","RoundID","TeamID","Point","LooseScore","WinScore","Win",
 			"Lose","Draw","Status"}, "TeamID="+t.ID, null, null, null, null);
 		c.moveToFirst();
+		t.roundID = c.getInt(1);
 		t.point = c.getInt(3);
 		t.goallose = c.getInt(4);
 		t.goalscore = c.getInt(5);
