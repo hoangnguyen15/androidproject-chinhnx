@@ -1,7 +1,6 @@
 package com.krazevina.euro2012;
 
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.Locale;
 
 import org.htmlcleaner.HtmlCleaner;
@@ -32,7 +31,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,7 +46,7 @@ public class News extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
-    ViewFlipper vfnew;
+    ViewFlipper vfnew;Button btnlist;
     ListView lvnew;
     RSSFeed rss1;
     int site = 0;
@@ -76,6 +74,7 @@ public class News extends Activity implements OnClickListener {
         btnNews = (Button)findViewById(R.id.btnNews);
         btnTeams = (Button)findViewById(R.id.btnTeams);
         btnSetting = (Button)findViewById(R.id.btnSetting);
+        btnlist = (Button)findViewById(R.id.btnlist);
         
         vfnew = (ViewFlipper)findViewById(R.id.vfnews);
         lvnew = (ListView)findViewById(R.id.lvnews);
@@ -85,8 +84,17 @@ public class News extends Activity implements OnClickListener {
         btnSchedule.setOnClickListener(this);
         handler = new Handler();
         
-//        if(site==0){
-	        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        btnlist.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				showList();
+			}
+		});
+        showList();
+    }
+    AlertDialog alert;
+    void showList(){
+    	if(alert==null){
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
 	        builder.setTitle("");
 	        builder.setItems(sites, new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int item) {
@@ -94,9 +102,9 @@ public class News extends Activity implements OnClickListener {
 	                loadRss();
 	            }
 	        });
-	        AlertDialog alert = builder.create();
-	        alert.show();
-//        }else loadRss();
+	        alert = builder.create();
+    	}
+        alert.show();
     }
     
     void loadRss(){
@@ -161,30 +169,28 @@ public class News extends Activity implements OnClickListener {
     	txtcon.getSettings().setAllowFileAccess(true);
 
     	tit.setText(item.getTitle());
-    	txtcon.loadData(head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8");
+    	txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+item.getDescription().replaceAll("%", "")+loading+tail, "text/html", "UTF-8",null);
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
     		RSSItem ite = item;
 			public void run() {
-				try{
 				b = ImageDownloader.readImageByUrl(url);
-				}catch (Exception e) {
+				if(b==null)
 					handler.post(new Runnable() {
 						public void run() {
 							img.setVisibility(View.GONE);
 						}
 					});
-				}
-				handler.post(new Runnable() {
-					public void run() {
-						img.setImageBitmap(b);
-					}
-				});
+				else
+					handler.post(new Runnable() {
+						public void run() {
+							img.setImageBitmap(b);
+						}
+					});
 				final String s = getAdditionInfo(ite.getLink());
 				handler.post(new Runnable() {
 					public void run() {
-						txtcon.loadData(head+" "+ite.getDescription()+s+tail,"text/html","UTF-8");
-						Log.e("DES:", ite.getDescription());
+						txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
 					}
 				});
 			}
@@ -211,9 +217,6 @@ public class News extends Activity implements OnClickListener {
 	            for(int i=0;i<child.length;i++)
 	            	child[i].setAttribute("width", "100%");
 	            s = cleaner.getInnerHtml(div);
-	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
-	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
-	            System.out.println(s);
 	            if(s.indexOf("VideoPlaying(")>0){
 	            	int x = s.indexOf("VideoPlaying(");
 	            	int st = s.indexOf("'", x);
@@ -221,7 +224,6 @@ public class News extends Activity implements OnClickListener {
 	            	String urlvideo = "http://bongdaplus.vn"+s.substring(st+1, en);
 	            	s = s+"<a href=\""+urlvideo+"\"> Video </a></br></br>";
 	            }
-	            s = URLEncoder.encode(s).replaceAll("\\+"," ");
     		}catch (Exception e) {
     			e.printStackTrace();
 			}
@@ -240,9 +242,36 @@ public class News extends Activity implements OnClickListener {
 	            for(int i=0;i<child.length;i++)
 	            	child[i].setAttribute("width", "100%");
 	            s = cleaner.getInnerHtml(div);
-	            s = s.replaceAll("src=\"/", "src=\"http://bongdaplus.vn/");
-	            s = s.replaceAll("href=\"/", "href=\"http://bongdaplus.vn/");
-	            s = URLEncoder.encode(s).replaceAll("\\+"," ");
+    		}catch (Exception e) {
+    			e.printStackTrace();
+			}
+    	}else if(url.contains("licheuro")){
+    		try{
+	    		HtmlCleaner cleaner = new HtmlCleaner();
+	    		Uri ss = Uri.parse(url);
+	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
+	            TagNode root = cleaner.clean(u);
+	            TagNode div = root.findElementByAttValue("class", "entry", true, false);
+	            TagNode[]child = div.getElementsByName("div", true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByName("ol", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].removeFromTree();
+	            child = div.getElementsByName("h3", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].removeFromTree();
+	            child = div.getElementsByName("img", true);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].setAttribute("width", "100%");
+	            s = cleaner.getInnerHtml(div);
+	            if(s.indexOf("\"file\":")>0){
+	            	int x = s.indexOf("\"file\":");
+	            	int st = s.indexOf("http", x);
+	            	int en = s.indexOf("\"", st+1);
+	            	String urlvideo = s.substring(st, en);
+	            	s = s+"<a href=\""+urlvideo+"\"> Video </a></br></br>";
+	            }
     		}catch (Exception e) {
     			e.printStackTrace();
 			}
@@ -294,13 +323,11 @@ public class News extends Activity implements OnClickListener {
 
 		@Override
 		public Object getItem(int position) {
-			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return 0;
 		}
 
@@ -328,9 +355,9 @@ public class News extends Activity implements OnClickListener {
 
 			  return convertView;
 			 }
-	}
-		static class ViewHolder {
+		class ViewHolder {
 			TextView tit,time;
-//			LinearLayout line;
 		}
+	}
+		
 }
