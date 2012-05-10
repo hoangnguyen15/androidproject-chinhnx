@@ -55,7 +55,7 @@
             android:id="@+id/imgsflag1"
             android:layout_width="20dip"
             android:layout_height="20dip"
-            android:src="@drawable/vietnamflag"/>
+            />
 		<TextView
 		    android:id="@+id/txtsratio"
             android:layout_width="0dip"
@@ -69,7 +69,7 @@
 		    android:id="@+id/imgsflag2"
 		    android:layout_width="20dip"
             android:layout_height="20dip"
-            android:src="@drawable/vietnamflag"/>
+            />
 		<TextView
 		    android:id="@+id/txtsteam2"
             android:layout_width="0dip"
