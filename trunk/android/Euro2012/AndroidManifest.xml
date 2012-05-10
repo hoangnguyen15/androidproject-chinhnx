@@ -26,6 +26,7 @@
         <activity android:name=".Setting"/>
         <activity android:name=".TeamDetails"/>
         <activity android:name=".MatchDetail"/>
+        <activity android:name=".Intro"/>
     </application>
 
 </manifest>
