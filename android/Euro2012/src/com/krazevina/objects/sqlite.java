@@ -104,7 +104,7 @@ public class sqlite
 	
 	public Vector<Event>getEvents(Match mat){
 		Vector<Event>ret = new Vector<Event>();
-		Cursor c = mSqlDatabase.query("MatcheOnline", new String[]{
+		Cursor c = mSqlDatabase.query("MatchOnline", new String[]{
 				"ID","MatchID","TeamID","PlayerID","EventID","Detail","MatchTime",
 				"Status"}, "MatchID="+mat.ID, null, null, null, null);
 		if(c==null)return ret;
