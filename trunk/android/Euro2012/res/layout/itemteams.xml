@@ -9,7 +9,8 @@
 	    android:layout_height="48dip"
 		android:orientation="horizontal"
 		android:gravity="center_vertical|center_horizontal"
-		android:layout_weight="4" >
+		android:layout_weight="4"
+		android:paddingLeft="5dip" >
     	<ImageView android:layout_width="20dip"
     	    android:layout_height="20dip" android:id="@+id/imgflag"
     	    android:src="@drawable/vietnamflag"/>
