@@ -2,6 +2,8 @@ package com.krazevina.rss;
 
 
 import org.xmlpull.v1.XmlPullParser;
+
+import android.util.Log;
 import android.util.Xml;
 
 public class XmlReader extends BaseXmlParser {
@@ -39,13 +41,18 @@ public class XmlReader extends BaseXmlParser {
 	                            if (name.equalsIgnoreCase(LINK)){
 	                            	currentFeed.setLink(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(DESCRIPTION)&&currentFeed.getDescription()==null){
-	                            	currentFeed.setDescription(parser.nextText());
+	                            	currentFeed.setDescription(parser.nextText().replaceAll("style=\"float: left;margin:0 10px 10px 10px;\"", "style=\"display: none;\""));
+	                            	Log.e("DES:", ""+currentFeed.getDescription());
 	                            } else if (name.equalsIgnoreCase(PUB_DATE)){
 	                            	currentFeed.setPubDate(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(TITLE)){
 	                            	currentFeed.setTitle(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(ENCLOSURE)){
 	                            	currentFeed.setEnclosure(parser.getAttributeValue(parser.getNamespace(), "url"));
+	                            } else if (name.equalsIgnoreCase(CONTENT)){
+	                            	for(int i=0;i<parser.getAttributeCount();i++)
+	                            		if(parser.getAttributeName(i).contains("url"))
+	                            			currentFeed.setEnclosure(parser.getAttributeValue(i));
 	                            }  
 	                        }
                         	break;

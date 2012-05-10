@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="fill_parent" android:gravity="center"
         android:layout_height="44dip"
         android:background="@drawable/bgtop" >
 
@@ -17,6 +17,9 @@
             android:text="@string/news"
             android:textColor="#fff"
             android:textSize="28dip" />
+        <Button android:layout_width="30dip" android:layout_height="30dip" 
+            android:layout_marginLeft="-40dip" android:id="@+id/btnlist"
+            android:background="@drawable/btnall"/>
     </LinearLayout>
 
     <LinearLayout

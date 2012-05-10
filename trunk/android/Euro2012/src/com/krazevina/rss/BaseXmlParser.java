@@ -14,7 +14,8 @@ public abstract class BaseXmlParser implements XmlParser {
 	public static final String DESCRIPTION="description";
 	public static final String PUB_DATE="pubdate";
 	public static final String CHANNEL="channel";
-	public static final String ENCLOSURE="enclosure"; 
+	public static final String ENCLOSURE="enclosure";
+	public static final String CONTENT="content";
 	
 	final URL feedUrl;
 
