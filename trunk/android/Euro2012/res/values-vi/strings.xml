@@ -2,7 +2,7 @@
 <resources>
     
     <string name="hello">Hello World, Main!</string>
-    <string name="app_name">Euro2012</string>
+    <string name="app_name">Euro 2012</string>
     <string name="schedule">Lịch</string>
     <string name="news">Tin tức</string>
     <string name="teams">Đội tuyển</string>
@@ -14,7 +14,7 @@
     <string name="description">Thông tin</string>
     <string name="testdes">The England national football team represents England in association football and is controlled by the Football Association, the governing body forThe England national football team represents England in association football and is controlled by the Football Association, the governing body forThe England national football team represents England in association football and is controlled by the Football Association, the governing body for</string>
     <string name="playerlist">Danh sách cầu thủ</string>
-    <string name="tno">T.No</string>
+    <string name="tno">STT</string>
     <string name="name">Tên</string>
     <string name="position">Vị trí</string>
     <string name="groupa">BẢNG A</string>
@@ -33,5 +33,20 @@
     <string name="details">&gt;</string>
     <string name="pleasewait">Hãy chờ</string>
     <string name="nonetwork">Không có kết nối mạng.</string>
-    
+    <string name="estimate">Năm thành lập</string>
+    <string name="fifajoin">Năm gia nhập Fifa</string>
+    <string name="fifarank">Thứ hạng Fifa</string>
+    <string name="coach">Huấn luyện viên</string>
+    <string name="attend">Số lần tham dự Euro</string>
+    <string name="player">Cầu thủ</string>
+    <string name="settingreply">Tùy chọn thông báo</string>
+    <string name="warnewsmsg">Thông báo trên thanh Notification</string>
+    <string name="vibrate">Báo rung</string>
+    <string name="settinglanguage">Tùy chọn ngôn ngữ</string>
+    <string name="english">English</string>
+    <string name="korean">한국의</string>
+    <string name="vietnam">Việt Nam</string>
+    <string name="contact">Tùy chọn khác</string>
+    <string name="feedback">Gửi ý kiến đóng góp</string>
+    <string name="aboutus">Thông tin ứng dụng</string>
 </resources>

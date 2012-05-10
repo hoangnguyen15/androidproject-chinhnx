@@ -42,7 +42,7 @@
     <string name="coach">Coach</string>
     <string name="attend">Attend Euro times</string>
     <string name="player">Player</string>
-    <string name="settingreply">Setting reply</string>
+    <string name="settingreply">Setting notification</string>
     <string name="warnewsmsg">Notification when a new message</string>
     <string name="vibrate">Vibrate when a goal</string>
     <string name="settinglanguage">Setting Language</string>
