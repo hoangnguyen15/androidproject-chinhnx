@@ -42,18 +42,27 @@ public class Global
 	 * lang = 2: vi </br>
 	 * lang = 3: ko
 	 */
-	public static void setLang(Context c,int lang){
+	public static void setLang(Activity c,int lang){
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
 		Editor e = sp.edit();
+		String slang;
 		if(lang==2){
+			slang = "VI";
 			e.putString("lang", "VI");
 			e.commit();
 		}else if(lang==1){
+			slang = "EN";
 			e.putString("lang", "EN");
 			e.commit();
 		}else {
+			slang = "KO";
 			e.putString("lang", "KO");
 			e.commit();
 		}
+		Configuration config = c.getBaseContext().getResources().getConfiguration();
+		Locale locale = new Locale(slang);
+        Locale.setDefault(locale);
+        config.locale = locale;
+        c.getBaseContext().getResources().updateConfiguration(config, c.getBaseContext().getResources().getDisplayMetrics());
 	}
 }
