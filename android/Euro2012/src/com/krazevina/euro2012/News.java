@@ -190,7 +190,8 @@ public class News extends Activity implements OnClickListener {
 				final String s = getAdditionInfo(ite.getLink());
 				handler.post(new Runnable() {
 					public void run() {
-						txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
+						if(site!=3)txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
+						else txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+s+tail,"text/html","UTF-8",null);
 					}
 				});
 			}
