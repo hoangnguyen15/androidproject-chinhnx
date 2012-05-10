@@ -42,7 +42,6 @@ public class XmlReader extends BaseXmlParser {
 	                            	currentFeed.setLink(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(DESCRIPTION)&&currentFeed.getDescription()==null){
 	                            	currentFeed.setDescription(parser.nextText().replaceAll("style=\"float: left;margin:0 10px 10px 10px;\"", "style=\"display: none;\""));
-	                            	Log.e("DES:", ""+currentFeed.getDescription());
 	                            } else if (name.equalsIgnoreCase(PUB_DATE)){
 	                            	currentFeed.setPubDate(parser.nextText());
 	                            } else if (name.equalsIgnoreCase(TITLE)){
