@@ -51,9 +51,11 @@ public class News extends Activity implements OnClickListener {
     ViewFlipper vfnew;
     ListView lvnew;
     RSSFeed rss1;
-    static int lang = 0;
+    int site = 0;
     Handler handler;
     ProgressDialog pr;
+    String sites[]= new String[]{"BongDaPlus.vn","TeamTalk.com","UEFA.com",
+    		"LichEuro2012.com","Goal.com","Guardian.co.uk"};
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,19 +85,18 @@ public class News extends Activity implements OnClickListener {
         btnSchedule.setOnClickListener(this);
         handler = new Handler();
         
-        if(lang==0){
-	        final CharSequence[] items = {"Tin tiếng Việt", "English news"};
+//        if(site==0){
 	        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 	        builder.setTitle("");
-	        builder.setItems(items, new DialogInterface.OnClickListener() {
+	        builder.setItems(sites, new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int item) {
-	                lang = item+1;
+	                site = item+1;
 	                loadRss();
 	            }
 	        });
 	        AlertDialog alert = builder.create();
 	        alert.show();
-        }else loadRss();
+//        }else loadRss();
     }
     
     void loadRss(){
@@ -103,8 +104,13 @@ public class News extends Activity implements OnClickListener {
         new Thread(new Runnable() {
 			@Override
 			public void run() {
-				if(lang==1)rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
-				else rss1 = new XmlReader("http://www.teamtalk.com/rss/15274").parse();
+				if(site==1)rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
+				else if(site==2)rss1 = new XmlReader("http://www.teamtalk.com/rss/15274").parse();
+				else if(site==3)rss1 = new XmlReader("http://www.uefa.com/rssfeed/uefaeuro/rss.xml").parse();
+				else if(site==4)rss1 = new XmlReader("http://licheuro2012.com/feed/").parse();
+				else if(site==5)rss1 = new XmlReader("http://www.goal.com/en/feeds/news?id=2898&fmt=rss").parse();
+				else if(site==6)rss1 = new XmlReader("http://www.guardian.co.uk/football/euro2012/rss").parse();
+					
 		        handler.post(new Runnable() {
 					public void run() {
 						pr.dismiss();
@@ -126,7 +132,10 @@ public class News extends Activity implements OnClickListener {
     }
     
     public void onBackPressed() {
-    	if(vfnew.getDisplayedChild()>0)vfnew.setDisplayedChild(0);
+    	if(vfnew.getDisplayedChild()>0){
+    		vfnew.setDisplayedChild(0);
+    		txtcon.loadData("", "text/html", "UTF-8");
+    	}
     	else super.onBackPressed();
     };
     
@@ -139,22 +148,6 @@ public class News extends Activity implements OnClickListener {
     	"<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"VN\">\n"+
     	"<head>\n"+
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
-	    	"<script type=\"text/javascript\" src=\"http://bongdaplus.vn/JScripts/jslib.axd?d=jquery-1.5.1.min.js,jquery.ui.core.js,jquery.ui.widget.js,jquery.ui.tabs.js,jquery.ui.datepicker.js,jquery.maskedinput.js,jquery.charcounter.js,vietuni.js,espebanner.js,swfobject.js,jwplayer.js,jquery.popupWindow.js,datetime.js\"></script>\n"+  
-	    	"<script type=\"text/javascript\" src=\"http://bongdaplus.vn/JScripts/jslib.axd?d=common.ui.js,jquery.cycle.all.min.js,jquery.jcarousel.min.js,jquery.scrollfollow.js\"></script> \n" +
-	    	"<script type=\"text/javascript\">\n" +
-	    	"function VideoPlaying(id, h,w,p) {\n"+
-	         "jwplayer(\"videoholder\" + id).setup({\n"+
-				   "flashplayer: \"http://bongdaplus.vn/JScripts/player.swf\",\n"+
-					"height: h,\n"+
-					"width: w,\n"+
-					"file: p,\n"+
-					"stretching: 'uniform',\n"+
-					"autostart: false,\n"+
-					"\"controlbar.position\": \"over\",\n"+
-					"skin:'http://bongdaplus.vn/JScripts/playerskin/bbd/bbd.xml'\n"+
-	         "});"+
-	         "}" +
-	    	"</script>" +
     	"</head>\n" +
     	"<body>";
     	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
@@ -168,12 +161,20 @@ public class News extends Activity implements OnClickListener {
     	txtcon.getSettings().setAllowFileAccess(true);
 
     	tit.setText(item.getTitle());
-    	txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8", null);
+    	txtcon.loadData(head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8");
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
     		RSSItem ite = item;
 			public void run() {
+				try{
 				b = ImageDownloader.readImageByUrl(url);
+				}catch (Exception e) {
+					handler.post(new Runnable() {
+						public void run() {
+							img.setVisibility(View.GONE);
+						}
+					});
+				}
 				handler.post(new Runnable() {
 					public void run() {
 						img.setImageBitmap(b);
@@ -183,6 +184,7 @@ public class News extends Activity implements OnClickListener {
 				handler.post(new Runnable() {
 					public void run() {
 						txtcon.loadData(head+" "+ite.getDescription()+s+tail,"text/html","UTF-8");
+						Log.e("DES:", ite.getDescription());
 					}
 				});
 			}

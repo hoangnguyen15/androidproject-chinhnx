@@ -51,7 +51,8 @@ public class MatchDetail extends Activity {
 		
 		name1.setText(t1.name);
 		name2.setText(t2.name);
-		score.setText(m.finalScore);
+		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
+		else score.setText("?-?");
 		stadium.setText(m.stadium);
 		referee.setText(m.referee);
 		

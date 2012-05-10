@@ -104,6 +104,7 @@ public class Main extends Activity implements OnClickListener {
 				int ind = i;
 				@Override
 				public void onClick(View v) {
+					if(match.elementAt(ind).team1<100)return;
 					Intent i  = new Intent(Main.this,TeamDetails.class);
 					i.putExtra("idTeam", match.elementAt(ind).team1);
 					startActivity(i);
@@ -113,6 +114,7 @@ public class Main extends Activity implements OnClickListener {
 				int ind = i;
 				@Override
 				public void onClick(View v) {
+					if(match.elementAt(ind).team1<100)return;
 					Intent i  = new Intent(Main.this,TeamDetails.class);
 					i.putExtra("idTeam", match.elementAt(ind).team2);
 					startActivity(i);
@@ -120,12 +122,14 @@ public class Main extends Activity implements OnClickListener {
 			});
 			
 			llmatchdetail.setOnClickListener(new OnClickListener() {
+				Match m = match.get(i);
 				int ind = i;
 				@Override
 				public void onClick(View v) {
 					Intent i  = new Intent(Main.this,MatchDetail.class);
 					i.putExtra("idTeam1", match.elementAt(ind).team1);
 					i.putExtra("idTeam2", match.elementAt(ind).team2);
+					Global.match = m;
 					startActivity(i);
 				}
 			});
