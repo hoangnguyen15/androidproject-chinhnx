@@ -21,6 +21,9 @@
     <string name="groupb">BẢNG B</string>
     <string name="groupc">BẢNG C</string>
     <string name="groupd">BẢNG D</string>
+	<string name="quarter">TỨ KẾT</string>
+    <string name="semi">BÁN KẾT</string>
+    <string name="finals">CHUNG KẾT</string>
     <string name="team">Đội tuyển</string>
     <string name="pld">Trận</string>
     <string name="w">T</string>
