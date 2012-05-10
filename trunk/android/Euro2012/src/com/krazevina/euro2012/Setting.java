@@ -203,6 +203,18 @@ public class Setting extends Activity implements OnClickListener {
 				Global.setLang(this,2);
 			}
 		}
+		
+		if(v.getId() == llabouts.getId()){
+			startActivity(new Intent(Setting.this,Intro.class));
+		}
+		if(v.getId() == llfeedback.getId()){
+			final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+	        emailIntent.setType("plain/text");
+	        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.intro_email)});
+	        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
+	        startActivity(Intent.createChooser(emailIntent, getString(R.string.choose)));
+		}
+		
 	}
 	
 	@Override
