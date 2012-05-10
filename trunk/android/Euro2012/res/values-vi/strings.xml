@@ -46,7 +46,20 @@
     <string name="english">English</string>
     <string name="korean">한국의</string>
     <string name="vietnam">Việt Nam</string>
-    <string name="contact">Tùy chọn khác</string>
+    <string name="contact">Liên hệ</string>
     <string name="feedback">Gửi ý kiến đóng góp</string>
     <string name="aboutus">Thông tin ứng dụng</string>
+    
+     <string name="address">Địa chỉ:</string>
+    <string name="email">Email:</string>
+    <string name="website">Website:</string>
+	<string name="intro_title">Europe 2012</string>
+	<string name="intro_address">Tầng 19, tòa nhà LandMark72 Tower, Khu E6, Đường Phạm Hùng,Quận Cầu Giấy,Hà Nội</string>
+	<string name="intro_text_tel">Số điện thoại:</string>
+	<string name="intro_tel">0435567810</string>
+	<string name="intro_tel_text">(+84)-43-556-7810</string>
+	<string name="intro_email">androidkraze@gmail.com</string>
+	<string name="intro_website">http://nhncorp.com</string>
+	<string name="intro_copyright">© Developed by NHN Inc - 2012</string>
+	<string name="choose">Lựa chọn</string>
 </resources>
