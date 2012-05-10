@@ -102,6 +102,30 @@ public class sqlite
 		if(sqlitehelper!=null)sqlitehelper.close();
 	}
 	
+	public Vector<Event>getEvents(Match mat){
+		Vector<Event>ret = new Vector<Event>();
+		Cursor c = mSqlDatabase.query("MatcheOnline", new String[]{
+				"ID","MatchID","TeamID","PlayerID","EventID","Detail","MatchTime",
+				"Status"}, "MatchID="+mat.ID, null, null, null, null);
+		if(c==null)return ret;
+		Event m;
+		c.moveToFirst();
+		for(int i=0;i<c.getCount();i++){
+			m = new Event();
+			m.eventID = c.getInt(c.getColumnIndex("EventID"));
+			m.matchID = c.getInt(c.getColumnIndex("MatchID"));
+			m.teamID = c.getInt(c.getColumnIndex("TeamID"));
+			m.playerID = c.getInt(c.getColumnIndex("PlayerID"));
+			m.detail = c.getString(c.getColumnIndex("Detail"));
+			m.time = c.getString(c.getColumnIndex("MatchTime"));
+			m.status = c.getInt(c.getColumnIndex("Status"));
+			ret.add(m);
+			c.moveToNext();
+		}
+		c.close();
+		return ret;
+	}
+	
 	public Vector<Match>getAllMatches(){
 		Vector<Match>ret = new Vector<Match>();
 		Cursor c = mSqlDatabase.query("Matches", new String[]{
@@ -237,6 +261,32 @@ public class sqlite
 		}
 		c.close();
 		return t;
+	}
+	
+	public Player getlayer(int ID){
+		Player m = null;
+		Cursor c = mSqlDatabase.query("Players", new String[]{"ID",
+				"TeamID","Name","Image","DOB","Height","Weight",
+				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+ID, null, null, null, null);
+		if(c==null)return m;
+		
+		c.moveToFirst();
+		m = new Player();
+		m.teamID = c.getInt(c.getColumnIndex("TeamID"));
+		m.name = c.getString(c.getColumnIndex("Name"));
+		m.imageUrl = c.getString(c.getColumnIndex("Image"));
+		m.dob = c.getString(c.getColumnIndex("DOB"));
+		m.height = c.getString(c.getColumnIndex("Height"));
+		m.weight = c.getString(c.getColumnIndex("Weight"));
+		m.club = c.getString(c.getColumnIndex("Club"));
+		m.pos = c.getString(c.getColumnIndex("Position"));
+		m.number = c.getString(c.getColumnIndex("Number"));
+		m.score = c.getInt(c.getColumnIndex("Score"));
+		m.status = c.getInt(c.getColumnIndex("Status"));
+		m.tip = c.getString(c.getColumnIndex("PlayerTip"));
+
+		c.close();
+		return m;
 	}
 	
 	public String searchNameTeam(int teamID){

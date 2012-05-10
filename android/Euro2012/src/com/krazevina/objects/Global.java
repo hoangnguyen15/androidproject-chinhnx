@@ -18,6 +18,7 @@ public class Global
 	public static String lang;
 	public static int notify;
 	public static int vibrate;
+	public static Match match;
 	
 	public static void getLang(Activity c){
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
