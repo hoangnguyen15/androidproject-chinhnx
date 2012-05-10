@@ -53,6 +53,19 @@
     <string name="feedback">Feedback</string>
     <string name="aboutus">About us</string>
     
+    <string name="address">Address:</string>
+    <string name="email">Email:</string>
+    <string name="website">Website:</string>
+	<string name="intro_title">Europe 2012</string>
+	<string name="intro_address">19 floors, LandMark72 Tower, Plot E6, Pham Hung Road, Cau Giay dst, Ha Noi, Viet Nam</string>
+	<string name="intro_text_tel">Call:</string>
+	<string name="intro_tel">0435567810</string>
+	<string name="intro_tel_text">(+84)-43-556-7810</string>
+	<string name="intro_email">androidkraze@gmail.com</string>
+	<string name="intro_website">http://nhncorp.com</string>
+	<string name="intro_copyright">© Developed by NHN Inc - 2012</string>
+	<string name="choose">Choose</string>
+    
     
     
 </resources>
