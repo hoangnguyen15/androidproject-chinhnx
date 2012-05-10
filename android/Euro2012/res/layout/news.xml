@@ -50,10 +50,11 @@
     				android:layout_marginBottom="25dip"/>
         	</LinearLayout>
         	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-                android:background="#fff"
-                android:weightSum="825" android:baselineAligned="false" android:orientation="vertical">
-        	    <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
-        	        android:layout_weight="200" android:layout_margin="10dip">
+                android:background="#fff" android:baselineAligned="false" 
+                android:orientation="vertical">
+	            
+        	    <LinearLayout android:layout_width="fill_parent" android:layout_height="60dip"
+        	        android:layout_margin="10dip">
         	        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
         	            android:id="@+id/imgnews" android:layout_weight="1"/>
         	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
@@ -69,13 +70,12 @@
 	        	            android:id="@+id/txttime"
 	        	            android:layout_marginLeft="10dip"/>
         	        </LinearLayout>
-        	        
         	    </LinearLayout>
-       	        <WebView android:layout_width="fill_parent" android:layout_height="0dip"
-       	        	android:layout_weight="625" android:layout_margin="10dip"
-       	            android:textColor="#000"
-       	            android:id="@+id/txtcontent"/>
+        	    
+       	        <WebView android:layout_width="fill_parent" android:layout_height="fill_parent"
+       	        	android:id="@+id/txtcontent"/>
         	</LinearLayout>
+        	
         </ViewFlipper>
         
     </LinearLayout>
