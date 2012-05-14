@@ -4,6 +4,7 @@ import java.util.Vector;
 
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
+import com.krazevina.objects.SocketConnect;
 import com.krazevina.objects.sqlite;
 
 import android.app.Activity;
@@ -157,6 +158,7 @@ public class Main extends Activity implements OnClickListener {
 				llfinal.addView(ll);
 			}
 		}
+		new SocketConnect().update("Matches", this);
     }
     
     OnTouchListener touch = new OnTouchListener() {
@@ -235,7 +237,6 @@ public class Main extends Activity implements OnClickListener {
 	
 	@Override
 	protected void onDestroy() {
-		// TODO Auto-generated method stub
 		super.onDestroy();
 		sql.recycle();
 	}
