@@ -152,14 +152,35 @@ public class News extends Activity implements OnClickListener {
     Bitmap b;String head,tail;
     
     void showInfo(final RSSItem item){
-    	head="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n"+
-    	"<html xmlns=\"http://www.w3.org/1999/xhtml\" dir=\"ltr\" lang=\"VN\">\n"+
+    	head=""+
+    	"<html xmlns:fb=\"http://ogp.me/ns/fb#\">\n"+
     	"<head>\n"+
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
     	"</head>\n" +
-    	"<body>";
+    	"<body>" +
+    	"<div id=\"fb-root\"></div>"+
+		"<script>"+
+		  "window.fbAsyncInit = function() {"+
+		    "FB.init({"+
+		      "appId      : '111569915535689', // App ID"+
+		      "status     : true, // check login status"+
+		      "cookie     : true, // enable cookies to allow the server to access the session"+
+		      "oauth      : true, // enable OAuth 2.0"+
+		      "xfbml      : true  // parse XFBML"+
+		    "});"+
+		  "};"+
+		  "(function(d){"+
+		     "var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}"+
+		     "js = d.createElement('script'); js.id = id; js.async = true;"+
+		     "js.src = \"//connect.facebook.net/en_US/all.js\";"+
+		     "d.getElementsByTagName('head')[0].appendChild(js);"+
+		   "}(document));"+
+		"</script>";
     	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
-    	tail = "</body></html>";
+    	tail = "<div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
+			"<fb:comments href=\"http://9gag.com/gag/4159769\" num_posts=\"5\" width=\"300\" colorscheme=\"dark\"></fb:comments>"+
+		"</div>\n"+
+    	"</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
     	img.setImageBitmap(null);
     	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
@@ -190,7 +211,7 @@ public class News extends Activity implements OnClickListener {
 				final String s = getAdditionInfo(ite.getLink());
 				handler.post(new Runnable() {
 					public void run() {
-						if(site!=3)txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
+						if(site!=4)txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
 						else txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+s+tail,"text/html","UTF-8",null);
 					}
 				});
@@ -216,7 +237,7 @@ public class News extends Activity implements OnClickListener {
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].setAttribute("width", "100%");
+	            	child[i].setAttribute("style", "width: 100%; height: auto;");
 	            s = cleaner.getInnerHtml(div);
 	            if(s.indexOf("VideoPlaying(")>0){
 	            	int x = s.indexOf("VideoPlaying(");
@@ -241,7 +262,7 @@ public class News extends Activity implements OnClickListener {
 	            		child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].setAttribute("width", "100%");
+	            	child[i].setAttribute("style", "max-width: 100%; height: auto;");
 	            s = cleaner.getInnerHtml(div);
     		}catch (Exception e) {
     			e.printStackTrace();
@@ -264,7 +285,7 @@ public class News extends Activity implements OnClickListener {
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].setAttribute("width", "100%");
+	            	child[i].setAttribute("style", "max-width: 100%; height: auto;");
 	            s = cleaner.getInnerHtml(div);
 	            if(s.indexOf("\"file\":")>0){
 	            	int x = s.indexOf("\"file\":");

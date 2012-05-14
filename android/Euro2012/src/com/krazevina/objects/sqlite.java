@@ -7,6 +7,10 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Vector;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -331,6 +335,21 @@ public class sqlite
 		try {
 			mSqlDatabase.execSQL("update setting set vibrate=" + i);
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	void updateMatches(String js){
+		try {
+			System.out.print(js);
+			JSONArray j = new JSONArray(js);
+			Match m;
+			for(int i=0;i<j.length();i++){
+				JSONObject o = (JSONObject) j.get(i);
+				m = new Match();
+				m.ID = o.getInt("ID");
+			}
+		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}
