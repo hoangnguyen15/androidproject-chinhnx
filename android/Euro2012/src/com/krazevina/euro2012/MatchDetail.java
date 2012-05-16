@@ -8,6 +8,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ import com.krazevina.objects.Player;
 import com.krazevina.objects.Team;
 import com.krazevina.objects.sqlite;
 
-public class MatchDetail extends Activity {
+public class MatchDetail extends Activity implements OnClickListener{
 	
 	ImageView flag1,flag2;
 	TextView name1,name2,score,stadium,referee;
@@ -27,6 +28,7 @@ public class MatchDetail extends Activity {
 	Match m;Team t1,t2;
 	Player p;
 	int i;
+	Button btnBack;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,8 @@ public class MatchDetail extends Activity {
 		stadium = (TextView)findViewById(R.id.stadium);
 		referee = (TextView)findViewById(R.id.referee);
 		llevent = (LinearLayout)findViewById(R.id.llevent);
+		btnBack = (Button)findViewById(R.id.btnBack);
+		btnBack.setOnClickListener(this);
 		sql = new sqlite(this);
 		m = Global.match;
 		m.events = sql.getEvents(m);
@@ -103,6 +107,13 @@ public class MatchDetail extends Activity {
 		default:
 			return 0;
 		}
+	}
+	@Override
+	public void onClick(View v) {
+		if(v.getId() == btnBack.getId()){
+			finish();
+		}
+		
 	}
 }
 
