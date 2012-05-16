@@ -342,7 +342,9 @@ public class sqlite
 	void updateMatches(String js){
 		try {
 			System.out.println(js);
-			JSONObject jo = new JSONObject(js);
+			int firstc = js.indexOf("-");
+			String js2 = js.substring(firstc+1);
+			JSONObject jo = new JSONObject(js2);
 			JSONArray j = jo.getJSONArray("Table");
 			Match m;
 			for(int i=0;i<j.length();i++){
@@ -353,22 +355,28 @@ public class sqlite
 				m.team1 = Integer.parseInt(o.getString("FirstTeam"));
 				m.team2 = Integer.parseInt(o.getString("SecondTeam"));
 				m.stadium = o.getString("Stadium");
-				m.start = o.getString("Start");
+				m.start = o.getString("StartT");
 				m.finalScore = o.getString("FinalScore");
 				m.referee = o.getString("MainReferee");
-				m.firstPick = Integer.parseInt(o.getString("FirstPickup"));
-				m.secPick = Integer.parseInt(o.getString("SecondPickup"));
+				try {
+					m.firstPick = Integer.parseInt(o.getString("FirstPickup"));
+					m.secPick = Integer.parseInt(o.getString("SecondPickup"));
+				} catch (NumberFormatException e) {
+					// TODO Auto-generated catch block
+//					e.printStackTrace();
+				}
 				m.status = Integer.parseInt(o.getString("Status"));
 				mSqlDatabase.execSQL("UPDATE Matches SET GroupID="+m.groupID+
-						" AND FirstTeam="+m.team1+
-						" AND SecondTeam="+m.team2+
-						" AND Stadium='"+m.stadium+"'"+
-						" AND Start='"+m.start+"'"+
-						" AND FinalScore='"+m.finalScore+"'"+
-						" AND MainReferee='"+m.referee+"'"+
-						" AND FirstPickup="+m.firstPick+
-						" AND SecondPickup="+m.secPick+
-						" AND Status="+m.status);
+						" , FirstTeam="+m.team1+
+						" , SecondTeam="+m.team2+
+						" , Stadium='"+m.stadium+"'"+
+						" , Start='"+m.start+"'"+
+						" , FinalScore='"+m.finalScore+"'"+
+						" , MainReferee='"+m.referee+"'"+
+						" , FirstPickup="+m.firstPick+
+						" , SecondPickup="+m.secPick+
+						" , Status="+m.status+
+						" where ID="+m.ID);
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
