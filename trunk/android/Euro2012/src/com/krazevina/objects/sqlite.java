@@ -361,11 +361,12 @@ public class sqlite
 				try {
 					m.firstPick = Integer.parseInt(o.getString("FirstPickup"));
 					m.secPick = Integer.parseInt(o.getString("SecondPickup"));
+					m.status = Integer.parseInt(o.getString("Status"));
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
 //					e.printStackTrace();
 				}
-				m.status = Integer.parseInt(o.getString("Status"));
+				
 				mSqlDatabase.execSQL("UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
