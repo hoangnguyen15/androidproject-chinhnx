@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -95,8 +96,9 @@ public class Main extends Activity implements OnClickListener {
 			imgsflag2.setImageResource(searchFlag(teamID2));
 			txtsteam1.setText(sql.searchNameTeam(teamID1));
 			txtsteam2.setText(sql.searchNameTeam(teamID2));
-			String ratio = match.elementAt(i).finalScore;
-			if(ratio!=null){
+			String ratio = match.elementAt(i).finalScore;			
+			
+			if(ratio!=null && ratio.length()>0){
 				txtsratio.setText(ratio);
 			}else{
 				txtsratio.setText("?-?");
