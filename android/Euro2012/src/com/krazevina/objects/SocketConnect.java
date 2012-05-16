@@ -15,7 +15,7 @@ import android.util.Log;
 public class SocketConnect {
 
 	String sv="123.30.187.134";
-	int port = 8888;
+	int port = 4141;
 	Socket sk;
 	BufferedReader br;
 	/**
@@ -66,7 +66,7 @@ public class SocketConnect {
 			output = null;
 			output=br.readLine();
 			if(output!=null)return output;
-		} catch (IOException e) {
+		} catch (Exception e) {
 		}
 		return "";
     }
@@ -90,6 +90,7 @@ public class SocketConnect {
     		if (str.equals("Matches")) {
     			sql.updateMatches(js);
     		}
+    		sql.recycle();
     	}
     }
 }
