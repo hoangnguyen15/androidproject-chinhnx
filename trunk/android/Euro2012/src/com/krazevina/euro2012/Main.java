@@ -161,6 +161,7 @@ public class Main extends Activity implements OnClickListener {
 			}
 		}
 		new SocketConnect().update("Matches", this);
+		new SocketConnect().update("TeamsInRound", this);
     }
     
     OnTouchListener touch = new OnTouchListener() {

@@ -22,7 +22,8 @@ import com.krazevina.objects.sqlite;
 public class MatchDetail extends Activity implements OnClickListener{
 	
 	ImageView flag1,flag2;
-	TextView name1,name2,score,stadium,referee;
+	TextView name1,name2,score;
+//	T,stadium,referee;
 	LinearLayout llevent;
 	sqlite sql;
 	Match m;Team t1,t2;
@@ -39,8 +40,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		name1 = (TextView)findViewById(R.id.name1);
 		name2 = (TextView)findViewById(R.id.name2);
 		score = (TextView)findViewById(R.id.score);
-		stadium = (TextView)findViewById(R.id.stadium);
-		referee = (TextView)findViewById(R.id.referee);
+//		stadium = (TextView)findViewById(R.id.stadium);
+//		referee = (TextView)findViewById(R.id.referee);
 		llevent = (LinearLayout)findViewById(R.id.llevent);
 		btnBack = (Button)findViewById(R.id.btnBack);
 		btnBack.setOnClickListener(this);
@@ -57,8 +58,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		name2.setText(t2.name);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
 		else score.setText("?-?");
-		stadium.setText(m.stadium);
-		referee.setText(m.referee);
+//		stadium.setText(m.stadium);
+//		referee.setText(m.referee);
 		
 		LinearLayout ll;
 		LayoutInflater mInflater = LayoutInflater.from(this);

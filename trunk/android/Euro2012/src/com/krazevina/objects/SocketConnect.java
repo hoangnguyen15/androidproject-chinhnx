@@ -38,6 +38,8 @@ public class SocketConnect {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
     }
     
@@ -54,7 +56,7 @@ public class SocketConnect {
 		try {
 			pw = new PrintWriter(sk.getOutputStream(),true);
 			pw.println(""+s);
-			Log.e("Send", ""+s);
+			Log.e("Send",""+s);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -89,6 +91,8 @@ public class SocketConnect {
     		sqlite sql = new sqlite(c);
     		if (str.equals("Matches")) {
     			sql.updateMatches(js);
+    		}else if (str.equals("TeamsInRound")) {
+    			sql.updateTeamsInRound(js);
     		}
     		sql.recycle();
     	}
