@@ -96,4 +96,9 @@ public class SocketConnect {
     		}else System.out.println(js);
     	}
     }
+    
+    public void vote(int matchID,int team){
+    	String s = "Pickup-"+matchID+"-"+team;
+    	send(s);
+    }
 }

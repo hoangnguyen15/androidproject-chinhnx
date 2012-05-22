@@ -1,5 +1,7 @@
 package com.krazevina.euro2012;
 
+import java.util.Vector;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,23 +15,27 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
 import com.krazevina.objects.Player;
+import com.krazevina.objects.SocketConnect;
 import com.krazevina.objects.Team;
 import com.krazevina.objects.sqlite;
 
 public class MatchDetail extends Activity implements OnClickListener{
 	
 	ImageView flag1,flag2;
-	TextView name1,name2,score;
+	TextView name1,name2,score,bet11,bet12,bet13,bet21,bet22,bet23,bet31,bet32,bet33;
 //	T,stadium,referee;
 	LinearLayout llevent;
 	sqlite sql;
 	Match m;Team t1,t2;
 	Player p;
 	int i;
-	Button btnBack;
+	Button btnBack,btnvote1,btnvote2;
+	Vector<Bet> b;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +50,22 @@ public class MatchDetail extends Activity implements OnClickListener{
 //		referee = (TextView)findViewById(R.id.referee);
 		llevent = (LinearLayout)findViewById(R.id.llevent);
 		btnBack = (Button)findViewById(R.id.btnBack);
+		bet11 = (TextView)findViewById(R.id.txtbet11);
+		bet11 = (TextView)findViewById(R.id.txtbet12);
+		bet11 = (TextView)findViewById(R.id.txtbet13);
+		bet11 = (TextView)findViewById(R.id.txtbet21);
+		bet11 = (TextView)findViewById(R.id.txtbet22);
+		bet11 = (TextView)findViewById(R.id.txtbet23);
+		bet11 = (TextView)findViewById(R.id.txtbet31);
+		bet11 = (TextView)findViewById(R.id.txtbet32);
+		bet11 = (TextView)findViewById(R.id.txtbet33);
+		btnvote1 = (Button)findViewById(R.id.btnvote1);
+		btnvote2 = (Button)findViewById(R.id.btnvote2);
 		btnBack.setOnClickListener(this);
 		sql = new sqlite(this);
 		m = Global.match;
 		m.events = sql.getEvents(m);
+		b = sql.getBet(m.ID);
 		
 		flag1.setImageResource(TeamDetails.flag(m.team1));
 		flag2.setImageResource(TeamDetails.flag(m.team2));
@@ -56,6 +74,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		
 		name1.setText(t1.name);
 		name2.setText(t2.name);
+		btnvote1.setText(m.firstPick);
+		btnvote2.setText(m.secPick);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
 		else score.setText("?-?");
 //		stadium.setText(m.stadium);
@@ -96,6 +116,25 @@ public class MatchDetail extends Activity implements OnClickListener{
 			}
 			llevent.addView(ll);
 		}
+		bet11.setText(getAsia().col1);
+		bet12.setText(getAsia().col2);
+		bet13.setText(getAsia().col3);
+		bet21.setText(getEuro().col1);
+		bet22.setText(getEuro().col2);
+		bet23.setText(getEuro().col3);
+		bet31.setText(getUO().col1);
+		bet32.setText(getUO().col2);
+		bet33.setText(getUO().col3);
+		btnvote1.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				new SocketConnect().vote(m.ID, 1);
+			}
+		});
+		btnvote2.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				new SocketConnect().vote(m.ID, 2);
+			}
+		});
 	}
 	int Type(int t){
 		switch (t) {
@@ -114,7 +153,18 @@ public class MatchDetail extends Activity implements OnClickListener{
 		if(v.getId() == btnBack.getId()){
 			finish();
 		}
-		
+	}
+	Bet getAsia(){
+		for(int i=0;i<b.size();i++)if(b.get(i).bethouse==1)return b.get(i);
+		return new Bet();
+	}
+	Bet getEuro(){
+		for(int i=0;i<b.size();i++)if(b.get(i).bethouse==3)return b.get(i);
+		return new Bet();
+	}
+	Bet getUO(){
+		for(int i=0;i<b.size();i++)if(b.get(i).bethouse==2)return b.get(i);
+		return new Bet();
 	}
 }
 

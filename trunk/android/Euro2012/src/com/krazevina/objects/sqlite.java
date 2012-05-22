@@ -22,7 +22,7 @@ public class sqlite
 {
 	private static String DB_PATH = "/data/data/com.krazevina.euro2012/databases/";
 	private static final String DATABASE_NAME="euro2012.dbo";
-	private static final int DATABASE_VERSION=1;
+	private static final int DATABASE_VERSION=2;
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -97,6 +97,11 @@ public class sqlite
 	 
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+			try {
+				copyDataBase();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
@@ -419,7 +424,27 @@ public class sqlite
 			e.printStackTrace();
 		}
 	}
-	
+	public Vector<Bet> getBet(int matchID){
+		Vector<Bet>vb = new Vector<Bet>();
+		Bet t = null;
+		Cursor c = mSqlDatabase.query("Bet", new String[]{
+				"ID","MatchID","BetHouseID","Col1","Col2","Col3","Status"}, "ID="+matchID, null, null, null, null);
+		if(c==null)return vb;
+		c.moveToFirst();
+		for(int i=0;i<c.getCount();i++){
+			t = new Bet();
+			t.matchID = c.getInt(c.getColumnIndex("MatchID"));
+			t.bethouse = c.getInt(c.getColumnIndex("BetHouseID"));
+			t.col1 = c.getString(c.getColumnIndex("Col1"));
+			t.col2 = c.getString(c.getColumnIndex("Col2"));
+			t.col3 = c.getString(c.getColumnIndex("Col3"));
+			t.status = c.getInt(c.getColumnIndex("Status"));
+			vb.add(t);
+			c.moveToNext();
+		}
+		c.close();
+		return vb;
+	}
 	void updateBet(String js){
 		try {
 			System.out.println(js);
@@ -435,17 +460,15 @@ public class sqlite
 				t.matchID = Integer.parseInt(o.getString("MatchID"));
 				t.bethouse = Integer.parseInt(o.getString("BetHouseID"));
 				t.col1 = o.getString("Col1");
-				t.col2 = (o.getString("Col2"));
-				t.col3 = (o.getString("Col3"));
+				t.col2 = o.getString("Col2");
+				t.col3 = o.getString("Col3");
 				t.status = Integer.parseInt(o.getString("Status"));
 				
-				exec("UPDATE BetDetail SET MatchID="+t.matchID+
-						" , BetHouseID="+t.bethouse+
-						" , Col1="+t.col1+
+				exec("UPDATE BetDetail SET Col1="+t.col1+
 						" , Col2="+t.col2+
 						" , Col3="+t.col3+
 						" , Status="+t.status+
-						" where ID="+t.ID);
+						" where MatchID="+t.matchID+" AND BetHouseID="+t.bethouse);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -455,4 +478,5 @@ public class sqlite
 	synchronized void exec(String s){
 		mSqlDatabase.execSQL(s);
 	}
+	
 }
