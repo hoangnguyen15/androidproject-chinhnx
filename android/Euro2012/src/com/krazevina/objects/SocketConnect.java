@@ -73,28 +73,27 @@ public class SocketConnect {
 		return "";
     }
     
-    public void update(String s,Context con){
-    	new updateData(s, con).start();
+    public void update(String s,sqlite sql){
+    	new updateData(s, sql).start();
     }
     
     class updateData extends Thread{
     	String str;
-    	Context c;
-    	public updateData(String s,Context con) {
+    	sqlite sql;
+    	public updateData(String s,sqlite sql) {
     		str = s;
-    		c = con;
+    		this.sql = sql;
 		}
     	public void run(){
     		connect();
     		send(str);
     		String js = receive();
-    		sqlite sql = new sqlite(c);
+    		
     		if (str.equals("Matches")) {
     			sql.updateMatches(js);
     		}else if (str.equals("TeamsInRound")) {
     			sql.updateTeamsInRound(js);
-    		}
-    		sql.recycle();
+    		}else System.out.println(js);
     	}
     }
 }
