@@ -325,7 +325,7 @@ public class sqlite
 	
 	public void setNotify(int i) {
 		try {
-			mSqlDatabase.execSQL("update setting set notify=" + i);
+			exec("update setting set notify=" + i);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -333,7 +333,7 @@ public class sqlite
 	
 	public void setVibrate(int i) {
 		try {
-			mSqlDatabase.execSQL("update setting set vibrate=" + i);
+			exec("update setting set vibrate=" + i);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -363,11 +363,9 @@ public class sqlite
 					m.secPick = Integer.parseInt(o.getString("SecondPickup"));
 					m.status = Integer.parseInt(o.getString("Status"));
 				} catch (NumberFormatException e) {
-					// TODO Auto-generated catch block
-//					e.printStackTrace();
 				}
 				
-				mSqlDatabase.execSQL("UPDATE Matches SET GroupID="+m.groupID+
+				exec("UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
 						" , Stadium='"+m.stadium+"'"+
@@ -379,7 +377,7 @@ public class sqlite
 						" , Status="+m.status+
 						" where ID="+m.ID);
 			}
-		} catch (JSONException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -406,7 +404,7 @@ public class sqlite
 				t.draw = Integer.parseInt(o.getString("Draw"));
 				t.status = Integer.parseInt(o.getString("Status"));
 				
-				mSqlDatabase.execSQL("UPDATE TeamsInRound SET RoundID="+t.roundID+
+				exec("UPDATE TeamsInRound SET RoundID="+t.roundID+
 						" , TeamID="+t.teamID+
 						" , Point="+t.point+
 						" , LooseScore="+t.looseScore+
@@ -417,8 +415,12 @@ public class sqlite
 						" , Status="+t.status+
 						" where ID="+t.ID);
 			}
-		} catch (JSONException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	synchronized void exec(String s){
+		mSqlDatabase.execSQL(s);
 	}
 }
