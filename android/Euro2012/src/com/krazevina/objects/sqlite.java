@@ -383,4 +383,42 @@ public class sqlite
 			e.printStackTrace();
 		}
 	}
+	
+	void updateTeamsInRound(String js){
+		try {
+			System.out.println(js);
+			int firstc = js.indexOf("-");
+			String js2 = js.substring(firstc+1);
+			JSONObject jo = new JSONObject(js2);
+			JSONArray j = jo.getJSONArray("Table");
+			TeamsInRound t;
+			for(int i=0;i<j.length();i++){
+				JSONObject o = (JSONObject) j.get(i);
+				t = new TeamsInRound();
+				t.ID = Integer.parseInt(o.getString("ID"));
+				t.roundID = Integer.parseInt(o.getString("RoundID"));
+				t.teamID = Integer.parseInt(o.getString("TeamID"));
+				t.point = Integer.parseInt(o.getString("Point"));
+				t.looseScore = Integer.parseInt(o.getString("LooseScore"));
+				t.winScore = Integer.parseInt(o.getString("WinScore"));
+				t.win = Integer.parseInt(o.getString("Win"));
+				t.lose = Integer.parseInt(o.getString("Lose"));
+				t.draw = Integer.parseInt(o.getString("Draw"));
+				t.status = Integer.parseInt(o.getString("Status"));
+				
+				mSqlDatabase.execSQL("UPDATE TeamsInRound SET RoundID="+t.roundID+
+						" , TeamID="+t.teamID+
+						" , Point="+t.point+
+						" , LooseScore="+t.looseScore+
+						" , WinScore="+t.winScore+
+						" , Win="+t.win+
+						" , Lose="+t.lose+
+						" , Draw="+t.draw+
+						" , Status="+t.status+
+						" where ID="+t.ID);
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 }
