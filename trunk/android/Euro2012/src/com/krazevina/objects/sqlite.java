@@ -420,6 +420,38 @@ public class sqlite
 		}
 	}
 	
+	void updateBet(String js){
+		try {
+			System.out.println(js);
+			int firstc = js.indexOf("-");
+			String js2 = js.substring(firstc+1);
+			JSONObject jo = new JSONObject(js2);
+			JSONArray j = jo.getJSONArray("Table");
+			Bet t;
+			for(int i=0;i<j.length();i++){
+				JSONObject o = (JSONObject) j.get(i);
+				t = new Bet();
+				t.ID = Integer.parseInt(o.getString("ID"));
+				t.matchID = Integer.parseInt(o.getString("MatchID"));
+				t.bethouse = Integer.parseInt(o.getString("BetHouseID"));
+				t.col1 = o.getString("Col1");
+				t.col2 = (o.getString("Col2"));
+				t.col3 = (o.getString("Col3"));
+				t.status = Integer.parseInt(o.getString("Status"));
+				
+				exec("UPDATE BetDetail SET MatchID="+t.matchID+
+						" , BetHouseID="+t.bethouse+
+						" , Col1="+t.col1+
+						" , Col2="+t.col2+
+						" , Col3="+t.col3+
+						" , Status="+t.status+
+						" where ID="+t.ID);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	synchronized void exec(String s){
 		mSqlDatabase.execSQL(s);
 	}
