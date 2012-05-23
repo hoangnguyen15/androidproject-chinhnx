@@ -302,11 +302,13 @@ public class sqlite
 		String nameTeam="";
 		try {
 			Cursor c = mSqlDatabase.query("Teams", new String[]{
-					"BongdasoID","Name"}, "BongdasoId="+teamID, null, null, null, null);
+					"BongdasoID","Name","NameEng","NameKor"}, "BongdasoId="+teamID, null, null, null, null);
 			if(c==null)return null;
 
 			c.moveToFirst();
-			nameTeam = c.getString(1);
+			if(Global.lang.equals("EN"))nameTeam = c.getString(1);
+			else if(Global.lang.equals("KO"))nameTeam = c.getString(2);
+			else nameTeam = c.getString(1);
 			c.close();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -323,7 +325,6 @@ public class sqlite
 			Global.notify = c.getInt(0);
 			Global.vibrate = c.getInt(1);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
