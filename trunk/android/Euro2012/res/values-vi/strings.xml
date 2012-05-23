@@ -53,7 +53,7 @@
     <string name="feedback">Gửi ý kiến đóng góp</string>
     <string name="aboutus">Thông tin ứng dụng</string>
     
-     <string name="address">Địa chỉ:</string>
+    <string name="address">Địa chỉ:</string>
     <string name="email">Email:</string>
     <string name="website">Website:</string>
 	<string name="intro_title">Europe 2012</string>
@@ -65,4 +65,9 @@
 	<string name="intro_website">http://nhncorp.com</string>
 	<string name="intro_copyright">© Developed by NHN Inc - 2012</string>
 	<string name="choose">Lựa chọn</string>
+	<string name="betAsia">Tỷ lệ châu Á</string>
+	<string name="betEuro">Tỷ lệ châu Âu</string>
+	<string name="betOver">Tỷ lệ tài xỉu</string>
+	
+	
 </resources>

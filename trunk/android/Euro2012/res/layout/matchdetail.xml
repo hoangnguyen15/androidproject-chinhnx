@@ -40,7 +40,7 @@
             android:layout_height="0dip"
             android:layout_weight="1"
             android:fadingEdge="none"
-            android:background="@drawable/ratiodetail">
+            android:background="@drawable/bgwhite">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -296,9 +296,9 @@
                         <TextView
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="4"
+                            android:layout_weight="3"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="Tỷ lệ cá cược châu Á"
+                            android:text="@string/betAsia"
                             android:textColor="#333" />
 
                         <LinearLayout
@@ -337,7 +337,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="2.55"
+                            android:text="2.55" android:layout_marginRight="40dip"
                             android:textColor="#333" />
                     </LinearLayout>
 
@@ -354,9 +354,9 @@
                         <TextView
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="4"
+                            android:layout_weight="3"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="Tỷ lệ cá cược châu Âu"
+                            android:text="@string/betEuro"
                             android:textColor="#333" />
 
                         <LinearLayout
@@ -395,7 +395,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="2.55"
+                            android:text="2.55" android:layout_marginRight="40dip"
                             android:textColor="#333" />
                     </LinearLayout>
 
@@ -412,9 +412,9 @@
                         <TextView
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="4"
+                            android:layout_weight="3"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="Tài xỉu"
+                            android:text="@string/betOver"
                             android:textColor="#333" />
 
                         <LinearLayout
@@ -455,12 +455,12 @@
                             android:gravity="center_vertical|center_horizontal"
                             android:text="2.55"
                             android:textColor="#333" />
+                        
+                        <ImageButton android:layout_width="40dip" android:layout_height="fill_parent"
+                            android:src="@drawable/down"
+                            android:background="#00000000"/>
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="1px"
-                        android:background="#9eb399" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -468,10 +468,10 @@
         <LinearLayout
             android:id="@+id/llevent"
             android:layout_width="fill_parent"
-            android:layout_height="0dip"
+            android:layout_height="fill_parent"
             android:layout_marginTop="10dip"
             android:layout_weight="1"
-            android:background="@drawable/ratiodetail"
+            android:background="@drawable/bgwhite"
             android:gravity="center_horizontal"
             android:orientation="vertical" >
         </LinearLayout>

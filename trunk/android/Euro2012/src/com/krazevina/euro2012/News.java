@@ -44,7 +44,6 @@ import com.krazevina.rss.RSSFeed;
 import com.krazevina.rss.RSSItem;
 import com.krazevina.rss.XmlReader;
 
-
 public class News extends Activity implements OnClickListener {
 	
     Button btnSchedule,btnNews,btnTeams,btnSetting;
@@ -156,6 +155,11 @@ public class News extends Activity implements OnClickListener {
     Bitmap b;String head,tail;
     
     void showInfo(final RSSItem item){
+    	img = (ImageView)findViewById(R.id.imgnews);
+    	img.setImageBitmap(null);
+    	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
+    	parentLayout = (LinearLayout)findViewById(R.id.wvcontainer);
+    	txtcon = (WebView)findViewById(R.id.txtcontent);
     	head=""+
     	"<html xmlns:fb=\"http://ogp.me/ns/fb#\">\n"+
     	"<head>\n"+
@@ -180,11 +184,7 @@ public class News extends Activity implements OnClickListener {
 			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*90/100)+"\" colorscheme=\"dark\"></fb:comments>"+
 		"</div>\n"+
     	"</body></html>";
-    	img = (ImageView)findViewById(R.id.imgnews);
-    	img.setImageBitmap(null);
-    	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
-    	parentLayout = (LinearLayout)findViewById(R.id.wvcontainer);
-    	txtcon = (WebView)findViewById(R.id.txtcontent);
+    	
     	txtcon.setWebViewClient(new FaceBookClient());
     	txtcon.setWebChromeClient(new MyChromeClient());
     	txtcon.getSettings().setJavaScriptEnabled(true);
