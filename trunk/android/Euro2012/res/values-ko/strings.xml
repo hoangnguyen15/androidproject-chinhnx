@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">Euro 2012</string>
+    <string name="schedule">경기일정</string>
+    <string name="news">소식</string>
+    <string name="teams">팀</string>
+    <string name="setting">옵션</string>
+    <string name="matchdetail">Trận đấu</string>
+    <string name="stadium">운동장</string>
+    <string name="arbitration">심판</string>
+    <string name="teamdetail">팀</string>
+    <string name="description">설명</string>
+    <string name="testdes"></string>
+    <string name="playerlist">선수 목록</string>
+    <string name="tno">No</string>
+    <string name="name">선수 이름</string>
+    <string name="position">위치</string>
+    <string name="groupa">A조</string>
+    <string name="groupb">B조</string>
+    <string name="groupc">C조</string>
+    <string name="groupd">D조</string>
+	<string name="quarter">준준결승</string>
+    <string name="semi">준결승</string>
+    <string name="finals">결승전</string>
+    <string name="team">팀</string>
+    <string name="pld">PLD</string>
+    <string name="w">W</string>
+    <string name="d">D</string>
+    <string name="l">L</string>
+    <string name="gf">GF</string>
+    <string name="ga">GA</string>
+    <string name="gd">GD</string>
+    <string name="pts">PTS</string>
+    <string name="details">&gt;</string>
+    <string name="pleasewait">기다려주십시오</string>
+    <string name="nonetwork">인터넷에 연결할 수 없습니다, ​​다시 시도하십시오.</string>
+    <string name="estimate">설립 연도</string>
+    <string name="fifajoin">피파 가입 연도</string>
+    <string name="fifarank">피파 랭킹</string>
+    <string name="coach">코치</string>
+    <string name="attend">유로컵 참석</string>
+    <string name="player">선수</string>
+    <string name="settingreply">아림 설정</string>
+    <string name="warnewsmsg">새로운 소식 알림</string>
+    <string name="vibrate">설레다</string>
+    <string name="settinglanguage">언너</string>
+    <string name="english">English</string>
+    <string name="korean">한국의</string>
+    <string name="vietnam">Tiếng Việt</string>
+    <string name="contact">연락</string>
+    <string name="feedback">문의</string>
+    <string name="aboutus">About us</string>
+    
+    <string name="address">주소:</string>
+    <string name="email">메일 주소:</string>
+    <string name="website">웹사이트:</string>
+	<string name="intro_title">Europe 2012</string>
+	<string name="intro_address">19 floors, LandMark72 Tower, Plot E6, Pham Hung Road, Cau Giay dst, Ha Noi, Viet Nam</string>
+	<string name="intro_text_tel">전화:</string>
+	<string name="intro_tel">0435567810</string>
+	<string name="intro_tel_text">(+84)-43-556-7810</string>
+	<string name="intro_email">androidkraze@gmail.com</string>
+	<string name="intro_website">http://nhncorp.com</string>
+	<string name="intro_copyright">© Developed by NHN Inc - 2012</string>
+	<string name="choose">선택</string>
+	<string name="betAsia">아시아 내기비율</string>
+	<string name="betEuro">유로 내기비율</string>
+	<string name="betOver">골 내기비율u</string>
+	
+	
+</resources>
