@@ -365,9 +365,15 @@ public class sqlite
 				m.referee = o.getString("MainReferee");
 				try {
 					m.firstPick = Integer.parseInt(o.getString("FirstPickup"));
+				}catch (Exception e) {
+				}
+				try{
 					m.secPick = Integer.parseInt(o.getString("SecondPickup"));
+				}catch (Exception e) {
+				}
+				try{
 					m.status = Integer.parseInt(o.getString("Status"));
-				} catch (NumberFormatException e) {
+				} catch (Exception e) {
 				}
 				
 				exec("UPDATE Matches SET GroupID="+m.groupID+
@@ -427,7 +433,7 @@ public class sqlite
 	public Vector<Bet> getBet(int matchID){
 		Vector<Bet>vb = new Vector<Bet>();
 		Bet t = null;
-		Cursor c = mSqlDatabase.query("Bet", new String[]{
+		Cursor c = mSqlDatabase.query("BetDetail", new String[]{
 				"ID","MatchID","BetHouseID","Col1","Col2","Col3","Status"}, "ID="+matchID, null, null, null, null);
 		if(c==null)return vb;
 		c.moveToFirst();
