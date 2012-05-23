@@ -17,6 +17,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,7 +25,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
@@ -149,6 +152,7 @@ public class News extends Activity implements OnClickListener {
     
     ImageView img;
     WebView txtcon;
+    LinearLayout parentLayout;
     Bitmap b;String head,tail;
     
     void showInfo(final RSSItem item){
@@ -159,6 +163,7 @@ public class News extends Activity implements OnClickListener {
     	"</head>\n" +
     	"<body>" +
     	"<div id=\"fb-root\"></div>"+
+    	"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>"+
 		"<script>"+
 		  "window.fbAsyncInit = function() {"+
 		    "FB.init({"+
@@ -169,28 +174,32 @@ public class News extends Activity implements OnClickListener {
 		      "xfbml      : true  // parse XFBML"+
 		    "});"+
 		  "};"+
-		  "(function(d){"+
-		     "var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}"+
-		     "js = d.createElement('script'); js.id = id; js.async = true;"+
-		     "js.src = \"//connect.facebook.net/en_US/all.js\";"+
-		     "d.getElementsByTagName('head')[0].appendChild(js);"+
-		   "}(document));"+
 		"</script>";
     	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
     	tail = "<div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
-			"<fb:comments href=\"http://9gag.com/gag/4159769\" num_posts=\"5\" width=\"300\" colorscheme=\"dark\"></fb:comments>"+
+			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*90/100)+"\" colorscheme=\"dark\"></fb:comments>"+
 		"</div>\n"+
     	"</body></html>";
     	img = (ImageView)findViewById(R.id.imgnews);
     	img.setImageBitmap(null);
     	TextView tit = (TextView)findViewById(R.id.txtinfotitle);
+    	parentLayout = (LinearLayout)findViewById(R.id.wvcontainer);
     	txtcon = (WebView)findViewById(R.id.txtcontent);
+    	txtcon.setWebViewClient(new FaceBookClient());
+    	txtcon.setWebChromeClient(new MyChromeClient());
+    	txtcon.getSettings().setJavaScriptEnabled(true);
+//    	txtcon.getSettings().setAppCacheEnabled(true);
+    	txtcon.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+    	txtcon.getSettings().setSupportMultipleWindows(true);
+    	txtcon.getSettings().setSupportZoom(true);
+    	txtcon.getSettings().setBuiltInZoomControls(true);
     	txtcon.getSettings().setJavaScriptEnabled(true);
     	txtcon.getSettings().setPluginsEnabled(true);
     	txtcon.getSettings().setAllowFileAccess(true);
 
     	tit.setText(item.getTitle());
-    	txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+item.getDescription().replaceAll("%", "")+loading+tail, "text/html", "UTF-8",null);
+    	Uri u = Uri.parse(item.getLink());
+    	txtcon.loadDataWithBaseURL(u.getHost(),head+" "+item.getDescription()+loading+tail, "text/html", "UTF-8",null);
     	new Thread(new Runnable() {
     		String url = item.getEnclosure();
     		RSSItem ite = item;
@@ -211,8 +220,9 @@ public class News extends Activity implements OnClickListener {
 				final String s = getAdditionInfo(ite.getLink());
 				handler.post(new Runnable() {
 					public void run() {
-						if(site!=4)txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+ite.getDescription().replaceAll("%", "")+s+tail,"text/html","UTF-8",null);
-						else txtcon.loadDataWithBaseURL("http://bongdaplus.vn",head+" "+s+tail,"text/html","UTF-8",null);
+						Uri u = Uri.parse(item.getLink());
+						if(site!=4)txtcon.loadDataWithBaseURL(u.getHost(),head+" "+ite.getDescription()+s+tail,"text/html","UTF-8",null);
+						else txtcon.loadDataWithBaseURL(u.getHost(),head+" "+s+tail,"text/html","UTF-8",null);
 					}
 				});
 			}
@@ -381,5 +391,56 @@ public class News extends Activity implements OnClickListener {
 			TextView tit,time;
 		}
 	}
-		
+	
+	
+	WebView childView;
+	
+	final class MyChromeClient extends WebChromeClient{
+	    @Override
+	    public boolean onCreateWindow(WebView view, boolean dialog,
+	            boolean userGesture, Message resultMsg) {
+	        childView = new WebView(News.this);
+	        childView.getSettings().setJavaScriptEnabled(true);
+	        childView.getSettings().setSupportZoom(true);
+	        childView.getSettings().setBuiltInZoomControls(true);
+	        childView.setWebViewClient(new FaceBookClient());
+	        childView.setWebChromeClient(this);
+	        childView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT));
+
+
+	        parentLayout.addView(childView);
+
+	        childView.requestFocus();
+	        txtcon.setVisibility(View.GONE);
+
+	          /*I think this is the main part which handles all the log in session*/
+	        WebView.WebViewTransport transport =(WebView.WebViewTransport)resultMsg.obj;
+	        transport.setWebView(childView);
+	        resultMsg.sendToTarget();
+	        return true;
+	    }
+
+
+	    @Override
+	    public void onProgressChanged(WebView view, int newProgress) {
+	        setProgress(newProgress*100);
+	    }
+
+	    @Override
+	    public void onCloseWindow(WebView window) {
+	        parentLayout.removeViewAt(parentLayout.getChildCount()-1);
+	        childView =null;
+	        txtcon.setVisibility(View.VISIBLE);
+	        txtcon.requestFocus();
+	    }
+	}
+
+    private class FaceBookClient extends WebViewClient{
+	     @Override
+	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	        Log.i("REQUEST URL",url);
+	        return false;
+	    }   
+	}
+
 }
