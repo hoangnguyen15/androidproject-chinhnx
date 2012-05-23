@@ -51,14 +51,14 @@ public class MatchDetail extends Activity implements OnClickListener{
 		llevent = (LinearLayout)findViewById(R.id.llevent);
 		btnBack = (Button)findViewById(R.id.btnBack);
 		bet11 = (TextView)findViewById(R.id.txtbet11);
-		bet11 = (TextView)findViewById(R.id.txtbet12);
-		bet11 = (TextView)findViewById(R.id.txtbet13);
-		bet11 = (TextView)findViewById(R.id.txtbet21);
-		bet11 = (TextView)findViewById(R.id.txtbet22);
-		bet11 = (TextView)findViewById(R.id.txtbet23);
-		bet11 = (TextView)findViewById(R.id.txtbet31);
-		bet11 = (TextView)findViewById(R.id.txtbet32);
-		bet11 = (TextView)findViewById(R.id.txtbet33);
+		bet12 = (TextView)findViewById(R.id.txtbet12);
+		bet13 = (TextView)findViewById(R.id.txtbet13);
+		bet21 = (TextView)findViewById(R.id.txtbet21);
+		bet22 = (TextView)findViewById(R.id.txtbet22);
+		bet23 = (TextView)findViewById(R.id.txtbet23);
+		bet31 = (TextView)findViewById(R.id.txtbet31);
+		bet32 = (TextView)findViewById(R.id.txtbet32);
+		bet33 = (TextView)findViewById(R.id.txtbet33);
 		btnvote1 = (Button)findViewById(R.id.btnvote1);
 		btnvote2 = (Button)findViewById(R.id.btnvote2);
 		btnBack.setOnClickListener(this);
@@ -74,8 +74,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		
 		name1.setText(t1.name);
 		name2.setText(t2.name);
-		btnvote1.setText(m.firstPick);
-		btnvote2.setText(m.secPick);
+		btnvote1.setText(""+m.firstPick);
+		btnvote2.setText(""+m.secPick);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
 		else score.setText("?-?");
 //		stadium.setText(m.stadium);
@@ -128,11 +128,17 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				new SocketConnect().vote(m.ID, 1);
+				m.firstPick++;
+				btnvote1.setText(""+m.firstPick);
+				btnvote1.setEnabled(false);
 			}
 		});
 		btnvote2.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				new SocketConnect().vote(m.ID, 2);
+				m.secPick++;
+				btnvote2.setText(""+m.secPick);
+				btnvote2.setEnabled(false);
 			}
 		});
 	}
@@ -165,6 +171,11 @@ public class MatchDetail extends Activity implements OnClickListener{
 	Bet getUO(){
 		for(int i=0;i<b.size();i++)if(b.get(i).bethouse==2)return b.get(i);
 		return new Bet();
+	}
+	@Override
+	protected void onDestroy() {
+		sql.recycle();
+		super.onDestroy();
 	}
 }
 

@@ -31,6 +31,7 @@ public class Main extends Activity implements OnClickListener {
     LinearLayout llgroupa,llgroupb,llgroupc,llgroupd,llquarter,llsemi,llfinal;
     int i ;
     sqlite sql;
+    static long lastUpdateMatch,lastUpdateBet;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -160,9 +161,15 @@ public class Main extends Activity implements OnClickListener {
 				llfinal.addView(ll);
 			}
 		}
-		new SocketConnect().update("Matches", sql);
-		new SocketConnect().update("TeamsInRound", sql);
-		new SocketConnect().update("BetDetail", sql);
+		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
+			new SocketConnect().update("Matches", sql);
+			new SocketConnect().update("TeamsInRound", sql);
+			lastUpdateMatch = System.currentTimeMillis();
+		}
+		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
+			new SocketConnect().update("BetDetail", sql);
+			lastUpdateBet = System.currentTimeMillis();
+		}
     }
     
     OnTouchListener touch = new OnTouchListener() {
