@@ -71,9 +71,11 @@
 	        	            android:layout_marginLeft="10dip"/>
         	        </LinearLayout>
         	    </LinearLayout>
-        	    
-       	        <WebView android:layout_width="fill_parent" android:layout_height="fill_parent"
-       	        	android:id="@+id/txtcontent"/>
+        	    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+        	        android:id="@+id/wvcontainer">
+	       	        <WebView android:layout_width="fill_parent" android:layout_height="fill_parent"
+	       	        	android:id="@+id/txtcontent"/>
+       	        </LinearLayout>
         	</LinearLayout>
         	
         </ViewFlipper>
