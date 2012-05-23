@@ -166,8 +166,7 @@ public class News extends Activity implements OnClickListener {
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
     	"</head>\n" +
     	"<body>" +
-    	"<div id=\"fb-root\"></div>"+
-    	"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>"+
+    	"<p><div id=\"fb-root\"></div></p>"+
 		"<script>"+
 		  "window.fbAsyncInit = function() {"+
 		    "FB.init({"+
@@ -178,11 +177,12 @@ public class News extends Activity implements OnClickListener {
 		      "xfbml      : true  // parse XFBML"+
 		    "});"+
 		  "};"+
-		"</script>";
+		"</script>"+
+		"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>";
     	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
-    	tail = "<div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
-			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*90/100)+"\" colorscheme=\"dark\"></fb:comments>"+
-		"</div>\n"+
+    	tail = "<p><div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
+			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*50/100)+"\" colorscheme=\"dark\"></fb:comments>"+
+		"</div></p>\n"+
     	"</body></html>";
     	
     	txtcon.setWebViewClient(new FaceBookClient());
@@ -272,7 +272,7 @@ public class News extends Activity implements OnClickListener {
 	            		child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].setAttribute("style", "max-width: 100%; height: auto;");
+	            	child[i].setAttribute("style", "max-width: 80%; height: auto;");
 	            s = cleaner.getInnerHtml(div);
     		}catch (Exception e) {
     			e.printStackTrace();
@@ -295,7 +295,7 @@ public class News extends Activity implements OnClickListener {
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].setAttribute("style", "max-width: 100%; height: auto;");
+	            	child[i].setAttribute("style", "max-width: 80%; height: auto;");
 	            s = cleaner.getInnerHtml(div);
 	            if(s.indexOf("\"file\":")>0){
 	            	int x = s.indexOf("\"file\":");
