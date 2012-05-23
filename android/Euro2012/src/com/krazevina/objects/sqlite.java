@@ -306,8 +306,8 @@ public class sqlite
 			if(c==null)return null;
 
 			c.moveToFirst();
-			if(Global.lang.equals("EN"))nameTeam = c.getString(1);
-			else if(Global.lang.equals("KO"))nameTeam = c.getString(2);
+			if(Global.lang.equals("EN"))nameTeam = c.getString(2);
+			else if(Global.lang.equals("KO"))nameTeam = c.getString(3);
 			else nameTeam = c.getString(1);
 			c.close();
 		} catch (Exception e) {
