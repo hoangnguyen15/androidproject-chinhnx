@@ -65,7 +65,9 @@
 	<string name="intro_website">http://nhncorp.com</string>
 	<string name="intro_copyright">© Developed by NHN Inc - 2012</string>
 	<string name="choose">Choose</string>
-    
+    <string name="betAsia">Asian handicap</string>
+	<string name="betEuro">1x2</string>
+	<string name="betOver">Over/Under</string>
     
     
 </resources>
