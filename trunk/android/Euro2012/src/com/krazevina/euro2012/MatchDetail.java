@@ -36,7 +36,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 	Button btnBack,btnvote1,btnvote2;
 	Vector<Bet> b;
 	
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
