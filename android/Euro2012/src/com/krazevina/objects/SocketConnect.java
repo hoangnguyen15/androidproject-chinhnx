@@ -73,15 +73,16 @@ public class SocketConnect {
 		return "";
     }
     
-    public void update(String s,sqlite sql){
-    	new updateData(s, sql).start();
+    public void update(String s,sqlite sql,Handler h){
+    	new updateData(s, sql, h).start();
     }
     
     class updateData extends Thread{
     	String str;
     	sqlite sql;
-    	public updateData(String s,sqlite sql) {
-    		str = s;
+    	Handler ha;
+    	public updateData(String s,sqlite sql,Handler h) {
+    		str = s; ha = h;
     		this.sql = sql;
 		}
     	public void run(){
@@ -90,13 +91,12 @@ public class SocketConnect {
     		String js = receive();
     		
     		if (str.equals("Matches")) {
-    			sql.updateMatches(js);
+    			sql.updateMatches(js,ha);
     		}else if (str.equals("TeamsInRound")) {
-    			sql.updateTeamsInRound(js);
+    			sql.updateTeamsInRound(js,ha);
     		}else if (str.equals("BetDetail")) {
-    			sql.updateBet(js);
+    			sql.updateBet(js,ha);
     		}else System.out.println("receive unprocess text:"+js);
-//    		
     	}
     }
     
