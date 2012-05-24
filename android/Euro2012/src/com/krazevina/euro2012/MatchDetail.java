@@ -5,6 +5,7 @@ import java.util.Vector;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
@@ -20,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.krazevina.euro2012.News.FaceBookClient;
 import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
@@ -46,6 +46,10 @@ public class MatchDetail extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.matchdetail);
+		sql = new sqlite(this);
+		m = Global.match;
+		m.events = sql.getEvents(m);
+		b = sql.getBet(m.ID);
 		flag1 = (ImageView)findViewById(R.id.flag1);
 		flag2 = (ImageView)findViewById(R.id.flag2);
 		name1 = (TextView)findViewById(R.id.name1);
@@ -67,11 +71,45 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1 = (Button)findViewById(R.id.btnvote1);
 		btnvote2 = (Button)findViewById(R.id.btnvote2);
 		wv = (WebView)findViewById(R.id.wvcomment);
+		
+		
+		String head=""+
+    	"<html xmlns:fb=\"http://ogp.me/ns/fb#\">\n"+
+    	"<head>\n"+
+    		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
+    		"<meta property=\"fb:admins\" content=\"{http}\"/>"+
+			"<meta property=\"fb:app_id\" content=\"{YOUR_APPLICATION_ID}\"/>"+
+    	"</head>\n" +
+    	"<body>" +
+    	"<p><div id=\"fb-root\"></div></p>"+
+		"<script>"+
+		  "window.fbAsyncInit = function() {"+
+		    "FB.init({"+
+		      "appId      : '111569915535689', // App ID"+
+		      "status     : true, // check login status"+
+		      "cookie     : true, // enable cookies to allow the server to access the session"+
+		      "oauth      : true, // enable OAuth 2.0"+
+		      "xfbml      : true  // parse XFBML"+
+		    "});"+
+		  "};"+
+		"</script>"+
+		"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>";
+    	String tail = "<p><div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
+			"<fb:comments href=\"http://gaixinh.com.vn/"+m.ID+"\" num_posts=\"5\" width=\""+(getWindowManager().getDefaultDisplay().getWidth()*80/100)+"\" colorscheme=\"dark\"></fb:comments>"+
+		"</div></p>\n"+
+    	"</body></html>";
+		wv.setWebViewClient(new FaceBookClient());
+    	wv.setWebChromeClient(new MyChromeClient());
+    	wv.getSettings().setJavaScriptEnabled(true);
+    	wv.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+    	wv.getSettings().setSupportMultipleWindows(true);
+    	wv.getSettings().setSupportZoom(true);
+    	wv.getSettings().setBuiltInZoomControls(true);
+    	wv.getSettings().setJavaScriptEnabled(true);
+    	wv.getSettings().setPluginsEnabled(true);
+    	wv.getSettings().setAllowFileAccess(true);
+    	wv.loadDataWithBaseURL("http://gaixinh.com.vn",head+tail, "text/html", "UTF-8",null);
 		btnBack.setOnClickListener(this);
-		sql = new sqlite(this);
-		m = Global.match;
-		m.events = sql.getEvents(m);
-		b = sql.getBet(m.ID);
 		
 		flag1.setImageResource(TeamDetails.flag(m.team1));
 		flag2.setImageResource(TeamDetails.flag(m.team2));
