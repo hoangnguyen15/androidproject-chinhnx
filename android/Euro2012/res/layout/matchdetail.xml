@@ -38,9 +38,9 @@
 
         <ScrollView
             android:layout_width="fill_parent"
-            android:layout_height="238dip"
-            android:fadingEdge="none"
-            android:background="@drawable/bgwhite">
+            android:layout_height="238dip" android:scrollbars="none"
+            android:background="@drawable/bgwhite"
+            android:padding="0dip">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -81,7 +81,7 @@
                             android:layout_weight="1"
                             android:background="#e9efe9"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="10-10"
+                            android:text="10-10" android:layout_marginTop="5dip"
                             android:textColor="#f00"
                             android:textSize="20dip" />
 
@@ -269,7 +269,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center_vertical|center_horizontal"
-                            android:text="2.55" android:layout_marginRight="40dip"
+                            android:text="2.55"
                             android:textColor="#333" />
                     </LinearLayout>
 
@@ -329,8 +329,6 @@
                             android:gravity="center_vertical|center_horizontal"
                             android:text="2.55"
                             android:textColor="#333" />
-                        <LinearLayout android:layout_width="40dip" android:layout_height="fill_parent"
-                            android:background="#e9efe9"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -389,12 +387,11 @@
                             android:gravity="center_vertical|center_horizontal"
                             android:text="2.55"
                             android:textColor="#333" />
-                        
-                        <ImageButton android:layout_width="40dip" android:layout_height="fill_parent"
-                            android:id="@+id/btnmore"
-                            android:src="@drawable/down"
-                            android:background="#00000000"/>
                     </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="#9eb399" />
 
                 </LinearLayout>
                 
@@ -418,7 +415,8 @@
                                 android:text="Nou Camp" android:layout_weight="1"
                                 android:textColor="#000"/>
                     </LinearLayout>
-                    
+                    <WebView android:layout_width="fill_parent" android:layout_height="300dip"
+                        android:id="@+id/wvcomment"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
