@@ -68,6 +68,6 @@
 	<string name="betAsia">Tỷ lệ châu Á</string>
 	<string name="betEuro">Tỷ lệ châu Âu</string>
 	<string name="betOver">Tỷ lệ tài xỉu</string>
-	
+	<string name="notstart">Chưa bắt đầu trận đấu, hoặc không có dữ liệu.</string>
 	
 </resources>

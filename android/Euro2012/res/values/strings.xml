@@ -68,6 +68,6 @@
     <string name="betAsia">Asian handicap</string>
 	<string name="betEuro">1x2</string>
 	<string name="betOver">Over/Under</string>
-    
+    <string name="notstart">Not start yet, or no data.</string>
     
 </resources>

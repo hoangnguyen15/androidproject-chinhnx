@@ -68,6 +68,6 @@
 	<string name="betAsia">아시아 내기비율</string>
 	<string name="betEuro">유로 내기비율</string>
 	<string name="betOver">골 내기비율u</string>
-	
+	<string name="notstart">경기전.</string>
 	
 </resources>
