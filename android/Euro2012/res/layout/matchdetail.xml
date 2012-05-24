@@ -404,7 +404,7 @@
                                 android:textColor="#000"/>
                             <TextView android:layout_width="1dip" android:layout_height="wrap_content"
                                 android:text="Vu Minh Tri" android:layout_weight="1"
-                                android:textColor="#000"/>
+                                android:textColor="#000" android:id="@+id/referee"/>
                     </LinearLayout>
                     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
                             <TextView android:layout_width="0dip" android:layout_height="wrap_content"
@@ -413,10 +413,10 @@
                                 android:textColor="#000"/>
                             <TextView android:layout_width="1dip" android:layout_height="wrap_content"
                                 android:text="Nou Camp" android:layout_weight="1"
-                                android:textColor="#000"/>
+                                android:textColor="#000" android:id="@+id/stadium"/>
                     </LinearLayout>
                     <WebView android:layout_width="fill_parent" android:layout_height="300dip"
-                        android:id="@+id/wvcomment"/>
+                        android:id="@+id/wvcomment" android:layout_marginBottom="5dip"/>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
