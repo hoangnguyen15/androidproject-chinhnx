@@ -22,7 +22,7 @@ public class sqlite
 {
 	private static String DB_PATH = "/data/data/com.krazevina.euro2012/databases/";
 	private static final String DATABASE_NAME="euro2012.dbo";
-	private static final int DATABASE_VERSION=2;
+	private static final int DATABASE_VERSION=3;
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
