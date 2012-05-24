@@ -377,17 +377,19 @@ public class sqlite
 				} catch (Exception e) {
 				}
 				
-				exec("UPDATE Matches SET GroupID="+m.groupID+
+				String cmd = "UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
-						" , Stadium='"+m.stadium+"'"+
 						" , Start='"+m.start+"'"+
 						" , FinalScore='"+m.finalScore+"'"+
 						" , MainReferee='"+m.referee+"'"+
 						" , FirstPickup="+m.firstPick+
 						" , SecondPickup="+m.secPick+
-						" , Status="+m.status+
-						" where ID="+m.ID);
+						" , Status="+m.status;
+				if(m.stadium!=null&&m.stadium.length()>0)
+					cmd += " , Stadium='"+m.stadium+"'";
+				cmd+=" where ID="+m.ID;
+				exec(cmd);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

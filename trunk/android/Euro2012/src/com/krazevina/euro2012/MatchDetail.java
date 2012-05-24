@@ -10,6 +10,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -27,12 +28,12 @@ public class MatchDetail extends Activity implements OnClickListener{
 	
 	ImageView flag1,flag2;
 	TextView name1,name2,score,bet11,bet12,bet13,bet21,bet22,bet23,bet31,bet32,bet33;
-//	T,stadium,referee;
+	TextView stadium,referee;
 	LinearLayout llevent;
 	sqlite sql;
 	Match m;Team t1,t2;
 	Player p;
-	int i;
+	int i;WebView wv;
 	Button btnBack,btnvote1,btnvote2;
 	Vector<Bet> b;
 	
@@ -45,8 +46,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		name1 = (TextView)findViewById(R.id.name1);
 		name2 = (TextView)findViewById(R.id.name2);
 		score = (TextView)findViewById(R.id.score);
-//		stadium = (TextView)findViewById(R.id.stadium);
-//		referee = (TextView)findViewById(R.id.referee);
+		stadium = (TextView)findViewById(R.id.stadium);
+		referee = (TextView)findViewById(R.id.referee);
 		llevent = (LinearLayout)findViewById(R.id.llevent);
 		btnBack = (Button)findViewById(R.id.btnBack);
 		bet11 = (TextView)findViewById(R.id.txtbet11);
@@ -60,6 +61,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		bet33 = (TextView)findViewById(R.id.txtbet33);
 		btnvote1 = (Button)findViewById(R.id.btnvote1);
 		btnvote2 = (Button)findViewById(R.id.btnvote2);
+		wv = (WebView)findViewById(R.id.wvcomment);
 		btnBack.setOnClickListener(this);
 		sql = new sqlite(this);
 		m = Global.match;
@@ -77,8 +79,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote2.setText(""+m.secPick);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
 		else score.setText("?-?");
-//		stadium.setText(m.stadium);
-//		referee.setText(m.referee);
+		stadium.setText(m.stadium);
+		referee.setText(m.referee);
 		
 		LinearLayout ll;
 		LayoutInflater mInflater = LayoutInflater.from(this);
