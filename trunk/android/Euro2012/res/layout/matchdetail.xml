@@ -178,9 +178,8 @@
                             android:id="@+id/btnvote1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/btnvote1"
-                            android:gravity="right|center_vertical"
-                            android:paddingRight="5dip"
+                            android:background="@drawable/btnvote"
+                            android:gravity="center"
                             android:text="2000"
                             android:textColor="#333"
                             android:textSize="10dip" />
@@ -202,9 +201,8 @@
                             android:id="@+id/btnvote2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/btnvote2"
-                            android:gravity="right|center_vertical"
-                            android:paddingRight="5dip"
+                            android:background="@drawable/btnvote"
+                            android:gravity="center"
                             android:text="20"
                             android:textSize="10dip" />
                     </LinearLayout>
