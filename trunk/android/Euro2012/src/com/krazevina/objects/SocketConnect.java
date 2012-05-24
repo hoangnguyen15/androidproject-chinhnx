@@ -93,13 +93,10 @@ public class SocketConnect {
     			sql.updateMatches(js);
     		}else if (str.equals("TeamsInRound")) {
     			sql.updateTeamsInRound(js);
-    		}else System.out.println(js);
-//    		try {
-//				Thread.sleep(10000);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-//    		disconnect();
+    		}else if (str.equals("BetDetail")) {
+    			sql.updateBet(js);
+    		}else System.out.println("receive unprocess text:"+js);
+//    		
     	}
     }
     

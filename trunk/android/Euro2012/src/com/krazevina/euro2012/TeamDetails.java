@@ -25,10 +25,10 @@ public class TeamDetails extends Activity implements OnClickListener{
 	
 	LinearLayout lv;
 	String pos[][]= new String[][]{
-			{"hậu vệ","Defender","옹호자"},
-			{"thủ môn","Goalkeeper", "골키퍼"},
-			{"tiền vệ","Midfielder","미드필더"},
-			{"tiền đạo","Striker","수비수"},
+			{"Hậu vệ","Defender","수비"},
+			{"Thủ môn","Goalkeeper", "골키퍼"},
+			{"Tiền vệ","Midfielder","미드필드"},
+			{"Tiền đạo","Striker","공격수"}
 	};
 	
 	Button btnBack;
