@@ -437,7 +437,7 @@ public class sqlite
 		Vector<Bet>vb = new Vector<Bet>();
 		Bet t = null;
 		Cursor c = mSqlDatabase.query("BetDetail", new String[]{
-				"ID","MatchID","BetHouseID","Col1","Col2","Col3","Status"}, "ID="+matchID, null, null, null, null);
+				"ID","MatchID","BetHouseID","Col1","Col2","Col3","Status"}, "MatchID="+matchID, null, null, null, null);
 		if(c==null)return vb;
 		c.moveToFirst();
 		for(int i=0;i<c.getCount();i++){
@@ -473,9 +473,9 @@ public class sqlite
 				t.col3 = o.getString("Col3");
 				t.status = Integer.parseInt(o.getString("Status"));
 				
-				exec("UPDATE BetDetail SET Col1="+t.col1+
-						" , Col2="+t.col2+
-						" , Col3="+t.col3+
+				exec("UPDATE BetDetail SET Col1='"+t.col1+"'"+
+						" , Col2='"+t.col2+"'"+
+						" , Col3='"+t.col3+"'"+
 						" , Status="+t.status+
 						" where MatchID="+t.matchID+" AND BetHouseID="+t.bethouse);
 			}

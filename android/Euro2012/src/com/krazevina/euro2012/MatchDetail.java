@@ -71,14 +71,15 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1 = (Button)findViewById(R.id.btnvote1);
 		btnvote2 = (Button)findViewById(R.id.btnvote2);
 		wv = (WebView)findViewById(R.id.wvcomment);
+		parentLayout = (LinearLayout)findViewById(R.id.llwvcontainer);
 		
 		
 		String head=""+
     	"<html xmlns:fb=\"http://ogp.me/ns/fb#\">\n"+
     	"<head>\n"+
     		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
-    		"<meta property=\"fb:admins\" content=\"{http}\"/>"+
-			"<meta property=\"fb:app_id\" content=\"{YOUR_APPLICATION_ID}\"/>"+
+    		"<meta property=\"fb:admins\" content=\"http//facebook.com/nna.cuong\"/>"+
+			"<meta property=\"fb:app_id\" content=\"111569915535689\"/>"+
     	"</head>\n" +
     	"<body>" +
     	"<p><div id=\"fb-root\"></div></p>"+
@@ -95,7 +96,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		"</script>"+
 		"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>";
     	String tail = "<p><div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
-			"<fb:comments href=\"http://gaixinh.com.vn/"+m.ID+"\" num_posts=\"5\" width=\""+(getWindowManager().getDefaultDisplay().getWidth()*80/100)+"\" colorscheme=\"dark\"></fb:comments>"+
+			"<fb:comments href=\"http://gaixinh.com.vn/euro"+m.ID+"\" num_posts=\"5\" width=\""+(getWindowManager().getDefaultDisplay().getWidth()*80/100)+"\" colorscheme=\"dark\"></fb:comments>"+
 		"</div></p>\n"+
     	"</body></html>";
 		wv.setWebViewClient(new FaceBookClient());
@@ -131,6 +132,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		ImageView imgtype1,imgtype2;
 		
 		int j = 0;
+		if(m.events.size()>0)
 		for(i = 0;i<m.events.size();i++){
 			ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
 			ll.setOrientation(LinearLayout.HORIZONTAL);
@@ -142,6 +144,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 			txttime.setText(m.events.get(i).time);
 			p = sql.getlayer(m.events.get(i).playerID);
 			txtname.setText(p.name);
+			
 			if(m.team1==m.events.get(i).teamID){
 				imgtype1.setImageResource(Type(m.events.get(i).eventID));
 				imgtype2.setVisibility(View.GONE);
@@ -159,6 +162,11 @@ public class MatchDetail extends Activity implements OnClickListener{
 				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
 			}
 			llevent.addView(ll);
+		}
+		else{
+			TextView t = new TextView(MatchDetail.this);
+			t.setText(R.string.notstart);
+			llevent.addView(t);
 		}
 		bet11.setText(getAsia().col1);
 		bet12.setText(getAsia().col2);
