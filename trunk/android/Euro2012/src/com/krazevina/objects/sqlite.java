@@ -8,7 +8,6 @@ import java.io.OutputStream;
 import java.util.Vector;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
@@ -16,7 +15,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
+import android.os.Handler;
 
 public class sqlite 
 {
@@ -311,7 +310,6 @@ public class sqlite
 			else nameTeam = c.getString(1);
 			c.close();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return nameTeam;
@@ -345,7 +343,7 @@ public class sqlite
 		}
 	}
 	
-	void updateMatches(String js){
+	void updateMatches(String js,Handler h){
 		try {
 			System.out.println(js);
 			int firstc = js.indexOf("-");
@@ -377,7 +375,7 @@ public class sqlite
 				} catch (Exception e) {
 				}
 				
-				String cmd = "UPDATE Matches SET GroupID="+m.groupID+
+				String cmd1 = "UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
 						" , Start='"+m.start+"'"+
@@ -387,16 +385,20 @@ public class sqlite
 						" , SecondPickup="+m.secPick+
 						" , Status="+m.status;
 				if(m.stadium!=null&&m.stadium.length()>0)
-					cmd += " , Stadium='"+m.stadium+"'";
-				cmd+=" where ID="+m.ID;
-				exec(cmd);
+					cmd1 += " , Stadium='"+m.stadium+"'";
+				final String cmd=cmd1+" where ID="+m.ID;
+				h.post(new Runnable() {
+					public void run() {
+						exec(cmd);
+					}
+				});
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 	
-	void updateTeamsInRound(String js){
+	void updateTeamsInRound(String js,Handler h){
 		try {
 			System.out.println(js);
 			int firstc = js.indexOf("-");
@@ -418,7 +420,8 @@ public class sqlite
 				t.draw = Integer.parseInt(o.getString("Draw"));
 				t.status = Integer.parseInt(o.getString("Status"));
 				
-				exec("UPDATE TeamsInRound SET RoundID="+t.roundID+
+				
+				final String s = "UPDATE TeamsInRound SET RoundID="+t.roundID+
 						" , TeamID="+t.teamID+
 						" , Point="+t.point+
 						" , LooseScore="+t.looseScore+
@@ -427,7 +430,12 @@ public class sqlite
 						" , Lose="+t.lose+
 						" , Draw="+t.draw+
 						" , Status="+t.status+
-						" where ID="+t.ID);
+						" where ID="+t.ID;
+				h.post(new Runnable() {
+					public void run() {
+						exec(s);
+					}
+				});
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -454,7 +462,7 @@ public class sqlite
 		c.close();
 		return vb;
 	}
-	void updateBet(String js){
+	void updateBet(String js,Handler h){
 		try {
 			System.out.println(js);
 			int firstc = js.indexOf("-");
@@ -473,11 +481,16 @@ public class sqlite
 				t.col3 = o.getString("Col3");
 				t.status = Integer.parseInt(o.getString("Status"));
 				
-				exec("UPDATE BetDetail SET Col1='"+t.col1+"'"+
+				final String s = "UPDATE BetDetail SET Col1='"+t.col1+"'"+
 						" , Col2='"+t.col2+"'"+
 						" , Col3='"+t.col3+"'"+
 						" , Status="+t.status+
-						" where MatchID="+t.matchID+" AND BetHouseID="+t.bethouse);
+						" where MatchID="+t.matchID+" AND BetHouseID="+t.bethouse;
+				h.post(new Runnable() {
+					public void run() {
+						exec(s);
+					}
+				});
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

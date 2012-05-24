@@ -2,16 +2,11 @@ package com.krazevina.euro2012;
 
 import java.util.Vector;
 
-import com.krazevina.objects.Global;
-import com.krazevina.objects.Match;
-import com.krazevina.objects.SocketConnect;
-import com.krazevina.objects.sqlite;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +17,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.krazevina.objects.Global;
+import com.krazevina.objects.Match;
+import com.krazevina.objects.SocketConnect;
+import com.krazevina.objects.sqlite;
+
 
 public class Main extends Activity implements OnClickListener {
 	
@@ -29,7 +29,7 @@ public class Main extends Activity implements OnClickListener {
     LinearLayout llbtnsched,llbtnnews,llbtnteams,llbtnsetting;
     Vector<Match> match;
     LinearLayout llgroupa,llgroupb,llgroupc,llgroupd,llquarter,llsemi,llfinal;
-    int i ;
+    int i ;Handler h;
     sqlite sql;
     static long lastUpdateMatch,lastUpdateBet;
     
@@ -37,6 +37,7 @@ public class Main extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Global.getLang(this);
+        h = new Handler();
         setContentView(R.layout.main);
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
@@ -162,12 +163,12 @@ public class Main extends Activity implements OnClickListener {
 			}
 		}
 		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
-			new SocketConnect().update("Matches", sql);
-			new SocketConnect().update("TeamsInRound", sql);
+			new SocketConnect().update("Matches", sql, h);
+			new SocketConnect().update("TeamsInRound", sql, h);
 			lastUpdateMatch = System.currentTimeMillis();
 		}
 		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
-			new SocketConnect().update("BetDetail", sql);
+			new SocketConnect().update("BetDetail", sql, h);
 			lastUpdateBet = System.currentTimeMillis();
 		}
     }
