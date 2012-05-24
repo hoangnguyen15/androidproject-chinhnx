@@ -6,16 +6,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Message;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.krazevina.euro2012.News.FaceBookClient;
 import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
@@ -177,6 +182,57 @@ public class MatchDetail extends Activity implements OnClickListener{
 	protected void onDestroy() {
 		sql.recycle();
 		super.onDestroy();
+	}
+	
+	WebView childView;
+	LinearLayout parentLayout;
+	
+	final class MyChromeClient extends WebChromeClient{
+	    @Override
+	    public boolean onCreateWindow(WebView view, boolean dialog,
+	            boolean userGesture, Message resultMsg) {
+	        childView = new WebView(MatchDetail.this);
+	        childView.getSettings().setJavaScriptEnabled(true);
+	        childView.getSettings().setSupportZoom(true);
+	        childView.getSettings().setBuiltInZoomControls(true);
+	        childView.setWebViewClient(new FaceBookClient());
+	        childView.setWebChromeClient(this);
+	        childView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT));
+
+
+	        parentLayout.addView(childView);
+
+	        childView.requestFocus();
+	        wv.setVisibility(View.GONE);
+
+	          /*I think this is the main part which handles all the log in session*/
+	        WebView.WebViewTransport transport =(WebView.WebViewTransport)resultMsg.obj;
+	        transport.setWebView(childView);
+	        resultMsg.sendToTarget();
+	        return true;
+	    }
+
+
+	    @Override
+	    public void onProgressChanged(WebView view, int newProgress) {
+	        setProgress(newProgress*100);
+	    }
+
+	    @Override
+	    public void onCloseWindow(WebView window) {
+	        parentLayout.removeViewAt(parentLayout.getChildCount()-1);
+	        childView =null;
+	        wv.setVisibility(View.VISIBLE);
+	        wv.requestFocus();
+	    }
+	}
+
+    private class FaceBookClient extends WebViewClient{
+	     @Override
+	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+//	        Log.i("REQUEST URL",url);
+	        return false;
+	    }   
 	}
 }
 
