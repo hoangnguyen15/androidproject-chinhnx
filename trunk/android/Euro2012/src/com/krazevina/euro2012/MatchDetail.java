@@ -37,6 +37,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 	ImageView flag1,flag2;
 	TextView name1,name2,score,bet11,bet12,bet13,bet21,bet22,bet23,bet31,bet32,bet33;
 	TextView stadium,referee;
+	TextView txtday,txttime;
 	LinearLayout llevent;
 	sqlite sql;
 	Match m;Team t1,t2;
@@ -60,6 +61,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		score = (TextView)findViewById(R.id.score);
 		stadium = (TextView)findViewById(R.id.stadium);
 		referee = (TextView)findViewById(R.id.referee);
+		txtday = (TextView)findViewById(R.id.txtday);
+		txttime = (TextView)findViewById(R.id.txttime);
 		llevent = (LinearLayout)findViewById(R.id.llevent);
 		btnBack = (Button)findViewById(R.id.btnBack);
 		bet11 = (TextView)findViewById(R.id.txtbet11);
@@ -132,6 +135,11 @@ public class MatchDetail extends Activity implements OnClickListener{
 		else score.setText("?-?");
 		stadium.setText(m.stadium);
 		referee.setText(m.referee);
+		String timefull = m.start;
+		String time[] = timefull.split(" ");
+		txtday.setText(time[0].split("-")[2]+"/"+time[0].split("-")[1]);
+		txttime.setText(time[1].split(":")[0]+":"+time[1].split(":")[1]);
+		
 		
 		LinearLayout ll;
 		LayoutInflater mInflater = LayoutInflater.from(this);
