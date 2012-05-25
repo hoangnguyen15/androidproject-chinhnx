@@ -73,7 +73,7 @@ public class TeamDetails extends Activity implements OnClickListener{
     	txtfifajoin.setText(getString(R.string.fifajoin)+":\t"+t.fifaJoin);
     	txtfifarank.setText(getString(R.string.fifarank)+":\t"+t.fifaRank);
     	txtcoach.setText(getString(R.string.coach)+":\t"+t.coach);
-    	txtattend.setText(getString(R.string.attend)+":\t"+t.attendTimes);
+    	txtattend.setText("");//getString(R.string.attend)+":\t"+t.attendTimes);
     	imgflag.setImageResource(flag(t.ID));
     	imguni1.setImageResource(uni1(t.ID));
     	imguni2.setImageResource(uni2(t.ID));
