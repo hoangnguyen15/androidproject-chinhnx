@@ -6,4 +6,9 @@ public class Team {
 	nameEng,nameKor,descEng,descKor;
 	public int establish,fifaJoin,fifaRank,status,
 	roundID,point,win,lose,draw,goallose,goalscore;
+	public String getName(){
+		if(Global.lang.equals("EN"))return nameEng;
+		else if(Global.lang.equals("KO"))return nameKor;
+		else return name;
+	}
 }
