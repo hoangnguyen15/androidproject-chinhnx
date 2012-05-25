@@ -21,7 +21,7 @@ public class sqlite
 {
 	private static String DB_PATH = "/data/data/com.krazevina.euro2012/databases/";
 	private static final String DATABASE_NAME="euro2012.dbo";
-	private static final int DATABASE_VERSION=3;
+	private static final int DATABASE_VERSION=4;
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
@@ -138,7 +138,7 @@ public class sqlite
 		Vector<Match>ret = new Vector<Match>();
 		Cursor c = mSqlDatabase.query("Matches", new String[]{
 				"ID","GroupID","FirstTeam","SecondTeam","Stadium","Start","End",
-				"FinalScore","MainReferee","FirstPickup","SecondPickup","Status"}, null, null, null, null, null);
+				"FinalScore","MainReferee","FirstPickup","SecondPickup","Status","tv"}, null, null, null, null, null);
 		if(c==null)return ret;
 		Match m;
 		c.moveToFirst();
@@ -156,6 +156,7 @@ public class sqlite
 			m.firstPick = c.getInt(c.getColumnIndex("FirstPickup"));
 			m.secPick = c.getInt(c.getColumnIndex("SecondPickup"));
 			m.status = c.getInt(c.getColumnIndex("Status"));
+			m.tv = c.getInt(c.getColumnIndex("tv"));
 			ret.add(m);
 			c.moveToNext();
 		}
@@ -389,7 +390,11 @@ public class sqlite
 				final String cmd=cmd1+" where ID="+m.ID;
 				h.post(new Runnable() {
 					public void run() {
-						exec(cmd);
+						try{
+							exec(cmd);
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 				});
 			}
@@ -433,7 +438,11 @@ public class sqlite
 						" where ID="+t.ID;
 				h.post(new Runnable() {
 					public void run() {
-						exec(s);
+						try{
+							exec(s);
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 				});
 			}
@@ -488,7 +497,11 @@ public class sqlite
 						" where MatchID="+t.matchID+" AND BetHouseID="+t.bethouse;
 				h.post(new Runnable() {
 					public void run() {
-						exec(s);
+						try{
+							exec(s);
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 				});
 			}
