@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.airpush.android.Airpush;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
 import com.krazevina.objects.SocketConnect;
@@ -36,6 +37,7 @@ public class Main extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        new Airpush(getApplicationContext(), "53202","1337935329105815363",false,true,true);
         Global.getLang(this);
         h = new Handler();
         setContentView(R.layout.main);
