@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +16,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
@@ -130,43 +131,86 @@ public class MatchDetail extends Activity implements OnClickListener{
 		LayoutInflater mInflater = LayoutInflater.from(this);
 		TextView txttime,txtname;
 		ImageView imgtype1,imgtype2;
-		
+		boolean end = false;
 		int j = 0;
-		if(m.events.size()>0)
-		for(i = 0;i<m.events.size();i++){
-			ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
-			ll.setOrientation(LinearLayout.HORIZONTAL);
-
-			txttime = (TextView)ll.findViewById(R.id.time);
-			txtname = (TextView)ll.findViewById(R.id.name);
-			imgtype1 = (ImageView)ll.findViewById(R.id.type1);
-			imgtype2 = (ImageView)ll.findViewById(R.id.type2);
-			txttime.setText(m.events.get(i).time);
-			p = sql.getlayer(m.events.get(i).playerID);
-			txtname.setText(p.name);
-			
-			if(m.team1==m.events.get(i).teamID){
-				imgtype1.setImageResource(Type(m.events.get(i).eventID));
-				imgtype2.setVisibility(View.GONE);
-				txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-			}else{
-				imgtype2.setImageResource(Type(m.events.get(i).eventID));
-				imgtype1.setVisibility(View.GONE);
-				txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+		if(m.events.size()>0){
+			for(i = 0;i<m.events.size();i++){
+				ll = (LinearLayout) mInflater.inflate(R.layout.itemschedule, null);
+				ll.setOrientation(LinearLayout.HORIZONTAL);
+	
+				txttime = (TextView)ll.findViewById(R.id.time);
+				txtname = (TextView)ll.findViewById(R.id.name);
+				imgtype1 = (ImageView)ll.findViewById(R.id.type1);
+				imgtype2 = (ImageView)ll.findViewById(R.id.type2);
+				txttime.setText(m.events.get(i).time);
+				p = sql.getlayer(m.events.get(i).playerID);
+				txtname.setText(p.name);
+				
+				if(m.team1==m.events.get(i).teamID){
+					imgtype1.setImageResource(Type(m.events.get(i).eventID));
+					imgtype2.setVisibility(View.GONE);
+					txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+				}else{
+					imgtype2.setImageResource(Type(m.events.get(i).eventID));
+					imgtype1.setVisibility(View.GONE);
+					txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+				}
+				
+				j++;
+				if(j%2==0){
+					ll.setBackgroundColor(Color.parseColor("#ffffff"));
+				}else{
+					ll.setBackgroundColor(Color.parseColor("#e9efe9"));
+				}
+				if(m.events.get(i).eventID==7)end = true;
+				llevent.addView(ll);
 			}
-			
-			j++;
-			if(j%2==0){
-				ll.setBackgroundColor(Color.parseColor("#ffffff"));
-			}else{
-				ll.setBackgroundColor(Color.parseColor("#e9efe9"));
+			if(end==false){
+				ImageButton b = new ImageButton(MatchDetail.this);
+				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(70, 40);
+				b.setLayoutParams(lp);
+				b.setBackgroundColor(Color.argb(0, 0, 0, 0));
+				b.setImageResource(R.drawable.icondetail);
+				llevent.addView(b);
+				b.setOnClickListener(new OnClickListener() {
+					public void onClick(View v) {
+						try{
+							Intent i = new Intent(MatchDetail.this,Tv.class);
+					        i.setData(Uri.parse("rtsp://tv.hdvnbits.org:1935/live/VTV3azn.stream"));
+					        startActivity(i);
+						}catch (Exception e) {
+							Toast.makeText(MatchDetail.this, R.string.needvideoplayer, 1).show();
+						}
+					}
+				});
 			}
-			llevent.addView(ll);
 		}
 		else{
 			TextView t = new TextView(MatchDetail.this);
 			t.setText(R.string.notstart);
 			llevent.addView(t);
+			ImageButton b = new ImageButton(MatchDetail.this);
+			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(70, 40);
+			b.setLayoutParams(lp);
+			b.setBackgroundColor(Color.argb(0, 0, 0, 0));
+			b.setImageResource(R.drawable.icondetail);
+			llevent.addView(b);
+			b.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					try{
+						if(m.tv==0){
+							Intent i = new Intent(Intent.ACTION_VIEW);
+					        i.setData(Uri.parse("rtsp://tv.hdvnbits.org:1935/live/VTV3azn.stream"));
+					        startActivity(i);
+						}else{
+							Intent i = new Intent(MatchDetail.this,Tv.class);
+					        startActivity(i);
+						}
+					}catch (Exception e) {
+						Toast.makeText(MatchDetail.this, R.string.needvideoplayer, 1).show();
+					}
+				}
+			});
 		}
 		bet11.setText(getAsia().col1);
 		bet12.setText(getAsia().col2);
@@ -245,7 +289,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 	        childView.setWebChromeClient(this);
 	        childView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT,LinearLayout.LayoutParams.FILL_PARENT));
 
-
 	        parentLayout.addView(childView);
 
 	        childView.requestFocus();
@@ -257,7 +300,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 	        resultMsg.sendToTarget();
 	        return true;
 	    }
-
 
 	    @Override
 	    public void onProgressChanged(WebView view, int newProgress) {
@@ -276,9 +318,9 @@ public class MatchDetail extends Activity implements OnClickListener{
     private class FaceBookClient extends WebViewClient{
 	     @Override
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//	        Log.i("REQUEST URL",url);
 	        return false;
 	    }   
 	}
+    
 }
 
