@@ -3,6 +3,8 @@ package com.krazevina.euro2012;
 import java.util.Vector;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -111,7 +113,12 @@ public class MatchDetail extends Activity implements OnClickListener{
     	wv.getSettings().setAllowFileAccess(true);
     	wv.loadDataWithBaseURL("http://gaixinh.com.vn",head+tail, "text/html", "UTF-8",null);
 		btnBack.setOnClickListener(this);
-		
+		ImageButton b = (ImageButton)findViewById(R.id.btnView);
+		b.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				showDialog();
+			}
+		});
 		flag1.setImageResource(TeamDetails.flag(m.team1));
 		flag2.setImageResource(TeamDetails.flag(m.team2));
 		t1 = sql.getTeam(m.team1);
@@ -164,52 +171,13 @@ public class MatchDetail extends Activity implements OnClickListener{
 				if(m.events.get(i).eventID==7)end = true;
 				llevent.addView(ll);
 			}
-			if(end==false){
-				ImageButton b = new ImageButton(MatchDetail.this);
-				LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(70, 40);
-				b.setLayoutParams(lp);
-				b.setBackgroundColor(Color.argb(0, 0, 0, 0));
-				b.setImageResource(R.drawable.icondetail);
-				llevent.addView(b);
-				b.setOnClickListener(new OnClickListener() {
-					public void onClick(View v) {
-						try{
-							Intent i = new Intent(MatchDetail.this,Tv.class);
-					        i.setData(Uri.parse("rtsp://tv.hdvnbits.org:1935/live/VTV3azn.stream"));
-					        startActivity(i);
-						}catch (Exception e) {
-							Toast.makeText(MatchDetail.this, R.string.needvideoplayer, 1).show();
-						}
-					}
-				});
-			}
 		}
 		else{
 			TextView t = new TextView(MatchDetail.this);
+			t.setGravity(Gravity.CENTER);
+			t.setTextColor(Color.BLACK);
 			t.setText(R.string.notstart);
 			llevent.addView(t);
-			ImageButton b = new ImageButton(MatchDetail.this);
-			LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(70, 40);
-			b.setLayoutParams(lp);
-			b.setBackgroundColor(Color.argb(0, 0, 0, 0));
-			b.setImageResource(R.drawable.icondetail);
-			llevent.addView(b);
-			b.setOnClickListener(new OnClickListener() {
-				public void onClick(View v) {
-					try{
-						if(m.tv==0){
-							Intent i = new Intent(Intent.ACTION_VIEW);
-					        i.setData(Uri.parse("rtsp://tv.hdvnbits.org:1935/live/VTV3azn.stream"));
-					        startActivity(i);
-						}else{
-							Intent i = new Intent(MatchDetail.this,Tv.class);
-					        startActivity(i);
-						}
-					}catch (Exception e) {
-						Toast.makeText(MatchDetail.this, R.string.needvideoplayer, 1).show();
-					}
-				}
-			});
 		}
 		bet11.setText(getAsia().col1);
 		bet12.setText(getAsia().col2);
@@ -318,8 +286,35 @@ public class MatchDetail extends Activity implements OnClickListener{
 	     @Override
 	    public boolean shouldOverrideUrlLoading(WebView view, String url) {
 	        return false;
-	    }   
+	    }
 	}
-    
+    AlertDialog dialog;
+    void showDialog(){
+    	if(dialog==null){
+	    	final CharSequence[] items = {"VTV3", "VTV2", "iTV music for relax"};
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setItems(items, new DialogInterface.OnClickListener() {
+	    	    public void onClick(DialogInterface dialog, int item) {
+	    	    	Intent i;
+	    	        switch (item) {
+					case 0:
+						i = new Intent(MatchDetail.this,Tv3.class);
+				        startActivity(i);
+			        break;
+					case 1:
+						i = new Intent(MatchDetail.this,Tv2.class);
+				        startActivity(i);
+			        break;
+					default:
+						i = new Intent(MatchDetail.this,TvItv.class);
+				        startActivity(i);
+			        break;
+					}
+	    	    }
+	    	});
+	    	dialog = builder.create();
+    	}
+    	dialog.show();
+    }
 }
 
