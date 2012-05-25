@@ -103,7 +103,7 @@ public class Teams extends Activity implements OnClickListener {
 			pts = (TextView)ll.findViewById(R.id.pts);
 			
 			imgflag.setImageResource(flag(v.get(i).ID));
-			name.setText(v.get(i).name);
+			name.setText(v.get(i).getName());
 			pld.setText(""+(v.get(i).win+v.get(i).lose+v.get(i).draw));
 			win.setText(""+(v.get(i).win));
 			lose.setText(""+(v.get(i).lose));

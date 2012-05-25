@@ -74,7 +74,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 		wv = (WebView)findViewById(R.id.wvcomment);
 		parentLayout = (LinearLayout)findViewById(R.id.llwvcontainer);
 		
-		
 		String head=""+
     	"<html xmlns:fb=\"http://ogp.me/ns/fb#\">\n"+
     	"<head>\n"+
