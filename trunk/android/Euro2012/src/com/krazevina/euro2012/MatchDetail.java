@@ -118,8 +118,8 @@ public class MatchDetail extends Activity implements OnClickListener{
 		t1 = sql.getTeam(m.team1);
 		t2 = sql.getTeam(m.team2);
 		
-		name1.setText(t1.name);
-		name2.setText(t2.name);
+		name1.setText(t1.getName());
+		name2.setText(t2.getName());
 		btnvote1.setText(""+m.firstPick);
 		btnvote2.setText(""+m.secPick);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
