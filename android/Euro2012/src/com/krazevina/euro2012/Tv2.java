@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.webkit.WebView;
 
 public class Tv2 extends Activity{
+	WebView wv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		WebView wv = new WebView(Tv2.this);
+		wv = new WebView(Tv2.this);
 //    	wv.getSettings().setJavaScriptEnabled(true);
 //    	wv.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 //    	wv.getSettings().setSupportMultipleWindows(true);
@@ -23,6 +24,6 @@ public class Tv2 extends Activity{
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		
+		wv.loadData("", "text/html", "UTF-8");
 	}
 }

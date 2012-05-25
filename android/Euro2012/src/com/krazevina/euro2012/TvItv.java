@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.webkit.WebView;
 
 public class TvItv extends Activity{
-	String s = "<center><embed wmode=\"opaque\" type=\"application/x-shockwave-flash\" style=\"background-color: black; color: rgb(51, 51, 51); font-family: Arial,serif; font-size: 14px; height: 465px; line-height: 22px; width: 560px;\" src=\"http://player.longtailvideo.com/player.swf\" quality=\"high\" flashvars=\"streamer=rtmp://210.245.82.6/live/&amp;file=itvw_hh&amp;type=rtmp&amp;fullscreen=true&amp;autostart=true&amp;controlbar=bottom&amp;logo=logo.png&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></center>";
+	String s = "<center><embed wmode=\"opaque\" type=\"application/x-shockwave-flash\" style=\"background-color: black; color: rgb(51, 51, 51); font-family: Arial,serif; font-size: 14px; height: 465px; line-height: 22px; width: "+(getWindowManager().getDefaultDisplay().getWidth()*8/10)+";\" src=\"http://player.longtailvideo.com/player.swf\" quality=\"high\" flashvars=\"streamer=rtmp://210.245.82.6/live/&amp;file=itvw_hh&amp;type=rtmp&amp;fullscreen=true&amp;autostart=true&amp;controlbar=bottom&amp;logo=logo.png&amp;\" allowscriptaccess=\"always\" allowfullscreen=\"true\"></center>";
+	WebView wv;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		WebView wv = new WebView(TvItv.this);
+		wv = new WebView(TvItv.this);
 //    	wv.getSettings().setJavaScriptEnabled(true);
 //    	wv.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 //    	wv.getSettings().setSupportMultipleWindows(true);
@@ -25,6 +26,6 @@ public class TvItv extends Activity{
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-		
+		wv.loadData("", "text/html", "UTF-8");
 	}
 }
