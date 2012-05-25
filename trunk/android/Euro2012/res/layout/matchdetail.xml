@@ -429,7 +429,7 @@
             android:layout_marginTop="10dip"
             android:layout_weight="1"
             android:background="@drawable/bgwhite"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:orientation="vertical" >
         </LinearLayout>
     </LinearLayout>

@@ -69,5 +69,6 @@
 	<string name="betEuro">1x2</string>
 	<string name="betOver">Over/Under</string>
     <string name="notstart">Not start yet, or no data.</string>
+    <string name="needvideoplayer">You need a video player installed to view.</string>
     
 </resources>

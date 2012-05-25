@@ -69,5 +69,6 @@
 	<string name="betEuro">Tỷ lệ châu Âu</string>
 	<string name="betOver">Tỷ lệ tài xỉu</string>
 	<string name="notstart">Chưa bắt đầu trận đấu, hoặc không có dữ liệu.</string>
+	<string name="needvideoplayer">Cần cài một chương trình xem video để xem.</string>
 	
 </resources>
