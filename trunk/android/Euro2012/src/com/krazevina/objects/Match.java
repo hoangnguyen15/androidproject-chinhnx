@@ -34,4 +34,7 @@ public class Match {
 	public void setStart(String s){
 		start = s;
 	}
+	public String rawStart(){
+		return start;
+	}
 }

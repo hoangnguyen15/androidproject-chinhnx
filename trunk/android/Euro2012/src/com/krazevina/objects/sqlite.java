@@ -379,7 +379,7 @@ public class sqlite
 				String cmd1 = "UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
-						" , Start='"+m.start()+"'"+
+						" , Start='"+m.rawStart()+"'"+
 						" , FinalScore='"+m.finalScore+"'"+
 						" , MainReferee='"+m.referee+"'"+
 						" , FirstPickup="+m.firstPick+
