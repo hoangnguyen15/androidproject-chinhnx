@@ -90,7 +90,7 @@ public class Main extends Activity implements OnClickListener {
 			imgsflag1 = (ImageView)ll.findViewById(R.id.imgsflag1);
 			imgsflag2 = (ImageView)ll.findViewById(R.id.imgsflag2);
 			llmatchdetail = (LinearLayout)ll.findViewById(R.id.llmatchdetail);
-			String timefull = match.elementAt(i).start;
+			String timefull = match.elementAt(i).start();
 			String time[] = timefull.split(" ");
 			txtsday.setText(time[0].split("-")[2]+"/"+time[0].split("-")[1]);
 			txtstime.setText(time[1].split(":")[0]+":"+time[1].split(":")[1]);
