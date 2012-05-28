@@ -145,7 +145,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		LayoutInflater mInflater = LayoutInflater.from(this);
 		TextView txttime,txtname;
 		ImageView imgtype1,imgtype2;
-		boolean end = false;
+//		boolean end = false;
 		int j = 0;
 		if(m.events.size()>0){
 			for(i = 0;i<m.events.size();i++){
@@ -176,7 +176,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 				}else{
 					ll.setBackgroundColor(Color.parseColor("#e9efe9"));
 				}
-				if(m.events.get(i).eventID==7)end = true;
+//				if(m.events.get(i).eventID==7)end = true;
 				llevent.addView(ll);
 			}
 		}

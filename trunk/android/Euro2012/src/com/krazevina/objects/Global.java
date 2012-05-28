@@ -1,12 +1,14 @@
 package com.krazevina.objects;
 
 import java.util.Locale;
+import java.util.TimeZone;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
+import android.util.Log;
 
 public class Global 
 {
@@ -19,8 +21,12 @@ public class Global
 	public static int notify;
 	public static int vibrate;
 	public static Match match;
+	public static int timeZone;
 	
 	public static void getLang(Activity c){
+		timeZone = TimeZone.getDefault().getOffset(System.currentTimeMillis());
+		timeZone = timeZone/(1000*60*60);
+		Log.e("Timezone", ""+timeZone);
 		SharedPreferences sp = c.getSharedPreferences("lang", Context.MODE_WORLD_WRITEABLE);
 		lang = sp.getString("lang", "");
 		if(lang.length()<=0){
