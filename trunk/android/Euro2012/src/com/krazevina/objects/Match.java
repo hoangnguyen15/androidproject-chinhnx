@@ -14,14 +14,14 @@ public class Match {
 		String s="";
 		Calendar cal = Calendar.getInstance();
 		String datetime[] = start.split(" ");
-		String time[] = datetime[0].split("-");
+		String date[] = datetime[0].split("-");
 		cal.set(Calendar.YEAR, 2012);
-		cal.set(Calendar.DATE, Integer.parseInt(time[2]));
-		cal.set(Calendar.MONTH, Integer.parseInt(time[1])-1);
+		cal.set(Calendar.DATE, Integer.parseInt(date[2]));
+		cal.set(Calendar.MONTH, Integer.parseInt(date[1])-1);
 		
-		String date[] = datetime[1].split(":");
+		String time[] = datetime[1].split(":");
 		cal.set(Calendar.HOUR_OF_DAY,Integer.parseInt(time[0]));
-		cal.set(Calendar.MINUTE,Integer.parseInt(date[1]));
+		cal.set(Calendar.MINUTE,Integer.parseInt(time[1]));
 		cal.set(Calendar.SECOND, 0);
 		
 		cal.setTimeInMillis(cal.getTimeInMillis()+(Global.timeZone-7)*3600000l);
