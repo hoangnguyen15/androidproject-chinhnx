@@ -28,6 +28,7 @@ public class Match {
 		
 		s = "2012-"+(cal.get(Calendar.MONTH)+1)+"-"+cal.get(Calendar.DATE)+" "+
 		cal.get(Calendar.HOUR_OF_DAY)+":"+cal.get(Calendar.MINUTE)+":"+cal.get(Calendar.SECOND);
+		s = s.replaceAll(":0", ":00");
 		return s;
 	}
 	
