@@ -135,7 +135,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		else score.setText("?-?");
 		stadium.setText(m.stadium);
 		referee.setText(m.referee);
-		String timefull = m.start;
+		String timefull = m.start();
 		String time[] = timefull.split(" ");
 		txtday.setText(time[0].split("-")[2]+"/"+time[0].split("-")[1]);
 		txttime.setText(time[1].split(":")[0]+":"+time[1].split(":")[1]);

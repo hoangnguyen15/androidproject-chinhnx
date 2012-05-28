@@ -149,7 +149,7 @@ public class sqlite
 			m.team1 = c.getInt(c.getColumnIndex("FirstTeam"));
 			m.team2 = c.getInt(c.getColumnIndex("SecondTeam"));
 			m.stadium = c.getString(c.getColumnIndex("Stadium"));
-			m.start = c.getString(c.getColumnIndex("Start"));
+			m.setStart(c.getString(c.getColumnIndex("Start")));
 			m.end = c.getString(c.getColumnIndex("End"));
 			m.finalScore = c.getString(c.getColumnIndex("FinalScore"));
 			m.referee = c.getString(c.getColumnIndex("MainReferee"));
@@ -360,7 +360,7 @@ public class sqlite
 				m.team1 = Integer.parseInt(o.getString("FirstTeam"));
 				m.team2 = Integer.parseInt(o.getString("SecondTeam"));
 				m.stadium = o.getString("Stadium");
-				m.start = o.getString("StartT");
+				m.setStart(o.getString("StartT"));
 				m.finalScore = o.getString("FinalScore");
 				m.referee = o.getString("MainReferee");
 				try {
@@ -379,7 +379,7 @@ public class sqlite
 				String cmd1 = "UPDATE Matches SET GroupID="+m.groupID+
 						" , FirstTeam="+m.team1+
 						" , SecondTeam="+m.team2+
-						" , Start='"+m.start+"'"+
+						" , Start='"+m.start()+"'"+
 						" , FinalScore='"+m.finalScore+"'"+
 						" , MainReferee='"+m.referee+"'"+
 						" , FirstPickup="+m.firstPick+

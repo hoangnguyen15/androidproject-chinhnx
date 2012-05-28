@@ -1,10 +1,37 @@
 package com.krazevina.objects;
 
+import java.util.Calendar;
 import java.util.Vector;
 
 public class Match {
 	public int ID,groupID,team1,team2,firstPick,secPick,status;
-	public String stadium,start,end,finalScore,referee;
+	public String stadium,end,finalScore,referee;
 	public Vector<Event> events;
 	public int tv;
+	private String start;
+	
+	public String start(){
+		String s="";
+		Calendar cal = Calendar.getInstance();
+		String datetime[] = start.split(" ");
+		String time[] = datetime[0].split("-");
+		cal.set(Calendar.YEAR, 2012);
+		cal.set(Calendar.DATE, Integer.parseInt(time[2]));
+		cal.set(Calendar.MONTH, Integer.parseInt(time[1])-1);
+		
+		String date[] = datetime[1].split(":");
+		cal.set(Calendar.HOUR_OF_DAY,Integer.parseInt(time[0]));
+		cal.set(Calendar.MINUTE,Integer.parseInt(date[1]));
+		cal.set(Calendar.SECOND, 0);
+		
+		cal.setTimeInMillis(cal.getTimeInMillis()+(Global.timeZone-7)*3600000l);
+		
+		s = "2012-"+(cal.get(Calendar.MONTH)+1)+"-"+cal.get(Calendar.DATE)+" "+
+		cal.get(Calendar.HOUR_OF_DAY)+":"+cal.get(Calendar.MINUTE)+":"+cal.get(Calendar.SECOND);
+		return s;
+	}
+	
+	public void setStart(String s){
+		start = s;
+	}
 }
