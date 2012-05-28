@@ -485,10 +485,10 @@ public class sqlite
 				t.ID = Integer.parseInt(o.getString("ID"));
 				t.matchID = Integer.parseInt(o.getString("MatchID"));
 				t.bethouse = Integer.parseInt(o.getString("BetHouseID"));
-				t.col1 = o.getString("Col1");
-				t.col2 = o.getString("Col2");
-				t.col3 = o.getString("Col3");
-				t.status = Integer.parseInt(o.getString("Status"));
+				if(o.getString("Col1").length()>0)t.col1 = o.getString("Col1");
+				if(o.getString("Col2").length()>0)t.col2 = o.getString("Col2");
+				if(o.getString("Col3").length()>0)t.col3 = o.getString("Col3");
+				if(o.getString("Status").length()>0)t.status = Integer.parseInt(o.getString("Status"));
 				
 				final String s = "UPDATE BetDetail SET Col1='"+t.col1+"'"+
 						" , Col2='"+t.col2+"'"+
