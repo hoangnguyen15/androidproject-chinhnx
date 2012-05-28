@@ -26,7 +26,8 @@ public class Match {
 		
 		cal.setTimeInMillis(cal.getTimeInMillis()+(Global.timeZone-7)*3600000l);
 		
-		s = "2012-"+(cal.get(Calendar.MONTH)+1)+"-"+cal.get(Calendar.DATE)+" "+
+		s = "2012-"+(cal.get(Calendar.MONTH)+1<10?"0":"")+(cal.get(Calendar.MONTH)+1)+"-"+
+		(cal.get(Calendar.DATE)<10?"0":"")+cal.get(Calendar.DATE)+" "+
 		cal.get(Calendar.HOUR_OF_DAY)+":"+cal.get(Calendar.MINUTE)+":"+cal.get(Calendar.SECOND);
 		s = s.replaceAll(":0", ":00");
 		return s;
