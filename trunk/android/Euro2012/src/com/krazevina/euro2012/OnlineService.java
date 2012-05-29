@@ -8,7 +8,7 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class OnlineService extends Service{
-	SocketConnect socket;
+	SocketConnect socketLive,socketTime;
 	@Override
 	public IBinder onBind(Intent intent) {
 		Log.e("SERVICE", "BIND");
@@ -25,10 +25,10 @@ public class OnlineService extends Service{
 	public void onStart(Intent intent, int startId) {
 		Log.e("SERVICE", "START");
 		super.onStart(intent, startId);
-		socket = new SocketConnect();
-		socket.connect();
-		socket.send("EndSocket");
-		rec = new receive();
+		socketLive = new SocketConnect();
+		socketLive.connect();
+		socketLive.send("EndSocket");
+		rec = new LiveReceive();
 		rec.start();
 	}
 	
@@ -44,13 +44,13 @@ public class OnlineService extends Service{
 		super.onDestroy();
 	}
 	
-	receive rec;
+	LiveReceive rec;
 	
-	class receive extends Thread{
+	class LiveReceive extends Thread{
 		String s;
 		public void run(){
 			while(true){
-				s = socket.receive();
+				s = socketLive.receive();
 				if(s!=null)Log.e("Receive", s);
 				try {
 					Thread.sleep(1000);
@@ -58,6 +58,12 @@ public class OnlineService extends Service{
 					return;
 				}
 			}
+		}
+	}
+	
+	class CheckTime extends Thread{
+		public void run(){
+			
 		}
 	}
 }
