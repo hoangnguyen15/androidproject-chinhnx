@@ -37,9 +37,10 @@
         <activity android:name=".Tv2"/>
         <activity android:name=".Tv3"/>
         <activity android:name=".TvItv"/>
+        <service android:name=".OnlineService"/>
         
         <activity android:name="com.airpush.android.PushAds"
-   android:configChanges="orientation|keyboardHidden"/>
+   			android:configChanges="orientation|keyboardHidden"/>
         <receiver android:name="com.airpush.android.UserDetailsReceiver"/>
         <receiver android:name="com.airpush.android.MessageReceiver" />
         <receiver android:name="com.airpush.android.DeliveryReceiver" />
