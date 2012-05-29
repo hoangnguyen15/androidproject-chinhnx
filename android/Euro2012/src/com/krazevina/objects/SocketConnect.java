@@ -24,6 +24,7 @@ public class SocketConnect {
 	 * 2:dis
 	 */
 	int status=-1;
+	PrintWriter pw;
 	
 	public SocketConnect(){
 	}
@@ -33,6 +34,7 @@ public class SocketConnect {
 			Log.e("Connecting", "Connecting");
 			sk = new Socket(sv,port);
 			br=new BufferedReader(new InputStreamReader(sk.getInputStream()));
+			pw = new PrintWriter(sk.getOutputStream(),true);
 			Log.e("Connected", "Connected");
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
@@ -52,10 +54,9 @@ public class SocketConnect {
     }
     
     public void send(String s){
-    	PrintWriter pw;
 		try {
-			pw = new PrintWriter(sk.getOutputStream(),true);
 			pw.println(""+s);
+			pw.flush();
 			Log.e("Send",""+s);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,13 +110,16 @@ public class SocketConnect {
 		    	send(s);
 		    	String js = receive();
 		    	System.out.println(js);
-//		    	try {
-//					Thread.sleep(10000);
-//				} catch (InterruptedException e) {
-//					e.printStackTrace();
-//				}
-//		    	disconnect();
 			}
 		}).start();
+    }
+    
+    public String getTime(){
+    	connect();
+    	send("Time");
+    	return receive();
+    }
+    public boolean checkError(){
+    	return pw.checkError();
     }
 }

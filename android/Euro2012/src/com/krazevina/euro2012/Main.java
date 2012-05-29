@@ -166,15 +166,15 @@ public class Main extends Activity implements OnClickListener {
 				llfinal.addView(ll);
 			}
 		}
-		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
-			new SocketConnect().update("Matches", sql, h);
-			new SocketConnect().update("TeamsInRound", sql, h);
-			lastUpdateMatch = System.currentTimeMillis();
-		}
-		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
-			new SocketConnect().update("BetDetail", sql, h);
-			lastUpdateBet = System.currentTimeMillis();
-		}
+//		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
+//			new SocketConnect().update("Matches", sql, h);
+//			new SocketConnect().update("TeamsInRound", sql, h);
+//			lastUpdateMatch = System.currentTimeMillis();
+//		}
+//		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
+//			new SocketConnect().update("BetDetail", sql, h);
+//			lastUpdateBet = System.currentTimeMillis();
+//		}
     }
     
     OnTouchListener touch = new OnTouchListener() {
