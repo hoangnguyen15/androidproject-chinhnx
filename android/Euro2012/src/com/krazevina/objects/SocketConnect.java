@@ -44,14 +44,14 @@ public class SocketConnect {
     }
     
 
-    protected void disconnect() {
+    public void disconnect() {
     	try {
 			sk.close();
 		} catch (Exception e) {
 		}
     }
     
-    void send(String s){
+    public void send(String s){
     	PrintWriter pw;
 		try {
 			pw = new PrintWriter(sk.getOutputStream(),true);
@@ -63,7 +63,7 @@ public class SocketConnect {
     }
     
     String output;
-    String receive(){
+    public String receive(){
 		try {
 			output = null;
 			output=br.readLine();
