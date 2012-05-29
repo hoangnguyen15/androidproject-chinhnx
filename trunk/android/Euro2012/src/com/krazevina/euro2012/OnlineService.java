@@ -25,6 +25,11 @@ public class OnlineService extends Service{
 	public void onStart(Intent intent, int startId) {
 		Log.e("SERVICE", "START");
 		super.onStart(intent, startId);
+		socket = new SocketConnect();
+		socket.connect();
+		socket.send("EndSocket");
+		rec = new receive();
+		rec.start();
 	}
 	
 	@Override
@@ -32,5 +37,27 @@ public class OnlineService extends Service{
 		Log.e("SERVICE", "STARTCOM");
 		return super.onStartCommand(intent, flags, startId);
 	}
-
+	
+	@Override
+	public void onDestroy() {
+		rec.interrupt();
+		super.onDestroy();
+	}
+	
+	receive rec;
+	
+	class receive extends Thread{
+		String s;
+		public void run(){
+			while(true){
+				s = socket.receive();
+				if(s!=null)Log.e("Receive", s);
+				try {
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					return;
+				}
+			}
+		}
+	}
 }
