@@ -37,7 +37,9 @@ public class Main extends Activity implements OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        new Airpush(getApplicationContext(), "53202","1337935329105815363",false,true,true);
+//        new Airpush(getApplicationContext(), "53202","1337935329105815363",false,true,true);
+        Intent intent = new Intent(Main.this,OnlineService.class);
+        startService(intent);
         Global.getLang(this);
         h = new Handler();
         setContentView(R.layout.main);
