@@ -94,12 +94,12 @@ public class TeamDetails extends Activity implements OnClickListener{
 		if(Global.lang.equals("VI"))return posi;
 		if(Global.lang.equals("EN"))
 			for(int i=0;i<4;i++){
-				if(posi.toLowerCase().equals(pos[i][0]))
+				if(posi.toLowerCase().equals(pos[i][0].toLowerCase()))
 					return pos[i][1];
 			}
 		if(Global.lang.equals("KO"))
 			for(int i=0;i<4;i++){
-				if(posi.toLowerCase().equals(pos[i][0]))
+				if(posi.toLowerCase().equals(pos[i][0].toLowerCase()))
 					return pos[i][2];
 			}
 		return "";
