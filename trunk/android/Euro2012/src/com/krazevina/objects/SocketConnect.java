@@ -64,13 +64,10 @@ public class SocketConnect {
     }
     
     String output;
-    public String receive(){
-		try {
-			output = null;
-			output=br.readLine();
-			if(output!=null)return output;
-		} catch (Exception e) {
-		}
+    public String receive() throws IOException{
+		output = null;
+		output=br.readLine();
+		if(output!=null)return output;
 		return "";
     }
     
@@ -89,15 +86,19 @@ public class SocketConnect {
     	public void run(){
     		connect();
     		send(str);
-    		String js = receive();
-    		
-    		if (str.equals("Matches")) {
-    			sql.updateMatches(js,ha);
-    		}else if (str.equals("TeamsInRound")) {
-    			sql.updateTeamsInRound(js,ha);
-    		}else if (str.equals("BetDetail")) {
-    			sql.updateBet(js,ha);
-    		}else System.out.println("receive unprocess text:"+js);
+    		String js;
+			try {
+				js = receive();
+				if (str.equals("Matches")) {
+	    			sql.updateMatches(js,ha);
+	    		}else if (str.equals("TeamsInRound")) {
+	    			sql.updateTeamsInRound(js,ha);
+	    		}else if (str.equals("BetDetail")) {
+	    			sql.updateBet(js,ha);
+	    		}else System.out.println("receive unprocess text:"+js);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
     	}
     }
     
@@ -108,17 +109,17 @@ public class SocketConnect {
 				connect();
 		    	String s = "Pickup-"+matchID+"-"+team;
 		    	send(s);
-		    	String js = receive();
-		    	System.out.println(js);
+		    	String js;
+				try {
+					js = receive();
+					System.out.println(js);
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
 		}).start();
     }
     
-    public String getTime(){
-    	connect();
-    	send("Time");
-    	return receive();
-    }
     public boolean checkError(){
     	return pw.checkError();
     }

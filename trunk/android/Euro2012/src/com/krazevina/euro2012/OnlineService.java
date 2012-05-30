@@ -47,6 +47,7 @@ public class OnlineService extends Service{
 		String s;
 		public void run(){
 			while(true){
+				
 				if(!live)return;
 				
 				try {
@@ -54,6 +55,7 @@ public class OnlineService extends Service{
 					if(socketLive.checkError()){
 						liveConnect();
 					}
+					
 					s = socketLive.receive();
 					if(s!=null)Log.e("Receive", s);
 					
@@ -67,6 +69,8 @@ public class OnlineService extends Service{
 					
 					// if match longer than 150min, no end match from server, force end match.
 				} catch (Exception e) {
+					e.printStackTrace();
+					liveConnect();
 				}
 			}
 		}
@@ -89,6 +93,7 @@ public class OnlineService extends Service{
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
+					timeToNextMatch = 1;
 					Log.e("Time to next match:", ""+minuteLeft()+"min");
 				}catch (Exception e) {
 					e.printStackTrace();
@@ -102,9 +107,8 @@ public class OnlineService extends Service{
 				try {
 					// update time server per 30 min
 					if(timeToNextMatch!=10000000000l)Thread.sleep(30*60*1000);
-					
-					// if havent updated time server yet, retry in 5sec
-					else Thread.sleep(5000);
+					// if havent updated time server yet, retry in 1min
+					else Thread.sleep(60000);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
