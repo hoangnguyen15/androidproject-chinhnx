@@ -11,4 +11,9 @@ public class Team {
 		else if(Global.lang.equals("KO"))return nameKor;
 		else return name;
 	}
+	public String getDesc(){
+		if(Global.lang.equals("EN"))return descEng;
+		else if(Global.lang.equals("KO"))return descKor;
+		else return desc;
+	}
 }
