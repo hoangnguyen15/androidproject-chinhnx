@@ -1,5 +1,6 @@
 package com.krazevina.euro2012;
 
+import com.krazevina.objects.MatchEvent;
 import com.krazevina.objects.SocketConnect;
 
 import android.app.Service;
@@ -57,15 +58,20 @@ public class OnlineService extends Service{
 					}
 					
 					s = socketLive.receive();
-					if(s!=null)Log.e("Receive", s);
+					if(s!=null){
+						Log.e("Receive", s);
+						// Update sql
+						MatchEvent md = new MatchEvent(s);
+						
+						
+						// if start match: timeStartMatch = System.currentTimeMilis();
+						
+						// if end match: update sql
+						//               timeToNextMatch = 10000000000;
+						//               live = false;
+					}
 					
-					// Update sql
 					
-					// if start match: timeStartMatch = System.currentTimeMilis();
-					
-					// if end match: update sql
-					//               timeToNextMatch = 10000000000;
-					//               live = false;
 					
 					// if match longer than 150min, no end match from server, force end match.
 				} catch (Exception e) {
@@ -77,11 +83,13 @@ public class OnlineService extends Service{
 	}
 	
 	static long timeToNextMatch;
+	static long timeReceiveNextMatch;
 	static long timeStartMatch;
 	static boolean live;
 	
 	class CheckTime extends Thread{
 		String time;
+		long timePassed;
 		public void run(){
 			while(true){
 				try{
@@ -90,26 +98,27 @@ public class OnlineService extends Service{
 //					socketTime.send("StartSocket");
 //					Thread.sleep(5000);
 					socketTime.send("Time");
+					timeReceiveNextMatch = System.currentTimeMillis();
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
-					timeToNextMatch = 1;
-					Log.e("Time to next match:", ""+minuteLeft()+"min");
-					// Start live socket before match start 10 min
-					if(timeToNextMatch<10*60*1000&&!live){
-						liveConnect();
-					}
+//					timeToNextMatch = 1;
 				}catch (Exception e) {
 					e.printStackTrace();
 				}
 				
-				try {
+				try{
+					timePassed = System.currentTimeMillis() - timeReceiveNextMatch;
+					Log.e("Time to next match:", ""+minuteLeft()+"min");
+					// Start live socket before match start 10 min
+					if(timeToNextMatch-timePassed<10*60*1000&&!live){
+						liveConnect();
+					}
 					// update time server per 30 min
 					if(timeToNextMatch!=10000000000l)Thread.sleep(30*60*1000);
-					// if havent updated time server yet, retry in 1min
+					// if havent updated time server yet, retry in 1 min
 					else Thread.sleep(60000);
-				} catch (Exception e) {
-					e.printStackTrace();
+				}catch (Exception e) {
 				}
 			}
 		}
@@ -120,7 +129,7 @@ public class OnlineService extends Service{
 		live = true;
 		socketLive = new SocketConnect();
 		socketLive.connect();
-		socketLive.send("EndSocket");
+//		socketLive.send("EndSocket");
 		if(rec==null||!rec.isAlive()){
 			rec = new LiveReceive();
 			rec.start();
