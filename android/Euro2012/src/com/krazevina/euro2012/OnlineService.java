@@ -1,14 +1,14 @@
 package com.krazevina.euro2012;
 
-import com.krazevina.objects.MatchEvent;
-import com.krazevina.objects.SocketConnect;
-import com.krazevina.objects.sqlite;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
+
+import com.krazevina.objects.Event;
+import com.krazevina.objects.SocketConnect;
+import com.krazevina.objects.sqlite;
 
 public class OnlineService extends Service{
 	SocketConnect socketLive,socketTime,socketUpdate;
@@ -65,10 +65,11 @@ public class OnlineService extends Service{
 					if(s!=null){
 						Log.e("Receive", s);
 						// Update sql
-						MatchEvent md = new MatchEvent(s);
-						
+						Event md = new Event(s);
+						sql.updateLiveMatchEvent(md);
 						
 						// if start match: timeStartMatch = System.currentTimeMilis();
+						if(md.eventID==6)timeStartMatch = System.currentTimeMillis();
 						
 						// if end match: update sql
 						//               timeToNextMatch = 10000000000;
@@ -87,7 +88,7 @@ public class OnlineService extends Service{
 						socketUpdate.connect();
 						socketUpdate.send("MatchOnline");
 						String s = socketUpdate.receive();
-						sql.updateBet(s,new Handler());
+						sql.updateMatchEvent(s,new Handler());
 						liveConnect();
 					}catch (Exception ex) {
 
@@ -95,6 +96,7 @@ public class OnlineService extends Service{
 				}
 			}
 			timeToNextMatch = 10000000000l;
+			timeStartMatch = -1;
 			live = false;
 			sql.recycle();
 		}
@@ -118,7 +120,7 @@ public class OnlineService extends Service{
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
-//					timeToNextMatch = 1;
+					timeToNextMatch = 1;
 				}catch (Exception e) {
 					e.printStackTrace();
 				}
