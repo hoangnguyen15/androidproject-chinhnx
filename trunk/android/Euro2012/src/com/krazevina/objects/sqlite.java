@@ -276,7 +276,7 @@ public class sqlite
 		Player m = null;
 		Cursor c = mSqlDatabase.query("Players", new String[]{"ID",
 				"TeamID","Name","Image","DOB","Height","Weight",
-				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+567), null, null, null, null);
+				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+951), null, null, null, null);
 		if(c==null)return m;
 		
 		c.moveToFirst();
