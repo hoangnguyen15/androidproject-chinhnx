@@ -84,10 +84,10 @@ public class SocketConnect {
     		this.sql = sql;
 		}
     	public void run(){
-    		connect();
-    		send(str);
-    		String js;
 			try {
+				connect();
+	    		send(str);
+	    		String js;
 				js = receive();
 				if (str.equals("Matches")) {
 	    			sql.updateMatches(js,ha);
@@ -96,7 +96,7 @@ public class SocketConnect {
 	    		}else if (str.equals("BetDetail")) {
 	    			sql.updateBet(js,ha);
 	    		}else System.out.println("receive unprocess text:"+js);
-			} catch (IOException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
     	}

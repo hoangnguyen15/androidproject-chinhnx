@@ -57,18 +57,9 @@ public class TeamDetails extends Activity implements OnClickListener{
 	    btnBack = (Button)findViewById(R.id.btnBack);
 	    btnBack.setOnClickListener(this);
 	    
-	    if(Global.lang.equals("EN")){
-	    	txtteam.setText(t.nameEng.toUpperCase());
-	    	txtdesc.setText(t.descEng);
-	    }
-	    else if(Global.lang.equals("KO")){
-	    	txtteam.setText(t.nameKor.toUpperCase());
-	    	txtdesc.setText(t.descKor);
-	    }
-	    else{
-	    	txtteam.setText(t.name.toUpperCase());
-	    	txtdesc.setText(t.desc);
-	    }
+	    txtteam.setText(t.getName());
+	    txtdesc.setText(t.getDesc());
+	    
 	    txtest.setText(getString(R.string.estimate)+":\t"+t.establish);
     	txtfifajoin.setText(getString(R.string.fifajoin)+":\t"+t.fifaJoin);
     	txtfifarank.setText(getString(R.string.fifarank)+":\t"+t.fifaRank);

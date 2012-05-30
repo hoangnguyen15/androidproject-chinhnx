@@ -95,13 +95,12 @@ public class OnlineService extends Service{
 					timeToNextMatch = Long.parseLong(time.substring(5));
 					timeToNextMatch = 1;
 					Log.e("Time to next match:", ""+minuteLeft()+"min");
+					// Start live socket before match start 10 min
+					if(timeToNextMatch<10*60*1000&&!live){
+						liveConnect();
+					}
 				}catch (Exception e) {
 					e.printStackTrace();
-				}
-				
-				// Start live socket before match start 10 min
-				if(timeToNextMatch<10*60*1000&&!live){
-					liveConnect();
 				}
 				
 				try {
@@ -117,6 +116,7 @@ public class OnlineService extends Service{
 	}
 	
 	void liveConnect(){
+		try{
 		live = true;
 		socketLive = new SocketConnect();
 		socketLive.connect();
@@ -124,6 +124,9 @@ public class OnlineService extends Service{
 		if(rec==null||!rec.isAlive()){
 			rec = new LiveReceive();
 			rec.start();
+		}
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
