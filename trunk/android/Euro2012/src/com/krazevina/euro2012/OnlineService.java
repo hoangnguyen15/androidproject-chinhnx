@@ -120,7 +120,7 @@ public class OnlineService extends Service{
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
-					timeToNextMatch = 1;
+//					timeToNextMatch = 1;
 				}catch (Exception e) {
 					e.printStackTrace();
 				}
