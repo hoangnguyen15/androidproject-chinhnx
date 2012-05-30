@@ -55,14 +55,17 @@ public class Global
 		String slang;
 		if(lang==2){
 			slang = "VI";
+			Global.lang = "VI";
 			e.putString("lang", "VI");
 			e.commit();
 		}else if(lang==1){
 			slang = "EN";
+			Global.lang = "EN";
 			e.putString("lang", "EN");
 			e.commit();
 		}else {
 			slang = "KO";
+			Global.lang = "KO";
 			e.putString("lang", "KO");
 			e.commit();
 		}
