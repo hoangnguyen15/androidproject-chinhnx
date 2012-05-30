@@ -2,14 +2,17 @@ package com.krazevina.euro2012;
 
 import com.krazevina.objects.MatchEvent;
 import com.krazevina.objects.SocketConnect;
+import com.krazevina.objects.sqlite;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
 
 public class OnlineService extends Service{
-	SocketConnect socketLive,socketTime;
+	SocketConnect socketLive,socketTime,socketUpdate;
+	sqlite sql;
 	@Override
 	public IBinder onBind(Intent intent) {
 		Log.e("SERVICE", "BIND");
@@ -47,6 +50,7 @@ public class OnlineService extends Service{
 	class LiveReceive extends Thread{
 		String s;
 		public void run(){
+			sql = new sqlite(OnlineService.this);
 			while(true){
 				
 				if(!live)return;
@@ -69,16 +73,30 @@ public class OnlineService extends Service{
 						// if end match: update sql
 						//               timeToNextMatch = 10000000000;
 						//               live = false;
+						if(md.eventID==7)break;
 					}
 					
-					
-					
 					// if match longer than 150min, no end match from server, force end match.
+					if(System.currentTimeMillis()-timeStartMatch>150*60*1000l)break;
 				} catch (Exception e) {
 					e.printStackTrace();
-					liveConnect();
+					try{
+						// if connect interrupt,
+						// update match online, and reconnect.
+						socketUpdate = new SocketConnect();
+						socketUpdate.connect();
+						socketUpdate.send("MatchOnline");
+						String s = socketUpdate.receive();
+						sql.updateBet(s,new Handler());
+						liveConnect();
+					}catch (Exception ex) {
+
+					}
 				}
 			}
+			timeToNextMatch = 10000000000l;
+			live = false;
+			sql.recycle();
 		}
 	}
 	
@@ -95,8 +113,6 @@ public class OnlineService extends Service{
 				try{
 					socketTime = new SocketConnect();
 					socketTime.connect();
-//					socketTime.send("StartSocket");
-//					Thread.sleep(5000);
 					socketTime.send("Time");
 					timeReceiveNextMatch = System.currentTimeMillis();
 					time = socketTime.receive();
@@ -129,7 +145,7 @@ public class OnlineService extends Service{
 		live = true;
 		socketLive = new SocketConnect();
 		socketLive.connect();
-//		socketLive.send("EndSocket");
+		socketLive.send("EndSocket");
 		if(rec==null||!rec.isAlive()){
 			rec = new LiveReceive();
 			rec.start();

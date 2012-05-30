@@ -471,7 +471,7 @@ public class sqlite
 		c.close();
 		return vb;
 	}
-	void updateBet(String js,Handler h){
+	public void updateBet(String js,Handler h){
 		try {
 			System.out.println(js);
 			int firstc = js.indexOf("-");
@@ -508,6 +508,38 @@ public class sqlite
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	MatchEvent e;
+	void updateMatchEvent(String js,Handler h){
+		try {
+			System.out.println(js);
+			int firstc = js.indexOf("-");
+			String js2 = js.substring(firstc+1);
+			JSONObject jo = new JSONObject(js2);
+			JSONArray j = jo.getJSONArray("Table");
+			
+			for(int i=0;i<j.length();i++){
+				JSONObject o = (JSONObject) j.get(i);
+				e = new MatchEvent(o);
+				h.post(new Runnable() {
+					MatchEvent ev = e;
+					public void run() {
+						try{
+							updateLiveMatchEvent(ev);
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	void updateLiveMatchEvent(MatchEvent ev){
+		final String s = "INSERT INTO MatchOnline(MatchID,TeamID,PlayerID,EventID,Detail,MatchTime,Status) VALUES " +
+				"(" +ev.matchID+","+ev.teamID+","+ev.playerID+","+ev.eventID+",'"+ev.detail+"','"+ev.time+"',"+ev.status+")";
+		exec(s);
 	}
 	
 	synchronized void exec(String s){
