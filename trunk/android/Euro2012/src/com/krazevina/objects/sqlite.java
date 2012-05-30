@@ -509,9 +509,10 @@ public class sqlite
 			e.printStackTrace();
 		}
 	}
-	MatchEvent e;
-	void updateMatchEvent(String js,Handler h){
+	Event e;
+	public void updateMatchEvent(String js,Handler h){
 		try {
+			exec("Delete from MatchOnline");
 			System.out.println(js);
 			int firstc = js.indexOf("-");
 			String js2 = js.substring(firstc+1);
@@ -520,9 +521,9 @@ public class sqlite
 			
 			for(int i=0;i<j.length();i++){
 				JSONObject o = (JSONObject) j.get(i);
-				e = new MatchEvent(o);
+				e = new Event(o);
 				h.post(new Runnable() {
-					MatchEvent ev = e;
+					Event ev = e;
 					public void run() {
 						try{
 							updateLiveMatchEvent(ev);
@@ -536,7 +537,7 @@ public class sqlite
 			e.printStackTrace();
 		}
 	}
-	void updateLiveMatchEvent(MatchEvent ev){
+	public void updateLiveMatchEvent(Event ev){
 		final String s = "INSERT INTO MatchOnline(MatchID,TeamID,PlayerID,EventID,Detail,MatchTime,Status) VALUES " +
 				"(" +ev.matchID+","+ev.teamID+","+ev.playerID+","+ev.eventID+",'"+ev.detail+"','"+ev.time+"',"+ev.status+")";
 		exec(s);
