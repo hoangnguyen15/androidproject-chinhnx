@@ -54,8 +54,8 @@ public class News extends Activity implements OnClickListener {
     int site = 0;
     Handler handler;
     ProgressDialog pr;
-    String sites[]= new String[]{"BongDaPlus.vn","TeamTalk.com","UEFA.com",
-    		"LichEuro2012.com","Goal.com","Guardian.co.uk"};
+    String sites[]= new String[]{"BongDaPlus.vn","LichEuro2012.com","TeamTalk.com","UEFA.com",
+    		"Goal.com","Guardian.co.uk"};
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -100,6 +100,10 @@ public class News extends Activity implements OnClickListener {
 	        builder.setTitle("");
 	        builder.setItems(sites, new DialogInterface.OnClickListener() {
 	            public void onClick(DialogInterface dialog, int item) {
+	            	if(vfnew.getDisplayedChild()>0){
+		            	vfnew.setDisplayedChild(0);
+		        		txtcon.loadData("", "text/html", "UTF-8");
+	            	}
 	                site = item+1;
 	                loadRss();
 	            }
@@ -115,9 +119,9 @@ public class News extends Activity implements OnClickListener {
 			@Override
 			public void run() {
 				if(site==1)rss1 = new XmlReader("http://bongdaplus.vn/_RSS_/4.rss").parse();
-				else if(site==2)rss1 = new XmlReader("http://www.teamtalk.com/rss/15274").parse();
+				else if(site==2)rss1 = new XmlReader("http://licheuro2012.com/feed/").parse();
 				else if(site==3)rss1 = new XmlReader("http://www.uefa.com/rssfeed/uefaeuro/rss.xml").parse();
-				else if(site==4)rss1 = new XmlReader("http://licheuro2012.com/feed/").parse();
+				else if(site==4)rss1 = new XmlReader("http://www.teamtalk.com/rss/15274").parse();
 				else if(site==5)rss1 = new XmlReader("http://www.goal.com/en/feeds/news?id=2898&fmt=rss").parse();
 				else if(site==6)rss1 = new XmlReader("http://www.guardian.co.uk/football/euro2012/rss").parse();
 					
@@ -177,11 +181,11 @@ public class News extends Activity implements OnClickListener {
 		      "xfbml      : true  // parse XFBML"+
 		    "});"+
 		  "};"+
-		"</script>"+
+		"</script>\n"+
 		"<script src=\"http://connect.facebook.net/en_US/all.js#xfbml=1\"></script>";
-    	String loading = "<p><img alt=\"loading\" src=\"file:///android_asset/load.gif\"/></p>";
-    	tail = "<p><div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
-			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*50/100)+"\" colorscheme=\"dark\"></fb:comments>"+
+    	String loading = "";
+    	tail = "<p style=\"clear:both;\"><div id=\"facebook-comments-4159769\" class=\"facebook-comments inited\">"+
+			"<fb:comments href=\""+item.getLink()+"\" num_posts=\"5\" width=\""+(txtcon.getWidth()*80/100)+"\" colorscheme=\"dark\"></fb:comments>"+
 		"</div></p>\n"+
     	"</body></html>";
     	
@@ -238,7 +242,7 @@ public class News extends Activity implements OnClickListener {
 	    		Uri ss = Uri.parse(url);
 	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
 	            TagNode root = cleaner.clean(u);
-	            TagNode div = root.findElementByAttValue("class", "story-body article", true, false);
+	            TagNode div = root.findElementByAttValue("class", "tintuc_text", true, false);
 	            TagNode[]child = div.getElementsByName("strong", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
@@ -284,13 +288,16 @@ public class News extends Activity implements OnClickListener {
 	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
 	            TagNode root = cleaner.clean(u);
 	            TagNode div = root.findElementByAttValue("class", "entry", true, false);
-	            TagNode[]child = div.getElementsByName("div", true);
+	            TagNode[]child = div.getElementsByName("span", true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByAttValue("class","dd_outer", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
 	            child = div.getElementsByName("ol", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
-	            child = div.getElementsByName("h3", true);
+	            child = div.getElementsByName("script", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
@@ -308,6 +315,7 @@ public class News extends Activity implements OnClickListener {
     			e.printStackTrace();
 			}
     	}
+    	System.out.println(s);
     	return s;
     }
     
