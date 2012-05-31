@@ -129,6 +129,7 @@ public class sqlite
 			m.detail = c.getString(c.getColumnIndex("Detail"));
 			m.time = c.getString(c.getColumnIndex("MatchTime"));
 			m.status = c.getInt(c.getColumnIndex("Status"));
+			if(m.eventID==1&&m.detail.length()>0)mat.finalScore = m.detail;
 			ret.add(m);
 			c.moveToNext();
 		}
@@ -167,6 +168,7 @@ public class sqlite
 			m.secPick = c.getInt(c.getColumnIndex("SecondPickup"));
 			m.status = c.getInt(c.getColumnIndex("Status"));
 			m.tv = c.getInt(c.getColumnIndex("tv"));
+			m.events = getEvents(m);
 			ret.add(m);
 			c.moveToNext();
 		}
