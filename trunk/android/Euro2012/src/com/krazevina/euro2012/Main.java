@@ -3,10 +3,12 @@ package com.krazevina.euro2012;
 import java.util.Vector;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -43,6 +45,10 @@ public class Main extends Activity implements OnClickListener {
         Global.getLang(this);
         h = new Handler();
         setContentView(R.layout.main);
+        
+        
+        
+        
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
         llbtnteams = (LinearLayout)findViewById(R.id.llbtnteams);

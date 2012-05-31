@@ -1,12 +1,15 @@
 package com.krazevina.euro2012;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Vibrator;
 import android.util.Log;
 
 import com.krazevina.objects.Event;
+import com.krazevina.objects.Global;
 import com.krazevina.objects.SocketConnect;
 import com.krazevina.objects.sqlite;
 
@@ -64,12 +67,24 @@ public class OnlineService extends Service{
 					s = socketLive.receive();
 					if(s!=null){
 						Log.e("Receive", s);
+						//GetSetting
+				        sql.getSetting();
+				        if(Global.notify == 1){
+				        
+				        }
+				        
+				        if(Global.vibrate == 1){
+				            Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+				            v.vibrate(5000);
+				        }
+						
 						// Update sql
 						Event md = new Event(s);
 						sql.updateLiveMatchEvent(md);
 						
 						// if start match: timeStartMatch = System.currentTimeMilis();
 						if(md.eventID==6)timeStartMatch = System.currentTimeMillis();
+						
 						
 						// if end match: update sql
 						//               timeToNextMatch = 10000000000;
