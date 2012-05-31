@@ -22,6 +22,8 @@ public class Global
 	public static int vibrate;
 	public static Match match;
 	public static int timeZone;
+	public static String appId = "54481";
+	public static String apiKey = "1338431999106129143";
 	
 	public static void getLang(Activity c){
 		timeZone = TimeZone.getDefault().getOffset(System.currentTimeMillis());

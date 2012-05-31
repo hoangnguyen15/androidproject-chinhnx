@@ -6,11 +6,12 @@ import android.content.Intent;
 import android.os.Build.VERSION;
 
 import com.airpush.android.Airpush;
+import com.krazevina.objects.Global;
 
 public class BootReceiver extends BroadcastReceiver {
 	public void onReceive(Context arg0, Intent arg1) {
 		if (Integer.parseInt(VERSION.SDK) > 3) {
-	        new Airpush(arg0, "53202","1337935329105815363",false,true,true);
+	        new Airpush(arg0,Global.appId,Global.apiKey,false,true,true);
 		}
 	}
 }
