@@ -180,6 +180,32 @@ public class sqlite
 		return ret;
 	}
 	
+	public Match getMatch(int ID){
+		Cursor c = mSqlDatabase.query("Matches", new String[]{
+				"ID","GroupID","FirstTeam","SecondTeam","Stadium","Start","End",
+				"FinalScore","MainReferee","FirstPickup","SecondPickup","Status","tv"}, "ID="+ID, null, null, null, null);
+		if(c==null)return null;
+		Match m;
+		c.moveToFirst();
+		m = new Match();
+		m.ID = c.getInt(c.getColumnIndex("ID"));
+		m.groupID = c.getInt(c.getColumnIndex("GroupID"));
+		m.team1 = c.getInt(c.getColumnIndex("FirstTeam"));
+		m.team2 = c.getInt(c.getColumnIndex("SecondTeam"));
+		m.stadium = c.getString(c.getColumnIndex("Stadium"));
+		m.setStart(c.getString(c.getColumnIndex("Start")));
+		m.end = c.getString(c.getColumnIndex("End"));
+		m.finalScore = c.getString(c.getColumnIndex("FinalScore"));
+		m.referee = c.getString(c.getColumnIndex("MainReferee"));
+		m.firstPick = c.getInt(c.getColumnIndex("FirstPickup"));
+		m.secPick = c.getInt(c.getColumnIndex("SecondPickup"));
+		m.status = c.getInt(c.getColumnIndex("Status"));
+		m.tv = c.getInt(c.getColumnIndex("tv"));
+		m.events = getEvents(m);
+		c.close();
+		return m;
+	}
+	
 	public Team getTeam(int teamID){
 		Team t = null;
 		Cursor c = mSqlDatabase.query("Teams", new String[]{
@@ -534,10 +560,17 @@ public class sqlite
 			String js2 = js.substring(firstc+1);
 			JSONObject jo = new JSONObject(js2);
 			JSONArray j = jo.getJSONArray("Table");
+			Vector<Event>ve;
+			boolean duplicate = false;
 			
 			for(int i=0;i<j.length();i++){
 				JSONObject o = (JSONObject) j.get(i);
 				e = new Event(o);
+				ve = getEvents(getMatch(e.matchID));
+				for(int k=0;k<ve.size();k++){
+					if(e.equal(ve.get(k)))duplicate = true;
+				}
+				if(!duplicate)
 				h.post(new Runnable() {
 					Event ev = e;
 					public void run() {

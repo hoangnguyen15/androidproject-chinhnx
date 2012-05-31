@@ -26,4 +26,14 @@ public class Event{
 	}
 	public Event(){
 	}
+	
+	public boolean equal(Event e){
+		if(playerID!=e.playerID)return false;
+		if(matchID!=e.matchID)return false;
+		if(teamID!=e.teamID)return false;
+		if(eventID!=e.eventID)return false;
+		if(!time.equals(e.time))return false;
+		if(!detail.equals(e.detail))return false;
+		return true;
+	}
 }
