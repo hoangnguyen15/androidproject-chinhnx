@@ -16,6 +16,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Handler;
+import android.util.Log;
 
 public class sqlite 
 {
@@ -129,7 +130,10 @@ public class sqlite
 			m.detail = c.getString(c.getColumnIndex("Detail"));
 			m.time = c.getString(c.getColumnIndex("MatchTime"));
 			m.status = c.getInt(c.getColumnIndex("Status"));
-			if(m.eventID==1&&m.detail.length()>0)mat.finalScore = m.detail;
+			if(m.eventID==1&&m.detail.length()>0){
+				mat.finalScore = m.detail;
+				Log.e("score:", ""+m.detail);
+			}
 			ret.add(m);
 			c.moveToNext();
 		}
