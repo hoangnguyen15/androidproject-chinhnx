@@ -25,12 +25,14 @@ public class sqlite
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
+	int firstPlayerID;
 	
 	public sqlite(Context context) {
 		sqlitehelper=new SQLiteRssHelper(context);
 		this.mSqlDatabase=sqlitehelper.getWritableDatabase();
 		if(mSqlDatabase.getVersion()!=DATABASE_VERSION)
 			sqlitehelper.onUpgrade(mSqlDatabase, mSqlDatabase.getVersion(), DATABASE_VERSION);
+		getFirstPlayerID();
 	}
 
 	private class SQLiteRssHelper extends SQLiteOpenHelper 
@@ -132,6 +134,14 @@ public class sqlite
 		}
 		c.close();
 		return ret;
+	}
+	public void getFirstPlayerID(){
+		Cursor c = mSqlDatabase.query("Players", new String[]{
+				"ID"}, null, null, null, null, null);
+		if(c==null)firstPlayerID = 0;
+		c.moveToFirst();
+		firstPlayerID = c.getInt(0)-1;
+		c.close();
 	}
 	
 	public Vector<Match>getAllMatches(){
@@ -276,7 +286,7 @@ public class sqlite
 		Player m = null;
 		Cursor c = mSqlDatabase.query("Players", new String[]{"ID",
 				"TeamID","Name","Image","DOB","Height","Weight",
-				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+951), null, null, null, null);
+				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+firstPlayerID), null, null, null, null);
 		if(c==null)return m;
 		
 		c.moveToFirst();
