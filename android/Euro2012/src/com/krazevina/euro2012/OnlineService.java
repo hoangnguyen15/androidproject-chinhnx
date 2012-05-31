@@ -1,5 +1,11 @@
 package com.krazevina.euro2012;
 
+import java.io.IOException;
+import java.util.Random;
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +16,10 @@ import android.util.Log;
 
 import com.krazevina.objects.Event;
 import com.krazevina.objects.Global;
+import com.krazevina.objects.Match;
+import com.krazevina.objects.Player;
 import com.krazevina.objects.SocketConnect;
+import com.krazevina.objects.Team;
 import com.krazevina.objects.sqlite;
 
 public class OnlineService extends Service{
@@ -67,17 +76,7 @@ public class OnlineService extends Service{
 					s = socketLive.receive();
 					if(s!=null){
 						Log.e("Receive", s);
-						//GetSetting
-				        sql.getSetting();
-				        if(Global.notify == 1){
-				        
-				        }
-				        
-				        if(Global.vibrate == 1){
-				            Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-				            v.vibrate(5000);
-				        }
-						
+
 						// Update sql
 						Event md = new Event(s);
 						sql.updateLiveMatchEvent(md);
@@ -85,6 +84,13 @@ public class OnlineService extends Service{
 						// if start match: timeStartMatch = System.currentTimeMilis();
 						if(md.eventID==6)timeStartMatch = System.currentTimeMillis();
 						
+						//GetSetting
+				        sql.getSetting();
+				        if(Global.notify == 1)notification(md);
+				        if(Global.vibrate == 1 && md.eventID == 1){
+				            Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+				            v.vibrate(1000);
+				        }
 						
 						// if end match: update sql
 						//               timeToNextMatch = 10000000000;
@@ -106,27 +112,99 @@ public class OnlineService extends Service{
 						sql.updateMatchEvent(s,new Handler());
 						liveConnect();
 					}catch (Exception ex) {
-
 					}
 				}
 			}
 			timeToNextMatch = 10000000000l;
 			timeStartMatch = -1;
 			live = false;
+			try {
+				Thread.sleep(new Random().nextInt(30000));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			updateMatchEvent();
 			sql.recycle();
 		}
 	}
 	
+	void notification(Event e){
+		Team t1,t2;Player p;
+		Match m;
+		m = sql.getMatch(e.matchID);
+		t1 = sql.getTeam(m.team1);
+		t2 = sql.getTeam(m.team2);
+		p = sql.getPlayer(e.playerID);
+		NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+		
+		if(e.eventID==1){//GOAL
+			int icon = R.drawable.goal;
+			long when = System.currentTimeMillis();
+			Notification notification = new Notification(icon, "Goal", when);
+			Context context = getApplicationContext();
+			CharSequence contentTitle = t1.getName()+e.detail+t2.getName();
+			CharSequence contentText = p.name+" "+e.time+"'";
+			Global.match = m;
+			Intent notificationIntent = new Intent(this, MatchDetail.class);
+			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+			mNotificationManager.notify(NOTIFY, notification);
+		}
+		if(e.eventID==6){//START
+			int icon = R.drawable.goal;
+			long when = System.currentTimeMillis();
+			Notification notification = new Notification(icon, getString(R.string.start), when);
+			Context context = getApplicationContext();
+			CharSequence contentTitle = t1.getName()+"-"+t2.getName();
+			CharSequence contentText = m.stadium;
+			Global.match = m;
+			Intent notificationIntent = new Intent(this, MatchDetail.class);
+			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+			mNotificationManager.notify(NOTIFY, notification);
+		}
+		if(e.eventID==7){//END
+			int icon = R.drawable.goal;
+			long when = System.currentTimeMillis();
+			Notification notification = new Notification(icon, getString(R.string.end), when);
+			Context context = getApplicationContext();
+			CharSequence contentTitle = t1.getName()+e.detail+t2.getName();
+			CharSequence contentText = m.stadium;
+			Global.match = m;
+			Intent notificationIntent = new Intent(this, MatchDetail.class);
+			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+			mNotificationManager.notify(NOTIFY, notification);
+		}
+	}
+	private static final int NOTIFY = 1;
+
 	static long timeToNextMatch;
 	static long timeReceiveNextMatch;
 	static long timeStartMatch;
 	static boolean live;
+	static boolean needUpdateMatchEvent = true;
+	
+	void updateMatchEvent(){
+		try {
+			socketUpdate = new SocketConnect();
+			socketUpdate.connect();
+			socketUpdate.send("MatchOnline");
+			String s;
+			s = socketUpdate.receive();
+			sql.updateMatchEvent(s,new Handler());
+			needUpdateMatchEvent = false;
+		} catch (IOException e1) {
+		}
+	}
 	
 	class CheckTime extends Thread{
 		String time;
 		long timePassed;
 		public void run(){
+			
 			while(true){
+				if(needUpdateMatchEvent)updateMatchEvent();
 				try{
 					socketTime = new SocketConnect();
 					socketTime.connect();
@@ -135,9 +213,7 @@ public class OnlineService extends Service{
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
-//					timeToNextMatch = 1;
 				}catch (Exception e) {
-					e.printStackTrace();
 				}
 				
 				try{

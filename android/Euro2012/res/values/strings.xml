@@ -71,5 +71,6 @@
     <string name="notstart">Not start yet, or no data.</string>
     <string name="needvideoplayer">You need a video player installed to view.</string>
 	<string name="back">Back</string>
-    
+	<string name="start">Start match</string>
+    <string name="end">Full time</string>
 </resources>
