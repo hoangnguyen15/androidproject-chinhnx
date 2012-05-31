@@ -294,9 +294,17 @@ public class News extends Activity implements OnClickListener {
 	            child = div.getElementsByAttValue("class","dd_outer", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
+	            child = div.getElementsByAttValue("class","ratingblock ", true, true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
 	            child = div.getElementsByName("ol", true);
 	            for(int i=0;i<child.length;i++)
-	            	child[i].removeFromTree();
+	            		child[i].removeFromTree();
+	            child = div.getElementsByName("table", true);
+	            for(int i=0;i<child.length;i++){
+	            	child[i].setAttribute("style", "max-width: 100%; height: auto;");
+	            	child[i].setAttribute("width", "100%");
+	            }
 	            child = div.getElementsByName("script", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
