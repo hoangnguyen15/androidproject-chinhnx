@@ -71,4 +71,6 @@
 	<string name="notstart">Chưa bắt đầu trận đấu, hoặc không có dữ liệu.</string>
 	<string name="needvideoplayer">Cần cài một chương trình xem video để xem.</string>
 	<string name="back">Quay lại</string>
+	<string name="start">Trận đấu bắt đầu</string>
+	<string name="end">Trận đấu kết thúc</string>
 </resources>
