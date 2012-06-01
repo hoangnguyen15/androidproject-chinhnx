@@ -201,7 +201,6 @@ public class Main extends Activity implements OnClickListener {
 				LinearLayout l = (LinearLayout)v;
 				((Button)l.getChildAt(0)).onTouchEvent(event);
 			}catch (Exception e) {
-				e.printStackTrace();
 			}
 			return true;
 		}

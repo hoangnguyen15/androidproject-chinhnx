@@ -49,7 +49,6 @@ public class SocketConnect {
 			pw.println(""+s);
 			pw.flush();
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
     }
     
@@ -88,7 +87,6 @@ public class SocketConnect {
 	    		}
 //	    		else System.out.println("receive unprocess text:"+js);
 			} catch (Exception e) {
-				e.printStackTrace();
 			}
     	}
     }

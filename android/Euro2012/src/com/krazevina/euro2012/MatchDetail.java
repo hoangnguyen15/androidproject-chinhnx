@@ -58,7 +58,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 		try {
 			updateLayout();
 		} catch (Exception e) {
-			e.printStackTrace();
 		}
 		registerReceiver(r, new IntentFilter("updatelayout"));
 	}
@@ -231,7 +230,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 					new SocketConnect().vote(m.ID, 1, h, MatchDetail.this);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
-					e.printStackTrace();
 				}
 				m.firstPick++;
 				btnvote1.setText(""+m.firstPick);
@@ -244,7 +242,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 					new SocketConnect().vote(m.ID, 2, h, MatchDetail.this);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
-					e.printStackTrace();
 				}
 				m.secPick++;
 				btnvote2.setText(""+m.secPick);
@@ -372,7 +369,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 			try {
 				updateLayout();
 			} catch (Exception e) {
-				e.printStackTrace();
 			}
 		}
 	}; 
