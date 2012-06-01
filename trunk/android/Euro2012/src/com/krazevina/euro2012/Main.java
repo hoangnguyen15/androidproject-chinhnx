@@ -45,7 +45,24 @@ public class Main extends Activity implements OnClickListener {
         startService(intent);
         Global.getLang(this);
         h = new Handler();
-        setContentView(R.layout.main);
+        
+        sql = new sqlite(this);
+        updateLayout();
+        registerReceiver(r, new IntentFilter("updatelayout"));
+        
+		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
+			new SocketConnect().update("Matches", sql, h);
+			new SocketConnect().update("TeamsInRound", sql, h);
+			lastUpdateMatch = System.currentTimeMillis();
+		}
+		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
+			new SocketConnect().update("BetDetail", sql, h);
+			lastUpdateBet = System.currentTimeMillis();
+		}
+    }
+    
+    public void updateLayout(){
+    	setContentView(R.layout.main);
         
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
@@ -73,22 +90,6 @@ public class Main extends Activity implements OnClickListener {
         btnNews.setOnClickListener(this);
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
-        sql = new sqlite(this);
-        updateLayout();
-        registerReceiver(r, new IntentFilter("updatelayout"));
-        
-		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
-			new SocketConnect().update("Matches", sql, h);
-			new SocketConnect().update("TeamsInRound", sql, h);
-			lastUpdateMatch = System.currentTimeMillis();
-		}
-		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
-			new SocketConnect().update("BetDetail", sql, h);
-			lastUpdateBet = System.currentTimeMillis();
-		}
-    }
-    
-    public void updateLayout(){
     	match = sql.getAllMatches();
         
 		LinearLayout ll;

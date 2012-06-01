@@ -52,7 +52,6 @@ public class MatchDetail extends Activity implements OnClickListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.matchdetail);
 		sql = new sqlite(this);
 		m = Global.match;
 		updateLayout();
@@ -60,6 +59,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 	}
 	
 	void updateLayout(){
+		setContentView(R.layout.matchdetail);
 		try{
 			m.events = sql.getEvents(m);
 		}catch (Exception e) {
@@ -163,26 +163,35 @@ public class MatchDetail extends Activity implements OnClickListener{
 		if(m.events.size()>0){
 			for(i = 0;i<m.events.size();i++){
 				if(m.events.get(i).eventID==1||m.events.get(i).eventID==8||m.events.get(i).eventID==2||
-						m.events.get(i).eventID==3){
+						m.events.get(i).eventID==3||m.events.get(i).eventID==6||m.events.get(i).eventID==7){
 					ll = (LinearLayout) mInflater.inflate(R.layout.itemmatchdetail, null);
 					ll.setOrientation(LinearLayout.HORIZONTAL);
-		
 					txttime = (TextView)ll.findViewById(R.id.time);
 					txtname = (TextView)ll.findViewById(R.id.name);
 					imgtype1 = (ImageView)ll.findViewById(R.id.type1);
 					imgtype2 = (ImageView)ll.findViewById(R.id.type2);
 					txttime.setText(m.events.get(i).time);
-					p = sql.getPlayer(m.events.get(i).playerID);
-					txtname.setText(p.name);
 					
-					if(m.team1==m.events.get(i).teamID){
-						imgtype1.setImageResource(Type(m.events.get(i).eventID));
+					if(m.events.get(i).eventID==6){
+						txtname.setText(R.string.start);
 						imgtype2.setVisibility(View.GONE);
-						txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-					}else{
-						imgtype2.setImageResource(Type(m.events.get(i).eventID));
 						imgtype1.setVisibility(View.GONE);
-						txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+					}else if(m.events.get(i).eventID==7){
+						txtname.setText(R.string.end);
+						imgtype2.setVisibility(View.GONE);
+						imgtype1.setVisibility(View.GONE);
+					}else{
+						p = sql.getPlayer(m.events.get(i).playerID);
+						txtname.setText(p.name);
+						if(m.team1==m.events.get(i).teamID){
+							imgtype1.setImageResource(Type(m.events.get(i).eventID));
+							imgtype2.setVisibility(View.GONE);
+							txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+						}else{
+							imgtype2.setImageResource(Type(m.events.get(i).eventID));
+							imgtype1.setVisibility(View.GONE);
+							txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+						}
 					}
 					
 					j++;
