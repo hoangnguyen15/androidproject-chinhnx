@@ -110,11 +110,13 @@ public class SocketConnect {
 					    		m.firstPick++;
 								btnvote1.setText(""+m.firstPick);
 								btnvote1.setEnabled(false);
+								btnvote2.setEnabled(false);
 								Toast.makeText(c,btnvote1.getContext().getString(R.string.vote1)+ t1.getName() +" " + btnvote1.getContext().getString(R.string.vote2), 0).show();
 					    	}else if(iteam ==2){
 					    		m.secPick++;
 								btnvote2.setText(""+m.secPick);
 								btnvote2.setEnabled(false);
+								btnvote1.setEnabled(false);
 								Toast.makeText(c,btnvote1.getContext().getString(R.string.vote1)+ t2.getName() +" "+ btnvote2.getContext().getString(R.string.vote2), 0).show();
 					    	}
 						}
