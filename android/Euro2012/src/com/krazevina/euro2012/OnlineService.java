@@ -65,6 +65,7 @@ public class OnlineService extends Service{
 	
 	class LiveReceive extends Thread{
 		String s;
+		Intent i = new Intent("updatelayout");
 		public void run(){
 			while(true){
 				
@@ -80,7 +81,7 @@ public class OnlineService extends Service{
 					s = socketLive.receive();
 					if(s!=null&&!s.equals("EndSocket")){
 						Log.e("Receive", s);
-
+						sendBroadcast(i);
 						// Update sql
 						Event md = new Event(s);
 						sql.updateMatchEvent(md,h);
