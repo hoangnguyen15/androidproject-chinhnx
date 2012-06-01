@@ -105,7 +105,6 @@ public class OnlineService extends Service{
 					// if match longer than 150min, no end match from server, force end match.
 					if(System.currentTimeMillis()-timeStartMatch>150*60*1000l)break;
 				} catch (Exception e) {
-					e.printStackTrace();
 					try{
 						// if connect interrupt,
 						// update match online, and reconnect.
@@ -125,7 +124,6 @@ public class OnlineService extends Service{
 			try {
 				Thread.sleep(new Random().nextInt(30000));
 			} catch (Exception e) {
-				e.printStackTrace();
 			}
 			updateMatchEvent();
 		}
@@ -175,7 +173,6 @@ public class OnlineService extends Service{
 				notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
 				mNotificationManager.notify(NOTIFY, notification);
 			}catch (Exception ex) {
-				ex.printStackTrace();
 			}
 		}
 		if(e.eventID==7){//END
@@ -267,7 +264,6 @@ public class OnlineService extends Service{
 			rec.start();
 		}
 		}catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
 	

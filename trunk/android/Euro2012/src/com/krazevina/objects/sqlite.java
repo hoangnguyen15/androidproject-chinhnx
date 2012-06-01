@@ -56,7 +56,7 @@ public class sqlite
 	        	try {
 	    			copyDataBase();
 	    		} catch (IOException e) {
-	    			e.printStackTrace();
+//	    			e.printStackTrace();
 	        	}
 	    	}
 	    }
@@ -101,7 +101,7 @@ public class sqlite
 			try {
 				copyDataBase();
 			} catch (IOException e) {
-				e.printStackTrace();
+//				e.printStackTrace();
 			}
 		}
 	}
@@ -365,7 +365,7 @@ public class sqlite
 			else nameTeam = c.getString(1);
 			c.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return nameTeam;
 	}
@@ -379,7 +379,7 @@ public class sqlite
 			Global.vibrate = c.getInt(1);
 			c.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -387,7 +387,7 @@ public class sqlite
 		try {
 			exec("update setting set notify=" + i);
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -395,7 +395,7 @@ public class sqlite
 		try {
 			exec("update setting set vibrate=" + i);
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -448,13 +448,13 @@ public class sqlite
 						try{
 							exec(cmd);
 						}catch (Exception e) {
-							e.printStackTrace();
+//							e.printStackTrace();
 						}
 					}
 				});
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -514,13 +514,13 @@ public class sqlite
 						try{
 							exec(s);
 						}catch (Exception e) {
-							e.printStackTrace();
+//							e.printStackTrace();
 						}
 					}
 				});
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	public Vector<Bet> getBet(int matchID){
@@ -573,13 +573,13 @@ public class sqlite
 						try{
 							exec(s);
 						}catch (Exception e) {
-							e.printStackTrace();
+//							e.printStackTrace();
 						}
 					}
 				});
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	Event e;
@@ -607,13 +607,13 @@ public class sqlite
 						try{
 							updateLiveMatchEvent(ev);
 						}catch (Exception e) {
-							e.printStackTrace();
+//							e.printStackTrace();
 						}
 					}
 				});
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
@@ -632,12 +632,12 @@ public class sqlite
 						try{
 							updateLiveMatchEvent(ev);
 						}catch (Exception e) {
-							e.printStackTrace();
+//							e.printStackTrace();
 						}
 					}
 				});
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 	}
 	
