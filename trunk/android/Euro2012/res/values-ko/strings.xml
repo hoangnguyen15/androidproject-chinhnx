@@ -70,6 +70,7 @@
 	<string name="betOver">골 내기비율u</string>
 	<string name="notstart">경기전.</string>
 	<string name="back">이전</string>
+	<string name="needvideoplayer">동영상 플레이어 설치가 필요합니다.</string>
 	<string name="start">경기/ 시합 시작</string>
 	<string name="end">경구종료</string>
 	<string name="nonetworktoupdate">최신 데이터를 업데이트하기 위하여 인터넷을 필요합니다.</string>
