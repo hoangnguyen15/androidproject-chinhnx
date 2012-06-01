@@ -262,8 +262,9 @@ public class Main extends Activity implements OnClickListener {
 	
 	@Override
 	protected void onDestroy() {
-		super.onDestroy();
 		sql.recycle();
+		unregisterReceiver(r);
+		super.onDestroy();
 	}
 	
 	BroadcastReceiver r = new BroadcastReceiver() {

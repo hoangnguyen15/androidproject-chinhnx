@@ -55,7 +55,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		setContentView(R.layout.matchdetail);
 		sql = new sqlite(this);
 		m = Global.match;
-		
+		updateLayout();
 		registerReceiver(r, new IntentFilter("updatelayout"));
 	}
 	
@@ -261,6 +261,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 	@Override
 	protected void onDestroy() {
 		sql.recycle();
+		unregisterReceiver(r);
 		super.onDestroy();
 	}
 	
