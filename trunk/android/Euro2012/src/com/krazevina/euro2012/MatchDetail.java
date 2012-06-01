@@ -170,7 +170,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 					txtname = (TextView)ll.findViewById(R.id.name);
 					imgtype1 = (ImageView)ll.findViewById(R.id.type1);
 					imgtype2 = (ImageView)ll.findViewById(R.id.type2);
-					txttime.setText(m.events.get(i).time);
+					txttime.setText(""+m.events.get(i).time);
 					
 					if(m.events.get(i).eventID==6){
 						txtname.setText(R.string.start);
