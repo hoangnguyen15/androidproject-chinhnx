@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -43,7 +44,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 	LinearLayout llevent;
 	sqlite sql;
 	Match m;Team t1,t2;
-	Player p;
+	Player p;Handler h;
 	int i;WebView wv;
 	Button btnBack,btnvote1,btnvote2;
 	Vector<Bet> b;
@@ -53,6 +54,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		sql = new sqlite(this);
 		m = Global.match;
+		h = new Handler();
 		try {
 			updateLayout();
 		} catch (Exception e) {
@@ -226,7 +228,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-					new SocketConnect().vote(m.ID, 1);
+					new SocketConnect().vote(m.ID, 1, h, MatchDetail.this);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
 					e.printStackTrace();
@@ -239,7 +241,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote2.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-					new SocketConnect().vote(m.ID, 2);
+					new SocketConnect().vote(m.ID, 2, h, MatchDetail.this);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
 					e.printStackTrace();
