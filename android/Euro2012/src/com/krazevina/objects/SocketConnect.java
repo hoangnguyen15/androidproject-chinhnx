@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class SocketConnect {
 
-	String sv="123.30.187.134";
-	int port = 4141;
+	String sv;
+	int port = 4142;
 	Socket sk;
 	BufferedReader br;
 	/**
@@ -28,6 +28,8 @@ public class SocketConnect {
 	PrintWriter pw;
 	
 	public SocketConnect(){
+		sv = ""+123+"."+30+"."+187+"."+134;
+		port--;
 	}
 	
     public void connect() throws Exception{
