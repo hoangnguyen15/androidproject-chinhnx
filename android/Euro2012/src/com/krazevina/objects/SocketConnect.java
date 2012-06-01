@@ -6,11 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
-import java.util.Stack;
 
-import android.content.Context;
 import android.os.Handler;
-import android.util.Log;
 
 public class SocketConnect {
 
@@ -31,11 +28,9 @@ public class SocketConnect {
 	
     public void connect() {
         try {
-			Log.e("Connecting", "Connecting");
 			sk = new Socket(sv,port);
 			br=new BufferedReader(new InputStreamReader(sk.getInputStream()));
 			pw = new PrintWriter(sk.getOutputStream(),true);
-			Log.e("Connected", "Connected");
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -57,7 +52,6 @@ public class SocketConnect {
 		try {
 			pw.println(""+s);
 			pw.flush();
-			Log.e("Send",""+s);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -95,7 +89,8 @@ public class SocketConnect {
 	    			sql.updateTeamsInRound(js,ha);
 	    		}else if (str.equals("BetDetail")) {
 	    			sql.updateBet(js,ha);
-	    		}else System.out.println("receive unprocess text:"+js);
+	    		}
+//	    		else System.out.println("receive unprocess text:"+js);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -109,11 +104,11 @@ public class SocketConnect {
 				connect();
 		    	String s = "Pickup-"+matchID+"-"+team;
 		    	send(s);
-		    	String js;
+//		    	String js;
 				try {
-					js = receive();
-					System.out.println(js);
-				} catch (IOException e) {
+//					js = receive();
+//					System.out.println(js);
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
