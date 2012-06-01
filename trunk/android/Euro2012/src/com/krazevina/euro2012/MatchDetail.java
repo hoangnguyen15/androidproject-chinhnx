@@ -24,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
@@ -224,7 +225,12 @@ public class MatchDetail extends Activity implements OnClickListener{
 		bet33.setText(getUO().col3);
 		btnvote1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				new SocketConnect().vote(m.ID, 1);
+				try {
+					new SocketConnect().vote(m.ID, 1);
+				} catch (Exception e) {
+					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
+					e.printStackTrace();
+				}
 				m.firstPick++;
 				btnvote1.setText(""+m.firstPick);
 				btnvote1.setEnabled(false);
@@ -232,7 +238,12 @@ public class MatchDetail extends Activity implements OnClickListener{
 		});
 		btnvote2.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				new SocketConnect().vote(m.ID, 2);
+				try {
+					new SocketConnect().vote(m.ID, 2);
+				} catch (Exception e) {
+					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
+					e.printStackTrace();
+				}
 				m.secPick++;
 				btnvote2.setText(""+m.secPick);
 				btnvote2.setEnabled(false);
