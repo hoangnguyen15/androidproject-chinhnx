@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.airpush.android.Airpush;
 import com.krazevina.objects.Global;
@@ -46,6 +49,11 @@ public class Main extends Activity implements OnClickListener {
         Global.getLang(this);
         h = new Handler();
         
+        ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo i = conMgr.getActiveNetworkInfo();
+        if (i == null||!i.isConnected()||!i.isAvailable())
+        	Toast.makeText(Main.this, R.string.nonetwork, 0).show();
+
         sql = new sqlite(this);
         updateLayout();
         registerReceiver(r, new IntentFilter("updatelayout"));
