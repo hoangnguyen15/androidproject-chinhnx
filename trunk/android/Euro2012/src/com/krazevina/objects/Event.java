@@ -37,4 +37,9 @@ public class Event{
 		if(!detail.equals(e.detail))return false;
 		return true;
 	}
+	public boolean after(Event e){
+		int t = Integer.parseInt(time);
+		if(t>Integer.parseInt(e.time))return true;
+		return false;
+	}
 }
