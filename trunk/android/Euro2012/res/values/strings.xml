@@ -74,4 +74,6 @@
 	<string name="start">Start match</string>
     <string name="end">Full time</string>
     <string name="nonetworktoupdate">No network to update data.</string>
+    <string name="vote1">You have just voted for </string>
+	<string name="vote2">win the match.</string>
 </resources>
