@@ -3,12 +3,13 @@ package com.krazevina.euro2012;
 import java.util.Vector;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -46,9 +47,6 @@ public class Main extends Activity implements OnClickListener {
         h = new Handler();
         setContentView(R.layout.main);
         
-        
-        
-        
         llbtnsched = (LinearLayout)findViewById(R.id.llbtnsched);
         llbtnnews = (LinearLayout)findViewById(R.id.llbtnnews);
         llbtnteams = (LinearLayout)findViewById(R.id.llbtnteams);
@@ -76,8 +74,22 @@ public class Main extends Activity implements OnClickListener {
         btnTeams.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
         sql = new sqlite(this);
+        updateLayout();
+        registerReceiver(r, new IntentFilter("updatelayout"));
         
-        match = sql.getAllMatches();
+		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
+			new SocketConnect().update("Matches", sql, h);
+			new SocketConnect().update("TeamsInRound", sql, h);
+			lastUpdateMatch = System.currentTimeMillis();
+		}
+		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
+			new SocketConnect().update("BetDetail", sql, h);
+			lastUpdateBet = System.currentTimeMillis();
+		}
+    }
+    
+    public void updateLayout(){
+    	match = sql.getAllMatches();
         
 		LinearLayout ll;
 		LayoutInflater mInflater = LayoutInflater.from(this);
@@ -172,15 +184,6 @@ public class Main extends Activity implements OnClickListener {
 				llfinal.addView(ll);
 			}
 		}
-		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
-			new SocketConnect().update("Matches", sql, h);
-			new SocketConnect().update("TeamsInRound", sql, h);
-			lastUpdateMatch = System.currentTimeMillis();
-		}
-		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
-			new SocketConnect().update("BetDetail", sql, h);
-			lastUpdateBet = System.currentTimeMillis();
-		}
     }
     
     OnTouchListener touch = new OnTouchListener() {
@@ -263,4 +266,10 @@ public class Main extends Activity implements OnClickListener {
 		sql.recycle();
 	}
 	
+	BroadcastReceiver r = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			updateLayout();
+		}
+	};
 }

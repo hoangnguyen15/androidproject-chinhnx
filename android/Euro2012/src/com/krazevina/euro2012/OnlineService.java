@@ -73,6 +73,7 @@ public class OnlineService extends Service{
 				try {
 					Thread.sleep(5000);
 					if(socketLive.checkError()){
+						Log.e("ERROR", "RECONNECT");
 						liveConnect();
 					}
 					
@@ -82,15 +83,16 @@ public class OnlineService extends Service{
 
 						// Update sql
 						Event md = new Event(s);
-						sql.updateLiveMatchEvent(md);
+						sql.updateMatchEvent(md,h);
 						
 						// if start match: timeStartMatch = System.currentTimeMilis();
-						if(md.eventID==6)timeStartMatch = System.currentTimeMillis();
+						if(md.eventID==6||timeStartMatch==0)timeStartMatch = System.currentTimeMillis();
 						
 						//GetSetting
 				        sql.getSetting();
 				        if(Global.notify == 1)notification(md);
-				        if(Global.vibrate == 1 && md.eventID == 1){
+				        if(Global.vibrate == 1 && md.eventID == 1||md.eventID == 8
+				        		||md.eventID == 6||md.eventID == 7){
 				            Vibrator v = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
 				            v.vibrate(1000);
 				        }
@@ -133,50 +135,68 @@ public class OnlineService extends Service{
 	void notification(Event e){
 		Team t1,t2;Player p;
 		Match m;
-		m = sql.getMatch(e.matchID);
-		t1 = sql.getTeam(m.team1);
-		t2 = sql.getTeam(m.team2);
-		p = sql.getPlayer(e.playerID);
 		NotificationManager mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		
-		if(e.eventID==1){//GOAL
-			int icon = R.drawable.goal;
-			long when = System.currentTimeMillis();
-			Notification notification = new Notification(icon, "Goal", when);
-			Context context = getApplicationContext();
-			CharSequence contentTitle = t1.getName()+e.detail+t2.getName();
-			CharSequence contentText = p.name+" "+e.time+"'";
-			Global.match = m;
-			Intent notificationIntent = new Intent(this, MatchDetail.class);
-			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-			mNotificationManager.notify(NOTIFY, notification);
+		if(e.eventID==1||e.eventID==8){//GOAL
+			try{
+				m = sql.getMatch(e.matchID);
+				t1 = sql.getTeam(m.team1);
+				t2 = sql.getTeam(m.team2);
+				p = sql.getPlayer(e.playerID);
+				int icon = R.drawable.goal;
+				long when = System.currentTimeMillis();
+				Notification notification = new Notification(icon, "Goal", when);
+				Context context = getApplicationContext();
+				CharSequence contentTitle = t1.getName()+" "+e.detail+" "+t2.getName();
+				CharSequence contentText = p.name+" "+e.time+"'";
+				Global.match = m;
+				Intent notificationIntent = new Intent(this, MatchDetail.class);
+				PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+				notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+				mNotificationManager.notify(NOTIFY, notification);
+			}catch (Exception ex) {
+			}
 		}
 		if(e.eventID==6){//START
-			int icon = R.drawable.goal;
-			long when = System.currentTimeMillis();
-			Notification notification = new Notification(icon, getString(R.string.start), when);
-			Context context = getApplicationContext();
-			CharSequence contentTitle = t1.getName()+"-"+t2.getName();
-			CharSequence contentText = m.stadium;
-			Global.match = m;
-			Intent notificationIntent = new Intent(this, MatchDetail.class);
-			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-			mNotificationManager.notify(NOTIFY, notification);
+			try{
+				m = sql.getMatch(e.matchID);
+				m.finalScore = "0-0";
+				sql.updateMatch(m, h);
+				t1 = sql.getTeam(m.team1);
+				t2 = sql.getTeam(m.team2);
+				int icon = R.drawable.goal;
+				long when = System.currentTimeMillis();
+				Notification notification = new Notification(icon, getString(R.string.start), when);
+				Context context = getApplicationContext();
+				CharSequence contentTitle = t1.getName()+" - "+t2.getName();
+				CharSequence contentText = getString(R.string.start)+m.stadium;
+				Global.match = m;
+				Intent notificationIntent = new Intent(this, MatchDetail.class);
+				PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+				notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+				mNotificationManager.notify(NOTIFY, notification);
+			}catch (Exception ex) {
+				ex.printStackTrace();
+			}
 		}
 		if(e.eventID==7){//END
-			int icon = R.drawable.goal;
-			long when = System.currentTimeMillis();
-			Notification notification = new Notification(icon, getString(R.string.end), when);
-			Context context = getApplicationContext();
-			CharSequence contentTitle = t1.getName()+e.detail+t2.getName();
-			CharSequence contentText = m.stadium;
-			Global.match = m;
-			Intent notificationIntent = new Intent(this, MatchDetail.class);
-			PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
-			notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
-			mNotificationManager.notify(NOTIFY, notification);
+			try{
+				m = sql.getMatch(e.matchID);
+				t1 = sql.getTeam(m.team1);
+				t2 = sql.getTeam(m.team2);
+				int icon = R.drawable.goal;
+				long when = System.currentTimeMillis();
+				Notification notification = new Notification(icon, getString(R.string.end), when);
+				Context context = getApplicationContext();
+				CharSequence contentTitle = t1.getName()+" "+m.finalScore + " " +t2.getName();
+				CharSequence contentText = getString(R.string.end);
+				Global.match = m;
+				Intent notificationIntent = new Intent(this, MatchDetail.class);
+				PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+				notification.setLatestEventInfo(context, contentTitle, contentText, contentIntent);
+				mNotificationManager.notify(NOTIFY, notification);
+			}catch (Exception ex) {
+			}
 		}
 	}
 	private static final int NOTIFY = 1;

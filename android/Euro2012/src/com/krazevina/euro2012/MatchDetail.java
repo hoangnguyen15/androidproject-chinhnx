@@ -4,8 +4,11 @@ import java.util.Vector;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -52,7 +55,16 @@ public class MatchDetail extends Activity implements OnClickListener{
 		setContentView(R.layout.matchdetail);
 		sql = new sqlite(this);
 		m = Global.match;
-		m.events = sql.getEvents(m);
+		
+		registerReceiver(r, new IntentFilter("updatelayout"));
+	}
+	
+	void updateLayout(){
+		try{
+			m.events = sql.getEvents(m);
+		}catch (Exception e) {
+			finish();
+		}
 		b = sql.getBet(m.ID);
 		flag1 = (ImageView)findViewById(R.id.flag1);
 		flag2 = (ImageView)findViewById(R.id.flag2);
@@ -149,35 +161,37 @@ public class MatchDetail extends Activity implements OnClickListener{
 		int j = 0;
 		if(m.events.size()>0){
 			for(i = 0;i<m.events.size();i++){
-				ll = (LinearLayout) mInflater.inflate(R.layout.itemmatchdetail, null);
-				ll.setOrientation(LinearLayout.HORIZONTAL);
-	
-				txttime = (TextView)ll.findViewById(R.id.time);
-				txtname = (TextView)ll.findViewById(R.id.name);
-				imgtype1 = (ImageView)ll.findViewById(R.id.type1);
-				imgtype2 = (ImageView)ll.findViewById(R.id.type2);
-				txttime.setText(m.events.get(i).time);
-				p = sql.getPlayer(m.events.get(i).playerID);
-				txtname.setText(p.name);
-				
-				if(m.team1==m.events.get(i).teamID){
-					imgtype1.setImageResource(Type(m.events.get(i).eventID));
-					imgtype2.setVisibility(View.GONE);
-					txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
-				}else{
-					imgtype2.setImageResource(Type(m.events.get(i).eventID));
-					imgtype1.setVisibility(View.GONE);
-					txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+				if(m.events.get(i).eventID==1||m.events.get(i).eventID==8||m.events.get(i).eventID==2||
+						m.events.get(i).eventID==3){
+					ll = (LinearLayout) mInflater.inflate(R.layout.itemmatchdetail, null);
+					ll.setOrientation(LinearLayout.HORIZONTAL);
+		
+					txttime = (TextView)ll.findViewById(R.id.time);
+					txtname = (TextView)ll.findViewById(R.id.name);
+					imgtype1 = (ImageView)ll.findViewById(R.id.type1);
+					imgtype2 = (ImageView)ll.findViewById(R.id.type2);
+					txttime.setText(m.events.get(i).time);
+					p = sql.getPlayer(m.events.get(i).playerID);
+					txtname.setText(p.name);
+					
+					if(m.team1==m.events.get(i).teamID){
+						imgtype1.setImageResource(Type(m.events.get(i).eventID));
+						imgtype2.setVisibility(View.GONE);
+						txtname.setGravity(Gravity.LEFT|Gravity.CENTER_VERTICAL);
+					}else{
+						imgtype2.setImageResource(Type(m.events.get(i).eventID));
+						imgtype1.setVisibility(View.GONE);
+						txtname.setGravity(Gravity.RIGHT|Gravity.CENTER_VERTICAL);
+					}
+					
+					j++;
+					if(j%2==0){
+						ll.setBackgroundColor(Color.parseColor("#ffffff"));
+					}else{
+						ll.setBackgroundColor(Color.parseColor("#e9efe9"));
+					}
+					llevent.addView(ll);
 				}
-				
-				j++;
-				if(j%2==0){
-					ll.setBackgroundColor(Color.parseColor("#ffffff"));
-				}else{
-					ll.setBackgroundColor(Color.parseColor("#e9efe9"));
-				}
-//				if(m.events.get(i).eventID==7)end = true;
-				llevent.addView(ll);
 			}
 		}
 		else{
@@ -213,6 +227,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 			}
 		});
 	}
+	
 	int Type(int t){
 		switch (t) {
 		case 1:return R.drawable.goal;
@@ -324,5 +339,11 @@ public class MatchDetail extends Activity implements OnClickListener{
     	}
     	dialog.show();
     }
+    BroadcastReceiver r = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			updateLayout();
+		}
+	}; 
 }
 
