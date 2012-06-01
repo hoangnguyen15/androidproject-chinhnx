@@ -10,7 +10,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.Gravity;
@@ -25,7 +24,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.krazevina.objects.Bet;
 import com.krazevina.objects.Global;
@@ -54,11 +52,15 @@ public class MatchDetail extends Activity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		sql = new sqlite(this);
 		m = Global.match;
-		updateLayout();
+		try {
+			updateLayout();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		registerReceiver(r, new IntentFilter("updatelayout"));
 	}
 	
-	void updateLayout(){
+	void updateLayout() throws Exception{
 		setContentView(R.layout.matchdetail);
 		try{
 			m.events = sql.getEvents(m);
@@ -327,6 +329,7 @@ public class MatchDetail extends Activity implements OnClickListener{
     	if(dialog==null){
 	    	final CharSequence[] items = {"VTV3", "VTV2", "iTV music for relax"};
 	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setTitle("Vietnamese tv");
 	    	builder.setItems(items, new DialogInterface.OnClickListener() {
 	    	    public void onClick(DialogInterface dialog, int item) {
 	    	    	Intent i;
@@ -353,7 +356,11 @@ public class MatchDetail extends Activity implements OnClickListener{
     BroadcastReceiver r = new BroadcastReceiver() {
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			updateLayout();
+			try {
+				updateLayout();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}; 
 }
