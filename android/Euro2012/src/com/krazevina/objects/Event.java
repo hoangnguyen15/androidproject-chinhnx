@@ -6,6 +6,7 @@ public class Event{
 	public int ID,matchID,teamID,playerID,eventID,status;
 	public String detail,time;
 	public Event(String js) throws Exception{
+		System.out.println(js);
 		JSONObject o = new JSONObject(js.substring(12));
 		playerID = o.getInt("PlayerID");
 		matchID = o.getInt("MatchID");

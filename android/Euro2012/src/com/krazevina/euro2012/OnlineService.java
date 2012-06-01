@@ -77,7 +77,7 @@ public class OnlineService extends Service{
 					}
 					
 					s = socketLive.receive();
-					if(s!=null){
+					if(s!=null&&!s.equals("EndSocket")){
 						Log.e("Receive", s);
 
 						// Update sql
@@ -198,7 +198,7 @@ public class OnlineService extends Service{
 			sql.updateMatchEvent(s,h);
 			needUpdateMatchEvent = false;
 			lastUpdateMatchEvent = System.currentTimeMillis();
-		} catch (IOException e1) {
+		} catch (Exception e1) {
 		}
 	}
 	
