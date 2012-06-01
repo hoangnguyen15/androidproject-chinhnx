@@ -52,7 +52,7 @@ public class Main extends Activity implements OnClickListener {
         ConnectivityManager conMgr =  (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo i = conMgr.getActiveNetworkInfo();
         if (i == null||!i.isConnected()||!i.isAvailable())
-        	Toast.makeText(Main.this, R.string.nonetwork, 0).show();
+        	Toast.makeText(Main.this, R.string.nonetworktoupdate, 0).show();
 
         sql = new sqlite(this);
         updateLayout();
