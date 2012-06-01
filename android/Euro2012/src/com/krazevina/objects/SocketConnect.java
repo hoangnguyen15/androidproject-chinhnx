@@ -97,20 +97,13 @@ public class SocketConnect {
     	}
     }
     
-    public void vote(final int imatchID,final int iteam){
+    public void vote(final int imatchID,final int iteam) throws Exception{
     	new Thread(new Runnable() {
     		int matchID = imatchID,team = iteam;
 			public void run() {
-//		    	String js;
-				try {
-					connect();
-			    	String s = "Pickup-"+matchID+"-"+team;
-			    	send(s);
-//					js = receive();
-//					System.out.println(js);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				connect();
+		    	String s = "Pickup-"+matchID+"-"+team;
+		    	send(s);
 			}
 		}).start();
     }
