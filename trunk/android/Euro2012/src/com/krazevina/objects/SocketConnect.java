@@ -7,7 +7,11 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+import com.krazevina.euro2012.R;
+
+import android.content.Context;
 import android.os.Handler;
+import android.widget.Toast;
 
 public class SocketConnect {
 
@@ -97,13 +101,21 @@ public class SocketConnect {
     	}
     }
     
-    public void vote(final int imatchID,final int iteam) throws Exception{
+    public void vote(final int imatchID,final int iteam,final Handler h,final Context c) throws Exception{
     	new Thread(new Runnable() {
     		int matchID = imatchID,team = iteam;
 			public void run() {
-				connect();
-		    	String s = "Pickup-"+matchID+"-"+team;
-		    	send(s);
+				try{
+					connect();
+			    	String s = "Pickup-"+matchID+"-"+team;
+			    	send(s);
+				}catch (Exception e) {
+					h.post(new Runnable() {
+						public void run() {
+							Toast.makeText(c, R.string.nonetwork, 0).show();
+						}
+					});
+				}
 			}
 		}).start();
     }
