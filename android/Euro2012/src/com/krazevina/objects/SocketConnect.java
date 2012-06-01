@@ -30,18 +30,10 @@ public class SocketConnect {
 	public SocketConnect(){
 	}
 	
-    public void connect() {
-        try {
-			sk = new Socket(sv,port);
-			br=new BufferedReader(new InputStreamReader(sk.getInputStream()));
-			pw = new PrintWriter(sk.getOutputStream(),true);
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+    public void connect() throws Exception{
+		sk = new Socket(sv,port);
+		br=new BufferedReader(new InputStreamReader(sk.getInputStream()));
+		pw = new PrintWriter(sk.getOutputStream(),true);
     }
     
 
