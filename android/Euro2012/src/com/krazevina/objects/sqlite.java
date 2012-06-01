@@ -315,10 +315,10 @@ public class sqlite
 	}
 	
 	public Player getPlayer(int ID){
-		Player m = null;
+		Player m = new Player();
 		Cursor c = mSqlDatabase.query("Players", new String[]{"ID",
 				"TeamID","Name","Image","DOB","Height","Weight",
-				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+firstPlayerID), null, null, null, null);
+				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID), null, null, null, null);
 		if(c==null)return m;
 		
 		if(c.getCount()>0){
@@ -367,6 +367,7 @@ public class sqlite
 			c.moveToFirst();
 			Global.notify = c.getInt(0);
 			Global.vibrate = c.getInt(1);
+			c.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -573,38 +574,37 @@ public class sqlite
 	}
 	Event e;
 	public void updateMatchEvent(String js,Handler h){
-		try {
-			exec("Delete from MatchOnline");
-			System.out.println(js);
-			int firstc = js.indexOf("-");
-			String js2 = js.substring(firstc+1);
-			JSONObject jo = new JSONObject(js2);
-			JSONArray j = jo.getJSONArray("Table");
-			Vector<Event>ve;
-			boolean duplicate = false;
-			
-			for(int i=0;i<j.length();i++){
-				JSONObject o = (JSONObject) j.get(i);
-				e = new Event(o);
-				ve = getEvents(getMatch(e.matchID));
-				for(int k=0;k<ve.size();k++){
-					if(e.equal(ve.get(k)))duplicate = true;
-				}
-				if(!duplicate)
-				h.post(new Runnable() {
-					Event ev = e;
-					public void run() {
-						try{
-							updateLiveMatchEvent(ev);
-						}catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			System.out.println(js);
+//			int firstc = js.indexOf("-");
+//			String js2 = js.substring(firstc+1);
+//			JSONObject jo = new JSONObject(js2);
+//			JSONArray j = jo.getJSONArray("Table");
+//			Vector<Event>ve;
+//			boolean duplicate = false;
+//			exec("Delete from MatchOnline");
+//			for(int i=0;i<j.length();i++){
+//				JSONObject o = (JSONObject) j.get(i);
+//				e = new Event(o);
+//				ve = getEvents(getMatch(e.matchID));
+//				for(int k=0;k<ve.size();k++){
+//					if(e.equal(ve.get(k)))duplicate = true;
+//				}
+//				if(!duplicate)
+//				h.post(new Runnable() {
+//					Event ev = e;
+//					public void run() {
+//						try{
+//							updateLiveMatchEvent(ev);
+//						}catch (Exception e) {
+//							e.printStackTrace();
+//						}
+//					}
+//				});
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	public void updateMatchEvent(final Event ev,Handler h){
