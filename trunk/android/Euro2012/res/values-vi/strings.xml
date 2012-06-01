@@ -74,4 +74,6 @@
 	<string name="start">Trận đấu bắt đầu</string>
 	<string name="end">Trận đấu kết thúc</string>
 	<string name="nonetworktoupdate">Cần có kết nối mạng để cập nhật dữ liệu.</string>
+	<string name="vote1">Bạn vừa bình chọn đội </string>
+	<string name="vote2">chiến thắng</string>
 </resources>
