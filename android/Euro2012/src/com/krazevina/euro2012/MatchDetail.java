@@ -227,25 +227,20 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-					new SocketConnect().vote(m.ID, 1, h, MatchDetail.this);
+					new SocketConnect().vote(m.ID, 1, h, MatchDetail.this, m,btnvote1,btnvote2,t1,t2);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
 				}
-				m.firstPick++;
-				btnvote1.setText(""+m.firstPick);
-				btnvote1.setEnabled(false);
+				
 			}
 		});
 		btnvote2.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				try {
-					new SocketConnect().vote(m.ID, 2, h, MatchDetail.this);
+					new SocketConnect().vote(m.ID, 2, h, MatchDetail.this,m,btnvote1,btnvote2,t1,t2);
 				} catch (Exception e) {
 					Toast.makeText(MatchDetail.this, R.string.nonetwork, 0).show();
 				}
-				m.secPick++;
-				btnvote2.setText(""+m.secPick);
-				btnvote2.setEnabled(false);
 			}
 		});
 	}
