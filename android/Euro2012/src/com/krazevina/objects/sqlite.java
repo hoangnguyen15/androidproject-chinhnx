@@ -137,6 +137,15 @@ public class sqlite
 			ret.add(m);
 			c.moveToNext();
 		}
+		
+		for(int i=0;i<ret.size()-1;i++)
+			for(int j=i+1;j<ret.size();j++){
+				if(ret.get(i).after(ret.get(j))){
+					m = ret.get(i);
+					ret.set(i, ret.get(j));
+					ret.set(j, m);
+				}
+			}
 		c.close();
 		return ret;
 	}
@@ -315,6 +324,8 @@ public class sqlite
 	}
 	
 	public Player getPlayer(int ID){
+		Log.e("get player",""+ID);
+		if(ID<952)ID = 952+ID; 
 		Player m = new Player();
 		Cursor c = mSqlDatabase.query("Players", new String[]{"ID",
 				"TeamID","Name","Image","DOB","Height","Weight",
