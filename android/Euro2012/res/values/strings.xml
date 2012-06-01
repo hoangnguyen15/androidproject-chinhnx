@@ -73,4 +73,5 @@
 	<string name="back">Back</string>
 	<string name="start">Start match</string>
     <string name="end">Full time</string>
+    <string name="nonetworktoupdate">No network to update data.</string>
 </resources>
