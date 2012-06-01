@@ -321,23 +321,25 @@ public class sqlite
 				"Club","Position","Number","Score","Status","PlayerTip"}, "ID="+(ID+firstPlayerID), null, null, null, null);
 		if(c==null)return m;
 		
-		c.moveToFirst();
-		m = new Player();
-		m.teamID = c.getInt(c.getColumnIndex("TeamID"));
-		m.name = c.getString(c.getColumnIndex("Name"));
-		m.imageUrl = c.getString(c.getColumnIndex("Image"));
-		m.dob = c.getString(c.getColumnIndex("DOB"));
-		m.height = c.getString(c.getColumnIndex("Height"));
-		m.weight = c.getString(c.getColumnIndex("Weight"));
-		m.club = c.getString(c.getColumnIndex("Club"));
-		m.pos = c.getString(c.getColumnIndex("Position"));
-		m.number = c.getString(c.getColumnIndex("Number"));
-		m.score = c.getInt(c.getColumnIndex("Score"));
-		m.status = c.getInt(c.getColumnIndex("Status"));
-		m.tip = c.getString(c.getColumnIndex("PlayerTip"));
-
-		c.close();
-		return m;
+		if(c.getCount()>0){
+			c.moveToFirst();
+			m = new Player();
+			m.teamID = c.getInt(c.getColumnIndex("TeamID"));
+			m.name = c.getString(c.getColumnIndex("Name"));
+			m.imageUrl = c.getString(c.getColumnIndex("Image"));
+			m.dob = c.getString(c.getColumnIndex("DOB"));
+			m.height = c.getString(c.getColumnIndex("Height"));
+			m.weight = c.getString(c.getColumnIndex("Weight"));
+			m.club = c.getString(c.getColumnIndex("Club"));
+			m.pos = c.getString(c.getColumnIndex("Position"));
+			m.number = c.getString(c.getColumnIndex("Number"));
+			m.score = c.getInt(c.getColumnIndex("Score"));
+			m.status = c.getInt(c.getColumnIndex("Status"));
+			m.tip = c.getString(c.getColumnIndex("PlayerTip"));
+	
+			c.close();
+			return m;
+		}else return null;
 	}
 	
 	public String searchNameTeam(int teamID){
@@ -386,7 +388,7 @@ public class sqlite
 		}
 	}
 	
-	void updateMatches(String js,Handler h){
+	public void updateMatches(String js,Handler h){
 		try {
 			System.out.println(js);
 			int firstc = js.indexOf("-");
@@ -443,6 +445,24 @@ public class sqlite
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void updateMatch(Match m, Handler h){
+		final String cmd1 = "UPDATE Matches SET GroupID="+m.groupID+
+				" , FirstTeam="+m.team1+
+				" , SecondTeam="+m.team2+
+				" , Start='"+m.rawStart()+"'"+
+				" , FinalScore='"+m.finalScore+"'"+
+				" , MainReferee='"+m.referee+"'"+
+				" , FirstPickup="+m.firstPick+
+				" , SecondPickup="+m.secPick+
+				" , Status="+m.status +
+				" WHERE ID = "+m.ID;
+		h.post(new Runnable() {
+			public void run() {
+				exec(cmd1);
+			}
+		});
 	}
 	
 	void updateTeamsInRound(String js,Handler h){
@@ -586,7 +606,32 @@ public class sqlite
 			e.printStackTrace();
 		}
 	}
-	public void updateLiveMatchEvent(Event ev){
+	
+	public void updateMatchEvent(final Event ev,Handler h){
+		try {
+			Vector<Event>ve;
+			boolean duplicate = false;
+			
+				ve = getEvents(getMatch(ev.matchID));
+				for(int k=0;k<ve.size();k++){
+					if(ev.equal(ve.get(k)))duplicate = true;
+				}
+				if(!duplicate)
+				h.post(new Runnable() {
+					public void run() {
+						try{
+							updateLiveMatchEvent(ev);
+						}catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void updateLiveMatchEvent(Event ev){
 		final String s = "INSERT INTO MatchOnline(MatchID,TeamID,PlayerID,EventID,Detail,MatchTime,Status) VALUES " +
 				"(" +ev.matchID+","+ev.teamID+","+ev.playerID+","+ev.eventID+",'"+ev.detail+"','"+ev.time+"',"+ev.status+")";
 		exec(s);
