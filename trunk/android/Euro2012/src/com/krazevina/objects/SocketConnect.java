@@ -8,9 +8,11 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import com.krazevina.euro2012.R;
+import com.krazevina.euro2012.Teams;
 
 import android.content.Context;
 import android.os.Handler;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class SocketConnect {
@@ -93,20 +95,38 @@ public class SocketConnect {
     	}
     }
     
-    public void vote(final int imatchID,final int iteam,final Handler h,final Context c) throws Exception{
+    public void vote(final int imatchID,final int iteam,final Handler h,final Context c, final Match m, final Button btnvote1, final Button btnvote2,final Team t1,final Team t2) throws Exception{
     	new Thread(new Runnable() {
     		int matchID = imatchID,team = iteam;
 			public void run() {
 				try{
 					connect();
-			    	String s = "Pickup-"+matchID+"-"+team;
+					String s = "Pickup-"+matchID+"-"+team;
 			    	send(s);
+			    	h.post(new Runnable() {
+						@Override
+						public void run() {
+					    	if(iteam == 1){
+					    		m.firstPick++;
+								btnvote1.setText(""+m.firstPick);
+								btnvote1.setEnabled(false);
+								Toast.makeText(c,btnvote1.getContext().getString(R.string.vote1)+ t1.getName() +" " + btnvote1.getContext().getString(R.string.vote2), 0).show();
+					    	}else if(iteam ==2){
+					    		m.secPick++;
+								btnvote2.setText(""+m.secPick);
+								btnvote2.setEnabled(false);
+								Toast.makeText(c,btnvote1.getContext().getString(R.string.vote1)+ t2.getName() +" "+ btnvote2.getContext().getString(R.string.vote2), 0).show();
+					    	}
+						}
+					});
+			    	
 				}catch (Exception e) {
 					h.post(new Runnable() {
 						public void run() {
 							Toast.makeText(c, R.string.nonetwork, 0).show();
 						}
 					});
+					e.printStackTrace();
 				}
 			}
 		}).start();
