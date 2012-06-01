@@ -101,11 +101,11 @@ public class SocketConnect {
     	new Thread(new Runnable() {
     		int matchID = imatchID,team = iteam;
 			public void run() {
-				connect();
-		    	String s = "Pickup-"+matchID+"-"+team;
-		    	send(s);
 //		    	String js;
 				try {
+					connect();
+			    	String s = "Pickup-"+matchID+"-"+team;
+			    	send(s);
 //					js = receive();
 //					System.out.println(js);
 				} catch (Exception e) {
