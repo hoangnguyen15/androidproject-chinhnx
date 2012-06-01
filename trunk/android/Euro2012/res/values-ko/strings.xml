@@ -70,6 +70,6 @@
 	<string name="betOver">골 내기비율u</string>
 	<string name="notstart">경기전.</string>
 	<string name="back">이전</string>
-	<string name="start">시작</string>
-	<string name="end">끝</string>
+	<string name="start">경기/ 시합 시작</string>
+	<string name="end">경구종료</string>
 </resources>
