@@ -73,4 +73,6 @@
 	<string name="start">경기/ 시합 시작</string>
 	<string name="end">경구종료</string>
 	<string name="nonetworktoupdate">최신 데이터를 업데이트하기 위하여 인터넷을 필요합니다.</string>
+	<string name="vote1"> </string>
+	<string name="vote2">팀이 우승팀으로 선택하셨습니다</string>
 </resources>
