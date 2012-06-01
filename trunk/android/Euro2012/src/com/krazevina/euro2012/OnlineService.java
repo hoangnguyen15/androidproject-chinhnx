@@ -1,6 +1,5 @@
 package com.krazevina.euro2012;
 
-import java.io.IOException;
 import java.util.Random;
 
 import android.app.Notification;
@@ -12,7 +11,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
-import android.util.Log;
 
 import com.krazevina.objects.Event;
 import com.krazevina.objects.Global;
@@ -28,13 +26,13 @@ public class OnlineService extends Service{
 	Handler h;
 	@Override
 	public IBinder onBind(Intent intent) {
-		Log.e("SERVICE", "BIND");
+//		Log.e("SERVICE", "BIND");
 		return null;
 	}
 	
 	@Override
 	public void onCreate() {
-		Log.e("SERVICE", "CREATE");
+//		Log.e("SERVICE", "CREATE");
 		timeToNextMatch = 10000000000l;
 		sql = new sqlite(OnlineService.this);
 		super.onCreate();
@@ -44,13 +42,13 @@ public class OnlineService extends Service{
 	
 	@Override
 	public void onStart(Intent intent, int startId) {
-		Log.e("SERVICE", "START");
+//		Log.e("SERVICE", "START");
 		super.onStart(intent, startId);
 	}
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Log.e("SERVICE", "STARTCOM");
+//		Log.e("SERVICE", "STARTCOM");
 		return super.onStartCommand(intent, flags, startId);
 	}
 	
@@ -74,13 +72,13 @@ public class OnlineService extends Service{
 				try {
 					Thread.sleep(5000);
 					if(socketLive.checkError()){
-						Log.e("ERROR", "RECONNECT");
+//						Log.e("ERROR", "RECONNECT");
 						liveConnect();
 					}
 					
 					s = socketLive.receive();
 					if(s!=null&&!s.equals("EndSocket")){
-						Log.e("Receive", s);
+//						Log.e("Receive", s);
 						sendBroadcast(i);
 						// Update sql
 						Event md = new Event(s);
@@ -243,7 +241,7 @@ public class OnlineService extends Service{
 				
 				try{
 					timePassed = System.currentTimeMillis() - timeReceiveNextMatch;
-					Log.e("Time to next match:", ""+minuteLeft()+"min");
+//					Log.e("Time to next match:", ""+minuteLeft()+"min");
 					// Start live socket before match start 10 min
 					if(timeToNextMatch-timePassed<10*60*1000&&!live){
 						liveConnect();
