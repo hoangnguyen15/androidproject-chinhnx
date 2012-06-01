@@ -25,6 +25,7 @@ import com.krazevina.objects.sqlite;
 public class OnlineService extends Service{
 	SocketConnect socketLive,socketTime,socketUpdate;
 	sqlite sql;
+	Handler h;
 	@Override
 	public IBinder onBind(Intent intent) {
 		Log.e("SERVICE", "BIND");
@@ -35,7 +36,9 @@ public class OnlineService extends Service{
 	public void onCreate() {
 		Log.e("SERVICE", "CREATE");
 		timeToNextMatch = 10000000000l;
+		sql = new sqlite(OnlineService.this);
 		super.onCreate();
+		h = new Handler();
 		new CheckTime().start();
 	}
 	
@@ -54,6 +57,7 @@ public class OnlineService extends Service{
 	@Override
 	public void onDestroy() {
 		rec.interrupt();
+		sql.recycle();
 		super.onDestroy();
 	}
 	
@@ -62,7 +66,6 @@ public class OnlineService extends Service{
 	class LiveReceive extends Thread{
 		String s;
 		public void run(){
-			sql = new sqlite(OnlineService.this);
 			while(true){
 				
 				if(!live)return;
@@ -109,7 +112,7 @@ public class OnlineService extends Service{
 						socketUpdate.connect();
 						socketUpdate.send("MatchOnline");
 						String s = socketUpdate.receive();
-						sql.updateMatchEvent(s,new Handler());
+						sql.updateMatchEvent(s,h);
 						liveConnect();
 					}catch (Exception ex) {
 					}
@@ -124,7 +127,6 @@ public class OnlineService extends Service{
 				e.printStackTrace();
 			}
 			updateMatchEvent();
-			sql.recycle();
 		}
 	}
 	
@@ -184,6 +186,7 @@ public class OnlineService extends Service{
 	static long timeStartMatch;
 	static boolean live;
 	static boolean needUpdateMatchEvent = true;
+	static long lastUpdateMatchEvent = 0;
 	
 	void updateMatchEvent(){
 		try {
@@ -192,8 +195,9 @@ public class OnlineService extends Service{
 			socketUpdate.send("MatchOnline");
 			String s;
 			s = socketUpdate.receive();
-			sql.updateMatchEvent(s,new Handler());
+			sql.updateMatchEvent(s,h);
 			needUpdateMatchEvent = false;
+			lastUpdateMatchEvent = System.currentTimeMillis();
 		} catch (IOException e1) {
 		}
 	}
@@ -202,9 +206,9 @@ public class OnlineService extends Service{
 		String time;
 		long timePassed;
 		public void run(){
-			
 			while(true){
-				if(needUpdateMatchEvent)updateMatchEvent();
+				if(System.currentTimeMillis()-lastUpdateMatchEvent>24*60*60*1000l)needUpdateMatchEvent = true;
+				if(needUpdateMatchEvent)updateMatchEvent();				
 				try{
 					socketTime = new SocketConnect();
 					socketTime.connect();
@@ -213,6 +217,7 @@ public class OnlineService extends Service{
 					time = socketTime.receive();
 					socketTime.disconnect();
 					timeToNextMatch = Long.parseLong(time.substring(5));
+					timeToNextMatch = 1;
 				}catch (Exception e) {
 				}
 				
@@ -225,8 +230,8 @@ public class OnlineService extends Service{
 					}
 					// update time server per 30 min
 					if(timeToNextMatch!=10000000000l)Thread.sleep(30*60*1000);
-					// if havent updated time server yet, retry in 1 min
-					else Thread.sleep(60000);
+					// if havent updated time server yet, retry in 2 min
+					else Thread.sleep(120000);
 				}catch (Exception e) {
 				}
 			}
