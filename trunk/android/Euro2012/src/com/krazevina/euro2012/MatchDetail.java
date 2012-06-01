@@ -144,6 +144,7 @@ public class MatchDetail extends Activity implements OnClickListener{
 		btnvote1.setText(""+m.firstPick);
 		btnvote2.setText(""+m.secPick);
 		if(m.finalScore!=null&&m.finalScore.length()>0)score.setText(m.finalScore);
+		else if(m.events.size()>0) score.setText("0-0");
 		else score.setText("?-?");
 		stadium.setText(m.stadium);
 		referee.setText(m.referee);
