@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.Leadbolt.AdController;
 import com.airpush.android.Airpush;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.Match;
@@ -39,11 +40,16 @@ public class Main extends Activity implements OnClickListener {
     int i ;Handler h;
     sqlite sql;
     static long lastUpdateMatch,lastUpdateBet;
+    private AdController myController;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         new Airpush(getApplicationContext(), Global.appId,Global.apiKey,false,true,true);
+        AdController myController = new AdController(getApplicationContext(), 
+        		"376887763");
+        myController.setAsynchTask(true);
+		myController.loadNotification();
         Intent intent = new Intent(Main.this,OnlineService.class);
         startService(intent);
         Global.getLang(this);
