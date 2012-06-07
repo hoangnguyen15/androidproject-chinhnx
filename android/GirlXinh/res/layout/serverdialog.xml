@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dip" android:gravity="right"
+    android:layout_height="210dip"
+    android:orientation="vertical" >
+
+    <TextView android:layout_width="fill_parent" android:layout_height="40dip"
+        android:id="@+id/txttitle" android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="12pt" android:text="tit"/>
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="120dip"
+	    >
+	    <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
+	        android:id="@+id/img"
+	        android:layout_weight="0.5" android:layout_margin="10dip"/>
+	    <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+	        android:layout_weight="1" android:orientation="vertical">
+	        <TextView android:layout_width="fill_parent" android:layout_height="0dip"
+		        android:id="@+id/txtcontent" android:text="abc def ghi"
+		        android:layout_weight="1" android:padding="10dip"/>
+	    </LinearLayout>
+	    
+	</LinearLayout>
+	<TextView android:layout_width="wrap_content" android:layout_height="40dip"
+        android:id="@+id/txtlink" android:text="Link"
+        android:textColor="#00f" android:gravity="center"
+        android:layout_marginRight="10dip" android:visibility="gone"/>
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="50dip"
+	    android:padding="4dip">
+	    <Button android:layout_width="0dip" android:layout_height="fill_parent"
+	        android:text="@string/web" android:id="@+id/btnweb"
+	        android:layout_weight="1" android:layout_marginLeft="20dip"/>
+	    <Button android:layout_width="0dip" android:layout_height="fill_parent"
+	        android:id="@+id/btnclose" android:text="@string/close"
+	        android:layout_weight="1" android:layout_marginRight="20dip"/>
+	</LinearLayout>
+</LinearLayout>

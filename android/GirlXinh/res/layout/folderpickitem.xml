@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent" android:layout_height="60dip">
+  
+  <LinearLayout android:layout_width="70dip" android:layout_height="60dip"
+  	android:background="@drawable/backfolder">
+	  <Button android:layout_width="50dip" android:layout_height="50dip"
+	  	android:id="@+id/btnopen" android:text="+" android:textSize="30dip"
+	  	android:background="@drawable/btnnc" android:textColor="#fff"
+	  	android:layout_marginTop="10dip" android:layout_marginLeft="10dip"
+	  	android:padding="0dip" android:focusable="true"/>
+  </LinearLayout>
+  
+  <TextView android:layout_width="fill_parent" android:layout_height="50dip"
+  	android:id="@+id/txtnamefolder" android:text="sd"
+  	android:gravity="center_vertical"
+  	android:layout_marginRight="20dip" android:layout_marginTop="10dip"
+  	android:background="@drawable/btnnc"
+  	android:ellipsize="marquee" android:textSize="18dip"
+  	android:focusable="true" android:paddingLeft="10dip"/>
+</LinearLayout>

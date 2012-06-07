@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<LinearLayout android:id="@+id/layout_g_title"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:background="@drawable/toppanel" android:paddingLeft="20dip"
+		android:orientation="vertical" android:layout_alignParentTop="true"
+		android:gravity="center_vertical">
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/title_list_follow"
+			android:textColor="#fff" android:textStyle="bold" android:textSize="16dip"
+			android:gravity="center_vertical" />
+	</LinearLayout>
+
+	<ListView android:layout_width="fill_parent" android:layout_weight="2"
+		android:layout_height="0dip" android:id="@+id/lst_follow" 
+		android:listSelector="@drawable/listselector"
+		android:focusable="true"/>
+		
+	<com.krazevina.objects.KHorizontalScrollView android:padding="0dip"
+		android:id="@+id/layout_menu" android:layout_width="fill_parent"
+		android:layout_height="57dip" android:fadingEdge="none" android:scrollbars="none"
+		android:layout_alignBottom="@+id/ksv" android:background="@drawable/bottompanel"
+		>
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="57dip">
+			<LinearLayout android:layout_width="320dip"	android:layout_height="fill_parent" 
+				android:orientation="vertical" android:padding="0dip" android:id="@+id/m1">
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="12dip"
+					android:layout_height="fill_parent">
+				    <Button android:layout_width="73dip" android:layout_height="fill_parent"
+						android:focusable="false" android:layout_marginLeft="8dip"
+						android:background="#00000000" android:drawableTop="@drawable/g_follow_hi"
+						android:text="@string/imgsfollow" android:textSize="6pt"
+						android:gravity="center" android:textColor="#f00"/>
+					<LinearLayout android:layout_width="1px" android:layout_height="fill_parent"
+					    android:background="#f00" android:layout_marginBottom="7dip"
+					    android:layout_marginTop="3dip"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:drawableTop="@drawable/moibtn"
+						android:background="#00000000" android:text="@string/sortnew"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:drawableTop="@drawable/btnrandom"
+						android:text="@string/sortrandom" android:gravity="center"
+						android:textColor="#fff" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:textSize="5pt"
+						android:text="@string/sortuser" android:drawableTop="@drawable/btndanhsach"
+						android:textColor="#fff" android:gravity="center"
+						android:focusable="false" android:layout_weight="1"/>
+				</LinearLayout>
+			</LinearLayout>
+			
+			
+			<LinearLayout android:layout_width="320dip" android:id="@+id/m2"
+				android:layout_height="93dip" android:orientation="vertical"
+				 android:padding="0dip">
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="12dip"
+					android:layout_height="fill_parent">
+					<Button android:layout_width="73dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/option"
+						android:drawableTop="@drawable/iconsettingshl"
+						android:layout_marginLeft="8dip"
+						android:textColor="#f00" android:gravity="center"
+						android:id="@+id/txt" android:focusable="false"
+						android:textSize="5pt"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/account"
+						android:textColor="#fff" android:gravity="center"
+						android:id="@+id/btnacc" android:drawableTop="@drawable/btnme"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/setting"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnsetting"
+						android:id="@+id/btnsetting"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/list"
+						android:textColor="#f00" android:id="@+id/btnlist"
+						android:gravity="center" android:drawableTop="@drawable/g_follow_hi"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/btn_all"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnall"
+						android:visibility="gone" android:id="@+id/btnall"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/myimgs"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnme"
+						android:visibility="gone" android:id="@+id/btnmyimg"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/imgfollow"
+						android:textColor="#fff" android:visibility="gone"
+						android:drawableTop="@drawable/btnfollow"
+						android:gravity="center" android:id="@+id/btnimgfollow"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+					
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</com.krazevina.objects.KHorizontalScrollView>
+</LinearLayout>

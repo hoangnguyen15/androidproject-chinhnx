@@ -1,0 +1,372 @@
+com.krazevina.beautifulgirl.Active:
+    android.app.ProgressDialog pg
+    java.lang.String response
+com.krazevina.beautifulgirl.GifActivity:
+    62:71:public static byte[] convertInputStreamToByteArray(java.io.InputStream)
+com.krazevina.beautifulgirl.Info:
+    android.app.ProgressDialog pg
+    java.lang.String response
+    boolean flag_logout
+com.krazevina.beautifulgirl.Intro:
+    android.widget.LinearLayout layout_intro_root
+com.krazevina.beautifulgirl.Login:
+    java.lang.String logout
+com.krazevina.beautifulgirl.Main:
+    protected static final int PHOTO_PICKED
+    protected static final int RETRY
+    public static final int LOGIN
+    protected static final int MENU
+    protected static final int SETTING
+    protected static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE
+    android.widget.LinearLayout layout_image1
+    android.widget.LinearLayout layout_image2
+    public static boolean getbydate
+    java.lang.Thread checknet
+    java.lang.Thread checktimeout
+    public android.app.ProgressDialog pr
+    int view
+    779:779:int dippx(int)
+    991:994:void scansd()
+com.krazevina.beautifulgirl.MainSearch:
+    protected static final int PHOTO_PICKED
+    protected static final int RETRY
+    public static final int LOGIN
+    protected static final int MENU
+    protected static final int SETTING
+    android.widget.LinearLayout layout_image1
+    android.widget.LinearLayout layout_image2
+    public static boolean getbydate
+    com.krazevina.webservice.CallWebService call
+    java.lang.String response
+    public static int menuViewInd
+    com.krazevina.objects.Users users
+    com.krazevina.objects.User user
+    android.app.ProgressDialog pg
+    java.lang.String userlist
+    java.lang.Thread checknet
+    java.lang.Thread checktimeout
+    android.app.Dialog exitDialog
+    252:252:int dippx(int)
+    297:298:void postslide(int)
+com.krazevina.beautifulgirl.MainSearch$UserAdapter
+com.krazevina.beautifulgirl.MainSearch$UserAdapter$ViewHolder
+com.krazevina.beautifulgirl.NoConnect:
+    protected static final int PHOTO_PICKED
+    boolean flag_logout
+com.krazevina.beautifulgirl.R
+com.krazevina.beautifulgirl.R$anim
+com.krazevina.beautifulgirl.R$array
+com.krazevina.beautifulgirl.R$attr
+com.krazevina.beautifulgirl.R$color
+com.krazevina.beautifulgirl.R$drawable
+com.krazevina.beautifulgirl.R$id
+com.krazevina.beautifulgirl.R$layout
+com.krazevina.beautifulgirl.R$string
+com.krazevina.beautifulgirl.R$style
+com.krazevina.beautifulgirl.Setting:
+    protected static final int PHOTO_PICKED
+com.krazevina.beautifulgirl.Single:
+    protected static final int PHOTO_PICKED
+com.krazevina.beautifulgirl.Upload:
+    protected static final int PHOTO_PICKED
+com.krazevina.objects.CView:
+    public static final int IMAGE_TYPE_UNKNOWN
+    public static final int IMAGE_TYPE_STATIC
+    public static final int IMAGE_TYPE_DYNAMIC
+    public static final int DECODE_STATUS_UNDECODE
+    public static final int DECODE_STATUS_DECODING
+    public static final int DECODE_STATUS_DECODED
+    int frame
+    107:109:public void setGif(int)
+    118:127:public void setGif(int,android.graphics.Bitmap)
+    237:240:public void stop()
+com.krazevina.objects.Decoder:
+    public static final int STATUS_OK
+    public static final int STATUS_FORMAT_ERROR
+    public static final int STATUS_OPEN_ERROR
+    protected static final int MAX_STACK_SIZE
+    99:99:public android.graphics.Bitmap getBitmap()
+    108:108:public int getLoopCount()
+com.krazevina.objects.Follows:
+    26:32:public void add(com.krazevina.objects.Follows)
+com.krazevina.objects.Global:
+    public static android.graphics.Bitmap img_upload
+com.krazevina.objects.Image:
+    176:177:public android.graphics.Bitmap getImgFromSD()
+com.krazevina.objects.ImageDownloader:
+    62:90:static android.graphics.Bitmap loadPhotoBitmap(java.net.URL)
+    94:99:private static void copy(java.io.InputStream,java.io.OutputStream)
+    102:109:private static void closeStream(java.io.Closeable)
+com.krazevina.objects.Images:
+    48:48:public int getCount1()
+    51:51:public int getCount2()
+    59:59:public com.krazevina.objects.Image getItem1AtPosition(int)
+    63:63:public com.krazevina.objects.Image getItem2AtPosition(int)
+    115:121:public void updateFav(android.content.Context)
+com.krazevina.objects.ImgItem:
+    52:66:public void update()
+com.krazevina.objects.ImgKSVItem
+com.krazevina.objects.KSV:
+    public static final int RANDOM
+    public static final int TOP
+    public static final int DOWNLOADED
+    public static final int UPLOADED
+    public static final int FAVORITED
+    public static final int ALBUM
+    public static final int SEARCHNEW
+    public static final int FOLLOWID
+    public static final int HOT
+    public static final int FOLLOWNEW
+    public static final int FOLLOWRAND
+    public static final int SEARCHHOT
+    public static final int SEARCHTOP
+    int leftCurrentIndex
+    int rightCurrentIndex
+    float top
+    float vW
+    float vH
+    int firstonscr1
+    int firstonscr2
+    223:223:int findFirstOnScreen(int)
+    286:286:public int getMinPos()
+com.krazevina.objects.KSV$Fling:
+    int firsL
+    int firsR
+    int last
+com.krazevina.objects.KSV$LoadImg:
+    boolean insert1
+    android.widget.LinearLayout$LayoutParams lp
+    com.krazevina.objects.KImageView imv
+com.krazevina.objects.KSV11
+com.krazevina.objects.KSV11$1
+com.krazevina.objects.KSV11$Fling
+com.krazevina.objects.KSV11$LoadImg
+com.krazevina.objects.KSV11$LoadImg$1
+com.krazevina.objects.KSV11$LoadImgsDown
+com.krazevina.objects.KSV11$LoadImgsDown$1
+com.krazevina.objects.KSV11$LoadImgsDown$2
+com.krazevina.objects.KSV11$LoadImgsDown$3
+com.krazevina.objects.KSV11$LoadImgsDown$4
+com.krazevina.objects.KSV11$TimeOut
+com.krazevina.objects.KSV11$TimeOut$1
+com.krazevina.objects.Params
+com.krazevina.objects.SingleView:
+    public static final int RANDOM
+    public static final int TOP
+    public static final int DOWNLOADED
+    public static final int UPLOADED
+    public static final int FAVORITED
+    public static final int ALBUM
+    public static final int SEARCHNEW
+    public static final int FOLLOWID
+    public static final int HOT
+    public static final int FOLLOWNEW
+    public static final int FOLLOWRAND
+    public static final int SEARCHHOT
+    public static final int SEARCHTOP
+    static android.graphics.Paint p
+    float downpx
+    float downpy
+    float scalespace
+    int slidepos
+    706:710:public void moveTo(int)
+com.krazevina.objects.SingleView$LoadImgsDown:
+    com.krazevina.objects.ImgItem it
+com.krazevina.objects.Users:
+    26:32:public void add(com.krazevina.objects.Users)
+com.krazevina.objects.sqlite:
+    private static final java.lang.String DATABASE_NAME
+    private static final int DATABASE_VERSION
+    public static final java.lang.String CREATE_TABLE_THUMB
+    public static final java.lang.String CREATE_TABLE_IMG
+    public static final java.lang.String CREATE_TABLE_IMG_UP
+    public static final java.lang.String CREATE_TABLE_FAVOR
+    public static final java.lang.String CREATE_TABLE_FOLLOW
+    public static final java.lang.String CREATE_TABLE_USER_LIST
+    public static final java.lang.String CREATE_TABLE_USER
+    public static final java.lang.String INSERT_TABLE_USER
+    83:84:public java.lang.String getKey()
+    88:89:public void setKey(java.lang.String)
+    195:208:public java.lang.String getUploadName()
+    213:214:public void upload(java.lang.String)
+    233:243:public void unfavor(com.krazevina.objects.Image)
+    401:401:public static java.lang.String getThumb(int)
+    440:448:public boolean checkImg(int)
+    453:461:public boolean checkThumb(int)
+    550:554:public java.lang.String getLogout()
+    741:743:public void recycle()
+com.krazevina.webservice.CallWebService:
+    private static final java.lang.String URL
+    com.krazevina.objects.Params params
+    87:110:public java.lang.String serviceImageRate(int)
+    270:297:public java.lang.String serviceImageDate1()
+    580:602:public java.lang.String logout(java.lang.String)
+org.kobjects.base64.Base64:
+    96:111:static int decode(char)
+    121:128:public static byte[] decode(java.lang.String)
+    133:160:public static void decode(java.lang.String,java.io.OutputStream)
+org.kobjects.crypt.Crypt
+org.kobjects.io.BoundInputStream
+org.kobjects.io.LookAheadReader
+org.kobjects.isodate.IsoDate
+org.kobjects.mime.Decoder
+org.kobjects.pim.PimField
+org.kobjects.pim.PimItem
+org.kobjects.pim.PimParser
+org.kobjects.pim.PimWriter
+org.kobjects.pim.VCard
+org.kobjects.rss.RssReader
+org.kobjects.util.ChainedRuntimeException
+org.kobjects.util.Csv
+org.kobjects.util.SingleEnumeration
+org.kobjects.util.Strings
+org.kobjects.util.Util
+org.kobjects.xml.XmlReader
+org.kobjects.xmlrpc.Driver
+org.kobjects.xmlrpc.XmlRpcParser
+org.ksoap2.HeaderProperty:
+    19:20:public void setKey(java.lang.String)
+    25:26:public void setValue(java.lang.String)
+org.ksoap2.SoapEnvelope:
+    public static final int VER10
+    public static final int VER11
+    public static final int VER12
+    public static final java.lang.String ENV2003
+    public static final java.lang.String ENC2003
+    public static final java.lang.String ENV
+    public static final java.lang.String ENC
+    public static final java.lang.String XSD
+    public static final java.lang.String XSI
+    public static final java.lang.String XSD1999
+    public static final java.lang.String XSI1999
+org.ksoap2.SoapFault:
+    private static final long serialVersionUID
+    88:100:public void write(org.xmlpull.v1.XmlSerializer)
+org.ksoap2.SoapFault12:
+    private static final long serialVersionUID
+    107:134:public void write(org.xmlpull.v1.XmlSerializer)
+org.ksoap2.serialization.AttributeContainer:
+    35:36:public java.lang.String getAttributeAsString(int)
+    45:47:public java.lang.Object getAttribute(java.lang.String)
+    56:61:public java.lang.String getAttributeAsString(java.lang.String)
+    101:105:public java.lang.Object getAttributeSafelyAsString(java.lang.String)
+    176:179:public void addAttributeIfValue(java.lang.String,java.lang.Object)
+    197:200:public void addAttributeIfValue(org.ksoap2.serialization.AttributeInfo)
+org.ksoap2.serialization.MarshalBase64
+org.ksoap2.serialization.MarshalDate
+org.ksoap2.serialization.MarshalFloat
+org.ksoap2.serialization.MarshalHashtable
+org.ksoap2.serialization.MarshalHashtable$ItemSoapObject
+org.ksoap2.serialization.NullSoapObject
+org.ksoap2.serialization.PropertyInfo:
+    public static final int TRANSIENT
+    public static final int MULTI_REF
+    public static final int REF_ONLY
+    82:86:public void clear()
+    93:93:public org.ksoap2.serialization.PropertyInfo getElementType()
+    102:103:public void setElementType(org.ksoap2.serialization.PropertyInfo)
+    110:110:public int getFlags()
+    119:120:public void setFlags(int)
+    127:127:public boolean isMultiRef()
+    136:137:public void setMultiRef(boolean)
+    178:178:public java.lang.Object getType()
+org.ksoap2.serialization.SoapObject:
+    148:149:public java.lang.String getPropertyAsString(int)
+    173:177:public java.lang.String getPropertyAsString(java.lang.String)
+    198:202:public java.lang.Object getPropertySafely(java.lang.String)
+    214:218:public java.lang.String getPropertySafelyAsString(java.lang.String)
+    226:226:public java.lang.Object safeGetProperty(java.lang.String)
+    237:241:public java.lang.Object getPropertySafely(java.lang.String,java.lang.Object)
+    257:261:public java.lang.String getPropertySafelyAsString(java.lang.String,java.lang.Object)
+    268:268:public java.lang.Object safeGetProperty(java.lang.String,java.lang.Object)
+    376:379:public org.ksoap2.serialization.SoapObject addPropertyIfValue(java.lang.String,java.lang.Object)
+    391:393:public org.ksoap2.serialization.SoapObject addProperty(org.ksoap2.serialization.PropertyInfo,java.lang.Object)
+    404:407:public org.ksoap2.serialization.SoapObject addPropertyIfValue(org.ksoap2.serialization.PropertyInfo,java.lang.Object)
+    427:431:public org.ksoap2.serialization.SoapObject addPropertyIfValue(org.ksoap2.serialization.PropertyInfo)
+    442:443:public org.ksoap2.serialization.SoapObject addSoapObject(org.ksoap2.serialization.SoapObject)
+org.ksoap2.serialization.SoapSerializationEnvelope:
+    protected static final int QNAME_TYPE
+    protected static final int QNAME_NAMESPACE
+    protected static final int QNAME_MARSHAL
+    private static final java.lang.String ANY_TYPE_LABEL
+    private static final java.lang.String ARRAY_MAPPING_NAME
+    private static final java.lang.String NULL_LABEL
+    private static final java.lang.String NIL_LABEL
+    private static final java.lang.String HREF_LABEL
+    private static final java.lang.String ID_LABEL
+    private static final java.lang.String ROOT_LABEL
+    private static final java.lang.String TYPE_LABEL
+    private static final java.lang.String ITEM_LABEL
+    private static final java.lang.String ARRAY_TYPE_LABEL
+    103:103:public boolean isAddAdornments()
+    112:113:public void setAddAdornments(boolean)
+    122:125:public void setBodyOutEmpty(boolean)
+    552:553:public void addTemplate(org.ksoap2.serialization.SoapObject)
+    590:591:public java.lang.Object getResult()
+org.ksoap2.transport.AndroidHttpTransport
+org.ksoap2.transport.AndroidServiceConnection
+org.ksoap2.transport.HttpTransportSE:
+    76:77:public HttpTransportSE(java.lang.String,int)
+    80:81:public HttpTransportSE(java.net.Proxy,java.lang.String,int)
+    194:194:public org.ksoap2.transport.ServiceConnection getConnection()
+    203:211:public java.lang.String getHost()
+    216:224:public int getPort()
+    229:237:public java.lang.String getPath()
+org.ksoap2.transport.HttpsServiceConnectionSE
+org.ksoap2.transport.HttpsTransportSE
+org.ksoap2.transport.KeepAliveHttpsTransportSE
+org.ksoap2.transport.KeepAliveHttpsTransportSE$1
+org.ksoap2.transport.ServiceConnection:
+    public static final int DEFAULT_TIMEOUT
+    public abstract java.lang.String getHost()
+    public abstract int getPort()
+    public abstract java.lang.String getPath()
+org.ksoap2.transport.ServiceConnectionSE:
+    47:48:public ServiceConnectionSE(java.lang.String)
+    51:52:public ServiceConnectionSE(java.net.Proxy,java.lang.String)
+    61:62:public ServiceConnectionSE(java.lang.String,int)
+    121:121:public java.lang.String getHost()
+    125:125:public int getPort()
+    129:129:public java.lang.String getPath()
+org.ksoap2.transport.Transport:
+    65:68:public Transport(java.lang.String,int)
+    83:87:public Transport(java.net.Proxy,java.lang.String,int)
+    122:123:public void setUrl(java.lang.String)
+    133:134:public void setXmlVersionTag(java.lang.String)
+    140:140:public void reset()
+    public abstract java.lang.String getHost()
+    public abstract int getPort()
+    public abstract java.lang.String getPath()
+org.kxml2.io.KXmlParser:
+    private static final java.lang.String UNEXPECTED_EOF
+    private static final java.lang.String ILLEGAL_TYPE
+    private static final int LEGACY
+    private static final int XML_DECL
+    1436:1447:public void skipSubTree()
+org.kxml2.kdom.Document
+org.kxml2.kdom.Element:
+    59:61:public void clear()
+    102:108:public java.lang.String getAttributeValue(java.lang.String,java.lang.String)
+    117:124:public org.kxml2.kdom.Node getRoot()
+    146:152:public java.lang.String getNamespaceUri(java.lang.String)
+    161:161:public int getNamespaceCount()
+    178:178:public org.kxml2.kdom.Node getParent()
+    280:281:public void setName(java.lang.String)
+    290:293:public void setNamespace(java.lang.String)
+org.kxml2.kdom.Node:
+    public static final int DOCUMENT
+    public static final int ELEMENT
+    public static final int TEXT
+    public static final int CDSECT
+    public static final int ENTITY_REF
+    public static final int IGNORABLE_WHITESPACE
+    public static final int PROCESSING_INSTRUCTION
+    public static final int COMMENT
+    public static final int DOCDECL
+    275:288:public void removeChild(int)
+org.kxml2.wap.Wbxml
+org.kxml2.wap.WbxmlParser
+org.kxml2.wap.WbxmlSerializer
+org.kxml2.wap.syncml.SyncML
+org.kxml2.wap.wml.Wml
+org.kxml2.wap.wv.WV

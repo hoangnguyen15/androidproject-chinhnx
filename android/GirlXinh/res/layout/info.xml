@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:gravity="center"
+	android:padding="10dip">
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:padding="0dip" android:layout_height="wrap_content"
+		android:orientation="vertical" android:background="@drawable/btn">
+		<TextView android:layout_width="fill_parent"
+			android:layout_marginTop="10dip" android:layout_height="wrap_content"
+			android:text="@string/info" android:gravity="center"
+			android:textSize="20dip" android:textStyle="bold" />
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:background="#f00" android:layout_marginTop="10dip"
+			android:layout_height="1dip" android:orientation="horizontal"
+			android:gravity="center_horizontal">
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginTop="20dip">
+			<TextView android:layout_width="160dip" android:textSize="16dip"
+				android:layout_height="wrap_content" android:text="@string/username"
+				android:gravity="right" />
+			<TextView android:id="@+id/edt_username" android:textSize="16dip"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textStyle="bold" android:layout_marginLeft="10dip" />
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_marginTop="20dip">
+			<TextView android:layout_width="160dip"
+				android:layout_height="wrap_content" android:text="@string/time"
+				android:gravity="right" android:textSize="16dip" />
+			<TextView android:id="@+id/edt_time" android:layout_width="fill_parent"
+				android:textSize="16dip" android:layout_height="wrap_content"
+				android:textStyle="bold" android:singleLine="true"
+				android:layout_marginLeft="10dip" />
+		</LinearLayout>
+
+		<TextView android:layout_width="fill_parent"
+			android:layout_marginTop="30dip" android:layout_height="wrap_content"
+			android:text="@string/needupgrade" android:gravity="center"
+			android:id="@+id/txtneed" android:textSize="16dip" />
+
+		<LinearLayout android:layout_width="fill_parent"
+			android:background="#f00" android:layout_marginTop="50dip"
+			android:layout_height="1dip" android:orientation="horizontal"
+			android:gravity="center_horizontal">
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_marginTop="5dip" android:layout_height="wrap_content"
+			android:orientation="horizontal" android:gravity="center">
+			<Button android:id="@+id/btn_change_info"
+				android:layout_weight="1" android:layout_width="0dip"
+				android:layout_height="wrap_content" android:text="@string/change_info"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" android:layout_margin="10dip"
+				android:textSize="12dip" />
+			<Button android:id="@+id/btn_upgrade" android:layout_width="0dip"
+				android:layout_height="wrap_content" android:text="@string/upgrade"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" android:layout_weight="1"
+				android:layout_marginRight="10dip" android:textSize="12dip"
+				android:layout_marginBottom="10dip" android:layout_marginTop="10dip"
+				android:layout_marginLeft="0dip" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_marginTop="5dip" android:layout_height="wrap_content"
+			android:orientation="horizontal" android:gravity="center"
+			android:padding="10dip">
+			<Button android:id="@+id/btn_relogin" android:layout_width="0dip"
+				android:layout_height="wrap_content" android:text="@string/mn_logout"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" android:layout_weight="1"
+				android:textSize="12dip"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

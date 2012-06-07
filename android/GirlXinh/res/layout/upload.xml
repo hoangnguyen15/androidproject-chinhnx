@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	
+	<ImageView android:id="@+id/img_upload" android:layout_width="fill_parent"
+		android:layout_height="fill_parent" />
+		
+	<LinearLayout android:id="@+id/layout_nameimg" android:layout_alignParentTop="true" 
+		android:layout_width="fill_parent"
+		android:layout_height="45dip" android:background="@drawable/toppanel"
+		android:padding="0dip"
+		android:gravity="center">
+		<TextView android:layout_width="0dip" android:layout_height="fill_parent"
+			android:layout_weight="2" android:layout_marginBottom="5dip"
+			android:layout_marginLeft="20dip" android:layout_marginTop="5dip"
+			android:id="@+id/txt_nameimg"
+			android:textColor="#fff" android:textStyle="bold"
+			android:textSize="16dip" android:gravity="center_vertical"/>
+	</LinearLayout>
+	
+	<RelativeLayout android:id="@+id/layout_menu_upload"
+		android:layout_width="fill_parent" android:layout_height="57dip"
+		android:layout_alignParentBottom="true">
+		<!-- OLD -->
+
+
+		<!--
+			<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="52dip" android:orientation="horizontal"
+			android:gravity="center_vertical|center_horizontal"> <Button
+			android:layout_width="0dip" android:layout_height="fill_parent"
+			android:id="@+id/btn_ok_upload" android:layout_weight="1"
+			android:background="@drawable/btn_ok"
+			android:gravity="center_vertical|center_horizontal" /> <Button
+			android:layout_width="0dip" android:layout_height="fill_parent"
+			android:id="@+id/btn_rorate" android:layout_weight="1"
+			android:background="@drawable/btn_rotate"
+			android:gravity="center_vertical|center_horizontal" /> <Button
+			android:layout_width="0dip" android:layout_height="fill_parent"
+			android:id="@+id/btn_reup" android:layout_weight="1"
+			android:background="@drawable/btn_reup"
+			android:gravity="center_vertical|center_horizontal" /> <Button
+			android:layout_width="0dip" android:layout_height="fill_parent"
+			android:id="@+id/btn_cancel_upload" android:layout_weight="1"
+			android:background="@drawable/btn_cancel"
+			android:gravity="center_vertical|center_horizontal" />
+			</LinearLayout>
+		-->
+
+
+		<!-- NEW -->
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="57dip"
+			android:orientation="vertical" android:padding="0dip"
+			 android:background="@drawable/bottompanelnoarrow">
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:orientation="horizontal"
+				android:layout_marginTop="12dip">
+				
+				<Button android:id="@+id/btn_details" android:layout_width="73dip"
+				    android:layout_height="fill_parent" android:drawableTop="@drawable/btninfo"
+				    android:background="#00000000" android:layout_marginLeft="8dip"
+					android:textSize="6pt" android:text="@string/details"
+					android:gravity="center" android:textColor="#fff"/>
+				<LinearLayout android:layout_width="1px" android:layout_height="fill_parent"
+				    android:layout_marginBottom="3dip" android:background="#f00"/>
+				
+				<Button android:layout_width="0dip" android:layout_height="fill_parent"
+					android:id="@+id/btn_rorate" android:layout_weight="1"
+					android:drawableTop="@drawable/btnrotate"
+					android:text="@string/rotate"
+					android:textSize="5pt" android:textColor="#fff"
+					android:background="#00000000"  />
+				<Button android:layout_width="0dip" android:layout_height="fill_parent"
+					android:id="@+id/btn_ok_upload" 
+					android:layout_weight="1"
+					android:drawableTop="@drawable/btnrecaptureimage"
+					android:text="@string/upload"
+					android:textSize="5pt" android:textStyle="bold" android:textColor="#fff"
+					android:background="#00000000"/>
+				<Button android:layout_width="0dip" android:layout_height="fill_parent"
+					android:id="@+id/btn_reup" android:layout_weight="1" android:drawableTop="@drawable/btnupload"
+					android:text="@string/reup"
+					android:textSize="5pt" android:textColor="#fff"
+					android:background="#00000000"  />
+			</LinearLayout>
+			
+			<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="44dip" android:gravity="center">
+					
+				</LinearLayout>
+				
+		</LinearLayout>
+	</RelativeLayout>
+</RelativeLayout>
