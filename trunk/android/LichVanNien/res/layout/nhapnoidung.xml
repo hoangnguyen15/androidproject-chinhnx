@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="@drawable/bg_dialog_date"
+  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+ 
+  android:id="@+id/content_root">  
+  <TextView
+  	android:layout_width="fill_parent"
+		android:layout_height="wrap_content"	
+		android:textColor="#f1de9a"
+	    android:height="150px"	
+	    android:textStyle="bold"
+	    android:paddingTop="35px"		
+		android:text="Tieu de :"
+		android:gravity="left"		
+		android:paddingLeft="15px"
+		android:textSize="8pt"
+		/>	
+		 <TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="80px"
+		android:layout_marginLeft="13px"		
+		android:gravity="bottom"
+		
+		android:layout_marginTop="10px"
+		android:orientation="horizontal">
+		<TableRow>
+		<EditText
+			android:id="@+id/solar_date"
+			android:gravity="center"			
+			android:background="#fff"
+			android:textSize="12pt"	
+			android:paddingLeft="5px"
+			android:width="290px"
+			android:height="30px"
+			
+			android:textColor="#000"
+			 />	
+		
+		</TableRow>		
+	
+	</TableLayout>   
+	 <TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="150px"
+		android:layout_marginLeft="13px"		
+		android:gravity="bottom"
+		
+		android:layout_marginTop="90px"
+		android:orientation="horizontal">
+		<TextView
+		android:text="Noi Dung :"
+		android:textColor="#f1de9a"
+		android:textStyle="bold"
+		android:gravity="left"
+		
+		android:textSize="8pt"/>
+		<TableRow>
+		<EditText
+			android:id="@+id/noi_dung"
+			android:gravity="center"			
+			android:background="#fff"
+			android:textSize="12pt"	
+			android:paddingLeft="5px"
+			android:width="290px"
+			android:height="250px"
+
+			android:textColor="#000"
+			 />	
+		
+		</TableRow>		
+	
+	</TableLayout>   
+	
+	 <TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="bottom"
+		android:layout_marginTop="260px"
+		android:orientation="horizontal">
+		<TableRow
+		
+			android:paddingLeft="15px">
+		<Button
+			android:id="@+id/set"
+			android:text="Chọn"
+			android:textColor="#c17601"
+			android:background="@drawable/button_dialog1"
+			android:width="10px" 
+			android:paddingRight="5px"
+			/>		
+		<Button
+			android:id="@+id/cancel"
+			android:textColor="#c17601"
+			android:text="Hủy"
+			android:background="@drawable/button_dialog1"
+			android:width="10px"/>	
+		</TableRow>			
+	</TableLayout>	
+</RelativeLayout>

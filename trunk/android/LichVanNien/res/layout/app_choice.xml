@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="80px"    
+    android:id="@+id/choice_root"
+    android:background="@drawable/list_item">    
+    <TextView        
+       android:text="Bật/Tắt cuộc hẹn"
+       android:id="@+id/txt_on_of_app"
+       android:textSize="20px"
+       android:layout_width="255px"
+       android:layout_height="wrap_content"    
+       android:layout_marginTop="15px"
+       android:textColor="#f1de9a"   
+         />
+      <ToggleButton
+     	android:id="@+id/app_choice_togbt"
+     	android:textOn="Bật"
+     	android:textOff="Tắt"
+     	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_marginTop="8px">
+     </ToggleButton>
+</LinearLayout>
