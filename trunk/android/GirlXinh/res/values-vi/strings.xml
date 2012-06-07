@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Gái Xinh Việt Nam</string>
+	<string name="btn_all">Tất cả</string>
+	<string name="banned">Tài khoản bị khóa.</string>
+	<string name="btn_retry">Thử lại</string>
+	<string name="btn_search">Tìm kiếm</string>
+	<string name="btn_taked">Ảnh tự chụp</string>
+	<string name="btn_downloaded">Đã tải</string>
+	<string name="btn_gallery">Bộ sưu tập</string>
+	<string name="btn_youralbum">Album của bạn</string>
+	<string name="noconnect">Không có kết nối Internet</string>
+	<string name="favorited">Đã thêm ảnh yêu thích.</string>
+	<string name="unfavorited">Đã bỏ yêu thích.</string>
+	<string name="action">Tùy chọn</string>
+	<string name="empty">Không có ảnh nào.</string>
+	<string name="emptyfollow">Bạn chưa quan tâm ai.</string>
+	<string name="back">Thư mục cha</string>
+	<string name="btn_back">Quay lại</string>
+	<string name="search">Tìm kiếm</string>
+	<string name="err">Không thể mở file.</string>
+	<string name="account">Tài khoản</string>
+	<string name="setting">Tùy chỉnh</string>
+	<string name="option">Cài đặt</string>
+	<string name="list">Danh sách</string>
+	<string name="undefine">Không tên</string>
+	<string name="filename">Tên ảnh</string>
+	<string name="user">Người dùng</string>
+	<string name="random">Ngẫu nhiên</string>
+	<string name="searchhint">Nhập tên người dùng</string>
+	<string name="needsd">Bạn cần gắn thẻ nhớ để chương trình hoạt động bình thường.</string>
+	<string name="sortnew">Xếp mới</string>
+	<string name="sortrandom">Xếp ngẫu nhiên</string>
+	<string name="needupdate">Ứng dụng đã có phiên bản mới.</string>
+	<string name="imagetoolarge">Ảnh quá lớn.</string>
+	<string name="sortuser">Xếp theo người dùng</string>
+	
+	<string name="quit">Thoát</string>
+	<string name="retry">Thử lại</string>
+	
+	<string name="followsortid">Xếp theo người dùng</string>
+	<string name="followsortnew">Sắp xếp theo thời gian</string>
+	<string name="followsortrand">Sắp xếp Ngẫu nhiên</string>
+	
+	<string name="scanning">Đang quét thẻ nhớ</string>
+
+	<string name="followed">Đã quan tâm</string>
+	<string name="uploader">Người đăng</string>
+	<string name="logedout">Bạn đã thoát tài khoản</string>
+	<string name="myimgs">Ảnh của bạn</string>
+	<string name="imgfollow">Ảnh quan tâm</string>
+	<string name="imgsfollow">Ảnh đã quan tâm</string>
+
+	<string name="suredelete">Xóa bộ nhớ tạm sẽ làm tăng thời gian khởi động phần
+		mềm.</string>
+	<string name="delete">Xóa</string>
+	<string name="outofdate">Hết hạn</string>
+	<string name="illegalcode">Mã không chính xác hoặc đã được sử dụng.</string>
+	<string name="legalcode">Mã chính xác, tài khoản của bạn đã có thể đăng
+		nhập.</string>
+	<string name="legalsms">Gửin tin nhắn thành công, tài khoản của bạn đã có
+		thể đăng nhập.</string>
+
+	<string name="userupload">Người đăng:</string>
+	<string name="loading">Đang tải...</string>
+
+	<string name="hintbrowse">Chọn thư mục bằng cách nhấn vào tên thư mục. \nMở
+		thư mục bằng nút + bên trái tên thư mục.</string>
+
+	<string name="general">Thông tin chung</string>
+	<string name="cache">Bộ nhớ tạm</string>
+	<string name="maxcache">Giới hạn bộ nhớ tạm (Mb)</string>
+	<string name="clear">Xóa</string>
+	<string name="reply">Phản hồi</string>
+	<string name="feedback">Gửi ý kiến đóng góp</string>
+	<string name="intro">Giới thiệu</string>
+	<string name="pleasewait">Vui lòng chờ giây lát...</string>
+
+	<string name="needlogin">Cần đăng nhập để thực hiện chức năng này.</string>
+	<string name="loginsucess">Bạn đã đăng nhập thành công.</string>
+	<string name="signup">Đăng kí</string>
+	<string name="phoneimgs">Ảnh trong máy</string>
+
+	<string name="change">Đổi</string>
+	<string name="directory">Thư mục mặc định</string>
+
+	<string name="saved">Đã lưu ảnh.</string>
+	<string name="info">Thông tin</string>
+	<string name="close">Đóng</string>
+	<string name="times">lần</string>
+	<string name="choosedirectory">Chọn thư mục</string>
+	<string name="choose">Chọn</string>
+	<string name="exit">Thoát</string>
+	<string name="confirmexit">Thoát chương trình?</string>
+	<string name="no">Không</string>
+	<string name="sdcard">Thẻ nhớ</string>
+	<string name="currentdirectory">Thư mục hiện tại</string>
+	<string name="confirm">Chọn thư mục </string>
+	<string name="downloading">Hãy chờ, đang tải ảnh gốc.</string>
+	<string name="root">Bạn đang ở thư mục gốc.</string>
+	<string name="sure">Chọn thư mục </string>
+	<string name="cantsave">Lỗi khi lưu ảnh.</string>
+	<string name="setwallpered">Đã thay ảnh nền.</string>
+	<string name="cantsetwallper">Lỗi khi thay ảnh nền.</string>
+	<string name="menu_share_intent">Chọn ứng dụng</string>
+	<string name="menu_cant_share">Không có ứng dụng phù hợp.</string>
+	<string name="title_selectfolder">Chọn thư mục</string>
+
+	<string name="uploaddate">Ngày đăng:</string>
+	<string name="measure">Kích thước:</string>
+	<string name="voted">Được ưa thích:</string>
+	<string name="days">ngày</string>
+	<string name="imgname">Tên ảnh:</string>
+	
+	<string-array name="actionarr">
+		<item>Lưu</item>
+		<item>Chọn làm ảnh nền</item>
+		<item>Chia sẻ</item>
+		<item>Đóng</item>
+	</string-array>
+	<string-array name="wallarr">
+		<item>Giữ nguyên kích thước</item>
+		<item>Ảnh vừa màn hình</item>
+		<item>Ảnh nền cuộn được</item>
+		<item>Ảnh nền cố định</item>
+	</string-array>
+
+	<string-array name="saveto">
+		<item>Lưu vào thư mục mặc định</item>
+		<item>Chọn thư mục lưu</item>
+	</string-array>
+
+	<string name="user_name">Tên đăng nhập</string>
+	<string name="username">Tên đăng nhập:</string>
+	<string name="register">Đăng ký</string>
+	<string name="login">Đăng nhập</string>
+	<string name="password">Mật khẩu</string>
+	<string name="re_password">Nhập lại Mật khẩu</string>
+	<string name="save_password">Lưu mật khẩu</string>
+	<string name="auto_login">Tự động đăng nhập</string>
+	<string name="waiting">Đang tải...</string>
+	<string name="info_title">Thông tin cá nhân</string>
+	<string name="accept_rule">Đồng ý các điều khoản đăng ký</string>
+
+	<string name="mn_edt_info">Chỉnh sửa thông tin</string>
+	<string name="mn_picload">Ảnh đã tải về</string>
+	<string name="download">Tải về</string>
+	<string name="mn_picup">Ảnh đã tải lên</string>
+	<string name="up">Đã tải lên</string>
+	<string name="mn_picfav">Ảnh ưa thích</string>
+	<string name="favorite">Ưa thích</string>
+	<string name="mn_upload">Tải ảnh lên</string>
+	<string name="mn_logout">Thoát tài khoản</string>
+
+	<string name="name">Họ và tên:</string>
+	<string name="email">Email:</string>
+	<string name="phone">Số điện thoại:</string>
+	<string name="yahoo">Nick yahoo:</string>
+	<string name="update">Cập nhật</string>
+	<string name="time">Thời hạn thành viên:</string>
+	<string name="change_info">Cập nhật thông tin</string>
+	<string name="change_pass">Đổi mật khẩu</string>
+
+	<string name="updated">Cập nhật thành công</string>
+	<string name="err_internet">Lỗi kết nối Internet.</string>
+	<string name="err_email">Email không đúng</string>
+	<string name="err_phone">Số điện thoại không đúng</string>
+
+
+	<string name="key">Mã đăng kí</string>
+	<string name="smsactive">Kích hoạt qua SMS</string>
+	<string name="codeactive">Kích hoạt bằng mã đăng kí</string>
+
+	<string name="cancel">Hủy</string>
+
+	<string name="putkeyhere">Nhập mã đăng kí</string>
+	<string name="needupgrade">Cần kích hoạt tài khoản</string>
+	<string name="sms">Lấy mã kích hoạt</string>
+	<string name="upgrade">Kích hoạt</string>
+	<string name="continuego">Tiếp tục</string>
+
+	<string name="oldpass">Mật khẩu cũ</string>
+	<string name="newpass">Mật khẩu mới</string>
+	<string name="notmatchpass">Mật khẩu không trùng nhau</string>
+	<string name="txt_search">Nhập tên người dùng vào ô tìm kiếm để tìm kiếm
+		những ảnh đã được tải lên bởi người dùng này.</string>
+	<string name = "dup_username">Tên đăng nhập đã có</string>
+	<string name = "reg_successful">Bạn đã đăng ký thành công</string>
+
+	<string name="logout_question">Bạn muốn thoát khỏi tài khoản này ?</string>
+	<string name="unfollow_question">Bạn không muốn quan tâm tài khoản này nữa ?</string>
+	<string name="yes">Có</string>
+	<string name="not_blank">Không được bỏ trống</string>
+	<string name="user_not_blank">Tên hoặc mật khẩu không được bỏ trống</string>
+	<string name="err_username">Tên đăng nhập chỉ được bao gồm các ký tự
+		[a-z,A-Z,0-9,-,_] và có độ dài từ 3 đến 15 ký tự.</string>
+
+	<string name="sms_sent">Đã gửi tin nhắn thành công.</string>
+	<string name="sms_fail">Gửi tin nhắn thất bại.</string>
+	<string name="sms_question">Để kích hoạt tài khoản bạn phải gửi SMS đến đầu số 8732 với phí là 15.000 VNĐ.</string>
+	<string name="err_loginacc">Tài khoản của bạn đang được đăng nhập bởi một máy khác. </string>
+	<string name="err_loginpass">Tên đăng nhập hoặc mật khẩu không đúng.</string>
+	<string name="err_accept_rule">Bạn phải đồng ý với các điều khoản đăng ký</string>
+
+	<string name="intro_title">Gái Xinh</string>
+	<string name="intro_address">Tầng 7,8 Lucky Building, 66 Trần Thái Tông, Cầu
+		Giấy, Hà Nội</string>
+	<string name="intro_text_tel">Gọi điện đến số:</string>
+	<string name="intro_tel">0435567810</string>
+	<string name="intro_tel_text">(+84)-43-556-7810</string>
+	<string name="intro_email">androidkraze@gmail.com</string>
+	<string name="intro_website">http://krazevina.com</string>
+	<string name="intro_copyright">© Developed by KrazeVina Inc - 2011</string>
+
+	<string name="moi">Mới</string>
+	<string name="hot">Hot</string>
+	<string name="top">Top</string>
+	
+	<string name="rotate">Xoay ảnh</string>
+	<string name="upload">Tải lên</string>
+	<string name="uploaded">Tải ảnh thành công</string>
+	<string name="uploadfail">Tải ảnh không thành công</string>
+	<string name="reup">Tải ảnh khác</string>
+	<string name="details">Chi tiết</string>
+	
+	<string name="g_acc">Tài khoản</string>
+	<string name="g_option">Tùy chỉnh</string>
+	<string name="g_list">Danh sách</string>
+	<string name="title_list_follow">Danh sách đã quan tâm</string>
+	<string name="warn_list_follow">Bạn chưa quan tâm tài khoản nào</string>
+	
+	<string name="title_rule">ĐIỀU KHOẢN SỬ DỤNG</string>
+	<string name="rule"> Khi đăng ký tài khoản, bạn nên cung cấp đầy đủ
+		thông tin về email, số điện thoại...Đây không phải là những thông tin
+		bắt buộc, nhưng khi có rủi ro, mất mát sau này, chúng tôi chỉ tiếp
+		nhận những trường hợp điền đúng và đầy đủ những thông tin trên.Những
+		trường hợp điền thiếu thông tin hoặc thông tin sai sự thật sẽ không
+		được giải quyết.Những thông tin này được dùng để làm căn cứ hỗ trợ
+		giải quyết.\n\n
+		Nghiêm cấm việc phát tán, truyền bá hay cổ vũ cho bất kỳ
+		hoạt động nào nhằm can thiệp, phá hoại phần mềm.\n\n
+		Khi phát hiện ra lỗi của phần mềm hoặc có bất cứ thắc mắc gì hãy gọi điện đến đường dây nóng của chúng tôi <b>043.556.7810</b> 
+		hoặc qua phần góp ý trong phần mềm.\n\n
+		Chúng tôi không chịu trách nhiệm về nguồn ảnh mà bạn đăng tải lên máy chủ của chúng tôi.\n\n
+		Tất cả những hình ảnh mà bạn đăng tải lên máy chủ đều phải qua kiểm duyệt của chúng tôi.\n
+	</string>
+	<string name="ffne">&gt;&gt;</string>
+	<string name="ffpr">&lt;&lt;</string>
+  	<string name="play">play</string>
+  	<string name="pause">pause</string>
+  	<string name="stop">stop</string>
+  	<string name="next_frame">next frame</string>
+  	<string name="prev_frame">prev frame</string>
+  	  	<string-array name="choosefrom">
+        <item >Gallery</item>
+        <item >Chụp ảnh</item>
+    </string-array>
+    <string name="choosefrom">Chọn ảnh tải lên từ:</string>
+</resources>

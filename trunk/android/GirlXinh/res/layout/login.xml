@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:padding="10dip"
+	android:gravity="center_vertical|center_horizontal">
+	<LinearLayout
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical" android:background="@drawable/btnnc"
+		>
+		<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="10dip"
+			android:layout_marginLeft="10dip" android:layout_marginRight="10dip"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/txt_username"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_marginLeft="10dip" android:text="@string/user_name"
+				android:textColor="#fff" android:textSize="14dip"/>
+			<EditText android:id="@+id/edt_username"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_margin="5dip" android:paddingLeft="5dip"
+				android:singleLine="true"/>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_marginLeft="10dip"
+			android:layout_height="wrap_content"  android:layout_marginRight="10dip"
+			android:orientation="vertical">
+			<TextView android:id="@+id/txt_password"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_marginLeft="10dip" android:text="@string/password"
+				android:textColor="#fff" android:textSize="14dip"/>
+			<EditText android:id="@+id/edt_password"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:layout_margin="5dip" android:paddingLeft="5dip"
+				android:password="true" android:singleLine="true"/>
+		</LinearLayout>
+
+		<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:visibility="gone">
+			<LinearLayout android:layout_width="0dip" android:layout_weight="1"
+				android:layout_height="wrap_content" android:gravity="center"
+				android:orientation="vertical">
+				<TextView android:layout_width="fill_parent" android:gravity="center"
+					android:layout_height="wrap_content"
+					android:text="@string/save_password" android:textColor="#fff"/>
+				<CheckBox android:id="@+id/chk_savepass"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:singleLine="true" />
+			</LinearLayout>
+	
+			<LinearLayout android:layout_width="0dip" android:layout_weight="1"
+				android:layout_height="wrap_content" android:gravity="center"
+				android:orientation="vertical">
+				<TextView android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:gravity="center"
+					android:text="@string/auto_login" android:textColor="#fff"/>
+				<CheckBox android:id="@+id/chk_autolog"
+					android:layout_width="wrap_content" android:layout_height="wrap_content"
+					android:singleLine="true" />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:layout_margin="10dip"
+			android:orientation="horizontal" android:gravity="center_vertical|center_horizontal">
+			<Button android:id="@+id/btn_login" android:layout_width="0dip"
+				android:layout_height="50dip" android:text="@string/login"
+				android:layout_marginRight="5dip" android:layout_weight="1"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" android:layout_marginLeft="5dip"/>
+			<Button android:id="@+id/btn_register" android:layout_width="0dip"
+				android:layout_weight="1" android:layout_marginRight="5dip"
+				android:layout_height="50dip" android:text="@string/register"
+				android:textColor="#fff" android:background="@drawable/btnnc"
+				android:layout_marginLeft="5dip" android:gravity="center_vertical|center_horizontal"/>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

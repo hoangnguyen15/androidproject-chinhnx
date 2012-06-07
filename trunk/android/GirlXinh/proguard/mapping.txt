@@ -1,0 +1,1916 @@
+com.krazevina.beautifulgirl.Accept_rule -> com.krazevina.beautifulgirl.Accept_rule:
+    android.widget.Button btn_exit -> a
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Active -> com.krazevina.beautifulgirl.Active:
+    android.widget.EditText edt_key -> a
+    android.widget.Button btn_upgrade -> b
+    android.os.Handler handler -> c
+    com.krazevina.webservice.CallWebService call -> d
+    android.widget.RadioButton rbsms -> e
+    android.widget.RadioButton rbcode -> f
+    android.app.ProgressDialog prog -> g
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+    void access$0(com.krazevina.beautifulgirl.Active,java.lang.String,java.lang.String) -> a
+com.krazevina.beautifulgirl.Active$1 -> com.krazevina.beautifulgirl.a:
+    com.krazevina.beautifulgirl.Active this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Active$2 -> com.krazevina.beautifulgirl.b:
+    com.krazevina.beautifulgirl.Active this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Active$3 -> com.krazevina.beautifulgirl.c:
+    com.krazevina.beautifulgirl.Active this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Active$checkCode -> com.krazevina.beautifulgirl.d:
+    com.krazevina.beautifulgirl.Active this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Active access$0(com.krazevina.beautifulgirl.Active$checkCode) -> a
+com.krazevina.beautifulgirl.Active$checkCode$1 -> com.krazevina.beautifulgirl.e:
+    com.krazevina.beautifulgirl.Active$checkCode this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Active$checkCode$2 -> com.krazevina.beautifulgirl.f:
+    com.krazevina.beautifulgirl.Active$checkCode this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Active$checkCode$3 -> com.krazevina.beautifulgirl.g:
+    com.krazevina.beautifulgirl.Active$checkCode this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Browse -> com.krazevina.beautifulgirl.Browse:
+    java.lang.String path -> a
+    android.widget.Button btnback -> b
+    android.widget.LinearLayout llbrow -> c
+    java.io.File curfile -> d
+    android.widget.TextView txtpath -> e
+    int i -> f
+    java.lang.String[] files -> g
+    android.view.LayoutInflater li -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void showfolder(java.io.File) -> a
+    void access$0(com.krazevina.beautifulgirl.Browse,java.io.File) -> a
+com.krazevina.beautifulgirl.Browse$1 -> com.krazevina.beautifulgirl.h:
+    com.krazevina.beautifulgirl.Browse this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Browse$2 -> com.krazevina.beautifulgirl.i:
+    int pos -> a
+    com.krazevina.beautifulgirl.Browse this$0 -> b
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Browse$3 -> com.krazevina.beautifulgirl.j:
+    int pos -> a
+    com.krazevina.beautifulgirl.Browse this$0 -> b
+    void onClick(android.view.View) -> onClick
+    com.krazevina.beautifulgirl.Browse access$0(com.krazevina.beautifulgirl.Browse$3) -> a
+com.krazevina.beautifulgirl.Browse$3$1 -> com.krazevina.beautifulgirl.k:
+    com.krazevina.beautifulgirl.Browse$3 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Browse$3$2 -> com.krazevina.beautifulgirl.l:
+    com.krazevina.beautifulgirl.Browse$3 this$1 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.ChangePassword -> com.krazevina.beautifulgirl.ChangePassword:
+    android.widget.Button btn_update -> a
+    android.widget.Button btn_cancel -> b
+    android.widget.EditText edt_oldpass -> c
+    android.widget.EditText edt_newpass -> d
+    android.widget.EditText edt_renewpass -> e
+    java.lang.String oldpass -> f
+    java.lang.String newpass -> g
+    java.lang.String renewpass -> h
+    android.os.Handler handler -> i
+    com.krazevina.webservice.CallWebService call -> j
+    android.app.ProgressDialog pg -> k
+    java.lang.String response -> l
+    boolean internet -> m
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.ChangePassword$changepass -> com.krazevina.beautifulgirl.m:
+    com.krazevina.beautifulgirl.ChangePassword this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.ChangePassword access$0(com.krazevina.beautifulgirl.ChangePassword$changepass) -> a
+com.krazevina.beautifulgirl.ChangePassword$changepass$1 -> com.krazevina.beautifulgirl.n:
+    com.krazevina.beautifulgirl.ChangePassword$changepass this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Editinfo -> com.krazevina.beautifulgirl.Editinfo:
+    android.widget.EditText edt_username -> a
+    android.widget.EditText edt_name -> b
+    android.widget.EditText edt_email -> c
+    android.widget.EditText edt_phone -> d
+    android.widget.EditText edt_yahoo -> e
+    android.widget.Button btn_update -> f
+    android.widget.Button btn_changepass -> g
+    java.lang.String username -> h
+    java.lang.String name -> i
+    java.lang.String email -> j
+    java.lang.String phone -> k
+    java.lang.String yahoo -> l
+    android.os.Handler handler -> m
+    android.app.ProgressDialog pg -> n
+    com.krazevina.webservice.CallWebService call -> o
+    java.lang.String response -> p
+    com.krazevina.objects.sqlite sql -> q
+    android.widget.LinearLayout m1 -> r
+    android.widget.LinearLayout m2 -> s
+    android.widget.Button btnacc -> t
+    android.widget.Button btnsetting -> u
+    android.widget.Button btnlist -> v
+    android.widget.Button btnall -> w
+    android.widget.Button btnmyimg -> x
+    android.widget.Button btnimgfollow -> y
+    android.widget.TextView btnlabel -> z
+    android.widget.LinearLayout prev -> A
+    com.krazevina.objects.KHorizontalScrollView layout_menu -> B
+    android.content.BroadcastReceiver prevReceiver -> K
+    boolean nextprev -> C
+    boolean statemenu -> D
+    android.view.MotionEvent downev -> E
+    boolean downed -> F
+    boolean dontcare -> G
+    float downx -> H
+    float downy -> I
+    boolean internet -> J
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    void onClick(android.view.View) -> onClick
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+com.krazevina.beautifulgirl.Editinfo$1 -> com.krazevina.beautifulgirl.o:
+    com.krazevina.beautifulgirl.Editinfo this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Editinfo$2 -> com.krazevina.beautifulgirl.p:
+    com.krazevina.beautifulgirl.Editinfo this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Editinfo$2$1 -> com.krazevina.beautifulgirl.q:
+    com.krazevina.beautifulgirl.Editinfo$2 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Editinfo$update -> com.krazevina.beautifulgirl.r:
+    com.krazevina.beautifulgirl.Editinfo this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Editinfo access$0(com.krazevina.beautifulgirl.Editinfo$update) -> a
+com.krazevina.beautifulgirl.Editinfo$update$1 -> com.krazevina.beautifulgirl.s:
+    com.krazevina.beautifulgirl.Editinfo$update this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.FollowList -> com.krazevina.beautifulgirl.FollowList:
+    android.widget.ListView lst_follow -> a
+    com.krazevina.objects.Follows follows -> b
+    com.krazevina.objects.Follow follow -> c
+    com.krazevina.webservice.CallWebService call -> d
+    android.os.Handler handler -> e
+    java.lang.String response -> f
+    android.app.ProgressDialog pg -> g
+    com.krazevina.objects.sqlite sql -> h
+    android.widget.Button btnacc -> i
+    android.widget.Button btnsetting -> j
+    android.widget.Button btnlist -> k
+    android.widget.Button btnall -> l
+    android.widget.Button btnmyimg -> m
+    android.widget.Button btnimgfollow -> n
+    android.widget.TextView btnlabel -> o
+    com.krazevina.objects.KHorizontalScrollView layout_menu -> p
+    android.widget.LinearLayout prev -> q
+    android.widget.LinearLayout m1 -> r
+    android.widget.LinearLayout m2 -> s
+    android.content.BroadcastReceiver prevReceiver -> C
+    boolean nextprev -> t
+    int pos -> u
+    boolean internet -> v
+    boolean statemenu -> w
+    android.view.MotionEvent downev -> x
+    boolean downed -> y
+    boolean dontcare -> z
+    float downx -> A
+    float downy -> B
+    void onCreate(android.os.Bundle) -> onCreate
+    void onDestroy() -> onDestroy
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    void onClick(android.view.View) -> onClick
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+com.krazevina.beautifulgirl.FollowList$1 -> com.krazevina.beautifulgirl.t:
+    com.krazevina.beautifulgirl.FollowList this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.FollowList$2 -> com.krazevina.beautifulgirl.u:
+    com.krazevina.beautifulgirl.FollowList this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.FollowList$2$1 -> com.krazevina.beautifulgirl.v:
+    com.krazevina.beautifulgirl.FollowList$2 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.FollowList$FollowAdapter -> com.krazevina.beautifulgirl.w:
+    android.view.LayoutInflater mInflater -> b
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter$ViewHolder mViewHolder -> c
+    com.krazevina.objects.Follows _follows -> d
+    int count -> e
+    com.krazevina.beautifulgirl.FollowList this$0 -> a
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    com.krazevina.beautifulgirl.FollowList access$0(com.krazevina.beautifulgirl.FollowList$FollowAdapter) -> a
+com.krazevina.beautifulgirl.FollowList$FollowAdapter$1 -> com.krazevina.beautifulgirl.x:
+    int p -> a
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter this$1 -> b
+    void onClick(android.view.View) -> onClick
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter access$0(com.krazevina.beautifulgirl.FollowList$FollowAdapter$1) -> a
+com.krazevina.beautifulgirl.FollowList$FollowAdapter$1$1 -> com.krazevina.beautifulgirl.y:
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter$1 this$2 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter$1 access$0(com.krazevina.beautifulgirl.FollowList$FollowAdapter$1$1) -> a
+com.krazevina.beautifulgirl.FollowList$FollowAdapter$1$1$1 -> com.krazevina.beautifulgirl.z:
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter$1$1 this$3 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.FollowList$FollowAdapter$2 -> com.krazevina.beautifulgirl.aa:
+    int p -> a
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter this$1 -> b
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.FollowList$FollowAdapter$ViewHolder -> com.krazevina.beautifulgirl.ab:
+    android.widget.LinearLayout mRoot -> a
+    android.widget.TextView mUsername -> b
+    android.widget.Button mBtnDel -> c
+    com.krazevina.beautifulgirl.FollowList$FollowAdapter this$1 -> d
+com.krazevina.beautifulgirl.FollowList$loadFollowList -> com.krazevina.beautifulgirl.ac:
+    com.krazevina.beautifulgirl.FollowList this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.FollowList access$0(com.krazevina.beautifulgirl.FollowList$loadFollowList) -> a
+com.krazevina.beautifulgirl.FollowList$loadFollowList$1 -> com.krazevina.beautifulgirl.ad:
+    com.krazevina.beautifulgirl.FollowList$loadFollowList this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.FollowList$loadFollowList$2 -> com.krazevina.beautifulgirl.ae:
+    com.krazevina.beautifulgirl.FollowList$loadFollowList this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.General -> com.krazevina.beautifulgirl.General:
+    android.widget.Button btn_setting -> a
+    android.widget.Button btn_list -> b
+    android.widget.EditText edt_username -> c
+    android.widget.EditText edt_email -> d
+    android.widget.EditText edt_phone -> e
+    android.widget.EditText edt_yahoo -> f
+    android.widget.Button btn_update -> g
+    android.widget.Button btn_changepass -> h
+    java.lang.String username -> i
+    java.lang.String name -> j
+    java.lang.String email -> k
+    java.lang.String phone -> l
+    java.lang.String yahoo -> m
+    android.os.Handler handler -> n
+    android.app.ProgressDialog pg -> o
+    com.krazevina.webservice.CallWebService call -> p
+    java.lang.String response -> q
+    boolean internet -> r
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.krazevina.beautifulgirl.General$update -> com.krazevina.beautifulgirl.af:
+    com.krazevina.beautifulgirl.General this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.General access$0(com.krazevina.beautifulgirl.General$update) -> a
+com.krazevina.beautifulgirl.General$update$1 -> com.krazevina.beautifulgirl.ag:
+    com.krazevina.beautifulgirl.General$update this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.GifActivity -> com.krazevina.beautifulgirl.GifActivity:
+    com.krazevina.objects.CView gifView -> a
+    android.widget.Button btnPlay -> b
+    android.widget.Button btnPause -> c
+    android.widget.Button btnPrevFrame -> d
+    android.widget.Button btnNextFrame -> e
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+com.krazevina.beautifulgirl.Info -> com.krazevina.beautifulgirl.Info:
+    android.widget.TextView edt_username -> a
+    android.widget.TextView edt_time -> b
+    android.widget.TextView txtneed -> c
+    android.widget.Button btn_upgrade -> d
+    android.widget.Button btn_change -> e
+    android.widget.Button btn_relogin -> f
+    android.os.Handler handler -> g
+    com.krazevina.webservice.CallWebService call -> h
+    com.krazevina.objects.sqlite sql -> i
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onDestroy() -> onDestroy
+com.krazevina.beautifulgirl.Intro -> com.krazevina.beautifulgirl.Intro:
+    android.widget.TextView intro_email -> a
+    android.widget.TextView intro_website -> b
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.krazevina.beautifulgirl.Login -> com.krazevina.beautifulgirl.Login:
+    android.widget.EditText edt_username -> a
+    android.widget.EditText edt_password -> b
+    android.widget.Button btn_login -> c
+    android.widget.Button btn_register -> d
+    android.widget.CheckBox chk_savepass -> e
+    android.widget.CheckBox chk_autolog -> f
+    com.krazevina.webservice.CallWebService call -> g
+    java.lang.String username -> h
+    java.lang.String password -> i
+    android.os.Handler handler -> j
+    android.app.ProgressDialog pg -> k
+    boolean isload -> l
+    java.lang.String response -> m
+    java.lang.String response_logout -> n
+    com.krazevina.objects.sqlite sql -> o
+    boolean flag_logout -> p
+    boolean flag_main -> q
+    boolean internet -> r
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onDestroy() -> onDestroy
+    boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
+com.krazevina.beautifulgirl.Login$1 -> com.krazevina.beautifulgirl.ah:
+    com.krazevina.beautifulgirl.Login this$0 -> a
+    void onCheckedChanged(android.widget.CompoundButton,boolean) -> onCheckedChanged
+com.krazevina.beautifulgirl.Login$login -> com.krazevina.beautifulgirl.ai:
+    com.krazevina.beautifulgirl.Login this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Login access$0(com.krazevina.beautifulgirl.Login$login) -> a
+com.krazevina.beautifulgirl.Login$login$1 -> com.krazevina.beautifulgirl.aj:
+    com.krazevina.beautifulgirl.Login$login this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main -> com.krazevina.beautifulgirl.Main:
+    com.krazevina.objects.KHorizontalScrollView layout_menu -> a
+    com.krazevina.objects.KSV ksv -> b
+    int type -> c
+    android.widget.LinearLayout llbtn_moi -> d
+    android.widget.LinearLayout llbtn_hot -> e
+    android.widget.LinearLayout llbtn_top -> f
+    android.widget.LinearLayout llbtn_fav -> g
+    android.widget.LinearLayout llbtn_down -> h
+    android.widget.LinearLayout llbtn_up -> i
+    android.widget.LinearLayout llbtn_new -> j
+    android.widget.LinearLayout llbtn_rand -> k
+    android.widget.LinearLayout llbtn_id -> l
+    android.widget.Button btn_top -> m
+    android.widget.Button btn_moi -> n
+    android.widget.Button btn_hot -> o
+    android.widget.Button btn_download -> p
+    android.widget.Button btn_fav -> q
+    android.widget.Button btn_up -> r
+    android.widget.Button btn_follow -> s
+    android.widget.Button btn_search -> t
+    android.widget.Button btnall2 -> u
+    android.widget.Button btnall3 -> v
+    android.widget.Button btnsetting1 -> w
+    android.widget.Button btnsetting2 -> x
+    android.widget.Button btnsetting3 -> y
+    android.widget.Button btnfollow1 -> z
+    android.widget.Button btnfollow2 -> A
+    android.widget.Button btnmyimg1 -> B
+    android.widget.Button btnmyimg3 -> C
+    android.widget.Button btnsortnew -> D
+    android.widget.Button btnsortid -> E
+    android.widget.Button btnsortrand -> F
+    android.widget.Button btnupload -> G
+    android.widget.LinearLayout next1 -> H
+    android.widget.LinearLayout next2 -> I
+    android.widget.LinearLayout prev2 -> J
+    android.widget.LinearLayout prev3 -> K
+    android.widget.LinearLayout next3 -> L
+    android.widget.LinearLayout lltop -> M
+    android.widget.LinearLayout m1 -> N
+    android.widget.LinearLayout m2 -> O
+    android.widget.LinearLayout m3 -> P
+    android.widget.LinearLayout m4 -> Q
+    android.widget.TextView btnmenu -> R
+    android.widget.TextView btnmenu2 -> S
+    android.widget.TextView btnmenu3 -> T
+    android.widget.TextView txt_Uploader -> U
+    android.widget.AutoCompleteTextView edtsearch -> V
+    android.view.animation.Animation anmDown -> W
+    android.view.animation.Animation anmUp -> X
+    boolean menuvisible -> Y
+    boolean scaned -> Z
+    android.os.Handler handler -> aa
+    com.krazevina.webservice.CallWebService call -> ab
+    com.krazevina.objects.sqlite sql -> ac
+    java.lang.String response -> ad
+    boolean flag_logout -> ae
+    boolean nextprev -> af
+    boolean stateMenu -> ag
+    int menuViewInd -> ah
+    int versionNumber -> ai
+    com.krazevina.objects.Users users -> aj
+    com.krazevina.objects.User user -> ak
+    android.app.ProgressDialog pg -> al
+    java.lang.String str_userlist -> am
+    boolean ignore -> an
+    android.app.Dialog exitDialog -> ao
+    android.app.AlertDialog dialog -> ap
+    android.net.Uri imageUri -> aq
+    int currevert -> ar
+    android.content.BroadcastReceiver retReceiver -> au
+    android.content.BroadcastReceiver allReceiver -> av
+    android.content.BroadcastReceiver downReceiver -> aw
+    android.content.BroadcastReceiver upReceiver -> ax
+    android.content.BroadcastReceiver favReceiver -> ay
+    android.content.BroadcastReceiver searchReceiver -> az
+    android.content.BroadcastReceiver nextReceiver -> aA
+    android.content.BroadcastReceiver prevReceiver -> aB
+    android.content.BroadcastReceiver followReceiver -> aC
+    boolean internet -> as
+    java.lang.String[] uslist -> at
+    void onCreate(android.os.Bundle) -> onCreate
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    void onResume() -> onResume
+    void findview() -> a
+    void onPause() -> onPause
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onClick(android.view.View) -> onClick
+    void clickSetting() -> b
+    void hideMenu() -> c
+    void updateMenu() -> d
+    void revertButton(int) -> a
+    void onDestroy() -> onDestroy
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void postslide(int) -> b
+    boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
+com.krazevina.beautifulgirl.Main$1 -> com.krazevina.beautifulgirl.ak:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$10 -> com.krazevina.beautifulgirl.al:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Main$11 -> com.krazevina.beautifulgirl.am:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Main$12 -> com.krazevina.beautifulgirl.an:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main$12$1 -> com.krazevina.beautifulgirl.ao:
+    com.krazevina.beautifulgirl.Main$12 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main$13 -> com.krazevina.beautifulgirl.ap:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Main$14 -> com.krazevina.beautifulgirl.aq:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Main$15 -> com.krazevina.beautifulgirl.ar:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Main$2 -> com.krazevina.beautifulgirl.as:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$3 -> com.krazevina.beautifulgirl.at:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$4 -> com.krazevina.beautifulgirl.au:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$5 -> com.krazevina.beautifulgirl.av:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$6 -> com.krazevina.beautifulgirl.aw:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$7 -> com.krazevina.beautifulgirl.ax:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$8 -> com.krazevina.beautifulgirl.ay:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$9 -> com.krazevina.beautifulgirl.az:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Main$ServerNotify -> com.krazevina.beautifulgirl.ba:
+    int ver -> a
+    java.lang.String s1 -> b
+    com.krazevina.beautifulgirl.Main this$0 -> c
+    void run() -> run
+    com.krazevina.beautifulgirl.Main access$0(com.krazevina.beautifulgirl.Main$ServerNotify) -> a
+com.krazevina.beautifulgirl.Main$ServerNotify$1 -> com.krazevina.beautifulgirl.bb:
+    com.krazevina.beautifulgirl.Main$ServerNotify this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main$UserAdapter -> com.krazevina.beautifulgirl.bc:
+    android.view.LayoutInflater mInflater -> b
+    com.krazevina.beautifulgirl.Main$UserAdapter$ViewHolder mViewHolder -> c
+    com.krazevina.objects.Users _users -> d
+    int count -> e
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.krazevina.beautifulgirl.Main$UserAdapter$ViewHolder -> com.krazevina.beautifulgirl.bd:
+    android.widget.LinearLayout mRoot -> a
+    android.widget.TextView mUsername -> b
+    com.krazevina.beautifulgirl.Main$UserAdapter this$1 -> c
+com.krazevina.beautifulgirl.Main$getUserList -> com.krazevina.beautifulgirl.be:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Main access$0(com.krazevina.beautifulgirl.Main$getUserList) -> a
+com.krazevina.beautifulgirl.Main$getUserList$1 -> com.krazevina.beautifulgirl.bf:
+    com.krazevina.beautifulgirl.Main$getUserList this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main$loadUser -> com.krazevina.beautifulgirl.bg:
+    com.krazevina.beautifulgirl.Main this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Main access$0(com.krazevina.beautifulgirl.Main$loadUser) -> a
+com.krazevina.beautifulgirl.Main$loadUser$1 -> com.krazevina.beautifulgirl.bh:
+    com.krazevina.beautifulgirl.Main$loadUser this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Main$loadUser$2 -> com.krazevina.beautifulgirl.bi:
+    com.krazevina.beautifulgirl.Main$loadUser this$1 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Main$loadUser access$0(com.krazevina.beautifulgirl.Main$loadUser$2) -> a
+com.krazevina.beautifulgirl.Main$loadUser$2$1 -> com.krazevina.beautifulgirl.bj:
+    com.krazevina.beautifulgirl.Main$loadUser$2 this$2 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.MainSearch -> com.krazevina.beautifulgirl.MainSearch:
+    android.widget.LinearLayout layout_menu -> a
+    com.krazevina.objects.KSV ksv -> b
+    int type -> c
+    android.widget.Button btn_top -> d
+    android.widget.Button btn_moi -> e
+    android.widget.Button btn_hot -> f
+    android.widget.Button btn_search -> g
+    android.widget.LinearLayout lltop -> h
+    android.widget.TextView btnmenu -> i
+    android.widget.TextView txt_Uploader -> j
+    android.view.animation.Animation anmDown -> k
+    android.view.animation.Animation anmUp -> l
+    boolean menuvisible -> m
+    boolean scaned -> n
+    android.os.Handler handler -> o
+    boolean flag_logout -> p
+    boolean nextprev -> q
+    boolean stateMenu -> r
+    boolean ignore -> s
+    int currevert -> t
+    boolean internet -> u
+    void onDestroy() -> onDestroy
+    void onCreate(android.os.Bundle) -> onCreate
+    void onResume() -> onResume
+    void onPause() -> onPause
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onClick(android.view.View) -> onClick
+    void hideMenu() -> a
+    void revertButton(int) -> a
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+com.krazevina.beautifulgirl.MainSearch$1 -> com.krazevina.beautifulgirl.bk:
+    com.krazevina.beautifulgirl.MainSearch this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.MainSearch$2 -> com.krazevina.beautifulgirl.bl:
+    com.krazevina.beautifulgirl.MainSearch this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.MainSearch$follow -> com.krazevina.beautifulgirl.bm:
+    com.krazevina.beautifulgirl.MainSearch this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.MainSearch access$0(com.krazevina.beautifulgirl.MainSearch$follow) -> a
+com.krazevina.beautifulgirl.MainSearch$follow$1 -> com.krazevina.beautifulgirl.bn:
+    com.krazevina.beautifulgirl.MainSearch$follow this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.NoConnect -> com.krazevina.beautifulgirl.NoConnect:
+    android.widget.LinearLayout llmain -> a
+    android.widget.Button btn_retry -> b
+    android.widget.Button btn_login -> c
+    android.widget.Button btn_picload -> d
+    android.widget.Button btn_picup -> e
+    android.widget.Button btn_picfav -> f
+    android.widget.Button btn_upload -> g
+    android.widget.Button btn_logout -> h
+    int RETRY -> i
+    int LOGIN -> j
+    int SDCARD -> k
+    int GALLERY -> l
+    android.os.Handler h -> m
+    boolean off -> n
+    com.krazevina.objects.sqlite sql -> o
+    java.lang.String response -> p
+    com.krazevina.webservice.CallWebService call -> q
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onClick(android.view.View) -> onClick
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onDestroy() -> onDestroy
+com.krazevina.beautifulgirl.NoConnect$1 -> com.krazevina.beautifulgirl.bo:
+    com.krazevina.beautifulgirl.NoConnect this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.NoConnect$1$1 -> com.krazevina.beautifulgirl.bp:
+    com.krazevina.beautifulgirl.NoConnect$1 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Register -> com.krazevina.beautifulgirl.Register:
+    android.widget.EditText edt_username -> a
+    android.widget.EditText edt_password -> b
+    android.widget.EditText edt_re_password -> c
+    android.widget.CheckBox chk_accept_rule -> d
+    android.widget.TextView txt_accept_rule -> e
+    android.widget.Button btn_register -> f
+    android.widget.Button btn_cancel -> g
+    com.krazevina.webservice.CallWebService call -> h
+    android.os.Handler handler -> i
+    java.lang.String username -> j
+    java.lang.String password -> k
+    java.lang.String repassword -> l
+    android.app.ProgressDialog pg -> m
+    boolean isload -> n
+    java.lang.String response -> o
+    com.krazevina.objects.sqlite sql -> p
+    boolean internet -> q
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.krazevina.beautifulgirl.Register$register -> com.krazevina.beautifulgirl.bq:
+    com.krazevina.beautifulgirl.Register this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Register access$0(com.krazevina.beautifulgirl.Register$register) -> a
+com.krazevina.beautifulgirl.Register$register$1 -> com.krazevina.beautifulgirl.br:
+    com.krazevina.beautifulgirl.Register$register this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Search -> com.krazevina.beautifulgirl.Search:
+    android.widget.Button btn_search -> a
+    android.widget.Button btn_cancel -> b
+    android.widget.EditText edt_search -> c
+    java.lang.String txt_search -> d
+    void onCreate(android.os.Bundle) -> onCreate
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Setting -> com.krazevina.beautifulgirl.Setting:
+    android.widget.Button btnclear -> a
+    android.widget.Button btnchange -> b
+    android.widget.Button btnchangemax -> c
+    android.widget.Button btnacc -> d
+    android.widget.Button btnsetting -> e
+    android.widget.Button btnlist -> f
+    android.widget.Button btnall -> g
+    android.widget.Button btnmyimg -> h
+    android.widget.Button btnimgfollow -> i
+    android.widget.TextView btnlabel -> j
+    android.widget.TextView txtsize -> k
+    android.widget.TextView txtdir -> l
+    android.widget.TextView txtmax -> m
+    android.widget.LinearLayout txtintro -> n
+    android.widget.LinearLayout txtfeedback -> o
+    android.widget.LinearLayout txtupload -> p
+    android.widget.LinearLayout txtlogout -> q
+    android.app.ProgressDialog prog -> r
+    android.os.Handler hand -> s
+    com.krazevina.objects.sqlite sql -> t
+    boolean nextprev -> u
+    int maxcache -> v
+    android.widget.LinearLayout prev -> w
+    com.krazevina.objects.KHorizontalScrollView layout_menu -> x
+    android.widget.LinearLayout m1 -> y
+    android.widget.LinearLayout m2 -> z
+    com.krazevina.webservice.CallWebService call -> A
+    long t1 -> B
+    android.app.AlertDialog sureDelete -> C
+    boolean statemenu -> D
+    android.content.BroadcastReceiver prevReceiver -> K
+    android.view.MotionEvent downev -> E
+    boolean downed -> F
+    boolean dontcare -> G
+    float downx -> H
+    float downy -> I
+    boolean get -> J
+    void onCreate(android.os.Bundle) -> onCreate
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    void onResume() -> onResume
+    java.lang.String val(java.lang.Float) -> a
+    long count(java.io.File) -> a
+    void del(java.io.File) -> b
+    void onClick(android.view.View) -> onClick
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onDestroy() -> onDestroy
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+com.krazevina.beautifulgirl.Setting$1 -> com.krazevina.beautifulgirl.bs:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void onReceive(android.content.Context,android.content.Intent) -> onReceive
+com.krazevina.beautifulgirl.Setting$2 -> com.krazevina.beautifulgirl.bt:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Setting$2$1 -> com.krazevina.beautifulgirl.bu:
+    com.krazevina.beautifulgirl.Setting$2 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Setting$2$2 -> com.krazevina.beautifulgirl.bv:
+    com.krazevina.beautifulgirl.Setting$2 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Setting$3 -> com.krazevina.beautifulgirl.bw:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Setting$3$1 -> com.krazevina.beautifulgirl.bx:
+    float t -> a
+    com.krazevina.beautifulgirl.Setting$3 this$1 -> b
+    void run() -> run
+com.krazevina.beautifulgirl.Setting$4 -> com.krazevina.beautifulgirl.by:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Setting$5 -> com.krazevina.beautifulgirl.bz:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Setting$6 -> com.krazevina.beautifulgirl.ca:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Setting$del -> com.krazevina.beautifulgirl.cb:
+    com.krazevina.beautifulgirl.Setting this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Setting access$0(com.krazevina.beautifulgirl.Setting$del) -> a
+com.krazevina.beautifulgirl.Setting$del$1 -> com.krazevina.beautifulgirl.cc:
+    com.krazevina.beautifulgirl.Setting$del this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single -> com.krazevina.beautifulgirl.Single:
+    com.krazevina.objects.SingleView v -> a
+    android.widget.Button btnfav -> b
+    android.widget.Button btndown -> c
+    android.widget.Button btninfo -> d
+    android.widget.Button btnfollow -> e
+    android.widget.TextView btnback -> f
+    android.widget.ZoomControls zoombtn -> g
+    android.widget.LinearLayout llmenu -> h
+    android.widget.LinearLayout lltop -> i
+    android.widget.RelativeLayout body -> j
+    boolean multi -> k
+    boolean menuvisible -> l
+    android.widget.TextView txtUploader -> m
+    android.widget.LinearLayout ll_txt_Uploader -> n
+    android.view.animation.Animation an -> o
+    android.view.animation.Animation an1 -> p
+    android.os.Handler handler -> q
+    com.krazevina.objects.sqlite sql -> r
+    com.krazevina.objects.Images images -> s
+    boolean fromSearch -> t
+    android.view.View$OnClickListener o -> u
+    android.view.View$OnClickListener i -> v
+    android.app.AlertDialog chooseWallType -> w
+    android.app.AlertDialog downloadType -> x
+    android.app.AlertDialog saveto -> y
+    java.lang.String folder -> z
+    java.io.File sfolder -> A
+    android.app.ProgressDialog pr -> B
+    void onCreate(android.os.Bundle) -> onCreate
+    void showUploader() -> a
+    void toggleMenu() -> b
+    void hideMenu() -> c
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onClick(android.view.View) -> onClick
+    void onDestroy() -> onDestroy
+    void share() -> d
+    void initChooseWallTypeDialog() -> e
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+    void access$0(com.krazevina.beautifulgirl.Single) -> a
+com.krazevina.beautifulgirl.Single$1 -> com.krazevina.beautifulgirl.cd:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Single$10 -> com.krazevina.beautifulgirl.ce:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$10$1 -> com.krazevina.beautifulgirl.cf:
+    com.krazevina.beautifulgirl.Single$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$10$2 -> com.krazevina.beautifulgirl.cg:
+    com.krazevina.beautifulgirl.Single$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$10$3 -> com.krazevina.beautifulgirl.ch:
+    com.krazevina.beautifulgirl.Single$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$2 -> com.krazevina.beautifulgirl.ci:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Single$3 -> com.krazevina.beautifulgirl.cj:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Single$4 -> com.krazevina.beautifulgirl.ck:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Single$5 -> com.krazevina.beautifulgirl.cl:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single$6 -> com.krazevina.beautifulgirl.cm:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single$7 -> com.krazevina.beautifulgirl.cn:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+    com.krazevina.beautifulgirl.Single access$0(com.krazevina.beautifulgirl.Single$7) -> a
+com.krazevina.beautifulgirl.Single$7$1 -> com.krazevina.beautifulgirl.co:
+    com.krazevina.beautifulgirl.Single$7 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$1$1 -> com.krazevina.beautifulgirl.cp:
+    com.krazevina.beautifulgirl.Single$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$1$2 -> com.krazevina.beautifulgirl.cq:
+    com.krazevina.beautifulgirl.Single$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$1$3 -> com.krazevina.beautifulgirl.cr:
+    com.krazevina.beautifulgirl.Single$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$2 -> com.krazevina.beautifulgirl.cs:
+    com.krazevina.beautifulgirl.Single$7 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$2$1 -> com.krazevina.beautifulgirl.ct:
+    com.krazevina.beautifulgirl.Single$7$2 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$7$2$2 -> com.krazevina.beautifulgirl.cu:
+    com.krazevina.beautifulgirl.Single$7$2 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$8 -> com.krazevina.beautifulgirl.cv:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single$9 -> com.krazevina.beautifulgirl.cw:
+    com.krazevina.beautifulgirl.Single this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$9$1 -> com.krazevina.beautifulgirl.cx:
+    com.krazevina.beautifulgirl.Single$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$9$2 -> com.krazevina.beautifulgirl.cy:
+    com.krazevina.beautifulgirl.Single$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$9$3 -> com.krazevina.beautifulgirl.cz:
+    com.krazevina.beautifulgirl.Single$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$follow -> com.krazevina.beautifulgirl.da:
+    com.krazevina.objects.Image i -> a
+    com.krazevina.beautifulgirl.Single this$0 -> b
+    void run() -> run
+    com.krazevina.beautifulgirl.Single access$0(com.krazevina.beautifulgirl.Single$follow) -> a
+com.krazevina.beautifulgirl.Single$follow$1 -> com.krazevina.beautifulgirl.db:
+    com.krazevina.beautifulgirl.Single$follow this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single$follow$2 -> com.krazevina.beautifulgirl.dc:
+    com.krazevina.beautifulgirl.Single$follow this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1 -> com.krazevina.beautifulgirl.Single1:
+    com.krazevina.objects.SingleView v -> a
+    android.widget.Button btnfav -> b
+    android.widget.Button btndown -> c
+    android.widget.Button btninfo -> d
+    android.widget.Button btnfollow -> e
+    android.widget.TextView btnback -> f
+    android.widget.TextView txtUploader -> g
+    android.widget.TextView lbl -> h
+    android.widget.ZoomControls zoombtn -> i
+    android.widget.LinearLayout llmenu -> j
+    android.widget.LinearLayout lltop -> k
+    boolean multi -> l
+    boolean menuvisible -> m
+    android.view.animation.Animation an -> n
+    android.view.animation.Animation an1 -> o
+    android.os.Handler handler -> p
+    android.view.View$OnClickListener o -> q
+    android.view.View$OnClickListener i -> r
+    android.app.AlertDialog chooseWallType -> s
+    android.app.AlertDialog downloadType -> t
+    android.app.AlertDialog saveto -> u
+    java.lang.String folder -> v
+    java.io.File sfolder -> w
+    android.app.ProgressDialog pr -> x
+    void onCreate(android.os.Bundle) -> onCreate
+    void toggleMenu() -> a
+    void hideMenu() -> b
+    void showUploader() -> c
+    void onWindowFocusChanged(boolean) -> onWindowFocusChanged
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void onClick(android.view.View) -> onClick
+    void initChooseWallTypeDialog() -> d
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void access$0(com.krazevina.beautifulgirl.Single1) -> a
+com.krazevina.beautifulgirl.Single1$1 -> com.krazevina.beautifulgirl.dd:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Single1$10 -> com.krazevina.beautifulgirl.de:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$10$1 -> com.krazevina.beautifulgirl.df:
+    com.krazevina.beautifulgirl.Single1$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$10$2 -> com.krazevina.beautifulgirl.dg:
+    com.krazevina.beautifulgirl.Single1$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$10$3 -> com.krazevina.beautifulgirl.dh:
+    com.krazevina.beautifulgirl.Single1$10 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$2 -> com.krazevina.beautifulgirl.di:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.view.View) -> onClick
+com.krazevina.beautifulgirl.Single1$3 -> com.krazevina.beautifulgirl.dj:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Single1$4 -> com.krazevina.beautifulgirl.dk:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Single1$5 -> com.krazevina.beautifulgirl.dl:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single1$6 -> com.krazevina.beautifulgirl.dm:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single1$7 -> com.krazevina.beautifulgirl.dn:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+    com.krazevina.beautifulgirl.Single1 access$0(com.krazevina.beautifulgirl.Single1$7) -> a
+com.krazevina.beautifulgirl.Single1$7$1 -> com.krazevina.beautifulgirl.do:
+    com.krazevina.beautifulgirl.Single1$7 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$1$1 -> com.krazevina.beautifulgirl.dp:
+    com.krazevina.beautifulgirl.Single1$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$1$2 -> com.krazevina.beautifulgirl.dq:
+    com.krazevina.beautifulgirl.Single1$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$1$3 -> com.krazevina.beautifulgirl.dr:
+    com.krazevina.beautifulgirl.Single1$7$1 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$2 -> com.krazevina.beautifulgirl.ds:
+    com.krazevina.beautifulgirl.Single1$7 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$2$1 -> com.krazevina.beautifulgirl.dt:
+    com.krazevina.beautifulgirl.Single1$7$2 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$7$2$2 -> com.krazevina.beautifulgirl.du:
+    com.krazevina.beautifulgirl.Single1$7$2 this$2 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$8 -> com.krazevina.beautifulgirl.dv:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Single1$9 -> com.krazevina.beautifulgirl.dw:
+    com.krazevina.beautifulgirl.Single1 this$0 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$9$1 -> com.krazevina.beautifulgirl.dx:
+    com.krazevina.beautifulgirl.Single1$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$9$2 -> com.krazevina.beautifulgirl.dy:
+    com.krazevina.beautifulgirl.Single1$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Single1$9$3 -> com.krazevina.beautifulgirl.dz:
+    com.krazevina.beautifulgirl.Single1$9 this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Upload -> com.krazevina.beautifulgirl.Upload:
+    android.widget.ImageView img_upload -> a
+    android.widget.RelativeLayout layout_menu_upload -> b
+    android.widget.LinearLayout layout_nameimg -> c
+    android.widget.Button btn_ok -> d
+    android.widget.Button btn_rorate -> e
+    android.widget.Button btn_reup -> f
+    android.widget.TextView btn_details -> g
+    android.widget.TextView txt_name_img -> h
+    java.lang.String filename_upload -> i
+    android.graphics.Bitmap bitmap_upload -> j
+    android.view.animation.Animation anmDown -> k
+    android.view.animation.Animation anmUp -> l
+    boolean menuvisible -> m
+    java.lang.String response -> n
+    com.krazevina.webservice.CallWebService call -> o
+    android.os.Handler handler -> p
+    android.app.ProgressDialog pg -> q
+    java.lang.String filePath -> r
+    boolean internet -> s
+    void onCreate(android.os.Bundle) -> onCreate
+    boolean dispatchKeyEvent(android.view.KeyEvent) -> dispatchKeyEvent
+    void hideMenu() -> a
+    void onClick(android.view.View) -> onClick
+    void onActivityResult(int,int,android.content.Intent) -> onActivityResult
+    void onDestroy() -> onDestroy
+    android.graphics.Bitmap decodeUri(android.net.Uri) -> a
+    boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
+com.krazevina.beautifulgirl.Upload$1 -> com.krazevina.beautifulgirl.ea:
+    com.krazevina.beautifulgirl.Upload this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Upload$2 -> com.krazevina.beautifulgirl.eb:
+    com.krazevina.beautifulgirl.Upload this$0 -> a
+    void onAnimationStart(android.view.animation.Animation) -> onAnimationStart
+    void onAnimationRepeat(android.view.animation.Animation) -> onAnimationRepeat
+    void onAnimationEnd(android.view.animation.Animation) -> onAnimationEnd
+com.krazevina.beautifulgirl.Upload$3 -> com.krazevina.beautifulgirl.ec:
+    com.krazevina.beautifulgirl.Upload this$0 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.beautifulgirl.Upload$uploadImage -> com.krazevina.beautifulgirl.ed:
+    com.krazevina.beautifulgirl.Upload this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.Upload access$0(com.krazevina.beautifulgirl.Upload$uploadImage) -> a
+com.krazevina.beautifulgirl.Upload$uploadImage$1 -> com.krazevina.beautifulgirl.ee:
+    com.krazevina.beautifulgirl.Upload$uploadImage this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.Upload$uploadImage$2 -> com.krazevina.beautifulgirl.ef:
+    com.krazevina.beautifulgirl.Upload$uploadImage this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.UserList -> com.krazevina.beautifulgirl.UserList:
+    android.widget.ListView lst_users -> a
+    com.krazevina.objects.Users users -> b
+    com.krazevina.objects.User user -> c
+    com.krazevina.webservice.CallWebService call -> d
+    android.os.Handler handler -> e
+    java.lang.String response -> f
+    android.app.ProgressDialog pg -> g
+    boolean internet -> h
+    void onCreate(android.os.Bundle) -> onCreate
+    void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
+com.krazevina.beautifulgirl.UserList$UserAdapter -> com.krazevina.beautifulgirl.eg:
+    android.view.LayoutInflater mInflater -> b
+    com.krazevina.beautifulgirl.UserList$UserAdapter$ViewHolder mViewHolder -> c
+    com.krazevina.objects.Users _users -> d
+    int count -> e
+    com.krazevina.beautifulgirl.UserList this$0 -> a
+    int getCount() -> getCount
+    java.lang.Object getItem(int) -> getItem
+    long getItemId(int) -> getItemId
+    android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+com.krazevina.beautifulgirl.UserList$UserAdapter$ViewHolder -> com.krazevina.beautifulgirl.eh:
+    android.widget.LinearLayout mRoot -> a
+    android.widget.TextView mUsername -> b
+    com.krazevina.beautifulgirl.UserList$UserAdapter this$1 -> c
+com.krazevina.beautifulgirl.UserList$loadUser -> com.krazevina.beautifulgirl.ei:
+    com.krazevina.beautifulgirl.UserList this$0 -> a
+    void run() -> run
+    com.krazevina.beautifulgirl.UserList access$0(com.krazevina.beautifulgirl.UserList$loadUser) -> a
+com.krazevina.beautifulgirl.UserList$loadUser$1 -> com.krazevina.beautifulgirl.ej:
+    com.krazevina.beautifulgirl.UserList$loadUser this$1 -> a
+    void run() -> run
+com.krazevina.beautifulgirl.UserList$loadUser$2 -> com.krazevina.beautifulgirl.ek:
+    com.krazevina.beautifulgirl.UserList$loadUser this$1 -> a
+    void run() -> run
+com.krazevina.objects.CView -> com.krazevina.objects.CView:
+    com.krazevina.objects.Decoder decoder -> d
+    android.graphics.Bitmap bitmap -> e
+    int imageType -> a
+    int decodeStatus -> b
+    int width -> f
+    int height -> g
+    long time -> h
+    int index -> i
+    int resId -> j
+    java.lang.String filePath -> k
+    boolean playFlag -> l
+    android.graphics.Paint p -> c
+    java.io.InputStream getInputStream() -> e
+    void setGif(java.lang.String) -> a
+    void onDetachedFromWindow() -> onDetachedFromWindow
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void incrementFrameIndex() -> f
+    void play() -> a
+    void pause() -> b
+    void nextFrame() -> c
+    void prevFrame() -> d
+    void access$0(com.krazevina.objects.CView,com.krazevina.objects.Decoder) -> a
+    com.krazevina.objects.Decoder access$1(com.krazevina.objects.CView) -> a
+    java.io.InputStream access$2(com.krazevina.objects.CView) -> b
+    void access$3(com.krazevina.objects.CView,long) -> a
+com.krazevina.objects.CView$1 -> com.krazevina.objects.a:
+    com.krazevina.objects.CView this$0 -> a
+    void run() -> run
+com.krazevina.objects.Decoder -> com.krazevina.objects.b:
+    java.io.InputStream in -> a
+    int status -> b
+    int width -> c
+    int height -> d
+    boolean gctFlag -> e
+    int gctSize -> f
+    int loopCount -> g
+    int[] gct -> h
+    int[] lct -> i
+    int[] act -> j
+    int bgIndex -> k
+    int bgColor -> l
+    int lastBgColor -> m
+    int pixelAspect -> n
+    boolean lctFlag -> o
+    boolean interlace -> p
+    int lctSize -> q
+    int ix -> r
+    int iy -> s
+    int iw -> t
+    int ih -> u
+    int lrx -> v
+    int lry -> w
+    int lrw -> x
+    int lrh -> y
+    android.graphics.Bitmap image -> z
+    android.graphics.Bitmap lastBitmap -> A
+    byte[] block -> B
+    int blockSize -> C
+    int dispose -> D
+    int lastDispose -> E
+    boolean transparency -> F
+    int delay -> G
+    int transIndex -> H
+    short[] prefix -> I
+    byte[] suffix -> J
+    byte[] pixelStack -> K
+    byte[] pixels -> L
+    java.util.Vector frames -> M
+    int frameCount -> N
+    int getDelay(int) -> a
+    int getFrameCount() -> a
+    android.graphics.Bitmap getFrame(int) -> b
+    int read(java.io.InputStream) -> a
+    boolean err() -> b
+    int read() -> c
+    int readBlock() -> d
+    int[] readColorTable(int) -> c
+    void readContents() -> e
+    void readHeader() -> f
+    void readNetscapeExt() -> g
+    int readShort() -> h
+    void skip() -> i
+com.krazevina.objects.Decoder$GifFrame -> com.krazevina.objects.c:
+    android.graphics.Bitmap image -> a
+    int delay -> b
+com.krazevina.objects.Follow -> com.krazevina.objects.d:
+    java.lang.String Uploader -> a
+    void setUploader(java.lang.String) -> a
+    java.lang.String getUploader() -> a
+com.krazevina.objects.Follows -> com.krazevina.objects.e:
+    java.util.ArrayList _follows -> a
+    void add(com.krazevina.objects.Follow) -> a
+    int getCount() -> a
+    com.krazevina.objects.Follow getItemAtPosition(int) -> a
+com.krazevina.objects.Global -> com.krazevina.objects.f:
+    android.net.Uri data_img -> a
+    java.lang.String username -> b
+    java.lang.String name -> c
+    java.lang.String email -> d
+    java.lang.String phone -> e
+    java.lang.String yahoo -> f
+    java.lang.String expDate -> g
+    int id -> h
+    int isActive -> i
+    int time -> j
+    int err -> k
+    java.lang.String gif -> l
+    java.lang.String userSearch -> m
+com.krazevina.objects.Image -> com.krazevina.objects.g:
+    int id -> a
+    int status -> b
+    boolean isanimate -> c
+    int rate -> s
+    java.lang.String name -> t
+    java.lang.String user -> d
+    java.lang.String url -> u
+    android.graphics.Bitmap bm -> v
+    java.lang.String urlthumb -> w
+    android.graphics.Bitmap bmthumb -> x
+    int wImg -> e
+    int hImg -> f
+    int wthumb -> g
+    int hthumb -> h
+    int top -> i
+    int left -> j
+    boolean freed -> k
+    int favor -> l
+    java.lang.String date -> m
+    java.lang.Thread thread -> n
+    android.graphics.Rect src -> o
+    com.krazevina.objects.KImageView imgv -> p
+    boolean inleft -> q
+    boolean isdownloaded -> r
+    void setUrl(java.lang.String) -> a
+    java.lang.String getUrl() -> a
+    void setBm(android.graphics.Bitmap) -> a
+    android.graphics.Bitmap getBm() -> b
+    void setName(java.lang.String) -> b
+    java.lang.String getName() -> c
+    java.lang.String getThumbUrl() -> d
+    android.graphics.Bitmap getThumbBm() -> e
+    void setThumbUrl(java.lang.String) -> c
+    void setThumbBm(android.graphics.Bitmap) -> b
+    int getRate() -> f
+    void setRate(int) -> a
+    android.graphics.Bitmap getThmbFromCache() -> g
+    android.graphics.Bitmap getThumbFromSD(int) -> b
+com.krazevina.objects.ImageDownloader -> com.krazevina.objects.h:
+    android.graphics.Bitmap readImageByUrl(java.lang.String,int) -> a
+    byte[] convertInputStreamToByteArray(java.io.InputStream) -> a
+    android.graphics.Bitmap readImageByUrl(java.lang.String) -> a
+com.krazevina.objects.Images -> com.krazevina.objects.i:
+    java.util.ArrayList _images -> f
+    java.util.ArrayList img1 -> a
+    java.util.ArrayList img2 -> b
+    long h1 -> c
+    long h2 -> d
+    android.graphics.BitmapFactory$Options op -> e
+    int find(com.krazevina.objects.Image) -> a
+    void add(com.krazevina.objects.Image,int) -> a
+    int getCount() -> a
+    com.krazevina.objects.Image getItemAtPosition(int) -> a
+    void clear() -> b
+    void scanSDCard(android.app.Activity,int) -> a
+    void readLog(java.io.FileInputStream,int,android.app.Activity) -> a
+com.krazevina.objects.ImgItem -> com.krazevina.objects.j:
+    boolean loadeding -> a
+    android.graphics.Bitmap bmp -> b
+    com.krazevina.objects.Image i -> c
+    float top -> d
+    float left -> e
+    float basetop -> f
+    float baseleft -> g
+    float scale -> h
+    float scalespace -> i
+    android.graphics.Rect dst -> j
+    int index -> k
+    int w -> l
+    int h -> m
+    android.graphics.Paint p -> n
+    void update(float,float) -> a
+    int move(com.krazevina.objects.SingleView,float,float,int) -> a
+    void scale(float,com.krazevina.objects.SingleView) -> a
+    void slide(float,float) -> b
+    void draw(android.graphics.Canvas,android.view.View) -> a
+com.krazevina.objects.KHorizontalScrollView -> com.krazevina.objects.KHorizontalScrollView:
+    float sx -> d
+    float sy -> e
+    int currview -> a
+    int w -> b
+    int maxv -> c
+    void onMeasure(int,int) -> onMeasure
+    void setCurrview(int) -> a
+    void setCurrview$255f295(int) -> b
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+com.krazevina.objects.KImageView -> com.krazevina.objects.k:
+    com.krazevina.objects.Image image -> a
+    boolean imgseted -> b
+    android.graphics.Bitmap imgfav -> c
+    android.view.animation.Animation anim -> d
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void setImageBitmap(android.graphics.Bitmap,int,int) -> a
+    void setImageBitmap(android.graphics.Bitmap) -> setImageBitmap
+    void onDetachedFromWindow() -> onDetachedFromWindow
+com.krazevina.objects.KSV -> com.krazevina.objects.KSV:
+    com.krazevina.objects.sqlite sql -> a
+    int LEFT -> b
+    int RIGHT -> c
+    com.krazevina.objects.Images images -> d
+    int topspace -> e
+    android.app.Activity father -> f
+    android.os.Handler handler -> g
+    android.widget.LinearLayout layout_image2 -> h
+    android.widget.LinearLayout layout_image1 -> i
+    android.graphics.BitmapFactory$Options op -> j
+    int type -> k
+    com.krazevina.objects.KSV$Fling fling -> l
+    java.io.File f -> m
+    float downx -> n
+    float downy -> o
+    float oldy -> p
+    float firstdowny -> q
+    float y -> r
+    boolean autoSlide -> s
+    long timetouchup -> t
+    long timetouchdown -> u
+    boolean down -> v
+    java.util.ArrayList arr -> w
+    java.util.Vector img3 -> x
+    java.util.Vector img4 -> y
+    long start -> z
+    long mid -> A
+    long space -> B
+    int i -> C
+    boolean lock -> D
+    android.view.MotionEvent evdown -> E
+    boolean dontcare -> F
+    boolean lock1 -> G
+    android.app.ProgressDialog prog -> H
+    android.widget.LinearLayout$LayoutParams lp -> I
+    java.util.Vector img1 -> J
+    java.util.Vector img2 -> K
+    long time -> L
+    android.app.AlertDialog alert -> M
+    com.krazevina.objects.Image image -> N
+    android.graphics.Paint p -> O
+    android.graphics.Rect dst -> P
+    boolean first -> Q
+    float gravity -> R
+    float v -> S
+    void clearImg() -> a
+    void setup(android.app.Activity,int) -> a
+    void change(int) -> a
+    int find(float,int) -> a
+    float getMax() -> c
+    float getMin() -> b
+    void restore(int) -> b
+    void loadUp(int) -> c
+    void setPos(int) -> d
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void onMeasure(int,int) -> onMeasure
+    void onAttachedToWindow() -> onAttachedToWindow
+    void onDetachedFromWindow() -> onDetachedFromWindow
+com.krazevina.objects.KSV$1 -> com.krazevina.objects.l:
+    com.krazevina.objects.KSV this$0 -> a
+    void run() -> run
+com.krazevina.objects.KSV$1$1 -> com.krazevina.objects.m:
+    com.krazevina.objects.KSV$1 this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$2 -> com.krazevina.objects.n:
+    com.krazevina.objects.KSV this$0 -> a
+    void run() -> run
+com.krazevina.objects.KSV$3 -> com.krazevina.objects.o:
+    int posi -> a
+    com.krazevina.objects.KSV this$0 -> b
+    void run() -> run
+com.krazevina.objects.KSV$4 -> com.krazevina.objects.p:
+    com.krazevina.objects.Image ima -> a
+    com.krazevina.objects.KSV this$0 -> b
+    void run() -> run
+com.krazevina.objects.KSV$5 -> com.krazevina.objects.q:
+    com.krazevina.objects.Image in -> a
+    com.krazevina.objects.KSV this$0 -> b
+    void run() -> run
+com.krazevina.objects.KSV$6 -> com.krazevina.objects.r:
+    com.krazevina.objects.KSV this$0 -> a
+    int val$pos -> b
+    void run() -> run
+com.krazevina.objects.KSV$Fling -> com.krazevina.objects.s:
+    float lasty -> a
+    com.krazevina.objects.KSV this$0 -> b
+    void run() -> run
+com.krazevina.objects.KSV$LoadImg -> com.krazevina.objects.t:
+    int pos -> a
+    int left -> b
+    java.util.ArrayList arr -> c
+    android.graphics.Bitmap b -> d
+    com.krazevina.objects.KSV this$0 -> e
+    void run() -> run
+    com.krazevina.objects.KSV access$0(com.krazevina.objects.KSV$LoadImg) -> a
+com.krazevina.objects.KSV$LoadImg$1 -> com.krazevina.objects.u:
+    android.graphics.Bitmap bi -> a
+    int posi -> b
+    com.krazevina.objects.KSV$LoadImg this$1 -> c
+    void run() -> run
+com.krazevina.objects.KSV$LoadImg$2 -> com.krazevina.objects.v:
+    com.krazevina.objects.KSV$LoadImg this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$LoadImgsDown -> com.krazevina.objects.w:
+    com.krazevina.objects.Image image -> a
+    java.lang.String res -> b
+    com.krazevina.objects.KImageView imgv -> c
+    com.krazevina.objects.KSV this$0 -> d
+    void run() -> run
+    com.krazevina.objects.KSV access$0(com.krazevina.objects.KSV$LoadImgsDown) -> a
+com.krazevina.objects.KSV$LoadImgsDown$1 -> com.krazevina.objects.x:
+    com.krazevina.objects.KSV$LoadImgsDown this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$LoadImgsDown$2 -> com.krazevina.objects.y:
+    com.krazevina.objects.KSV$LoadImgsDown this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$LoadImgsDown$3 -> com.krazevina.objects.z:
+    com.krazevina.objects.KSV$LoadImgsDown this$1 -> a
+    void run() -> run
+    com.krazevina.objects.KSV$LoadImgsDown access$0(com.krazevina.objects.KSV$LoadImgsDown$3) -> a
+com.krazevina.objects.KSV$LoadImgsDown$3$1 -> com.krazevina.objects.aa:
+    com.krazevina.objects.KSV$LoadImgsDown$3 this$2 -> a
+    void onClick(android.content.DialogInterface,int) -> onClick
+com.krazevina.objects.KSV$LoadImgsDown$4 -> com.krazevina.objects.ab:
+    com.krazevina.objects.KSV$LoadImgsDown this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$LoadImgsDown$5 -> com.krazevina.objects.ac:
+    com.krazevina.objects.KSV$LoadImgsDown this$1 -> a
+    void run() -> run
+com.krazevina.objects.KSV$TimeOut -> com.krazevina.objects.ad:
+    com.krazevina.objects.KSV this$0 -> a
+    void run() -> run
+    com.krazevina.objects.KSV access$0(com.krazevina.objects.KSV$TimeOut) -> a
+com.krazevina.objects.KSV$TimeOut$1 -> com.krazevina.objects.ae:
+    com.krazevina.objects.KSV$TimeOut this$1 -> a
+    void run() -> run
+com.krazevina.objects.SingleView -> com.krazevina.objects.af:
+    int LEFT -> a
+    int RIGHT -> b
+    boolean lock -> c
+    java.util.Vector item -> d
+    int focusItem -> e
+    float oldscale -> f
+    boolean multi -> g
+    boolean scaleMove -> h
+    boolean ignore -> i
+    boolean scaled -> j
+    float downx -> k
+    float downy -> l
+    float oldx -> m
+    float firstdistance -> n
+    float x -> o
+    float itemwidth -> p
+    float top -> q
+    float left -> r
+    float oldtop -> s
+    float oldleft -> t
+    long timetouchdown -> u
+    long timetouchup -> v
+    android.os.Handler hand -> w
+    android.app.Activity father -> x
+    android.widget.ZoomControls zb -> y
+    com.krazevina.objects.sqlite sql -> z
+    android.graphics.Bitmap bmpplay -> A
+    boolean online -> B
+    int type -> C
+    int moveout -> D
+    int test -> E
+    com.krazevina.objects.SingleView$Slide slide -> F
+    com.krazevina.objects.SingleView$AutoSlide autoslide -> G
+    void onAttachedToWindow() -> onAttachedToWindow
+    boolean onKeyUp(int,android.view.KeyEvent) -> onKeyUp
+    void onMeasure(int,int) -> onMeasure
+    void zoom(boolean) -> a
+    boolean onTouchEvent(android.view.MotionEvent) -> onTouchEvent
+    void onDraw(android.graphics.Canvas) -> onDraw
+    void slideTo(int) -> a
+    void autoSlide(boolean) -> b
+    boolean save(java.lang.String) -> a
+    void onDetachedFromWindow() -> onDetachedFromWindow
+    int access$0(com.krazevina.objects.SingleView,float) -> a
+com.krazevina.objects.SingleView$AutoSlide -> com.krazevina.objects.ag:
+    float dx -> a
+    boolean run -> b
+    com.krazevina.objects.SingleView this$0 -> c
+    void run() -> run
+com.krazevina.objects.SingleView$LoadImg -> com.krazevina.objects.ah:
+    int pos -> a
+    com.krazevina.objects.SingleView this$0 -> b
+    void run() -> run
+com.krazevina.objects.SingleView$LoadImgsDown -> com.krazevina.objects.ai:
+    com.krazevina.webservice.CallWebService call -> a
+    android.app.Activity ac -> b
+    com.krazevina.objects.Image image -> c
+    java.lang.String res -> d
+    com.krazevina.objects.SingleView this$0 -> e
+    void run() -> run
+    com.krazevina.objects.SingleView access$0(com.krazevina.objects.SingleView$LoadImgsDown) -> a
+com.krazevina.objects.SingleView$LoadImgsDown$1 -> com.krazevina.objects.aj:
+    com.krazevina.objects.Image im -> a
+    com.krazevina.objects.SingleView$LoadImgsDown this$1 -> b
+    void run() -> run
+com.krazevina.objects.SingleView$Slide -> com.krazevina.objects.ak:
+    float xdes -> a
+    float dx -> b
+    float dis -> c
+    boolean run -> d
+    com.krazevina.objects.SingleView this$0 -> e
+    void st(int) -> a
+    void run() -> run
+    com.krazevina.objects.SingleView access$0(com.krazevina.objects.SingleView$Slide) -> a
+com.krazevina.objects.SingleView$Slide$1 -> com.krazevina.objects.al:
+    com.krazevina.objects.SingleView$Slide this$1 -> a
+    void run() -> run
+com.krazevina.objects.User -> com.krazevina.objects.am:
+    java.lang.String User -> a
+    void setUploader(java.lang.String) -> a
+    java.lang.String getUploader() -> a
+com.krazevina.objects.Users -> com.krazevina.objects.an:
+    java.util.ArrayList _users -> a
+    void add(com.krazevina.objects.User) -> a
+    int getCount() -> a
+    com.krazevina.objects.User getItemAtPosition(int) -> a
+com.krazevina.objects.sqlite -> com.krazevina.objects.ao:
+    long maxcache -> a
+    long cachesize -> b
+    android.database.sqlite.SQLiteDatabase mSqlDatabase -> c
+    com.krazevina.objects.sqlite$SQLiteRssHelper sqlitehelper -> d
+    void setMaxCache(int) -> a
+    int getMaxCache() -> a
+    long getSizeCache() -> l
+    void setSizeCache(long) -> a
+    void del(java.io.File) -> a
+    void insertThumb(com.krazevina.objects.Image,android.app.Activity) -> a
+    void favor(com.krazevina.objects.Image) -> a
+    int getfavor(int) -> b
+    void follow(java.lang.String) -> a
+    void unfollow(java.lang.String) -> b
+    boolean getfollow(java.lang.String) -> c
+    void favor(com.krazevina.objects.Image,com.krazevina.beautifulgirl.Single,android.os.Handler,android.view.View) -> a
+    void unfavor(com.krazevina.objects.Image,com.krazevina.beautifulgirl.Single,android.os.Handler,android.view.View) -> b
+    void getImg(com.krazevina.objects.Image) -> b
+    void insertImg(com.krazevina.objects.Image) -> c
+    boolean getAutologin() -> b
+    boolean getSavepassword() -> c
+    void setAutoLogin(boolean) -> a
+    void setSavePassword(boolean) -> b
+    void setLogout() -> d
+    java.lang.String getUsername() -> e
+    java.lang.String getPassword() -> f
+    void setUserId(int) -> c
+    int getUserId() -> g
+    void setUserPass(java.lang.String,java.lang.String) -> a
+    void getInfoUser() -> h
+    void updateInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    void insertUser(java.lang.String) -> d
+    java.lang.String[] selectAllUser() -> i
+    void dropAndCreateUserList() -> j
+    void close() -> k
+    android.database.sqlite.SQLiteDatabase access$0(com.krazevina.objects.sqlite) -> a
+com.krazevina.objects.sqlite$1 -> com.krazevina.objects.ap:
+    com.krazevina.objects.sqlite this$0 -> a
+    java.io.File val$dir -> b
+    void run() -> run
+com.krazevina.objects.sqlite$2 -> com.krazevina.objects.aq:
+    com.krazevina.objects.sqlite this$0 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    com.krazevina.objects.Image val$i -> c
+    android.os.Handler val$h -> d
+    android.view.View val$v -> e
+    void run() -> run
+com.krazevina.objects.sqlite$2$1 -> com.krazevina.objects.ar:
+    com.krazevina.objects.sqlite$2 this$1 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    android.view.View val$v -> c
+    void run() -> run
+com.krazevina.objects.sqlite$2$2 -> com.krazevina.objects.as:
+    com.krazevina.objects.sqlite$2 this$1 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    com.krazevina.objects.Image val$i -> c
+    android.view.View val$v -> d
+    void run() -> run
+com.krazevina.objects.sqlite$3 -> com.krazevina.objects.at:
+    com.krazevina.objects.sqlite this$0 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    com.krazevina.objects.Image val$i -> c
+    android.os.Handler val$h -> d
+    android.view.View val$v -> e
+    void run() -> run
+com.krazevina.objects.sqlite$3$1 -> com.krazevina.objects.au:
+    com.krazevina.objects.sqlite$3 this$1 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    android.view.View val$v -> c
+    void run() -> run
+com.krazevina.objects.sqlite$3$2 -> com.krazevina.objects.av:
+    com.krazevina.objects.sqlite$3 this$1 -> a
+    com.krazevina.beautifulgirl.Single val$c -> b
+    com.krazevina.objects.Image val$i -> c
+    android.view.View val$v -> d
+    void run() -> run
+com.krazevina.objects.sqlite$SQLiteRssHelper -> com.krazevina.objects.aw:
+    com.krazevina.objects.sqlite this$0 -> a
+    void onCreate(android.database.sqlite.SQLiteDatabase) -> onCreate
+    void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int) -> onUpgrade
+com.krazevina.webservice.CallWebService -> com.krazevina.a.a:
+    java.lang.String ACTION_NAME -> b
+    java.lang.String METHOD_NAME -> c
+    android.content.Context mContext -> a
+    java.lang.String valnamespace(java.lang.String) -> c
+    java.lang.String val(java.lang.String) -> d
+    java.lang.String serviceServerVersion() -> a
+    java.lang.String serviceServerPromotion() -> b
+    java.lang.String serviceImageHot(int) -> a
+    java.lang.String serviceImageRandom() -> c
+    java.lang.String serviceImageAll(int) -> b
+    java.lang.String serviceImageFollowID(int) -> c
+    java.lang.String serviceImageFollowNew(int) -> d
+    java.lang.String serviceImageFollowRand(int) -> e
+    java.lang.String serviceImageUploaded(int) -> f
+    java.lang.String serviceImageFavorited(int) -> g
+    java.lang.String serviceImageSearchNew(int,java.lang.String) -> a
+    java.lang.String serviceImageSearchHot(int,java.lang.String) -> b
+    java.lang.String serviceImageSearchTop(int,java.lang.String) -> c
+    java.lang.String uploadImage(java.lang.String,java.lang.String,java.lang.String) -> a
+    java.lang.String imageVote(int) -> h
+    java.lang.String imageUnVote(int) -> i
+    java.lang.String follow(java.lang.String) -> a
+    java.lang.String register(java.lang.String,java.lang.String) -> a
+    java.lang.String login(java.lang.String,java.lang.String) -> b
+    boolean checkCode(java.lang.String,java.lang.String) -> c
+    java.lang.String updateInfo(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String) -> a
+    java.lang.String changePass(java.lang.String,java.lang.String,java.lang.String) -> b
+    java.lang.String FollowList(java.lang.String) -> b
+    java.lang.String UnFollow(java.lang.String,java.lang.String) -> d
+    java.lang.String UsernameList$13d12155() -> d
+    boolean isOnline() -> e
+org.kobjects.base64.Base64 -> a.a.a.a:
+    char[] charTab -> a
+    java.lang.String encode(byte[]) -> a
+org.ksoap2.HeaderProperty -> a.b.a:
+    java.lang.String key -> a
+    java.lang.String value -> b
+org.ksoap2.SoapEnvelope -> a.b.b:
+    java.lang.Object bodyIn -> a
+    java.lang.Object bodyOut -> b
+    org.kxml2.kdom.Element[] headerIn -> c
+    org.kxml2.kdom.Element[] headerOut -> d
+    java.lang.String encodingStyle -> e
+    int version -> f
+    java.lang.String env -> g
+    java.lang.String enc -> h
+    java.lang.String xsi -> i
+    java.lang.String xsd -> j
+    boolean stringToBoolean(java.lang.String) -> a
+    void parse(org.xmlpull.v1.XmlPullParser) -> a
+    void parseBody(org.xmlpull.v1.XmlPullParser) -> b
+    void write(org.xmlpull.v1.XmlSerializer) -> a
+    void writeBody(org.xmlpull.v1.XmlSerializer) -> b
+org.ksoap2.SoapFault -> a.b.c:
+    java.lang.String faultcode -> a
+    java.lang.String faultstring -> b
+    java.lang.String faultactor -> c
+    org.kxml2.kdom.Node detail -> d
+    int version -> e
+    void parse(org.xmlpull.v1.XmlPullParser) -> a
+    java.lang.String getMessage() -> getMessage
+    java.lang.String toString() -> toString
+org.ksoap2.SoapFault12 -> a.b.d:
+    org.kxml2.kdom.Node Code -> f
+    org.kxml2.kdom.Node Reason -> g
+    org.kxml2.kdom.Node Node -> h
+    org.kxml2.kdom.Node Role -> i
+    org.kxml2.kdom.Node Detail -> j
+    void parse(org.xmlpull.v1.XmlPullParser) -> a
+    java.lang.String getMessage() -> getMessage
+    java.lang.String toString() -> toString
+org.ksoap2.serialization.AttributeContainer -> a.b.a.a:
+    java.util.Vector attributes -> a
+    void getAttributeInfo(int,org.ksoap2.serialization.AttributeInfo) -> a
+    java.lang.Integer attributeIndex(java.lang.String) -> a
+    int getAttributeCount() -> a
+    boolean attributesAreEqual(org.ksoap2.serialization.AttributeContainer) -> a
+    void addAttribute(java.lang.String,java.lang.Object) -> a
+    void addAttribute(org.ksoap2.serialization.AttributeInfo) -> a
+org.ksoap2.serialization.AttributeInfo -> a.b.a.b:
+org.ksoap2.serialization.DM -> a.b.a.c:
+    java.lang.Object readInstance$483bc6ce(org.xmlpull.v1.XmlPullParser,java.lang.String) -> a
+    void writeInstance(org.xmlpull.v1.XmlSerializer,java.lang.Object) -> a
+    void register(org.ksoap2.serialization.SoapSerializationEnvelope) -> a
+org.ksoap2.serialization.FwdRef -> a.b.a.d:
+    org.ksoap2.serialization.FwdRef next -> a
+    java.lang.Object obj -> b
+    int index -> c
+org.ksoap2.serialization.KvmSerializable -> a.b.a.e:
+    java.lang.Object getProperty(int) -> a
+    int getPropertyCount() -> a_
+    void setProperty(int,java.lang.Object) -> a
+    void getPropertyInfo$70db41a4(int,org.ksoap2.serialization.PropertyInfo) -> a
+org.ksoap2.serialization.Marshal -> a.b.a.f:
+    java.lang.Object readInstance$483bc6ce(org.xmlpull.v1.XmlPullParser,java.lang.String) -> a
+    void writeInstance(org.xmlpull.v1.XmlSerializer,java.lang.Object) -> a
+    void register(org.ksoap2.serialization.SoapSerializationEnvelope) -> a
+org.ksoap2.serialization.PropertyInfo -> a.b.a.g:
+    java.lang.Class OBJECT_CLASS -> a
+    java.lang.Class STRING_CLASS -> b
+    java.lang.Class INTEGER_CLASS -> c
+    java.lang.Class LONG_CLASS -> d
+    java.lang.Class BOOLEAN_CLASS -> e
+    java.lang.Class VECTOR_CLASS -> f
+    org.ksoap2.serialization.PropertyInfo OBJECT_TYPE -> g
+    java.lang.String name -> h
+    java.lang.String namespace -> i
+    int flags -> j
+    java.lang.Object value -> k
+    java.lang.Object type -> l
+    boolean multiRef -> m
+    org.ksoap2.serialization.PropertyInfo elementType -> n
+    java.lang.String getName() -> a
+    void setName(java.lang.String) -> a
+    java.lang.String getNamespace() -> b
+    void setNamespace(java.lang.String) -> b
+    void setType(java.lang.Object) -> a
+    java.lang.Object getValue() -> c
+    void setValue(java.lang.Object) -> b
+    java.lang.String toString() -> toString
+org.ksoap2.serialization.SoapObject -> a.b.a.h:
+    java.lang.String namespace -> a
+    java.lang.String name -> b
+    java.util.Vector properties -> c
+    java.util.Vector nestedSoapObjects -> d
+    boolean equals(java.lang.Object) -> equals
+    java.lang.String getName() -> b
+    java.lang.String getNamespace() -> c
+    java.lang.Object getNestedSoap(int) -> b
+    java.lang.Object getProperty(int) -> a
+    java.lang.Integer propertyIndex(java.lang.String) -> a
+    int getPropertyCount() -> a_
+    int getNestedSoapCount() -> d
+    void getPropertyInfo$70db41a4(int,org.ksoap2.serialization.PropertyInfo) -> a
+    org.ksoap2.serialization.SoapObject newInstance() -> e
+    void setProperty(int,java.lang.Object) -> a
+    org.ksoap2.serialization.SoapObject addProperty(java.lang.String,java.lang.Object) -> b
+    org.ksoap2.serialization.SoapObject addProperty(org.ksoap2.serialization.PropertyInfo) -> a
+    java.lang.String toString() -> toString
+org.ksoap2.serialization.SoapPrimitive -> a.b.a.i:
+    java.lang.String namespace -> a
+    java.lang.String name -> b
+    java.lang.String value -> c
+    boolean equals(java.lang.Object) -> equals
+    int hashCode() -> hashCode
+    java.lang.String toString() -> toString
+org.ksoap2.serialization.SoapSerializationEnvelope -> a.b.a.j:
+    org.ksoap2.serialization.Marshal DEFAULT_MARSHAL -> k
+    java.util.Hashtable properties -> l
+    java.util.Hashtable idMap -> m
+    java.util.Vector multiRef -> n
+    boolean implicitTypes -> o
+    boolean dotNet -> p
+    java.util.Hashtable qNameToClass -> q
+    java.util.Hashtable classToQName -> r
+    boolean addAdornments -> s
+    java.lang.Class class$org$ksoap2$serialization$SoapObject -> t
+    void parseBody(org.xmlpull.v1.XmlPullParser) -> b
+    void readSerializable(org.xmlpull.v1.XmlPullParser,org.ksoap2.serialization.SoapObject) -> a
+    void readSerializable(org.xmlpull.v1.XmlPullParser,org.ksoap2.serialization.KvmSerializable) -> a
+    java.lang.Object readUnknown(org.xmlpull.v1.XmlPullParser,java.lang.String,java.lang.String) -> a
+    int getIndex(java.lang.String,int,int) -> a
+    void readVector(org.xmlpull.v1.XmlPullParser,java.util.Vector,org.ksoap2.serialization.PropertyInfo) -> a
+    java.lang.Object read(org.xmlpull.v1.XmlPullParser,java.lang.Object,int,java.lang.String,java.lang.String,org.ksoap2.serialization.PropertyInfo) -> a
+    java.lang.Object readInstance(org.xmlpull.v1.XmlPullParser,java.lang.String,java.lang.String,org.ksoap2.serialization.PropertyInfo) -> a
+    java.lang.Object[] getInfo(java.lang.Object,java.lang.Object) -> a
+    void addMapping(java.lang.String,java.lang.String,java.lang.Class,org.ksoap2.serialization.Marshal) -> a
+    java.lang.Object getResponse() -> a
+    void writeBody(org.xmlpull.v1.XmlSerializer) -> b
+    void writeObjectBody(org.xmlpull.v1.XmlSerializer,org.ksoap2.serialization.SoapObject) -> a
+    void writeObjectBody(org.xmlpull.v1.XmlSerializer,org.ksoap2.serialization.KvmSerializable) -> a
+    void writeProperty(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.ksoap2.serialization.PropertyInfo) -> a
+    void writeElement(org.xmlpull.v1.XmlSerializer,java.lang.Object,org.ksoap2.serialization.PropertyInfo,java.lang.Object) -> a
+    java.lang.Class class$(java.lang.String) -> b
+org.ksoap2.transport.HttpTransportSE -> a.b.b.a:
+    org.ksoap2.transport.ServiceConnection connection -> g
+    java.util.List call$267cefc9(java.lang.String,org.ksoap2.SoapEnvelope) -> a
+org.ksoap2.transport.ServiceConnection -> a.b.b.b:
+    void connect() -> a
+    void disconnect() -> b
+    java.util.List getResponseProperties() -> c
+    void setRequestProperty(java.lang.String,java.lang.String) -> a
+    void setRequestMethod(java.lang.String) -> a
+    java.io.OutputStream openOutputStream() -> d
+    java.io.InputStream openInputStream() -> e
+    java.io.InputStream getErrorStream() -> f
+org.ksoap2.transport.ServiceConnectionSE -> a.b.b.c:
+    java.net.HttpURLConnection connection -> a
+    void connect() -> a
+    void disconnect() -> b
+    java.util.List getResponseProperties() -> c
+    void setRequestProperty(java.lang.String,java.lang.String) -> a
+    void setRequestMethod(java.lang.String) -> a
+    java.io.OutputStream openOutputStream() -> d
+    java.io.InputStream openInputStream() -> e
+    java.io.InputStream getErrorStream() -> f
+org.ksoap2.transport.Transport -> a.b.b.d:
+    java.net.Proxy proxy -> a
+    java.lang.String url -> b
+    int timeout -> c
+    boolean debug -> d
+    java.lang.String requestDump -> e
+    java.lang.String responseDump -> f
+    java.lang.String xmlVersionTag -> g
+    byte[] createRequestData(org.ksoap2.SoapEnvelope) -> a
+org.kxml2.io.KXmlParser -> a.c.a.a:
+    java.lang.Object location -> a
+    java.lang.String version -> b
+    java.lang.Boolean standalone -> c
+    boolean processNsp -> d
+    boolean relaxed -> e
+    java.util.Hashtable entityMap -> f
+    int depth -> g
+    java.lang.String[] elementStack -> h
+    java.lang.String[] nspStack -> i
+    int[] nspCounts -> j
+    java.io.Reader reader -> k
+    java.lang.String encoding -> l
+    char[] srcBuf -> m
+    int srcPos -> n
+    int srcCount -> o
+    int line -> p
+    int column -> q
+    char[] txtBuf -> r
+    int txtPos -> s
+    int type -> t
+    boolean isWhitespace -> u
+    java.lang.String namespace -> v
+    java.lang.String prefix -> w
+    java.lang.String name -> x
+    boolean degenerated -> y
+    int attributeCount -> z
+    java.lang.String[] attributes -> A
+    java.lang.String error -> B
+    int[] peek -> C
+    int peekCount -> D
+    boolean wasCR -> E
+    boolean unresolved -> F
+    boolean token -> G
+    boolean isProp(java.lang.String,boolean,java.lang.String) -> a
+    boolean adjustNsp() -> a
+    java.lang.String[] ensureCapacity(java.lang.String[],int) -> a
+    void error(java.lang.String) -> a
+    void exception(java.lang.String) -> b
+    void nextImpl() -> b
+    int parseLegacy(boolean) -> a
+    void parseDoctype(boolean) -> b
+    int peekType() -> c
+    java.lang.String get(int) -> a
+    void push(int) -> b
+    void parseStartTag(boolean) -> c
+    void pushEntity() -> d
+    void pushText(int,boolean) -> a
+    void read(char) -> a
+    int read() -> e
+    int peek(int) -> c
+    java.lang.String readName() -> f
+    void skip() -> g
+    void setInput(java.io.Reader) -> setInput
+    void setInput(java.io.InputStream,java.lang.String) -> setInput
+    boolean getFeature(java.lang.String) -> getFeature
+    java.lang.String getInputEncoding() -> getInputEncoding
+    void defineEntityReplacementText(java.lang.String,java.lang.String) -> defineEntityReplacementText
+    java.lang.Object getProperty(java.lang.String) -> getProperty
+    int getNamespaceCount(int) -> getNamespaceCount
+    java.lang.String getNamespacePrefix(int) -> getNamespacePrefix
+    java.lang.String getNamespaceUri(int) -> getNamespaceUri
+    java.lang.String getNamespace(java.lang.String) -> getNamespace
+    int getDepth() -> getDepth
+    java.lang.String getPositionDescription() -> getPositionDescription
+    int getLineNumber() -> getLineNumber
+    int getColumnNumber() -> getColumnNumber
+    boolean isWhitespace() -> isWhitespace
+    java.lang.String getText() -> getText
+    char[] getTextCharacters(int[]) -> getTextCharacters
+    java.lang.String getNamespace() -> getNamespace
+    java.lang.String getName() -> getName
+    java.lang.String getPrefix() -> getPrefix
+    boolean isEmptyElementTag() -> isEmptyElementTag
+    int getAttributeCount() -> getAttributeCount
+    java.lang.String getAttributeType(int) -> getAttributeType
+    boolean isAttributeDefault(int) -> isAttributeDefault
+    java.lang.String getAttributeNamespace(int) -> getAttributeNamespace
+    java.lang.String getAttributeName(int) -> getAttributeName
+    java.lang.String getAttributePrefix(int) -> getAttributePrefix
+    java.lang.String getAttributeValue(int) -> getAttributeValue
+    java.lang.String getAttributeValue(java.lang.String,java.lang.String) -> getAttributeValue
+    int getEventType() -> getEventType
+    int next() -> next
+    int nextToken() -> nextToken
+    int nextTag() -> nextTag
+    void require(int,java.lang.String,java.lang.String) -> require
+    java.lang.String nextText() -> nextText
+    void setFeature(java.lang.String,boolean) -> setFeature
+    void setProperty(java.lang.String,java.lang.Object) -> setProperty
+org.kxml2.io.KXmlSerializer -> a.c.a.b:
+    java.io.Writer writer -> a
+    boolean pending -> b
+    int auto -> c
+    int depth -> d
+    java.lang.String[] elementStack -> e
+    int[] nspCounts -> f
+    java.lang.String[] nspStack -> g
+    boolean[] indent -> h
+    boolean unicode -> i
+    java.lang.String encoding -> j
+    void check(boolean) -> a
+    void writeEscaped(java.lang.String,int) -> a
+    void docdecl(java.lang.String) -> docdecl
+    void endDocument() -> endDocument
+    void entityRef(java.lang.String) -> entityRef
+    boolean getFeature(java.lang.String) -> getFeature
+    java.lang.String getPrefix(java.lang.String,boolean) -> getPrefix
+    java.lang.String getPrefix(java.lang.String,boolean,boolean) -> a
+    java.lang.Object getProperty(java.lang.String) -> getProperty
+    void ignorableWhitespace(java.lang.String) -> ignorableWhitespace
+    void setFeature(java.lang.String,boolean) -> setFeature
+    void setProperty(java.lang.String,java.lang.Object) -> setProperty
+    void setPrefix(java.lang.String,java.lang.String) -> setPrefix
+    void setOutput(java.io.Writer) -> setOutput
+    void setOutput(java.io.OutputStream,java.lang.String) -> setOutput
+    void startDocument(java.lang.String,java.lang.Boolean) -> startDocument
+    org.xmlpull.v1.XmlSerializer startTag(java.lang.String,java.lang.String) -> startTag
+    org.xmlpull.v1.XmlSerializer attribute(java.lang.String,java.lang.String,java.lang.String) -> attribute
+    void flush() -> flush
+    org.xmlpull.v1.XmlSerializer endTag(java.lang.String,java.lang.String) -> endTag
+    java.lang.String getNamespace() -> getNamespace
+    java.lang.String getName() -> getName
+    int getDepth() -> getDepth
+    org.xmlpull.v1.XmlSerializer text(java.lang.String) -> text
+    org.xmlpull.v1.XmlSerializer text(char[],int,int) -> text
+    void cdsect(java.lang.String) -> cdsect
+    void comment(java.lang.String) -> comment
+    void processingInstruction(java.lang.String) -> processingInstruction
+org.kxml2.kdom.Element -> a.c.b.a:
+    java.lang.String namespace -> a
+    java.lang.String name -> b
+    java.util.Vector attributes -> c
+    org.kxml2.kdom.Node parent -> d
+    java.util.Vector prefixes -> e
+    org.kxml2.kdom.Element createElement(java.lang.String,java.lang.String) -> a
+    java.lang.String getName() -> a
+    java.lang.String getNamespace() -> b
+    void parse(org.xmlpull.v1.XmlPullParser) -> a
+    void setAttribute(java.lang.String,java.lang.String,java.lang.String) -> a
+    void setParent(org.kxml2.kdom.Node) -> a
+    void write(org.xmlpull.v1.XmlSerializer) -> a
+org.kxml2.kdom.Node -> a.c.b.b:
+    java.util.Vector children -> f
+    java.lang.StringBuffer types -> g
+    void addChild(int,java.lang.Object) -> a
+    org.kxml2.kdom.Element createElement(java.lang.String,java.lang.String) -> a
+    java.lang.Object getChild(int) -> b
+    int getChildCount() -> c
+    org.kxml2.kdom.Element getElement(int) -> a
+    org.kxml2.kdom.Element getElement(java.lang.String,java.lang.String) -> b
+    java.lang.String getText$47921032() -> d
+    int getType(int) -> c
+    int indexOf(java.lang.String,java.lang.String,int) -> a
+    void parse(org.xmlpull.v1.XmlPullParser) -> a
+    void write(org.xmlpull.v1.XmlSerializer) -> a
+    void writeChildren(org.xmlpull.v1.XmlSerializer) -> b

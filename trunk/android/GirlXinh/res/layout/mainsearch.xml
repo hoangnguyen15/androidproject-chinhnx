@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainbody"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <com.krazevina.objects.KSV
+        android:id="@+id/ksv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </com.krazevina.objects.KSV>
+
+    <LinearLayout
+        android:id="@+id/ll_toppanel"
+        android:layout_width="fill_parent"
+        android:layout_height="60dip"
+        android:background="@drawable/toppanel"
+        android:gravity="center"
+        android:padding="0dip" >
+
+        <TextView
+            android:id="@+id/txt_Uploader"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_weight="2"
+            android:ellipsize="marquee"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="40dip"
+            android:singleLine="true"
+            android:textColor="#fff"
+            android:textSize="20dip" />
+
+        <LinearLayout
+            android:layout_width="64dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="-64dip"
+            android:layout_marginTop="5dip" >
+
+            <LinearLayout
+                android:layout_width="2dip"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="5dip"
+                android:layout_marginTop="2dip"
+                android:background="#f00" />
+
+            <Button
+                android:id="@+id/btn_SearchMain"
+                android:layout_width="61dip"
+                android:layout_height="43dip"
+                android:background="@drawable/followbtn" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="57dip"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottompanelnoar"
+            android:orientation="horizontal"
+            android:scrollbars="none" 
+            android:paddingTop="12dip">
+
+
+                <Button
+                    android:id="@+id/btn_menu"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:text="@string/btn_back"
+                    android:textColor="#fff"
+                    android:textSize="6pt" />
+
+                <!--
+                    <Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_moi"
+						android:drawableTop="@drawable/moiactive"
+						android:background="#00000000" android:text="@string/moi"
+						android:textColor="#f00" android:textSize="6pt"
+						android:focusable="false" android:layout_weight="1"
+						android:gravity="center"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_hot" android:background="#00000000"
+						android:drawableTop="@drawable/btnhot" android:text="@string/hot"
+						android:textColor="#fff" android:textSize="6pt"
+						android:focusable="false" android:layout_weight="1"
+						android:gravity="center"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_top" android:background="#00000000"
+						android:drawableTop="@drawable/topbtn" android:text="@string/top"
+						android:textColor="#fff" android:textSize="6pt" android:paddingLeft="0dip"
+						android:focusable="false" android:layout_weight="1"
+						android:gravity="center"/>
+                -->
+
+                <Button
+                    android:id="@+id/btn_moi"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/moiactive"
+                    android:focusable="false"
+                    android:paddingLeft="0dip"
+                    android:text="@string/moi"
+                    android:textColor="#fff"
+                    android:textSize="5pt" />
+
+                <Button
+                    android:id="@+id/btn_hot"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/btnhot"
+                    android:focusable="false"
+                    android:paddingLeft="0dip"
+                    android:text="@string/hot"
+                    android:textColor="#fff"
+                    android:textSize="5pt" />
+
+                <Button
+                    android:id="@+id/btn_top"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/topbtn"
+                    android:focusable="false"
+                    android:paddingLeft="0dip"
+                    android:text="@string/top"
+                    android:textColor="#fff"
+                    android:textSize="5pt" />
+                
+            </LinearLayout>
+</RelativeLayout>

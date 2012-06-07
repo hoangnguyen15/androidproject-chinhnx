@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:orientation="vertical" android:id="@+id/mainbody">
+
+	<com.krazevina.objects.KSV android:layout_width="fill_parent"
+		android:layout_height="fill_parent" android:id="@+id/ksv">
+	</com.krazevina.objects.KSV> 
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:layout_height="45dip" android:background="@drawable/toppanel"
+		android:padding="0dip" android:id="@+id/ll_toppanel"
+		android:gravity="center">
+
+		<LinearLayout android:layout_width="50dip" android:layout_height="fill_parent">
+			<Button android:layout_width="48dip" android:layout_height="fill_parent"
+				android:background="@drawable/searchbtn" android:id="@+id/btn_SearchMain"/>	
+			<LinearLayout android:layout_width="2dip" android:layout_height="fill_parent"
+				android:layout_marginTop="2dip" android:layout_marginBottom="5dip" 
+				android:background="#f00"/>
+		</LinearLayout>
+	    
+		<AutoCompleteTextView android:layout_width="0dip" android:layout_height="fill_parent"
+		    android:completionThreshold="1" android:layout_weight="2"
+			android:layout_marginLeft="10dip"
+			android:id="@+id/edt_Search_main" android:hint="@string/searchhint"
+			android:singleLine="true" android:visibility="gone"/>
+			
+		<TextView android:layout_width="0dip" android:layout_height="fill_parent"
+			android:gravity="left|center_vertical" android:singleLine="true"
+			android:ellipsize="marquee" android:layout_weight="2"
+			android:textSize="20dip" android:textColor="#fff"
+			android:id="@+id/txt_Uploader" android:paddingLeft="10dip"/>
+		
+				
+	    <LinearLayout android:layout_width="50dip" android:layout_height="fill_parent"
+			android:visibility="visible" android:gravity="center_vertical|center_horizontal">
+			<Button android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:background="@drawable/btnrecaptureimage" android:id="@+id/btnupload"/>
+		</LinearLayout>
+	</LinearLayout>
+	
+	<com.krazevina.objects.KHorizontalScrollView android:padding="0dip"
+		android:id="@+id/layout_menu" android:layout_width="fill_parent"
+		android:layout_height="57dip" android:fadingEdge="none" android:scrollbars="none"
+		android:layout_alignBottom="@+id/ksv" android:background="@drawable/bottompanel">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="fill_parent">
+			
+		    
+			<LinearLayout android:layout_width="320dip" android:id="@+id/menu1"
+				android:layout_height="fill_parent"	android:paddingTop="12dip">
+				    <Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_menu" android:drawableTop="@drawable/btn_allhl"
+						android:text="@string/btn_all" android:textColor="#f00" 
+						android:textSize="5pt" android:gravity="center_vertical|center_horizontal"
+						android:background="#00000000"
+						android:layout_weight="1"/>
+				    <Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_moi" android:drawableTop="@drawable/moiactive"
+						android:background="#00000000" android:text="@string/moi"
+						android:textSize="5pt"
+						android:textColor="#f00" android:gravity="center"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_top" android:background="#00000000"
+						android:drawableTop="@drawable/btnrandom" android:text="@string/random"
+						android:textSize="5pt"
+						android:textColor="#fff" android:gravity="center"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_hot" android:background="#00000000"
+						android:drawableTop="@drawable/btnhot" android:text="@string/hot"
+						android:textSize="5pt"
+						android:textColor="#fff" android:gravity="center"
+						android:focusable="false" android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_myimg1" android:visibility="gone"
+						android:background="#00000000" android:text="@string/myimgs"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnme"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_setting1" android:background="#00000000"
+						android:text="@string/option" android:visibility="gone"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt" android:drawableTop="@drawable/btnsetting"
+						android:layout_weight="1" android:focusable="false"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_follow1" android:background="#00000000"
+						android:text="@string/imgfollow" android:gravity="center"
+						android:textColor="#fff" android:focusable="false"
+						android:drawableTop="@drawable/btnfollow"
+						android:textSize="5pt"
+						android:visibility="gone" android:layout_weight="1"/>
+					
+			</LinearLayout>
+			
+			<LinearLayout android:layout_width="320dip" android:id="@+id/menu2"
+				android:layout_height="fill_parent" android:paddingTop="12dip">
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:text="@string/myimgs" android:drawableTop="@drawable/iconmehl"
+						android:textColor="#f00" android:layout_marginLeft="8dip"
+						android:gravity="center" android:textSize="5pt"
+						android:id="@+id/btn_menu2" android:background="#00000000"
+						android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:drawableTop="@drawable/btnhot"
+						android:background="#00000000" android:text="@string/favorite"
+						android:textColor="#fff" android:gravity="center"
+						android:id="@+id/btn_favorite_main" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:id="@+id/btn_down_main"
+						android:drawableTop="@drawable/btndownload" android:text="@string/btn_downloaded"
+						android:textColor="#f00" android:gravity="center"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:id="@+id/btn_up_main"
+						android:drawableTop="@drawable/btnuploadimage" android:text="@string/up"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_all2" android:visibility="gone"
+						android:background="#00000000" android:text="@string/btn_all"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnall" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_setting2" android:background="#00000000"
+						android:text="@string/option" android:visibility="gone"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt" android:drawableTop="@drawable/btnsetting"
+						android:layout_weight="1" android:focusable="false"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_follow2" android:background="#00000000"
+						android:text="@string/imgfollow" android:gravity="center"
+						android:textColor="#fff" android:layout_weight="1"
+						android:drawableTop="@drawable/btnfollow"
+						android:textSize="5pt"
+						android:focusable="false" android:visibility="gone"/>
+			</LinearLayout>
+			
+			<LinearLayout android:layout_width="320dip"	android:layout_height="fill_parent" 
+				android:orientation="vertical" android:padding="0dip" android:id="@+id/menu3">
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="12dip"
+					android:layout_height="fill_parent" android:gravity="center">
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:focusable="false" android:layout_marginLeft="8dip"
+						android:background="#00000000" android:drawableTop="@drawable/g_follow_hi"
+						android:text="@string/imgsfollow" android:textSize="5pt"
+						android:gravity="center" 
+						android:textColor="#f00" android:id="@+id/btn_menu3"
+						android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortnew" android:drawableTop="@drawable/moibtn"
+						android:background="#00000000" android:text="@string/sortnew"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortrand" android:background="#00000000"
+						android:drawableTop="@drawable/btnrandom"
+						android:text="@string/sortrandom" android:gravity="center"
+						android:textColor="#fff" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortid" android:background="#00000000"
+						android:text="@string/sortuser" android:drawableTop="@drawable/btndanhsach"
+						android:textColor="#fff" android:gravity="center"
+						android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_all3" android:visibility="gone"
+						android:drawableTop="@drawable/btnall" android:textSize="5pt"
+						android:background="#00000000" android:text="@string/btn_all"
+						android:textColor="#fff" android:gravity="center"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_setting3" android:background="#00000000"
+						android:text="@string/option" android:visibility="gone"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnsetting" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:id="@+id/btn_myimg3" android:background="#00000000"
+						android:text="@string/myimgs" android:gravity="center"
+						android:textColor="#fff" android:visibility="gone"
+						android:drawableTop="@drawable/btnme" android:textSize="5pt"
+						android:focusable="false" android:layout_weight="1"/>
+				</LinearLayout>
+			</LinearLayout>
+			
+			
+			<LinearLayout android:layout_width="320dip" android:id="@+id/menu4"
+				android:layout_height="fill_parent"	 android:paddingTop="12dip">
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/option"
+						android:drawableTop="@drawable/iconsettingshl"
+						android:textColor="#f00" android:gravity="center"
+						android:focusable="false"
+						android:textSize="5pt"
+						android:layout_weight="1"/>
+					
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/account"
+						android:textColor="#fff" android:gravity="center"
+						android:drawableTop="@drawable/btnme"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/setting"
+						android:textColor="#f00" android:gravity="center"
+						android:drawableTop="@drawable/btnsetting"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/list"
+						android:textColor="#fff" android:id="@+id/btnlist"
+						android:gravity="center" android:drawableTop="@drawable/btnfollow"
+						android:layout_weight="1" android:focusable="false"
+						android:textSize="5pt"/>
+				</LinearLayout>
+		</LinearLayout>
+	</com.krazevina.objects.KHorizontalScrollView>
+	
+</RelativeLayout>

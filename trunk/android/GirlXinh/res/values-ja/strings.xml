@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">美しい少女</string>
+	<string name="banned">アカウントがロック。</string>
+	<string name="btn_all">全ての</string>
+	<string name="btn_retry">再試行</string>
+	<string name="btn_search">を検索</string>
+	<string name="btn_taked">とら</string>
+	<string name="btn_downloaded">ダウンロードし</string>
+	<string name="btn_gallery">ギャラリー</string>
+	<string name="btn_youralbum">アルバム</string>
+	<string name="noconnect">インターネットの接続エラー.</string>
+	<string name="favorited">お気に入り.</string>
+	<string name="unfavorited">お気に入りキャンセル.</string>
+	<string name="action">アクションを選択します。</string>
+	<string name="empty">写真はありません.</string>
+	<string name="emptyfollow">あなたは誰にも従っていませんでした。</string>
+	<string name="back">親フォルダ</string>
+	<string name="btn_back">戻る</string>
+	<string name="search">を検索</string>
+	<string name="err">間違ったファイル.</string>
+	<string name="account">アカウント</string>
+	<string name="setting">設定する</string>
+	<string name="option">オプション</string>
+	<string name="list">従ってください一覧</string>
+	<string name="undefine">ノーブランド商品</string>
+	<string name="filename">ファイル名</string>
+	<string name="user">ユーザーが</string>
+	<string name="random">ランダム</string>
+	<string name="searchhint">ユーザ名を入力し</string>
+	<string name="needsd">あなたは、SDカードが正常にこのアプリケーションを実行するためにマウントされている必要があります。.</string>
+	<string name="sortnew">時間によるソート</string>
+	<string name="sortrandom">ソートランダム</string>
+	<string name="needupdate">利用可能な新しいバージョンは、アプリケーションを更新する必要があります.</string>
+	<string name="imagetoolarge">大きすぎる写真.</string>
+	<string name="sortuser">並べ替えのユーザー</string>
+	
+	<string name="quit">終了</string>
+	<string name="retry">再試行</string>
+	
+	<string name="followsortid">並べ替えのユーザー</string>
+	<string name="followsortnew">時間によるソート</string>
+	<string name="followsortrand">ソートランダム</string>
+	
+	<string name="scanning">スキャニング sdcard...</string>
+
+	<string name="followed">従ってください</string>
+	<string name="uploader">ユーザのアップロード</string>
+	<string name="logedout">ログアウト.</string>
+	<string name="myimgs">あなたの写真</string>
+	<string name="imgfollow">友人の写真</string>
+	<string name="imgsfollow">友人の写真</string>
+
+	<string name="suredelete">明確なキャッシュは、アプリケーションのロード時間が長くなります.</string>
+	<string name="delete">削除</string>
+	<string name="outofdate">外の日付の</string>
+	<string name="illegalcode">不正コード.</string>
+	<string name="legalcode">法的コード.</string>
+	<string name="legalsms">SMS は、送信.</string>
+
+	<string name="userupload">ユーザのアップロード:</string>
+	<string name="loading">ロード...</string>
+
+	<string name="hintbrowse">クリックしてフォルダ名でフォルダを選択します。.\n
+	開いているフォルダ：左クリックして"+".</string>
+
+	<string name="general">一般情報</string>
+	<string name="cache">キャッシュのサイズ</string>
+	<string name="maxcache">最大キャッシュサイズ (Mb)</string>
+	<string name="clear">クリア</string>
+	<string name="reply">フィードバック</string>
+	<string name="feedback">フィードバックを送信</string>
+	<string name="intro">私たちについて</string>
+	<string name="pleasewait">しばらくお待ちください...</string>
+
+	<string name="needlogin">ログインしてください.</string>
+	<string name="loginsucess">うまくログイン.</string>
+	<string name="signup">サインアップ</string>
+	<string name="phoneimgs">電話での画像</string>
+
+	<string name="change">変更</string>
+	<string name="directory">デフォルトのフォルダ</string>
+
+	<string name="saved">画像が保存さ.</string>
+	<string name="info">情報</string>
+	<string name="close">閉じる</string>
+	<string name="times">回</string>
+	<string name="choosedirectory">フォルダを選択します。</string>
+	<string name="choose">選択</string>
+	<string name="exit">終了</string>
+	<string name="confirmexit">アプリケーションの終了?</string>
+	<string name="no">なし</string>
+	<string name="sdcard">Sdcard</string>
+	<string name="currentdirectory">現在のフォルダ</string>
+	<string name="confirm">フォルダを選択します。</string>
+	<string name="downloading">待つのダウンロードフルイメージ間.</string>
+	<string name="root">あなたは、ルートフォルダに格納されています.</string>
+	<string name="sure">フォルダを選択します。</string>
+	<string name="cantsave">エラー、保存した画像間.</string>
+	<string name="setwallpered">壁紙が変更.</string>
+	<string name="cantsetwallper">エラー変更の壁紙間.</string>
+	<string name="menu_share_intent">アプリケーションを選択します。</string>
+	<string name="menu_cant_share">アクションを実行するアプリケーションがない.</string>
+	<string name="title_selectfolder">フォルダを選択します。</string>
+
+	<string name="uploaddate">日付のアップロード(d/m/y):</string>
+	<string name="measure">サイズ:</string>
+	<string name="voted">好きな:</string>
+	<string name="days">一日</string>
+	<string name="imgname">の名前:</string>
+	
+	<string-array name="actionarr">
+		<item>保存</item>
+		<item>セット壁紙</item>
+		<item>シェア</item>
+		<item>閉じる</item>
+	</string-array>
+	<string-array name="wallarr">
+		<item>サイズを維持</item>
+		<item>画面に合わせる</item>
+		<item>スクロール可能な</item>
+		<item>の静的</item>
+	</string-array>
+
+	<string-array name="saveto">
+		<item>デフォルトのフォルダに保存</item>
+		<item>フォルダを選択します。</item>
+	</string-array>
+
+	<string name="user_name">ユーザ名</string>
+	<string name="username">ユーザ名:</string>
+	<string name="register">サインアップ</string>
+	<string name="login">ログイン</string>
+	<string name="password">パスワード</string>
+	<string name="re_password">再入力パスワード</string>
+	<string name="save_password">パスワードを保存</string>
+	<string name="auto_login">自動ログイン</string>
+	<string name="waiting">しばらくお待ちください...</string>
+	<string name="info_title">個人情報</string>
+	<string name="accept_rule">私達の条件を承諾</string>
+
+	<string name="mn_edt_info">個人情報を編集</string>
+	<string name="mn_picload">ダウンロードした写真</string>
+	<string name="download">ダウンロード</string>
+	<string name="mn_picup">アップロード</string>
+	<string name="up">アップロード</string>
+	<string name="mn_picfav">お気に入り</string>
+	<string name="favorite">お気に入り</string>
+	<string name="mn_upload">画像をアップロードする</string>
+	<string name="mn_logout">ログアウト</string>
+
+	<string name="name">の名前:</string>
+	<string name="email">メール:</string>
+	<string name="phone">電話番号:</string>
+	<string name="yahoo">Yahoo/MSN/Skype id:</string>
+	<string name="update">更新</string>
+	<string name="time">会員の日付:</string>
+	<string name="change_info">アップデート情報</string>
+	<string name="change_pass">パスワードを変更する</string>
+
+	<string name="updated">情報が更新されました</string>
+	<string name="err_internet">インターネットの接続エラー.</string>
+	<string name="err_email">間違ったメール</string>
+	<string name="err_phone">間違って電話番号</string>
+
+
+	<string name="key">コードは</string>
+	<string name="smsactive">アクティブ経由のSMS</string>
+	<string name="codeactive">コードを介したアクティブな</string>
+
+	<string name="cancel">キャンセル</string>
+
+	<string name="putkeyhere">ここに入力コード</string>
+	<string name="needupgrade">あなたがアカウントをアップグレードする必要があります。.</string>
+	<string name="sms">コードを取得</string>
+	<string name="upgrade">アクティブ</string>
+	<string name="continuego">継続</string>
+
+	<string name="oldpass">古いパスワード</string>
+	<string name="newpass">新しいパスワード</string>
+	<string name="notmatchpass">再入力パスワードが一致しない</string>
+	<string name="txt_search">このユーザーがアップロードしたすべての画像を検索するには、この検索ボックスでユーザー名を入力する.</string>
+	<string name = "dup_username">ユーザ名は存在しています.</string>
+	<string name = "reg_successful">登録に成功.</string>
+	
+	<string name="logout_question">あなたはログアウトしますか？ ?</string>
+	<string name="unfollow_question">このユーザーをフォローキャンセル？</string>
+	<string name="yes">はい</string>
+	<string name="not_blank">空白のままにすることはできません</string>
+	<string name="user_not_blank">空白のままにすることはできません</string>
+	<string name="err_username">ユーザ名は[a-z,A-Z,0-9,-,_]と長さ3-15文字のみを含めることができます</string>
+
+	<string name="sms_sent">SMSは、送信.</string>
+	<string name="sms_fail">SMSを送信するために失敗する.</string>
+	<string name="sms_question">8732費用15000 VNDへのSMS.</string>
+	<string name="err_loginacc">アカウントが他の場所に記録されます。. </string>
+	<string name="err_loginpass">間違ったユーザー名またはパスワード.</string>
+	<string name="err_accept_rule">あなたは言葉を受け入れている.</string>
+
+	<string name="intro_title">美しい女の子</string>
+	<string name="intro_address">7,8 floors, Lucky Building, 66 Trần Thái Tông str, Cầu
+		Giấy dst, Hà Nội city</string>
+	<string name="intro_text_tel">Call:</string>
+	<string name="intro_tel">0435567810</string>
+	<string name="intro_tel_text">(+84)-43-556-7810</string>
+	<string name="intro_email">androidkraze@gmail.com</string>
+	<string name="intro_website">http://krazevina.com</string>
+	<string name="intro_copyright">© Developed by KrazeVina Inc - 2011</string>
+
+	<string name="moi">新</string>
+	<string name="hot">Hot</string>
+	<string name="top">Top</string>
+	
+	<string name="rotate">回転する</string>
+	<string name="upload">アップロード</string>
+	<string name="uploaded">正常にアップロード</string>
+	<string name="uploadfail">失敗をアップロード</string>
+	<string name="reup">別の写真を選択してください</string>
+	<string name="details">詳細</string>
+	
+	<string name="g_acc">アカウント</string>
+	<string name="g_option">オプション</string>
+	<string name="g_list">一覧</string>
+	<string name="title_list_follow">一覧</string>
+	<string name="warn_list_follow">あなたは誰に興味がない.</string>
+	
+	<string name="title_rule">利用規約</string>
+	<string name="rule"> 
+		Personal infomation is optional, but when you lost your password, you have to provide us infomation to 
+		recover password.
+		You own all your photo that you upload to our server. We are not responsible to your content.
+		The photos you upload will be censored before it can be viewed from top chart.
+		The TERM OF USE in future version can different to this version. You should view TERM OF USE each time the application have new version.
+		You are not able to upload porn photo.
+	</string>
+	<string-array name="choosefrom">
+        <item >ギャラリー</item>
+        <item >カメラ</item>
+    </string-array>
+    <string name="choosefrom">から写真を選択してください。</string>
+</resources>

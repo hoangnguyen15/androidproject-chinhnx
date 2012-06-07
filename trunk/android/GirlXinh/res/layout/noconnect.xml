@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:layout_height="fill_parent" android:gravity="center_horizontal|center_vertical"
+	android:id="@+id/ll_main_noconnect">
+
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="40dip" android:text="@string/noconnect"
+		android:background="#f00" android:gravity="center" android:textColor="#fff"
+		android:textSize="18dip" android:layout_marginBottom="20dip"
+		android:layout_marginTop="5dip" android:textStyle="bold" android:id="@+id/txtnoconnect"
+		android:visibility="invisible" />
+
+	<Button android:layout_width="200dip" android:layout_height="45dip"
+		android:layout_marginBottom="5dip" android:background="@drawable/btnnc"
+		android:id="@+id/btn_retry" android:text="@string/btn_search"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold" />
+	<Button android:id="@+id/btn_login" android:layout_width="200dip"
+		android:layout_height="45dip" android:layout_marginBottom="5dip"
+		android:background="@drawable/btnnc" android:text="@string/login"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold" />
+	<Button android:layout_width="200dip" android:layout_height="45dip"
+		android:layout_marginBottom="5dip" android:background="@drawable/btnnc"
+		android:id="@+id/btn_picload" android:text="@string/mn_picload"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold" />
+	<Button android:background="@drawable/btnnc"
+		android:layout_marginBottom="5dip" android:text="@string/mn_picup"
+		android:layout_height="45dip" android:textStyle="bold"
+		android:textColor="#fff" android:textSize="16dip" android:id="@+id/btn_picup"
+		android:layout_width="200dip" />
+	<Button android:layout_width="200dip" android:layout_height="45dip"
+		android:layout_marginBottom="5dip" android:background="@drawable/btnnc"
+		android:id="@+id/btn_picfav" android:text="@string/mn_picfav"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold" />
+	<Button android:layout_width="200dip" android:layout_height="45dip"
+		android:layout_marginBottom="5dip" android:background="@drawable/btnnc"
+		android:id="@+id/btn_upload" android:text="@string/mn_upload"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold" />
+	<Button android:layout_width="200dip" android:layout_height="45dip"
+		android:layout_marginBottom="5dip" android:background="@drawable/btnnc"
+		android:id="@+id/btn_logout" android:text="@string/mn_logout"
+		android:textColor="#fff" android:textSize="16dip" android:textStyle="bold"
+		android:visibility="invisible" />
+</LinearLayout>

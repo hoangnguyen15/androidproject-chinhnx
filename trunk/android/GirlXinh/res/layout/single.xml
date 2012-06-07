@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/singlebody"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_toppanel"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/toppanel"
+        android:gravity="center"
+        android:padding="0dip" >
+
+        <LinearLayout
+            android:id="@+id/ll_txtUploader"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="5dip"
+            android:layout_marginLeft="40dip"
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="3dip"
+            android:layout_weight="2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lbluploader"
+                android:layout_width="fill_parent"
+                android:layout_height="12dip"
+                android:gravity="left|center_vertical"
+                android:text="@string/uploader"
+                android:textColor="#fff"
+                android:textSize="10dip" />
+
+            <TextView
+                android:id="@+id/txtuploader"
+                android:layout_width="fill_parent"
+                android:layout_height="0dip"
+                android:layout_weight="2"
+                android:gravity="left|center_vertical"
+                android:singleLine="true"
+                android:text="uploader id"
+                android:textColor="#fff"
+                android:textSize="20dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="64dip"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip" >
+
+            <LinearLayout
+                android:layout_width="1px"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="4dip"
+                android:layout_marginTop="4dip"
+                android:background="#f00" />
+
+            <Button
+                android:id="@+id/btnfollow"
+                android:layout_width="61dip"
+                android:layout_height="43dip"
+                android:background="@drawable/followbtn" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/llimgview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom"
+            android:scrollbars="vertical" />
+
+        <LinearLayout
+            android:id="@+id/llmenu"
+            android:layout_width="fill_parent"
+            android:layout_height="57dip"
+            android:layout_marginTop="-57dip"
+            android:background="@drawable/bottompanelnoar"
+            android:orientation="vertical"
+            android:padding="0dip" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="12dip" >
+
+                <Button
+                    android:id="@+id/btnmain"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:focusable="false"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="@string/btn_back"
+                    android:textColor="#fff"
+                    android:textSize="6pt" />
+
+                <Button
+                    android:id="@+id/btninfo"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/btninfo"
+                    android:focusable="false"
+                    android:paddingLeft="0dip"
+                    android:text="@string/info"
+                    android:textColor="#fff"
+                    android:textSize="5pt" />
+
+                <Button
+                    android:id="@+id/btnfav"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/btnfavorite"
+                    android:focusable="false"
+                    android:text="2"
+                    android:textColor="#f00"
+                    android:textSize="5pt" />
+
+                <Button
+                    android:id="@+id/btndown"
+                    android:layout_width="0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:drawableTop="@drawable/btndownload"
+                    android:focusable="false"
+                    android:paddingLeft="10dip"
+                    android:text="@string/download"
+                    android:textColor="#fff"
+                    android:textSize="5pt" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

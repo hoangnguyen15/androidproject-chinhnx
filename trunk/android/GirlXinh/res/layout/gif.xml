@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <LinearLayout android:layout_width="fill_parent" android:layout_height="0dip"
+  	android:layout_weight="1" android:gravity="center">
+	  <com.krazevina.objects.CView
+	    android:id="@+id/gifView"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content" />
+   </LinearLayout>
+    
+   <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+   	android:orientation="vertical" android:id="@+id/llmenu">
+   
+  <LinearLayout
+    android:orientation="horizontal" android:layout_marginLeft="20dip"
+    android:layout_width="fill_parent" android:layout_marginRight="20dip"
+    android:layout_height="50dip">
+    <Button
+      android:id="@+id/btnPlay" android:layout_weight="1"
+      android:text="@string/play" android:background="@drawable/btnnc"
+      android:layout_width="0dip" android:textColor="#fff"
+      android:layout_height="fill_parent" android:layout_marginRight="10dip"/>
+    <Button
+      android:id="@+id/btnPause" android:layout_weight="1"
+      android:text="@string/pause" android:background="@drawable/btnnc"
+      android:layout_width="0dip" android:textColor="#fff"
+      android:layout_height="fill_parent" />
+  </LinearLayout>
+  <LinearLayout
+    android:orientation="horizontal"  android:layout_marginLeft="80dip"
+    android:layout_width="fill_parent"  android:layout_marginRight="80dip"
+    android:layout_height="40dip" android:gravity="center"
+    android:layout_marginTop="5dip">
+    <Button
+      android:id="@+id/btnPrevFrame" android:layout_marginRight="10dip"
+      android:text="@string/ffpr" android:background="@drawable/btnnc"
+      android:layout_width="wrap_content" android:textColor="#fff"
+      android:layout_height="fill_parent" />
+    <Button
+      android:id="@+id/btnNextFrame"
+      android:text="@string/ffne" android:background="@drawable/btnnc"
+      android:layout_width="wrap_content" android:textColor="#fff"
+      android:layout_height="fill_parent" />
+  </LinearLayout>
+  </LinearLayout>
+</LinearLayout>
+
+
