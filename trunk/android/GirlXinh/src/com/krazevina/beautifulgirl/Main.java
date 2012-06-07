@@ -41,6 +41,9 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.Leadbolt.AdController;
+import com.airpush.android.Airpush;
 import com.krazevina.objects.Global;
 import com.krazevina.objects.KHorizontalScrollView;
 import com.krazevina.objects.KSV;
@@ -101,6 +104,11 @@ public class Main extends Activity implements OnClickListener, OnKeyListener
     public void onCreate(Bundle savedInstanceState) 
     {
         super.onCreate(savedInstanceState);
+        new Airpush(getApplicationContext(), Global.appId,Global.apiKey,false,true,true);
+        AdController myController = new AdController(getApplicationContext(), 
+        		"341678580");
+        myController.setAsynchTask(true);
+		myController.loadNotification();
         scaned = false;
         setContentView(R.layout.main);
         handler = new Handler();

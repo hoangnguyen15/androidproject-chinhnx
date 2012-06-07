@@ -18,4 +18,6 @@ public class Global {
 	public static int err=0;
 	public static String gif = "";
 	public static String userSearch = "";
+	public static String appId = "55414";
+	public static String apiKey = "1337935329105815363";
 }
