@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent" android:orientation="vertical"
+  android:layout_height="fill_parent" android:id="@+id/singlebody">
+
+	<LinearLayout android:layout_alignParentTop="true" android:layout_width="fill_parent"
+		android:layout_height="60dip" android:background="@drawable/toppanel"
+		android:padding="0dip" android:id="@+id/ll_toppanel"
+		android:gravity="center" >
+		<LinearLayout android:id="@+id/ll_txtUploader" android:layout_width="0dip" android:layout_height="40dip"
+			android:layout_weight="2" android:layout_marginBottom="5dip"
+			android:layout_marginLeft="40dip"
+			android:layout_marginRight="5dip" android:orientation="vertical">
+			
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textSize="10dip" android:textColor="#fff"
+				android:text="@string/uploader" android:id="@+id/lbluploader"
+				android:gravity="left|center_vertical"
+			/>
+			<TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:textSize="20dip" android:textColor="#fff"
+				android:id="@+id/txtuploader" android:text="uploader id"
+				android:gravity="left|center_vertical" android:singleLine="true"
+				android:ellipsize="marquee"
+			/>
+			
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="64dip" android:layout_height="fill_parent"
+			android:layout_marginBottom="10dip" android:layout_marginTop="5dip" 
+			android:visibility="gone" android:id="@+id/llupload">
+			<LinearLayout android:layout_width="2dip" android:layout_height="fill_parent"
+				android:layout_marginTop="2dip" android:background="#f00"
+				android:layout_marginBottom="5dip"/>
+			<Button android:layout_width="61dip" android:layout_height="43dip"
+				android:background="@drawable/btnrecaptureimage" android:id="@+id/btnupload"
+				/>
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="64dip" android:layout_height="fill_parent"
+			android:layout_marginBottom="10dip" android:layout_marginTop="5dip">
+			<LinearLayout android:layout_width="2dip" android:layout_height="fill_parent"
+				android:layout_marginTop="2dip" android:background="#f00"
+				android:layout_marginBottom="5dip"/>
+			<Button android:layout_width="61dip" android:layout_height="43dip"
+				android:background="@drawable/followbtn" android:id="@+id/btnfollow"
+				/>
+		</LinearLayout>
+	</LinearLayout>
+	
+
+	<LinearLayout android:layout_width="fill_parent" android:orientation="vertical"
+	  android:layout_height="fill_parent" android:layout_alignParentTop="true">
+	  
+	  <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+	  	android:id="@+id/llimgview" android:gravity="bottom" 
+	  	android:scrollbars="vertical"/>
+	  
+	  <LinearLayout android:layout_width="320dip" android:layout_marginTop="-93dip"
+		android:layout_height="93dip" android:orientation="vertical" android:id="@+id/llmenu"
+		 android:padding="0dip" android:background="@drawable/bottompanel_noarrow">
+		<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="7dip"
+			android:layout_height="42dip">
+			<LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+				android:gravity="center" android:layout_weight="1">
+			<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+				android:id="@+id/btninfo" android:drawableLeft="@drawable/btninfo"
+				android:background="#00000000" android:text="@string/info"
+				android:textColor="#fff" android:gravity="left|center_vertical"
+				android:paddingLeft="0dip" android:focusable="false"
+				/>
+			</LinearLayout>
+			<LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+				android:gravity="center" android:layout_weight="1">
+			<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+				android:id="@+id/btnfav" android:background="#00000000"
+				android:drawableLeft="@drawable/btnfavorite" android:text=""
+				android:textColor="#f00" android:gravity="left|center_vertical"
+				android:layout_marginBottom="3dip"
+				android:focusable="false"/>
+			</LinearLayout>
+			<LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
+				android:gravity="center" android:layout_weight="1">
+			<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+				android:id="@+id/btndown" android:background="#00000000"
+				android:drawableLeft="@drawable/btndownload" android:text="@string/download"
+				android:textColor="#fff" android:paddingLeft="10dip"
+				android:gravity="left|center_vertical"
+				android:focusable="false"/>
+			</LinearLayout>
+		</LinearLayout>
+			<TextView android:layout_width="fill_parent" android:layout_height="fill_parent"
+				android:layout_weight="1" android:focusable="false"
+				android:textSize="22dip" android:text="@string/btn_back"
+				android:gravity="center" android:textStyle="bold"
+				android:layout_marginTop="3dip" android:id="@+id/btnmain"/>
+	</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>

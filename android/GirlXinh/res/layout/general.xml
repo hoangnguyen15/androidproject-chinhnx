@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+
+	<!--
+		<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="@string/general"
+		android:textColor="#000" android:textStyle="bold"
+		android:textSize="16dip" android:gravity="center_vertical"
+		android:padding="10dip" android:background="#ccc"/>
+	-->
+
+	<ScrollView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:layout_marginTop="50dip">
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:padding="10dip">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/username" />
+			<EditText android:id="@+id/edt_username"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:enabled="false" />
+
+			<!--
+				<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/name" />
+				<EditText android:id="@+id/edt_name"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true" />
+			-->
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/email" />
+			<EditText android:id="@+id/edt_email" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true" />
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/phone" />
+			<EditText android:id="@+id/edt_phone" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true" />
+
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:text="@string/yahoo" />
+			<EditText android:id="@+id/edt_yahoo" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:singleLine="true" />
+
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="50dip" android:orientation="horizontal"
+				android:gravity="center_horizontal" android:layout_marginTop="10dip">
+				<Button android:id="@+id/btn_update" android:layout_width="120dip"
+					android:layout_height="45dip" android:text="@string/update"
+					android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+					android:background="@drawable/btnnc" />
+				<Button android:id="@+id/btn_change_pass"
+					android:layout_width="120dip" android:layout_height="45dip"
+					android:text="@string/change_pass" android:textColor="#fff"
+					android:gravity="center_vertical|center_horizontal"
+					android:background="@drawable/btnnc" android:layout_marginLeft="5dip" />
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+
+	<LinearLayout android:id="@+id/layout_g_title"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:background="@drawable/toppanel" android:paddingLeft="20dip"
+		android:gravity="center" android:orientation="vertical"
+		android:layout_alignParentTop="true">
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="40dip" android:text="@string/general"
+			android:textColor="#fff" android:textStyle="bold" android:textSize="16dip"
+			android:gravity="center_vertical" />
+	</LinearLayout>
+
+	<RelativeLayout android:id="@+id/layout_menu_upload"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+		<LinearLayout android:id="@+id/layout_g_menu"
+			android:layout_width="fill_parent" android:layout_height="55dip"
+			android:orientation="horizontal" android:background="@drawable/bottom">
+			<Button android:layout_width="0dip" android:layout_height="fill_parent"
+				android:id="@+id/btn_g_setting" android:layout_weight="1"
+				android:drawableLeft="@drawable/g_setting" android:text="@string/g_option"
+				android:gravity="center_vertical|left" android:textSize="13dip"
+				android:textStyle="bold" android:textColor="#fff"
+				android:background="#00000000" />
+
+			<Button android:layout_width="0dip" android:layout_height="fill_parent"
+				android:id="@+id/btn_g_acc" android:layout_weight="1"
+				android:drawableLeft="@drawable/g_acc_hi" android:text="@string/g_acc"
+				android:gravity="center_vertical|left" android:textSize="13dip"
+				android:textStyle="bold" android:textColor="#f00"
+				android:background="#00000000" />
+
+			<Button android:layout_width="0dip" android:layout_height="fill_parent"
+				android:id="@+id/btn_g_list" android:layout_weight="1"
+				android:drawableLeft="@drawable/g_follow" android:text="@string/g_list"
+				android:gravity="center_vertical|left" android:textSize="13dip"
+				android:textStyle="bold" android:textColor="#fff"
+				android:background="#00000000" />
+		</LinearLayout>
+
+	</RelativeLayout>
+</RelativeLayout>

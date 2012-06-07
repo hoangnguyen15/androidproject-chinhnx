@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.krazevina.beautifulgirl"
+      android:versionCode="2"
+      android:versionName="1.1">
+    <uses-sdk android:minSdkVersion="4" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name"
+    	 android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:name=".Main" android:screenOrientation="portrait"
+        			android:windowSoftInputMode="adjustPan"
+                  android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar"
+                  android:launchMode="singleTop">
+          <intent-filter>
+          	<action android:name="android.intent.action.MAIN" />
+        	<category android:name="android.intent.category.LAUNCHER" />
+          </intent-filter>
+         </activity>
+         
+         
+         <activity android:name=".MainSearch" android:screenOrientation="portrait"
+        	android:windowSoftInputMode="adjustPan"
+            android:label="@string/app_name" android:theme="@android:style/Theme.NoTitleBar"
+            android:launchMode="singleTop"/>
+                  
+		<activity android:name=".Upload" android:label="@string/app_name"/>
+
+		<activity android:name=".Single1" android:label="@string/app_name"
+			android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<data android:mimeType="image/*" />
+			</intent-filter>
+		</activity>
+		
+		<activity android:name=".Single" android:label="@string/app_name"
+			android:screenOrientation="portrait" android:launchMode="singleTop"/>
+		<activity android:name=".NoConnect" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent"
+			android:launchMode="singleTop"/>
+		<activity android:name=".Browse" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent"
+			android:launchMode="singleTop">
+			<intent-filter>
+				<action android:name="org.openintents.action.PICK_DIRECTORY"/>
+			</intent-filter>
+		</activity>
+		<activity android:name=".Login" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" >
+			<intent-filter>
+                
+            </intent-filter>
+			</activity>
+		<activity android:name=".Register" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" />
+		<activity android:name=".Menu_info" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" />
+		<activity android:name=".Setting" android:label="@string/app_name"/>
+		<activity android:name=".Editinfo" android:label="@string/app_name" android:windowSoftInputMode="adjustPan"/>
+		<activity android:name=".ChangePassword" android:label="@string/app_name"/>
+		<activity android:name=".Search" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" />
+		<activity android:name=".Active" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" />
+		<activity android:name=".Info" android:label="@string/app_name"
+			android:theme="@style/Theme.Transparent" />
+		<activity android:name=".Intro" android:label="@string/app_name"/>
+		<activity android:name=".Accept_rule" android:label="@string/app_name"/>
+		<activity android:name=".General" android:label="@string/app_name" android:windowSoftInputMode="adjustPan"
+		/>
+		<activity android:name=".FollowList" android:label="@string/app_name"/>
+		<activity android:name=".UserList" android:label="@string/app_name"/>
+    </application>
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.SET_WALLPAPER_HINTS"/>
+	<!-- <uses-permission android:name="android.permission.SEND_SMS"/> -->
+	<!-- <uses-permission android:name="android.permission.CALL_PHONE"/>  -->
+
+	
+	
+</manifest>

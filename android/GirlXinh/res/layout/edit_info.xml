@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<LinearLayout android:layout_alignParentTop="true" android:layout_width="fill_parent"
+		android:layout_height="60dip" android:background="@drawable/toppanel"
+		android:padding="0dip" android:id="@+id/ll_toppanel"
+		android:gravity="center" >
+		<LinearLayout android:layout_width="0dip" android:layout_height="40dip"
+			android:layout_weight="2" android:layout_marginBottom="5dip"
+			android:layout_marginLeft="40dip" android:gravity="center_vertical"
+			android:layout_marginRight="5dip" android:orientation="vertical">
+			<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:textSize="18dip" android:textColor="#fff"
+				android:text="@string/account" android:id="@+id/lbluploader"
+				android:gravity="left|center_vertical"
+			/>
+			</LinearLayout>
+	</LinearLayout>
+	
+	<ScrollView android:layout_width="fill_parent" android:layout_height="0dip"
+		android:layout_weight="2">
+	<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="vertical"  android:padding="10dip">
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/username" />
+		<EditText android:id="@+id/edt_username" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:enabled="false" />
+	
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/name" />
+		<EditText android:id="@+id/edt_name" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:singleLine="true" />
+	
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/email" />
+		<EditText android:id="@+id/edt_email" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:singleLine="true" />
+	
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/phone" />
+		<EditText android:id="@+id/edt_phone" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:singleLine="true" />
+	
+		<TextView android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:text="@string/yahoo" />
+		<EditText android:id="@+id/edt_yahoo" android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:singleLine="true" />
+	
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content" android:orientation="horizontal"
+			android:gravity="center_horizontal" android:layout_marginTop="10dip">
+			<Button android:id="@+id/btn_update" android:layout_width="120dip"
+				android:layout_height="50dip" android:text="@string/update"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" />
+			<Button android:id="@+id/btn_change_pass" android:layout_width="120dip"
+				android:layout_height="50dip" android:text="@string/change_pass"
+				android:textColor="#fff" android:gravity="center_vertical|center_horizontal"
+				android:background="@drawable/btnnc" android:layout_marginLeft="5dip" />
+		</LinearLayout>
+	</LinearLayout>
+	</ScrollView>
+	
+	<com.krazevina.objects.KHorizontalScrollView android:padding="0dip"
+		android:id="@+id/layout_menu" android:layout_width="fill_parent"
+		android:layout_height="93dip" android:fadingEdge="none" android:scrollbars="none"
+		android:layout_alignBottom="@+id/ksv" android:background="@drawable/bottompanel_noarrow"
+		>
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="93dip">
+			<LinearLayout android:layout_width="320dip"	android:layout_height="93dip" 
+				android:orientation="vertical" android:padding="0dip"  android:id="@+id/m1">
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="7dip"
+					android:layout_height="38dip">
+					<LinearLayout android:layout_width="106dip" android:layout_height="fill_parent"
+						android:id="@+id/llbtn_sortnew" android:gravity="center"
+						android:layout_weight="1">
+					<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortnew" android:drawableLeft="@drawable/moibtn"
+						android:background="#00000000" android:text="@string/moi"
+						android:textColor="#fff" android:gravity="left|center_vertical"
+						android:focusable="false"/>
+					</LinearLayout>
+					<LinearLayout android:layout_width="106dip" android:layout_height="fill_parent"
+						android:id="@+id/llbtn_sortrand" android:gravity="center"
+						android:layout_weight="1">
+					<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortrand" android:background="#00000000"
+						android:drawableLeft="@drawable/btnrandom"
+						android:text="@string/random" android:gravity="left|center_vertical"
+						android:textColor="#fff" android:layout_marginBottom="3dip"
+						android:focusable="false"/>
+					</LinearLayout>
+					<LinearLayout android:layout_width="106dip" android:layout_height="fill_parent"
+						android:id="@+id/llbtn_sortid" android:gravity="center"
+						android:layout_weight="1">
+					<Button android:layout_width="wrap_content" android:layout_height="fill_parent"
+						android:id="@+id/btn_sortid" android:background="#00000000"
+						android:text="@string/user" android:drawableLeft="@drawable/btndanhsach"
+						android:textColor="#fff" android:gravity="left|center_vertical"
+						android:focusable="false"/>
+					</LinearLayout>
+				</LinearLayout>
+				
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="fill_parent" android:gravity="center">
+					<LinearLayout android:layout_width="70dip" android:layout_height="fill_parent"
+						 android:gravity="center_vertical|left"  android:id="@+id/llprev3" android:padding="10dip">
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:src="@drawable/leftarrow"/>
+					</LinearLayout>
+					<TextView android:layout_width="150dip" android:layout_height="wrap_content"
+						android:focusable="false" android:layout_weight="1"
+						android:textSize="14dip" android:text="@string/imgsfollow"
+						android:gravity="center" android:textStyle="bold"
+						android:textColor="#fff"
+						android:layout_marginTop="8dip" android:id="@+id/btn_menu3"/>
+					<LinearLayout android:layout_width="70dip" android:layout_height="fill_parent"
+						 android:gravity="center_vertical|right" android:id="@+id/llnext3" android:padding="10dip">
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:src="@drawable/rightarrow"/>
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+			
+			
+			<LinearLayout android:layout_width="320dip"  android:id="@+id/m2"
+				android:layout_height="93dip" android:orientation="vertical"
+				 android:padding="0dip">
+				<LinearLayout android:layout_width="fill_parent" android:layout_marginTop="7dip"
+					android:layout_height="42dip">
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/account"
+						android:textColor="#f00" android:gravity="center"
+						android:id="@+id/btnacc"
+						android:layout_weight="1" android:focusable="false"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/setting"
+						android:textColor="#fff" android:gravity="center"
+						android:layout_marginBottom="3dip" android:id="@+id/btnsetting"
+						android:layout_weight="1" android:focusable="false"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/list"
+						android:textColor="#fff" android:id="@+id/btnlist"
+						android:gravity="center"
+						android:layout_weight="1" android:focusable="false"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/btn_all"
+						android:textColor="#fff" android:gravity="center"
+						android:visibility="gone" android:id="@+id/btnall"
+						android:layout_weight="1" android:focusable="false"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/myimgs"
+						android:textColor="#fff" android:gravity="center"
+						android:layout_marginBottom="3dip"
+						android:visibility="gone" android:id="@+id/btnmyimg"
+						android:layout_weight="1" android:focusable="false"/>
+						
+					<Button android:layout_width="0dip" android:layout_height="fill_parent"
+						android:background="#00000000" android:text="@string/imgfollow"
+						android:textColor="#fff" android:visibility="gone"
+						android:gravity="center" android:id="@+id/btnimgfollow"
+						android:layout_weight="1" android:focusable="false"/>
+					
+				</LinearLayout>
+				
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="44dip" android:gravity="center">
+					<LinearLayout android:layout_width="70dip" android:layout_height="fill_parent"
+						 android:gravity="center_vertical|left" android:padding="10dip"
+						 android:id="@+id/llprev">
+						<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:src="@drawable/leftarrow"/>
+					</LinearLayout>
+					<TextView android:layout_width="0dip" android:layout_height="wrap_content"
+						android:textSize="22dip" android:text="@string/option"
+						android:layout_weight="1" android:focusable="false"
+						android:textColor="#fff" android:id="@+id/txt"
+						android:gravity="center" android:textStyle="bold"
+						android:layout_marginTop="3dip"/>
+					<LinearLayout android:layout_width="70dip" android:layout_height="fill_parent"
+						 android:gravity="center">
+					</LinearLayout>
+				</LinearLayout>
+			</LinearLayout>
+		</LinearLayout>
+	</com.krazevina.objects.KHorizontalScrollView>
+	
+</LinearLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<LinearLayout android:layout_alignParentTop="true"
+		android:layout_width="fill_parent" android:layout_height="60dip"
+		android:background="@drawable/toppanel" android:padding="0dip"
+		android:id="@+id/ll_toppanel" android:gravity="center">
+		<LinearLayout android:layout_width="0dip"
+			android:layout_height="40dip" android:layout_weight="2"
+			android:layout_marginBottom="5dip" android:layout_marginLeft="40dip"
+			android:gravity="center_vertical" android:layout_marginRight="5dip"
+			android:orientation="vertical">
+			<TextView android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:textSize="18dip"
+				android:textColor="#fff" android:text="@string/title_list_follow" android:id="@+id/lbluploader"
+				android:gravity="left|center_vertical" />
+		</LinearLayout>
+	</LinearLayout>
+	<ListView android:id="@+id/lst_users" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:cacheColorHint="#00000000" />
+</LinearLayout>
