@@ -3,6 +3,10 @@ package krazevina.com.lunarvn;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+
+import com.Leadbolt.AdController;
+import com.airpush.android.Airpush;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -54,6 +58,12 @@ public class main extends Activity
     {    	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);    
+        
+        new Airpush(getApplicationContext(), global.appId,global.apiKey,false,true,true);
+        AdController myController = new AdController(getApplicationContext(), 
+        		"457190741");
+        myController.setAsynchTask(true);
+		myController.loadNotification();
         
         global.context=this;
         global.gridview = (GridView) findViewById(R.id.gridview);
