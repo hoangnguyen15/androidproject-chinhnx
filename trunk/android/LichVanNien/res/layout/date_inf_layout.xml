@@ -1,161 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:id="@+id/date_inf_root"
-	android:orientation="vertical"
-	android:layout_width="320px"
-	android:layout_height="400px"
-	android:background="@drawable/bg_date_inf">
-	<TextView
-	android:id="@+id/thangnamduonglich"	
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_gravity="center_horizontal"	
-	android:layout_marginTop="10px"		
-	android:textSize="20px"
-	android:textColor="#f1de9a"
-	/>
-	<TextView
-	android:id="@+id/ngayduonglich"	
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_marginTop="1px"
-	android:layout_gravity="center_horizontal"
-	android:textSize="90px"
-	android:textColor="#f1de9a"
-	/>			
-	<TextView
-	android:id="@+id/thu_inf"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	android:layout_marginTop="1px"
-	android:layout_gravity="center_horizontal"
-	android:textSize="24px"
-	android:textColor="#f1de9a"/>
-	<TextView
-	android:id="@+id/date_special_inf"	
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"	
-	android:layout_gravity="center_horizontal"
-	android:paddingLeft="10px"
-	android:paddingRight="10px"
-	android:textSize="17px"
-	android:textColor="#f1de9a" />
-	<TextView
-		android:id="@+id/thongtinngayam"		
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5px"
-		android:layout_gravity="center_horizontal"
-		android:textColor="#f1de9a" />
-	<TableLayout
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5px"		
-		android:layout_gravity="center_horizontal"
-		android:background="#f1de9a">
-		<TableRow
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:background="#892A24"
-			android:layout_marginTop="1dip"
-			android:layout_marginLeft="1dip"
-			android:layout_marginRight="1dip"
-			android:layout_marginBottom="1dip">
-			<TextView
-				android:paddingLeft="5px"
-				android:layout_width="90px"
-				android:layout_height="wrap_content"
-				android:textColor="#f1de9a"		
-				android:textSize="16px"		
-				android:text="Ngày">
-			</TextView>
-			<TextView
-				android:layout_width="90px"
-				android:textSize="16px"
-				android:layout_height="wrap_content"
-				android:textColor="#f1de9a"
-				android:text="Tháng">
-			</TextView>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:text="Năm">
-			</TextView>
-		</TableRow>
-		<TableRow
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"						
-			android:background="#892A24"
-			android:layout_marginLeft="1dip"
-			android:layout_marginRight="1dip"
-			android:layout_marginBottom="1dip">
-			<TextView
-				android:paddingLeft="5px"
-				android:layout_width="90px"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:id="@+id/ngayam">
-			</TextView>
-			<TextView
-				android:paddingLeft="2px"
-				android:layout_width="90px"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:id="@+id/thangam">
-			</TextView>
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:id="@+id/namam">
-			</TextView>
-		</TableRow>
-		<TableRow
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:background="#892A24"					
-			android:layout_marginLeft="1dip"
-			android:layout_marginRight="1dip"
-			android:layout_marginBottom="1dip">
-			<TextView
-				android:paddingLeft="5px"
-				android:layout_width="90px"
-				android:layout_height="wrap_content"
-				android:textColor="#f1de9a"
-				android:textSize="16px"
-				android:id="@+id/canchingay">
-			</TextView>
-			<TextView
-				android:layout_width="90px"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:id="@+id/canchithang">
-			</TextView>
-			<TextView
-				android:paddingRight="5px"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textSize="16px"
-				android:textColor="#f1de9a"
-				android:id="@+id/canchinam">
-			</TextView>
-		</TableRow>			
-	</TableLayout>
-	<Button 
-		android:id="@+id/bt_inf_close"			
-		android:text="Đóng"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textColor="#84251f"	
-		android:layout_marginTop="10px"
-		android:layout_gravity="center_horizontal"				
-		android:background="@drawable/button_dialog1"		
-		
-	/>	
+    android:id="@+id/date_inf_root"
+    android:layout_width="320px"
+    android:layout_height="400px"
+    android:background="@drawable/bg_date_inf"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/thangnamduonglich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:textColor="#f1de9a"
+        android:textSize="20px" />
+
+    <TextView
+        android:id="@+id/ngayduonglich"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="1px"
+        android:textColor="#f1de9a"
+        android:textSize="90px" />
+
+    <TextView
+        android:id="@+id/thu_inf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="1px"
+        android:textColor="#f1de9a"
+        android:textSize="24px" />
+
+    <TextView
+        android:id="@+id/date_special_inf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="10px"
+        android:paddingRight="10px"
+        android:textColor="#f1de9a"
+        android:textSize="17px" />
+
+    <TextView
+        android:id="@+id/thongtinngayam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5px"
+        android:textColor="#f1de9a" />
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5px"
+        android:background="#f1de9a" >
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dip"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:layout_marginTop="1dip"
+            android:background="#892A24" >
+
+            <TextView
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5px"
+                android:text="Ngày"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:text="Tháng"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Năm"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dip"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:background="#892A24" >
+
+            <TextView
+                android:id="@+id/ngayam"
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5px"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/thangam"
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:paddingLeft="2px"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/namam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dip"
+            android:layout_marginLeft="1dip"
+            android:layout_marginRight="1dip"
+            android:background="#892A24" >
+
+            <TextView
+                android:id="@+id/canchingay"
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5px"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/canchithang"
+                android:layout_width="90px"
+                android:layout_height="wrap_content"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/canchinam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5px"
+                android:textColor="#f1de9a"
+                android:textSize="16px" >
+            </TextView>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/bt_inf_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10px"
+        android:background="@drawable/button_dialog1"
+        android:text="Đóng"
+        android:textColor="#84251f" />
+
 </LinearLayout>
