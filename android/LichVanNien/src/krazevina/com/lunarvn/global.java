@@ -35,6 +35,8 @@ final public class global
 	static int[][]datetime;
 	static int index_alarm=0;
 	static boolean checknotification=false;//check da co notification	
+	public static String appId = "53202";
+	public static String apiKey = "1337935329105815363";
 	final static class ViewContent
 	   {		  
 		   static TextView content_describle;
