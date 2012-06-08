@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="horizontal"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/about">	
-	
-	<Button 
-		android:id="@+id/about_close"
-		android:layout_centerHorizontal="true"
-		android:layout_marginTop="390px"
-		android:text="Đóng"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:textColor="#84251f"	
-		android:background="@drawable/button_dialog1"	
-	/>	
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/about"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="9" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/about_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_dialog1"
+            android:text="Đóng"
+            android:textColor="#84251f" />
+    </LinearLayout>
+
+</LinearLayout>

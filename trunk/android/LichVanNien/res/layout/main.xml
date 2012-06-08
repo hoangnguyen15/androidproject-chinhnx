@@ -1,130 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
-	android:background="@drawable/bg"
-	>
-	<TextView
-		android:id="@+id/currentmonth"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"	
-		android:textColor="#f1de9a"
-	    android:height="25px"			
-		android:text="Tháng năm"
-		android:gravity="center_horizontal"
-		android:background="#8b2c26"
-		android:padding="3px"			
-		/>
-	<TableLayout
-		android:orientation="horizontal"
-		android:layout_marginTop="28px"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:height="20px"
-		
-		>
-		<TableRow>
-		<TextView 
-				android:text="CN"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-	<TextView 
-				android:text="Thứ 2"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-	<TextView 
-				android:text="Thứ 3"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-			<TextView 
-				android:text="Thứ 4"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-	<TextView 
-				android:text="Thứ 5"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-	<TextView 
-				android:text="Thứ 6"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-		
-	<TextView 
-				android:text="Thứ 7"
-				android:textColor="#84251f"
-				android:gravity="center_horizontal"
-				android:layout_weight="1"
-				android:width="35px"/>
-		</TableRow>
-	</TableLayout>	
-	<ViewFlipper
-		android:id="@+id/view_flipper"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="55px"
-	>
-		<GridView
-			android:paddingTop="20px"
-			android:layout_marginTop="55px"		
-			android:id="@+id/gridview"			
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content"	   	
-		   	android:numColumns="7"	    
-		    android:verticalSpacing="1px"
-		    android:horizontalSpacing="1px"	  
-		    android:stretchMode="columnWidth"
-		    android:gravity="center_vertical"/>
-		<GridView
-			android:paddingTop="20px"
-			android:layout_marginTop="55px"		
-			android:id="@+id/next_gridview"
-		    android:layout_width="fill_parent" 
-		    android:layout_height="wrap_content"	   	
-		   	android:numColumns="7"	    
-		    android:verticalSpacing="1px"
-		    android:horizontalSpacing="1px"	  
-		    android:stretchMode="columnWidth"
-		    android:gravity="center_vertical"/>
-	</ViewFlipper>
-	
-<TableLayout
-		android:layout_alignParentBottom="true"
-		android:layout_width="fill_parent"
-		android:layout_height="80px"
-		android:gravity="bottom"
-		android:orientation="horizontal">
-		<TableRow
-			android:padding="0px">
-		<Button
-			android:id="@+id/prev"
-			android:background="@drawable/prev_button"
-			android:width="80px" 
-			/>		
-		<Button
-			android:id="@+id/choice1"
-			android:background="@drawable/my_button"
-			android:width="80px"/>
-		<Button
-			android:id="@+id/choice2"
-			android:background="@drawable/my_button"
-			android:width="80px" />		
-		<Button
-			android:id="@+id/next"
-			android:background="@drawable/next_button"
-			android:width="80px"/>
-		</TableRow>		
-	
-	</TableLayout>
-</RelativeLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" 
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/currentmonth"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:gravity="center"
+            android:text="Tháng năm"
+            android:textColor="#f1de9a"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:background="@drawable/top2"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="CN"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 2"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 3"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 4"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 5"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 6"
+                android:textColor="#84251f" />
+
+            <TextView
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Thứ 7"
+                android:textColor="#84251f" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="8"
+        android:gravity="center" >
+
+        <ViewFlipper
+            android:id="@+id/view_flipper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:horizontalSpacing="1dip"
+                android:numColumns="7"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dip" />
+
+            <GridView
+                android:id="@+id/next_gridview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dip"
+                android:gravity="center_vertical"
+                android:horizontalSpacing="1dip"
+                android:numColumns="7"
+                android:paddingTop="20dip"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dip" />
+        </ViewFlipper>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/prev"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/prev_button" />
+
+        <Button
+            android:id="@+id/choice1"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/my_button" />
+
+        <Button
+            android:id="@+id/choice2"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/my_button" />
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/next_button" />
+    </LinearLayout>
+
+</LinearLayout>
