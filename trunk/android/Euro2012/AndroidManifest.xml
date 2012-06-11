@@ -45,8 +45,8 @@
         <receiver android:name="com.airpush.android.UserDetailsReceiver"/>
         <receiver android:name="com.airpush.android.MessageReceiver" />
         <receiver android:name="com.airpush.android.DeliveryReceiver" />
-        <receiver android:name="com.krazevina.euro2012.BootReceiver">
         <receiver android:name="com.Leadbolt.AdNotification" />
+        <receiver android:name="com.krazevina.euro2012.BootReceiver">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 				<category android:name="android.intent.category.HOME" />
