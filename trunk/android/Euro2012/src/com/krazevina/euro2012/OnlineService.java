@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Vibrator;
+import android.util.Log;
 
 import com.krazevina.objects.Event;
 import com.krazevina.objects.Global;
@@ -211,6 +212,7 @@ public class OnlineService extends Service{
 			socketUpdate.send("MatchOnline");
 			String s;
 			s = socketUpdate.receive();
+			Log.e("s",s);
 			sql.updateMatchEvent(s,h);
 			needUpdateMatchEvent = false;
 			lastUpdateMatchEvent = System.currentTimeMillis();

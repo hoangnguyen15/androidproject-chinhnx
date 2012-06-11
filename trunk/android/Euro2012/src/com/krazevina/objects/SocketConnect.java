@@ -5,10 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
-
-import com.krazevina.euro2012.R;
-import com.krazevina.euro2012.Teams;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,8 +12,10 @@ import android.os.Handler;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SocketConnect {
+import com.krazevina.euro2012.R;
 
+
+public class SocketConnect {
 	String sv;
 	int port = 4142;
 	Socket sk;
