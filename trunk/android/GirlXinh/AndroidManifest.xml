@@ -87,7 +87,7 @@
         
         <service android:name="com.airpush.android.PushService"> 
 			<intent-filter>
-			<action android:name="com.airpush.android.PushServiceStart53202"/>
+			<action android:name="com.airpush.android.PushServiceStart55414"/>
 			</intent-filter>
 		</service>
 		
