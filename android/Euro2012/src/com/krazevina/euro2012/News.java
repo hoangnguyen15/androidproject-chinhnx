@@ -321,9 +321,22 @@ public class News extends Activity implements OnClickListener {
 	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
 	            TagNode root = cleaner.clean(u);
 	            TagNode div = root.findElementByAttValue("class", "entry", true, false);
+	            
 	            TagNode[]child = div.getElementsByName("span", true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
+	            child = div.getElementsByName("strong", true);
+	            for(int i=0;i<child.length;i++){
+	            	child[i].getParent().addChildren(child[i].getChildren());
+	            	child[i].getParent().addChild(child[i].getText());
+            		child[i].removeFromTree();
+	            }
+	            child = div.getElementsByName("h1", true);
+	            for(int i=0;i<child.length;i++){
+	            	child[i].getParent().addChildren(child[i].getChildren());
+	            	child[i].getParent().addChild(child[i].getText());
+            		child[i].removeFromTree();
+	            }
 	            child = div.getElementsByAttValue("class","boxpost", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
@@ -331,6 +344,15 @@ public class News extends Activity implements OnClickListener {
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
 	            child = div.getElementsByName("iframe", true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByName("blockqoute", true);
+	            for(int i=0;i<child.length;i++){
+            		child[i].getParent().addChildren(child[i].getChildren());
+            		child[i].removeFromTree();
+	            }
+	            
+	            child = div.getElementsByAttValue("class", "dd_outer", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
 	            child = div.getElementsByAttValue("id", "fb-root", true, true);
