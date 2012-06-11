@@ -1,8 +1,19 @@
 package com.krazevina.euro2012;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
 import java.net.URL;
 import java.util.Locale;
 
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.params.ClientPNames;
+import org.apache.http.client.params.CookiePolicy;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;
 
@@ -239,14 +250,36 @@ public class News extends Activity implements OnClickListener {
     	if(url.contains("bongda")){
     		try{
 	    		HtmlCleaner cleaner = new HtmlCleaner();
-	    		Uri ss = Uri.parse(url);
-	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
-	            TagNode root = cleaner.clean(u);
-	            TagNode div = root.findElementByAttValue("class", "tintuc_text", true, false);
+	    		String id = url.substring(url.lastIndexOf("/"));
+	    		id = id.substring(1,id.indexOf("."));
+	    		Uri ss = Uri.parse("http://m.bongdaplus.vn/Story.aspx?sid="+id);
+	    		
+				URI fine = new URI(ss.getScheme(),ss.getUserInfo(),ss.getHost(),
+						ss.getPort(),ss.getPath(),ss.getQuery(),ss.getFragment());
+				HttpClient httpclient = new DefaultHttpClient();
+				httpclient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.BEST_MATCH);
+				HttpGet httpget = new HttpGet(fine);
+				httpget.addHeader("user-agent", "Mozilla/5.0 (Linux; U; Android 2.3.3) Gecko/20100101 Firefox/8.0");
+				httpget.addHeader("accept-language","en-us,en;q=0.5");
+				HttpResponse response = httpclient.execute(httpget);
+				InputStream binaryreader = new BufferedInputStream( response.getEntity().getContent());
+				BufferedReader buf = new BufferedReader(new InputStreamReader(binaryreader));
+				String sss;
+				StringBuilder sb = new StringBuilder();
+				while((sss = buf.readLine())!=null){
+					sb.append(sss);
+				}
+				
+//	    		URL u = new URL(ss.getScheme(), ss.getHost(), ss.getPort(), ss.getPath());
+	            TagNode root = cleaner.clean(sb.toString());
+	            TagNode div = root.findElementByAttValue("class", "story-body", true, false);
 	            TagNode[]child = div.getElementsByName("strong", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
-	            child = div.getElementsByName("p", true);
+	            child = div.getElementsByAttValue("class", "listing", true, false);
+	            for(int i=0;i<child.length;i++)
+	            	child[i].removeFromTree();
+	            child = div.getElementsByName("ul", true);
 	            for(int i=0;i<child.length;i++)
 	            	child[i].removeFromTree();
 	            child = div.getElementsByName("img", true);
@@ -291,13 +324,22 @@ public class News extends Activity implements OnClickListener {
 	            TagNode[]child = div.getElementsByName("span", true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
-	            child = div.getElementsByAttValue("class","dd_outer", true, true);
+	            child = div.getElementsByAttValue("class","boxpost", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
 	            child = div.getElementsByAttValue("class","ratingblock ", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
-	            child = div.getElementsByName("ol", true);
+	            child = div.getElementsByName("iframe", true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByAttValue("id", "fb-root", true, true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByAttValue("id", "fbSEOComments", true, true);
+	            for(int i=0;i<child.length;i++)
+	            		child[i].removeFromTree();
+	            child = div.getElementsByAttValue("id", "ajax_comments_wrapper", true, true);
 	            for(int i=0;i<child.length;i++)
 	            		child[i].removeFromTree();
 	            child = div.getElementsByName("table", true);

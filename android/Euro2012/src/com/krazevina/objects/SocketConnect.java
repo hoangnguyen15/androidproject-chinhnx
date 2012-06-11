@@ -11,6 +11,7 @@ import com.krazevina.euro2012.R;
 import com.krazevina.euro2012.Teams;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.Toast;
@@ -64,17 +65,18 @@ public class SocketConnect {
 		return "";
     }
     
-    public void update(String s,sqlite sql,Handler h){
-    	new updateData(s, sql, h).start();
+    public void update(String s,sqlite sql,Handler h,Context c){
+    	new updateData(s, sql, h,c).start();
     }
     
     class updateData extends Thread{
     	String str;
     	sqlite sql;
     	Handler ha;
-    	public updateData(String s,sqlite sql,Handler h) {
+    	Context c;
+    	public updateData(String s,sqlite sql,Handler h,Context c) {
     		str = s; ha = h;
-    		this.sql = sql;
+    		this.sql = sql;this.c = c;
 		}
     	public void run(){
 			try {
@@ -89,6 +91,8 @@ public class SocketConnect {
 	    		}else if (str.equals("BetDetail")) {
 	    			sql.updateBet(js,ha);
 	    		}
+				Intent i = new Intent("updatelayout");
+				c.sendBroadcast(i);
 //	    		else System.out.println("receive unprocess text:"+js);
 			} catch (Exception e) {
 			}

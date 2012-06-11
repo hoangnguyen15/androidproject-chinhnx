@@ -40,8 +40,6 @@ public class Main extends Activity implements OnClickListener {
     int i ;Handler h;
     sqlite sql;
     static long lastUpdateMatch,lastUpdateBet;
-    private AdController myController;
-    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +63,12 @@ public class Main extends Activity implements OnClickListener {
         registerReceiver(r, new IntentFilter("updatelayout"));
         
 		if(System.currentTimeMillis()-lastUpdateMatch>6*60*60*1000){
-			new SocketConnect().update("Matches", sql, h);
-			new SocketConnect().update("TeamsInRound", sql, h);
+			new SocketConnect().update("Matches", sql, h,this);
+			new SocketConnect().update("TeamsInRound", sql, h,this);
 			lastUpdateMatch = System.currentTimeMillis();
 		}
 		if(System.currentTimeMillis()-lastUpdateBet>30*60*1000){
-			new SocketConnect().update("BetDetail", sql, h);
+			new SocketConnect().update("BetDetail", sql, h,this);
 			lastUpdateBet = System.currentTimeMillis();
 		}
     }
