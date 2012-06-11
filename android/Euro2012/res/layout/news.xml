@@ -24,10 +24,9 @@
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="0dip" android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="vertical" 
-        android:paddingBottom="44dip"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip">
@@ -49,12 +48,13 @@
     				android:fadingEdge="none"
     				android:layout_marginBottom="25dip"/>
         	</LinearLayout>
+        	
         	<LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
                 android:background="#fff" android:baselineAligned="false" 
                 android:orientation="vertical">
 	            
         	    <LinearLayout android:layout_width="fill_parent" android:layout_height="60dip"
-        	        android:layout_margin="10dip">
+        	        android:layout_margin="5dip">
         	        <ImageView android:layout_width="0dip" android:layout_height="fill_parent"
         	            android:id="@+id/imgnews" android:layout_weight="1"/>
         	        <LinearLayout android:layout_width="0dip" android:layout_height="fill_parent"
@@ -77,7 +77,6 @@
 	       	        	android:id="@+id/txtcontent"/>
        	        </LinearLayout>
         	</LinearLayout>
-        	
         </ViewFlipper>
         
     </LinearLayout>
@@ -85,7 +84,6 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="44dip"
-        android:layout_marginTop="-44dip"
         android:background="@drawable/bgbottom"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal" >
