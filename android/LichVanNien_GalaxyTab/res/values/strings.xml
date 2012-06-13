@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="hello">Hello World, Main!</string><string name="thoigiannhac">Chọn thời gian nhắc trước sự kiện (Phút)</string>
+	<string name="app_name">Lịch Vạn Niên (GalaxyTab)</string>
+	<string name="monday">Thứ 2</string>
+	<string name="tuesday">Thứ 3</string>
+	<string name="wednesday">Thứ 4</string>
+	<string name="thursday">Thứ 5</string>
+	<string name="friday">Thứ 6</string>
+	<string name="saturday">Thứ 7</string>
+	<string name="sunday">Chủ nhật</string>
+
+	<string name="monday2">Thứ hai</string>
+	<string name="tuesday2">Thứ ba</string>
+	<string name="wednesday2">Thứ tư</string>
+	<string name="thursday2">Thứ năm</string>
+	<string name="friday2">Thứ sáu</string>
+	<string name="saturday2">Thứ bảy</string>
+
+	<string name="searchdate">Chọn ngày</string>
+	<string name="viewmonth">Xem theo tháng</string>
+	<string name="viewweek">Xem theo tuần</string>
+	<string name="changebg">Đổi hình nền</string>
+	<string name="tieude">Tiêu đề</string>
+	<string name="datchuong">Đặt chuông</string>
+	<string name="notitle">Trống</string>
+	<string name="save">Lưu</string>
+	<string name="delete">Xóa</string>
+
+	<color name="color_today">#0f0f0f</color>
+	<color name="color_holiday">#ff0000</color>
+
+	<string name="wrongtime">Sai thời gian.</string>
+	<string name="test_text">Những người Nhật kiên cường đang trải qua thảm họa
+		lớn nhất kể từ sau Thế chiến II, sau khi động đất và sóng thần đổ ập
+		vào miền đông bắc nước này hôm 11/3 khiến hơn 10.000 người thiệt mạng
+		và mất tích. Những người sống sót, nhất là ở vùng đông bắc, trong đó
+		có cả các công dân Việt Nam, đang cần sự trợ giúp từ chính phủ và nhân
+		dân khắp thế giới.
+
+		Vốn là quốc gia hào phóng trong việc viện trợ các
+		nước khác vượt qua
+		thiên tai, nay Nhật Bản đang đứng trước lượng công
+		việc khổng lồ về
+		cứu trợ và cứu nạn.
+
+		Độc giả trong và ngoài nước có thể
+		quyên góp qua hai hình thức sau:
+
+		1/ Chuyển khoản
+
+		Chuyển khoản bằng USD:
+		Tên tài khoản: Công ty Cổ phần Dịch Vụ Trực Tuyến FPT
+		Số tài khoản:
+		0071374645684
+		Tại ngân hàng: Vietcombank – chi nhánh TP HCM
+
+		Chuyển khoản
+		bằng VNĐ:
+		Tên tài khoản: Công ty Cổ phần Dịch Vụ Trực Tuyến FPT
+		Số tài
+		khoản : 007.100.5627255
+		Tại Ngân hàng Vietcombank - TP HCM
+
+		Độc giả
+		chuyển tiền vui lòng ghi tên và mục đích chuyển để tòa soạn công
+		bố
+		danh sách. Xin cảm ơn. </string>
+	 <string-array name="repeatarr">
+	 	<item>Nhắc một lần</item>
+        <item>Nhắc hàng tháng</item>
+        <item>Nhắc hàng năm</item>
+    </string-array>
+    <string-array name="kieunhacnho">
+    	<item>0</item>
+    	<item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+    </string-array>
+    <string-array name="alarmstyle">
+    	<item>Rung</item>
+        <item>Rung và chuông</item>
+        <item>Không rung và chuông</item>
+    </string-array>
+    <string name="ok">OK</string>
+    <string name="chonnhacchuong">Chọn chuông báo</string>
+    <string name="chonkieulap">Chọn kiểu lặp</string>
+    <string name="chonkieubao">Chọn kiểu báo</string>
+    <string name="macdinh">Mặc định</string>
+    <string name="imlang">Im lặng</string>
+    <string name="noidung">Nội dung</string>
+    <string name="thoigian">Thời gian</string>   
+    <string name="cachlap">Chọn cách lặp lại sự kiện</string>
+	<string name="amlich">Âm lịch</string>
+	<string name="duonglich">Dương lịch</string>
+	<string name="timkiem">Tìm kiếm</string>
+	<string name="dong">Đóng</string>
+	
+	<string name = "intro_title">Lịch Vạn Niên cho Galaxy Tab</string>
+	<string name = "intro_address">Tầng 7,8 Lucky Building, 66 Trần Thái Tông, Cầu Giấy, Hà Nội</string>
+	<string name = "intro_tel">0435567810</string>
+	<string name = "intro_tel_text">(+84)-43-556-7810</string>
+	<string name = "intro_email">android@krazevina.com</string>
+	<string name = "intro_website1">http://krazevina.com</string>
+	<string name = "intro_website2">http://aloandroid.vn</string>
+	<string name = "intro_copyright">© Developed by KrazeVina Inc - 2011</string>
+
+</resources>

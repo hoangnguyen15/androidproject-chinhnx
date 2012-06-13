@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="400px" android:orientation="vertical"
+  android:layout_height="272px" android:background="#80666666"
+  android:padding="3px" android:gravity="center">
+  
+  <TextView android:layout_width="fill_parent" android:layout_height="50px"
+  	android:gravity="center" android:textColor="#fff"
+  	android:id="@+id/txttit" android:textSize="20px"
+  	android:background="#80666666" android:text="alarm"/>
+  	
+  <TextView android:layout_width="fill_parent" android:layout_height="150px"
+  	android:gravity="center" android:textColor="#000" android:textSize="16px"
+  	android:background="#80eeeeee" android:id="@+id/txtcont"
+  	android:text="di choi ngay"/>
+  	
+  <LinearLayout android:layout_width="fill_parent" android:layout_height="70px"
+  	android:background="#80aaaaaa" android:gravity="center">
+	  <Button android:layout_width="200px" android:layout_height="wrap_content"
+	  	android:text="OK" android:layout_marginTop="10px"
+	  	android:layout_marginBottom="10px"
+	  	android:id="@+id/btnok"/>
+  </LinearLayout>
+</LinearLayout>

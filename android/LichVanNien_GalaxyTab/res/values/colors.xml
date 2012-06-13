@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titleColor">#222</color>
+    <color name="headerColor">#444</color>
+    <color name="dayColor">#FFF</color>
+    <color name="commonTextView">#444</color>
+    <color name="dayOfWeekColor">#FFF</color>
+    <color name="weekendColor">#FF0000</color>
+    <color name="holidayColor">#FF0000</color> 
+    <color name="eventColor">#FF6A00</color>
+    <color name="shadowColor">#000</color>
+    <color name="otherDayColor">#5444</color>
+    <color name="iconColor">#40B322</color>
+    <color name="characterBackgroud">#FEFEFE</color>
+    <color name="transparent">#00000000</color>
+</resources>

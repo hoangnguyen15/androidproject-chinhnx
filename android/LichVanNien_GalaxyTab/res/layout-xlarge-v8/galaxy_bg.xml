@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<TextView android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:text="Chọn hình nền"
+		android:textSize="30px" android:gravity="center_vertical|center_horizontal"
+		android:textColor="#fff" />
+	<GridView android:id="@+id/grid_galaxy_bg"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:numColumns="auto_fit" android:verticalSpacing="10dp"
+		android:horizontalSpacing="10dp" android:columnWidth="100dp"
+		android:stretchMode="columnWidth" android:gravity="center" />
+</LinearLayout>
