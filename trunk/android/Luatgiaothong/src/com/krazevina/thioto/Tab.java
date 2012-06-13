@@ -15,6 +15,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -175,7 +176,6 @@ public class Tab extends TabActivity implements OnTabChangeListener {
 		LinearLayout l = (LinearLayout) v.findViewById(R.id.linearlayout);
 		l.setBackgroundDrawable(getResources().getDrawable(R.drawable.highlight_icon_1));
 
-		Log.d("tabid ", "" + tabId);
 	}
 
 	// ///////////////XULYTABCHANGE
@@ -286,7 +286,7 @@ public class Tab extends TabActivity implements OnTabChangeListener {
 									timer = new Timer();
 									timer.execute((Void) null);
 								}
-								Log.d("getdetailtimenow", "" + timerequest);
+//								Log.d("getdetailtimenow", "" + timerequest);
 								sendIntent.putExtra("address", "8732");
 								sendIntent.putExtra("sms_body", timerequest);
 								sendIntent.setType("vnd.android-dir/mms-sms");
@@ -372,19 +372,19 @@ public class Tab extends TabActivity implements OnTabChangeListener {
 			Tab.tabwidget.setVisibility(TabWidget.GONE);
 			return true;
 		} else if (item.getItemId() == R.id.meothi) {
-			Tab.tabHost.setCurrentTab(9);
-			Tab.tabwidget.setVisibility(TabWidget.GONE);
-//			if (Toancuc.duocxemmeothi) {
-
-//				Intent intent = new Intent(Tab.this, Meothi.class);
-//				startActivity(intent);
-//				Tab.tabHost.setCurrentTab(9);
-//				Tab.tabwidget.setVisibility(TabWidget.GONE);
-//			} else if (CallWebService.checknet(Tab.this)) {
-//				showDialogSendSMS();
-//			} else {
-//				Toast.makeText(Tab.this, "Bạn cần kết nối mạng Internet", 0).show();
-//			}
+//			Tab.tabHost.setCurrentTab(9);
+//			Tab.tabwidget.setVisibility(TabWidget.GONE);
+			if (Toancuc.duocxemmeothi) {
+				Intent intent = new Intent(Tab.this, Meothi.class);
+				startActivity(intent);
+				Tab.tabHost.setCurrentTab(9);
+				Tab.tabwidget.setVisibility(TabWidget.GONE);
+				Log.d("toancuc","toancuc");
+			} else if (CallWebService.checknet(Tab.this)) {
+				showDialogSendSMS();
+			} else {
+				Toast.makeText(Tab.this, "Bạn cần kết nối mạng Internet", 0).show();
+			}
 
 		}
 		return true;
@@ -414,8 +414,8 @@ public class Tab extends TabActivity implements OnTabChangeListener {
 			x = 0;
 			while (!issent && total > 0) {
 				total--;
-				Log.d("total=", "" + total);
-				Log.d("x", "" + x);
+//				Log.d("total=", "" + total);
+//				Log.d("x", "" + x);
 				x++;
 				try {
 					Thread.sleep(500);
@@ -441,8 +441,8 @@ public class Tab extends TabActivity implements OnTabChangeListener {
 
 	@Override
 	public boolean onKeyDown(int keyCode,KeyEvent event) {
-		Log.d("keycode", "" + event.getKeyCode());
-		Log.d("current tab", "" + currentTab);
+//		Log.d("keycode", "" + event.getKeyCode());
+//		Log.d("current tab", "" + currentTab);
 		
 		if(keyCode!=21&&keyCode!=22) return super.onKeyDown(keyCode, event);
 		
