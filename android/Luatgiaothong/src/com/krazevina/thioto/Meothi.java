@@ -4,7 +4,7 @@ import com.krazevina.thioto.R;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+//import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TabWidget;
@@ -29,7 +29,7 @@ public class Meothi extends Activity {
 		content3 = (TextView) findViewById(R.id.content3);
 		content4 = (TextView) findViewById(R.id.content4);
 		back = (Button) findViewById(R.id.back);
-		Log.d("length",""+noidung.length());
+//		Log.d("length",""+noidung.length());
 		content.setText(noidung.substring(0, 4000));
 		content1.setText(noidung.substring(4000,8000));
 		content2.setText(noidung.substring(8000,12000));
