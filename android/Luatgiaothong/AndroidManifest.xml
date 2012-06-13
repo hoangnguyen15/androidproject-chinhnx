@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.krazevina.thioto" android:versionCode="2"
+	android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="7" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:icon="@drawable/icon" android:label="@string/app_name">
+
+
+		<activity android:name=".Tab" android:theme="@android:style/Theme.NoTitleBar"
+			android:screenOrientation="portrait" android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".StartActivity" 
+		          android:theme="@android:style/Theme.NoTitleBar"
+			android:screenOrientation="portrait" android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<activity android:name=".Luat" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+		</activity>
+		<activity android:name=".LuatDetail" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Bienbao" android:theme="@android:style/Theme.NoTitleBar"
+			android:windowSoftInputMode="adjustPan" android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Baithi" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".BaithiDanhsach" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Bode" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Ketqua" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Abouts" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Huongdan" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+		<activity android:name=".Meothi" android:theme="@android:style/Theme.NoTitleBar"
+			android:label="@string/app_name">
+
+		</activity>
+	</application>
+</manifest>
