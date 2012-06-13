@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:orientation="vertical"
+	android:background="#fff" android:gravity="center_vertical"
+	android:layout_height="wrap_content">
+	<ScrollView android:layout_width="fill_parent" android:id="@+id/cuon"
+		android:paddingBottom="0dip" android:paddingTop="5dip"
+		android:layout_height="fill_parent">
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="fill_parent"
+			android:layout_marginTop="35dip">
+			<LinearLayout android:id="@+id/linearLayout1"
+				android:layout_height="wrap_content" android:layout_marginTop="0dip"
+				android:gravity="center" android:layout_width="fill_parent">
+				<LinearLayout android:layout_height="fill_parent"
+
+					android:gravity="center_vertical|center_horizontal" android:id="@+id/prev"
+					android:layout_width="0dip" android:layout_weight="1"
+					android:layout_marginTop="0dip">
+					<ImageView android:layout_height="wrap_content"
+						android:id="@+id/imageView1" android:src="@drawable/table_cell_arrow1"
+						android:layout_width="wrap_content"></ImageView>
+				</LinearLayout>
+				<LinearLayout android:layout_height="200dip"
+					android:id="@+id/prev" android:layout_marginTop="0dip"
+					android:gravity="center"
+					android:layout_width="0dip" android:layout_weight="5">
+					<ImageView android:layout_marginLeft="0dip"
+						android:layout_height="160dip" android:id="@+id/image"
+						android:layout_gravity="center"
+						android:layout_width="160dip"></ImageView>
+				</LinearLayout>
+				<LinearLayout android:layout_height="fill_parent"
+					android:gravity="center" android:id="@+id/next"
+					android:layout_width="0dip" android:layout_weight="1"
+					android:layout_marginTop="0dip">
+					<ImageView android:layout_height="wrap_content"
+						android:id="@+id/imageView3" android:src="@drawable/table_cell_arrow"
+						android:layout_width="wrap_content"></ImageView>
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout android:layout_width="fill_parent"
+				android:gravity="center_vertical|center_horizontal"
+				android:orientation="vertical" android:layout_height="wrap_content"
+				android:layout_marginTop="0dip">
+				<TextView android:text="Biển báo" android:layout_width="wrap_content"
+					android:textColor="#000" android:textSize="17dip"
+					android:textStyle="bold" android:layout_height="wrap_content"
+					android:id="@+id/tenbienbao" android:layout_marginLeft="10dip"
+					android:layout_marginRight="5dip" android:layout_marginTop="15dip"></TextView>
+				<TextView android:text="Nội dung" android:id="@+id/noidung"
+					android:textColor="#000" android:layout_width="fill_parent"
+					android:textSize="17dip" android:layout_height="wrap_content"
+					android:layout_marginLeft="10dip" android:layout_marginRight="5dip"></TextView>
+
+			</LinearLayout>
+
+
+		</LinearLayout>
+	</ScrollView>
+
+
+</LinearLayout>

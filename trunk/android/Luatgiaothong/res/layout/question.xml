@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="match_parent" android:orientation="vertical">
+	<LinearLayout android:layout_width="fill_parent"
+		android:gravity="center" android:orientation="vertical" android:layout_height="wrap_content">
+		<TextView android:textSize="20dip" android:textColor="#fff" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView1" android:text="Bạn đã thi trượt" android:layout_marginTop="5dip"></TextView>
+		<TextView android:text="Gửi SMS để xem mẹo thi."
+			android:textSize="20dip" android:textColor="#fff" android:id="@+id/textView22"
+			android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5dip"></TextView>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:orientation="horizontal" android:layout_height="wrap_content">
+		<LinearLayout android:id="@+id/linearLayout2"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:layout_width="wrap_content" >
+			<Button android:layout_height="wrap_content" android:textSize="16dip"
+				android:text="Soạn SMS" android:id="@+id/btn_sms"
+				android:layout_width="100dip" android:layout_marginTop="0dip"
+				android:layout_marginBottom="2dip"></Button>
+		</LinearLayout>
+		<LinearLayout android:id="@+id/linearLayout1"
+			android:layout_height="wrap_content" android:orientation="vertical"
+			android:layout_width="wrap_content" >
+
+			<Button android:layout_height="wrap_content" android:textSize="16dip"
+				android:text="Không" android:layout_marginBottom="2dip"
+				android:id="@+id/cancel" android:layout_width="70dip"></Button>
+
+		</LinearLayout>
+		<LinearLayout android:id="@+id/linearLayout4"
+			android:orientation="horizontal" android:layout_height="wrap_content"
+			android:layout_width="wrap_content" >
+			<Button android:layout_height="fill_parent" android:textSize="16dip"
+				android:layout_width="120dip" android:text="Đừng hỏi lại"
+				android:id="@+id/btn_dontrequestion"></Button>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>
