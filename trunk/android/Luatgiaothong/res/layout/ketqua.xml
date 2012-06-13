@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ketqua" android:orientation="vertical"
+	android:layout_width="match_parent" android:background="@drawable/bg_320"
+	android:layout_height="fill_parent">
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:background="@drawable/nav_bar" android:layout_height="wrap_content">
+
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical" android:layout_weight="2"
+			android:layout_height="49dip">
+			<Button android:text="Quay lại" android:id="@+id/quaylaigrid"
+				android:background="@drawable/quay_lai_button" android:layout_width="wrap_content"
+				android:textColor="#fff" android:layout_height="wrap_content"
+				android:layout_marginLeft="5dip"></Button>
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical|center_horizontal"
+			android:layout_weight="3" android:layout_height="49dip">
+			<TextView android:text="Kết quả" android:id="@+id/chuong"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:textSize="25dip" android:textColor="#FFF" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical|right" android:layout_weight="2"
+			android:layout_height="49dip">
+			<Button android:text="Xóa dữ liệu" android:layout_width="wrap_content"
+				android:textColor="#000" android:background="@drawable/danhsach"
+				android:layout_height="wrap_content" android:id="@+id/clear"
+				android:layout_marginRight="5dip"></Button>
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/option_bar" android:gravity="center_vertical"
+		android:background="@drawable/option_bar" android:layout_height="49dip">
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical" android:layout_weight="1"
+			android:layout_height="49dip">
+			<LinearLayout android:layout_width="fill_parent"
+				android:gravity="center" android:layout_height="wrap_content">
+				<LinearLayout android:layout_width="0dip" android:id="@+id/tk"
+					android:gravity="center_vertical|right"
+					android:layout_weight="1" android:layout_height="49dip" android:layout_marginRight="5dip">
+					<LinearLayout android:gravity="center_vertical|center_horizontal"
+						android:id="@+id/thongke"
+						android:background="@drawable/option_selected"
+						android:layout_width="wrap_content"
+						 android:layout_height="wrap_content" android:layout_marginRight="5dip">
+						<TextView android:textSize="17dip" android:layout_height="wrap_content"
+							android:shadowDy="-0.5" android:textStyle="bold"
+							android:textColor="#fff" android:id="@+id/textView2"
+							android:shadowColor="#000" android:shadowRadius="0.5"
+							android:shadowDx="0" android:layout_width="wrap_content"
+							android:text="Kết quả thi"/>
+					</LinearLayout>
+
+
+				</LinearLayout>
+
+				<LinearLayout android:layout_width="0dip" android:id="@+id/kqt"
+					android:gravity="center_vertical|left"
+					android:layout_weight="1" android:layout_height="49dip">
+					<LinearLayout 
+						android:gravity="center_vertical|center_horizontal" android:id="@+id/ketquathi"
+						android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5dip">
+						<TextView android:textSize="17dip" android:layout_height="wrap_content"
+							android:shadowDy="-0.5" android:textStyle="bold"
+							android:textColor="#fff" android:id="@+id/textView1"
+							android:shadowColor="#000" android:shadowRadius="0.5"
+							android:shadowDx="0" android:layout_width="wrap_content"
+							android:text="Thống kê"></TextView>
+					</LinearLayout>
+
+				</LinearLayout>
+
+
+			</LinearLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+
+
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:visibility="gone" android:id="@+id/headerketqua"
+		android:orientation="vertical" android:layout_height="wrap_content">
+		<LinearLayout android:id="@+id/title" android:background="@drawable/banner_ket_qua_truot"
+			android:gravity="center_vertical" android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<LinearLayout android:id="@+id/linearLayout1"
+				android:orientation="vertical" android:layout_weight="2"
+				android:layout_height="55dip" android:layout_width="0dip">
+				<LinearLayout android:id="@+id/linearLayout3"
+					android:layout_height="wrap_content" android:layout_width="match_parent">
+					<TextView android:textStyle="bold" android:textSize="19dip"
+						android:textColor="#FFF" android:id="@+id/sodung" android:text="Trả lời đúng : "
+						android:layout_height="wrap_content" android:layout_width="wrap_content"
+						android:layout_marginLeft="15dip" />
+				</LinearLayout>
+				<LinearLayout android:id="@+id/linearLayout3"
+					android:layout_height="wrap_content" android:layout_width="match_parent">
+					<TextView android:textStyle="bold" android:textSize="19dip"
+						android:textColor="#FFF" android:id="@+id/thoigian"
+						android:layout_marginLeft="15dip" android:text="Thời gian : "
+						android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
+				</LinearLayout>
+			</LinearLayout>
+			<LinearLayout android:id="@+id/linearLayout2"
+				android:gravity="center" android:layout_weight="1"
+				android:layout_height="match_parent" android:layout_width="0dip">
+				<TextView android:text="" android:id="@+id/dotruot"
+					android:textStyle="bold" android:textSize="35dip"
+					android:textColor="#FFF" android:layout_width="wrap_content"
+					android:layout_height="wrap_content"></TextView>
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+
+
+	<LinearLayout android:id="@+id/thongkelayout"
+		android:orientation="vertical" android:gravity="center"
+		android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TextView android:text="Chưa có dữ liệu" android:id="@+id/chualambai"
+			android:textSize="30dip" android:textColor="#fff" android:textStyle="bold"
+			android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+		<GridView android:id="@+id/gridview" android:layout_width="fill_parent"
+
+			android:listSelector="@android:color/transparent"
+			android:columnWidth="45dp" android:numColumns="6"
+			android:verticalSpacing="5dp" android:horizontalSpacing="5dp"
+			android:stretchMode="columnWidth" android:gravity="center"
+			android:layout_height="fill_parent" android:layout_marginTop="5dip" />
+	</LinearLayout>
+	<LinearLayout android:id="@+id/scroll"
+		android:layout_width="fill_parent" android:layout_height="fill_parent" />
+
+
+
+
+	<LinearLayout android:id="@+id/thongkeketquathi"
+		android:orientation="vertical" android:background="@drawable/table_cell"
+		android:layout_height="wrap_content" android:layout_width="match_parent">
+		<LinearLayout android:id="@+id/linearLay2"
+			android:orientation="vertical" android:gravity="center_vertical"
+			android:layout_width="match_parent" android:layout_height="wrap_content">
+			<TextView android:text="Số lần đỗ : " android:id="@+id/solando"
+				android:textColor="#000" android:textSize="25dip" android:textStyle="bold"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="20dip" android:layout_marginTop="20dip"></TextView>
+			<TextView android:text="Điểm trung bình : " android:id="@+id/diemtrungbinh"
+				android:textColor="#000" android:textSize="25dip" android:textStyle="bold"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="20dip"></TextView>
+		</LinearLayout>
+		<LinearLayout android:id="@+id/kephancach"
+			android:visibility="gone" android:layout_height="2dip"
+			android:background="@drawable/seperator" android:layout_width="match_parent"
+			android:layout_margin="5dip"></LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:layout_height="wrap_content">
+			<ListView android:layout_height="fill_parent" android:id="@+id/listthongke"
+				android:fadingEdgeLength="0dip" android:layout_width="fill_parent"></ListView>
+		</LinearLayout>
+	</LinearLayout>
+
+
+
+	<!-- <LinearLayout android:id="@+id/lineayout4" android:layout_height="49dip" 
+		android:layout_width="match_parent"></LinearLayout> -->
+</LinearLayout>

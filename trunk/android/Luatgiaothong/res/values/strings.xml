@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Luat!</string>
+    <string name="app_name">Thi Ôtô</string>
+    <string name="luat">Luật</string>
+    <string name="bienbao">Biển báo</string>
+    <string name="baithi">Bài thi</string>
+    <string name="ketqua">Kết quả</string>
+    <string name="bode">Bộ đề</string>
+    <string name="onlyviet">This application supports only Vietnameses.</string>
+    <string name="sms">Soạn SMS</string>
+    <string name="view">Xem</string>
+    <string name="noapptodo">Không có ứng dụng để gửi tin nhắn.</string>
+</resources>

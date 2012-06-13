@@ -1,0 +1,207 @@
+101	Đường cấm	Đường cấm tất cả các loại phương tiện (cơ giới và thô sơ) đi lại cả hai hướng, trừ các xe được ưu tiên theo luật lệ nhà nước quy định.	101.jpg	1
+102	Cấm đi ngược chiều	Đường cấm tất cả các loại xe (cơ giới và thô sơ) đi vào theo chiều đặt biển, trừ các xe được ưu tiên theo luật lệ nhà nước quy định.	102.jpg	1
+103a	Cấm ôtô	Đường cấm tất cả các loại xe cơ giới kể cả môtô 3 bánh có thùng đi qua, trừ môtô hai bánh, xe gắn máy và các xe được ưu tiên theo luật lệ nhà nước quy định.	103a.jpg	1
+103b	Cấm ôtô rẽ phải	Đường cấm tất cả các loại xe cơ giới kể cả môtô 3 bánh có thùng xe rẽ phải, trừ môtô hai bánh, xe gắn máy và các xe được ưu tiên theo luật lệ nhà nước.	0	1
+103c	Cấm ôtô rẽ trái	Đường cấm tất cả các loại xe cơ giới kể cả môtô 3 bánh có thùng xe rẽ trái, trừ môtô hai bánh, xe gắn máy và các xe được ưu tiên theo luật lệ nhà nước.	0	1
+104	Cấm môtô	Đường cấm tất cả các loại môtô đi qua, trừ các xe môtô được ưu tiên theo luật lệ nhà nước quy định.	104.jpg	1
+105	Cấm ôtô và môtô	Đường cấm tất cả các loại xe cơ giới và môtô đi qua trừ xe gắn máy và các xe ưu tiên theo luật lệ nhà nước quy định.	105.jpg	1
+106	Cấm ôtô tải	Để báo đường cấm tất cả các loại ôtô tải có trọng lượng lớn nhất cho phép (bao gồm trọng lượng xe và hàng) trên 3,5Tấn đi qua trừ các xe được ưu tiên theo luật lệ nhà nước quy định.	106.jpg	1
+107	Cấm ôtô khách và ôtô tải	Để báo đường cấm ôtô chở hành khách và các loại ôtô tải có trọng lượng lớn nhất cho phép trên 3,5Tấn kể cả các loại máy kéo và xe máy thi công chuyên dùng đi qua trừ các xe được ưu tiên theo luật lệ nhà nước quy định.	107.jpg	1
+108	Cấm ôtô kéo moóc	Đường cấm tất cả các loại xe cơ giới kéo theo rơ-moóc kể cả môtô, máy kéo, ôtô khách kéo theo rơ-moóc đi qua, trừ loại ôtô sơ-mi rơ-moóc và các loại xe được ưu tiên (có kéo theo rơ-moóc) theo luật lệ nhà nước quy định.	108.jpg	1
+109	Cấm máy kéo	Để báo đường cấm tất cả các loại máy kéo, kể cả máy kéo bánh hơi và bánh xích đi qua.	0	1
+110a	Cấm đi xe đạp	Để báo đường cấm xe đạp đi qua.	110a.jpg	1
+110b	Cấm xe đạp thồ	Để báo đường cấm xe đạp thồ đi qua. Biển này không cấm người dắt loại xe này.	110b.jpg	1
+111a	Cấm xe gắn máy	Để báo đường cấm xe gắn máy đi qua. Biển không có giá trị đối với xe đạp.	111a.jpg	1
+111b	Cấm xe ba bánh loại có động cơ (xem lam)	Để báo đường cấm xe ba bánh loại có động cơ như xe lam, xích lô máy, xe lôi máy v.v...	0	1
+111c	Cấm xe ba bánh loại có động cơ (xe lôi máy)	Để báo đường cấm xe ba bánh loại có động cơ như xe lam, xích lô máy, xe lôi máy v.v...	0	1
+111d	Cấm xe ba bánh loại không có động cơ	Để báo đường cấm xe ba bánh loại không có động cơ như xích lô, xe lôi, xe đạp v.v...	0	1
+112	Cấm người đi bộ	Để báo đường cấm đi bộ qua lại.	112.jpg	1
+113	Cấm xe người kéo, đẩy	Để báo đường cấm xe người kéo, đẩy đi qua. Biển không có giá trị cấm những xe nôi của trẻ em và phương tiện chuyên dùng để đi lại của người tàn tật.	113.jpg	1
+114	Cấm xe xúc vật kéo	Để báo đường cấm súc vật vận tải hàng hóa hoặc hành khách dù kéo xe hay chở trên lưng đi qua.	0	1
+115	Hạn chế trọng lượng xe	Để báo đường cấm các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ của nhà nước quy định, có trọng lượng toàn bộ (cả xe và hàng) vượt quá trị số ghi trên biển đi qua.	0	1
+116	Hạn chế trọng lượng trên trục xe	Để báo đường cấm các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ của nhà nước quy định, có trọng lượng toàn bộ (cả xe và hàng) phân bổ trên một trục bất kỳ của xe vượt quá trị số ghi trên biển đi qua.	0	1
+117	Hạn chế chiều cao	Cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ nhà nước quy định có chiều cao (tính đến điểm cao nhất kể cả xe và hàng hóa) vượt quá trị số ghi trên biển không được đi qua.	117.jpg	1
+118	Hạn chế chiều ngang	Cấm các xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ nhà nước quy định có chiều ngang (kể cả xe và hàng hóa) vượt quá trị số ghi trên biển không được đi qua.	118.jpg	1
+119	Hạn chế chiều dài ôtô	Để báo đường cấm các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ nhà nước quy định, có độ dài toàn bộ kể cả xe và hàng lớn hơn trị số ghi trên biển đi qua.	0	1
+120	Hạn chế chiều dài ôtô kéo moóc	Đường cấm các loại xe (cơ giới và thô sơ) kéo theo moóc kể cả ôtô sơ-mi rơ-moóc và các loại xe được ưu tiên kéo moóc theo luật lệ nhà nước quy định, có độ dài toàn bộ kể cả xe, moóc và hàng lớn hơn trị số ghi trên biển đi qua.	0	1
+121	Cự ly tối thiểu giữa hai xe	Để báo xe ôtô phải đi cách nhau một khoảng tối thiểu. Số ghi trên biển cho biết khoảng cách tối thiểu tính bằng mét. Biển có hiệu lực cấm các xe ôtô không được đi cách nhau kể cả các xe được ưu tiên theo luật lệ nhà nước quy định một cự ly nhỏ hơn trị số ghi trên biển báo.	0	1
+122	Dừng lại	Biển có hiệu lực buộc các xe cơ giới và thô sơ kể cả các xe được ưu tiên theo luật lệ Nhà nước quy định dừng lại trước biển hoặc trước vạch ngang đường và chỉ được phép đi khi thấy các tín hiệu (do người điều khiển giao thông hoặc đèn, cờ) cho phép đi.	122.jpg	1
+123a	Cấm rẽ trái	Cấm rẽ trái (theo hướng mũi tên chỉ) ở những chỗ đường giao nhau. Biển có hiệu lực cấm các loại xe (cơ giới và thô sơ) trừ các xe được ưu tiên theo luật lệ Nhà nước quy định được rẽ trái.	123a.jpg	1
+123b	Cấm rẽ phải	Để báo cấm rẽ phải (theo hướng mũi tên chỉ) ở những chỗ đường giao nhau. Biển có hiệu lực cấm các loại xe (cơ giới và thô sơ) trừ các xe được ưu tiên theo luật lệ Nhà nước quy định được rẽ phải.	0	1
+124a	Cấm quay xe	Cấm các loại xe (cơ giới và thô sơ) quay đầu theo kiểu chữ U, trừ các xe được ưu tiên theo luật lệ Nhà nước quy định.	124a.jpg	1
+124b	Cấm ôtô quay đầu xe	Cấm xe ôtô và xe môtô 3 bánh (cide car) quay đầu theo kiểu chữ U, trừ các xe được ưu tiên theo luật lệ Nhà nước quy định.	0	1
+125	Cấm vượt	Cấm các loại xe cơ giới vượt nhau kể cả các xe được ưu tiên theo luật lệ Nhà nước quy định. Được phép vượt xe mô tô 2 bánh, xe gắn máy.	125.jpg	1
+126	Cấm ôtô tải vượt	Cấm tất cả các loại ô tô tải có trọng lượng lớn nhất cho phép (bao gồm trọng lượng xe và hàng) trên 3.5 tấn kể cả các xe được ưu tiên theo luật lệ Nhà nước quy định vượt nhau. Được phép vượt xe mô tô 2 bánh, xe gắn máy.	126.jpg	1
+127	Tốc độ tối đa cho phép	Cấm tất cả các loại xe cơ giới chạy với tốc độ tối đa vượt quá trị số ghi trên biển, trừ các xe được ưu tiên theo luật lệ Nhà nước quy định.	127.jpg	1
+128	Cấm bóp còi	Cấm các loại xe cơ giới sử dụng còi.	0	1
+129	Kiểm tra	Để báo nơi đặt trạm kiểm tra, các loại phương tiện vận tải qua đó phải dừng lại để làm thủ tục kiểm tra, kiểm soát theo luật lệ nhà nước quy định.	0	1
+130	Cấm dừng xe và đỗ xe	Để báo nơi cấm dừng xe và đỗ xe. Biển có hiệu lực cấm tất cả các loại xe cơ giới dừng và đỗ lại ở phía đường có đặt biển, trừ các xe được ưu tiên theo luật lệ Nhà nước quy định.	130.jpg	1
+132	Nhường đường cho xe cơ giới đi ngược chiều qua đường hẹp	Để báo các loại xe (cơ giới và thô sơ) kể cả các xe được ưu tiên theo luật lệ nhà nước quy định đi theo chiều nhìn thấy biển phải nhường đường cho các loại xe cơ giới đi theo hướng ngược lại khi đi qua các đoạn đường và cầu hẹp.	0	1
+133	Hết cấm vượt	Biển báo các xe cơ giới được phép vượt nhau nhưng phải theo đúng luật đi đường bộ quy định về điều kiện cho phép vượt nhau.	0	1
+134	Hết hạn chế tốc độ tối đa	Biển báo hết đoạn đường hạn chế tốc độ tối đa. Kể từ biển này, các xe được phép chạy với tốc độ tối đa đã quy định trong Luật Giao thông đường bộ.	134.jpg	1
+135	Hết tất cả các lệnh cấm	Biển báo hiệu đoạn đường hết tất cả các lệnh cấm.	135.jpg	1
+136	Cấm đi thẳng	Biểu thị ở phía trước cấm tất cả các loại xe đi thẳng.	0	1
+137	Cấm rẽ trái và rẽ phải	Biểu thị ở ngã đường phía trước cấm tất cả các loại xe cộ rẽ trái và rẽ phải.	0	1
+138	Cấm đi thẳng và rẽ trái	Biểu thị ở ngã tư, ngã năm đường phía trước cấm tất cả các loại xe đi thẳng và rẽ trái.	0	1
+139	Cấm đi thẳng và rẽ phải	Biểu thị ở ngã tư, ngã năm đường phía trước cấm tất cả các loại xe đi thẳng và rẽ phải.	0	1
+201a	Chỗ ngoặt nguy hiểm vòng bên trái	Báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên trái.	201a.jpg	2
+201b	Chỗ ngoặt nguy hiểm vòng bên phải	Báo trước sắp đến một chỗ ngoặt nguy hiểm vòng bên phải.	0	2
+202	Nhiều chỗ ngoặt nguy hiểm liên tiếp	Dùng để báo nguy hiểm cho người lái xe giảm tốc độ, biển được đặt ở ngoài vị trí tiếp đầu (hay tiếp cuối) của đường ngoặt liên tục có tốc độ xe chạy cho phép (thiết kế) nhỏ hơn 60km/h, đoạn có ba hoặc trên ba đoạn cong ngược chiều nhau có bán kính đường cong nằm nhỏ hơn giá trị tối thiểu quy định của cấp đường, còn đoạn thẳng chêm giữa các đoạn cong thì bằng hoặc nhỏ hơn chiều dài có giá trị bé nhất của đường cong chuyển tiếp hay đoạn vuốt nối siêu cao.	0	2
+203a	Đường bị hẹp cả hai bên	Báo trước sắp đến một đoạn đường bị hẹp đột ngột cả hai bên.	203a.jpg	2
+203b	Đường bị hẹp về phía trái	Báo trước sắp đến một đoạn đường bị hẹp đột ngột về phía trái.	0	2
+203c	Đường bị hẹp về phía phải	Báo trước sắp đến một đoạn đường bị hẹp đột ngột về phía phải.	0	2
+204	Đường hai chiều	Để báo trước sắp đến đoạn đường vì lý do sửa chữa hoặc có trở ngại ở một phía đường mà phải giải quyết đi lại của phương tiện phía đường còn lại hoặc để báo trước đoạn đường đôi tạm thời hay thường xuyên các chiều xe đi và về phải đi chung.	0	2
+205a	Đường giao nhau	Báo trước sắp đến nơi giao nhau của các tuyến đường cùng cấp, (không có đường nào ưu tiên) trên cùng một mặt bằng.	205a.jpg	2
+206	Giao nhau chạy theo vòng xuyến	Báo trước nơi giao nhau có bố trí đảo an toàn ở giữa điểm giao, các loại xe qua điểm giao vòng trái, phải đi vòng xuyến qua đảo an toàn.	206.jpg	2
+207a	Giao nhau với đường không ưu tiên	Trên đường ưu tiên, để báo trước sắp đến nơi giao nhau với đường không ưu tiên.	207a.jpg	2
+208	Giao nhau với đường ưu tiên	Trên đường không ưu tiên, biển này để báo trước sắp đến nơi giao nhau với đường ưu tiên.	208.jpg	2
+209	Giao nhau có tín hiệu đèn	Để báo trước nơi giao nhau có sự điều khiển giao thông bằng tín hiệu đèn (hệ thống 3 đèn bật theo chiều đứng) và trong trường hợp thiết bị tín hiệu đèn không được nhìn thấy rõ ràng và kịp thời.	209.jpg	2
+210	Giao nhau với đường sắt có rào chắn	Báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt có rào chắn kín hay chắn nửa kín bố trí theo trật tự xen kẽ ở mỗi bên đường sắt và có nhân viên ngành đường sắt điều khiển giao thông.	210.jpg	2
+211	Giao nhau với đường sắt không có rào chắn	Báo trước sắp đến chỗ giao nhau giữa đường bộ và đường sắt không có rào chắn, không có người điều khiển giao thông.	211.jpg	2
+212	Cầu hẹp	Báo trước sắp đến cầu hẹp là loại cầu có chiều rộng lòng cầu (phần xe chạy) nhỏ hơn hoặc bằng 4.50 m (1 làn đường). Khi qua các cầu này các xe phải nhường nhau và chờ ở hai đầu cầu.	212.jpg	2
+213	Cầu tạm	Để báo trước sắp đến cầu tạm là loại cầu được làm để sử dụng tạm thời cho xe cộ qua lại.	0	2
+214	Cầu xoay-cầu cất	Để báo trước sắp đến cầu xoay, cầu cất là những loại cầu trong từng thời gian có cắt giao thông đường bộ để cho tàu thuyền qua lại. Các phương tiện đi trên đường bộ phải chờ đợi.	0	2
+215a	Kè, vực sâu phía trước	Để báo trước sắp tới những chỗ có kè, vực sâu, hoặc bờ sông áp sát đường ở phía trước, cần đề phòng tình huống nguy hiểm vượt kè, tụt xuống vực sâu (thường có ở những chỗ ngoặt nguy hiểm).	0	2
+215b	Kè, vực sâu phía trước	Để báo trước sắp tới những chỗ có kè, vực sâu, hoặc bờ sông áp sát đường ở phía trước, cần đề phòng tình huống nguy hiểm vượt kè, tụt xuống vực sâu (thường có ở những chỗ ngoặt nguy hiểm).	0	2
+216	Đường ngầm	Để báo trước những chỗ có đường ngầm (đường tràn). Đường ngầm là những đoạn đường vượt qua sông, suối, khe cạn mà nước có thể chảy tràn qua thường xuyên hoặc khi có lũ.	0	2
+217	Bến phà	Để báo trước sắp đến bến phà. Người sử dụng đường phải tuân theo nội quy bến phà.	0	2
+218	Cửa chui	Để báo trước sắp đến những đường có cổng, kiểu cổng tò vò chắn ngang như cổng đường hầm, cổng thành, cầu vượt đường bộ dạng cầu vòm v.v...	0	2
+219	Dốc xuống nguy hiểm	Báo trước sắp tới chỗ dốc nguy hiểm. Người lái các phương tiện phải chọn phương thức chạy xe cho phù hợp để xe xuống dốc một cách thuận lợi, an toàn	219.jpg	2
+220	Dốc lên nguy hiểm	Báo trước sắp tới chỗ dốc nguy hiểm. Người lái các phương tiện phải chọn phương thức chạy xe cho phù hợp để xe lên dốc một cách thuận lợi, an toàn	0	2
+221a	Đường không bằng phẳng	Để báo trước sắp tới đoạn đường có mặt đường không bằng phẳng, lồi lõm, sống trâu v.v... xe chạy với tốc độ cao sẽ bị nguy hiểm.	0	2
+221b	Đường không bằng phẳng	Báo hiệu đoạn "đường có sóng mấp mô nhân tạo (humps)" để hạn chế tốc độ xe chạy (biển được cắm kèm theo biển số 227 "Hạn chế tốc độ tối đa"), bắt buộc lái xe phải chạy với tốc độ chậm trước khi qua những điểm cần kiểm soát, kiểm tra...	0	2
+222	Đường trơn	Để báo trước sắp tới đoạn đường có thể xảy ra trơn trượt đặc biệt là khi thời tiết xấu, mưa phùn cần tránh hãm phanh, tăng ga, sang số đột ngột hoặc xe chạy với tốc độ cao sẽ bị nguy hiểm. Khi gặp biển này tốc độ xe chạy phải giảm kịp thời và thận trọng.	0	2
+223a	Vách núi nguy hiểm	Biển báo nguy hiểm đường đi sát vách núi. Dùng để báo nguy hiểm cho lái xe lái cẩn thận.	0	2
+224	Đường người đi bộ cắt ngang	Báo trước sắp đến phần đường ngang dành cho người đi bộ sang qua đường. Gặp biển này các loại xe cộ phải nhường ưu tiên cho người đi bộ và chỉ được chạy xe nếu như không gây nguy hiểm cho người đi bộ.	0	2
+225	Trẻ em	Báo trước là gần đến đoạn đường thường có trẻ dem đi ngang qua hoặc tụ tập trên đường như ở vườn trẻ, trường học, câu lạc bộ đi qua.	225.jpg	2
+226	Đường người đi xe đạp cắt ngang	Báo trước là gần đến chỗ thường có người đi xe đạp từ những đường nhỏ cắt ngang qua hoặc từ đường dành cho xe đạp đo nhập vào đường ô tô.	226.jpg	2
+227	Công trường	Để báo trước gần tới đoạn đường đang tiến hành sửa chữa có người và máy móc đang làm việc trên mặt đường. Khi gặp biển báo này tốc độ xe chạy phải giảm cho thích hợp, không gây nguy hiểm cho người và máy móc trên đoạn đường đó.	0	2
+228a	Đá lở	Để báo trước gần tới một đoạn đường có hiện tượng đất đá từ trên ta luy dụt lở bất ngờ gây nguy hiểm cho xe cộ và người đi đường, đặc biệt là ở những đoạn đường miền núi. Gặp biển này, người lái xe phải chú ý đặc biệt khi thời tiết xấu hạn chế tầm nhìn và khi dừng hay đỗ xe sau những trận mưa lớn.	0	2
+229	Giải máy bay lên xuống	Để báo trước gần tới đoạn đường ở vùng sát đường băng sân bay và cắt ngang qua hướng máy bay lên xuống ở độ cao không lớn.	0	2
+230	Gia súc	Để báo trước gần tới đoạn đường thường có gia súc thả rông hoặc lùa qua ngang đường nguy hiểm, đường ở vùng đồng cỏ của nông trường chăn nuôi, vùng thảo nguyên. Người lái xe có trách nhiệm dừng lại bảo đảm cho gia súc có thể qua đường không bị nguy hiểm.	0	2
+231	Thú rừng vượt qua đường	Để báo trước gần tới đoạn đường thường có thú rừng qua đường như đường đi qua khu vực rừng cây hay khu cấm săn bắn.	0	2
+232	Gió ngang	Để báo trước gần tới đoạn đường thường có gió ngang thổi mạnh nguy hiểm. Người lái xe cần phải điều chỉnh tốc độ xe chạy cho thích hợp, đề phòng tình huống gió thổi lật xe.	0	2
+233	Nguy hiểm khác	Để báo trên đường có những nguy hiểm khác.	0	2
+234	Giao nhau với đường hai chiều	Trên đường một chiều, biển này để báo trước sắp đến chỗ giao nhau với đường hai chiều	234.jpg	2
+235	Đường đôi	Để báo trước sắp đến đoạn đường đôi (chiều đi và chiều về phân biệt rõ ràng bằng giải phân cách cứng).	0	2
+236	Hết đường đôi	Để báo trước sắp kết thúc đoạn đường đôi (đoạn đường hết giải phân cách). Đường đôi chỉ được chia bằng vạch sơn không phải đặt biển này.	0	2
+237	Cầu vòng	Dùng để nhắc nhở lái xe cho cẩn thận. Biển đặt ở nơi thích hợp trên đoạn đường sắp sửa đến chiếc cầu có độ vồng rất lớn ảnh hưởng tới tầm nhìn.	0	2
+238	Đường cao tốc phía trước	Biển này nhằm để báo cho các phương tiện đi trên đường biết có "Đường cao tốc phía trước".	238.jpg	2
+239	Đường cáp điện ở phía trên	Biển này để cảnh báo nơi có đường dây điện cắt ngang phía trên tuyến đường, thường kèm theo biển phụ 509 "Chiều cao an toàn" ở phía dưới.	239.jpg	2
+240	Đường hầm	Dùng để nhắc lái xe chú ý đi chậm lại, biển đặt ở nơi thích hợp mà đường sắp sửa đi vào đường hầm chạy hai chiều, mà chiếu sáng lại không tốt.	0	2
+241	Thôn bản	Dùng để nhắc lái xe lái cẩn thận. Biển được đặt ở nơi đường sắp đi qua khu dân cư, thị tứ mà lái xe lại không có đủ tầm nhìn, hoặc bị hạn chế tầm nhìn.	0	2
+242a	Chỗ đường sắt cắt đường bộ	Tại chỗ giao nhau đường sắt chỉ có một đường cắt ngang đường bộ.	242a.jpg	2
+242b	Chỗ đường sắt cắt đường bộ	Tại chỗ giao nhau đường sắt có từ hai đường cắt ngang đường bộ.	242b.jpg	2
+243	Đường sắt giao cắt với đường bộ không vuông góc	Biểu thị sắp đi qua đoạn đường có đường sắt cắt qua, nếu ở nơi giao cắt với đường bộ không có người gác mà trên mặt đường có biển báo “gần vạch tín hiệu của đường sắt giao nhau cùng mức” thì phải đặt thêm kí hiệu đường sắt giao cắt với đường bộ không vuông góc ở phía dưới biển báo “giao cắt với đường bộ của đường sắt không có người gác”. Kí hiệu đường sắt giao cắt với đường bộ không vuông góc có ba loại. Loại thứ nhất đặt ở nơi cách nơi giao nhau với đường sắt 50 mét. Loại thứ hai và ba đặt cách nới giao cắt đường sắt 100 mét và 150 mét.	0	2
+244	Đoạn đường hay xảy ra tai nạn	Dùng để báo nguy hiểm lái xe chú ý đoạn đường phía trước thường xảy ra tai nạn để lái xe cần đặc biệt chú ý. Biển được đặt ở vị trí thích hợp nơi sắp vào đoạn đường thường xảy ra tai nạn.	0	2
+245	Đi chậm	Dùng để nhắc lái xe giảm tốc độ đi chậm. Biển đặt ở vị trí thích đáng trước khi đến đoạn đường yêu cầu đi chậm.	0	2
+246	Chú ý chướng ngại vật	Dùng để báo trước cho lái xe biết phía trước có chướng ngại vật, xe cần giảm tốc độ theo chỉ dẫn trên biển báo. Biển này đặt ở vị trí thích hợp trước khi đến đoạn đường có chướng ngại vật.	0	2
+301a	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được đi thẳng.	301a.png	3
+301b	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được rẽ trái.	301b.png	3
+301c	Hướng đi phải theo	Để báo cho các loại xe(thô sơ và cơ giới) chỉ được rẽ trái.	301c.png	3
+301d	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được rẽ phải.	301d.png	3
+301e	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được rẽ trái.	301e.png	3
+301f	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được đi thẳng và rẽ phải.	301f.png	3
+301h	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được đi thẳng và rẽ trái.	301h.png	3
+301i	Hướng đi phải theo	Để báo cho các loại xe (thô sơ và cơ giới) chỉ được rẽ trái và rẽ phải.	301i.png	3
+302a	Hướng phải đi vòng chướng ngại vật	Báo các loại xe (cơ giới và thô sơ) hướng đi để qua một chướng ngại vật. Biển được đặt trước chướng ngại vật và tùy theo hướng đi vòng sang phải hay sang trái mà lựa chọn theo kiểu biển cho phù hợp. Biển có hiệu lực bắt buộc các loại xe phải đi vòng chướng ngại vật theo hướng mũi tên chỉ.	302a.png	3
+302b	Hướng phải đi vòng chướng ngại vật	Báo các loại xe (cơ giới và thô sơ) hướng đi để qua một chướng ngại vật. Biển được đặt trước chướng ngại vật và tùy theo hướng đi vòng sang phải hay sang trái mà lựa chọn theo kiểu biển cho phù hợp. Biển có hiệu lực bắt buộc các loại xe phải đi vòng chướng ngại vật theo hướng mũi tên chỉ.	302b.png	3
+303	Nơi giao nhau chạy theo vòng xuyến	Báo cho các loại xe (cơ giới và thô sơ) phải chạy vòng theo đảo an toàn ở các ngã ba, ngã tư. Biển có hiệu lực bắt buộc các loại xe muốn chuyển hướng phải chạy vòng theo, đảo an toàn theo hướng mũi tên chỉ.	303.png	3
+304	Đường dành cho xe thô sơ	Báo đường dành cho xe thô sơ (kể cả xe của người tàn tật) và người đi bộ. Biển có hiệu lực bắt buộc các loại xe thô sơ (kể cả xe của người tàn tật) và người đi bộ phải dùng đường dành riêng này để đi. Cấm các xe cơ giới kể cả xe gắn máy, các xe được ưu tiên theo luật lệ Nhà nước quy định vào đường đã đặt biển này, trừ trường hợp đi cắt ngang qua nhưng phải đảm bảo tuyệt đối an toàn cho xe thô sơ và người đi bộ.	304.png	3
+305	Đường dành cho người đi bộ	Báo đường dành cho người đi bộ. Các loại xe cơ giới và thô sơ kể cả các xe được ưu tiên theo luật lệ Nhà nước quy định không được phép đi vào đường đã đặt biển này, trừ trường hợp đi cắt ngang qua nhưng phải đảm bảo tuyệt đối an toàn cho người đi bộ.	305.png	3
+306	Tốc độ tối thiểu cho phép	Báo tốc độ tối thiểu cho phép các xe cơ giới chạy. Biển có hiệu lực cấm các loại xe cơ giới chạy với tốc độ nhỏ hơn trị số ghi trên biển. Các loại xe do sự chế tạo có tốc độ tối đa không đạt tốc độ tối thiểu đã ghi không được phép đi vào đường này. Trị số ghi trên biển chỉ tốc độ tối thiểu cho phép tính bằng km/h.	306.png	3
+307	Hết hạn chế tốc độ tối thiểu	Báo hết đoạn đường hạn chế tốc độ tối thiểu. Biển có giá trị báo cho người lái xe biết hiệu lực của biển số 306 hết tác dụng, kể từ biển này các loại xe được phép chạy chậm hơn trị số ghi trên biển nhưng không được gây cản trở các xe khác.	307.png	3
+308a	Tuyến đường cầu vượt cắt qua	Biểu thị tại cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ trái. Biển đặt tại vị trí thích hợp ngay trước khi vào đường rẽ trái hoặc qua cầu vượt.	308a.png	3
+308b	Tuyến đường cầu vượt cắt qua	Biểu thị tại cầu vượt, xe có thể đi thẳng hoặc theo chỉ dẫn trên hình vẽ để rẽ phải. Biển đặt tại vị trí thích hợp ngay trước khi vào đường rẽ phải hoặc qua cầu vượt.	308b.png	3
+309	Ấn còi	Biểu thị xe cộ đi đến chỗ cắm biển đó thì phải ấn còi.	309.png	3
+401	Các xe trên trục đường chính được ưu tiên đi trước	Biển chỉ dẫn các xe trên trục đường chính được ưu tiên đi trước	401.png	4
+402	Hết đọan đường ưu tiên	Biển này báo hiệu hết đoan đường quy định là ưu tiên. Trên đoan đường tiếp theo, các xe cộ đi đúng với tốc độ quy định trong Luật Giao thông đường bộ, qua nơi giao nhau ưu tiên bên phải.	402.png	4
+403a	Đường dành cho ôtô	Để chỉ dẫn bắt đầu đường dành cho các loại ô tô đi lại, các loại phương tiện giao thông khác không được phép đi vào đoạn đường có đặt biển này.	403a.png	4
+403b	Đường dành cho ôtô, xe máy	Để chỉ dẫn bắt đầu đường dành cho các loại ôtô, xe máy (kể cả xe gắnmáy) đi lại, các loại phương tiện giao thông khác không được phép đi vào đọan đường có đặt biển này.	403b.png	4
+404a	Hết đường dành cho ôtô	Đến hết đoạn đường dành cho ô tô đi lại phải đặt biển số 404a "Hết đường dành cho ô tô".	404a.png	4
+404b	Hết đường dành cho ôtô, xe máy	Đến hết đoạn đường dành cho ôtô, xe máy đi lại phải đặt biển số 404b "Hết đường danh cho ôtô, xe máy"	404b.png	4
+405a	Đường cụt	Để chỉ lối rẽ vào đường cụt.	405a.png	4
+405b	Đường cụt	 Để chỉ lối rẽ vào đường cụt.	405b.png	4
+405c	Đường cụt	Để chỉ dẫn đường trước mắt là đường cụt	405c.png	4
+406	Được ưu tiên qua đường hẹp	Để chỉ dẫn cho người lái xe cơ giới biết mình có quyền được ưu tiên đi trước trên đoạn đường hẹp khi gặp xe đi ngược chiều. Nếu trên hướng đi ngược chiều có xe (cơ giới hoặc thô sơ) đã đi vào phạm vi đường hẹp thì xe đi theo chiều ưu tiên cũng phải nhường đường .	406.png	4
+407a	Đường một chiều	Để chỉ dẫn những đoạn đường chạy một chiều đặt sau ngã ba, ngã tư.	407a.png	4
+407b	Đường một chiều	Để chỉ dẫn những đoạn đường chạy một chiều đặt trước ngã ba, ngã tư.	407b.png	4
+407c	Đường một chiều	Để chỉ dẫn những đoạn đường chạy một chiều đặt trước ngã ba, ngã tư.	407c.png	4
+408a	Nơi đỗ xe	Để chỉ dẫn những nơi được phép đỗ xe, những bãi đỗ xe, bến xe v.v... Chiều dai nơi đỗ xe có thể được xác định giới hạn bằng vạch kẻ trên mặt đường hoặc bãi đỗ có hình dáng rõ ràng. Phạm vi quy định đỗ xe sẽ hết hiệu lực 10m trước khi đến ngã ba, ngã tư tiếp theo.	408a.png	4
+408b	Nơi đỗ xe	Để chỉ dẫn những nơi được phép đỗ xe, những bãi đỗ xe, bến xe v.v... Chiều dai nơi đỗ xe có thể được xác định giới hạn bằng vạch kẻ trên mặt đường hoặc bãi đỗ có hình dáng rõ ràng. Phạm vi quy định đỗ xe sẽ hết hiệu lực 10m trước khi đến ngã ba, ngã tư tiếp theo.	408b.png	4
+409	Chỗ quay xe	Để chỉ dẫn vị trí được phép quay đầu xe kiểu chữ U. Biển không cho phép rẽ trái (trừ các xe được quyền ưu tiên theo khoản 2 điều 20 Luật Giao thông đường bộ).	409.png	4
+410	Khu vực quay xe	Để chỉ dẫn khu vực được phép quay đầu xe kiểu chữ U. Trên biển mô tả cách thức tiến hành quay đầu xe. Biển không cho phép rẽ trái (trừ các xe được quyền ưu tiên theo khoản 2 điều 20 Luật Giao thông đường bộ).	410.png	4
+411	Hướng đi trên mỗi làn đường theo vạch kẻ đường	Để chỉ dẫn cho người lái xe biết số lượng làn đường trên mặt đường và hướng đi trên mỗi làn đường theo vạch kẻ đường. Biển có tác dụng bắt buộc người lái xe phải giữ đúng hướng đã được chỉ dẫn trên mỗi làn.	411.png	4
+412	Làn đường dành cho ôtô khách	Để chỉ dẫn cho người lái xe biết có làn đường dành riêng cho ôtô khách (kể cả ôtô buýt, tắc-xi). Biển được đặt ở đầu đường theo hướng đi của ôtô khách. Các loại xe khác không được đi vào làn đường có đặt biển này (trừ các xe có quyền ưu tiên theo điều 20 Luật Giao thông đường bộ).	412.png	4
+413a	Đường có làn đường dành cho ôtô khách	Để chỉ dẫn cho người lái xe biết đường có làn đường dành riêng cho ôtô khách theo chiều ngược lại. Biển được đặt ở ngã ba, ngã tư đầu đường một chiều mà hướng ngược chiều có ôtô khách được phép chạy.	413a.png	4
+413b	Rẽ ra đường có làn đường dành cho ôtô khách	Để chỉ dẫn cho người lái xe biết ở ngã ba, ngã tư rẽ phải là rẽ ra đường có làn đường dành cho ôtô khách.	413b.png	4
+413c	Rẽ ra đường có làn đường dành cho ôtô khách	Để chỉ dẫn cho người lái xe biết ở ngã ba, ngã tư rẽ trái là rẽ ra đường có làn đường dành cho ôtô khách.	413c.png	4
+414a	Chỉ hướng đường	Đặt ở tất cả các ngã ba, ngã tư đường giao nhau để chỉ dẫn có một khu đông dân cư trên hướng đường đến.	414a.png	4
+414b	Chỉ hướng đường	Đặt ở tất cả các ngã ba, ngã tư đường giao nhau để chỉ dẫn có một khu đông dân cư trên hướng đường đến.	414b.png	4
+423	Đường người đi bộ sang ngang	Để chỉ dẫn cho người đi bộ và người lái xe biết nơi dành cho người đi bộ sang ngang. Gặp biển này người lái xe phải ưu tiên cho người đi bộ sang ngang.	423.png	4
+425	Bệnh viện	Để chỉ dẫn những chỗ có cơ sở điều trị bệnh ở gần đường như bệnh viện, bệnh xá, trạm xá, .v.v... Gặp biển này người lái xe phải thận trọng và tránh làm ồn.	425.png	4
+426	Trạm cấp cứu	Để chỉ dẫn những chỗ có trạm cấp cứu y tế ở gần đường.	426.png	4
+427	Trạm sửa chữa	Để chỉ dẫn những nơi có đặt xưởng chuyên phục vụ sửa chữa ôtô, môtô hỏng trên đường.	427.png	4
+428	Trạm cung cấp xăng dầu	Để chỉ dẫn những nơi có đặt trạm kinh doanh xăng dầu phục vụ cho xe cộ đi trên đường.	428.png	4
+429	Nơi rửa xe	Để chỉ dẫn những nơi có bố trí chỗ rửa xe.	429.png	4
+430	Điện thoại	Để chỉ dẫn những nơi có đặt trạm điện thoại công cộng chuyên phục vụ khách đi đường.	430.png	4
+431	Cửa hàng ăn uống	Để chỉ dẫn những nơi có cửa hàng ăn uống phục vụ khách đi đường.	431.png	4
+432	Khách sạn	Để chỉ dẫn những nơi có khách sạn phục vụ khách đi đường.	432.png	4
+433	Nơi nghỉ mát	Để chỉ dẫn những nơi nghỉ mát.	433.png	4
+434	Bến xe buýt	Để chỉ dẫn những chỗ xe buýt dùng cho hành khách lên xuống.	434.png	4
+435	Bến xe điện	Để chỉ dẫn những chỗ xe điện dùng cho hành khách lên xuống.	435.png	4
+436	Trạm cảnh sát giao thông	Để chỉ dẫn những nơi có đặt trạm cảnh sát giao thông. Những người sử dụng đường phải tuân theo những luật lệ nhà nước quy định khi đi qua nơi này.	436.png	4
+437	Đường cao tốc	Để chỉ dẫn bắt đầu đường cao tốc. Quy chế sử dụng đường cao tốc phải được thực hiện nghiêm ngặt.	437.png	4
+438	Hết đường cao tốc	Để chỉ dẫn hết đường cao tốc.	438.png	4
+439	Tốc độ cho phép chạy trên đường cao tốc	Để nhắc nhở lái xe chạy trên đường cao tốc phải tuân theo tốc độ quy định. Trong biển lồng gồm có biển: - Tốc độ tối thiểu (bắt buộc lái xe phải thực hiện). - Tốc độ tối đa cho phép. - Tốc độ cho phép khi chạy trời mưa, trơn ướt.	439.png	4
+443	Chợ	Để báo sắp đến khu vực có họp chợ, xe cộ qua lại khu vực này phải chú ý làm chủ tốc độ.	443.png	4
+444	Xe kéo moóc	Để báo hiệu xe có kéo moóc.	444.png	4
+447	Biển báo phần đường cho người tàn tật	Dùng để biểu thị vị trí thiết bị chuyên dùng cho người tàn tật.	447.png	4
+448a	Chỉ dẫn cầu vượt liên thông	Đặt biển tại vị trí thích hợp trước trước khi vào cầu vượt	448a.png	4
+501	Phạm vi tác dụng của biển	Để thông báo chiều dài đoạn đường nguy hiểm hay đoạn đường phải thi hành lệnh cấm hoặc hạn chế.	501.png	5
+502	Khoảng cách đến đối tượng báo hiệu	Để thông báo khoảng cách thực tế từ vị trí đặt biển đến đối tượng báo hiệu ở phía trước.	502.png	5
+503a	Hướng tác dụng của biển	Đặt bên dưới các biển báo cấm, biển hiệu lệnh để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.	503a.png	5
+503b	Hướng tác dụng của biển	Để chỉ đồng thời 2 hướng tác dụng (trái và phải) của biển chính hoặc được đặt với biển báo nhắc lại lệnh cấm và hiệu lệnh.	503b.png	5
+503c	Hướng tác dụng của biển	Đặt bên dưới các biển báo cấm, biển hiệu lệnh để chỉ hướng tác dụng của biển là hướng vuông góc với chiều đi.	503c.png	5
+503d	Hướng tác dụng của biển	Để chỉ hướng tác dụng của biển là hướng song song với chiều đi.	503d.png	5
+503e	Hướng tác dụng của biển	Để chỉ đồng thời 2 hướng tác dụng (xuôi và ngược) của biển báo nhắc lại lệnh cấm dừng và cấm đỗ xe.	503e.png	5
+503f	Hướng tác dụng của biển	Để chỉ hướng tác dụng của biển là hướng song song với chiều đi.	503f.png	5
+504	Làn đường	Biển được đặt bên dưới các biển báo cấm và biển hiệu lệnh hay bên dưới đèn hiệu để chỉ làn đường chịu hiệu lực của biển (hay đèn hiệu) báo lệnh cấm - và hiệu lệnh trên làn đường đó.	504.png	5
+505	Loại xe	Biển được đặt bên dưới các biển báo cấm và biển hiệu lệnh hay biển chỉ dẫn để chỉ loại xe chịu hiệu lực của biển báo cấm, biển hiệu lệnh hay biển chỉ dẫn đối với riêng loại xe đó.	505.png	5
+506a	Hướng đường ưu tiên	Biển được đặt bên dưới biển chỉ dẫn số 401 trên đường ưu tiên để chỉ dẫn cho người lái xe trên đường này biết hướng đường ưu tiên ở ngã tư.	506a.png	5
+506b	Hướng đường ưu tiên	Biển được đặt bên dưới biển số 208 và biển số 122 trên đường không ưu tiên để chỉ dẫn cho người lái xe trên đường này biết hướng đường ưu tiên ở ngã tư.	506b.png	5
+507	Hướng rẽ	Biển được sử dụng độc lập để báo trước cho người biết gần đến chỗ rẽ nguy hiểm và để chỉ hướng rẽ.	507.png	5
+508a	Biểu thị thời gian	Biểu thị thời gian.	508a.png	5
+509	Chiều cao an toàn	Để bổ sung cho biển 239 "Đường cáp điện ở phía trên", phải đặt biển số 509 "chiều cao an toàn", biển này chỉ rõ chiều cao an toàn cho các phương tiện đi qua đoạn đường có dây điện bên trên.	509.png	5
+Vạch số 1-1	Vạch nằm ngang	Vạch liền, nét màu trắng, rộng 10 cm, dùng để phân chia 2 dòng phương tiện giao thông đi ngược chiều nhau, xác định ranh giới phần đường cấm, ranh giới nơi đỗ xe, ranh giới của làn xe ở vị trí nguy hiểm. Đối với vạch này xe không được đè lên vạch.	vach1-1.png	6
+Vạch số 1-2	Vạch nằm ngang	Vạch liền, màu trắng, rộng 20 cm, dùng để xác định mép phần xe chạy trên các trục đường. Xe chạy được phép cắt ngang hoặc đè lên vạch khi cần thiết.	vach1-2.png	6
+Vạch số 1-3	Vạch nằm ngang	Là vạch kép (2 vạch liên tục) màu trắng, có chiều rộng bằng nhau và bằng 10 cm, cách nhau là 10 cm, dùng để phân chia 2 dòng phương tiện giao thông từ 2 hướng ngược chiều nhau trên những đường có từ 4 làn đường trở lên. Xe chạy không được đè qua vạch.	vach1-3.png	6
+Vạch số 1-4	Vạch nằm ngang	Là vạch liên tục màu vàng có chiều rộng 10 cm, để xác định nơi cấm dừng và cấm đỗ xe. 	vach1-4.png	6
+Vạch số 1-5	Vạch nằm ngang	Là vạch đứt quãng, màu trắng, rộng 10 cm, tỷ lệ L1:L2 = 1:3. Vạch dùng để phân chia 2 dòng phương tiện giao thông từ 2 hướng ngược chiều nhau trên các đườngcó 2 hoặc 3 làn xe chạy. Xác định ranh giới làn xe khi có 2 hoặc trên 2 làn xe chạy theo một hướng.	vach1-5.png	6
+Vạch số 1-6	Vạch nằm ngang	Là vạch đứt quãng màu trắng, rộng 10 cm. Tỷ lệ L1:L2 = 3:1, dùng để báo hiệu gần đến vạch 1-1 hay 1-11, để phân chia dòng xe ngược chiều hay cùng chiều.	vach1-5.png	6
+Vạch số 1-7	Vạch nằm ngang	Là vạch đứt quãng màu trắng rộng 0,1m, khoảng cách giữa hai vạch là 0,5m. Vạch được kẻ Theo đường cong Theo chiều xe chạy ở chỗ giao nhau khi lái xe cần định hướng chung để đảm bảo an toàn khi qua chỗ giao nhau.	vach1-7.png	6
+Vạch số 1-8	Vạch nằm ngang	Là vạch đứt quãng màu trắng rộng0,4m. Vạch dùng để quay định danh giới làn xe tăng tốc độ hoặc giảm tốc độ (gọi là chuyển tới làn đường) và làn xe chính của phần xe chạy.	vach1-8.png	6
+Vạch số 1-9	Vạch nằm ngang	Là loại vạch kép (hai vạch) đứt quãng, song song, màu trắng rộng 0,1m và cách nhau 0,1 m. Vạch quay định danh giới làn xe dự trữ mà trên làn này chiều xe chạy có thể thay đổi hoặc hoặc chiều thuận hoặc chiều đi ngược lại. Sự thay đổi hướng xe được điều khiển bằng tín hiệu đèn xanh và đỏ đặt trên làn xe.	vach1-9.png	6
+Vạch số 1-10	Vạch nằm ngang	Là vạch đứt quãng màu vàng. Vạch xác định vị trí hay khu vực cấm đỗ xe.	vach1-10.png	6
+Vạch số 1-11	Vạch nằm ngang	Là hai vạch song song (vạch kép) màu trắng, một vạch đứt quãng và một vạch liền liền nét. Vạch dùng để phân chia dòng phương tiện hai hướng ngược chiều nhau trên các đường có hai hoặc ba làn xe chạy. Lái xe được phép cắt ngang qua vạch từ phía có vạch đứt quãng.	vach1-11.png	6
+Vạch số 1.12	Vạch nằm ngang	Vạch chỉ rõ vị trí xe phải dừng lại khi có biển báo số 122 “Stop” hoặc khi có tín hiệu đèn đỏ. Vạch này kẻ ngang toàn bộ đường của hướng xe chạy. Trong trường hợp không có biển 122 hoặc không có đèn hay người điều khiển thì vạch 1.12 không có hiệu lực.	vach1-12.png	6
+Vạch số 1.13	Vạch nằm ngang	Là vạch hình tam giác cân màu trắng vạch chỉ rõ vị trí mà lái xe phải dừng để nhường cho các phương tiện khác ở đường ưu tiên.	vach1-13.png	6
+Vạch số 1-14	Vạch nằm ngang	Là vạch "sọc ngựa vằn" gồm các đường màu trắng song song với tim đường, rộng 40 cm, cách nhau 60 cm. Vạch quy định nơi người đi bộ qua đường.	vach1-14.png	6
+Vạch số 1-15	Vạch nằm ngang	Vạch gồm 2 vạch đứt quãng chạy song song, cách nhau 1.8 mét, chiều dài, chiều rộng và khỏng cách giữa các vạch của vạch đứt quãng bằng nhau và bằng 40 cm. Vạch xác định vị trí chỗ xe đạp đi ngang qua xe đường của xe cơ giới. Xe đạp phải nhường đường cho phương tiện cơ giới chạy trên tuyến đường cắt ngang đường xe đạp.	vach1-15.png	6
+Vạch số 1.16.1	Vạch nằm ngang	“Ngựa vằn” màu trắng, xác định đảo phân chia dòng phương tiện ngược chiều nhau.	vach1-16-1.png	6
+Vạch số 1.16.2	Vạch nằm ngang	Vạch xác định đảo phân chia dòng phương tiện Theo cùng một hướng. Tại đó dòng phương tiện chạy cùng hướng được phân chia ra nhiều dòng (làn ) khác nhau.	vach1-16-2.png	6
+Vạch số 1.16.3	Vạch nằm ngang	: Đảo nhập dòng phương tiện. Tại đó dòng phương tiện chạy cùng hướng nhập với nhau.	vach1-16-3.png	6
+Vạch số 1.17	Vạch nằm ngang	Vạch sơn sóng màu vàng quay định vị trí dừng của xe các phương tiện vận tải Theo tuyến quay định hoặc nơi tập kết của tắc xi, cấm dừng hoặc đỗ của bất kì một lọai phương tiện nào về cả hai phía và cách vạch 15cm.	vach1-17.png	6
+Vạch số 1.18	Vạch nằm ngang	Màu trắng chỉ dẫn các hướng đi cho phép của các làn xe ở nơi giao nhau. Lái xe khi gặp biển này bắt buộc phải tuân Theo mũi tên chỉ hướng đi	vach1-18.png	6
+Vạch số 1.19	Vạch nằm ngang	Vạch màu trắng, vạch xác định sắp đến vị trí thắt hẹp của phần xe chạy, báo cho người lái xe biết rằng số làn xe Theo hướng mũi tên bị giảm và lái xe phải từ từ chuyển làn Theo hướng mũi tên.	vach1-19.png	6
+Vạch số 1.20	Vạch nằm ngang	Màu trắng, xác định sắp đến gần vạch 113 và biển báo số 108, khoảng cách đến vạch 1.13 Theo tim đường từ 2-2,5m (đường cao tốc có thể lớn hơn), lái xe được phép chạy đè lên vạch 1.13 không cần dừng lại.	vach1-20.png	6
+Vạch số 1.21	Vạch nằm ngang	Là chữ “Stop” (dừng lại) màu trắng, xác định gần đến vị trí dừng lại vạch 1.12 và biển báo số 122. Vạch 1.21 cách vạch dừng xe từ 2-2,5m.	vach1-21.png	6
+Vạch số 1.22	Vạch nằm ngang	Là vạch chỉ số hiệu đường, được kẻ trên đường quốc lộ và được kẻ trực tiếp trên mặt đường xe chạy	vach1-22.png	6
+Vạch số 1.23	Vạch nằm ngang	Là vạch chỉ làn xe dành cho ô to khách chạy Theo tuyến quay định.	vach1-23.png	6
+Vạch số 2.1	Vạch nằm đứng	Xác định các bộ phận thẳng đừng của các công trình giao thông như trụ cầu, cầu vượt đường…để chỉ dẫn những chỗ nguy hiểm đối với phương tiện giao thông đi qua.	vach2-1.png	6
+Vạch số 2.2	Vạch nằm đứng	Là vạch trắng đen xen kẽ thẳng đứng, xác định cạnh dưới cùng của cầu và cầu vượt đường.	vach2-2.png	6
+Vạch số 2.3	Vạch nằm đứng	Là vạch đen trắng xen kẽ nằm ngang. Vạch kẻ xung quanh các cột tròn đặt trên các đẩo an toàn hoặc trên giải phân cách và các nới khác.	vach2-3.png	6
+Vạch số 2.4	Vạch nằm đứng	Là vạch xiên góc màu đen tạo với mặt phẳng ngang góc 30o rộng 0,15m dùng để kẻ trên các cột tín hiệu, cột rào chắn, cọc tiêu	vach2-4.png	6
+Vạch số 2.5	Vạch nằm đứng	Kẻ ở thành rào có chắn, chỗ đường vòng có bán kính nhỏ, đường cao hơn so với khu vực xung quanh, dốc xuống với những nơi nguy hiểm khác.	vach2-5.png	6
+Vạch số 2.6	Vạch nằm đứng	Kẻ trên thành rào chắn bố trí ở những nơi đặc biệt nguy hiểm.	vach2-6.png	6
+Vạch số 2.7	Vạch nằm đứng	Kẻ ở thành các vỉa hè nơi nguy hiểm, thành dọc của đảo an toàn.	vach2-7.png	6
