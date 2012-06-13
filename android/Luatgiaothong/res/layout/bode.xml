@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="match_parent"
+	android:background="@drawable/bg_320" android:layout_height="fill_parent">
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:background="@drawable/nav_bar" android:layout_height="wrap_content">
+
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical" android:layout_weight="2"
+			android:layout_height="49dip">
+			<Button android:text="Quay lại" android:id="@+id/back"
+				android:textColor="#fff" android:textSize="15dip"
+				android:background="@drawable/quay_lai_button" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:layout_marginLeft="5dip"></Button>
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical|center_horizontal"
+			android:layout_weight="3" android:layout_height="49dip">
+			<TextView android:text="Bộ đề" android:id="@+id/chuong"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:textSize="25dip" android:textColor="#FFF" />
+		</LinearLayout>
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical|right" android:layout_weight="2"
+			android:layout_height="49dip">
+			<Button android:text="Xóa trả lời" android:id="@+id/clear"
+				android:textColor="#000" android:background="@drawable/danhsach"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginRight="2dip"></Button>
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/barlist" android:gravity="center_vertical"
+		android:background="@drawable/option_bar" android:layout_height="wrap_content">
+	
+			<LinearLayout android:layout_width="fill_parent"
+				android:gravity="center_vertical" android:layout_height="fill_parent">
+				<LinearLayout android:layout_width="0dip" android:gravity="center"
+				android:id="@+id/luat0"
+					android:layout_weight="1" android:layout_height="fill_parent">
+					<LinearLayout android:layout_width="fill_parent"
+						android:id="@+id/luat" android:background="@drawable/option_selected"
+						android:gravity="center_vertical|center_horizontal"
+						android:layout_height="wrap_content" android:layout_marginLeft="1dip">
+						<TextView android:text="Câu hỏi luật" android:id="@+id/textView1"
+							android:textStyle="bold" android:layout_width="wrap_content"
+							android:textColor="#fff" android:shadowColor="#000"
+							android:shadowDx="0" android:shadowDy="-0.5"
+							android:shadowRadius="0.5" android:layout_height="wrap_content"></TextView>
+					</LinearLayout>
+				</LinearLayout>
+				
+				<LinearLayout android:layout_width="0dip" android:gravity="center"
+					android:id="@+id/bienbao0"
+					android:layout_weight="1" android:layout_height="fill_parent">
+					<LinearLayout android:layout_width="fill_parent"
+						android:id="@+id/bienbao" android:gravity="center_vertical|center_horizontal"
+						android:layout_height="wrap_content">
+						<TextView android:text="Biển báo" android:id="@+id/textView2"
+							android:textStyle="bold" android:layout_width="wrap_content"
+							android:textColor="#fff" android:shadowColor="#000"
+							android:shadowDx="0" android:shadowDy="-0.5"
+							android:shadowRadius="0.5" android:layout_height="wrap_content"></TextView>
+
+					</LinearLayout>
+				</LinearLayout>
+				<LinearLayout android:layout_width="0dip" android:gravity="center"
+					android:id="@+id/tinhhuong0"
+					android:layout_weight="1" android:layout_height="fill_parent">
+					<LinearLayout android:layout_width="fill_parent"
+						android:id="@+id/tinhhuong" android:gravity="center_vertical|center_horizontal"
+						android:layout_height="wrap_content" android:layout_marginRight="1dip">
+						<TextView android:text="Tình huống" android:id="@+id/textView3"
+							android:textStyle="bold" android:layout_width="wrap_content"
+							android:textColor="#fff" android:shadowColor="#000"
+							android:shadowDx="0" android:shadowDy="-0.5"
+							android:shadowRadius="0.5" android:layout_height="wrap_content"></TextView>
+					</LinearLayout>
+				</LinearLayout>
+
+			</LinearLayout>
+
+	</LinearLayout>
+
+
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/bardetail" android:visibility="gone" android:gravity="center_vertical"
+		android:background="@drawable/option_bar" android:layout_height="49dip">
+		<LinearLayout android:layout_width="0dip"
+			android:gravity="center_vertical" android:layout_weight="1"
+			android:layout_height="49dip">
+			<LinearLayout android:layout_width="fill_parent"
+				android:gravity="center_vertical" android:layout_height="wrap_content">
+
+				<LinearLayout android:layout_width="0dip" android:id="@+id/luat"
+					android:gravity="center_vertical|center_horizontal"
+					android:layout_weight="1" android:layout_height="wrap_content"
+					android:layout_marginLeft="1dip">
+					<Button android:text="Trước" android:id="@+id/truoc"
+						android:background="@drawable/truoc" android:textSize="15dip"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+
+				</LinearLayout>
+				<LinearLayout android:layout_width="0dip" android:id="@+id/bienbao"
+					android:gravity="center_vertical|center_horizontal"
+					android:layout_weight="2" android:layout_height="wrap_content">
+					<Button android:text="Xem trả lời" android:id="@+id/xemtraloi"
+					android:textColor="#fff" android:shadowColor="#000"
+					android:textStyle="bold"
+							android:shadowDx="0" android:shadowDy="-0.5"
+							android:shadowRadius="0.5"
+						android:background="@drawable/xemtraloi" android:layout_width="wrap_content"
+						android:layout_height="wrap_content"></Button>
+
+				</LinearLayout>
+				<LinearLayout android:layout_width="0dip" android:id="@+id/tinhhuong"
+					android:gravity="center_vertical|center_horizontal"
+					android:layout_weight="1" android:layout_height="wrap_content"
+					android:layout_marginRight="1dip">
+					<Button android:text="Tiếp" android:id="@+id/tiep"
+						android:textSize="15dip" android:background="@drawable/tiep"
+						android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
+				</LinearLayout>
+
+
+			</LinearLayout>
+
+		</LinearLayout>
+	</LinearLayout>
+
+
+
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/viewlistcau" android:orientation="vertical"
+		android:layout_height="fill_parent">
+		<LinearLayout android:id="@+id/title" android:background="@drawable/chua_tra_loi_section"
+			android:gravity="center_vertical" android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+			<TextView android:text="Chưa trả lời" android:id="@+id/textheader"
+				android:textStyle="bold" android:textColor="#fff" android:textSize="17dip"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
+				android:shadowColor="#000" android:shadowDx="0" android:shadowDy="-0.5"
+				android:shadowRadius="0.5" android:layout_marginLeft="15dip"></TextView>
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content">
+			<ListView android:id="@+id/list" android:layout_height="wrap_content"
+				android:fadingEdgeLength="0dip" android:layout_width="fill_parent"></ListView>
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content">
+			<ListView android:id="@+id/list2" android:fadingEdgeLength="0dip"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"></ListView>
+
+		</LinearLayout>
+		<LinearLayout android:layout_width="fill_parent"
+			android:orientation="vertical" android:layout_height="wrap_content">
+			<ListView android:id="@+id/list3" android:layout_height="wrap_content"
+				android:fadingEdgeLength="0dip" android:layout_width="fill_parent"></ListView>
+
+		</LinearLayout>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent"
+		android:id="@+id/viewlistcaudetail" android:layout_height="fill_parent">
+
+	</LinearLayout>
+
+
+
+</LinearLayout>
