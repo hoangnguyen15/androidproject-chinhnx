@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	 android:layout_width="wrap_content"
+	android:layout_height="wrap_content" android:orientation="vertical"
+	android:gravity="center">
+	
+	<TextView android:layout_width="108px"
+		android:layout_height="wrap_content" android:textColor="#000"
+		android:text="@string/sunday" android:textSize="14px"
+		android:id="@+id/txttitle" android:background="#fff"
+		android:textStyle="bold" android:gravity="center_horizontal" />
+		
+	<LinearLayout android:id="@+id/layout_grid_item"
+		android:layout_width="108px" 
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:gravity="center">
+		<ImageView android:id="@+id/img_item_specialday"
+			android:layout_width="wrap_content" android:layout_height="20px"
+			android:paddingLeft="50px" />
+		<LinearLayout android:layout_width="108px" android:gravity="center"
+			android:layout_height="60px" android:orientation="horizontal"
+			android:layout_marginTop="-20px" android:layout_marginBottom="20px">
+			<TextView android:id="@+id/grid_item_day"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="12" android:gravity="top" android:textColor="#fff"
+				android:textSize="32px" android:textStyle="bold"
+				android:shadowColor="#000" android:shadowDx="1" android:shadowDy="1"
+				android:shadowRadius="1" />
+			<TextView android:id="@+id/grid_item_daylunar"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="12/12" android:gravity="top" android:textColor="#fff"
+				android:layout_marginLeft="5px" android:textSize="14px"/>
+		</LinearLayout>
+	</LinearLayout>
+	<ListView android:layout_width="108px" android:layout_height="450px"
+			android:id="@+id/lvreminder" android:cacheColorHint="#00000000"/>
+</LinearLayout>

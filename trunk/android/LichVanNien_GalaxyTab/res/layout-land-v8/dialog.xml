@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root" android:gravity="center_horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical"
+              android:padding="10dp"
+              >
+    <TextView android:id="@+id/text" android:text="Notification"
+              android:layout_width="200dip" android:layout_margin="20dip"
+              android:layout_height="wrap_content" android:textSize="14dip"
+              android:textColor="#FFF" android:gravity="center"
+              />
+    <Button android:id="@+id/btnok" android:layout_width="100dip" 
+    	android:layout_height="40dip" android:text="@string/ok"/>
+    
+</LinearLayout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="385px" android:layout_height="wrap_content"
+	android:gravity="center_vertical|center_horizontal"
+	android:orientation="horizontal">
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar1"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fc3838" android:textSize="34px"
+				android:textStyle="bold"/>
+			<TextView android:id="@+id/wgmonth_lunar1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fc3838" android:textSize="14px" 
+				android:layout_marginTop="-20px"/>
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar2"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff"  android:textSize="30px" />
+			<TextView android:id="@+id/wgmonth_lunar2"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px"/>
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar3"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff" android:textSize="30px"/>
+			<TextView android:id="@+id/wgmonth_lunar3"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar4"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff" android:textSize="30px"/>
+			<TextView android:id="@+id/wgmonth_lunar4"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar5"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff"  android:textSize="30px" />
+			<TextView android:id="@+id/wgmonth_lunar5"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar6"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff"  android:textSize="30px" />
+			<TextView android:id="@+id/wgmonth_lunar6"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px" />
+		</LinearLayout>
+	</LinearLayout>
+
+	<LinearLayout android:layout_width="55px"
+		android:layout_height="56px" android:orientation="horizontal"
+		android:gravity="center_vertical|center_horizontal">
+		<LinearLayout android:layout_width="wrap_content"
+			android:layout_height="wrap_content" android:orientation="vertical">
+			<TextView android:id="@+id/wgmonth_solar7"
+				android:layout_width="wrap_content" android:layout_height="56px"
+				android:gravity="center_vertical|center_horizontal" android:text="1"
+				android:textColor="#fff"  android:textSize="30px" />
+			<TextView android:id="@+id/wgmonth_lunar7"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:gravity="center_vertical|center_horizontal" android:text="1/2"
+				android:textColor="#fff" android:textSize="14px"
+				android:layout_marginTop="-20px" />
+		</LinearLayout>
+	</LinearLayout>
+
+</LinearLayout>

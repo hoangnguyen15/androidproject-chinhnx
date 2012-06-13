@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="2048px" android:layout_height="2048px"
+	android:background="#aa000000" android:id="@+id/llcontainer" >
+	
+<LinearLayout
+  
+  android:layout_width="wrap_content" android:id="@+id/llrootpopup"
+  android:gravity="center"
+  android:layout_height="600px" android:orientation="horizontal">
+  
+  <LinearLayout android:layout_width="360px" android:layout_height="600px"
+  	 android:orientation="vertical" android:background="@drawable/popupback">
+  	
+  	<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  		android:text="@string/tieude"
+  		android:textColor="#fff" android:textSize="20px" android:textStyle="bold"/>
+  	<EditText android:layout_width="fill_parent" android:layout_height="34px"
+  		android:id="@+id/txttitle" android:padding="5px"
+  		android:ellipsize="end" android:singleLine="true"
+  		android:gravity="top|left" android:textSize="20px"
+  		android:layout_marginTop="5px" android:background="#fff"/>
+  	<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  		android:text="@string/noidung"
+  		android:textColor="#fff" android:textSize="20px" android:textStyle="bold"/>
+  	<EditText android:layout_width="fill_parent" android:layout_height="90px"
+  		android:id="@+id/txtcont" android:padding="5px"
+  		android:ellipsize="end" android:textSize="20px"
+  		android:singleLine="false" android:gravity="top|left"
+  		android:layout_marginTop="5px" android:background="#fff"/>
+  	
+  	<TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  		android:layout_marginTop="5px" android:text="@string/thoigian"
+  		android:textColor="#fff" android:textSize="20px" android:textStyle="bold"
+  		android:id="@+id/txttime"/>	
+  		
+  	<LinearLayout android:layout_width="fill_parent" android:layout_height="50px"
+  		android:layout_marginTop="5px" >
+	  	<LinearLayout android:layout_width="0dip" android:layout_height="50px"
+	  		android:gravity="center" android:padding="0px" android:layout_weight="2"
+	  		android:background="@drawable/popupedittextback">
+	  		
+		  	<EditText android:layout_width="0px" android:layout_height="fill_parent"
+		  		android:gravity="right|center_vertical"
+		  		android:textColor="#3c4040" android:textSize="18px"
+		  		android:id="@+id/txthour" android:maxLength="2"
+		  		android:selectAllOnFocus="true" android:digits="0123456789"
+		  		android:layout_weight="1" android:paddingRight="5px"
+		  		android:text="09" android:background="@drawable/trans"/>
+		  	<TextView android:layout_width="10px" android:layout_height="fill_parent"
+		  		android:text=":" android:textColor="#000" android:textSize="20px"
+		  		android:gravity="center" android:padding="0px"/>
+		  	<EditText android:layout_width="0px" android:layout_height="fill_parent"
+		  		android:gravity="left|center_vertical"
+		  		android:textColor="#3c4040" android:textSize="18px"
+		  		android:id="@+id/txtmin" android:maxLength="2"
+		  		android:selectAllOnFocus = "true"
+		  		android:digits="0123456789"
+		  		android:layout_weight="1" android:paddingLeft="5px"
+		  		android:text="00" android:background="@drawable/trans"/>
+	  	</LinearLayout>
+	  	
+	  	<LinearLayout android:layout_width="0px" android:layout_height="50px"
+	  		android:gravity="center" android:layout_weight="3"
+	  		android:background="@drawable/popupedittextback" android:padding="0px">
+	  		
+		  	<EditText android:layout_width="0px" android:layout_height="fill_parent"
+		  		android:gravity="right|center_vertical"
+		  		android:textColor="#3c4040" android:textSize="18px"
+		  		android:id="@+id/txtday" android:maxLength="2"
+		  		android:selectAllOnFocus="true" android:digits="0123456789"
+		  		android:layout_weight="1" android:padding="0px"
+		  		android:text="09" android:background="@drawable/trans"/>
+		  	<TextView android:layout_width="10px" android:layout_height="fill_parent"
+		  		android:text="/" android:textColor="#000" android:textSize="20px"
+		  		android:gravity="center"/>
+		  	<EditText android:layout_width="0px" android:layout_height="fill_parent"
+		  		android:layout_weight="1"
+		  		android:textColor="#3c4040" android:textSize="18px"
+		  		android:id="@+id/txtmon" android:maxLength="2"
+		  		android:selectAllOnFocus = "true" android:gravity="center"
+		  		android:digits="0123456789" android:padding="0px"
+		  		android:text="00" android:background="@drawable/trans"/>
+		  	<TextView android:layout_width="10px" android:layout_height="fill_parent"
+		  		android:text="/" android:textColor="#000" android:textSize="20px"
+		  		android:gravity="center"/>
+		  	<EditText android:layout_width="0px" android:layout_height="fill_parent"
+		  		android:gravity="left|center_vertical"
+		  		android:textColor="#3c4040" android:textSize="18px"
+		  		android:id="@+id/txtyear" android:maxLength="4"
+		  		android:selectAllOnFocus = "true"
+		  		android:digits="0123456789" android:layout_weight="2"
+		  		android:paddingLeft="5px"
+		  		android:text="2300" android:background="@drawable/trans"/>
+		  	</LinearLayout>
+	  	
+  	</LinearLayout>
+  	<Button android:layout_width="fill_parent" android:layout_height="40px"
+  		android:text="@string/datchuong" android:textSize="18px"
+  		android:textColor="#3c4040"
+  		android:padding="0dip" android:layout_marginTop="10px"
+  		android:background="@drawable/btnpopup" android:id="@+id/btnalarm"/>
+  	
+  		<Button android:layout_width="fill_parent" android:layout_height="40px"
+  			android:layout_marginTop="10px" android:background="@drawable/btnpopup"
+  			android:text="bao mot lan" android:id="@+id/btnrepeatstyle"
+  			android:padding="0px"/>
+  	<Button android:layout_width="fill_parent" android:layout_height="40px"
+  		android:text="Rung" android:textSize="18px"
+  		android:textColor="#3c4040"
+  		android:padding="0dip" android:layout_marginTop="10px"
+  		android:id="@+id/btnalarmstyle" android:background="@drawable/btnpopup"/>
+  	<LinearLayout android:layout_width="fill_parent" android:layout_height="40px"
+  		android:layout_marginTop="20px">
+  		<Button android:layout_width="0px" android:layout_height="fill_parent"
+  			android:text="OK" android:textColor="#000"
+  			android:padding="0px"
+  			android:layout_weight="1" android:background="@drawable/btnpopup"
+  			android:layout_marginRight="8px" android:id="@+id/btnadd"/>
+  		<Button android:layout_weight="1" android:layout_width="0px"
+			android:layout_height="fill_parent" android:background="@drawable/btnpopup"
+			android:textColor="#000" android:text="Cancel" android:padding="0px"
+			android:layout_marginLeft="8px" android:id="@+id/btnclose"/>
+  	</LinearLayout>
+  </LinearLayout>
+  
+  <LinearLayout android:layout_width="200px" android:layout_height="468px"
+  		android:background="@drawable/popupextend" android:id="@+id/llextend"
+  		android:visibility="visible" android:orientation="vertical"
+  		android:gravity="center_horizontal">
+  		<TextView android:layout_width="fill_parent" android:layout_height="40px"
+  			android:text="lag a" android:gravity="center_vertical"
+  			android:paddingLeft="10px" android:id="@+id/txtcaptionextend"/>
+  		<ListView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  			android:layout_marginLeft="10px" android:id="@+id/lvextend"
+  			android:layout_marginTop="5px" android:layout_marginRight="10px"
+  			android:fadingEdge="none" android:dividerHeight="0px"
+  			android:layout_marginBottom="12px"
+  			android:divider="#00000000" android:cacheColorHint="#00000000"/>
+  		
+  		
+  </LinearLayout>
+   
+  
+</LinearLayout>
+</LinearLayout>

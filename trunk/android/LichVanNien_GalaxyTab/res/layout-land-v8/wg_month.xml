@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="@drawable/wgmonth_background">
+	<TextView android:id="@+id/wgmonth_title" android:layout_width="fill_parent"
+		android:layout_height="22px" android:gravity="center_vertical|center_horizontal"
+		android:text="Tháng 2/2011" android:textColor="#fff" android:textSize="16px"
+		android:layout_marginTop="20px" android:textStyle="bold" />
+	<LinearLayout android:id="@+id/wgmonth_layoutcontent" android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:orientation="vertical"
+		android:gravity="center_horizontal">
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w1" />
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w2" />
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w3" />
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w4" />
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w5" />
+		<include android:layout_width="fill_parent" layout="@layout/wg_month_w6" />
+
+	</LinearLayout>
+</LinearLayout>

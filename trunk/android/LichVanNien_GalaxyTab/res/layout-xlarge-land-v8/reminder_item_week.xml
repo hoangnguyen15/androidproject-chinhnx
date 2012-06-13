@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/reminder_item" android:layout_width="108px"
+	android:layout_height="45px" android:orientation="vertical"
+	android:background="#20000000" >
+	<TextView android:layout_width="fill_parent" android:layout_height="25px"
+		android:textColor="#fff" android:textSize="16px" android:textStyle="bold"
+		android:text="An trua" android:id="@+id/txttitle"/>
+	<TextView android:layout_width="fill_parent" android:layout_height="20px"
+		android:textColor="#fff" android:textSize="14px" 
+		android:text="16:50" android:id="@+id/txttime"
+		android:gravity="left|center_vertical"/>
+	
+</LinearLayout>
