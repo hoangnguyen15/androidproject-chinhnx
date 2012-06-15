@@ -18,7 +18,7 @@ import android.widget.LinearLayout.LayoutParams;
 
 import com.krazevina.lichvannien.R;
 
-public class DatePick extends PopupWindow implements OnClickListener, OnKeyListener, OnTouchListener
+public class DatePick extends PopupWindow implements OnClickListener
 {
 	Button btnPday,btnPmonth,btnPyear,btnMday,btnMmonth,btnMyear;
 	Button close,search,btnamduong;
@@ -65,24 +65,23 @@ public class DatePick extends PopupWindow implements OnClickListener, OnKeyListe
 		btnamduong.setOnClickListener(this);
 		search.setOnClickListener(cl);
 		
-		txtDay.setOnKeyListener(this);
-		txtMonth.setOnKeyListener(this);
-		txtYear.setOnKeyListener(this);
+//		txtDay.setOnKeyListener(this);
+//		txtMonth.setOnKeyListener(this);
+//		txtYear.setOnKeyListener(this);
 		
 		llroot.setFocusable(true);
-		llroot.setOnKeyListener(this);
-		llroot.setOnTouchListener(this);
-		llcontainer.setOnTouchListener(new OnTouchListener() {
-			public boolean onTouch(View v, MotionEvent event) {
-				dismiss();
-				return false;
-			}
-		});
+//		llroot.setOnKeyListener(this);
+//		llroot.setOnTouchListener(this);
+//		llcontainer.setOnTouchListener(new OnTouchListener() {
+//			public boolean onTouch(View v, MotionEvent event) {
+//				dismiss();
+//				return false;
+//			}
+//		});
 		
 		maxy = 600;
 		maxx = 1024;
-		Log.d("ZZZZZZ", "W:"+v.getWidth()+":H:"+v.getHeight());
-		Log.d("ZZZZZZ", "L:"+v.getLeft()+":R:"+v.getRight());
+
 		setOutsideTouchable(true);
 		lunar = Utils.convertSolar2Lunar(c.get(Calendar.DATE), c.get(Calendar.MONTH)+1, c.get(Calendar.YEAR), 7.0);
 		this.setAnimationStyle(R.anim.zoom_enter);
@@ -177,51 +176,51 @@ public class DatePick extends PopupWindow implements OnClickListener, OnKeyListe
 			display();
 		}
 	}
-	public boolean onKey(View v, int keyCode, KeyEvent event) 
-	{
-		if(event.getAction()==KeyEvent.ACTION_UP)
-		{
-			if(keyCode==KeyEvent.KEYCODE_BACK)
-			{
-				dismiss();
-				return true;
-			}
-			
-		}
-		return false;
-	}
+//	public boolean onKey(View v, int keyCode, KeyEvent event) 
+//	{
+//		if(event.getAction()==KeyEvent.ACTION_UP)
+//		{
+//			if(keyCode==KeyEvent.KEYCODE_BACK)
+//			{
+//				dismiss();
+//				return true;
+//			}
+//			
+//		}
+//		return false;
+//	}
 
 
-	float startx,starty;
+//	float startx,starty;
 	
-	public boolean onTouch(View v, MotionEvent e) 
-	{
-		if(e.getAction()==MotionEvent.ACTION_DOWN)
-		{
-			startx = e.getRawX();
-			starty = e.getRawY();
-			Log.d("ZZZZ", "touch down");
-			LayoutParams lp = (LayoutParams) llroot.getLayoutParams();
-			xx=lp.leftMargin;
-			yy=lp.topMargin;
-		}
-		if(e.getAction()==MotionEvent.ACTION_MOVE)
-		{
-			LayoutParams lp = (LayoutParams) llroot.getLayoutParams();
-			float dx = e.getRawX()-startx,dy = e.getRawY()-starty;
-			
-			lp.setMargins(xx+(int)(dx), yy+(int)(dy), 0, 0);
-			llroot.setLayoutParams(lp);
-		}
-		if(e.getAction()==MotionEvent.ACTION_UP)
-		{
-			Log.d("ZZZZ", "touch up");
-			float dx = e.getRawX()-startx,dy = e.getRawY()-starty;
-			xx+=(int)(dx);
-			yy+=(int)(dy);
-		}
-		return true;
-	}
+//	public boolean onTouch(View v, MotionEvent e) 
+//	{
+//		if(e.getAction()==MotionEvent.ACTION_DOWN)
+//		{
+//			startx = e.getRawX();
+//			starty = e.getRawY();
+//			Log.d("ZZZZ", "touch down");
+//			LayoutParams lp = (LayoutParams) llroot.getLayoutParams();
+//			xx=lp.leftMargin;
+//			yy=lp.topMargin;
+//		}
+//		if(e.getAction()==MotionEvent.ACTION_MOVE)
+//		{
+//			LayoutParams lp = (LayoutParams) llroot.getLayoutParams();
+//			float dx = e.getRawX()-startx,dy = e.getRawY()-starty;
+//			
+//			lp.setMargins(xx+(int)(dx), yy+(int)(dy), 0, 0);
+//			llroot.setLayoutParams(lp);
+//		}
+//		if(e.getAction()==MotionEvent.ACTION_UP)
+//		{
+//			Log.d("ZZZZ", "touch up");
+//			float dx = e.getRawX()-startx,dy = e.getRawY()-starty;
+//			xx+=(int)(dx);
+//			yy+=(int)(dy);
+//		}
+//		return true;
+//	}
 	
 
 }
