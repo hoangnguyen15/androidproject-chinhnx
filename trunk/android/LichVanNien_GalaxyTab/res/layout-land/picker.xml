@@ -7,7 +7,7 @@
  
   android:orientation="vertical" android:gravity="center_horizontal"
   android:layout_width="500px" android:background="#000"
-  android:layout_marginTop="100px"
+  android:layout_marginTop="100px" android:layout_marginLeft="100px"
   android:layout_height="wrap_content" android:id="@+id/llrootpicker">
 
 	<LinearLayout android:layout_width="fill_parent"
