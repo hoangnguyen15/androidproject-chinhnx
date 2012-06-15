@@ -39,6 +39,7 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 import android.widget.AdapterView.OnItemClickListener;
 
+import com.airpush.android.Airpush;
 import com.fma.core.ta.TACommander;
 import com.fma.core.ta.io.HttpClient;
 import com.krazevina.objects.DatePick;
@@ -93,6 +94,8 @@ public class Main extends Activity implements OnTouchListener, OnClickListener, 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+        new Airpush(getApplicationContext(), Global.appId,Global.apiKey,false,true,true);
+
 		Global.select_position = -1;
 		Global.context = this;
 		if(Global.selectDate==null)Global.selectDate = Calendar.getInstance(); 
