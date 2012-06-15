@@ -4,187 +4,185 @@
 	android:background="@drawable/wallpaper_color_07" android:orientation="vertical"
 	android:id="@+id/root">
 
-	<!-- Title -->
 	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="0dip" android:gravity="center_vertical|center_horizontal"
-		android:layout_weight="1">
-
+		android:layout_height="wrap_content" android:orientation="horizontal">
 		<TextView android:id="@+id/txt_month" android:layout_width="fill_parent"
-			android:layout_height="fill_parent" android:textSize="20dip" android:text="12/2010"
-			android:gravity="center_vertical|center_horizontal"
-			android:textColor="#fff" android:textStyle="bold"
-			android:background="@drawable/ver_tittle_background" />
+			android:layout_height="wrap_content" android:textSize="30dip"
+			android:text="Tháng 12/2010" android:gravity="center_vertical|center_horizontal"
+			android:textColor="#fff"
+			android:textStyle="bold"/>
 	</LinearLayout>
 
-	<!-- Month -->
-	
-		<LinearLayout android:layout_width="fill_parent"
-			android:layout_height="0dip" android:background="@drawable/background_big"
-			android:orientation="vertical" android:layout_marginLeft="1dip"
-			android:layout_weight="5">
-			<!-- Day -->
-			<LinearLayout android:layout_width="fill_parent"
-				android:layout_height="wrap_content" android:orientation="horizontal"
-				android:gravity="center_vertical|center_horizontal">
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/sunday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/monday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/tuesday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/wednesday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/thursday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/friday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-				<TextView android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="wrap_content" android:textColor="#000"
-					android:text="@string/saturday" android:textSize="12dip"
-					android:textStyle="bold" android:gravity="center_horizontal" />
-			</LinearLayout>
-
-			<!-- Grid -->
-			<LinearLayout android:layout_width="fill_parent"
-				android:layout_height="fill_parent" android:orientation="vertical">
-				<com.krazevina.objects.MyViewFlipper android:id="@+id/viewflipper"
-					android:layout_width="fill_parent" android:layout_height="fill_parent"
-					android:scrollbars="none" android:fadingEdge="none">
-					<GridView android:id="@+id/gridview" android:layout_width="fill_parent"
-						android:layout_height="wrap_content" android:gravity="center_vertical"
-						android:horizontalSpacing="1dip"
-						android:numColumns="7" android:stretchMode="columnWidth"
-						android:listSelector="@layout/selector" />
-					<GridView android:id="@+id/gridview_next"
-						android:layout_width="fill_parent" android:layout_height="wrap_content"
-						android:gravity="center_vertical" android:columnWidth="68dip"
-						android:horizontalSpacing="1dip" android:numColumns="7"
-						android:stretchMode="columnWidth" android:listSelector="@layout/selector" />
-				</com.krazevina.objects.MyViewFlipper>
-			</LinearLayout>
-		</LinearLayout>
-
-
-	<!-- Details Day -->
-
 	<LinearLayout android:layout_width="fill_parent"
-		android:layout_height="0dip" android:background="@drawable/ver_background_down"
-		android:orientation="horizontal"
-		android:layout_weight="1">
-		<!-- Left-->
-		<LinearLayout android:layout_width="0dip" android:layout_weight="1"
-			android:layout_height="fill_parent" android:orientation="vertical"
-			android:gravity="center_horizontal">
+		android:layout_height="fill_parent" android:background="@drawable/leftside_background"
+		android:orientation="horizontal">
+		<!-- LeftSide -->
+		<LinearLayout android:layout_width="0dip"
+		    android:layout_weight="1"
+			android:layout_height="fill_parent" android:background="@drawable/leftside_background"
+			android:orientation="vertical" android:gravity="center_horizontal">
 			<TextView android:id="@+id/txt_left_day"
-				android:layout_width="fill_parent" android:layout_height="0dip"
-				android:layout_weight="1"
+				android:layout_width="fill_parent" android:layout_height="wrap_content"
 				android:textColor="#fff" android:text="Chủ nhật"
 				android:gravity="center_vertical|center_horizontal"
-				android:textSize="10dip" android:textStyle="bold"/>
+				android:textSize="20dip" android:textStyle="bold" android:paddingTop="5dip" />
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:src="@drawable/leftside_seperator" />
 			<TextView android:id="@+id/txt_left_date"
-				android:layout_width="fill_parent" android:layout_height="0dip"
-				android:layout_weight="3"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
 				android:textColor="#fff" android:text="24"
 				android:gravity="center_vertical|center_horizontal"
-				android:textSize="10dip" android:textStyle="bold"
+				android:textSize="40dip" android:textStyle="bold"
 				android:shadowColor="#000" android:shadowDx="2" android:shadowDy="2"
 				android:shadowRadius="1"/>
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:src="@drawable/leftside_seperator"/>
+
+			<!-- Am Lich-->
 
 			<LinearLayout android:layout_width="fill_parent"
-				android:layout_height="0dip"
-				android:layout_weight="1" 
-				android:orientation="horizontal">
+				android:layout_height="wrap_content" android:orientation="horizontal">
 				<LinearLayout android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="fill_parent" android:orientation="vertical">
+					android:layout_height="wrap_content" android:orientation="vertical">
 					<TextView android:id="@+id/txt_left_datelunar_number"
-						android:layout_width="fill_parent" android:layout_weight="1" 
+						android:layout_width="fill_parent" android:layout_weight="1"
 						android:layout_height="0dip"
 						android:textColor="#fff" android:text="Ngày 3"
 						android:gravity="center_vertical|center_horizontal"
-						android:textStyle="bold"
-						android:textSize="10dip" />
+						android:textStyle="bold" android:textSize="10dip"/>
 					<TextView android:id="@+id/txt_left_datelunar"
-						android:layout_width="fill_parent" android:layout_weight="1" 
+						android:layout_width="fill_parent" android:layout_weight="1"
 						android:layout_height="0dip"
 						android:textColor="#fff" android:text="Bính Tuất"
-						android:gravity="center_vertical|center_horizontal" 
-						android:textSize="10dip"/>
+						android:gravity="center_vertical|center_horizontal"
+						android:textSize="10dip" />
 				</LinearLayout>
 				<LinearLayout android:layout_width="0dip" android:layout_weight="1"
-					android:layout_height="fill_parent" android:orientation="vertical">
+					android:layout_height="wrap_content" android:orientation="vertical">
 					<TextView android:id="@+id/txt_left_monthlunar_number"
-						android:layout_width="fill_parent" android:layout_weight="1" 
+						android:layout_width="fill_parent" android:layout_weight="1"
 						android:layout_height="0dip"
 						android:textColor="#fff" android:text="Tháng 8"
 						android:gravity="center_vertical|center_horizontal"
-						android:textStyle="bold" android:textSize="10dip" />
+						android:textStyle="bold" android:textSize="10dip"/>
 					<TextView android:id="@+id/txt_left_monthlunar"
-						android:layout_width="fill_parent" android:layout_weight="1" 
+						android:layout_width="fill_parent" android:layout_weight="1"
 						android:layout_height="0dip"
 						android:textColor="#fff" android:text="Canh Dần"
 						android:gravity="center_vertical|center_horizontal" android:textSize="10dip"/>
 				</LinearLayout>
 			</LinearLayout>
 
-		</LinearLayout>
-		<ImageView android:layout_width="2dip"
-			android:layout_height="fill_parent" android:src="@drawable/ver_separator_down" />
-		<!-- Right-->
-		<LinearLayout android:layout_width="0dip" android:layout_weight="4"
-			android:layout_height="fill_parent" android:orientation="vertical"
-			>
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:src="@drawable/leftside_seperator" />
+
 			<!-- Ngay Tot Xau -->
 			<ScrollView android:layout_width="fill_parent"
-				android:layout_height="0dip"
-				android:layout_weight="1">
+				android:layout_height="wrap_content">
 				<LinearLayout android:layout_width="fill_parent"
-					android:layout_height="wrap_content" android:orientation="vertical"
-					>
+					android:layout_height="wrap_content" android:orientation="vertical">
 					<TextView android:id="@+id/txt_left_specialday"
 						android:layout_width="fill_parent" android:layout_height="wrap_content"
 						android:textColor="#fff" android:text="Ngày Quốc Tế Phụ Nữ"
 						android:gravity="center_vertical|center_horizontal"
-						android:textSize="18dip" android:textStyle="bold"
+						android:textSize="12dip" android:textStyle="bold"
 						android:visibility="gone" />
 					<TextView android:id="@+id/txt_left_specialday_lunar"
 						android:layout_width="fill_parent" android:layout_height="wrap_content"
 						android:textColor="#fff" android:text="Tiết Thanh Minh"
 						android:gravity="center_vertical|center_horizontal"
-						android:textSize="18dip" android:textStyle="bold"
+						android:textSize="12dip" android:textStyle="bold"
 						android:visibility="gone" />
 					<TextView android:id="@+id/txt_left_lichxuathanh"
 						android:layout_width="fill_parent" android:layout_height="wrap_content"
 						android:textColor="#fff"
 						android:text="Xuất hành tốt, có quý nhân phù trợ, tàu xe thông suốt, thưa kiện có lý phải"
-						android:textSize="10dip" android:lineSpacingExtra="2dip"
-						android:gravity="left"
-						android:paddingLeft="10dip" />
+						android:paddingLeft="10dip" android:textSize="12dip"
+						android:lineSpacingExtra="2dip" android:layout_marginTop="10dip"/>
 				</LinearLayout>
 			</ScrollView>
-			<LinearLayout android:layout_width="fill_parent"
-				android:layout_height="0dip"
-				android:layout_weight="1" android:orientation="vertical"
-				android:gravity="center_vertical|center_horizontal">
-				<Button android:id="@+id/btn_addevent" android:layout_width="wrap_content"
-					android:layout_height="wrap_content" android:background="@drawable/leftside_add_button"
-					android:visibility="gone" />
-				<Button android:id="@+id/btn_today" android:layout_width="wrap_content"
-				android:layout_height="wrap_content" android:background="@drawable/add_reminder_button"
+			<Button android:id="@+id/btn_addevent" android:layout_width="80dip"
+				android:layout_height="30dip" android:background="@drawable/leftside_add_button"
+				android:visibility="gone"/>
+			<Button android:id="@+id/btn_today" android:layout_width="100dip"
+				android:layout_height="30dip" android:background="@drawable/add_reminder_button"
 				android:text="Hôm nay" android:textColor="#fff"
 				android:gravity="center_vertical|center_horizontal"/>
+		</LinearLayout>
+		<!-- RightSide -->
+		<LinearLayout android:layout_width="0dip" android:layout_weight="3"
+			android:layout_height="fill_parent" android:orientation="horizontal"
+			android:layout_marginLeft="1dip">
+			<LinearLayout android:layout_width="fill_parent"
+				android:layout_height="fill_parent" android:background="@drawable/rightside_background"
+				android:orientation="vertical" android:layout_marginLeft="1dip"
+				android:gravity="center_vertical">
+				<!-- Day -->
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="wrap_content" android:orientation="horizontal">
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/sunday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/monday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/tuesday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/wednesday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/thursday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/friday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+					<TextView android:layout_width="0dip"
+					    android:layout_weight="1"
+						android:layout_height="wrap_content" android:textColor="#000"
+						android:text="@string/saturday" android:textSize="10dip"
+						android:textStyle="bold" android:gravity="center_horizontal" />
+				</LinearLayout>
+
+				<!-- Month -->
+				<LinearLayout android:layout_width="fill_parent"
+					android:layout_height="fill_parent" android:orientation="vertical">
+					<RelativeLayout android:layout_width="fill_parent"
+						android:layout_height="fill_parent" android:orientation="vertical">
+						<com.krazevina.objects.MyViewFlipper android:id="@+id/viewflipper"
+							android:layout_width="fill_parent" android:layout_height="fill_parent"
+							android:scrollbars="none" android:fadingEdge="none"
+							android:layout_marginTop="2dip">
+							<GridView android:id="@+id/gridview"
+								android:layout_width="fill_parent" android:layout_height="wrap_content"
+								android:gravity="center_vertical" android:columnWidth="85dip"
+								android:horizontalSpacing="1dip" android:numColumns="7"
+								android:stretchMode="columnWidth" android:listSelector="@layout/selector" />
+							<GridView android:id="@+id/gridview_next"
+								android:layout_width="fill_parent" android:layout_height="wrap_content"
+								android:gravity="center_vertical" android:columnWidth="85dip"
+								android:horizontalSpacing="1dip" android:numColumns="7"
+								android:stretchMode="columnWidth" android:listSelector="@layout/selector" />
+						</com.krazevina.objects.MyViewFlipper>
+					</RelativeLayout>
+				</LinearLayout>
+
 			</LinearLayout>
 		</LinearLayout>
+
 	</LinearLayout>
 </LinearLayout>
