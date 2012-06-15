@@ -17,6 +17,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,6 +26,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
@@ -379,8 +381,11 @@ public class Main extends Activity implements OnTouchListener, OnClickListener, 
 //	        	return true;
 	        case CHOOSE:
 	        	LayoutInflater inflater = (LayoutInflater) Main.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+	        	Display display = ((WindowManager)getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+	        	int width = display.getWidth();
+	        	int height = display.getHeight();
 				root = inflater.inflate(R.layout.picker, null, false);
-				dp = new DatePick(root,1024,1024,true, c,new OnClickListener() {
+				dp = new DatePick(root,width,height,true, c,new OnClickListener() {
 					public void onClick(View v) {
 						dp.dismiss();
 						if(dp.amduong)
