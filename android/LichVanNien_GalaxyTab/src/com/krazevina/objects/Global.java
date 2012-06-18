@@ -42,8 +42,8 @@ final public class Global
 	public static int[][]datetime;
 	public static int index_alarm=0;
 	public static boolean checknotification=false;//check da co notification	
-	public static String appId = "56775";
-	public static String apiKey = "1337935329105815363";
+//	public static String appId = "56775";
+//	public static String apiKey = "1337935329105815363";
 
 	
 	public static Reminder curReminder;
