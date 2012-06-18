@@ -94,7 +94,6 @@ public class Main extends Activity implements OnTouchListener, OnClickListener, 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-        new Airpush(getApplicationContext(), Global.appId,Global.apiKey,false,true,true);
 
 		Global.select_position = -1;
 		Global.context = this;
