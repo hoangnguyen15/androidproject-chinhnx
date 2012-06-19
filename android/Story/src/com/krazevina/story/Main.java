@@ -57,12 +57,11 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		pos = sp.getInt("pos",0);
 		y =sp.getInt("y", 0);
 
-		Log.e("y=pos",""+y+"="+pos);
-		
 		if(pos == 0 && y == 0){
 			btnBookMark.setEnabled(false);
+		}else{ 
+			btnBookMark.setEnabled(true);
 		}
-		
 		
         
     }
@@ -132,7 +131,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			b.putInt("y",y);
 			b.putBoolean("bookmark", true);
 			i.putExtras(b);
-			startActivity(i);
+			startActivityForResult(i,1);
 		}
 		
 	}
@@ -143,8 +142,25 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			Intent i = new Intent();
 			i.putExtra("position", position);
 			i.setClass(this, Content.class);
-			startActivity(i);
+			startActivityForResult(i,1);
 		}
 		
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		if(requestCode == 1){
+			SharedPreferences sp = getSharedPreferences("a", MODE_PRIVATE);
+			pos = sp.getInt("pos",0);
+			y =sp.getInt("y", 0);
+
+			if(pos == 0 && y == 0){
+				btnBookMark.setEnabled(false);
+			}else{ 
+				btnBookMark.setEnabled(true);
+			}
+		}
 	}
 }
