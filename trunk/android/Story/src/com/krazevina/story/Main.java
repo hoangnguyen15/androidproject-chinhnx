@@ -9,7 +9,9 @@ import com.krazevina.objects.Story;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -24,7 +27,9 @@ import android.widget.AdapterView.OnItemClickListener;
 public class Main extends Activity implements OnClickListener,OnItemClickListener {
     ListView lst;
     TextView txtTitle;
-    
+    Button btnBookMark;
+    int pos,y;
+    int book[];
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,13 +38,28 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
         
         lst = (ListView)findViewById(R.id.lst);
         txtTitle = (TextView)findViewById(R.id.title);
+        btnBookMark = (Button)findViewById(R.id.btnbookmark);
         
         ReadData readData= new ReadData(this);
         Global.vt = readData.getData();
+        readData.recycle();
         
         TitleAdapter adapter = new TitleAdapter(this,Global.vt);
 		lst.setAdapter(adapter);
 		lst.setOnItemClickListener(this);
+		btnBookMark.setOnClickListener(this);
+		
+		SharedPreferences sp = getSharedPreferences("a", MODE_PRIVATE);
+		pos = sp.getInt("pos",0);
+		y =sp.getInt("y", 0);
+
+		Log.e("y=pos",""+y+"="+pos);
+		
+		if(pos == 0 && y == 0){
+			btnBookMark.setEnabled(false);
+		}
+		
+		
         
     }
     
@@ -90,7 +110,15 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 	}
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
+		if(v.getId() == btnBookMark.getId()){
+			Intent i = new Intent(this,Content.class);
+			Bundle b = new Bundle();
+			b.putInt("pos",pos);
+			b.putInt("y",y);
+			b.putBoolean("bookmark", true);
+			i.putExtras(b);
+			startActivity(i);
+		}
 		
 	}
 	@Override

@@ -31,8 +31,10 @@
         </LinearLayout>
 
         <ScrollView
+            android:id="@+id/scrollview"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent"
+            android:fadingEdge="none" >
 
             <TextView
                 android:id="@+id/content"

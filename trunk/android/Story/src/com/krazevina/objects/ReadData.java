@@ -60,6 +60,7 @@ public class ReadData {
 	    		String myPath = DB_PATH + DATABASE_NAME;
 	    		checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 	    	}catch(SQLiteException e){
+	    		e.printStackTrace();
 	    	}
 	 
 	    	if(checkDB != null){
@@ -94,7 +95,7 @@ public class ReadData {
 			try {
 				copyDataBase();
 			} catch (IOException e) {
-//				e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 	}
@@ -108,13 +109,13 @@ public class ReadData {
 	public Vector<Story>getData(){
 		Vector<Story>ret = new Vector<Story>();
 		Cursor c = mSqlDatabase.query("story", new String[]{
-				"id","tieude","noidung"}, null, null, null, null, null);
+				"rowid","tieude","noidung"}, null, null, null, null, null);
 		if(c==null)return ret;
 		Story story;
 		c.moveToFirst();
 		for(int i=0;i<c.getCount();i++){
 			story = new Story();
-			story.id = c.getInt(c.getColumnIndex("id"));
+			story.id = c.getInt(c.getColumnIndex("rowid"));
 			story.title = c.getString(c.getColumnIndex("tieude"));
 			story.content = c.getString(c.getColumnIndex("noidung"));
 			
