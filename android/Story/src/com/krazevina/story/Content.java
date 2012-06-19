@@ -43,8 +43,6 @@ public class Content extends Activity implements OnClickListener {
 			position = getIntent().getIntExtra("position", 0);
 		}
 		
-		Log.e("!@#.y=pos",""+y+"="+position);
-
 		title.setText(Global.vt.elementAt(position).title);
 		content.setText(Global.vt.elementAt(position).content+"\n\n\n");
 
@@ -99,6 +97,7 @@ public class Content extends Activity implements OnClickListener {
 		}
 
 		if (v.getId() == btnNext.getId()) {
+			scrollView.scrollTo(0, 0);
 			position++;
 			if (position > Global.vt.size()-1) {
 				Toast.makeText(this, "End", 2).show();
@@ -109,6 +108,7 @@ public class Content extends Activity implements OnClickListener {
 		}
 
 		if (v.getId() == btnPrev.getId()) {
+			scrollView.scrollTo(0, 0);
 			position--;
 			if (position <0) {
 				Toast.makeText(this, "First", 2).show();
