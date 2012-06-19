@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class ReadData {
 	private static String DB_PATH = "/data/data/com.krazevina.story/databases/";
 	private static final String DATABASE_NAME="story.db";
-	private static final int DATABASE_VERSION=1;
+	private static final int DATABASE_VERSION=5;
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;

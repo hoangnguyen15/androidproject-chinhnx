@@ -40,9 +40,13 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
         txtTitle = (TextView)findViewById(R.id.title);
         btnBookMark = (Button)findViewById(R.id.btnbookmark);
         
-        ReadData readData= new ReadData(this);
-        Global.vt = readData.getData();
-        readData.recycle();
+        try{
+        	ReadData readData = new ReadData(this);
+        	Global.vt = readData.getData();
+            readData.recycle();
+        }catch (Exception e) {
+        	e.printStackTrace();
+		}
         
         TitleAdapter adapter = new TitleAdapter(this,Global.vt);
 		lst.setAdapter(adapter);
@@ -73,7 +77,18 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		@Override
 		public int getCount() {
 			// TODO Auto-generated method stub
-			return Global.vt.size();
+			try{
+				return Global.vt.size();
+			}catch (Exception e) {
+				try{
+					ReadData readData = new ReadData(Main.this);
+		        	Global.vt = readData.getData();
+		            readData.recycle();
+		            return Global.vt.size();
+				}catch (Exception ex) {
+					return 0;
+				}
+			}
 		}
 
 		@Override
