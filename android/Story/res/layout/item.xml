@@ -8,6 +8,9 @@
         android:id="@+id/itemTitle"
         android:layout_width="fill_parent"
         android:layout_height="40dip"
-        android:text="Chuong 1" />
+        android:text="Chuong 1" 
+        android:textColor="#393939"
+        android:paddingLeft="30dip"
+        android:gravity="center_vertical"/>
 
 </LinearLayout>
