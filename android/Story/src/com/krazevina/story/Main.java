@@ -58,9 +58,11 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		y =sp.getInt("y", 0);
 
 		if(pos == 0 && y == 0){
-			btnBookMark.setEnabled(false);
-		}else{ 
+			btnBookMark.setVisibility(View.GONE);
+		}else{
+			btnBookMark.setVisibility(View.VISIBLE);
 			btnBookMark.setEnabled(true);
+			btnBookMark.setText(getString(R.string.reading));
 		}
 		
         
@@ -156,11 +158,21 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			pos = sp.getInt("pos",0);
 			y =sp.getInt("y", 0);
 
-			if(pos == 0 && y == 0){
-				btnBookMark.setEnabled(false);
-			}else{ 
+			if(pos == 0 && y == 0 && !Global.bookmarked){
+				btnBookMark.setVisibility(View.INVISIBLE);
+			}else{
+				btnBookMark.setVisibility(View.VISIBLE);
 				btnBookMark.setEnabled(true);
+				btnBookMark.setText(getString(R.string.reading));
 			}
 		}
+	}
+	
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+		Global.bookmarked = false;
+		Global.vt = null;
 	}
 }
