@@ -5,6 +5,8 @@
     <string name="app_name">Đàn bà xấu thì không có quà</string>
     <string name="author">Y Ban</string>
     <string name="bookmark">Đánh dấu</string>
+    <string name="bookmarked">Bạn đã đánh dấu</string>
     <string name="next">Tiến</string>
     <string name="prev">Lùi</string>
+    <string name="reading">Chương đã đánh dấu</string>
 </resources>

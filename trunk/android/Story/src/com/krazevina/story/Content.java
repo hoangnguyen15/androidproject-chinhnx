@@ -18,10 +18,10 @@ import android.widget.Toast;
 
 public class Content extends Activity implements OnClickListener {
 	TextView title, content;
-	Button btnBooked, btnNext, btnPrev;
+	Button btnBookmarked, btnNext, btnPrev;
 	ScrollView scrollView;
-	int position;
-	int y;
+	int position,y;
+	String chap;
 //	Handler handler;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class Content extends Activity implements OnClickListener {
 		setContentView(R.layout.content);
 		title = (TextView) findViewById(R.id.title);
 		content = (TextView) findViewById(R.id.content);
-		btnBooked = (Button) findViewById(R.id.btnbookmark);
+		btnBookmarked = (Button) findViewById(R.id.btnbookmark);
 		btnNext = (Button) findViewById(R.id.btnnext);
 		btnPrev = (Button) findViewById(R.id.btnprev);
 		scrollView = (ScrollView)findViewById(R.id.scrollview);
@@ -42,8 +42,14 @@ public class Content extends Activity implements OnClickListener {
 		}else{
 			position = getIntent().getIntExtra("position", 0);
 		}
-		
-		title.setText(Global.vt.elementAt(position).title);
+		if (position == Global.vt.size()-1) {
+			btnNext.setVisibility(View.INVISIBLE);
+		}else if (position == 0) {
+			btnPrev.setVisibility(View.INVISIBLE);
+		}
+				
+		chap = Global.vt.elementAt(position).title;
+		title.setText(chap);
 		content.setText(Global.vt.elementAt(position).content);
 
 //		new sc().start();
@@ -68,7 +74,7 @@ public class Content extends Activity implements OnClickListener {
 //				});
 //			}}).start();
 
-		btnBooked.setOnClickListener(this);
+		btnBookmarked.setOnClickListener(this);
 		btnNext.setOnClickListener(this);
 		btnPrev.setOnClickListener(this);
 
@@ -87,20 +93,24 @@ public class Content extends Activity implements OnClickListener {
 //	
 	@Override
 	public void onClick(View v) {
-		if (v.getId() == btnBooked.getId()) {
+		if (v.getId() == btnBookmarked.getId()) {
 			y = scrollView.getScrollY();			
 			SharedPreferences sp = getSharedPreferences("a", MODE_PRIVATE);
 			Editor e = sp.edit();
 			e.putInt("pos",position);
 			e.putInt("y", y);
-			e.commit();			
+			e.commit();
+			chap = Global.vt.elementAt(position).title;
+			Toast.makeText(this, getString(R.string.bookmarked)+ " " + chap, 1).show();
+			Global.bookmarked = true;
 		}
 
 		if (v.getId() == btnNext.getId()) {
+			btnPrev.setVisibility(View.VISIBLE);
 			scrollView.scrollTo(0, 0);
 			position++;
-			if (position > Global.vt.size()-1) {
-				Toast.makeText(this, "End", 2).show();
+			if (position == Global.vt.size()-1) {
+				btnNext.setVisibility(View.INVISIBLE);
 				position = Global.vt.size()-1;
 			}
 			title.setText(Global.vt.elementAt(position).title);
@@ -108,10 +118,11 @@ public class Content extends Activity implements OnClickListener {
 		}
 
 		if (v.getId() == btnPrev.getId()) {
+			btnNext.setVisibility(View.VISIBLE);
 			scrollView.scrollTo(0, 0);
 			position--;
-			if (position <0) {
-				Toast.makeText(this, "First", 2).show();
+			if (position ==0) {
+				btnPrev.setVisibility(View.INVISIBLE);
 				position = 0;
 			}
 			

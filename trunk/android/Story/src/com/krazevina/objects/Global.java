@@ -9,4 +9,5 @@ import android.content.SharedPreferences.Editor;
 
 public class Global {
 	public static Vector<Story> vt;
+	public static boolean bookmarked = false;
 }
