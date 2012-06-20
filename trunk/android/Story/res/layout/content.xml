@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/bg"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -11,23 +12,34 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="50dip"
-            android:orientation="horizontal" >
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgtop"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingRight="5dip" >
 
             <TextView
                 android:id="@+id/title"
                 android:layout_width="0dip"
                 android:layout_height="fill_parent"
                 android:layout_weight="4"
-                android:text="day la chuong 1"/>
-
+                android:gravity="center_vertical"
+                android:paddingLeft="20dip"
+                android:text="@string/app_name"
+                android:textColor="#fcf9f0"
+                android:textSize="16dip" />
+
             <Button
                 android:id="@+id/btnbookmark"
                 android:layout_width="0dip"
-                android:layout_height="fill_parent"
-                android:layout_weight="1" 
-                android:text="book"/>
-
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn2"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:text="@string/bookmark"
+                android:textColor="#393939"
+                android:textSize="10dip" />
         </LinearLayout>
 
         <ScrollView
@@ -40,23 +52,36 @@
                 android:id="@+id/content"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="day la noi dung chuong 1" />
+                android:text="day la noi dung chuong 1"
+                android:paddingLeft="30dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip"
+                android:paddingBottom="80dip"
+                android:textColor="#393939" />
         </ScrollView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="50dip"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:weightSum="5" >
+        android:weightSum="5"
+        android:background="@drawable/bgbottom"
+        android:gravity="center_vertical" 
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip">
 
         <Button
             android:id="@+id/btnprev"
             android:layout_width="0dip"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="prev" />
+            android:text="@string/prev"
+            android:textStyle="bold" 
+            android:background="@drawable/btn"
+            android:textColor="#393939"
+            android:gravity="center"/>
 
         <LinearLayout
             android:layout_width="0dip"
@@ -66,9 +91,13 @@
         <Button
             android:id="@+id/btnnext"
             android:layout_width="0dip"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="next" />
+            android:text="@string/next"
+            android:textStyle="bold"
+            android:background="@drawable/btn"
+            android:textColor="#393939"
+            android:gravity="center" />
     </LinearLayout>
 
 </RelativeLayout>

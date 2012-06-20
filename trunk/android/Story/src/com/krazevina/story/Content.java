@@ -44,7 +44,7 @@ public class Content extends Activity implements OnClickListener {
 		}
 		
 		title.setText(Global.vt.elementAt(position).title);
-		content.setText(Global.vt.elementAt(position).content+"\n\n\n");
+		content.setText(Global.vt.elementAt(position).content);
 
 //		new sc().start();
 		
@@ -104,7 +104,7 @@ public class Content extends Activity implements OnClickListener {
 				position = Global.vt.size()-1;
 			}
 			title.setText(Global.vt.elementAt(position).title);
-			content.setText(Global.vt.elementAt(position).content+"\n\n\n");
+			content.setText(Global.vt.elementAt(position).content);
 		}
 
 		if (v.getId() == btnPrev.getId()) {
@@ -116,7 +116,7 @@ public class Content extends Activity implements OnClickListener {
 			}
 			
 			title.setText(Global.vt.elementAt(position).title);
-			content.setText(Global.vt.elementAt(position).content+"\n\n\n");
+			content.setText(Global.vt.elementAt(position).content);
 		}
 
 	}
