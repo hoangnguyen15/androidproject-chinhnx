@@ -38,6 +38,7 @@ public class Content extends Activity implements OnClickListener,
 	LinearLayout llmenu;
 	RelativeLayout llbg;
 	boolean isMenu = false;
+	SharedPreferences sp;
 
 	// Handler handler;
 	@Override
@@ -58,7 +59,9 @@ public class Content extends Activity implements OnClickListener,
 		btnMinus = (Button) findViewById(R.id.btnminus);
 		btnPlus = (Button) findViewById(R.id.btnplus);
 		
-		textSize = 14;
+		
+		sp = getSharedPreferences("a", MODE_PRIVATE);
+		textSize = sp.getInt("textSize", 14);
 		content.setTextSize(textSize);
 		boolean isBookmark = getIntent().getBooleanExtra("bookmark", false);
 		if (isBookmark) {
@@ -125,7 +128,7 @@ public class Content extends Activity implements OnClickListener,
 	public void onClick(View v) {
 		if (v.getId() == btnBookmarked.getId()) {
 			y = scrollView.getScrollY();
-			SharedPreferences sp = getSharedPreferences("a", MODE_PRIVATE);
+			sp = getSharedPreferences("a", MODE_PRIVATE);
 			Editor e = sp.edit();
 			e.putInt("pos", position);
 			e.putInt("y", y);
@@ -185,6 +188,10 @@ public class Content extends Activity implements OnClickListener,
 				textSize = minTextSize;
 			}
 			content.setTextSize(textSize);
+			sp = getSharedPreferences("a", MODE_PRIVATE);
+			Editor e = sp.edit();
+			e.putInt("textSize", textSize);
+			e.commit();
 			
 		}
 		if( v.getId() == btnPlus.getId()){
@@ -194,6 +201,10 @@ public class Content extends Activity implements OnClickListener,
 				textSize = maxTextSize;
 			}
 			content.setTextSize(textSize);
+			sp = getSharedPreferences("a", MODE_PRIVATE);
+			Editor e = sp.edit();
+			e.putInt("textSize", textSize);
+			e.commit();
 			
 		}
 
