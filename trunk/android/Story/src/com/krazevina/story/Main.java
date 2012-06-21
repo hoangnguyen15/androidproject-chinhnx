@@ -61,8 +61,6 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			btnBookMark.setVisibility(View.GONE);
 		}else{
 			btnBookMark.setVisibility(View.VISIBLE);
-			btnBookMark.setEnabled(true);
-			btnBookMark.setText(getString(R.string.reading));
 		}
 		
         
@@ -162,8 +160,6 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 				btnBookMark.setVisibility(View.GONE);
 			}else{
 				btnBookMark.setVisibility(View.VISIBLE);
-				btnBookMark.setEnabled(true);
-				btnBookMark.setText(getString(R.string.reading));
 			}
 		}
 	}
