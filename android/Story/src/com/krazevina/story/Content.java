@@ -35,7 +35,7 @@ public class Content extends Activity implements OnClickListener,
 	int minTextSize = 8;
 	int maxTextSize = 30;
 	String chap;
-	LinearLayout llmenu;
+	LinearLayout llmenu,llbottom;
 	RelativeLayout llbg;
 	boolean isMenu = false;
 	SharedPreferences sp;
@@ -53,6 +53,7 @@ public class Content extends Activity implements OnClickListener,
 		btnPrev = (Button) findViewById(R.id.btnprev);
 		scrollView = (ScrollView) findViewById(R.id.scrollview);
 		llmenu = (LinearLayout) findViewById(R.id.llmenu);
+		llbottom = (LinearLayout) findViewById(R.id.llbottom);
 		llbg = (RelativeLayout) findViewById(R.id.llbg);
 		btnDay = (Button) findViewById(R.id.btnday);
 		btnNight = (Button) findViewById(R.id.btnnight);
@@ -175,11 +176,28 @@ public class Content extends Activity implements OnClickListener,
 		if (v.getId() == btnDay.getId()) {
 			content.setTextColor(Color.parseColor("#393939"));
 			llbg.setBackgroundResource(R.drawable.bg);
+			llbottom.setBackgroundResource(R.drawable.bgbottom);
+			llmenu.setBackgroundResource(R.drawable.bgbottom);
+			btnNext.setBackgroundResource(R.drawable.buttonnext);
+			btnPrev.setBackgroundResource(R.drawable.buttonprev);
+			btnNight.setBackgroundResource(R.drawable.buttonnight);
+			btnDay.setBackgroundResource(R.drawable.buttonday);
+			btnPlus.setBackgroundResource(R.drawable.buttonplus);
+			btnMinus.setBackgroundResource(R.drawable.buttonminus);
+			
 		}
 
 		if (v.getId() == btnNight.getId()) {
 			content.setTextColor(Color.parseColor("#ffffff"));
-			llbg.setBackgroundColor(Color.parseColor("#000000"));
+			llbg.setBackgroundResource(R.drawable.bgnight);
+			llbottom.setBackgroundResource(R.drawable.bgbottomnight);
+			llmenu.setBackgroundResource(R.drawable.bgbottomnight);
+			btnNext.setBackgroundResource(R.drawable.buttonnext2);
+			btnPrev.setBackgroundResource(R.drawable.buttonprev2);
+			btnNight.setBackgroundResource(R.drawable.buttonnight2);
+			btnDay.setBackgroundResource(R.drawable.buttonday2);
+			btnPlus.setBackgroundResource(R.drawable.buttonplus2);
+			btnMinus.setBackgroundResource(R.drawable.buttonminus2);
 			
 		}
 		if( v.getId() == btnMinus.getId()){
@@ -220,6 +238,15 @@ public class Content extends Activity implements OnClickListener,
 			} else {
 				llmenu.setVisibility(View.VISIBLE);
 				isMenu = true;
+			}
+		}
+		if (keyCode == KeyEvent.KEYCODE_BACK){
+			if(isMenu){
+				llmenu.setVisibility(View.GONE);
+				isMenu = false;
+				return false;
+			}else{
+				finish();
 			}
 		}
 		return super.onKeyDown(keyCode, event);
