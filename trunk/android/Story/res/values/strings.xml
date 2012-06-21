@@ -6,7 +6,7 @@
     <string name="author">Y Ban</string>
     <string name="bookmark">Đánh dấu</string>
     <string name="bookmarked">Bạn đã đánh dấu</string>
-    <string name="next">Tiến</string>
-    <string name="prev">Lùi</string>
+    <string name="next">&gt;</string>
+    <string name="prev">&lt;</string>
     <string name="reading">Chương đã đánh dấu</string>
 </resources>

@@ -159,7 +159,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			y =sp.getInt("y", 0);
 
 			if(pos == 0 && y == 0 && !Global.bookmarked){
-				btnBookMark.setVisibility(View.INVISIBLE);
+				btnBookMark.setVisibility(View.GONE);
 			}else{
 				btnBookMark.setVisibility(View.VISIBLE);
 				btnBookMark.setEnabled(true);

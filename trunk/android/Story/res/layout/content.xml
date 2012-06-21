@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llbg"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
-    android:orientation="vertical"
-    android:id="@+id/llbg">"
+    android:orientation="vertical" >
+"
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -73,32 +74,42 @@
         android:paddingRight="15dip"
         android:weightSum="5" >
 
-        <Button
-            android:id="@+id/btnprev"
+        <LinearLayout
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:background="@drawable/button1"
-            android:gravity="center"
-            android:text="@string/prev"
-            android:textColor="#393939"
-            android:textStyle="bold" />
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnprev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonprev"
+                android:gravity="center"
+                android:textColor="#393939"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
             android:layout_weight="3" />
 
-        <Button
-            android:id="@+id/btnnext"
+        <LinearLayout
             android:layout_width="0dip"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/button1"
-            android:gravity="center"
-            android:text="@string/next"
-            android:textColor="#393939"
-            android:textStyle="bold" />
+            android:layout_height="fill_parent"
+            android:layout_weight="1" 
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnnext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonnext"
+                android:gravity="center"
+                android:textColor="#393939"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
