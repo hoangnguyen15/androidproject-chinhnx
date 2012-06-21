@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>	
+    <dimen name="smallMonthWidgetWidth">280px</dimen>
+    <dimen name="smallMonthWidgetHeight">320px</dimen>
+    
+	<dimen name="smallMonthWidgetTitleOffsetX">0px</dimen>
+	<dimen name="smallMonthWidgetTitleOffsetY">0px</dimen>
+	<dimen name="smallMonthWidgetTitleWidth">280px</dimen>
+	<dimen name="smallMonthWidgetTitleHeight">40px</dimen>
+	<dimen name="smallMonthWidgetTitleTextSize">23px</dimen>
+	<color name="smallMonthWidgetTitleTextColor">#222</color>
+	
+	<dimen name="smallMonthWidgetHeaderOffsetX">0px</dimen>
+	<dimen name="smallMonthWidgetHeaderOffsetY">40px</dimen>
+	<dimen name="smallMonthWidgetHeaderWidth">40px</dimen>
+	<dimen name="smallMonthWidgetHeaderHeight">40px</dimen>
+	<dimen name="smallMonthWidgetHeaderTextSize">16px</dimen>
+	<color name="smallMonthWidgetHeaderTextColor">#222</color>
+	
+	<dimen name="smallMonthWidgetCellOffsetX">0px</dimen>
+	<dimen name="smallMonthWidgetCellOffsetY">80px</dimen>
+	<dimen name="smallMonthWidgetCellWidth">40px</dimen>
+	<dimen name="smallMonthWidgetCellHeight">40px</dimen>
+	<dimen name="smallMonthWidgetCellMainTextSize">20px</dimen>
+    <dimen name="smallMonthWidgetCellSubTextSize">13px</dimen>    
+    
+	<color name="smallMonthWidgetDayColor">#666</color>
+    <color name="smallMonthWidgetDayOfWeekColor">#666</color>
+    <color name="smallMonthWidgetWeekendColor">#D00</color>
+    <color name="smallMonthWidgetHolidayColor">#D00</color>
+</resources>

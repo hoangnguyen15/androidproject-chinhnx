@@ -1,0 +1,16 @@
+body { line-height: 1.5em; margin: 0; padding:0; color: #333; }
+h2, h3, h4 { text-align: center; }
+em.AL { margin-bottom: 1em; text-align: center; display: block; }
+h2 { font-size: 1.2em; margin: 1em 0em 0.1em 0em;
+    text-shadow: 1px 1px 1px #AAA;
+}
+h3 { font-size: 1.1em; margin: 1em 0em 0.2em 0.0em; padding: 0.2em 1em; color: #B00;
+    text-align: left;
+    text-shadow: 1px 1px 1px #AAA;
+}
+h4 { font-size: 1em; color: #00E; margin: 0.5em 0.3em;}
+ul { margin: 0; }
+p { margin: 0.5em }
+hr { color: #eee; margin: 1em }
+div.Ref { margin-top: 1em; text-align: center; font-size: 0.9em; color: #666; }
+div.Ref ul { text-align: left }

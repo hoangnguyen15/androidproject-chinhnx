@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:a="http://schemas.android.com/apk/res/android"
+  a:layout_width="fill_parent"
+  a:layout_height="fill_parent"
+  a:orientation="vertical">
+  <Gallery
+    a:id="@+id/gallery"
+    a:layout_width="fill_parent"
+    a:layout_height="wrap_content"
+    a:layout_weight="1"
+    a:fadingEdge="none"
+    a:spacing="0dip"/>
+  <LinearLayout
+    a:layout_width="fill_parent"
+    a:layout_height="wrap_content"
+    a:orientation="horizontal">
+    <Button
+        a:text="  &lt;  "
+        a:id="@+id/prev"
+        a:layout_width="wrap_content"
+        a:layout_height="wrap_content" />
+    <Button
+        a:text="Chọn"
+        a:id="@+id/choose"
+        a:layout_width="wrap_content"
+        a:layout_height="wrap_content"
+        a:layout_weight="1" />
+    <Button
+        a:text="  &gt;  "
+        a:id="@+id/next"
+        a:layout_width="wrap_content"
+        a:layout_height="wrap_content" />                        
+  </LinearLayout>      
+</LinearLayout>

@@ -1,0 +1,43 @@
+{
+    name: "Đen",
+    width: 420,
+    height: 280,    
+    background: "dark_month_widget_bg",
+    enableShadow: false,    
+    autoCalculateOffsets: true,
+    
+    titleOffsetX: 0,
+    titleOffsetY: 0,
+    titleWidth: 301,
+    titleHeight: 43,
+    titleTextSize: 25,
+    titleTextColor: "#FFFFFF",
+    titleTextShadowColor: "#333333",
+    
+    headerOffsetX: 0,
+    headerOffsetY: 43,
+    headerWidth: 43,
+    headerHeight: 43,
+    headerTextSize: 18,
+    headerTextColor: "#FFFFFF",
+    headerTextShadowColor: "#333333",
+    
+    cellOffsetX: 0,
+    cellOffsetY: 86,
+    cellWidth: 43,
+    cellHeight: 43,
+    cellMainTextSize: 20,
+    cellSubTextSize: 13,    
+    cellEventBackground: "event_cell_bg",
+    
+    dayColor: "#FFFFFF",
+    dayShadowColor: "#333333",
+    todayColor: "#A5CA39",
+    todayShadowColor: "#FFFFFF",
+    dayOfWeekColor: "#666666",
+    dayOfWeekShadowColor: "#333333",
+    weekendColor: "#FF0000",
+    weekendShadowColor: "#FFFFFF",
+    holidayColor: "#FF0000",
+    holidayShadowColor: "#FFFFFF"
+}

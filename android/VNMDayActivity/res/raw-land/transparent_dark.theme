@@ -1,0 +1,42 @@
+{
+    name: "Chữ đen - Trong suot",
+    width: 420,
+    height: 280,    
+    enableShadow: true,
+    autoCalculateOffsets: false,
+    
+    titleOffsetX: 0,
+    titleOffsetY: 0,
+    titleWidth: 420,
+    titleHeight: 35,
+    titleTextSize: 25,
+    titleTextColor: "#000000",
+    titleTextShadowColor: "#FFFFFF",
+    
+    headerOffsetX: 0,
+    headerOffsetY: 35,
+    headerWidth: 60,
+    headerHeight: 35,
+    headerTextSize: 18,
+    headerTextColor: "#000000",
+    headerTextShadowColor: "#FFFFFF",
+    
+    cellOffsetX: 0,
+    cellOffsetY: 70,
+    cellWidth: 60,
+    cellHeight: 35,
+    cellMainTextSize: 22,
+    cellSubTextSize: 13,    
+    cellEventBackground: "event_cell_bg",
+    
+    dayColor: "#000000",
+    dayShadowColor: "#FFFFFF",
+    todayColor: "#A5CA39",
+    todayShadowColor: "#FFFFFF",
+    dayOfWeekColor: "#000000",
+    dayOfWeekShadowColor: "#FFFFFF",
+    weekendColor: "#FF0000",
+    weekendShadowColor: "#FFFFFF",
+    holidayColor: "#FF0000",
+    holidayShadowColor: "#FFFFFF"    
+}

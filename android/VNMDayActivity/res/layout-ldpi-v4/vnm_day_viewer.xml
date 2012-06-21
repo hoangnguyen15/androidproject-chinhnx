@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+	a:orientation="vertical"
+	a:layout_width="fill_parent"
+	a:layout_height="fill_parent">
+	
+	<LinearLayout
+		a:orientation="vertical"
+		a:layout_width="fill_parent"
+		a:layout_height="wrap_content"
+		a:layout_weight="1">
+		
+		<TextView a:id="@+id/monthText" 
+		      a:layout_width="fill_parent" 
+		      a:layout_height="wrap_content" 
+		      a:text="Tháng 2 năm 2012" 
+		      a:gravity="center_horizontal" 
+		      a:textSize="18sp"
+		      a:paddingTop="10sp" />
+		<TextView a:id="@+id/dayOfMonthText"
+			a:layout_width="fill_parent" 
+			a:layout_height="wrap_content"
+			a:layout_marginTop="-16sp"
+			a:text="29"
+			a:textColor="@color/dayColor"
+			a:gravity="center"
+			a:textSize="120sp"
+			a:textStyle="bold"			
+			a:shadowColor="#FF0000"
+			a:shadowDx="1"
+			a:shadowDy="1"
+			a:shadowRadius="1.5" />
+		<TextView a:id="@+id/dayOfWeekText" 
+			a:layout_width="fill_parent" 
+			a:layout_height="wrap_content" 
+			a:layout_marginTop="-16sp"
+			a:text="Thứ ba"
+			a:textColor="@color/dayOfWeekColor"
+			a:gravity="center_horizontal"		
+			a:textSize="20sp"/>
+		<TextView a:id="@+id/noteText" 
+		      a:layout_width="fill_parent" 
+		      a:layout_height="fill_parent"
+		      a:maxLines="4"		      
+		      a:text="Chúc bạn một ngày vui vẻ Chúc bạn một ngày vui vẻ Chúc bạn một ngày vui vẻ Chúc bạn một ngày vui vẻ Chúc bạn một ngày vui vẻ Chúc bạn một ngày vui vẻ" 
+		      a:gravity="center_horizontal" 
+		      a:textSize="16sp"
+		      a:padding="10sp"/>
+	</LinearLayout>
+	
+	<TableLayout 
+	    a:paddingTop="1sp"
+	    a:paddingBottom="1sp"
+		a:layout_width="fill_parent"
+		a:layout_height="wrap_content"
+		a:layout_weight="0"
+		a:stretchColumns="*"
+		a:background="@drawable/section_bg">
+		
+		<TableRow
+		    a:layout_marginBottom="1sp">
+			<TextView 
+			    a:layout_width="wrap_content" 
+			    a:layout_height="wrap_content" 
+			    a:layout_weight="1"
+			    a:padding="2px"
+			    a:text="Giờ"
+			    a:gravity="center" 
+			    a:textSize="16sp"
+				a:background="@drawable/lighter_section_bg"/>
+			<TextView
+			    a:layout_width="wrap_content" 
+			    a:layout_height="wrap_content"
+			    a:layout_weight="1"
+			    a:padding="2px"
+			    a:text="Ngày"
+				a:gravity="center" 
+				a:textSize="16sp"
+				a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp"/>
+			<TextView
+			    a:layout_width="wrap_content" 
+			    a:layout_height="wrap_content"
+			    a:layout_weight="1"
+			    a:padding="2px"
+			    a:text="Tháng"
+			    a:gravity="center"
+			    a:textSize="16sp"
+			    a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp"/>
+			<TextView
+			    a:layout_width="wrap_content" 
+			    a:layout_height="wrap_content"
+			    a:layout_weight="1"
+			    a:padding="2px"
+			    a:text="Năm"
+				a:gravity="center" 
+				a:textSize="16sp"
+				a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp"/>
+		</TableRow>
+		
+		<TableRow>
+			<LinearLayout
+				a:orientation="vertical"
+				a:layout_width="fill_parent"
+				a:layout_height="60sp"
+				a:layout_weight="1"
+				a:gravity="center"
+				a:background="@drawable/lighter_section_bg">		
+				<TextView 
+				    a:id="@+id/vnmHourText" 
+				    a:layout_width="fill_parent" 
+				    a:layout_height="20sp" 
+				    a:layout_marginBottom="5sp"
+				    a:text="1:23"
+					a:gravity="center" 
+					a:textSize="18sp"/>
+				<TextView 
+				    a:id="@+id/vnmHourInText" 
+				    a:layout_width="70sp" 
+				    a:layout_height="wrap_content" 
+				    a:text="Quý sửu"
+					a:gravity="center" 
+					a:textSize="14sp" />
+			</LinearLayout>
+			<LinearLayout
+				a:orientation="vertical"
+				a:layout_width="fill_parent"
+				a:layout_height="fill_parent"
+				a:layout_weight="1"
+				a:gravity="center"
+				a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp">
+				<TextView 
+				    a:id="@+id/vnmDayOfMonthText" 
+				    a:layout_width="fill_parent" 
+				    a:layout_height="20sp"
+				    a:layout_marginBottom="5sp"
+				    a:text="23"
+					a:gravity="center" 
+					a:textSize="18sp"/>
+				<TextView 
+				    a:id="@+id/vnmDayOfMonthInText" 
+				    a:layout_width="70sp" 
+				    a:layout_height="wrap_content" 
+				    a:text="Quý hợi"
+					a:gravity="center" 
+				    a:textSize="14sp"/>
+			</LinearLayout>
+			<LinearLayout
+				a:orientation="vertical"
+				a:layout_width="fill_parent"
+				a:layout_height="fill_parent"
+				a:layout_weight="1"
+				a:gravity="center"
+				a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp">		
+				<TextView 
+				    a:id="@+id/vnmMonthText" 
+				    a:layout_width="fill_parent" 
+				    a:layout_height="20sp"
+				    a:layout_marginBottom="5sp"
+				    a:text="12"
+					a:gravity="center" 
+					a:textSize="18sp"/>
+				<TextView 
+				    a:id="@+id/vnmMonthInText" 
+				    a:layout_width="70sp" 
+				    a:layout_height="wrap_content" 
+				    a:text="Ất sửu"
+					a:gravity="center" 
+					a:textSize="14sp"/>
+			</LinearLayout>
+			<LinearLayout
+				a:orientation="vertical"
+				a:layout_width="fill_parent"
+				a:layout_height="fill_parent"
+				a:layout_weight="1"
+				a:gravity="center"
+				a:background="@drawable/lighter_section_bg"
+                a:layout_marginLeft="1sp">		
+				<TextView
+				    a:id="@+id/vnmYearText" 
+				    a:layout_width="fill_parent" 
+				    a:layout_height="20sp"
+				    a:layout_marginBottom="5sp"
+				    a:text="2008"
+					a:gravity="center" 
+					a:textSize="18sp"/>
+				<TextView 
+				    a:id="@+id/vnmYearInText" 
+				    a:layout_width="70sp" 
+				    a:layout_height="wrap_content" 
+				    a:text="Canh Thìn"
+					a:gravity="center" 
+					a:textSize="14sp"/>
+			</LinearLayout>
+		</TableRow>
+	</TableLayout>
+	
+</LinearLayout>
