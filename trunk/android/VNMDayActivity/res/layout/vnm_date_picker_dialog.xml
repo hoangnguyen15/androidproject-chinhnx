@@ -1,0 +1,27 @@
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+              a:orientation="vertical"
+              a:layout_width="fill_parent"
+              a:layout_height="fill_parent"
+              >
+    <RadioGroup a:id="@+id/radio_group"
+      a:layout_width="wrap_content"
+      a:layout_height="wrap_content"
+      a:orientation="horizontal"
+      a:layout_gravity="center_horizontal"
+      a:layout_weight="1">
+      <RadioButton a:id="@+id/radio_solar"
+          a:layout_width="wrap_content"
+          a:layout_height="wrap_content"
+          a:text="Ngày dương" />
+      <RadioButton a:id="@+id/radio_lunar"
+          a:layout_width="wrap_content"
+          a:layout_height="wrap_content"
+          a:layout_marginLeft="10sp"
+          a:text="Ngày âm" />
+    </RadioGroup>
+    <chau.nguyen.calendar.widget.DatePicker a:id="@+id/datePicker"
+               a:layout_width="fill_parent"
+               a:layout_height="wrap_content"
+               a:layout_weight="2"/>
+    
+</LinearLayout>

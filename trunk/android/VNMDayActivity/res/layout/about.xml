@@ -1,0 +1,32 @@
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+			a:id="@+id/layoutRoot"
+              a:orientation="vertical"
+              a:layout_width="fill_parent"
+              a:layout_height="fill_parent"
+              a:padding="10sp"
+              >
+    <TextView a:id="@+id/versionText"
+              a:layout_width="wrap_content"
+              a:layout_height="wrap_content"
+              a:textColor="#FFF"
+              a:text="Phiên bản 1.2"
+              />
+    <TextView
+              a:layout_width="wrap_content"
+              a:layout_height="wrap_content"
+              a:textColor="#FFF"
+              a:text="Phát triển bởi:"
+              />
+    <TextView a:id="@+id/deveopersText"
+              a:layout_width="wrap_content"
+              a:layout_height="wrap_content"
+              a:textColor="#FFF"
+              a:text="Nguyễn Phạm Hải Châu, Bùi Phạm Minh Trí"
+              />
+    <TextView a:id="@+id/contactText"
+              a:layout_width="wrap_content"
+              a:layout_height="wrap_content"
+              a:textColor="#FFF"
+              a:text="Email: nphaichau@gmail.com"
+              />
+</LinearLayout>

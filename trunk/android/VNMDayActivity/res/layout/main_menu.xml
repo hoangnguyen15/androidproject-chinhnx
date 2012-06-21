@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+	a:orientation="horizontal"
+	a:layout_height="fill_parent" 
+	a:layout_width="fill_parent">
+	
+		<ImageButton a:id="@+id/monthDaySwitcherButton"
+			a:layout_height="wrap_content"
+			a:layout_width="wrap_content"
+			a:src="@drawable/month" />
+		<!-- 
+		<ImageButton a:id="@+id/optionButton"
+			a:layout_width="wrap_content" 
+			a:layout_height="wrap_content" />
+		 -->
+</LinearLayout>

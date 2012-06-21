@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:a="http://schemas.android.com/apk/res/android"
+    a:id="@+id/famousWordsWidget"
+	a:orientation="vertical"
+	a:layout_width="fill_parent"
+	a:layout_height="fill_parent"		
+	a:layout_gravity="center"
+	a:paddingLeft="10sp"
+	a:paddingRight="10sp"
+	a:paddingTop="20sp"
+	a:paddingBottom="20sp">
+	<LinearLayout
+		a:orientation="vertical"
+		a:layout_width="fill_parent"
+		a:layout_height="fill_parent"
+		a:background="@color/iconColor"
+		a:padding="3sp"
+		a:layout_weight="7">
+		<TextView a:id="@+id/solarCurrentDay"
+	        a:layout_width="fill_parent" 
+	        a:layout_height="wrap_content"
+	        a:layout_weight="1"
+	        a:textColor="@color/dayColor"
+	        a:gravity="center"
+	        a:textSize="16sp"
+	        a:textStyle="bold"
+	        a:text="Thứ 6 ngày 13 tháng 4 năm 2011"/>
+		<TextView a:id="@+id/lunarCurrentDay"
+	        a:layout_width="fill_parent" 
+	        a:layout_height="wrap_content"
+	        a:layout_weight="1"
+	        a:textColor="@color/dayColor"
+	        a:gravity="center"
+	        a:textSize="14sp"
+	        a:text="Ngày 24 tháng 3 (âm lịch)"/>
+	</LinearLayout>	
+	
+	<TextView a:id="@+id/famousWords"
+		a:layout_width="fill_parent" 
+		a:layout_height="fill_parent"
+		a:layout_weight="3"
+		a:text="Có người nằm mơ đến sự thành công trong khi người khác thức dậy và làm việc chăm chỉ vì nó."
+		a:textColor="@color/dayColor"
+		a:gravity="center"
+		a:textSize="18sp"
+		a:layout_alignParentBottom="true"
+		a:padding="5sp"
+		a:background="@color/characterBackgroud"
+		/>		
+</LinearLayout>

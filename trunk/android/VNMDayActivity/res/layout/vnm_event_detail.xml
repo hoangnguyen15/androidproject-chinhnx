@@ -1,0 +1,307 @@
+<ScrollView xmlns:a="http://schemas.android.com/apk/res/android"
+    a:id="@+id/scroll_view"
+    a:layout_width="fill_parent"
+    a:layout_height="fill_parent"
+	>
+    <LinearLayout a:id="@+id/event"
+        a:background="#fafafa"
+        a:orientation="vertical"
+        a:layout_width="fill_parent"
+        a:layout_height="fill_parent"
+        a:padding="10sp">
+        <!-- CALENDARS -->
+        <RadioGroup
+      		a:layout_width="fill_parent"
+      		a:layout_height="wrap_content"
+      		a:orientation="horizontal">
+			<RadioButton a:id="@+id/lunarCalendarRadio"
+			    a:layout_width="fill_parent"
+			    a:layout_height="wrap_content"
+			    a:layout_weight="1"
+			    a:textColor="@color/commonTextView"
+			    a:text="Âm lịch" 
+			    a:checked="true"/>
+			<RadioButton a:id="@+id/solarCalendarRadio"
+			    a:layout_width="fill_parent"
+			    a:layout_height="wrap_content"
+			    a:layout_weight="1"
+			    a:textColor="@color/commonTextView"
+			    a:text="Dương lịch" />
+    	</RadioGroup>
+        <LinearLayout
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+			>
+            <TextView a:id="@+id/calendarsLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/calendars_label"
+                a:textColor="@color/commonTextView"
+                />
+	        <Spinner a:id="@+id/calendarsDropDown"
+	                a:layout_width="fill_parent"
+	                a:layout_height="wrap_content"
+	                a:prompt="@string/calendars_label"
+	                a:paddingLeft="5sp"/>
+	    </LinearLayout>
+        <!-- WHAT -->
+        <LinearLayout
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+			>
+            <TextView a:id="@+id/whatLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/what_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <EditText a:id="@+id/titleEditText"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:hint="@string/hint_what"
+                a:capitalize="words"
+                a:paddingLeft="5sp"/>
+        </LinearLayout>
+
+        <!-- WHEN -->
+        <LinearLayout a:id="@+id/whenContainer"
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView a:id="@+id/fromLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/edit_event_from_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <LinearLayout
+                a:orientation="horizontal"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                >
+
+                <Button a:id="@+id/startDateButton"
+                    a:layout_width="0px"
+                    a:layout_height="wrap_content"
+                    a:layout_weight="7"
+                    a:gravity="left|center_vertical"
+                    />
+
+                <Button a:id="@+id/startTimeButton"
+                    a:layout_width="0px"
+                    a:layout_height="wrap_content"
+                    a:layout_weight="4"
+                    a:gravity="left|center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <TextView a:id="@+id/toLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/edit_event_to_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <LinearLayout
+                a:orientation="horizontal"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                >
+
+                <Button a:id="@+id/endDateButton"
+                    a:layout_width="0px"
+                    a:layout_height="wrap_content"
+                    a:layout_weight="7"
+                    a:gravity="left|center_vertical"
+                    />
+
+                <Button a:id="@+id/endTimeButton"
+                    a:layout_width="0px"
+                    a:layout_height="wrap_content"
+                    a:layout_weight="4"
+                    a:gravity="left|center_vertical"
+                    />
+            </LinearLayout>
+			<!-- 
+            <LinearLayout
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:gravity="center_vertical|right"
+                >
+                <TextView
+                    a:layout_width="wrap_content"
+                    a:layout_height="wrap_content"
+                    a:text="@string/edit_event_all_day_label"
+                    a:paddingTop="1dip"
+                    a:paddingRight="7dip"
+                    />
+                <CheckBox a:id="@+id/isAllDayCheckBox"
+                    a:layout_width="wrap_content"
+                    a:layout_height="wrap_content"
+                    a:paddingTop="15dip"
+                    a:paddingBottom="15dip"
+                    a:paddingRight="1dip"/>
+            </LinearLayout>
+         -->
+        </LinearLayout>
+
+        <!-- WHERE -->
+        <View
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="@android:drawable/divider_horizontal_bright"
+        />
+        <LinearLayout a:id="@+id/whereContainer"
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/where_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <EditText a:id="@+id/locationEditText"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:hint="@string/hint_where"
+                a:capitalize="sentences"
+                a:paddingLeft="5sp"/>
+        </LinearLayout>
+		<View
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="@android:drawable/divider_horizontal_bright"
+        />
+        <!-- DESCRIPTION -->
+        <LinearLayout
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView a:id="@+id/descriptionLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/description_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <EditText a:id="@+id/descriptionEditText"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:hint="@string/hint_description"
+                a:capitalize="sentences"
+                a:paddingLeft="5sp"/>
+        </LinearLayout>
+        <View
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="@android:drawable/divider_horizontal_bright"
+        />
+        <!-- REPEATS -->
+        <LinearLayout
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView a:id="@+id/repeatsLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/repeats_label"
+                a:textColor="@color/commonTextView"
+                />
+
+            <Spinner a:id="@+id/repeatsDropDown"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:prompt="@string/repeats_label"
+                a:paddingLeft="5sp"/>
+        </LinearLayout>
+		<View
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="@android:drawable/divider_horizontal_bright"
+        />
+        <!-- REMINDERS -->
+        <View a:id="@+id/remindersSeparator"
+            a:layout_width="fill_parent"
+            a:layout_height="1dip"
+            a:background="@android:drawable/divider_horizontal_dark"
+        	/>
+
+        <LinearLayout a:id="@+id/remindersContainer"
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView a:id="@+id/remindersLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/reminders_label"
+                a:textColor="@color/commonTextView"
+                />
+           <Spinner a:id="@+id/remindersDropDown"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:prompt="@string/reminders_label"
+                a:paddingLeft="5sp"/> 
+        </LinearLayout>
+        <LinearLayout a:id="@+id/numberYearsContainer"
+            a:orientation="vertical"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            >
+
+            <TextView a:id="@+id/numberYearsLabel"
+                a:layout_width="wrap_content"
+                a:layout_height="wrap_content"
+                a:text="@string/number_years_label"
+                a:textColor="@color/commonTextView"
+                />
+           <Spinner a:id="@+id/numberYearsDropDown"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:prompt="@string/select_number_years"
+                a:paddingLeft="5sp"/> 
+        </LinearLayout>
+
+        <!-- BUTTONS -->
+        <LinearLayout
+            a:orientation="horizontal"
+            a:layout_width="fill_parent"
+            a:layout_height="wrap_content"
+            a:paddingTop="5dip"
+            a:paddingLeft="4dip"
+            a:paddingRight="4dip"
+            a:paddingBottom="1dip"
+            a:background="@android:drawable/bottom_bar" >
+
+            <Button a:id="@+id/saveButton"
+                a:layout_width="0dip"
+                a:layout_height="fill_parent"
+                a:layout_weight="1"
+                a:text="@string/save_label"
+            />
+
+            <Button a:id="@+id/discardButton"
+                a:layout_width="0dip"
+                a:layout_height="fill_parent"
+                a:layout_weight="1"
+                a:text="@string/discard_label"
+            />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
