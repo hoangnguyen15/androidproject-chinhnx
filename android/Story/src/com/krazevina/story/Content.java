@@ -263,54 +263,55 @@ public class Content extends Activity implements OnClickListener,
 				isMenu = false;
 			}
 
-			if (event.getAction() == MotionEvent.ACTION_DOWN) {
-				downx = event.getRawX();
-				return true;
-			}
-
-			if (event.getAction() == MotionEvent.ACTION_UP) {
-				Log.d("z", "next" + (downx - event.getRawX()));
-
-				if (event.getRawX() - downx > 20) {
-					Log.d("z", "prev");
-					btnNext.setVisibility(View.VISIBLE);
-					scrollView.scrollTo(0, 0);
-					position--;
-					if (position == 0) {
-						btnPrev.setVisibility(View.INVISIBLE);
-						position = 0;
-					}
-					if (position < 0) {
-						position = 0;
-					}
-					try {
-						title.setText(Global.vt.elementAt(position).title);
-						content.setText(Global.vt.elementAt(position).content);
-					} catch (Exception e) {
-						// TODO: handle exception
-					}
-				}
-				if (downx - event.getRawX() > 20) {
-					Log.d("z", "next" + (downx - event.getRawX()));
-					btnPrev.setVisibility(View.VISIBLE);
-					scrollView.scrollTo(0, 0);
-					position++;
-					if (position == Global.vt.size() - 1) {
-						btnNext.setVisibility(View.INVISIBLE);
-						position = Global.vt.size() - 1;
-					}
-					if (position > Global.vt.size() - 1) {
-						position = Global.vt.size() - 1;
-					}
-					try {
-						title.setText(Global.vt.elementAt(position).title);
-						content.setText(Global.vt.elementAt(position).content);
-					} catch (Exception e) {
-						// TODO: handle exception
-					}
-
-				}
-			}
+			//Vuot ngang
+//			if (event.getAction() == MotionEvent.ACTION_DOWN) {
+//				downx = event.getRawX();
+//				return true;
+//			}
+//
+//			if (event.getAction() == MotionEvent.ACTION_UP) {
+//				Log.d("z", "next" + (downx - event.getRawX()));
+//
+//				if (event.getRawX() - downx > 20) {
+//					Log.d("z", "prev");
+//					btnNext.setVisibility(View.VISIBLE);
+//					scrollView.scrollTo(0, 0);
+//					position--;
+//					if (position == 0) {
+//						btnPrev.setVisibility(View.INVISIBLE);
+//						position = 0;
+//					}
+//					if (position < 0) {
+//						position = 0;
+//					}
+//					try {
+//						title.setText(Global.vt.elementAt(position).title);
+//						content.setText(Global.vt.elementAt(position).content);
+//					} catch (Exception e) {
+//						// TODO: handle exception
+//					}
+//				}
+//				if (downx - event.getRawX() > 20) {
+//					Log.d("z", "next" + (downx - event.getRawX()));
+//					btnPrev.setVisibility(View.VISIBLE);
+//					scrollView.scrollTo(0, 0);
+//					position++;
+//					if (position == Global.vt.size() - 1) {
+//						btnNext.setVisibility(View.INVISIBLE);
+//						position = Global.vt.size() - 1;
+//					}
+//					if (position > Global.vt.size() - 1) {
+//						position = Global.vt.size() - 1;
+//					}
+//					try {
+//						title.setText(Global.vt.elementAt(position).title);
+//						content.setText(Global.vt.elementAt(position).content);
+//					} catch (Exception e) {
+//						// TODO: handle exception
+//					}
+//
+//				}
+//			}
 		}
 		return false;
 	}
