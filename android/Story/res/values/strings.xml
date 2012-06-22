@@ -9,4 +9,7 @@
     <string name="next">&gt;</string>
     <string name="prev">&lt;</string>
     <string name="reading">Chương đã đánh dấu</string>
+    <string name="question">Bạn có muốn đánh dấu chương đang đọc ?</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
 </resources>
