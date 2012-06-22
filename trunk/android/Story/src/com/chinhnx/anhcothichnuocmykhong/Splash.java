@@ -1,5 +1,7 @@
-package com.krazevina.story;
+package com.chinhnx.anhcothichnuocmykhong;
 
+
+import com.krazevina.story.R;
 
 import android.app.Activity;
 import android.content.Intent;
