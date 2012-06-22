@@ -3,6 +3,8 @@ package com.krazevina.story;
 import com.krazevina.objects.Global;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -39,6 +41,7 @@ public class Content extends Activity implements OnClickListener,
 	RelativeLayout llbg;
 	boolean isMenu = false;
 	SharedPreferences sp;
+	boolean localBookmark = false;
 
 	// Handler handler;
 	@Override
@@ -128,6 +131,7 @@ public class Content extends Activity implements OnClickListener,
 	@Override
 	public void onClick(View v) {
 		if (v.getId() == btnBookmarked.getId()) {
+			localBookmark = true;
 			y = scrollView.getScrollY();
 			sp = getSharedPreferences("a", MODE_PRIVATE);
 			Editor e = sp.edit();
@@ -141,6 +145,7 @@ public class Content extends Activity implements OnClickListener,
 		}
 
 		if (v.getId() == btnNext.getId()) {
+			localBookmark = false;
 			btnPrev.setVisibility(View.VISIBLE);
 			scrollView.scrollTo(0, 0);
 			position++;
@@ -157,6 +162,7 @@ public class Content extends Activity implements OnClickListener,
 		}
 
 		if (v.getId() == btnPrev.getId()) {
+			localBookmark = false;
 			btnNext.setVisibility(View.VISIBLE);
 			scrollView.scrollTo(0, 0);
 			position--;
@@ -246,7 +252,32 @@ public class Content extends Activity implements OnClickListener,
 				isMenu = false;
 				return false;
 			}else{
-				finish();
+				if(!localBookmark){
+					new AlertDialog.Builder(this)
+				    .setTitle(getString(R.string.bookmark))
+				    .setMessage(getString(R.string.question))
+				    .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+				        public void onClick(DialogInterface dialog, int which) {
+							y = scrollView.getScrollY();
+							sp = getSharedPreferences("a", MODE_PRIVATE);
+							Editor e = sp.edit();
+							e.putInt("pos", position);
+							e.putInt("y", y);
+							e.commit();
+							chap = Global.vt.elementAt(position).title;
+							Toast.makeText(Content.this, getString(R.string.bookmarked) + " " + chap, 1)
+									.show();
+							Global.bookmarked = true;
+							finish();
+				        }
+				     })
+				    .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+				        public void onClick(DialogInterface dialog, int which) { 
+				        	finish();
+				        }
+				     })
+				     .show();
+				}
 			}
 		}
 		return super.onKeyDown(keyCode, event);
