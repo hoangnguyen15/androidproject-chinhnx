@@ -1,4 +1,4 @@
-package com.krazevina.objects;
+package com.chinhnx.objects;
 
 import java.io.File;
 import java.io.FileOutputStream;

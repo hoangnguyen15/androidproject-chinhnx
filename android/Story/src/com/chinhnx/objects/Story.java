@@ -1,4 +1,4 @@
-package com.krazevina.objects;
+package com.chinhnx.objects;
 
 public class Story {
 	public String title,content;

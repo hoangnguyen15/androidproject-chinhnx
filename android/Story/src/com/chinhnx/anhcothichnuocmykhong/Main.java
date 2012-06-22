@@ -1,10 +1,11 @@
-package com.krazevina.story;
+package com.chinhnx.anhcothichnuocmykhong;
 
 import java.util.Vector;
 
-import com.krazevina.objects.Global;
-import com.krazevina.objects.ReadData;
-import com.krazevina.objects.Story;
+import com.chinhnx.objects.Global;
+import com.chinhnx.objects.ReadData;
+import com.chinhnx.objects.Story;
+import com.krazevina.story.R;
 
 import android.app.Activity;
 import android.content.Context;
