@@ -1,8 +1,6 @@
 package com.chinhnx.anhcothichnuocmykhong;
 
 
-import com.krazevina.story.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

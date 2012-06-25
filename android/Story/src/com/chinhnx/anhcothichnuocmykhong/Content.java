@@ -1,7 +1,6 @@
 package com.chinhnx.anhcothichnuocmykhong;
 
 import com.chinhnx.objects.Global;
-import com.krazevina.story.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;

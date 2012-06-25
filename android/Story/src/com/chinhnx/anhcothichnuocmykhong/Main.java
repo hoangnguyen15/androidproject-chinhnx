@@ -5,7 +5,6 @@ import java.util.Vector;
 import com.chinhnx.objects.Global;
 import com.chinhnx.objects.ReadData;
 import com.chinhnx.objects.Story;
-import com.krazevina.story.R;
 
 import android.app.Activity;
 import android.content.Context;
