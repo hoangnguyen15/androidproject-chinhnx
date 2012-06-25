@@ -14,9 +14,9 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class ReadData {
-	private static String DB_PATH = "/data/data/com.krazevina.story/databases/";
+	private static String DB_PATH = "/data/data/com.chinhnx.anhcothichnuocmykhong/databases/";
 	private static final String DATABASE_NAME="AnhCoThichNuocMyKhong.mp3";
-	private static final int DATABASE_VERSION=13;
+	private static final int DATABASE_VERSION=1;
 	
 	private SQLiteDatabase mSqlDatabase;
 	private SQLiteRssHelper sqlitehelper;
