@@ -114,8 +114,11 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			   holder = (ViewHolder) convertView.getTag();
 			  }
 			  
-			  holder.txt.setText(Global.vt.elementAt(position).title);
-
+			  String title = Global.vt.elementAt(position).title;
+			  if(title.length()>30){
+				  title = title.substring(0, 30)+"...";
+			  }
+			  holder.txt.setText(title);
 			  return convertView;
 			 }
 	}
