@@ -40,6 +40,16 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        //Check version
+        try{
+        	String versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        	int versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        	Log.d("Name+code",""+versionName+"+"+versionCode);
+        }catch (Exception e) {
+			// TODO: handle exception
+		}
+        
+        
         lst = (ListView)findViewById(R.id.lst);
         txtTitle = (TextView)findViewById(R.id.title);
         btnBookMark = (Button)findViewById(R.id.btnbookmark);
