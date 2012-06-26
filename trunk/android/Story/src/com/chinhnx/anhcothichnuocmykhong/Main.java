@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -31,7 +32,7 @@ import android.widget.Toast;
 public class Main extends Activity implements OnClickListener,OnItemClickListener {
     ListView lst;
     TextView txtTitle;
-    Button btnBookMark;
+    Button btnBookMark,btnUpdate;
     int pos,y;
     int book[];
     
@@ -40,19 +41,10 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        //Check version
-        try{
-        	String versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-        	int versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-        	Log.d("Name+code",""+versionName+"+"+versionCode);
-        }catch (Exception e) {
-			// TODO: handle exception
-		}
-        
-        
         lst = (ListView)findViewById(R.id.lst);
         txtTitle = (TextView)findViewById(R.id.title);
         btnBookMark = (Button)findViewById(R.id.btnbookmark);
+        btnUpdate = (Button)findViewById(R.id.btnupdate);
         
         try{
         	ReadData readData = new ReadData(this);
@@ -66,6 +58,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		lst.setAdapter(adapter);
 		lst.setOnItemClickListener(this);
 		btnBookMark.setOnClickListener(this);
+		btnUpdate.setOnClickListener(this);
 		
 		SharedPreferences sp = getSharedPreferences("a", MODE_PRIVATE);
 		pos = sp.getInt("pos",0);
@@ -76,6 +69,17 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		}else{
 			btnBookMark.setVisibility(View.VISIBLE);
 		}
+		
+		//Check version
+        try{
+        	String versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        	int versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        	Log.d("Name+code",""+versionName+"+"+versionCode);
+        	
+        }catch (Exception e) {
+			// TODO: handle exception
+		}
+        
 		
         
     }
@@ -151,6 +155,12 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			startActivityForResult(i,1);
 		}
 		
+		if(v.getId() == btnUpdate.getId()){
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			intent.setData(Uri.parse("market://details?id=com.krazevina.beautifulgirl"));
+			startActivity(intent);
+		}
+		
 	}
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -208,7 +218,9 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 	        	break;
 	        }
 	        case R.id.more:{
-	        	
+				Intent intent = new Intent(Intent.ACTION_VIEW);
+				intent.setData(Uri.parse("market://search?q=pub:KrazeVina+Inc."));
+				startActivity(intent);
 	        	break;
 	        }
 	    }
