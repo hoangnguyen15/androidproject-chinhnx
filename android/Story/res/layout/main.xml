@@ -16,7 +16,7 @@
         <LinearLayout
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_weight="4"
+            android:layout_weight="5"
             android:orientation="vertical"
             android:paddingLeft="20dip" >
 
@@ -38,6 +38,19 @@
                 android:text="@string/author"
                 android:textColor="#aaaaaa"
                 android:textSize="14dip" />
+        </LinearLayout>
+        
+		<LinearLayout
+            android:layout_width="0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btnupdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/buttonupdate" />
         </LinearLayout>
 
         <LinearLayout

@@ -12,4 +12,8 @@
     <string name="question">Bạn có muốn đánh dấu chương đang đọc ?</string>
     <string name="yes">Có</string>
     <string name="no">Không</string>
+    <string name="contact">Phản hồi</string>
+    <string name="update">Cập nhật</string>
+    <string name="info">Thông tin</string>
+    <string name="moreapp">Ứng dụng khác</string>
 </resources>

@@ -14,6 +14,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -23,6 +26,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class Main extends Activity implements OnClickListener,OnItemClickListener {
     ListView lst;
@@ -173,5 +177,31 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		super.onDestroy();
 		Global.bookmarked = false;
 		Global.vt = null;
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu, menu);
+	    return true;
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.info:{     
+	        	
+	        	break;
+	        }
+	        case R.id.contact:{
+	        	
+	        	break;
+	        }
+	        case R.id.more:{
+	        	
+	        	break;
+	        }
+	    }
+	    return true;
 	}
 }
