@@ -21,6 +21,7 @@
         </activity>
         <activity android:name=".Content"/>
         <activity android:name=".Main"/>
+        <activity android:name=".Info" android:theme="@style/Theme.Transparent"/>
     </application>
 
 </manifest>

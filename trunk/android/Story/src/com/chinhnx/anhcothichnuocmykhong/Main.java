@@ -210,11 +210,17 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {
 	        case R.id.info:{     
-	        	
+	        	Intent intent = new Intent();
+				intent.setClass(this,Info.class);
+				startActivity(intent);
 	        	break;
 	        }
 	        case R.id.contact:{
-	        	
+				final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+	            emailIntent.setType("plain/text");
+	            emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{getString(R.string.email)});
+	            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "");
+	            startActivity(Intent.createChooser(emailIntent, getString(R.string.choose)));
 	        	break;
 	        }
 	        case R.id.more:{
