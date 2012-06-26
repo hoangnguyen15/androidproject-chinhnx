@@ -63,7 +63,7 @@
                 android:id="@+id/btnbookmark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/buttonbookmark" />
+                android:background="@drawable/buttonbookmarked" />
         </LinearLayout>
     </LinearLayout>
 
