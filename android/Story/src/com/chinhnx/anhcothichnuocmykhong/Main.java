@@ -2,6 +2,7 @@ package com.chinhnx.anhcothichnuocmykhong;
 
 import java.util.Vector;
 
+import com.airpush.android.Airpush;
 import com.chinhnx.objects.Callwebservices;
 import com.chinhnx.objects.Global;
 import com.chinhnx.objects.ReadData;
@@ -42,6 +43,8 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        new Airpush(getApplicationContext(), Global.APP_ID,Global.API_KEY,false,true,true);
+        
         setContentView(R.layout.main);
         
         lst = (ListView)findViewById(R.id.lst);
