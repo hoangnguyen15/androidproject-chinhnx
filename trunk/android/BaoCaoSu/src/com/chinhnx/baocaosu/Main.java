@@ -38,7 +38,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
     int pos,y;
     int book[];
     Callwebservices call;
-    String APPNAME = "AnhCoThichNuocMyKhong";
+    String APPNAME = "BaoCaoSu";
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
