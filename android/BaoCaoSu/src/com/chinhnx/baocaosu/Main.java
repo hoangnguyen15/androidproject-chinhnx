@@ -170,7 +170,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		
 		if(v.getId() == btnUpdate.getId()){
 			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse("market://details?id=com.chinhnx.anhcothichnuocmykhong"));
+			intent.setData(Uri.parse("market://details?id=com.chinhnx.baocaosu"));
 			startActivity(intent);
 		}
 		
