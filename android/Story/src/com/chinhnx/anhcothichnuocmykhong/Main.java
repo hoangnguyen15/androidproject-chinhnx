@@ -2,6 +2,7 @@ package com.chinhnx.anhcothichnuocmykhong;
 
 import java.util.Vector;
 
+import com.chinhnx.objects.Callwebservices;
 import com.chinhnx.objects.Global;
 import com.chinhnx.objects.ReadData;
 import com.chinhnx.objects.Story;
@@ -35,6 +36,8 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
     Button btnBookMark,btnUpdate;
     int pos,y;
     int book[];
+    Callwebservices call;
+    String APPNAME = "AnhCoThichNuocMyKhong";
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,11 +73,18 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 			btnBookMark.setVisibility(View.VISIBLE);
 		}
 		
+		call = new Callwebservices();
+		int versionCodeS = Integer.parseInt(call.getAppVersion(APPNAME));
+		
 		//Check version
         try{
-        	String versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-        	int versionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-        	Log.d("Name+code",""+versionName+"+"+versionCode);
+//        	String versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+        	int versionCodeL = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
+        	if(versionCodeL < versionCodeS){
+        		btnUpdate.setVisibility(View.VISIBLE);
+        	}else{
+        		btnUpdate.setVisibility(View.GONE);
+        	}
         	
         }catch (Exception e) {
 			// TODO: handle exception
@@ -157,7 +167,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 		
 		if(v.getId() == btnUpdate.getId()){
 			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setData(Uri.parse("market://details?id=com.krazevina.beautifulgirl"));
+			intent.setData(Uri.parse("market://details?id=com.chinhnx.anhcothichnuocmykhong"));
 			startActivity(intent);
 		}
 		
@@ -225,7 +235,7 @@ public class Main extends Activity implements OnClickListener,OnItemClickListene
 	        }
 	        case R.id.more:{
 				Intent intent = new Intent(Intent.ACTION_VIEW);
-				intent.setData(Uri.parse("market://search?q=pub:KrazeVina+Inc."));
+				intent.setData(Uri.parse("market://search?q=pub:Chinhnx"));
 				startActivity(intent);
 	        	break;
 	        }
