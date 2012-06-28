@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="names">
+        <item>Atlantic</item>
+        <item>Diagonal</item>
+        <item>Four-in-Hand</item>
+        <item>Half Windsor</item>
+        <item>Kelvin</item>
+        <item>Oriental</item>
+        <item>Persian</item>
+        <item>Plattsburg</item>
+        <item>Pratt</item>
+        <item>Simple Double</item>
+        <item>St. Andrew</item>
+        <item>Windsor</item>
+        <item>Bow Tie</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>Easy-made and original tie knot for social events.</item>
+        <item>Asymmetrical and extraordinary tie knot, a bit difficult to tie.</item>
+        <item>"Also known as 'simple knot', the most popular tie knot due to its simplicity."</item>
+        <item>One of the four classic knots for every day.</item>
+        <item>Narrow and slightly asymmetrical. Small but flashy tie knot for any occasion.</item>
+        <item>This easy-to-tie conservative knot is perfect for any dress shirt.</item>
+        <item>Big tie knot though a bit difficult to make without practice.</item>
+        <item>This classic tie knot works well with older neckties bringing them back to life.</item>
+        <item>"Also known as 'Shelby knot', the Pratt knot makes a bold impression."</item>
+        <item>"Also known as 'Victoria knot', this knot is elegant in shape and simple to tie."</item>
+        <item>Perfect for any fashionable event.</item>
+        <item>Difficult to make but perfect to impress!</item>
+        <item>Excellent for special occasions!</item>
+    </string-array>
+    <string-array name="atlantic_descriptions">
+        <item>Wide and triangular. A full knot best suited for spread collar shirts.</item>
+        <item>Bring the wide end of the tie under the narrow.</item>
+        <item>Bring the narrow end up through the middle.</item>
+        <item>Then back down to the left.</item>
+        <item>Bring the narrow end behind the wide end and then up.</item>
+        <item>Bring the narrow end through the middle.</item>
+        <item>And push the narrow end down through the loop in back.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="diagonal_descriptions">
+        <item>The asymmetric nature of this knot gives it an elegantly casual presence.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow.</item>
+        <item>Bring the wide end back around the narrow end.</item>
+        <item>Then loop it around again.</item>
+        <item>Bring the wide end up and through the middle to the right.</item>
+        <item>Pass the wide end through the loop in front.</item>
+        <item>Pull the ends gently to tighten the knot.</item>
+        <item>Follow the picture.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="four_in_hand_descriptions">
+        <item>Narrow and slightly asymmetrical. The perfect knot of a standard button-down dress shirt.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow.</item>
+        <item>Swing the wide end behind the narrow end to the left.</item>
+        <item>Swing it over in front.</item>
+        <item>Then up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="half_windsor_descriptions">
+        <item>Symmetrical and triangular. A knot you can use with any dress shirt.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and it should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow end.</item>
+        <item>Swing the wide end behind the narrow end to the left.</item>
+        <item>Bring the wide end up and down through the middle.</item>
+        <item>Swing it around to the front.</item>
+        <item>Bring the wide end up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="kelvin_descriptions">
+        <item>Narrow and slightly asymmetrical. Small but flashy tie knot for any occasion.</item>
+        <item>The tie knot should begin inside-out.</item>
+        <item>Bring the wide end of the tie under the narrow end.</item>
+        <item>Swing the wide end across the front to the left.</item>
+        <item>Bring the wide end around the back toward the right.</item>
+        <item>Swing it around to the left.</item>
+        <item>Bring the wide end up through the back.</item>
+        <item>Hold the front of the knot loose with your finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="oriental_descriptions">
+        <item>A simple small casual look.</item>
+        <item>The tie should begin inside-out.</item>
+        <item>Bring the wide end of the tie under the narrow end.</item>
+        <item>Swing the wide end across the front, from right to left.</item>
+        <item>Bring the wide end up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="persian_descriptions">
+        <item>Ideal for thin neckties and spread collar shirts.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow.</item>
+        <item>Bring the wide end up and through the inside of the loop around your neck.</item>
+        <item>Then down.</item>
+        <item>Bring the wide end around the back of the narrow end, from right to left.</item>
+        <item>Bring the wide end up, then down through the middle to the right.</item>
+        <item>Swing it around to the front of the tie.</item>
+        <item>Go up through the middle from the back.</item>
+        <item>Bring the wide end down and through the loop.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="plattsburg_descriptions">
+        <item>Great with spread collar shirts. Symmetrical and wide.</item>
+        <item>The knot should begin inside-out.</item>
+        <item>Bring the wide end of the tie under the narrow.</item>
+        <item>Swing the wide end up.</item>
+        <item>Turn the wide end down through the middle, to the left.</item>
+        <item>Bring the wide end of the tie up.</item>
+        <item>Then down through the middle, to the right.</item>
+        <item>Swing it over in front to the left.</item>
+        <item>Then up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="pratt_descriptions">
+        <item>A good dimple is made before you tighten the knot at your necktie.</item>
+        <item>The tie knot should begin inside-out.</item>
+        <item>Bring the wide end of the tie under the narrow.</item>
+        <item>Swing the wide end up and down through the middle.</item>
+        <item>Swing it over in front.</item>
+        <item>Then up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="simple_double_descriptions">
+        <item>Best suited for classic collar dress shirts.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow.</item>
+        <item>Swing the wide end behind the narrow.</item>
+        <item>Bring the wide end in front of the narrow end.</item>
+        <item>Then behind</item>
+        <item>and in front of the narrow end again.</item>
+        <item>Bring the wide end up through the middle from the back.</item>
+        <item>Hold the front of the knot loose with your finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="st_andrew_descriptions">
+        <item>The knot has a depth which allows it to stand up and drape well.</item>
+        <item>The tie knot should begin inside-out.</item>
+        <item>Bring the wide end of the tie under the narrow.</item>
+        <item>Swing the wide end in front and to the left.</item>
+        <item>Bring the wide end behind the narrow end.</item>
+        <item>Bring the wide end of the tie up and then down through the middle to the left.</item>
+        <item>Swing it over in front, to the right.</item>
+        <item>Then up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="windsor_descriptions">
+        <item>Thick and wide with a triangular shape, the Windsor knot is best suited for spread collar shirts.</item>
+        <item>Place the tie around your neck. The wide end of the tie should be on your left side and should be longer than the narrow end by a few inches.</item>
+        <item>Bring the wide end of the tie over the narrow.</item>
+        <item>Bring the wide end up through the middle.</item>
+        <item>Bring the wide end over to the left.</item>
+        <item>Bring the wide end behind the narrow end.</item>
+        <item>Bring the wide end of the tie up.</item>
+        <item>Bring the wide end down through the middle, to the left.</item>
+        <item>Swing it over in front, to the right.</item>
+        <item>Then bring it up through the back.</item>
+        <item>Hold the front of the knot loose with your index finger, pass the wide end down through the loop in front.</item>
+        <item>Tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+    <string-array name="bowtie_descriptions">
+        <item>Most classic for all ties and commonly worn during black tie events. One should choose the bow tie when wearing a tuxedo.</item>
+        <item>Place the bow tie around your neck. One end of the bow tie should be longer than the other by a few inches.</item>
+        <item>Cross the long end over the short one.</item>
+        <item>Bring the long end up through the middle.</item>
+        <item>Form the front loop of the bow tie by folding the short end horizontally.</item>
+        <item>This loop will be the front loop of the completed tie.</item>
+        <item>Drop the long end of the tie over the front of the bow.</item>
+        <item>Holding tightly the front loop you made, form a new loop with the long end by doubling the end over itself.</item>
+        <item>Push this loop through the front loop behind the bow tie.</item>
+        <item>Pull both ends gently to tighten the knot.</item>
+        <item>Check your tie knot with a picture!</item>
+    </string-array>
+</resources>

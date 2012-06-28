@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="80dip"
+    android:orientation="horizontal" >
+    <ImageView android:id="@+id/itemimg"
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:src="@drawable/atlantic"/>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="-80dip"
+        android:orientation="vertical"
+        android:paddingLeft="80dip">
+        
+        <TextView
+            android:id="@+id/itemname" 
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:text="zz"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:gravity="center_vertical"/>
+		<TextView 
+		    android:id="@+id/itemdescription"
+		    android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:text="zz"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:gravity="center_vertical"/>
+        
+    </LinearLayout>
+	
+</LinearLayout>
