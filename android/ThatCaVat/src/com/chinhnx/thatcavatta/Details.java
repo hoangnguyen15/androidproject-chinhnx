@@ -1,26 +1,40 @@
 package com.chinhnx.thatcavatta;
 
+import com.chinhnx.objects.Global;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Details extends Activity {
+public class Details extends Activity implements OnClickListener {
 	int position;
 	int[] imgSteps;
-	TextView txtSteps,txtDes;
+	TextView txtName, txtSteps,txtDes;
 	ImageView img;
+	String currSteps, maxSteps;
 	int i =0;
+	Button btnNext,btnPrev;
+	String[] names,descriptions;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
 		txtSteps = (TextView)findViewById(R.id.txtSteps);
+		txtName = (TextView)findViewById(R.id.txtName);
 		txtDes = (TextView)findViewById(R.id.txtDes);
 		img = (ImageView)findViewById(R.id.img);
+		btnNext = (Button)findViewById(R.id.btnnext);
+		btnPrev = (Button)findViewById(R.id.btnprev);
+		
+		btnNext.setOnClickListener(this);
+		btnPrev.setOnClickListener(this);
 		
 		
 		Intent intent = getIntent();
@@ -117,8 +131,8 @@ public class Details extends Activity {
 				R.drawable.bowtie05, R.drawable.bowtie06, R.drawable.bowtie07,
 				R.drawable.bowtie08, R.drawable.bowtie09, R.drawable.bowtie };
 
-		String[] descriptions = getResources().getStringArray(details[position]);
-		String []names = getResources().getStringArray(R.array.names);
+		descriptions = getResources().getStringArray(details[position]);
+		names = getResources().getStringArray(R.array.names);
 		switch (position) {
 		case 0:
 			imgSteps = imgAtlantic;
@@ -164,11 +178,57 @@ public class Details extends Activity {
 			break;
 		}
 		
-		img.setBackgroundResource(imgSteps[i]);
-		txtSteps.setText(names[position]);
+		btnPrev.setVisibility(View.GONE);
+		maxSteps = ""+imgSteps.length;
+		currSteps = ""+(i + 1);
+		img.setImageResource(imgSteps[i]);
+		txtName.setText(names[position]);
+		
+		txtSteps.setText(currSteps+"/"+maxSteps);
 		txtDes.setText(descriptions[i]);
 		
 
+	}
+	@Override
+	public void onClick(View v) {
+		if(v.getId() == btnNext.getId()){
+			i++;
+			btnPrev.setVisibility(View.VISIBLE);
+			if (i == imgSteps.length - 1) {
+				btnNext.setVisibility(View.INVISIBLE);
+				i = imgSteps.length - 1;
+			}
+			if (i > imgSteps.length - 1) {
+				i = imgSteps.length - 1;
+			}
+			
+			img.setImageResource(imgSteps[i]);
+			txtSteps.setText(names[position]);
+			txtDes.setText(descriptions[i]);
+			currSteps = ""+(i + 1);
+			txtSteps.setText(currSteps+"/"+maxSteps);
+		}
+		
+		if(v.getId() == btnPrev.getId()){
+			i--;
+			btnNext.setVisibility(View.VISIBLE);
+			
+			if (i == 0) {
+				btnPrev.setVisibility(View.INVISIBLE);
+				i = 0;
+			}
+			if (i < 0) {
+				i = 0;
+			}
+			
+			img.setImageResource(imgSteps[i]);
+			txtSteps.setText(names[position]);
+			txtDes.setText(descriptions[i]);
+			currSteps = ""+(i + 1);
+			txtSteps.setText(currSteps+"/"+maxSteps);
+			
+		}
+		
 	}
 
 }

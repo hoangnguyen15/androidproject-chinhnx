@@ -7,80 +7,83 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:paddingBottom="50dip"
         android:paddingTop="10dip" >
 
-        <TextView
-            android:id="@+id/txtSteps"
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="0dip"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Atlantic 1/1" />
+            android:gravity="center" >
 
-        <ImageView
-            android:id="@+id/img"
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="150dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/bound"
+                android:gravity="center"
+                android:text="Atlantic"
+                android:textColor="#fff"
+                android:textSize="14dip"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="0dip"
-            android:layout_weight="5"
-            android:background="@drawable/atlantic" />
+            android:layout_weight="8"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="horizontal" 
+				android:background="@drawable/bgdetails"
+				android:padding="10dip">
+				<Button
+				    android:id="@+id/btnprev" 
+				    android:layout_width="0dip"
+				    android:layout_weight="1"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/buttonprev"/>
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="0dip"
+				    android:layout_weight="8"
+                    android:layout_height="fill_parent"
+                    android:src="@drawable/atlantic01" />
+                
+				<Button
+					android:id="@+id/btnnext"
+				    android:layout_width="0dip"
+				    android:layout_weight="1"
+				    android:layout_height="wrap_content"
+				    android:background="@drawable/buttonnext"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtSteps"
+                android:layout_width="50dip"
+                android:layout_height="50dip"
+                android:layout_marginLeft="100dip"
+                android:layout_marginTop="-100dip"
+                android:background="@drawable/tron"
+                android:gravity="center"
+                android:text="10/10"
+                android:textColor="#000"
+                android:textSize="18dip" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/txtDes"
             android:layout_width="fill_parent"
             android:layout_height="0dip"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:gravity="center"
-            android:text="ajsl;dkfjasl;kfjasfkl;ajsl;fja" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llbottom"
-        android:layout_width="fill_parent"
-        android:layout_height="50dip"
-        android:layout_alignParentBottom="true"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="15dip"
-        android:paddingRight="15dip"
-        android:weightSum="5" >
-
-        <LinearLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center" >
-
-            <Button
-                android:id="@+id/btnprev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="prev"
-                android:textColor="#393939"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="3" />
-
-        <LinearLayout
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:gravity="center" >
-
-            <Button
-                android:id="@+id/btnnext"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="next"
-                android:textColor="#393939"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:text="check your tie with above picture"
+            android:textColor="#fff"
+            android:textSize="16dip"/>
     </LinearLayout>
 
 </RelativeLayout>
