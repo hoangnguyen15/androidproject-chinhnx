@@ -2,6 +2,8 @@ package com.chinhnx.thatcavatta;
 
 import java.util.Vector;
 
+import com.airpush.android.Airpush;
+import com.chinhnx.objects.Global;
 import com.chinhnx.objects.Tie;
 
 
@@ -33,7 +35,9 @@ public class Main extends Activity implements OnItemClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        new Airpush(getApplicationContext(), Global.APP_ID,Global.API_KEY,false,true,true);
         setContentView(R.layout.main);
+        
         list = (ListView)findViewById(R.id.list);
         
         
