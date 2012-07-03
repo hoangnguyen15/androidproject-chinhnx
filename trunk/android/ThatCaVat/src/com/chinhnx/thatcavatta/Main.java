@@ -28,6 +28,7 @@ public class Main extends Activity implements OnItemClickListener{
 	Tie tie;
 	Vector<Tie> vtTie;
 	ListView list;
+	TextView txtStep;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,12 +36,13 @@ public class Main extends Activity implements OnItemClickListener{
         setContentView(R.layout.main);
         list = (ListView)findViewById(R.id.list);
         
+        
         names = getResources().getStringArray(R.array.names);
         descriptions = getResources().getStringArray(R.array.descriptions);
-        int imgicon[] = {R.drawable.atlantic,R.drawable.diagonal,R.drawable.four_in_hand,
-        		R.drawable.half_windsor,R.drawable.kelvin,R.drawable.oriental,R.drawable.persian,
-        		R.drawable.plattsburg,R.drawable.pratt,R.drawable.simple_double,R.drawable.st_andrew,
-        		R.drawable.windsor,R.drawable.bowtie};
+        int imgicon[] = {R.drawable.ico_atlantic,R.drawable.ico_diagonal,R.drawable.ico_four_in_hand,
+        		R.drawable.ico_half_windsor,R.drawable.ico_kelvin,R.drawable.ico_oriental,R.drawable.ico_persian,
+        		R.drawable.ico_plattsburg,R.drawable.ico_pratt,R.drawable.ico_simple_double,R.drawable.ico_st_andrew,
+        		R.drawable.ico_windsor,R.drawable.ico_bowtie};
         
         vtTie = new Vector<Tie>();
         for(int i = 0;i<names.length;i++){
