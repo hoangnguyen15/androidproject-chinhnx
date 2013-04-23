@@ -4,5 +4,7 @@
     <string name="app_name">IC_LichVanNien</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+	<string name="power">Powered by IC Soft @ 2013</string>
+    
 
 </resources>
