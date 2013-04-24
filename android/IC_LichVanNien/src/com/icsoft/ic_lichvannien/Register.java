@@ -2,6 +2,8 @@ package com.icsoft.ic_lichvannien;
 
 import java.util.Calendar;
 
+import com.icsoft.objects.Global;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -83,6 +85,21 @@ public class Register extends FragmentActivity implements OnClickListener {
 			}
 		}
 		if(v.getId() == btnConfirm.getId()){
+			//Save It
+			String info="";
+			String dob = edtDOB.getText().toString();
+			String sex="1";
+			if(!isMale){
+				sex="2";
+			}
+			if(dob.length()==0){
+				info="";
+			}else{
+				info = dob +"@@@"+sex;
+			}
+			Global.saveInfo(this, info);
+			
+			//Start Activity Main
 			Intent intent = new Intent();
 			intent.setClass(this,Main.class);
 			startActivity(intent);
