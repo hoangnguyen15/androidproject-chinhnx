@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Register extends FragmentActivity implements OnClickListener {
 	static EditText edtDOB;
@@ -93,16 +94,19 @@ public class Register extends FragmentActivity implements OnClickListener {
 				sex="2";
 			}
 			if(dob.length()==0){
-				info="";
+				Toast.makeText(this,"Hãy nhập ngày tháng năm sinh của bạn",Toast.LENGTH_LONG).show();
+				return;
 			}else{
 				info = dob +"@@@"+sex;
+				Global.saveInfo(this, info);
+				//Start Activity Main
+				Intent intent = new Intent();
+				intent.setClass(this,Main.class);
+				startActivity(intent);
+				finish();
 			}
-			Global.saveInfo(this, info);
 			
-			//Start Activity Main
-			Intent intent = new Intent();
-			intent.setClass(this,Main.class);
-			startActivity(intent);
+
 		}
 		if(v.getId() == btnCancel.getId()){
 			finish();
