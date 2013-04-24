@@ -5,6 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 	<string name="power">Powered by IC Soft @ 2013</string>
+	<string name="dob">Ngày tháng năm sinh</string>
+	<string name="sex">Giới tính</string>
+	<string name="male">Nam</string>
+	<string name="female">Nữ</string>
+	<string name="confirm">Xác nhận</string>
+	<string name="cancel">Hủy</string>
     
 
 </resources>
