@@ -16,7 +16,9 @@
         android:id="@+id/edtdob"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/dob"/>
+        android:hint="@string/dob"
+        android:singleLine="true"
+        android:editable="false"/>
     
     <TextView
         android:layout_marginTop="10dp"
