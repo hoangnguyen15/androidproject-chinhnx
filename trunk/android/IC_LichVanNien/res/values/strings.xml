@@ -16,4 +16,5 @@
 	<string name="hour">Giờ</string>
 	<string name="day">Ngày</string>
 	<string name="month">Tháng</string>
+	<string name="year">Năm</string>
 </resources>

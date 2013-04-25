@@ -32,22 +32,30 @@
         android:orientation="vertical"
         android:background="#999999"
         android:layout_weight="6">
-        <TextView android:layout_width="fill_parent"
+        <TextView 
+			android:id="@+id/monthText" 
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Tháng 6 năm 2013"
             android:gravity="center"
             android:textSize="16sp"/>
-        <TextView android:layout_width="fill_parent"
+        <TextView 
+            android:id="@+id/dayOfMonthText"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="25"
             android:gravity="center"
             android:textSize="120sp"/>
-        <TextView android:layout_width="fill_parent"
+        <TextView 
+            android:id="@+id/dayOfWeekText"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Thứ 5"
             android:gravity="center"
             android:textSize="45sp"/>
-        <TextView android:layout_width="fill_parent"
+        <TextView 
+            android:id="@+id/noteText"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="danh ngôn danh ngôn danh ngôn"
             android:gravity="center"
@@ -70,12 +78,16 @@
 	            android:text="@string/hour"
 	            android:gravity="center"
 	            android:background="#ccc"/>
-	        <TextView android:layout_width="fill_parent"
+	        <TextView 
+	            android:id="@+id/vnmHourText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="24sp"
 	            android:text="10:30"
 	            android:gravity="center"/>
-	        <TextView android:layout_width="fill_parent"
+	        <TextView 
+	            android:id="@+id/vnmHourInText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="14sp"
 	            android:text="Tân Tỵ"
@@ -91,12 +103,16 @@
 	            android:text="@string/day"
 	            android:gravity="center"
 	            android:background="#ccc"/>
-			<TextView android:layout_width="fill_parent"
+			<TextView 
+			    android:id="@+id/vnmDayOfMonthText"
+			    android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="24sp"
 	            android:text="14"
 	            android:gravity="center"/>
-	        <TextView android:layout_width="fill_parent"
+	        <TextView 
+	            android:id="@+id/vnmDayOfMonthInText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="14sp"
 	            android:text="Canh Thân"
@@ -112,32 +128,46 @@
 	            android:text="@string/month"
 	            android:gravity="center"
 	            android:background="#ccc"/>
-			<LinearLayout android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:orientation="horizontal">
-			    <TextView android:layout_width="0dp"
+			<TextView 
+			    android:id="@+id/vnmMonthText"
+			    android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
+	            android:textSize="24sp"
 	            android:text="1"
-	            android:gravity="center"
-	            android:layout_weight="1"/>
-	        <TextView android:layout_width="0dp"
+	            android:gravity="center"/>
+	        <TextView 
+	            android:id="@+id/vnmMonthInText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="14sp"
-	            android:text="Giáp Dần"
+	            android:text="Tân Tý"
+	            android:gravity="center"/>
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+	        <TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:text="@string/year"
 	            android:gravity="center"
-	            android:layout_weight="2"/>
-			</LinearLayout>
-			<TextView android:layout_width="fill_parent"
+	            android:background="#ccc"/>
+	        <TextView 
+	            android:id="@+id/vnmYearText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="24sp"
 	            android:text="2013"
 	            android:gravity="center"/>
-	        <TextView android:layout_width="fill_parent"
+	        <TextView 
+	            android:id="@+id/vnmYearInText"
+	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:textSize="14sp"
 	            android:text="Quý Tỵ"
 	            android:gravity="center"/>
-		</LinearLayout>
+        </LinearLayout>
 	</LinearLayout>
 </LinearLayout>
