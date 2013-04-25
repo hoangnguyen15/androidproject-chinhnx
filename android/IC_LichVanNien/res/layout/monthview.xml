@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="#ccc"
+        android:layout_weight="1">
+        <Button android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/details"
+            android:layout_weight="1"
+            android:textSize="12sp"/>
+        <TextView android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_weight="2"/>
+        <Button android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/today"
+            android:layout_weight="1"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 2"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 3"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+			<TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 4"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 5"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+			<TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 6"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="Thứ 7"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+	        <TextView 
+	            android:layout_width="0dp"
+	            android:layout_height="wrap_content"
+	            android:text="CN"
+	            android:gravity="center"
+	            android:textSize="16sp"
+	            android:layout_weight="1"/>
+        </LinearLayout>
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="#999999"
+        android:layout_weight="7">
+        <GridView
+            android:id="@+id/gridview"
+		    android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"	   	
+		   	android:numColumns="7"	    
+		    android:verticalSpacing="1px"
+		    android:horizontalSpacing="1px"	  
+		    android:stretchMode="columnWidth"
+		    android:gravity="center_vertical"/>
+	</LinearLayout>
+	
+    <TextView 
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="Tháng 12 năm 2012"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:layout_weight="1"/>
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+            
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/luckyday"
+                android:gravity="center"/>
+            
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+            <TextView android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/blackday"
+                android:gravity="center"/>
+        </LinearLayout>
+        
+        
+	</LinearLayout>
+</LinearLayout>

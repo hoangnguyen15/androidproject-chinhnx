@@ -17,4 +17,6 @@
 	<string name="day">Ngày</string>
 	<string name="month">Tháng</string>
 	<string name="year">Năm</string>
+	<string name="luckyday">Hoàng đạo</string>
+	<string name="blackday">Hắc đạo</string>
 </resources>
