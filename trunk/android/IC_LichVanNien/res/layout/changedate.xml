@@ -78,7 +78,7 @@
 	            android:gravity="center"
 	            android:background="#ccc"/>
 	        <TextView 
-	            android:id="@+id/vnmHourText"
+            	android:id="@+id/dayOfWeekText"
 	            android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
 	            android:textSize="16sp"
@@ -96,7 +96,7 @@
 	            android:gravity="center"
 	            android:background="#ccc"/>
 			<TextView 
-			    android:id="@+id/vnmDayOfMonthText"
+	            android:id="@+id/vnmDayOfMonthInText"
 			    android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
 	            android:textSize="16sp"
@@ -115,7 +115,7 @@
 	            android:gravity="center"
 	            android:background="#ccc"/>
 			<TextView 
-			    android:id="@+id/vnmMonthText"
+	            android:id="@+id/vnmMonthInText"
 			    android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
 	            android:textSize="16sp"
@@ -134,7 +134,7 @@
 	            android:gravity="center"
 	            android:background="#ccc"/>
 	        <TextView 
-	            android:id="@+id/vnmYearText"
+	            android:id="@+id/vnmYearInText"
 	            android:layout_width="fill_parent"
 	            android:layout_height="fill_parent"
 	            android:textSize="16sp"
