@@ -1,8 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical" >
     
-
+	<LinearLayout android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="#ccc"
+        android:layout_weight="1">
+        <Button android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/details"
+            android:layout_weight="1"
+            android:textSize="12sp"/>
+        <TextView android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_weight="2"/>
+        <Button android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/today"
+            android:layout_weight="1"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    
+	<LinearLayout android:layout_width="fill_parent"
+	    android:layout_height="0dp"
+	    android:layout_weight="7"
+	    android:orientation="vertical"
+	    android:gravity="center">
+        <LinearLayout android:layout_width="wrap_content"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:orientation="vertical">
+			<TextView android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:text="@string/solar"
+			    android:gravity="center"/>
+		    <DatePicker android:id="@+id/dpSolar"
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent"
+		        android:layout_weight="1"/>
+		    </LinearLayout>
+	    
+	    <LinearLayout android:layout_width="wrap_content"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:orientation="vertical">
+		    <TextView android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lunar"
+			    android:gravity="center"/>
+		    <DatePicker android:id="@+id/dpLunar"
+		        android:layout_width="wrap_content"
+		        android:layout_height="0dp"
+		        android:layout_weight="1"/>
+		</LinearLayout>
+	    
+	    
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+	        <TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:text="@string/date"
+	            android:gravity="center"
+	            android:background="#ccc"/>
+	        <TextView 
+	            android:id="@+id/vnmHourText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:textSize="16sp"
+	            android:text="Chủ Nhật"
+	            android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+			<TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:text="@string/day"
+	            android:gravity="center"
+	            android:background="#ccc"/>
+			<TextView 
+			    android:id="@+id/vnmDayOfMonthText"
+			    android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:textSize="16sp"
+	            android:text="Mậu Ngọ"
+	            android:gravity="center"/>
+	        
+		</LinearLayout>
+		<LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+			<TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:text="@string/month"
+	            android:gravity="center"
+	            android:background="#ccc"/>
+			<TextView 
+			    android:id="@+id/vnmMonthText"
+			    android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:textSize="16sp"
+	            android:text="Nhâm Tý"
+	            android:gravity="center"/>
+		</LinearLayout>
+		
+		<LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+	        <TextView android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:textSize="14sp"
+	            android:text="@string/year"
+	            android:gravity="center"
+	            android:background="#ccc"/>
+	        <TextView 
+	            android:id="@+id/vnmYearText"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:textSize="16sp"
+	            android:text="Nhâm Thìn"
+	            android:gravity="center"/>
+        </LinearLayout>
+	</LinearLayout>
 </LinearLayout>

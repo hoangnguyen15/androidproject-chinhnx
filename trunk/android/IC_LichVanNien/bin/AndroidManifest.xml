@@ -25,6 +25,9 @@
         <activity android:name=".Main"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".Dayview"></activity>
+        <activity android:name=".MonthView"></activity>
+        <activity android:name=".ChangeDate"></activity>
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>
