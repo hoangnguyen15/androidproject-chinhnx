@@ -13,10 +13,13 @@
 	<string name="cancel">Hủy</string>
     <string name="details">Chi tiết</string>
     <string name="today">Hôm nay</string>
+    <string name="date">Thứ</string>
 	<string name="hour">Giờ</string>
 	<string name="day">Ngày</string>
 	<string name="month">Tháng</string>
 	<string name="year">Năm</string>
 	<string name="luckyday">Hoàng đạo</string>
 	<string name="blackday">Hắc đạo</string>
+	<string name="solar">Ngày dương</string>
+	<string name="lunar">Ngày âm</string>
 </resources>
