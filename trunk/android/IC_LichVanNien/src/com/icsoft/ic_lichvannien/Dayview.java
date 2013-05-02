@@ -2,16 +2,18 @@ package com.icsoft.ic_lichvannien;
 
 import java.util.Calendar;
 import java.util.Date;
-import com.icsoft.calendar.VNMDate;
-import com.icsoft.calendar.VietCalendar;
-import com.icsoft.calendar.VietCalendar.Holiday;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.icsoft.calendar.VNMDate;
+import com.icsoft.calendar.VietCalendar;
+import com.icsoft.calendar.VietCalendar.Holiday;
 
 public class Dayview extends Activity{
 	TextView monthText;
@@ -42,6 +44,7 @@ public class Dayview extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dayview);
+		
 		monthText = (TextView)findViewById(R.id.monthText);
 		dayOfMonthText = (TextView)findViewById(R.id.dayOfMonthText);
 		dayOfWeekText = (TextView)findViewById(R.id.dayOfWeekText);
