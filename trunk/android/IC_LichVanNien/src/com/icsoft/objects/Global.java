@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 public class Global{
 
+	public static double timeZone = 7;
 	public static String Info(Context context){
 		String info="";
 		SharedPreferences prefs = context.getSharedPreferences("preferencename", 0); 
@@ -19,4 +20,5 @@ public class Global{
 		editor.putString("Info",info);
 		editor.commit();
 	}
+	
 }
