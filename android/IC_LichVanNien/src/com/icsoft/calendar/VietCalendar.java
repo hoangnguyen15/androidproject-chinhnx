@@ -535,4 +535,14 @@ public class VietCalendar {
 		}
     	
     }
+    
+    // Added by chinhnx
+    public static boolean IsLeapMonth(int solarDate, int solarMonth, int solarYear, int TimeZone ){
+    	int[] lunar= convertSolar2Lunar(solarDate, solarMonth, solarYear, TimeZone);
+    	if(lunar[3]!=0)
+    		return true;
+    	else 
+    		return false;
+    	 
+    }
 }
