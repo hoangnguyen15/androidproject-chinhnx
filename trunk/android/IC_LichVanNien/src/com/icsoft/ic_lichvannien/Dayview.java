@@ -12,7 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,10 +22,11 @@ import com.icsoft.calendar.VNMDate;
 import com.icsoft.calendar.VietCalendar;
 import com.icsoft.calendar.VietCalendar.Holiday;
 
-public class Dayview extends Activity implements OnTouchListener{
+public class Dayview extends Activity implements OnTouchListener, OnClickListener{
 	TextView monthText,dayOfMonthText,dayOfWeekText,noteText;
 	TextView vnmHourText,vnmHourInText,vnmDayOfMonthText,vnmDayOfMonthInText,vnmMonthInText,vnmYearText,vnmYearInText;
 //	TextView vnmMonthText;
+	Button btnDetails,btnToday;
 	int dayOfWeekColor,weekendColor,holidayColor,eventColor;
 	
 	private static final int MENU_CHANGE_DATE = 2;
@@ -56,6 +59,10 @@ public class Dayview extends Activity implements OnTouchListener{
 		vnmMonthInText = (TextView) findViewById(R.id.vnmMonthInText);
 		vnmYearText = (TextView) findViewById(R.id.vnmYearText);
 		vnmYearInText = (TextView) findViewById(R.id.vnmYearInText);
+		
+		btnDetails = (Button)findViewById(R.id.btnDetails);
+		btnToday = (Button)findViewById(R.id.btnToday);
+		
 		dayOfWeekColor = getResources().getColor(R.color.dayOfWeekColor);
 		weekendColor = getResources().getColor(R.color.weekendColor);
 		holidayColor = getResources().getColor(R.color.holidayColor);
@@ -63,12 +70,15 @@ public class Dayview extends Activity implements OnTouchListener{
 		
 		llday = (LinearLayout)findViewById(R.id.llday);
 		
-		setDate(new Date());
+		curDate = new Date();
+		setDate(curDate);
 		
 		xArray = new ArrayList<Float>();
 		yArray = new ArrayList<Float>();
 		
 		llday.setOnTouchListener(this);
+		btnDetails.setOnClickListener(this);
+		btnToday.setOnClickListener(this);
 	}
 	
 
@@ -102,6 +112,7 @@ public class Dayview extends Activity implements OnTouchListener{
 		String famousSaying = "danh ngon cuoc song";
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);
+		
 		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 		int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 		int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -161,7 +172,6 @@ public class Dayview extends Activity implements OnTouchListener{
 		
 		dayOfMonthText.setShadowLayer(1.2f, 1.0f, 1.0f, getResources().getColor(R.color.shadowColor));		
 //		invalidate();
-		curDate = date;
 	}
 
 
@@ -226,21 +236,21 @@ public class Dayview extends Activity implements OnTouchListener{
     void ProcessAction(int move) {
     	if (move == 1) { //Phải sang trái
     		Log.d("action","Next()");
-    		Next();
+    		curDate = addDays(curDate, 1);
     	}
     	else  if (move == 2){ //Trái sang phải
     		Log.d("action","Prev()");
+    		curDate = addDays(curDate, -1);
     	}
     	else  if (move == 3){ //Trên xuống dưới
-    		Log.d("action","nextYear()");
+    		Log.d("action","nextMonth()");
+    		curDate = addMonths(curDate, 1);
     	}
     	else  { //Dưới lên trên
-    		Log.d("action","prevYear()");
+    		Log.d("action","prevMonth()");
+    		curDate = addMonths(curDate, -1);
     	}
-    }
-    
-    void Next(){
-    	setDate(addDays(new Date(), 1));
+    	setDate(curDate);
     }
     
     private Date addDays(Date date, int days) {
@@ -249,5 +259,26 @@ public class Dayview extends Activity implements OnTouchListener{
     	cal.add(Calendar.DATE, days);
     	return cal.getTime();
     }
+    
+    private Date addMonths(Date date, int months) {
+    	Calendar cal = Calendar.getInstance();
+    	cal.setTime(date);
+//    	cal.set(Calendar.DAY_OF_MONTH, 1);
+    	cal.add(Calendar.MONTH, months);
+    	return cal.getTime();
+    }
+
+
+	@Override
+	public void onClick(View v) {
+		if(v.getId() == btnDetails.getId()){
+			
+		}
+		if(v.getId() == btnToday.getId()){
+			curDate = new Date();
+			setDate(curDate);
+		}
+		
+	}
 	
 }
