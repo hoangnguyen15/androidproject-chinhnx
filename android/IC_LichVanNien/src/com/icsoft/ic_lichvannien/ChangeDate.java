@@ -24,6 +24,8 @@ import android.widget.Toast;
 public class ChangeDate extends  Activity{
 	WheelView monthSolar,yearSolar,daySolar,monthLunar,yearLunar,dayLunar;
 	TextView dayOfWeekText,vnmDayOfMonthInText,vnmMonthInText,vnmYearInText;
+	String months[];
+	int lunar[];
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -52,18 +54,33 @@ public class ChangeDate extends  Activity{
         OnWheelChangedListener listenerSolar = new OnWheelChangedListener() {
             public void onChanged(WheelView wheel, int oldValue, int newValue) {
                 updateDays(yearSolar, monthSolar, daySolar);
+                //change Lunar Picker
+                int day = daySolar.getCurrentItem();
+                int month = monthSolar.getCurrentItem();
+                int year = yearSolar.getCurrentItem();
+                int lunar[] = VietCalendar.convertSolar2Lunar(day+1,month+1,year+1900, Global.timeZone);
+                dayLunar.setCurrentItem(lunar[0]-1);
+                monthLunar.setCurrentItem(lunar[1]-1);
+                yearLunar.setCurrentItem(lunar[2]-1900);
+                
+                //setText
+//        		String[] vnmCalendarTexts = VietCalendar.getCanChiInfo(vnmDate.getDayOfMonth(), vnmDate.getMonth(), vnmDate.getYear(), dayOfMonth, month, year);
+//                setText(vnmCalendarTexts, dayOfWeek);
+                
             }
         };
         
         OnWheelChangedListener listenerLunar = new OnWheelChangedListener() {
             public void onChanged(WheelView wheel, int oldValue, int newValue) {
-            	updateDaysnMonthsLunar(yearLunar, monthLunar, dayLunar);
+            	updateDaysnMonthsLunar(yearLunar, monthLunar);
             }
         };
 
         // monthSolar
-        String months[] = new String[] {"Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5",
-                "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"};
+        months = new String[12];
+        for(int i=0;i<months.length;i++){
+        	months[i] = "Tháng " + (i+1);
+        }
         monthSolar.setViewAdapter(new DateArrayAdapter(this, months, curMonthSolar));
         monthSolar.setCurrentItem(curMonthSolar);
         monthSolar.addChangingListener(listenerSolar);
@@ -76,18 +93,10 @@ public class ChangeDate extends  Activity{
         //daySolar
         updateDays(yearSolar, monthSolar, daySolar);
         daySolar.setCurrentItem(curDaySolar-1);
+        daySolar.addChangingListener(listenerSolar);
         
         //Change Solar to Lunar
-		int lunar[] = VietCalendar.convertSolar2Lunar(curDaySolar,curMonthSolar+1, curYearSolar, Global.timeZone);
-
-        
-        // monthLunar
-        int curMonthLunar = lunar[1];
-        String monthsLunar[] = new String[] {"Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5",
-                "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"};
-        monthLunar.setViewAdapter(new DateArrayAdapter(this, monthsLunar, curMonthLunar-1));
-        monthLunar.setCurrentItem(curMonthLunar-1);
-        monthLunar.addChangingListener(listenerLunar);
+		lunar = VietCalendar.convertSolar2Lunar(curDaySolar,curMonthSolar+1, curYearSolar, Global.timeZone);        
     
         // yearLunar
         int curYearLunar = lunar[2];
@@ -99,6 +108,11 @@ public class ChangeDate extends  Activity{
         int curDayLunar = lunar[0];
         dayLunar.setViewAdapter(new DateNumericAdapter(this,1,30,curDayLunar-1));
         dayLunar.setCurrentItem(curDayLunar-1);
+        
+        // monthLunar
+        int curMonthLunar = lunar[1];
+        updateDaysnMonthsLunar(yearLunar, monthLunar);
+        monthLunar.setCurrentItem(curMonthLunar-1);
         
                 
 	}
@@ -121,15 +135,27 @@ public class ChangeDate extends  Activity{
         day.setCurrentItem(curDay - 1, true);
     }
     
-    void updateDaysnMonthsLunar(WheelView year, WheelView month, WheelView day) {
-    	Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, calendar.get(Calendar.YEAR) + year.getCurrentItem());
-        calendar.set(Calendar.MONTH, month.getCurrentItem());
-        
-        int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-        day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, calendar.get(Calendar.DAY_OF_MONTH) - 1));
-        int curDay = Math.min(maxDays, day.getCurrentItem() + 1);
-        day.setCurrentItem(curDay - 1, true);
+    void updateDaysnMonthsLunar(WheelView year, WheelView month) {
+    	int iyear = year.getCurrentItem()+1900;
+    	int leapMonth = VietCalendar.getLeapMonth(iyear, Global.timeZone);
+    	if(leapMonth != -1){
+    		//change month lunar
+    		months = new String[13];
+    		for(int i=0;i<months.length;i++){
+            	months[i] = "Tháng " + (i+1);     	
+            	if(i == leapMonth){
+            		months[i] = "Tháng " + (leapMonth) + "+";
+            	} else if(i > leapMonth){
+            		months[i] = "Tháng " + i;
+            	}
+    		}
+    	}else{
+    		months = new String[12];
+    		for(int i=0;i<months.length;i++){
+            	months[i] = "Tháng " + (i+1);
+    		}
+    	}
+    	month.setViewAdapter(new DateArrayAdapter(this, months, lunar[1]-1));    	
     }
     
     private class DateNumericAdapter extends NumericWheelAdapter {

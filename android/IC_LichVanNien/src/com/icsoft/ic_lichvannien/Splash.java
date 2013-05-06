@@ -24,7 +24,7 @@ public class Splash extends Activity {
 				if(info.length() == 0){
 					startActivity(new Intent(Splash.this,Register.class));
 				}else{
-					startActivity(new Intent(Splash.this,Dayview.class));
+					startActivity(new Intent(Splash.this,Main.class));
 				}
 			}
 		},SPLASH_DURATION);
