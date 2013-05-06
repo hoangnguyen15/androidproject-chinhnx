@@ -7,16 +7,18 @@
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:background="#ccc"
-        android:layout_weight="1">
+        android:background="@drawable/header"
+        android:layout_weight="1"
+        android:padding="4dp">
         <Button android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:text="@string/details"
             android:layout_weight="1"
-            android:textSize="12sp"/>
+            android:textSize="16sp"
+            android:background="@drawable/button"
+            android:textColor="#fff"/>
         <TextView android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:text="@string/app_name"
             android:gravity="center"
             android:textSize="20sp"
             android:layout_weight="2"/>
@@ -24,14 +26,19 @@
             android:layout_height="fill_parent"
             android:text="@string/today"
             android:layout_weight="1"
-            android:textSize="12sp"/>
+            android:textSize="16sp"
+            android:background="@drawable/button"
+            android:textColor="#fff"/>
     </LinearLayout>
     
-    <LinearLayout android:layout_width="fill_parent"
+    <LinearLayout 
+        android:id="@+id/llday"
+        android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:background="#999999"
-        android:layout_weight="6">
+        android:background="@drawable/bg_day"
+        android:layout_weight="4.5"
+        android:paddingTop="15dp">
         <TextView 
 			android:id="@+id/monthText" 
             android:layout_width="fill_parent"
@@ -45,14 +52,14 @@
             android:layout_height="wrap_content"
             android:text="25"
             android:gravity="center"
-            android:textSize="120sp"/>
+            android:textSize="100sp"/>
         <TextView 
             android:id="@+id/dayOfWeekText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Thứ 5"
             android:gravity="center"
-            android:textSize="45sp"/>
+            android:textSize="36sp"/>
         <TextView 
             android:id="@+id/noteText"
             android:layout_width="fill_parent"
@@ -66,108 +73,103 @@
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:background="@drawable/bg_infoday">
+        <LinearLayout android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_weight="3"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/vnmYearInText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Năm Quý Tỵ"
+                android:gravity="center"/>
+            <TextView 
+                android:id="@+id/vnmMonthInText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="Tháng Bính Thìn"
+                android:gravity="center"/>
+            <TextView 
+                android:id="@+id/vnmDayOfMonthInText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="Ngày Kỷ Mùi"
+                android:gravity="center"/>
+            <TextView 
+                android:id="@+id/vnmHourText" 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="10:42:43"
+                android:gravity="center"/>
+            <TextView 
+                android:id="@+id/vnmHourInText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="Giờ Tân Tỵ"
+                android:gravity="center"/>
+        </LinearLayout>
         
         <LinearLayout android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:orientation="vertical"
-            android:layout_weight="1">
-	        <TextView android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="@string/hour"
-	            android:gravity="center"
-	            android:background="#ccc"/>
-	        <TextView 
-	            android:id="@+id/vnmHourText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="24sp"
-	            android:text="10:30"
-	            android:gravity="center"/>
-	        <TextView 
-	            android:id="@+id/vnmHourInText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="Tân Tỵ"
-	            android:gravity="center"/>
+            android:layout_weight="2"
+            android:gravity="center">
+            <TextView 
+			    android:id="@+id/vnmDayOfMonthText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="14"
+                android:gravity="center"
+                android:textSize="30sp"/>
+            <TextView 
+			    android:id="@+id/vnmYearText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="3/2013"
+                android:gravity="center"
+                android:textSize="16sp"/>
+            <!--  <TextView 
+			    android:id="@+id/vnmMonthText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:text="zzz"
+                android:gravity="center"/>-->
         </LinearLayout>
+        
         <LinearLayout android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:orientation="vertical"
-            android:layout_weight="1">
-			<TextView android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="@string/day"
-	            android:gravity="center"
-	            android:background="#ccc"/>
-			<TextView 
-			    android:id="@+id/vnmDayOfMonthText"
-			    android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="24sp"
-	            android:text="14"
-	            android:gravity="center"/>
-	        <TextView 
-	            android:id="@+id/vnmDayOfMonthInText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="Canh Thân"
-	            android:gravity="center"/>
-		</LinearLayout>
-		<LinearLayout android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
-			<TextView android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="@string/month"
-	            android:gravity="center"
-	            android:background="#ccc"/>
-			<TextView 
-			    android:id="@+id/vnmMonthText"
-			    android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="24sp"
-	            android:text="1"
-	            android:gravity="center"/>
-	        <TextView 
-	            android:id="@+id/vnmMonthInText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="Tân Tý"
-	            android:gravity="center"/>
-		</LinearLayout>
-		
-		<LinearLayout android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:orientation="vertical"
-            android:layout_weight="1">
-	        <TextView android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="@string/year"
-	            android:gravity="center"
-	            android:background="#ccc"/>
-	        <TextView 
-	            android:id="@+id/vnmYearText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="24sp"
-	            android:text="2013"
-	            android:gravity="center"/>
-	        <TextView 
-	            android:id="@+id/vnmYearInText"
-	            android:layout_width="fill_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="14sp"
-	            android:text="Quý Tỵ"
-	            android:gravity="center"/>
+            android:layout_weight="3"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/blackorluckyday"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:text="Ngày Hoàng Đạo"
+                android:gravity="center"/>
         </LinearLayout>
 	</LinearLayout>
 </LinearLayout>
