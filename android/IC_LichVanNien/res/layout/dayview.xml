@@ -10,7 +10,9 @@
         android:background="@drawable/header"
         android:layout_weight="1"
         android:padding="4dp">
-        <Button android:layout_width="0dp"
+        <Button 
+            android:id="@+id/btnDetails"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:text="@string/details"
             android:layout_weight="1"
@@ -22,7 +24,9 @@
             android:gravity="center"
             android:textSize="20sp"
             android:layout_weight="2"/>
-        <Button android:layout_width="0dp"
+        <Button 
+            android:id="@+id/btnToday"
+            android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:text="@string/today"
             android:layout_weight="1"
